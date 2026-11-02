@@ -10,8 +10,13 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--source', type=Path, required=True)
 parser.add_argument('--extension', type=Path, required=True)
 parser.add_argument('--destination', type=Path, required=True)
+parser.add_argument('--phase4a', action='store_true', help='Mark a disposable Phase 4A deployment target')
 args = parser.parse_args()
 src, ext, dest = args.source.resolve(), args.extension.resolve(), args.destination.resolve()
+if args.phase4a:
+    repo = Path(__file__).resolve().parents[1]
+    if dest.parent != repo / '.cache' or not dest.name.startswith('phase4a-'):
+        parser.error('Phase 4A destination must be .cache/phase4a-*')
 if dest.exists():
     parser.error('Destination already exists; use a fresh directory')
 if dest.is_relative_to(src) or src.is_relative_to(dest):
@@ -49,4 +54,9 @@ extensions:
     autoDownload: false
 enableServerPlugins: false
 ''')
+if args.phase4a:
+    (dest / '.phase4a-isolated.json').write_text(json.dumps(dict(
+        purpose='phase4a-disposable', root=str(dest), source=str(src),
+        extension_source=str(ext), snapshot_sha256=hashlib.sha256(
+            (dest / 'snapshot-hashes.json').read_bytes()).hexdigest()), indent=2)+'\n')
 print(dest)

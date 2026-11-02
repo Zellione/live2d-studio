@@ -38,6 +38,7 @@ setTimeout(() => {
         report.missing_parameters = required.filter(id => !report.parameters.includes(id));
         if (report.missing_parameters.length) throw Error('Missing expected MVP parameter IDs');
         report.drawables = model.drawables.count;
+        report.drawable_ids = Array.from(model.drawables.ids);
         if (!report.drawables) throw Error('No drawables');
         report.status = 'pass';
     } catch (error) {

@@ -7,6 +7,25 @@ import sys
 def main():
     parser=argparse.ArgumentParser(description='Local image-to-layers MVP; candidates require visual review')
     commands=parser.add_subparsers(dest='command',required=True)
+    p=commands.add_parser('package')
+    p.add_argument('--source',type=Path,default=Path('runs/phase3-final/runtime'))
+    p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--core',type=Path,required=True)
+    p=commands.add_parser('deploy')
+    p.add_argument('--package',type=Path,required=True)
+    p.add_argument('--target',type=Path,required=True)
+    p.add_argument('--record',type=Path,required=True)
+    p.add_argument('--name',default='girl2')
+    p.add_argument('--adapter',action='store_true')
+    p.add_argument('--replace',action='store_true')
+    mode=p.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--dry-run',action='store_true')
+    mode.add_argument('--execute',action='store_true')
+    p=commands.add_parser('rollback')
+    p.add_argument('--record',type=Path,required=True)
+    mode=p.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--dry-run',action='store_true')
+    mode.add_argument('--execute',action='store_true')
     p=commands.add_parser('prepare')
     p.add_argument('--input',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
@@ -49,7 +68,16 @@ def main():
     commands.add_parser('doctor')
     args=parser.parse_args()
     try:
-        if args.command=='prepare':
+        if args.command=='package':
+            from .packaging import package
+            result=package(args.source,args.output,args.core)
+        elif args.command=='deploy':
+            from .deployment import deploy
+            result=deploy(args.package,args.target,args.record,args.name,args.adapter,args.replace,args.execute)
+        elif args.command=='rollback':
+            from .deployment import rollback
+            result=rollback(args.record,args.execute)
+        elif args.command=='prepare':
             from .backends import prepare
             result=prepare(args.input,args.output,args.rights,args.backend,args.decomposition)
         elif args.command=='prepare-rig':
