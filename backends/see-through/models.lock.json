@@ -1,0 +1,268 @@
+{
+  "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783",
+  "repositories": {
+    "layerdiff": {
+      "repo": "layerdifforg/seethroughv0.0.2_layerdiff3d",
+      "revision": "4477e6ce529bc6a141732e1a55a4932176db3b89",
+      "card": {
+        "license": "openrail++",
+        "base_model": "cagliostrolab/animagine-xl-4.0",
+        "base_model_relation": "finetune",
+        "library_name": "diffusers"
+      },
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 43567,
+          "sha256": null
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 2321,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 2656,
+          "sha256": null
+        },
+        {
+          "path": "model_index.json",
+          "bytes": 668,
+          "sha256": null
+        },
+        {
+          "path": "scheduler/scheduler_config.json",
+          "bytes": 992,
+          "sha256": null
+        },
+        {
+          "path": "text_encoder/config.json",
+          "bytes": 561,
+          "sha256": null
+        },
+        {
+          "path": "text_encoder/model.safetensors",
+          "bytes": 246144352,
+          "sha256": "e4c36502d1f3fca20e6a8db3af2ab8213bb59178a5ff77aab086f0992cd0237d"
+        },
+        {
+          "path": "text_encoder_2/config.json",
+          "bytes": 571,
+          "sha256": null
+        },
+        {
+          "path": "text_encoder_2/model.safetensors",
+          "bytes": 1389382688,
+          "sha256": "b361da6fb93514411949c779d3abd7684e19900a6e566eaf64ea5a3697b23a21"
+        },
+        {
+          "path": "tokenizer/merges.txt",
+          "bytes": 524619,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "bytes": 585,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "bytes": 755,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer/vocab.json",
+          "bytes": 1059962,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_2/merges.txt",
+          "bytes": 524619,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_2/special_tokens_map.json",
+          "bytes": 574,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_2/tokenizer_config.json",
+          "bytes": 906,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer_2/vocab.json",
+          "bytes": 1059962,
+          "sha256": null
+        },
+        {
+          "path": "trans_vae/config.json",
+          "bytes": 139,
+          "sha256": null
+        },
+        {
+          "path": "trans_vae/diffusion_pytorch_model.safetensors",
+          "bytes": 210639792,
+          "sha256": "925ffed4df7b2f57dbb549ac1ef374a26a1ead8d247eaf054dab641f82a8e0b7"
+        },
+        {
+          "path": "unet/config.json",
+          "bytes": 1985,
+          "sha256": null
+        },
+        {
+          "path": "unet/diffusion_pytorch_model.safetensors",
+          "bytes": 8142919672,
+          "sha256": "05b5cd5ee2cbd7cd9c23008b7f76918cfc8e75aa0c45e7ce4cd1c741629b8f1d"
+        },
+        {
+          "path": "vae/config.json",
+          "bytes": 932,
+          "sha256": null
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "bytes": 167335590,
+          "sha256": "ce4b137acad050c9072769cfb02fdc6ecb8dc0957586db5f6fab71d18103ccc1"
+        }
+      ],
+      "total_bytes": 10159649987
+    },
+    "depth": {
+      "repo": "24yearsold/seethroughv0.0.1_marigold",
+      "revision": "4f4ffc46050b6feb764b628859968a26e76e6b6a",
+      "card": {
+        "license": "openrail++",
+        "base_model": "prs-eth/marigold-depth-v1-1",
+        "base_model_relation": "finetune",
+        "library_name": "diffusers"
+      },
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 39470,
+          "sha256": null
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 1909,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 2634,
+          "sha256": null
+        },
+        {
+          "path": "model_index.json",
+          "bytes": 499,
+          "sha256": null
+        },
+        {
+          "path": "scheduler/scheduler_config.json",
+          "bytes": 538,
+          "sha256": null
+        },
+        {
+          "path": "text_encoder/config.json",
+          "bytes": 556,
+          "sha256": null
+        },
+        {
+          "path": "text_encoder/model.safetensors",
+          "bytes": 680820760,
+          "sha256": "305b018799a2e1dba83e9db17654309814ff4212e40b8096b237ce2e3794a132"
+        },
+        {
+          "path": "tokenizer/merges.txt",
+          "bytes": 524619,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "bytes": 460,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "bytes": 886,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer/vocab.json",
+          "bytes": 1059962,
+          "sha256": null
+        },
+        {
+          "path": "unet/config.json",
+          "bytes": 1890,
+          "sha256": null
+        },
+        {
+          "path": "unet/diffusion_pytorch_model.safetensors",
+          "bytes": 2426482432,
+          "sha256": "baf19abcc3b59af0e9a32b19781bf062aa99ced5d6f7d661902b59b0b4e1fb29"
+        },
+        {
+          "path": "vae/config.json",
+          "bytes": 919,
+          "sha256": null
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "bytes": 167335590,
+          "sha256": "8d0c34f57abe50f323040f2366c8e22b941068dcdf53c8eb1d6fafb838afecb7"
+        }
+      ],
+      "total_bytes": 3276274643
+    },
+    "sam": {
+      "repo": "24yearsold/l2d_sam_iter2",
+      "revision": "0b0608310fb7a89e32ecd7397147a249540cf1e7",
+      "card": {
+        "license": "apache-2.0",
+        "base_model": "lkeab/hq-sam",
+        "base_model_relation": "finetune"
+      },
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": null
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11357,
+          "sha256": null
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 1672,
+          "sha256": null
+        },
+        {
+          "path": "README.md",
+          "bytes": 1691,
+          "sha256": null
+        },
+        {
+          "path": "checkpoint-18000.pt",
+          "bytes": 1294766917,
+          "sha256": "dda82b916f6c340bc5a6c3a077ff1214f9906906abe3707b1076d55b508f253f"
+        }
+      ],
+      "total_bytes": 1294783156
+    }
+  }
+}
