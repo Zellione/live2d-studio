@@ -150,3 +150,32 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - No audit `--execute`, production override or retagging production as a test copy.
   Proposed production commands in the audit are unimplemented design contracts.
 - Stop here pending explicit user authorization. No Phase 4B or training assignment.
+
+
+## Phase 4A.2 target-filesystem transactions and classifier investigation
+- Read `docs/phase4a2-results.md`, `docs/phase4a2-deployment.md` and
+  `docs/phase4a2-classifier.md`. This assignment superseded the earlier audit stop
+  only for implementation and disposable testing. Production remains disabled.
+- New `target-deploy`/`target-rollback` accept only fixed dedicated test bases:
+  `/home/zelli/tools/ai/live2d-studio-phase4a2-tests` and `.cache/phase4a2-tests`,
+  with `RUN/instance` plus private sibling `RUN/transactions/ID`. Do not broaden
+  allowlists or retag production. Old Phase 4A commands/restrictions stay unchanged.
+- Cross-filesystem copies go into target-local private staging. Preserve exact pins,
+  verify hashes/metadata, publish controller before patched extension; restore original
+  extension before controller removal. Keep plans, backups and standalone helpers.
+- Production writes still need separate authorization and a reviewed production-only
+  binding. No actual model/API calls, provider changes, private chats, production
+  service changes, Phase 4B work or training are authorized.
+- ST's exported classifier cannot provide typed errors or fresh shared message results.
+  The authorized blocker path retains the current adapter, neutral fallback and provider
+  preferences. `lastExpression` exists but has no message identity or success flag.
+  Never claim LLM integration from the synthetic exact-function experiment or local
+  classifier network mocks. No global fetch override belongs in shipped adapter code.
+- Run all Python tests and `node tests/test_rp_talk.mjs`; 15 new transaction tests
+  additionally run on Btrfs with `PHASE4A2_TEST_BASE` set to the dedicated base.
+  `scripts/phase4a2_acceptance.py --run-id NEW` runs isolated message/render/removal
+  scenarios and recovery with `/data` hidden. Node source-contract audits stay synthetic.
+- Local evidence: `runs/phase4a2-acceptance-v3`, `runs/phase4a2-audit`,
+  `runs/phase4a2-review-final`. Preserve expected upstream HTTP failure, blocked LLM gate,
+  raw opacity excursions, and existing portrait limitations. SIGKILL is not power loss.
+- Stop after Phase 4A.2; report remaining production/classifier decisions.

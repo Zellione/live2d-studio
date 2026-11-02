@@ -1,6 +1,41 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 4A.1 read-only audit (2026-11-02)
+## Current state after Phase 4A.2 (2026-11-02)
+
+Started from `b53c3eb`. Read [results](phase4a2-results.md),
+[target transactions](phase4a2-deployment.md), [classifier blocker](phase4a2-classifier.md)
+and [benchmark](benchmarks/phase4a2.json). Production unchanged and disabled.
+
+- `target-deploy` / `target-rollback` implement target-local private staging, verified
+  copies/metadata, controller-first publication, durable journal and stdlib-only recovery.
+  Only dedicated disposable bases are accepted; old Phase 4A restrictions unchanged.
+- Real ext4 device 66305 → Btrfs device 48 staging and atomic publication pass.
+  Both actual browser copies rolled back with `/data` hidden using bubblewrap.
+  Original extension metadata/hashes and existing assets restored; later browser-created
+  settings survive rollback. Post-removal actual asset discovery passes for both.
+- 97 Python tests, five JS controller tests, three Node source behavior audits pass.
+  The 15 new transaction tests also pass on actual Btrfs, including SIGKILL at all
+  six served rename boundaries and sixteen install/rollback journal replacements.
+  Low-space/ENOSPC is simulated; no destructive full-disk or power-loss claim.
+- Eleven fresh browser scenarios: ten pass, upstream HTTP fallback is intentionally
+  negative. Seven expressions, talking/idle/blink, lifecycle and stale reply checks pass.
+  Neutral canvas is byte-identical to Phase 3; visual prototype limitations remain.
+- **No LLM integration shipped.** Exact ST export tests show untyped fallback errors,
+  duplicate identical calls and contextual full-prompt semantics. Exported lastExpression
+  has no message identity/error status. Current provider 2 remains unchanged: upstream
+  happy fallback, adapter neutral fallback, zero classifier requests. The user explicitly
+  permitted this blocker outcome. Real inference is untested and unauthorized.
+- Production pins/Core and all 729 public baseline files still match; projected
+  settings/metadata and Live2D inventories unchanged. No credentials/chats accessed.
+- Evidence: `runs/phase4a2-acceptance-v3/`, `runs/phase4a2-audit/`,
+  `runs/phase4a2-review-final/index.html`; Btrfs transactions retained outside production.
+- Next requires explicit production scope (including model-only/adapter, neutral/manual
+  emotion acceptance or a broader shared classifier API, character activation and
+  maintenance). Production path binding is still unimplemented; never loosen the test
+  allowlist as a shortcut. Stop here; Phase 4B remains unassigned.
+
+
+## Historical state after Phase 4A.1 read-only audit (2026-11-02)
 
 Read [production audit and concrete plan](phase4a1-production-audit.md).
 Started from `f1c7e39`; no production files/settings, services, package or adapter

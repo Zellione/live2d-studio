@@ -216,3 +216,26 @@
 - 82 Python + five JS controller regressions and two source-behavior audits pass.
   Stop and request explicit authorization before implementation/deployment, classifier
   changes, real production validation or service maintenance. Phase 4B remains unassigned.
+
+
+## 2026-11-02 — Phase 4A.2 target-local transactions and classifier blocker
+
+- Keep Phase 4A installer unchanged. A separate disposable-only engine uses private
+  staging/backups/journals on the target filesystem, verified ownership/mode/mtime/
+  xattrs, no-replace model/controller publication and atomic extension replacement.
+  Recovery restores the original extension first. No production authorization switch.
+- Real Btrfs tests validate different-device copying and target-local renames. A
+  stdlib-only helper runs with `/data` hidden; retain target-side recovery material.
+  SIGKILL/journal tests and simulated ENOSPC do not certify arbitrary power loss.
+- Do not directly import ST getExpressionLabel into Live2D yet: its successful fallback
+  emotion and failure return values are indistinguishable, its full prompt uses context,
+  and it has no shared request/result identity. Exported lastExpression lacks message
+  identity and can represent manual/old state. A wrapper cannot reliably deduplicate
+  against the sprite worker or promise neutral errors without broader changes.
+- Use the user's explicit blocker option: retain the pinned two-file adapter and
+  neutral fallback, preserve provider 2, document a future shared result API instead
+  of a second classifier/global fetch override/preference mutation. Mock labels are
+  contract evidence, not real inference or an accepted LLM-to-Live2D integration.
+- Keep technical runtime, visual prototype, classifier and production readiness gates
+  separate. Any production binding, activation, maintenance or real API call requires
+  new explicit scope. No Phase 4B or training work was started.

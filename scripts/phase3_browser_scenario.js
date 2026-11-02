@@ -142,7 +142,7 @@
     } else {
       const constants=await import(base+'constants.js');report.classifier_vocabulary=constants.CLASSIFY_EXPRESSIONS;
       assert(constants.CLASSIFY_EXPRESSIONS.every(k=>settings.classify_mapping[k]),'Missing classifier mapping');
-      extension_settings.expressions.api=0;
+      extension_settings.expressions.api=mode==='llm-blocked'?2:0;
       let classifier='joy',requests=[];
       const realFetch=window.fetch;
       window.fetch=async(input,init)=>{
@@ -162,7 +162,17 @@
         st.addOneMessage(msg);await context.eventSource.emit(context.event_types.MESSAGE_RECEIVED,index);
       }
       await live.playExpression(name,'neutral');await live.playMotion(name,'Idle_id=0');await wait(700);await capture('neutral');
-      if(mode==='rp'){
+      if(mode==='llm-blocked'){
+        await message('anger','Synthetic provider contract test.');
+        const rows=await sample('llm_fallback',1100);await capture('llm_fallback');
+        assert(requests.length===0,'Blocked LLM path unexpectedly made a request');
+        const expected=report.integration_adapter?0:.85;
+        assert(Math.abs(rows.at(-1).ParamMouthForm-expected)<.03,'Wrong documented LLM fallback');
+        report.llm_integration='blocked: pinned export cannot meet error/deduplication contract';
+        report.provider_preserved=extension_settings.expressions.api===2;
+        report.simulated_requested_label='anger';report.actual_fallback=report.integration_adapter?'neutral':'happy';
+        assert(report.provider_preserved,'Provider changed');
+      }else if(mode==='rp'){
         for(const label of ['joy','sadness','anger','surprise','confusion','embarrassment','neutral']){
           await message(label,'A short local test reply.');
           const rows=await sample('message_'+label,1100);await capture('message_'+label);

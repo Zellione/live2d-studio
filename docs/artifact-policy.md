@@ -44,3 +44,12 @@ copies/profiles remain under `.cache/`. The reviewed packaging policy and hashes
 in `recipes/girl2-package.json`, automated scenarios, compact benchmark and results
 are tracked; no generated runtime, copied upstream dependency or settings snapshot
 is added to Git. Keep failed attempts and rollback evidence inspectable locally.
+
+
+Phase 4A.2 additionally retains target-filesystem disposable instances, journals,
+backups, quarantine and browser profiles under the explicitly authorized
+`/home/zelli/tools/ai/live2d-studio-phase4a2-tests/` base, outside production and Git.
+Project reports/contact sheets/logs stay in ignored `runs/phase4a2-*`; local unit
+fixtures use `.cache/phase4a2-tests`. Only implementation, repeatable scenarios,
+compact benchmark and documentation are committed. Do not copy target-side recovery
+material into served asset trees or force-add generated package data.

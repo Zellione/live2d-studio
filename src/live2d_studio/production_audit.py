@@ -244,7 +244,7 @@ def audit(root, package):
         package_manifest_sha256=digest(package/'package-manifest.json'), package_bytes=sum(p.stat().st_size for p in package.rglob('*') if p.is_file()),
         conflicts=conflicts, adapter=dict(upstream_sha256=before[EXT+'/live2d.js'],patched_sha256=patched_sha,
             companion_sha256=companion_sha,manifest_auto_update=json.loads((root/EXT/'manifest.json').read_text()).get('auto_update'),production_patch_performed=False),
-        readiness=dict(production_execution='blocked-unimplemented-target-filesystem-transaction',
+        readiness=dict(production_execution='blocked-production-path-binding-not-authorized-or-implemented',
             automatic_emotions=('blocked-current-LLM-preference-uses-fallback' if preferences['classifier_api']==2 and not preferences['legacy_api_is_llm']
                 else 'requires-provider-review-and-separate-inference-validation'),
             settings_policy='preserve-all-preferences'),

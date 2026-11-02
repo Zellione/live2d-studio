@@ -1,28 +1,34 @@
 # live2d-studio
 
-A local, open-source-first pipeline that turns one or more character images into an animated Live2D avatar usable in the SillyTavern Live2D extension.
+A local, open-source-first pipeline that turns character images into animated
+Live2D avatars usable in the SillyTavern Live2D extension.
 
-**Status:** Phase 4A packages the accepted Girl2 prototype reproducibly and deploys/removes
-it through a recoverable CLI restricted to disposable SillyTavern copies.
-Production deployment is disabled. Real message, expression, lifecycle and rollback
-tests pass with the optional pinned adapter; upstream classifier-fallback failure
-remains documented.
+**Status: Phase 4A.2.** Girl2 packages reproducibly and deploys/removes through
+transactions restricted to disposable instances. Real ext4-to-Btrfs staging,
+browser message handling and standalone recovery with `/data` hidden pass.
+Production remains unchanged and disabled.
 
-The [Phase 4A.1 production audit](docs/phase4a1-production-audit.md) confirms runtime
-compatibility but identifies separate filesystems and an unsupported existing LLM
-classification preference. Production execution remains unimplemented and unauthorized.
+The installed ST classifier export cannot meet the required error, freshness and
+request-sharing contract. LLM integration remains blocked; the optional adapter
+retains neutral fallback without changing provider preferences. Seven expressions
+and text-talk are validated with supported-provider mocks, not actual inference.
 
-Read [Phase 4A results](docs/phase4a-results.md) and the
-[deployment/recovery guide](docs/phase4a-deployment.md). Run the complete isolated
-scenario with a fresh name:
+See [results](docs/phase4a2-results.md), [deployment plan](docs/phase4a2-deployment.md),
+[classifier investigation](docs/phase4a2-classifier.md) and
+[benchmark](docs/benchmarks/phase4a2.json). Run the Btrfs scenario with a fresh ID:
 
 ```sh
 export UV_CACHE_DIR="$PWD/.cache/uv"
-uv run --frozen python scripts/phase4a_acceptance.py --run-id my-new-run
+uv run --frozen python scripts/phase4a2_acceptance.py --run-id my-new-run
 ```
 
+It writes only project artifacts and the dedicated disposable test base documented
+in the deployment guide. The original [Phase 4A workflow](docs/phase4a-deployment.md)
+retains its stricter project-cache-only restrictions. The
+[Phase 4A.1 audit](docs/phase4a1-production-audit.md) records the production baseline.
+
 Accepted editable sources remain in `runs/phase3-final/`. Tested package:
-`runs/phase4a-acceptance-v4/girl2/`; local visual review: `runs/phase4a-review-final/index.html`.
+`runs/phase4a-acceptance-v4/girl2/`; latest local visual review: `runs/phase4a2-review-final/index.html`.
 [Phase 3 animation](docs/phase3-animation.md) supplies seven expressions, independent
 blinks and text-driven talking. No audio lipsync or classifier-model inference is claimed.
 Girl2 passes portrait completeness despite absent source forearms/hands; this does

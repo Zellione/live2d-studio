@@ -1,0 +1,295 @@
+{
+  "audio_lipsync": false,
+  "classifier_contract": {
+    "decision": "Retain existing neutral fallback; do not patch built-in expressions or install unsafe direct bridge",
+    "findings": {
+      "duplicate_same_text_calls": 2,
+      "full_mode_omits_supplied_text": true,
+      "lastExpression_has_no_message_id_or_error_status": true,
+      "local_http_error_returns_undefined": true,
+      "success_and_error_indistinguishable": true,
+      "unknown_returns_configured_non_neutral_fallback": true
+    },
+    "network_requests": 0,
+    "real_inference": false,
+    "reliable_direct_integration": false,
+    "simulated_llm_labels": [
+      "joy",
+      "sadness",
+      "anger",
+      "surprise",
+      "confusion",
+      "embarrassment",
+      "neutral"
+    ],
+    "source_sha256": "42ef6cf85ee459d821eda3b10c9b589bccfbb2946bb743c3f5137a614836609c",
+    "status": "pass"
+  },
+  "core": {
+    "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+    "core_version": 83886080,
+    "drawable_ids": [
+      "ArtMeshFrontHair",
+      "ArtMeshEyelashR",
+      "ArtMeshEyebrowR",
+      "ArtMeshEyelashL",
+      "ArtMeshIridesR",
+      "ArtMeshIridesL",
+      "ArtMeshEyewhiteR",
+      "ArtMeshEyewhiteL",
+      "ArtMeshMouth",
+      "ArtMeshMouth_lip_0",
+      "ArtMeshMouth_lip_1",
+      "ArtMeshEyebrowL",
+      "ArtMeshNose",
+      "ArtMeshFace",
+      "ArtMeshEarsL",
+      "ArtMeshTopwear",
+      "ArtMeshEarsR",
+      "ArtMeshHandwearR",
+      "ArtMeshNeck",
+      "ArtMeshHandwearL",
+      "ArtMeshBackHair",
+      "ArtMeshEyebrowR_SeeThrough",
+      "ArtMeshEyebrowL_SeeThrough",
+      "ArtMeshFrontHair_SeeThrough"
+    ],
+    "drawables": 24,
+    "latest_moc_version": 5,
+    "missing_parameters": [],
+    "moc_sha256": "ee5211e840fa1144db0882e1985d3a7ca5eb5b4bccd556c11ce193548062999b",
+    "moc_version": 5,
+    "parameters": [
+      "ParamBrowMood",
+      "ParamAngleX",
+      "ParamAngleY",
+      "ParamAngleZ",
+      "ParamEyeLOpen",
+      "ParamEyeROpen",
+      "ParamEyeBallX",
+      "ParamEyeBallY",
+      "ParamEyeBallForm",
+      "ParamBrowLY",
+      "ParamBrowRY",
+      "ParamMouthForm",
+      "ParamMouthOpenY",
+      "ParamBodyAngleX",
+      "ParamBodyAngleY",
+      "ParamBodyAngleZ",
+      "ParamBodyLean",
+      "ParamProportion",
+      "ParamBreath",
+      "ParamHairFront",
+      "ParamHairBack"
+    ],
+    "render_tested": false,
+    "stage": "cubism-core-only",
+    "status": "pass"
+  },
+  "evidence": "runs/phase4a2-acceptance-v3",
+  "filesystems": {
+    "source_device": 66305,
+    "target_device": 48,
+    "target_fstype": "btrfs"
+  },
+  "gates": {
+    "LLM_integration": "blocked-no-bridge-shipped",
+    "production": "disabled",
+    "runtime_integration": "pass-with-known-upstream-HTTP-failure",
+    "target_transaction": "pass-isolated-Btrfs",
+    "visual": "unchanged-limited-portrait"
+  },
+  "neutral_equals_phase3": true,
+  "package_manifest_sha256": "5f3a30be1c1af850637a3cb3c4963db05a0003aad35730afd0e7fb27ac645b94",
+  "phase": "4A.2",
+  "power_loss_certified": false,
+  "production_unchanged": {
+    "assets": true,
+    "compatibility_pins": true,
+    "projected_settings_and_metadata": true,
+    "public_baseline_files": 729
+  },
+  "real_LLM_inference": false,
+  "release_recovery_sha256": "930baebc7f9dc9ad7b06a012449c93a0efa0c4cd203549ba7d4e9caf9088f648",
+  "restoration": {
+    "adapter": {
+      "browser_created_settings_preserved": true,
+      "file_hashes": true,
+      "original_extension_metadata": true,
+      "project_hidden_by_mount_namespace": true,
+      "transaction": "/home/zelli/tools/ai/live2d-studio-phase4a2-tests/acceptance-v3-adapter/transactions/girl2"
+    },
+    "upstream": {
+      "browser_created_settings_preserved": true,
+      "file_hashes": true,
+      "original_extension_metadata": true,
+      "project_hidden_by_mount_namespace": true,
+      "transaction": "/home/zelli/tools/ai/live2d-studio-phase4a2-tests/acceptance-v3-upstream/transactions/girl2"
+    }
+  },
+  "review": "runs/phase4a2-review-final",
+  "scenarios": {
+    "adapter-expressions": {
+      "fallback": null,
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 0,
+      "status": "pass"
+    },
+    "adapter-failure": {
+      "fallback": null,
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 0,
+      "status": "pass"
+    },
+    "adapter-lifecycle": {
+      "fallback": null,
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 20,
+      "status": "pass"
+    },
+    "adapter-llm-blocked": {
+      "fallback": "neutral",
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": true,
+      "raw_opacity_excursions": 0,
+      "status": "pass"
+    },
+    "adapter-race": {
+      "fallback": null,
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 19,
+      "status": "pass"
+    },
+    "adapter-rp": {
+      "fallback": null,
+      "mapped_expressions": 7,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 0,
+      "status": "pass"
+    },
+    "adapter-visual": {
+      "fallback": null,
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 39,
+      "status": "pass"
+    },
+    "upstream-failure": {
+      "fallback": null,
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 1,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 20,
+      "status": "fail"
+    },
+    "upstream-lifecycle": {
+      "fallback": null,
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 1,
+      "status": "pass"
+    },
+    "upstream-llm-blocked": {
+      "fallback": "happy",
+      "mapped_expressions": 0,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": true,
+      "raw_opacity_excursions": 0,
+      "status": "pass"
+    },
+    "upstream-rp": {
+      "fallback": null,
+      "mapped_expressions": 7,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "provider_preserved": null,
+      "raw_opacity_excursions": 2,
+      "status": "pass"
+    }
+  },
+  "starting_commit": "b53c3eb",
+  "status": "completed-with-LLM-integration-blocker",
+  "tests": {
+    "btrfs": 15,
+    "javascript_controller": 5,
+    "python": 97
+  },
+  "uninstall": {
+    "adapter": "pass",
+    "upstream": "pass"
+  },
+  "versions": {
+    "extension": "0.1.0",
+    "git": {
+      "extension": "d1801d36a32ace9451cf6377c005a7a64292fc39",
+      "sillytavern": "8172dcd0ee672d3cd9a5e5f7af134f91a45cd2b8"
+    },
+    "sillytavern": "1.18.0"
+  }
+}
