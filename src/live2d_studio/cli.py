@@ -11,6 +11,8 @@ def main():
     p.add_argument('--input',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--rights',default='unspecified-local-only')
+    p.add_argument('--backend',choices=['deterministic','see-through'],default='deterministic')
+    p.add_argument('--decomposition',type=Path)
     p=commands.add_parser('inspect')
     p.add_argument('--project',type=Path,required=True)
     p=commands.add_parser('reconstruct')
@@ -33,8 +35,8 @@ def main():
     args=parser.parse_args()
     try:
         if args.command=='prepare':
-            from .pipeline import prepare
-            result=prepare(args.input,args.output,args.rights)
+            from .backends import prepare
+            result=prepare(args.input,args.output,args.rights,args.backend,args.decomposition)
         elif args.command=='inspect':
             from .manifest import load_validate
             data=load_validate(args.project)

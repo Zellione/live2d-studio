@@ -15,8 +15,8 @@ def preview(root, manifest, original):
         x,y,w,h = (layer[k] for k in ('x','y','width','height'))
         if layer['default_visible']:
             composite.alpha_composite(image, (x,y))
-        mask = np.array(Image.open(root/layer['mask_path']))>0
-        rec = np.array(Image.open(root/layer['reconstructed_mask_path']))>0
+        mask = np.array(Image.open(root/layer.get('semantic_mask_path',layer['mask_path'])))>0
+        rec = np.array(Image.open(root/layer.get('generated_mask_path',layer['reconstructed_mask_path'])))>0
         overlay[y:y+h,x:x+w][mask] = ((i*73+41)%256,(i*113+97)%256,(i*157+53)%256,255)
         reconstructed[y:y+h,x:x+w][rec] = (255,0,150,255)
         tile = Image.new('RGBA',(200,200),(225,225,225,255))
@@ -33,9 +33,10 @@ def preview(root, manifest, original):
         sheet.alpha_composite(cell, ((i%4)*200,(i//4)*200))
     sheet.save(root/'preview/layers.png')
     warnings = ''.join('<li>'+escape(w)+'</li>' for w in manifest['warnings'])
+    mask_label = 'Candidate full semantic masks (not validated visible masks)' if manifest['schema_version']==2 else 'Visible regions'
     figures = ''.join(f'<figure><img src="{name}"><figcaption>{label}</figcaption></figure>' for name,label in [
         ('../source/normalized.png','Input'),('composite.png','Composite (default-visible layers)'),
-        ('segmentation.png','Visible regions'),('reconstructed.png','Reconstructed/generated pixels'),('layers.png','All layers')])
+        ('segmentation.png',mask_label),('reconstructed.png','Reconstructed/generated pixels'),('layers.png','All layers')])
     rights = escape(manifest['sources'][0]['rights'])
     (root/'preview/index.html').write_text('<!doctype html><meta charset="utf-8"><title>Layer review</title>'
         '<style>body{font:16px sans-serif;background:#eee}figure{display:inline-block;vertical-align:top}'

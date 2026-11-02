@@ -105,6 +105,8 @@ def reconstruct_project(project, output, max_fraction=.25):
         raise ValueError('Fill fraction must be between 0 and 1')
     project, output = Path(project),Path(output)
     data = load_validate(project)
+    if data['schema_version'] != 1:
+        raise ValueError('Bounded reconstruction replay supports only deterministic manifest v1')
     if output.exists():
         raise FileExistsError('Output already exists; choose a new directory')
     started = time.perf_counter()

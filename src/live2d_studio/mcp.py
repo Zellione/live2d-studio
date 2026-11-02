@@ -96,6 +96,8 @@ def build(project, output, endpoint):
     from .manifest import artwork_request, write_json, load_validate
     from .bundle import validate
     data = load_validate(project)
+    if data['schema_version']==2 and not data.get('rig_ready',False):
+        raise ValueError('Neural decomposition has not passed animation-layer review; inspect missing variants and hidden geometry')
     from .pipeline import EXPECTED
     found = {(l['role'],l['side']) for l in data['layers']}
     if set(EXPECTED)-found or any(l['role']=='unknown' for l in data['layers']):

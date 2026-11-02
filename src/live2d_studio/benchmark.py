@@ -41,6 +41,8 @@ def flatten(art, output):
 def evaluate(project, truth_dir):
     project, truth_dir = Path(project), Path(truth_dir)
     data = load_validate(project)
+    if data['schema_version'] != 1:
+        raise ValueError('Use the independent coarse See-through benchmark; synthetic visible-mask scoring is v1 only')
     truth = json.loads((truth_dir/'ground_truth.json').read_text())
     layers = {l['id']:l for l in data['layers']}
     scores = {}

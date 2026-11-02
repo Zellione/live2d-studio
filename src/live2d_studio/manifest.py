@@ -1,4 +1,4 @@
-"""Portable v1 layer contract and strict file/pixel integrity validation."""
+"""Portable v1/v2 layer contracts and strict file/pixel integrity validation."""
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
@@ -32,7 +32,8 @@ def local_file(root, name):
 def load_validate(root):
     root = Path(root)
     data = json.loads((root/'layer_manifest.json').read_text())
-    if data['schema_version'] != 1:
+    version = data['schema_version']
+    if version not in (1, 2):
         raise ValueError('Unsupported manifest version')
     w, h = data['canvas']['width'], data['canvas']['height']
     if not all(type(v) is int and 0 < v <= 8192 for v in (w,h)):
@@ -62,7 +63,10 @@ def load_validate(root):
         if not all(type(v) is int for v in (x,y,lw,lh)) or min(x,y)<0 or min(lw,lh)<1 or x+lw>w or y+lh>h:
             raise ValueError('Layer outside canvas')
         arrays = {}
-        for key in ('rgba_path','mask_path','reconstructed_mask_path'):
+        keys = ['rgba_path','mask_path','reconstructed_mask_path']
+        if version == 2:
+            keys += ['generated_mask_path', 'semantic_mask_path', 'uncertain_mask_path']
+        for key in keys:
             path = local_file(root, layer[key])
             if digest(path) != layer['sha256'][key]:
                 raise ValueError(f'Layer checksum changed: {layer["id"]}')
@@ -74,7 +78,18 @@ def load_validate(root):
         visible = mask>0
         if np.any(visible & (rebuilt>0)) or not set(np.unique(rebuilt)) <= {0,255}:
             raise ValueError('Overlapping or nonbinary reconstruction mask')
-        if not np.array_equal(pixels[...,3], np.maximum(mask,rebuilt)):
+        generated = arrays['generated_mask_path'] if version == 2 else rebuilt
+        if version == 2:
+            uncertain = arrays['uncertain_mask_path']
+            if np.any(visible & (generated>0)) or np.any((rebuilt>0) & (generated==0)):
+                raise ValueError('Invalid generated/observed/hidden mask relationship')
+            if not set(np.unique(uncertain)) <= {0,255} or np.any((uncertain>0) & (pixels[...,3]==0)):
+                raise ValueError('Invalid uncertainty mask')
+            if not np.array_equal(arrays['semantic_mask_path'], pixels[...,3]):
+                raise ValueError('Semantic mask differs from layer alpha')
+            if layer['hidden_reconstruction_status'] not in {'unlocalized', 'validated'}:
+                raise ValueError('Missing hidden reconstruction status')
+        if not np.array_equal(pixels[...,3], np.maximum(mask,generated)):
             raise ValueError('Alpha differs from mask union')
         if np.any(pixels[pixels[...,3]==0] != 0):
             raise ValueError('Nonzero transparent RGB')
