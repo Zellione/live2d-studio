@@ -1,5 +1,14 @@
 # Handover to local Codex CLI
 
+## Post-Phase 3 limb audit
+
+Read [Girl2 limb audit](girl2-limb-audit.md). Both sleeves survive as left/right
+`handwear`; the XCF itself contains no forearms/hands, including hidden/off-canvas
+leaves. Shirt and neck evaluated visible pixels are exactly preserved. The local
+comparison is `runs/girl2-limb-audit-final/index.html`. Future limb preservation
+is not guaranteed; framing and per-limb checks are recommendations only.
+Accepted models unchanged; Phase 4 has not started.
+
 ## Current state after Phase 3 (2026-11-02)
 
 Read [results](phase3-results.md), [authoring](phase3-animation.md) and

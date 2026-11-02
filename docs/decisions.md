@@ -1,5 +1,14 @@
 # Decisions
 
+## 2026-11-02 — Girl2 source-limb audit after Phase 3
+
+- Full XCF inspection confirms source-absent forearms/hands, not dropped limbs.
+  Both sleeves survive as image-left/right `handwear` and runtime meshes.
+- Preserve the accepted model. Do not generate anatomical completion during audit.
+- [Audit](girl2-limb-audit.md) records exact shirt/chest preservation, residual
+  ownership errors and a reproducible local comparison. Framing and visible-limb
+  preservation gates are future recommendations, not implemented Phase 4 work.
+
 ## 2026-11-02 — Phase 0 compatibility gate
 
 - Installed source, not the `.model.json` wording in documentation, determines
