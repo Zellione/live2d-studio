@@ -20,7 +20,14 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--sam',type=Path)
     p.add_argument('--no-neck-repair',action='store_true')
+    p.add_argument('--no-detail-repair',action='store_true')
     p=commands.add_parser('readiness')
+    p.add_argument('--project',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
+    p=commands.add_parser('review-poses')
+    p.add_argument('--frames',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
+    p=commands.add_parser('prepare-rig')
     p.add_argument('--project',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
     p=commands.add_parser('reconstruct')
@@ -45,12 +52,18 @@ def main():
         if args.command=='prepare':
             from .backends import prepare
             result=prepare(args.input,args.output,args.rights,args.backend,args.decomposition)
+        elif args.command=='prepare-rig':
+            from .readiness import prepare
+            result=prepare(args.project,args.output)
+        elif args.command=='review-poses':
+            from .visual_qa import review
+            result=review(args.frames,args.output)
         elif args.command=='readiness':
             from .readiness import analyze
             result=analyze(args.project,args.output)
         elif args.command=='refine':
             from .refinement import refine
-            result=refine(args.project,args.output,args.sam,not args.no_neck_repair)
+            result=refine(args.project,args.output,args.sam,not args.no_neck_repair,not args.no_detail_repair)
         elif args.command=='inspect':
             from .manifest import load_validate
             data=load_validate(args.project)

@@ -31,3 +31,34 @@ for the reviewed experiment. No unsupported mouth/eyelid anatomy is invented.
 `rig_import.animation_tested=false` in Phase 2.5 is the scope of import validation.
 The later isolated browser tests did test animation. Both records are correct;
 import validation must never overwrite a separate runtime/visual result.
+
+Near-feature source ink is a separate refinement: only dark pixels currently on
+face/ears can transfer to nearby eye whites, lashes, brows, nose or mouth. Search
+radius is at most 0.6% of image size and 15% of feature width. Far-away ink and skin
+stay in place. This fixed the actual doubled lower-eye/mouth contours seen in the
+first restoration rig; the original failed frames remain local.
+
+Small relative components and tiny border components are retained and flagged
+for uncertain review, not discarded. Source EXIF orientations not handled by the
+pinned worker are rejected rather than silently misregistered. The refinement is
+not a general background-removal or pose-estimation stage.
+
+`prepare-rig` generates small nearest-interior-colour underlaps for face, neck,
+back hair and clothing, only where a higher opaque layer already covers the
+pixels. Radius 0.6% of canvas dimension, at most 10% of base support area. Newly
+filled pixels are marked in reconstructed/generated/uncertain masks; the neural
+model's other hidden-only provenance remains unlocalized. It must leave the neutral
+composite exactly unchanged. Its Girl2 experiment is **visually rejected** because
+of new detached hair fragments, despite reducing some holes. Never promote it
+through a neutral-image metric alone.
+
+Actual browser QA records 21 poses (neutral, six eye/mouth states, six ±15° head
+poses, eight combined poses), plus control repeat and reload. Core nonfinite
+vertices and out-of-range opacity are invalid. Triangle flips/collapse/expansion,
+alpha holes, disconnected components and sharp colour steps are diagnostics;
+closed eyelids can intentionally collapse/fold triangles. Duplicated contours,
+identity, natural lid shape and plausible hidden anatomy require visual inspection.
+
+The recommended Girl2 export passes numeric/runtime/import gates and limited
+prototype motion review. The high-quality visual gate remains unmet because of
+thin hair gaps and simplified lids. No report grants production readiness.

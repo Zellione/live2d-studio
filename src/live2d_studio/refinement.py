@@ -17,7 +17,7 @@ from scipy import ndimage as ndi
 from .manifest import digest, load_validate, local_file, write_json
 from .preview import preview
 
-VERSION = 'native-owner-v1'
+VERSION = 'native-owner-v2'
 COARSE = dict(front_hair='hair', back_hair='hair', headwear='headwear',
               irides='eyes', eyewhite='eyes', eyelash='eyes', eyebrow='eyes')
 
@@ -47,6 +47,33 @@ def visible_owners(arrays):
     owner=np.full(arrays[0].shape[:2],-1,np.int16)
     for i,a in enumerate(arrays):owner[a[...,3]>127]=i
     return owner
+
+
+def detail_ownership(rgba, arrays, layers, owner):
+    """Attach nearby source ink to moving features, not the stationary face.
+
+    Only pixels currently owned by face/ears can move. Search distance scales
+    with the image and is capped by local feature size. No source ink is copied
+    twice. This targets shifted generated boundaries, not absent anatomy.
+    """
+    face_ids=[i for i,l in enumerate(layers) if l['role'] in ('face','ears')]
+    face=np.isin(owner,face_ids)
+    if not face.any():return np.zeros(owner.shape,bool)
+    luminance=rgba[...,:3].astype(float).mean(axis=2)
+    ink=face&(luminance<np.median(luminance[face])*.7)&(rgba[...,3]>0)
+    best=np.full(owner.shape,np.inf);chosen=owner.copy()
+    for i,(a,l) in enumerate(zip(arrays,layers)):
+        if l['role'] not in ('eyewhite','eyelash','eyebrow','mouth','nose'):continue
+        support=a[...,3]>127
+        if not support.any():continue
+        ys,xs=np.nonzero(support)
+        radius=min(max(1,min(owner.shape)*.006),max(1,(xs.max()-xs.min()+1)*.15))
+        distance=ndi.distance_transform_edt(~support)
+        eligible=ink&(distance<=radius)&(distance<best)
+        chosen[eligible]=i;best[eligible]=distance[eligible]
+    changed=chosen!=owner
+    owner[:]=chosen
+    return changed
 
 
 def sam_masks(root, source_hash, size):
@@ -112,10 +139,11 @@ def component_flags(arrays,layers):
         labels,n=ndi.label(a[...,3]>127)
         sizes=np.bincount(labels.ravel());total=int(sizes[1:].sum())
         for i in range(1,n+1):
-            if sizes[i]<=max(2,total*.001):
-                yy,xx=np.nonzero(labels==i)
+            yy,xx=np.nonzero(labels==i)
+            border=bool((xx==0).any() or (yy==0).any() or (xx==a.shape[1]-1).any() or (yy==a.shape[0]-1).any())
+            if sizes[i]<=max(2,total*.001) or (border and sizes[i]<a.shape[0]*a.shape[1]*.001):
                 flags.append(dict(layer=l['id'],pixels=int(sizes[i]),
-                    border=bool((xx==0).any() or (yy==0).any() or (xx==a.shape[1]-1).any() or (yy==a.shape[0]-1).any()),
+                    border=border,
                     action='retained-uncertain',reason='small relative component; may be legitimate ink/accessory'))
     return flags
 
@@ -158,13 +186,15 @@ def fidelity(original,composite):
         caveat='Pixel/edge agreement is not semantic correctness or animation acceptance.')
 
 
-def refine(project,output,sam=None,repair_neck=True):
+def refine(project,output,sam=None,repair_neck=True,repair_details=True):
     started=time.perf_counter()
     project,output=Path(project),Path(output)
     if output.exists():raise FileExistsError('Choose a fresh refinement directory')
     data=deepcopy(load_validate(project))
     if data['schema_version']!=2:raise ValueError('Refinement requires a neural v2 project; baseline is unchanged')
     source=data['sources'][0]
+    if Image.open(project/source['path']).getexif().get(274,1)!=1:
+        raise ValueError('Worker EXIF orientation is unverified; use a separately normalized input')
     image=ImageOps.exif_transpose(Image.open(project/source['path'])).convert('RGBA')
     if image.width*image.height>4_194_304:raise ValueError('Refinement limit: 4 megapixels')
     rgba=np.array(image);rgba[rgba[...,3]==0]=0
@@ -179,6 +209,7 @@ def refine(project,output,sam=None,repair_neck=True):
         owner[close]=owner[tuple(indices[:,close])]
     owner[rgba[...,3]==0]=-1
     changed=neck_repair(rgba,arrays,data['layers'],owner,masks) if repair_neck else np.zeros(owner.shape,bool)
+    detail_changed=detail_ownership(rgba,arrays,data['layers'],owner) if repair_details else np.zeros(owner.shape,bool)
     structure=structural_review(arrays,data['layers'],owner,masks)
     flags=component_flags(arrays,data['layers'])
     output.mkdir(parents=True,exist_ok=False)
@@ -225,13 +256,16 @@ def refine(project,output,sam=None,repair_neck=True):
         'Small components are flagged, not deleted. Procedural PSD2Live blink/mouth requires pose inspection.']
     write_json(output/'layer_manifest.json',data)
     write_json(output/'config.json',dict(algorithm=VERSION,parent_manifest_sha256=digest(project/'layer_manifest.json'),
-        sam_sha256=digest(Path(sam)/'sam.json') if sam else None,repair_neck=repair_neck))
+        sam_sha256=digest(Path(sam)/'sam.json') if sam else None,
+        sam_mask_hashes={name:digest(Path(sam)/(name+'.png')) for name in masks},
+        repair_neck=repair_neck,repair_details=repair_details))
     composite=preview(output,data,Image.fromarray(rgba))
     Image.fromarray((changed*255).astype(np.uint8)).save(output/'preview/neck-repair.png')
+    Image.fromarray((detail_changed*255).astype(np.uint8)).save(output/'preview/detail-repair.png')
     Image.fromarray(((owner<0)&(rgba[...,3]>0)).astype(np.uint8)*255).save(output/'preview/unassigned.png')
     report=dict(fidelity=fidelity(rgba,composite),structural_semantics=structure,
         source_samples_copied=observed_total,uncertain_copied_samples=uncertain_total,
-        neck_reassigned_pixels=int(changed.sum()),small_components=flags,
+        neck_reassigned_pixels=int(changed.sum()),detail_reassigned_pixels=int(detail_changed.sum()),small_components=flags,
         gates=dict(semantic_decomposition=structure['status'],source_preservation='requires-review',
             hidden_reconstruction='requires-review',psd2live_import='not-tested',runtime_geometry='not-tested',visual_animation='not-tested'),
         production_ready=False)

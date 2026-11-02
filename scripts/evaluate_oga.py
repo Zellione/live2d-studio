@@ -34,14 +34,17 @@ def maps(layers,size):
     return full,visible
 
 
-def evaluate(project,truth):
+def evaluate(project,truth,definition=None):
     data=load_validate(project)
     if data['sources'][0]['sha256']!=digest(truth/'flat.png'):
         raise ValueError('Ground truth belongs to a different original input')
     gt=json.loads((truth/'benchmark.json').read_text())
+    if definition is not None and definition['input_sha256']!=digest(truth/'flat.png'):
+        raise ValueError('Benchmark definition belongs to a different input')
+    groups=definition['layer_groups'] if definition is not None else GT_GROUP
     original=Image.open(truth/'flat.png')
     size=original.size
-    gt_layers=[(Image.open(truth/l['path']).convert('RGBA'),GT_GROUP[l['name']]) for l in gt['layers']]
+    gt_layers=[(Image.open(truth/l['path']).convert('RGBA'),groups[l['name']]) for l in gt['layers']]
     pred_layers=[]
     for l in data['layers']:
         if not l['default_visible']:continue
@@ -55,7 +58,7 @@ def evaluate(project,truth):
     scores={g:dict(full_iou=iou(full_gt[g],full_pred[g]),
                    visible_iou=iou(visible_gt==i,visible_pred==i)) for i,g in enumerate(GROUPS)}
     foreground=visible_gt>=0
-    return dict(scope='OGA Girl2 only; six independently reviewed coarse groups',
+    return dict(scope=definition['scope'] if definition else 'OGA Girl2 only; six independently reviewed coarse groups',
         mask_threshold=127,resampling='nearest to original 1000x1000; square no crop',
         caveat='Full source layers are authored drawing components, not complete hidden anatomical ground truth.',
         groups=scores,mean_visible_iou=float(np.mean([s['visible_iou'] for s in scores.values()])),
@@ -72,9 +75,10 @@ def main():
     p.add_argument('--project',type=Path,required=True)
     p.add_argument('--truth',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--definition',type=Path,help='Reviewed independent XCF layer mapping; evaluation only')
     args=p.parse_args()
     if args.output.exists():raise FileExistsError('Use a fresh report path')
-    write_json(args.output,evaluate(args.project,args.truth))
+    write_json(args.output,evaluate(args.project,args.truth,json.loads(args.definition.read_text()) if args.definition else None))
 
 
 if __name__=='__main__':main()

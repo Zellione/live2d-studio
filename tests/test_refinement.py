@@ -8,7 +8,7 @@ from PIL import Image
 
 from live2d_studio.manifest import digest, load_validate, write_json
 from live2d_studio.seethrough import import_decomposition, PINNED_SOURCE, MODEL_REVISIONS
-from live2d_studio.refinement import refine, neck_repair, structural_review
+from live2d_studio.refinement import refine, neck_repair, structural_review, detail_ownership
 
 
 class RefinementTests(unittest.TestCase):
@@ -77,3 +77,31 @@ class RefinementTests(unittest.TestCase):
         arrays[0][1:3,1:3,3]=255;arrays[1][10:12,10:12,3]=255
         r=structural_review(arrays,[{'role':'face'},{'role':'irides'}],np.zeros((20,20),int),{})
         self.assertEqual(r['status'],'rejected')
+
+    def test_nearby_ink_moves_to_feature_without_moving_far_ink_or_skin(self):
+        rgba=np.full((100,100,4),[230,200,180,255],np.uint8)
+        rgba[30,30]=[10,10,10,255];rgba[70,70]=[10,10,10,255]
+        face=np.full_like(rgba,255);eye=np.zeros_like(rgba);eye[31:40,25:35,3]=255
+        owner=np.zeros((100,100),np.int16);owner[31:40,25:35]=1
+        changed=detail_ownership(rgba,[face,eye],[{'role':'face'},{'role':'eyewhite'}],owner)
+        self.assertTrue(changed[30,30]);self.assertEqual(owner[30,30],1)
+        self.assertEqual(owner[70,70],0);self.assertEqual(owner[30,29],0)
+
+    def test_duplicate_source_ownership_rejected_even_if_pixels_match(self):
+        out=self.root/'result';refine(self.project,out);data=load_validate(out)
+        duplicate=dict(data['layers'][1]);duplicate['id']='duplicate';duplicate['z_order']=2
+        data['layers'].append(duplicate);write_json(out/'layer_manifest.json',data)
+        with self.assertRaisesRegex(ValueError,'Duplicated observed'):load_validate(out)
+
+    def test_guard_bands_are_generated_hidden_only_and_neutral_unchanged(self):
+        from live2d_studio.readiness import occlusion_guard, prepare
+        a=np.zeros((50,50,4),np.uint8);a[10:40,10:30]=[180,150,120,255]
+        higher=np.zeros((50,50),bool);higher[12:38,28:35]=True
+        b,added=occlusion_guard(a,higher,2)
+        self.assertGreater(added.sum(),0);self.assertFalse(np.any(added&~higher))
+        self.assertTrue(np.array_equal(a[a[...,3]>0],b[a[...,3]>0]))
+        out=self.root/'refined';refine(self.project,out)
+        report=prepare(out,self.root/'rig')
+        self.assertEqual(report['neutral_pixel_changes'],0)
+        load_validate(self.root/'rig')
+        self.assertEqual((out/'preview/composite.png').read_bytes(),(self.root/'rig/preview/composite.png').read_bytes())

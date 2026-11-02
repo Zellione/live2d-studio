@@ -1,0 +1,22 @@
+{
+  "archive_sha256": "616438aaf0bb1f5925b164486f351ee4a612952054de7d3b6900bf121f3a5c05",
+  "author": "stevenburrow",
+  "caveat": "Same artist and collection; additional characters are not independent style coverage.",
+  "group": "Girl1",
+  "input_sha256": "0912d6c050e023019e08ab14c0e5bbbd848f2ce2f5805f01118485ce8e7069ad",
+  "layer_groups": {
+    "G1 Face": "face_ears_nose",
+    "G1 HairTop": "hair_accessories",
+    "G1 InnerEyes": "eyes_brows",
+    "G1 Mouth1": "mouth",
+    "G1 Neck": "neck",
+    "G1 OuterEyes1": "eyes_brows",
+    "G1 Ponytail1": "hair_accessories",
+    "G1 Ponytail2": "hair_accessories",
+    "G1 Shirt": "clothing"
+  },
+  "license": "CC0",
+  "schema_version": 1,
+  "scope": "Girl1 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+  "source": "https://opengameart.org/content/anime-girl-and-boy-portraits"
+}

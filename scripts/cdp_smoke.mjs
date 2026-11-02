@@ -29,6 +29,7 @@ const timeout=setTimeout(()=>{console.error('CDP test timed out');process.exit(2
 try {
   await send('Runtime.enable');await send('Network.enable');await send('Page.enable');
   await send('Page.navigate',{url});
+  await send('Page.bringToFront');
   let ready=false;
   for(let i=0;i<60;i++){
     const r=await send('Runtime.evaluate',{expression:'document.readyState',returnByValue:true});
@@ -46,12 +47,13 @@ try {
     }
     result.result.value.frames=Object.keys(frames);
   }
-  if(['sillytavern-extension','phase1-animation','phase2-basic','phase2-5-experiment'].includes(result.result.value?.stage)) {
+  if(['sillytavern-extension','phase1-animation','phase2-basic','phase2-5-experiment','phase2-6-quality'].includes(result.result.value?.stage)) {
     const value=result.result.value;
     const phase1=value.stage==='phase1-animation';
     const phase25=value.stage==='phase2-5-experiment';
-    const phase2=value.stage==='phase2-basic'||phase25;
-    const assetRoot=phase25?'/assets/live2d/phase2-5/':phase2?'/assets/live2d/phase2/':phase1?'/assets/live2d/phase1/':'/assets/live2d/phase0/';
+    const phase26=value.stage==='phase2-6-quality';
+    const phase2=value.stage==='phase2-basic'||phase25||phase26;
+    const assetRoot=phase26?value.asset_root:phase25?'/assets/live2d/phase2-5/':phase2?'/assets/live2d/phase2/':phase1?'/assets/live2d/phase1/':'/assets/live2d/phase0/';
     const responses=events.filter(e=>e.method==='Network.responseReceived').map(e=>e.params.response);
     const expected=phase2?['.model3.json','.moc3','/texture_00.png','.idle.motion3.json']:phase1?['.model3.json','.moc3','/texture_00.png','.phase1Idle.motion3.json',
       '.phase1_neutral.exp3.json','.phase1_happy.exp3.json','.phase1_angry.exp3.json']:
