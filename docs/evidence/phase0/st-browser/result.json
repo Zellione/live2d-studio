@@ -1,0 +1,67 @@
+{
+  "result": {
+    "type": "object",
+    "value": {
+      "stage": "sillytavern-extension",
+      "status": "pass",
+      "visual_character_rig_tested": false,
+      "character": "Phase0 Tile",
+      "discovered_models": [
+        "/assets/live2d/phase0/Generated_artwork.model3.json"
+      ],
+      "model_option_found": true,
+      "parameter_mapping": {
+        "mouth": "ParamMouthOpenY",
+        "cursor": {
+          "idParamAngleX": "ParamAngleX",
+          "idParamAngleY": "ParamAngleY",
+          "idParamAngleZ": "ParamAngleZ",
+          "idParamBodyAngleX": "ParamBodyAngleX",
+          "idParamBreath": "ParamBreath",
+          "idParamEyeBallX": "ParamEyeBallX",
+          "idParamEyeBallY": "ParamEyeBallY"
+        }
+      },
+      "expression_options": [
+        "none",
+        "Smile",
+        "Sad",
+        "Angry",
+        "Surprised"
+      ],
+      "motion_options": [
+        "none",
+        "Idle_id=random",
+        "Blink_id=random",
+        "Nod_id=random",
+        "Shake_id=random"
+      ],
+      "first_render": {
+        "present": true,
+        "width": 2560,
+        "height": 1626,
+        "visible_pixels": 109386,
+        "turquoise_pixels": 104704
+      },
+      "expression_loads": [
+        "Smile",
+        "Sad",
+        "Angry",
+        "Surprised"
+      ],
+      "motion_invoked": "Nod_id=0",
+      "reload_render": {
+        "present": true,
+        "width": 2560,
+        "height": 1626,
+        "visible_pixels": 109386,
+        "turquoise_pixels": 104703
+      },
+      "network_validation": {
+        "missing_successful_resources": [],
+        "unexpected_http_errors": [],
+        "uncaught_exceptions": 0
+      }
+    }
+  }
+}

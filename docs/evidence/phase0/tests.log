@@ -1,0 +1,15 @@
+test_case_mismatch (test_compatibility.BundleTests.test_case_mismatch) ... ok
+test_escape (test_compatibility.BundleTests.test_escape) ... ok
+test_invalid_binary (test_compatibility.BundleTests.test_invalid_binary) ... ok
+test_invalid_motion (test_compatibility.BundleTests.test_invalid_motion) ... ok
+test_missing_expression (test_compatibility.BundleTests.test_missing_expression) ... ok
+test_missing_file (test_compatibility.BundleTests.test_missing_file) ... ok
+test_missing_sound (test_compatibility.BundleTests.test_missing_sound) ... ok
+test_real_export (test_compatibility.BundleTests.test_real_export) ... ok
+test_symlink_escape (test_compatibility.BundleTests.test_symlink_escape) ... ok
+test_wrong_schema (test_compatibility.BundleTests.test_wrong_schema) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.009s
+
+OK

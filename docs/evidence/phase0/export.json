@@ -1,0 +1,135 @@
+{
+  "project_save_as": {
+    "ok": true,
+    "operation": "project_save_as",
+    "data": {
+      "id": "job-d9929260-3599-4e3b-a874-5035cd51fde9",
+      "operation": "project_save_as",
+      "project_id": "f99ed6c5-5266-4679-a045-52d19039154a",
+      "input_state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:1:0",
+      "status": "completed",
+      "terminal": true,
+      "progress": 1,
+      "message": "Completed",
+      "created_at": "2026-11-02T00:00:26.920940291Z",
+      "updated_at": "2026-11-02T00:00:27.010263571Z",
+      "result": {
+        "state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:1:0",
+        "project_id": "f99ed6c5-5266-4679-a045-52d19039154a",
+        "history_node_id": "history-f649353e-982a-4b61-8c1b-f7458c80f408",
+        "revision": "revision-2f9115391d56bc6971b3803c8ed428dbd0f55641c539b144f2647281ab58e56b",
+        "applied": false
+      }
+    }
+  },
+  "project_export_psd": {
+    "ok": true,
+    "operation": "project_export_psd",
+    "data": {
+      "id": "job-8a183de1-1e08-49d3-86c8-1f1c2e7eabf3",
+      "operation": "project_export_psd",
+      "project_id": "f99ed6c5-5266-4679-a045-52d19039154a",
+      "input_state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:1:0",
+      "status": "completed",
+      "terminal": true,
+      "progress": 1,
+      "message": "Completed",
+      "created_at": "2026-11-02T00:00:27.019166040Z",
+      "updated_at": "2026-11-02T00:00:27.026279167Z",
+      "result": {
+        "state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:1:0",
+        "path": "/data/projects/live2d-studio/tests/fixtures/phase0/tile.psd",
+        "bytes": 3518,
+        "layers": 1
+      }
+    }
+  },
+  "project_export_model": {
+    "ok": true,
+    "operation": "project_export_model",
+    "data": {
+      "id": "job-a7fafbdd-6cdc-4425-b499-adce589862fa",
+      "operation": "project_export_model",
+      "project_id": "f99ed6c5-5266-4679-a045-52d19039154a",
+      "input_state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:1:0",
+      "status": "completed",
+      "terminal": true,
+      "progress": 1,
+      "message": "Completed",
+      "created_at": "2026-11-02T00:00:27.034103105Z",
+      "updated_at": "2026-11-02T00:00:27.617459663Z",
+      "result": {
+        "state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:1:0",
+        "revision": "revision-2f9115391d56bc6971b3803c8ed428dbd0f55641c539b144f2647281ab58e56b",
+        "files": [
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.moc3",
+            "bytes": 72768
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.cdi3.json",
+            "bytes": 3001
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.4096/texture_00.png",
+            "bytes": 65715
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.idle.motion3.json",
+            "bytes": 15999
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.blink.motion3.json",
+            "bytes": 1155
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.nod.motion3.json",
+            "bytes": 1751
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.shake.motion3.json",
+            "bytes": 1573
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.smile.exp3.json",
+            "bytes": 668
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.sad.exp3.json",
+            "bytes": 671
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.angry.exp3.json",
+            "bytes": 669
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.surprised.exp3.json",
+            "bytes": 669
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.model3.json",
+            "bytes": 1112
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.cmo3",
+            "bytes": 133617
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.can3",
+            "bytes": 17445
+          },
+          {
+            "path": "/data/projects/live2d-studio/tests/fixtures/phase0/export/Generated_artwork.psd2live.json",
+            "bytes": 1566
+          }
+        ],
+        "warnings": [
+          "Only 1 See-Through semantic layers were recognized; unknown layers will be assigned to the head or body by position.",
+          "The face layer is missing; the face area was estimated from the bounding boxes of head layers.",
+          "Eye semantic layers are missing; blink and gaze parameters will not be bound to any drawable.",
+          "mouth/mouth_open/mouth_close is missing; lip-sync parameters will not be bound to any drawable."
+        ]
+      }
+    }
+  }
+}

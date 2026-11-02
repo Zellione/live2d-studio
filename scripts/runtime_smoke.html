@@ -1,0 +1,44 @@
+<!doctype html><meta charset="utf-8"><title>Phase 0 runtime smoke</title>
+<style>body{background:#252535;color:white;font:16px monospace}canvas{border:1px solid white}pre{white-space:pre-wrap}</style>
+<h1>Installed runtime test — not SillyTavern UI acceptance</h1>
+<button id="save">Download report</button><pre id="result">Running…</pre>
+<script>
+const report = {stage:'installed-runtime-browser', status:'running', sillytavern_ui_tested:false, console:[]};
+for (const level of ['log','warn','error','debug']) {
+  const original = console[level].bind(console);
+  console[level] = (...args) => {report.console.push({level,message:args.map(String).join(' ')}); original(...args);};
+}
+window.addEventListener('error', e => report.console.push({level:'error',message:e.message}));
+document.querySelector('#save').onclick = () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));
+  const a = document.createElement('a'); a.href=url; a.download='runtime-browser.json'; a.click(); URL.revokeObjectURL(url);
+};
+</script>
+<script src="/lib/live2dcubismcore.min.js"></script>
+<script src="/lib/live2d.min.js"></script>
+<script src="/lib/pixi.min.js"></script>
+<script src="/lib/index.min.js"></script>
+<script src="/lib/extra.min.js"></script>
+<script>
+(async () => {
+  try {
+    const app = new PIXI.Application({width:512,height:512,backgroundAlpha:0,preserveDrawingBuffer:true});
+    document.body.append(app.view);
+    const model = await Promise.race([PIXI.live2d.Live2DModel.from(MODEL_URL),
+      new Promise((_,reject)=>setTimeout(()=>reject(Error('Load timeout after 30s')),30000))]);
+    app.stage.addChild(model);
+    model.scale.set(400/Math.max(model.width,model.height));
+    model.x=56; model.y=56;
+    await new Promise(resolve=>setTimeout(resolve,1500));
+    app.renderer.render(app.stage);
+    const pixels=app.renderer.extract.pixels(app.stage);
+    report.nontransparent_pixels=Array.from(pixels).filter((v,i)=>i%4===3 && v>0).length;
+    if(!report.nontransparent_pixels) throw Error('No visible pixels');
+    report.parameters=Array.from(model.internalModel.coreModel.parameters?.ids || []);
+    report.core_version=Live2DCubismCore.Version.csmGetVersion();
+    report.status='pass';
+  } catch(e) {report.status='fail'; report.error=String(e);}
+  document.querySelector('#result').textContent=JSON.stringify(report,null,2);
+  window.phase0Report=report;
+})();
+</script>

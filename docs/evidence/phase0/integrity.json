@@ -1,0 +1,20 @@
+{
+  "stage": "bundle-integrity-only",
+  "status": "pass",
+  "render_tested": false,
+  "model_sha256": "fd58ec21b59f1234c53fc07dfe97c916bfa98f48a4b75db03cb91cf8006332f8",
+  "files_sha256": {
+    "Generated_artwork.moc3": "a5b4a6ce9cfdf64ee1758fa25a08094e7ccae8427a98a724fa40bc827199ddb9",
+    "Generated_artwork.4096/texture_00.png": "b7365cc51599ac1f793ca058f878efd2fd21523a51c477d6920ffae0c040ce31",
+    "Generated_artwork.cdi3.json": "287ecb9704944e2f3ca79b334cfab5202de327599f3ed6c8d51dc6fdfc3febd9",
+    "Generated_artwork.smile.exp3.json": "59e6869c12dad404623dc587086b79909262b1d027bdcf1a27a58aa8c2d50377",
+    "Generated_artwork.sad.exp3.json": "e0f88d2ce01fa6f4718051ec6a15c803d70064011cf370cee15e50bf19978c82",
+    "Generated_artwork.angry.exp3.json": "98bacc260d618079f916df94f201c22d8ccde920c029c01fc793ae4dd670e756",
+    "Generated_artwork.surprised.exp3.json": "9b7850b565e3c2edef7534fb62fa364285063c254b76d079328dc8ee747b9097",
+    "Generated_artwork.idle.motion3.json": "14674d50d8765df706ac253975629f7cffe97a2442248a41af59f68d9cd3f2dc",
+    "Generated_artwork.blink.motion3.json": "399f91b7bfac0666f589ab7c6daace5e33e5c6d6e7c6e7ca4024b6db48a65110",
+    "Generated_artwork.nod.motion3.json": "bfd9a247d5ec8479145c2dddfd5fdbf03e1c46df8d7460f07badd146c1e19418",
+    "Generated_artwork.shake.motion3.json": "81f50690b925cab5487c64cd1fc9781485a141f758a1f7085d36f0596bbfe54b"
+  },
+  "errors": []
+}

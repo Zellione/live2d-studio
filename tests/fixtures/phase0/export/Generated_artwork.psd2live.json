@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "model": "Generated_artwork",
+  "generator": "PSD2Live 3.6.7",
+  "runtimeTarget": "Cubism50",
+  "mocVersion": 5,
+  "cmo3TargetVersionNo": 5000000,
+  "cmo3FileFormatVersion": "500000005",
+  "canvas": {"width":128,"height":128},
+  "config": {"atlasSize":4096,"meshSpacing":40,"headTurnStrength":1.0,"bodyStrength":1.0,"meshOnly":false,"generateDeformers":true,"exportMotions":true},
+  "faceRig": {"algorithm":"perspective-parallelogram-nine-pose-v2","angleX":[-45,0,45],"angleY":[-30,0,30],"initialAngleZ":0.0,"centerX":64.0,"centerY":45.2184,"radiusX":35.06037,"radiusY":14.772472},
+  "deformerHierarchy": {"head":"DeformHeadContainer","face":"DeformFaceNinePose","frontHair":["DeformHairFrontFollow","DeformHairFrontPhysics"],"backHair":["DeformHairBackFollow","DeformHairBackPhysics"]},
+  "physics": {"enabled":true,"frontHair":false,"backHair":false,"eyeJelly":false,"groups":[]},
+  "summary": {"layers":1,"drawables":1,"deformers":7,"parameters":20,"atlasPages":1},
+  "layers": [
+    {"source":"phase0-tile","type":"preset","tag":"objects","side":"NONE","parameter":"","switchId":0,"drawable":"ArtMeshObjects"}
+  ],
+  "warnings": ["Only 1 See-Through semantic layers were recognized; unknown layers will be assigned to the head or body by position.","The face layer is missing; the face area was estimated from the bounding boxes of head layers.","Eye semantic layers are missing; blink and gaze parameters will not be bound to any drawable.","mouth/mouth_open/mouth_close is missing; lip-sync parameters will not be bound to any drawable."]
+}

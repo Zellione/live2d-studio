@@ -1,0 +1,7 @@
+.cache/
+.venv/
+__pycache__/
+.pytest_cache/
+assets/input/*
+assets/intermediate/*
+assets/output/*

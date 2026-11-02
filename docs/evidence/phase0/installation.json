@@ -1,0 +1,17 @@
+{
+  "sillytavern_commit": "8172dcd0ee672d3cd9a5e5f7af134f91a45cd2b8",
+  "extension_commit": "d1801d36a32ace9451cf6377c005a7a64292fc39",
+  "files": {
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/constants.js": "3090cd81e1fc037dd685266175592d6030b7386fd7fb35149039ccafba080bdd",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/live2d.js": "f6bae7eff0705593403de51062b9dead7a1a5799a8aaa1754c677149fb117c5b",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/ui.js": "440231a50ec9d192eead0af98c832ce5e1daef7e60f80e4a583fc7468bd89c78",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/lib/extra.min.js": "f71e5b58190bab324eed2ac49fa6f84be090ec63df068b70b9d826b5e6ed9d16",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/lib/index.min.js": "e32028b54c6f975e93469a51fc73421eff175f5bf61b73b56b41ab2051829e04",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/lib/live2d.min.js": "96cd98047edc7ff319c35c344ede4dc62a286d3c7e1173e5365e7a7ea6bad69e",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/lib/live2dcubismcore.min.js": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+    "/home/zelli/tools/ai/SillyTavern/data/default-user/extensions/Extension-Live2d/lib/pixi.min.js": "ce14152237354383ef19362e1d83cad5c62c6af70f6598c2bf54820af8e7eaf1",
+    "/home/zelli/tools/ai/SillyTavern/src/endpoints/assets.js": "890a4fe32ca20d24b0c1aa178e0e9c6b3de82f64f51b01d3f3766105b9fb4b8a"
+  },
+  "psd2live_jar_sha256": "7001df5d68b5148ae2e92098986d11f2aec14fb966a2cb747492b6a5e78a15e7"
+}

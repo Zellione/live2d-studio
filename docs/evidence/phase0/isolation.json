@@ -1,0 +1,11 @@
+{
+  "checked_files": 137,
+  "changed_files": [],
+  "source_and_test_code_identical": true,
+  "browser": "Google Chrome 156.0.8078.79",
+  "render_backend": "ANGLE SwiftShader (software WebGL; not RTX/Wayland performance validation)",
+  "server": "127.0.0.1:8766",
+  "browser_debug": "127.0.0.1:9227",
+  "test_directory": "/data/projects/live2d-studio/.cache/phase0-st",
+  "copied_user_data": false
+}
