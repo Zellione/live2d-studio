@@ -49,6 +49,7 @@ def load_validate(root):
     if original.shape != (h,w,4):
         raise ValueError('Source dimensions differ')
     ids, orders = set(), []
+    owners = np.zeros((h,w), bool) if data.get('provenance',{}).get('unique_source_ownership') else None
     if not 1 <= len(data['layers']) <= 32:
         raise ValueError('PSD2Live requires 1..32 layers')
     for layer in data['layers']:
@@ -76,6 +77,11 @@ def load_validate(root):
                 arrays[key] = np.array(im)
         pixels, mask, rebuilt = (arrays[k] for k in ('rgba_path','mask_path','reconstructed_mask_path'))
         visible = mask>0
+        if owners is not None:
+            patch = owners[y:y+lh,x:x+lw]
+            if np.any(patch & visible):
+                raise ValueError('Duplicated observed source ownership')
+            patch |= visible
         if np.any(visible & (rebuilt>0)) or not set(np.unique(rebuilt)) <= {0,255}:
             raise ValueError('Overlapping or nonbinary reconstruction mask')
         generated = arrays['generated_mask_path'] if version == 2 else rebuilt

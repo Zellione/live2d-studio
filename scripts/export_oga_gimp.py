@@ -11,7 +11,7 @@ from gi.repository import Gimp, Gio, Gegl
 out = Path(os.environ['OGA_OUTPUT'])
 out.mkdir(parents=True, exist_ok=False)
 image = Gimp.file_load(Gimp.RunMode.NONINTERACTIVE, Gio.File.new_for_path(os.environ['OGA_XCF']))
-group = next(g for g in image.get_layers() if g.get_name() == 'Girl2')
+group = next(g for g in image.get_layers() if g.get_name() == os.environ.get('OGA_GROUP', 'Girl2'))
 records = []
 
 

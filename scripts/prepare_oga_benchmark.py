@@ -49,9 +49,9 @@ def main():
         ImageDraw.Draw(tile).text((5,5),item['name'],fill='black')
         sheet.alpha_composite(tile,((i%4)*250,(i//4)*250))
     sheet.save(args.output/'layers.png')
-    (args.output/'benchmark.json').write_text(json.dumps(dict(canvas=info['width'],layers=records,metrics=metrics,
+    (args.output/'benchmark.json').write_text(json.dumps(dict(canvas=info['width'],group=info['group'],layers=records,metrics=metrics,
         rights='stevenburrow; CC0; https://opengameart.org/content/anime-girl-and-boy-portraits',
-        source='NewAnime.xcf / Girl2; default visible child variants; no metadata provided to inference'),indent=2)+'\n')
+        source='NewAnime.xcf / '+info['group']+'; default visible child variants; no metadata provided to inference'),indent=2)+'\n')
     print(json.dumps(metrics,indent=2))
 
 

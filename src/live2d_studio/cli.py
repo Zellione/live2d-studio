@@ -15,6 +15,14 @@ def main():
     p.add_argument('--decomposition',type=Path)
     p=commands.add_parser('inspect')
     p.add_argument('--project',type=Path,required=True)
+    p=commands.add_parser('refine')
+    p.add_argument('--project',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--sam',type=Path)
+    p.add_argument('--no-neck-repair',action='store_true')
+    p=commands.add_parser('readiness')
+    p.add_argument('--project',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
     p=commands.add_parser('reconstruct')
     p.add_argument('--project',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
@@ -37,6 +45,12 @@ def main():
         if args.command=='prepare':
             from .backends import prepare
             result=prepare(args.input,args.output,args.rights,args.backend,args.decomposition)
+        elif args.command=='readiness':
+            from .readiness import analyze
+            result=analyze(args.project,args.output)
+        elif args.command=='refine':
+            from .refinement import refine
+            result=refine(args.project,args.output,args.sam,not args.no_neck_repair)
         elif args.command=='inspect':
             from .manifest import load_validate
             data=load_validate(args.project)
