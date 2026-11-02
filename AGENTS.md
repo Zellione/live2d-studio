@@ -56,7 +56,7 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   inference on the 5090; read its results before generalizing to other inputs.
 - Keep MCP on loopback; tokens only from an explicitly provided environment.
   `mcp-check` is read-only. Never read profile secrets to close the live CLI auth gate.
-- Phase 2.6 is the current stopping point. Do not begin Phase 3, custom training
+- Phase 3 is the current stopping point. Do not begin Phase 4, custom training
   or production copying without a new user assignment.
 
 ## Phase 2.5 neural backend
@@ -87,4 +87,21 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   source restoration without guards. Retain negative visual evidence.
 - Final tested Girl2 is a limited prototype with remaining hair gaps and flat lids.
   Girl1/Wikipe-tan fail parsing; Boy1 fine beard/brow ownership is not rig-ready.
-  No Phase 3, custom training or production deployment is authorized yet.
+  Phase 3 was subsequently authorized for Girl2 only; see the current section below.
+
+## Phase 3 Girl2 RP prototype
+- Read `docs/phase3-results.md`, `docs/phase3-animation.md` and
+  `docs/phase3-sillytavern.md`. Keep the accepted Phase 2.6 project immutable.
+- `recipes/girl2-animation.json` is specific to the inspected Girl2 rig. No general
+  character conversion or new image inference was implemented in this phase.
+- Prefer `runs/phase3-final/` and the local `runs/phase3-review/` gallery. Rebuilds
+  must use fresh directories. Rig/texture neutrality and RP lifecycle are separate gates.
+- `sillytavern_settings.json` maps all 28 installed classifier labels. Actual
+  message-handler tests use mocked network classification, not model inference.
+- The optional adapter only patches a pinned, isolated `.cache/` ST copy. Never
+  silently install it into production or claim upstream has the corrected behavior.
+- Retain HTTP-fallback failure evidence and strict/raw opacity excursion counts;
+  ST-caught listener errors are distinct from uncaught browser exceptions.
+- Run Python regression tests plus `node tests/test_rp_talk.mjs`; actual RP browser
+  tests cover messages, mapping, idle, interruption, reload, fallback and stale replies.
+- Stop after Phase 3. No Phase 4, training or production deployment is authorized.

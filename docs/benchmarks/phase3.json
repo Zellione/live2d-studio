@@ -1,0 +1,1912 @@
+{
+  "artifacts": {
+    "gallery": "runs/phase3-review/index.html",
+    "project": "runs/phase3-final/character.psd2live",
+    "psd": "runs/phase3-final/character.psd",
+    "runtime": "runs/phase3-final/runtime"
+  },
+  "character": "CC0 Girl2",
+  "classifier": {
+    "inference_tested": false,
+    "mapping_checks": {
+      "anger": {
+        "checks": [
+          {
+            "accepted": true,
+            "actual": 1,
+            "expected": 1,
+            "id": "ParamBrowMood"
+          },
+          {
+            "accepted": true,
+            "actual": -0.550000011920929,
+            "expected": -0.55,
+            "id": "ParamBrowLY"
+          },
+          {
+            "accepted": true,
+            "actual": -0.550000011920929,
+            "expected": -0.55,
+            "id": "ParamBrowRY"
+          },
+          {
+            "accepted": true,
+            "actual": -0.5,
+            "expected": -0.5,
+            "id": "ParamMouthForm"
+          }
+        ],
+        "expression": "angry"
+      },
+      "confusion": {
+        "checks": [
+          {
+            "accepted": true,
+            "actual": 0.15000000596046448,
+            "expected": 0.15,
+            "id": "ParamBrowMood"
+          },
+          {
+            "accepted": true,
+            "actual": 0.6499999761581421,
+            "expected": 0.65,
+            "id": "ParamBrowLY"
+          },
+          {
+            "accepted": true,
+            "actual": -0.15000000596046448,
+            "expected": -0.15,
+            "id": "ParamBrowRY"
+          },
+          {
+            "accepted": true,
+            "actual": -0.20000000298023224,
+            "expected": -0.2,
+            "id": "ParamMouthForm"
+          }
+        ],
+        "expression": "confused"
+      },
+      "embarrassment": {
+        "checks": [
+          {
+            "accepted": true,
+            "actual": -0.3499999940395355,
+            "expected": -0.35,
+            "id": "ParamBrowMood"
+          },
+          {
+            "accepted": true,
+            "actual": 0.15000000596046448,
+            "expected": 0.15,
+            "id": "ParamBrowLY"
+          },
+          {
+            "accepted": true,
+            "actual": 0.15000000596046448,
+            "expected": 0.15,
+            "id": "ParamBrowRY"
+          },
+          {
+            "accepted": true,
+            "actual": 0.5,
+            "expected": 0.5,
+            "id": "ParamMouthForm"
+          }
+        ],
+        "expression": "embarrassed"
+      },
+      "joy": {
+        "checks": [
+          {
+            "accepted": true,
+            "actual": 0,
+            "expected": 0,
+            "id": "ParamBrowMood"
+          },
+          {
+            "accepted": true,
+            "actual": 0.3499999940395355,
+            "expected": 0.35,
+            "id": "ParamBrowLY"
+          },
+          {
+            "accepted": true,
+            "actual": 0.3499999940395355,
+            "expected": 0.35,
+            "id": "ParamBrowRY"
+          },
+          {
+            "accepted": true,
+            "actual": 0.8500000238418579,
+            "expected": 0.85,
+            "id": "ParamMouthForm"
+          }
+        ],
+        "expression": "happy"
+      },
+      "neutral": {
+        "checks": [
+          {
+            "accepted": true,
+            "actual": 0,
+            "expected": 0,
+            "id": "ParamBrowMood"
+          },
+          {
+            "accepted": true,
+            "actual": 0,
+            "expected": 0,
+            "id": "ParamBrowLY"
+          },
+          {
+            "accepted": true,
+            "actual": 0,
+            "expected": 0,
+            "id": "ParamBrowRY"
+          },
+          {
+            "accepted": true,
+            "actual": 0,
+            "expected": 0,
+            "id": "ParamMouthForm"
+          }
+        ],
+        "expression": "neutral"
+      },
+      "sadness": {
+        "checks": [
+          {
+            "accepted": true,
+            "actual": -1,
+            "expected": -1,
+            "id": "ParamBrowMood"
+          },
+          {
+            "accepted": true,
+            "actual": -0.25,
+            "expected": -0.25,
+            "id": "ParamBrowLY"
+          },
+          {
+            "accepted": true,
+            "actual": -0.25,
+            "expected": -0.25,
+            "id": "ParamBrowRY"
+          },
+          {
+            "accepted": true,
+            "actual": -0.6499999761581421,
+            "expected": -0.65,
+            "id": "ParamMouthForm"
+          }
+        ],
+        "expression": "sad"
+      },
+      "surprise": {
+        "checks": [
+          {
+            "accepted": true,
+            "actual": 0,
+            "expected": 0,
+            "id": "ParamBrowMood"
+          },
+          {
+            "accepted": true,
+            "actual": 0.800000011920929,
+            "expected": 0.8,
+            "id": "ParamBrowLY"
+          },
+          {
+            "accepted": true,
+            "actual": 0.800000011920929,
+            "expected": 0.8,
+            "id": "ParamBrowRY"
+          },
+          {
+            "accepted": true,
+            "actual": -0.15000000596046448,
+            "expected": -0.15,
+            "id": "ParamMouthForm"
+          }
+        ],
+        "expression": "surprised"
+      }
+    },
+    "vocabulary": [
+      "admiration",
+      "amusement",
+      "anger",
+      "annoyance",
+      "approval",
+      "caring",
+      "confusion",
+      "curiosity",
+      "desire",
+      "disappointment",
+      "disapproval",
+      "disgust",
+      "embarrassment",
+      "excitement",
+      "fear",
+      "gratitude",
+      "grief",
+      "joy",
+      "love",
+      "nervousness",
+      "optimism",
+      "pride",
+      "realization",
+      "relief",
+      "remorse",
+      "sadness",
+      "surprise",
+      "neutral"
+    ]
+  },
+  "expression_pixel_changes": {
+    "angry": 1892,
+    "confused": 20380,
+    "embarrassed": 20388,
+    "happy": 1563,
+    "neutral": 0,
+    "sad": 1493,
+    "surprised": 690
+  },
+  "gates": {
+    "hidden_geometry": "Reviewed incomplete; no new pixels",
+    "production_ready": false,
+    "psd2live_import": "Accepted save/reopen/export",
+    "rp_integration": "accepted-isolated-adapter",
+    "runtime_geometry": "Accepted, raw float32 opacity excursions retained",
+    "semantic": "Inherited Girl2 coarse acceptance, not re-parsed",
+    "source_preservation": "Accepted: unchanged texture and exact runtime-neutral equality",
+    "visual_animation": "Accepted limited RP prototype; flat lids, subtle expressions and residual hair gaps"
+  },
+  "hair_tuning": {
+    "after_max_hole_pixels": 349,
+    "after_max_small_component_pixels": 3,
+    "before_max_hole_pixels": 502,
+    "before_max_small_component_pixels": 3,
+    "neutral_rgba_equal": true
+  },
+  "isolation": {
+    "checked": 137,
+    "unchanged": true
+  },
+  "limitations": [
+    "No audio/phoneme lipsync or real classifier inference",
+    "Intermediate lids remain flat",
+    "Some expressions are subtle; no blush/teeth/tongue artwork",
+    "Residual hair gaps; no validated new hidden anatomy",
+    "RP acceptance requires optional isolated adapter for failure handling and controlled idle",
+    "CMO3/CAN3 editor containers not byte-identical across full replay",
+    "Float32 interpolation overshoot is recorded separately; eight ULP tolerance only for numeric classification"
+  ],
+  "mouth_pixel_changes": {
+    "1": 537,
+    "10": 108,
+    "11": 391,
+    "12": 473,
+    "13": 266,
+    "14": 339,
+    "15": 521,
+    "2": 139,
+    "3": 472,
+    "4": 258,
+    "5": 341,
+    "6": 525,
+    "7": 226,
+    "8": 439,
+    "9": 426
+  },
+  "mouth_roi": [
+    263,
+    740,
+    333,
+    777
+  ],
+  "phase": "3",
+  "pose_count": 42,
+  "poses": {
+    "blink_0": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 17,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4322
+    },
+    "blink_100": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4581
+    },
+    "blink_25": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4365
+    },
+    "blink_50": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4433
+    },
+    "blink_75": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4532
+    },
+    "closed_L": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 17,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4519
+    },
+    "closed_R": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4384
+    },
+    "combined_angry": {
+      "detached_small_component_pixels": 2,
+      "enclosed_transparent_pixels": 183,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4210
+    },
+    "combined_confused": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4160
+    },
+    "combined_embarrassed": {
+      "detached_small_component_pixels": 2,
+      "enclosed_transparent_pixels": 224,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4189
+    },
+    "combined_happy": {
+      "detached_small_component_pixels": 2,
+      "enclosed_transparent_pixels": 183,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4199
+    },
+    "combined_neutral": {
+      "detached_small_component_pixels": 2,
+      "enclosed_transparent_pixels": 183,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4192
+    },
+    "combined_sad": {
+      "detached_small_component_pixels": 2,
+      "enclosed_transparent_pixels": 183,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4080
+    },
+    "combined_surprised": {
+      "detached_small_component_pixels": 2,
+      "enclosed_transparent_pixels": 183,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4203
+    },
+    "expression_angry": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4530
+    },
+    "expression_confused": {
+      "detached_small_component_pixels": 0,
+      "enclosed_transparent_pixels": 145,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4487
+    },
+    "expression_embarrassed": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 207,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4513
+    },
+    "expression_happy": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4605
+    },
+    "expression_neutral": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4581
+    },
+    "expression_sad": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4423
+    },
+    "expression_surprised": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4639
+    },
+    "head_X_minus": {
+      "detached_small_component_pixels": 0,
+      "enclosed_transparent_pixels": 202,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4355
+    },
+    "head_X_plus": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 199,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4295
+    },
+    "head_Y_minus": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 231,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4437
+    },
+    "head_Y_plus": {
+      "detached_small_component_pixels": 3,
+      "enclosed_transparent_pixels": 199,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4447
+    },
+    "head_Z_minus": {
+      "detached_small_component_pixels": 2,
+      "enclosed_transparent_pixels": 250,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4439
+    },
+    "head_Z_plus": {
+      "detached_small_component_pixels": 0,
+      "enclosed_transparent_pixels": 60,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4420
+    },
+    "mouth_0": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4581
+    },
+    "mouth_100": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4678
+    },
+    "mouth_25": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 2,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 8,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4649
+    },
+    "mouth_50": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4665
+    },
+    "mouth_75": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4663
+    },
+    "neutral": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4581
+    },
+    "neutral_restored": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 163,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 0,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4581
+    },
+    "stress_blink_minus": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 349,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 18,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 3930
+    },
+    "stress_blink_plus": {
+      "detached_small_component_pixels": 0,
+      "enclosed_transparent_pixels": 119,
+      "geometry": {
+        "collapsed_triangles": 5,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 17,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 3840
+    },
+    "stress_half_minus": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 349,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4116
+    },
+    "stress_half_plus": {
+      "detached_small_component_pixels": 0,
+      "enclosed_transparent_pixels": 119,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4082
+    },
+    "stress_open_minus": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 349,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4239
+    },
+    "stress_open_plus": {
+      "detached_small_component_pixels": 0,
+      "enclosed_transparent_pixels": 119,
+      "geometry": {
+        "collapsed_triangles": 0,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 6,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4210
+    },
+    "stress_wink_minus": {
+      "detached_small_component_pixels": 1,
+      "enclosed_transparent_pixels": 349,
+      "geometry": {
+        "collapsed_triangles": 4,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 24,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4219
+    },
+    "stress_wink_plus": {
+      "detached_small_component_pixels": 0,
+      "enclosed_transparent_pixels": 119,
+      "geometry": {
+        "collapsed_triangles": 5,
+        "expanded_triangles": 0,
+        "invalidOpacity": 0,
+        "new_triangle_flips": 23,
+        "nonfinite": 0,
+        "opacity_max": 1,
+        "opacity_min": 0.5,
+        "outOfRange": 0,
+        "rawOpacityExcursions": 0
+      },
+      "strong_internal_colour_steps": 4128
+    }
+  },
+  "regression": {
+    "javascript_talk_tests": 5,
+    "phase0_browser": "pass",
+    "phase1_browser": "pass",
+    "python_tests": 59
+  },
+  "replay": {
+    "Generated_artwork.4096/texture_00.png": true,
+    "Generated_artwork.blink.motion3.json": true,
+    "Generated_artwork.can3": false,
+    "Generated_artwork.cdi3.json": true,
+    "Generated_artwork.cmo3": false,
+    "Generated_artwork.idle.motion3.json": true,
+    "Generated_artwork.moc3": true,
+    "Generated_artwork.model3.json": true,
+    "Generated_artwork.nod.motion3.json": true,
+    "Generated_artwork.physics3.json": true,
+    "Generated_artwork.psd2live.json": true,
+    "Generated_artwork.rpIdle.motion3.json": true,
+    "Generated_artwork.rpNod.motion3.json": true,
+    "Generated_artwork.rp_angry.exp3.json": true,
+    "Generated_artwork.rp_confused.exp3.json": true,
+    "Generated_artwork.rp_embarrassed.exp3.json": true,
+    "Generated_artwork.rp_happy.exp3.json": true,
+    "Generated_artwork.rp_neutral.exp3.json": true,
+    "Generated_artwork.rp_sad.exp3.json": true,
+    "Generated_artwork.rp_surprised.exp3.json": true,
+    "Generated_artwork.shake.motion3.json": true,
+    "animation-provenance.json": true,
+    "sillytavern_settings.json": true
+  },
+  "rp_acceptance": {
+    "classification": "mock network labels, not classifier model inference",
+    "failures": [],
+    "production_ready": false,
+    "rp_integration": "accepted-isolated-adapter",
+    "schema_version": 1,
+    "visual_animation": "requires-independent-review"
+  },
+  "scenarios": {
+    "failure": {
+      "invalid_opacity": 0,
+      "max_opacity": 1.0000001192092896,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "nonfinite": 0,
+      "out_of_range": 0,
+      "raw_opacity_excursions": 19,
+      "samples": {
+        "http_failure": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.6092334985733032,
+              "min": 0.993667721748352
+            },
+            "ParamAngleY": {
+              "max": 0.800000011920929,
+              "min": 0.6481301188468933
+            },
+            "ParamAngleZ": {
+              "max": 0.9655396938323975,
+              "min": 0.5962003469467163
+            },
+            "ParamBrowMood": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.7200000286102295
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.7200000286102295
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": -0.5
+            },
+            "ParamMouthOpenY": {
+              "max": 0.849943220615387,
+              "min": 0
+            }
+          }
+        }
+      },
+      "source": "runs/phase3-http-fallback-adapter",
+      "status": "pass"
+    },
+    "lifecycle": {
+      "invalid_opacity": 0,
+      "max_opacity": 1.0000001192092896,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "nonfinite": 0,
+      "out_of_range": 0,
+      "raw_opacity_excursions": 1,
+      "samples": {
+        "explicit_motion": {
+          "count": 105,
+          "parameters": {
+            "ParamAngleX": {
+              "max": -1.4156749248504639,
+              "min": -1.9999998807907104
+            },
+            "ParamAngleY": {
+              "max": 0.6829831004142761,
+              "min": -0.7992104291915894
+            },
+            "ParamAngleZ": {
+              "max": -0.8494045734405518,
+              "min": -1.1999999284744263
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 0.800000011920929,
+              "min": 0
+            },
+            "ParamEyeROpen": {
+              "max": 0.800000011920929,
+              "min": 0
+            },
+            "ParamMouthForm": {
+              "max": 0.8500000238418579,
+              "min": 0.8500000238418579
+            },
+            "ParamMouthOpenY": {
+              "max": 0.10000000149011612,
+              "min": 0.10000000149011612
+            }
+          }
+        },
+        "idle": {
+          "count": 135,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.9998769760131836,
+              "min": 0.6598304510116577
+            },
+            "ParamAngleY": {
+              "max": 0.7998107075691223,
+              "min": -0.6113901138305664
+            },
+            "ParamAngleZ": {
+              "max": 1.1999262571334839,
+              "min": 0.39589807391166687
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0,
+              "min": 0
+            }
+          }
+        },
+        "interruption": {
+          "count": 39,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 0.7675153613090515,
+              "min": -0.1340116411447525
+            },
+            "ParamAngleY": {
+              "max": 0.09904839843511581,
+              "min": -0.5664608478546143
+            },
+            "ParamAngleZ": {
+              "max": 0.4605090022087097,
+              "min": -0.08040694892406464
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": -1
+            },
+            "ParamEyeLOpen": {
+              "max": 0.8500000238418579,
+              "min": 0
+            },
+            "ParamEyeROpen": {
+              "max": 0.8500000238418579,
+              "min": 0
+            },
+            "ParamMouthForm": {
+              "max": 0.8500000238418579,
+              "min": -0.6499999761581421
+            },
+            "ParamMouthOpenY": {
+              "max": 0.9234394431114197,
+              "min": 4.45017354672346e-14
+            }
+          }
+        },
+        "long_talk": {
+          "count": 46,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.7157407999038696,
+              "min": 0.7836399674415588
+            },
+            "ParamAngleY": {
+              "max": -0.5722838044166565,
+              "min": -0.7999999523162842
+            },
+            "ParamAngleZ": {
+              "max": 1.0294440984725952,
+              "min": 0.470183789730072
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": -1
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.8500000238418579
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.8500000238418579
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": -0.6499999761581421
+            },
+            "ParamMouthOpenY": {
+              "max": 0.8450942039489746,
+              "min": 4.450173207910281e-14
+            }
+          }
+        },
+        "post_reload": {
+          "count": 34,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.8156324625015259,
+              "min": 1.201216697692871
+            },
+            "ParamAngleY": {
+              "max": 0.800000011920929,
+              "min": 0.5830481648445129
+            },
+            "ParamAngleZ": {
+              "max": 1.089379072189331,
+              "min": 0.720729649066925
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.6906059980392456
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.6906059980392456
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0.8495035767555237,
+              "min": 0
+            }
+          }
+        },
+        "post_switch": {
+          "count": 36,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.5462925434112549,
+              "min": 0.8327848315238953
+            },
+            "ParamAngleY": {
+              "max": 0.7999999523162842,
+              "min": 0.5900312662124634
+            },
+            "ParamAngleZ": {
+              "max": 0.9277751445770264,
+              "min": 0.4996706545352936
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.800000011920929
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.800000011920929
+            },
+            "ParamMouthForm": {
+              "max": 0.8500000238418579,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0.9252542853355408,
+              "min": 0
+            }
+          }
+        },
+        "reload_talking": {
+          "count": 30,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.105940818786621,
+              "min": 0.43956005573272705
+            },
+            "ParamAngleY": {
+              "max": 0.688674807548523,
+              "min": 0.3248801529407501
+            },
+            "ParamAngleZ": {
+              "max": 0.6635642051696777,
+              "min": 0.26373592019081116
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 1
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 1
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0,
+              "min": 0
+            }
+          }
+        },
+        "transition_angry": {
+          "count": 22,
+          "parameters": {
+            "ParamAngleX": {
+              "max": -0.2690785825252533,
+              "min": -0.7833948135375977
+            },
+            "ParamAngleY": {
+              "max": 0.572195291519165,
+              "min": 0.1988767683506012
+            },
+            "ParamAngleZ": {
+              "max": -0.16144707798957825,
+              "min": -0.47003668546676636
+            },
+            "ParamBrowMood": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 0.800000011920929,
+              "min": 0.7200000286102295
+            },
+            "ParamEyeROpen": {
+              "max": 0.800000011920929,
+              "min": 0.7200000286102295
+            },
+            "ParamMouthForm": {
+              "max": 0.8500000238418579,
+              "min": -0.5
+            },
+            "ParamMouthOpenY": {
+              "max": 0.10000000149011612,
+              "min": 0
+            }
+          }
+        },
+        "transition_neutral": {
+          "count": 21,
+          "parameters": {
+            "ParamAngleX": {
+              "max": -0.8132316470146179,
+              "min": -1.3825197219848633
+            },
+            "ParamAngleY": {
+              "max": 0.7885543704032898,
+              "min": 0.582970142364502
+            },
+            "ParamAngleZ": {
+              "max": -0.487938791513443,
+              "min": -0.8295114040374756
+            },
+            "ParamBrowMood": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.7200000286102295
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.7200000286102295
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": -0.5
+            },
+            "ParamMouthOpenY": {
+              "max": 0,
+              "min": 0
+            }
+          }
+        }
+      },
+      "source": "runs/phase3-final-lifecycle",
+      "status": "pass"
+    },
+    "race": {
+      "invalid_opacity": 0,
+      "max_opacity": 1,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "nonfinite": 0,
+      "out_of_range": 0,
+      "raw_opacity_excursions": 0,
+      "samples": {
+        "latest_reply": {
+          "count": 36,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.7447932958602905,
+              "min": 1.105940818786621
+            },
+            "ParamAngleY": {
+              "max": 0.7998084425926208,
+              "min": 0.6213341355323792
+            },
+            "ParamAngleZ": {
+              "max": 1.0468755960464478,
+              "min": 0.6635642051696777
+            },
+            "ParamBrowMood": {
+              "max": 1,
+              "min": 1
+            },
+            "ParamEyeLOpen": {
+              "max": 0.7200000286102295,
+              "min": 0.7200000286102295
+            },
+            "ParamEyeROpen": {
+              "max": 0.7200000286102295,
+              "min": 0.7200000286102295
+            },
+            "ParamMouthForm": {
+              "max": -0.5,
+              "min": -0.5
+            },
+            "ParamMouthOpenY": {
+              "max": 0,
+              "min": 0
+            }
+          }
+        }
+      },
+      "source": "runs/phase3-race-adapter",
+      "status": "pass"
+    },
+    "rp": {
+      "invalid_opacity": 0,
+      "max_opacity": 1.0000001192092896,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "nonfinite": 0,
+      "out_of_range": 0,
+      "raw_opacity_excursions": 19,
+      "samples": {
+        "fallback_offline": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": -1.883797287940979,
+              "min": -1.999881386756897
+            },
+            "ParamAngleY": {
+              "max": 0.4317769408226013,
+              "min": -0.18521639704704285
+            },
+            "ParamAngleZ": {
+              "max": -1.1302779912948608,
+              "min": -1.199928879737854
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.01817600056529045
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.01817600056529045
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0.8482831120491028,
+              "min": 0
+            }
+          }
+        },
+        "message_anger": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.9998769760131836,
+              "min": 1.857030987739563
+            },
+            "ParamAngleY": {
+              "max": 0.06829427182674408,
+              "min": -0.531233012676239
+            },
+            "ParamAngleZ": {
+              "max": 1.1999262571334839,
+              "min": 1.1142182350158691
+            },
+            "ParamBrowMood": {
+              "max": 1,
+              "min": -1
+            },
+            "ParamEyeLOpen": {
+              "max": 0.8500000238418579,
+              "min": 0.7200000286102295
+            },
+            "ParamEyeROpen": {
+              "max": 0.8500000238418579,
+              "min": 0.7200000286102295
+            },
+            "ParamMouthForm": {
+              "max": -0.5,
+              "min": -0.6499999761581421
+            },
+            "ParamMouthOpenY": {
+              "max": 0.8484290242195129,
+              "min": 0
+            }
+          }
+        },
+        "message_confusion": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 0.833096444606781,
+              "min": 0.0373859666287899
+            },
+            "ParamAngleY": {
+              "max": -0.027632078155875206,
+              "min": -0.5901437997817993
+            },
+            "ParamAngleZ": {
+              "max": 2.389338254928589,
+              "min": 0.499857634305954
+            },
+            "ParamBrowMood": {
+              "max": 0.15000000596046448,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamMouthForm": {
+              "max": -0.15000000596046448,
+              "min": -0.20000000298023224
+            },
+            "ParamMouthOpenY": {
+              "max": 1,
+              "min": 0
+            }
+          }
+        },
+        "message_embarrassment": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": -0.18127577006816864,
+              "min": -0.9779042601585388
+            },
+            "ParamAngleY": {
+              "max": 0.6424375772476196,
+              "min": 0.13398145139217377
+            },
+            "ParamAngleZ": {
+              "max": 1.8912346363067627,
+              "min": -2.586742401123047
+            },
+            "ParamBrowMood": {
+              "max": 0.15000000596046448,
+              "min": -0.3499999940395355
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.6499999761581421
+            },
+            "ParamEyeROpen": {
+              "max": 0.7070357203483582,
+              "min": 0.6499999761581421
+            },
+            "ParamMouthForm": {
+              "max": 0.5,
+              "min": -0.20000000298023224
+            },
+            "ParamMouthOpenY": {
+              "max": 0.847897469997406,
+              "min": 0
+            }
+          }
+        },
+        "message_joy": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.3826547861099243,
+              "min": 0.6456922888755798
+            },
+            "ParamAngleY": {
+              "max": 0.7886031866073608,
+              "min": 0.47723308205604553
+            },
+            "ParamAngleZ": {
+              "max": 0.8295925259590149,
+              "min": 0.38741520047187805
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.800000011920929
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.800000011920929
+            },
+            "ParamMouthForm": {
+              "max": 0.8500000238418579,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0.9339520335197449,
+              "min": 4.450173207910281e-14
+            }
+          }
+        },
+        "message_neutral": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": -1.3464221954345703,
+              "min": -1.8265212774276733
+            },
+            "ParamAngleY": {
+              "max": 0.7999998927116394,
+              "min": 0.5771632194519043
+            },
+            "ParamAngleZ": {
+              "max": -0.890993058681488,
+              "min": -2.8078529834747314
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": -0.3499999940395355
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.6499999761581421
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.6499999761581421
+            },
+            "ParamMouthForm": {
+              "max": 0.5,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0.8468831777572632,
+              "min": 0
+            }
+          }
+        },
+        "message_sadness": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.8941177129745483,
+              "min": 1.5078051090240479
+            },
+            "ParamAngleY": {
+              "max": 0.7494174838066101,
+              "min": 0.39342910051345825
+            },
+            "ParamAngleZ": {
+              "max": 1.1364703178405762,
+              "min": 0.9046826362609863
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": -1
+            },
+            "ParamEyeLOpen": {
+              "max": 0.8500000238418579,
+              "min": 0
+            },
+            "ParamEyeROpen": {
+              "max": 0.8500000238418579,
+              "min": 0
+            },
+            "ParamMouthForm": {
+              "max": 0.8500000238418579,
+              "min": -0.6499999761581421
+            },
+            "ParamMouthOpenY": {
+              "max": 0.9268769025802612,
+              "min": 0
+            }
+          }
+        },
+        "message_surprise": {
+          "count": 33,
+          "parameters": {
+            "ParamAngleX": {
+              "max": 1.7542225122451782,
+              "min": 1.2168153524398804
+            },
+            "ParamAngleY": {
+              "max": -0.616237998008728,
+              "min": -0.7999999523162842
+            },
+            "ParamAngleZ": {
+              "max": 1.0525331497192383,
+              "min": 0.7300888299942017
+            },
+            "ParamBrowMood": {
+              "max": 1,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.7200000286102295
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.7200000286102295
+            },
+            "ParamMouthForm": {
+              "max": -0.15000000596046448,
+              "min": -0.5
+            },
+            "ParamMouthOpenY": {
+              "max": 1,
+              "min": 1.5218595763144549e-05
+            }
+          }
+        },
+        "rest": {
+          "count": 15,
+          "parameters": {
+            "ParamAngleX": {
+              "max": -1.5883147716522217,
+              "min": -1.8357598781585693
+            },
+            "ParamAngleY": {
+              "max": -0.572170078754425,
+              "min": -0.7059049606323242
+            },
+            "ParamAngleZ": {
+              "max": -0.9529885053634644,
+              "min": -1.1014554500579834
+            },
+            "ParamBrowMood": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamEyeLOpen": {
+              "max": 1,
+              "min": 0.8198769688606262
+            },
+            "ParamEyeROpen": {
+              "max": 1,
+              "min": 0.8198769688606262
+            },
+            "ParamMouthForm": {
+              "max": 0,
+              "min": 0
+            },
+            "ParamMouthOpenY": {
+              "max": 0,
+              "min": 0
+            }
+          }
+        }
+      },
+      "source": "runs/phase3-final-rp",
+      "status": "pass"
+    },
+    "visual": {
+      "invalid_opacity": 0,
+      "max_opacity": 1.0000001192092896,
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "nonfinite": 0,
+      "out_of_range": 0,
+      "raw_opacity_excursions": 25,
+      "samples": {},
+      "source": "runs/phase3-final-visual",
+      "status": "pass"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Character-specific prototype, no production installation or new inference",
+  "source_preservation": {
+    "neutral_equals_phase26": true,
+    "psd_equals_phase26": true,
+    "texture_equals_phase26": true,
+    "texture_sha256": "fe6668bc67467761a47ffd2a9bea3956d18e8707fc3fe1a16806701fc20708ab",
+    "visible_exact_rgba_fraction_inherited": 0.9988552208041109
+  },
+  "source_sha256": "09011ad707e0325c345fdc39da23d9b1a1640c3327c1ba2dfe192001da736f41",
+  "starting_commit": "addd895",
+  "tools": {
+    "core": "5.0.0",
+    "extension": "d1801d36a32ace9451cf6377c005a7a64292fc39",
+    "neural_inference_runs": 0,
+    "new_packages": 0,
+    "psd2live": "3.6.7",
+    "sillytavern": "8172dcd0ee672d3cd9a5e5f7af134f91a45cd2b8"
+  },
+  "upstream_http_failure": {
+    "network": {
+      "caught_event_listener_errors": 2,
+      "missing_successful_resources": [],
+      "uncaught_exceptions": 0,
+      "unexpected_http_errors": []
+    },
+    "status": "fail"
+  },
+  "upstream_idle": {
+    "ParamAngleX": {
+      "max": 6.721009731292725,
+      "min": -5.670464515686035
+    },
+    "ParamAngleY": {
+      "max": 4.716510772705078,
+      "min": -4.060922145843506
+    },
+    "ParamAngleZ": {
+      "max": 6.110456943511963,
+      "min": -4.138429164886475
+    },
+    "ParamBrowMood": {
+      "max": 0,
+      "min": 0
+    },
+    "ParamEyeLOpen": {
+      "max": 1,
+      "min": 0
+    },
+    "ParamEyeROpen": {
+      "max": 1,
+      "min": 0
+    },
+    "ParamMouthForm": {
+      "max": 0,
+      "min": 0
+    },
+    "ParamMouthOpenY": {
+      "max": 0,
+      "min": 0
+    }
+  }
+}

@@ -1,6 +1,33 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 2.6 (2026-11-02)
+## Current state after Phase 3 (2026-11-02)
+
+Read [results](phase3-results.md), [authoring](phase3-animation.md) and
+[isolated RP tests](phase3-sillytavern.md).
+
+- Girl2 has seven expressions, a new brow inclination axis, independent eyes,
+  authored 16-second subtle idle/blinks and a short Nod. Source texture and neutral
+  runtime are unchanged. No new raster pixels, models or dependencies.
+- Accepted local deliverables: `runs/phase3-final/character.psd2live`, matching PSD
+  and packaged `runtime/`. Local visual gallery: `runs/phase3-review/index.html`.
+- Hair tuning reduces maximum stress-pose hole pixels 502→349 without more small
+  fragments. Flat intermediate eyelids and residual hair gaps remain.
+- Real ST assistant-message events trigger talking and all seven mapped expressions.
+  Classification responses are mocked at the network boundary; no inference claim.
+- Full RP acceptance needs the optional isolated adapter: neutral classification
+  fallback, stale-response protection, smooth frame-aligned text-talk and suppression
+  of additional runtime head/breath oscillation. Production extension untouched.
+- Negative upstream HTTP-fallback test retained; caught EventEmitter errors are
+  now included in browser QA. `force_loop` and `force_animation` must remain off.
+- Complete recipe replay matches all runtime-consumed files exactly. Extra CMO3/
+  CAN3 editor containers differ; no blanket archive-byte reproducibility claim.
+- 59 Python tests + five JS controller tests; unchanged Phase 0/1 browser goldens
+  pass. All 137 recorded production file hashes unchanged. Models/locks and earlier
+  benchmark reports unchanged. Final project saved/reopened in editor; isolated
+  test servers and browser stopped.
+- Stop after Phase 3. No production installation, training or Phase 4 work.
+
+## Historical state after Phase 2.6 (2026-11-02)
 
 Read [Phase 2.6 results](phase2-6-results.md), [quality contract](phase2-6-quality.md)
 and the [replay guide](../backends/see-through/README.md).

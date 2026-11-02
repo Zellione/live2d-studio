@@ -7,6 +7,10 @@ not call `playTalk` or `updateExpression` directly. No LLM, real user chat, TTS,
 audio lipsync or classifier-model inference is claimed.
 
 Classification is mocked at `/api/extra/classify` in the isolated browser only.
+Character selection can trigger earlier startup classification requests before the
+mock is installed; these failed for missing local weights. The copied server sets
+`extensions.models.autoDownload=false` (`local_files_only=true`); no classifier
+weights were downloaded and no successful real classification is claimed.
 The extension's real fetch/parser → `classify_mapping` → expression application
 runs unchanged except for the explicitly isolated optional fixes described below.
 Seven labels are tested through actual events, all 28 installed labels have a

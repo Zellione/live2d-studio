@@ -124,3 +124,27 @@
   prototype acceptance. Hair gaps and flat lids still block unrestricted quality.
 - No new weights, training, manual painting or production ST changes. Stop at 2.6;
   [results](phase2-6-results.md) record improvements and measured regressions.
+
+## Phase 3 — Character-specific animation and actual RP lifecycle (2026-11-02)
+
+- User authorized Girl2 animation/RP work; preserve Phase 2.6 and stop before Phase 4.
+- Author all expressions, brow shapes and motion curves through MCP; replay from the
+  accepted project. Keep source rasters/texture and neutral runtime exact.
+- Reverse the first brow inclination after actual visual review. Seven expressions
+  use Multiply eyes / Add mouth and mood, preserving independent blink/talk.
+- Select only authored Idle/Nod in the packaged model references. Builtin motion
+  export suppression did not remove those files; do not rely on disabled flags alone.
+- Prefer restrained hair tuning over inferred guard pixels. Neutral equality plus
+  full pose review accepts reduced gaps; simplified eyelids remain a limitation.
+- Prove message delivery through ST events with network-mocked classification.
+  Never describe the mock as model inference or text-talk as TTS synchronization.
+- Upstream HTTP 503 caused a caught event-listener TypeError. Retain negative evidence,
+  broaden QA to caught errors, and isolate the pinned optional adapter under `.cache/`.
+- Adapter handles classifier failure/stale messages, frame-aligned smooth mouth,
+  reload cleanup and runtime-added head oscillation. Do not deploy it into production.
+- Raw float32 opacity overshoots up to a few ULPs are retained. Classify invalid numeric
+  opacity separately beyond eight float32 ULPs; no geometric/aesthetic threshold relaxed.
+- Separate RP acceptance from source, semantic, hidden, import, Core and visual gates.
+  Full runtime replay is exact; editable CMO3/CAN3 container bytes are not.
+- 59 Python + five JS tests, actual RP/pose QA and old golden browser regressions pass.
+  Stop after Phase 3; all generated projects, frames and transcripts remain ignored.

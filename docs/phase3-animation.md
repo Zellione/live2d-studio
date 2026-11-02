@@ -1,6 +1,6 @@
 # Girl2 animation authoring
 
-Work in progress: Phase 3, from accepted Phase 2.6 commit `addd895`.
+Completed Phase 3, from accepted Phase 2.6 commit `addd895`.
 The original `runs/phase2-6-oga-v2-build/character.psd2live` remains unchanged.
 
 `recipes/girl2-animation.json` is the reviewed MCP recipe for this character;
@@ -41,5 +41,7 @@ Connected authenticated MCP is the experimentally exercised route; the CLI needs
 Idle/Nod groups, and adds `sillytavern_settings.json`. PSD2Live still exported
 builtin motion files despite disabled presets; only selected references are used.
 No binary/texture is patched. All 23 packaged files reproduce exactly in a second
-packaging run. Optional `rp_animation` settings are ignored by upstream ST; their
+packaging run; full authoring replay reproduces 21/23, with only the additional
+CMO3/CAN3 editor containers differing. All runtime-consumed files match. Optional
+`rp_animation` settings are ignored by upstream ST; their
 isolated adapter is evaluated separately, not installed into production.

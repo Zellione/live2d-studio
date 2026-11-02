@@ -2,24 +2,29 @@
 
 A local, open-source-first pipeline that turns one or more character images into an animated Live2D avatar usable in the SillyTavern Live2D extension.
 
-**Status:** Phase 2.6 restores original pixels to individually deformable layers
-and improves neck/chest semantics. Girl2 preserves 99.89% of visible RGBA exactly;
-21 actual runtime poses demonstrate a limited animated prototype. Hair gaps and
-flat lids remain; two other inputs fail parsing. This is **not a production anime converter**.
+**Status:** Phase 3 delivers an expressive Girl2 RP prototype: seven facial
+presets, independent blinking, subtle idle, and actual SillyTavern assistant-event
+text-talk/emotion mappings. The complete RP gate passes with an **optional adapter
+tested only in an isolated ST copy**. Upstream has a demonstrated classifier-error
+fallback defect and adds unwanted head oscillation. Production ST is untouched.
 
-Read [Phase 2.6 results](docs/phase2-6-results.md),
-[quality gates](docs/phase2-6-quality.md) and
-[replay commands](backends/see-through/README.md#phase-26-source-preserving-replay-and-rig-qa).
-The deterministic baseline remains the default. `refine`, `readiness` and
-`review-poses` are independent steps; experimental `prepare-rig` guards are
-not recommended for the tested Girl2 export.
+Read [Phase 3 results](docs/phase3-results.md),
+[animation recipe](docs/phase3-animation.md) and
+[isolated RP integration](docs/phase3-sillytavern.md).
+The accepted local project/runtime is under `runs/phase3-final/`; visual gallery:
+`runs/phase3-review/index.html`. Text-driven mouth motion is not audio lipsync;
+classification tests use network mocks, not a newly installed classifier model.
 
-See [Phase 2 results](docs/phase2-results.md),
-[architecture and commands](docs/phase2-architecture.md),
-[artifact policy](docs/artifact-policy.md), [Phase 0](docs/compatibility.md) and
-[Phase 1](docs/phase1-results.md). The standalone MCP CLI requires a locally supplied
-token; the authenticated connected MCP route was exercised. Text-talk and emotion
-classification remain unvalidated.
+Source preservation from [Phase 2.6](docs/phase2-6-results.md) remains intact:
+99.89% exact visible RGBA in the refined layers, unchanged texture and runtime
+neutral. Hair gaps are reduced; simplified lids and subtle expression shapes remain.
+This is a character-specific prototype, **not a production anime converter**.
+
+The deterministic baseline remains the default; see [architecture/commands](docs/phase2-architecture.md),
+[artifact policy](docs/artifact-policy.md), [Phase 0](docs/compatibility.md),
+[Phase 1](docs/phase1-results.md) and [source replay](backends/see-through/README.md).
+Standalone MCP authoring needs a locally supplied token. The connected authenticated
+MCP route was exercised without reading profile secrets.
 
 ## Phase 2.5: evaluated neural backend
 
@@ -58,8 +63,8 @@ optional `uv sync --frozen --extra gpu` installs the pinned Torch/CUDA probe sta
 ## Continuing work
 
 Read [`AGENTS.md`](AGENTS.md), [`docs/HANDOVER.md`](docs/HANDOVER.md) and the phase
-results before continuing. Phase 2.6 stops at the documented evaluation; Phase 3 and
-production deployment require a new assignment.
+results before continuing. Work stops after Phase 3. Phase 4, general-purpose
+automation and production deployment require a new assignment.
 
 ## Project structure
 
