@@ -56,7 +56,7 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   inference on the 5090; read its results before generalizing to other inputs.
 - Keep MCP on loopback; tokens only from an explicitly provided environment.
   `mcp-check` is read-only. Never read profile secrets to close the live CLI auth gate.
-- Phase 2.5 is the current stopping point. Do not begin Phase 3, custom training
+- Phase 2.6 is the current stopping point. Do not begin Phase 3, custom training
   or production copying without a new user assignment.
 
 ## Phase 2.5 neural backend
@@ -72,3 +72,19 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Coverage, correct semantic assignment, reconstructed plausibility, import and
   rendered motion are separate gates. Girl2 passed a basic animation experiment;
   Wikipe-tan failed semantic quality. Retain both outcomes.
+
+## Phase 2.6 source fidelity and quality
+- Read `docs/phase2-6-results.md` and `docs/phase2-6-quality.md`. Frozen Phase 2.5
+  measurements stay unchanged; compare against them, never relabel them current.
+- `refine` reuses existing decomposition and optional source-matched SAM masks.
+  Observed masks prove copied RGBA; semantic ownership can still be uncertain.
+  A source sample must not appear in multiple observed layer masks.
+- `readiness` and `review-poses` cannot grant production readiness from part names
+  or moving vertices. Keep semantic, source, hidden, import, Core and visual gates
+  separate. Test combined head/blink/mouth poses in an isolated runtime.
+- `prepare-rig` guard bands remain experimental: Girl2 neutral equality passed,
+  but new hair fragments made its export unacceptable. Prefer the contour-corrected
+  source restoration without guards. Retain negative visual evidence.
+- Final tested Girl2 is a limited prototype with remaining hair gaps and flat lids.
+  Girl1/Wikipe-tan fail parsing; Boy1 fine beard/brow ownership is not rig-ready.
+  No Phase 3, custom training or production deployment is authorized yet.

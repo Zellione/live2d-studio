@@ -1,0 +1,1174 @@
+{
+  "ablation": {
+    "neck_and_ink": {
+      "background_false_positive_pixels": 47,
+      "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+      "correct_visible_semantic_pixels": 308820,
+      "foreground_pixels": 310930,
+      "groups": {
+        "clothing": {
+          "full_iou": 0.9960160267819949,
+          "visible_iou": 0.9960160267819949
+        },
+        "eyes_brows": {
+          "full_iou": 0.9191155492154066,
+          "visible_iou": 0.9488451668092387
+        },
+        "face_ears_nose": {
+          "full_iou": 0.833516139141335,
+          "visible_iou": 0.9689402997525234
+        },
+        "hair_accessories": {
+          "full_iou": 0.6345088222427453,
+          "visible_iou": 0.9883853423595086
+        },
+        "mouth": {
+          "full_iou": 0.9168831168831169,
+          "visible_iou": 0.9168831168831169
+        },
+        "neck": {
+          "full_iou": 0.8692721030897059,
+          "visible_iou": 0.9809217121851931
+        }
+      },
+      "mask_threshold": 127,
+      "mean_full_iou": 0.8615519595590507,
+      "mean_visible_iou": 0.9666652774619292,
+      "resampling": "nearest to original 1000x1000; square no crop",
+      "scope": "OGA Girl2 only; six independently reviewed coarse groups",
+      "unknown_or_missing_foreground_pixels": 356,
+      "visible_semantic_accuracy": 0.9932139066670955
+    },
+    "neck_without_ink": {
+      "background_false_positive_pixels": 47,
+      "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+      "correct_visible_semantic_pixels": 308493,
+      "foreground_pixels": 310930,
+      "groups": {
+        "clothing": {
+          "full_iou": 0.9960160267819949,
+          "visible_iou": 0.9960160267819949
+        },
+        "eyes_brows": {
+          "full_iou": 0.8753585771658061,
+          "visible_iou": 0.896504219045979
+        },
+        "face_ears_nose": {
+          "full_iou": 0.8334377815205045,
+          "visible_iou": 0.9600506245529081
+        },
+        "hair_accessories": {
+          "full_iou": 0.6345088222427453,
+          "visible_iou": 0.9883853423595086
+        },
+        "mouth": {
+          "full_iou": 0.90473061760841,
+          "visible_iou": 0.90473061760841
+        },
+        "neck": {
+          "full_iou": 0.8692721030897059,
+          "visible_iou": 0.9809217121851931
+        }
+      },
+      "mask_threshold": 127,
+      "mean_full_iou": 0.852220654734861,
+      "mean_visible_iou": 0.9544347570889989,
+      "resampling": "nearest to original 1000x1000; square no crop",
+      "scope": "OGA Girl2 only; six independently reviewed coarse groups",
+      "unknown_or_missing_foreground_pixels": 356,
+      "visible_semantic_accuracy": 0.9921622230083942
+    },
+    "preservation_only": {
+      "background_false_positive_pixels": 47,
+      "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+      "correct_visible_semantic_pixels": 280737,
+      "foreground_pixels": 310930,
+      "groups": {
+        "clothing": {
+          "full_iou": 0.822994505150639,
+          "visible_iou": 0.822994505150639
+        },
+        "eyes_brows": {
+          "full_iou": 0.8753585771658061,
+          "visible_iou": 0.896504219045979
+        },
+        "face_ears_nose": {
+          "full_iou": 0.8334377815205045,
+          "visible_iou": 0.9600506245529081
+        },
+        "hair_accessories": {
+          "full_iou": 0.6345088222427453,
+          "visible_iou": 0.9883853423595086
+        },
+        "mouth": {
+          "full_iou": 0.90473061760841,
+          "visible_iou": 0.90473061760841
+        },
+        "neck": {
+          "full_iou": 0.29103437981989155,
+          "visible_iou": 0.1377141815530441
+        }
+      },
+      "mask_threshold": 127,
+      "mean_full_iou": 0.7270107805846661,
+      "mean_visible_iou": 0.7850632483784148,
+      "resampling": "nearest to original 1000x1000; square no crop",
+      "scope": "OGA Girl2 only; six independently reviewed coarse groups",
+      "unknown_or_missing_foreground_pixels": 356,
+      "visible_semantic_accuracy": 0.9028945421799118
+    }
+  },
+  "algorithms": [
+    "native-owner-v2",
+    "connected skin neck extension",
+    "near-feature ink ownership"
+  ],
+  "baseline_exact_reproduction": true,
+  "benchmarks": {
+    "boy1": {
+      "after": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.9987201280664424,
+          "candidate_covered_pixels": 252046,
+          "composite_changed_foreground_pixels": 323,
+          "composite_rgb_mae": 0.0805566452298024,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 252369,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            1000,
+            1000
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 0.082065,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 0.3943140895943878,
+          "exact_edge_fraction": 0.9908966558181218,
+          "exact_fraction": 0.9987201280664424,
+          "exactly_preserved_pixels": 252046,
+          "foreground_pixels": 252369,
+          "rgb_mae": 0.0805566452298024,
+          "silhouette_iou": 0.9987201280664424,
+          "source_edge_pixels": 21201
+        },
+        "independent_semantics": {
+          "background_false_positive_pixels": 50,
+          "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+          "correct_visible_semantic_pixels": 247968,
+          "foreground_pixels": 252319,
+          "groups": {
+            "clothing": {
+              "full_iou": 0.9990711149219217,
+              "visible_iou": 0.9993760034319811
+            },
+            "eyes_brows": {
+              "full_iou": 0.8412730589904723,
+              "visible_iou": 0.9284413218839448
+            },
+            "face_ears_nose": {
+              "full_iou": 0.6933129994980889,
+              "visible_iou": 0.9666526233917749
+            },
+            "hair_accessories": {
+              "full_iou": 0.9218159139955255,
+              "visible_iou": 0.9218159139955255
+            },
+            "mouth": {
+              "full_iou": 0.9110776186887717,
+              "visible_iou": 0.9110776186887717
+            },
+            "neck": {
+              "full_iou": 0.662373539403442,
+              "visible_iou": 0.8150368427625827
+            }
+          },
+          "mask_threshold": 127,
+          "mean_full_iou": 0.8381540409163705,
+          "mean_visible_iou": 0.9237333873590967,
+          "resampling": "nearest to original 1000x1000; square no crop",
+          "scope": "Boy1 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+          "unknown_or_missing_foreground_pixels": 323,
+          "visible_semantic_accuracy": 0.982755955754422
+        }
+      },
+      "before": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.9921741576818072,
+          "candidate_covered_pixels": 250394,
+          "composite_changed_foreground_pixels": 251259,
+          "composite_rgb_mae": 13.387308531026658,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 252369,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            1000,
+            1000
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 0.66116,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 20.79402239610846,
+          "exact_edge_fraction": 0.003584736569029763,
+          "exact_fraction": 0.00439832150541469,
+          "exactly_preserved_pixels": 1110,
+          "foreground_pixels": 252369,
+          "rgb_mae": 13.387308531026658,
+          "silhouette_iou": 0.9908228211122583,
+          "source_edge_pixels": 21201
+        },
+        "independent_semantics": {
+          "background_false_positive_pixels": 454,
+          "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+          "correct_visible_semantic_pixels": 246212,
+          "foreground_pixels": 252319,
+          "groups": {
+            "clothing": {
+              "full_iou": 0.994195887186205,
+              "visible_iou": 0.9935268363872223
+            },
+            "eyes_brows": {
+              "full_iou": 0.8202886765602765,
+              "visible_iou": 0.9058977719528178
+            },
+            "face_ears_nose": {
+              "full_iou": 0.6555484402158998,
+              "visible_iou": 0.9578219868234078
+            },
+            "hair_accessories": {
+              "full_iou": 0.9084008697371022,
+              "visible_iou": 0.9084008697371022
+            },
+            "mouth": {
+              "full_iou": 0.898021308980213,
+              "visible_iou": 0.898021308980213
+            },
+            "neck": {
+              "full_iou": 0.6522591866188062,
+              "visible_iou": 0.7964739596311986
+            }
+          },
+          "mask_threshold": 127,
+          "mean_full_iou": 0.8214523948830837,
+          "mean_visible_iou": 0.9100237889186603,
+          "resampling": "nearest to original 1000x1000; square no crop",
+          "scope": "Boy1 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+          "unknown_or_missing_foreground_pixels": 1970,
+          "visible_semantic_accuracy": 0.9757965115587808
+        }
+      },
+      "defects": [
+        "beard attached to neck",
+        "hair fragment classified eyebrow",
+        "missing independently supported back head geometry; rig not attempted"
+      ],
+      "detail_reassigned_pixels": 202,
+      "gates": {
+        "hidden_reconstruction": "not-accepted",
+        "psd2live_import": "not-tested",
+        "runtime_geometry": "not-tested",
+        "semantic_decomposition": "accepted-coarse-only; fine beard/brow ownership rejected",
+        "source_preservation": "accepted-with-small-unassigned-fringe",
+        "visual_animation": "not-tested"
+      },
+      "manifest_sha256": "e2df6163c32499c8ef38efd79c596f591a660d91f0a72fcf21468b0ec1c5c3b6",
+      "neck_reassigned_pixels": 148,
+      "postprocess_seconds": 1.7552101430010225,
+      "production_ready": false,
+      "rights": "stevenburrow; CC0; https://opengameart.org/content/anime-girl-and-boy-portraits",
+      "small_component_flags": 0,
+      "source_sha256": "e846a1c5e54e2a918d51f46ecc0200b9cdb1784702f22f4c7cab865bf7151e5e",
+      "structural_semantics": {
+        "face_support_of_eyes": 1.0,
+        "reasons": [],
+        "sam_face_recall_candidate": 0.9563826891671203,
+        "status": "requires-review"
+      },
+      "uncertain_source_samples": 11712
+    },
+    "girl1": {
+      "after": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.9319890739533988,
+          "candidate_covered_pixels": 276030,
+          "composite_changed_foreground_pixels": 20143,
+          "composite_rgb_mae": 15.653755293921684,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 296173,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            1000,
+            1000
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 5.147282,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 4.835786637225829,
+          "exact_edge_fraction": 0.9841259979497375,
+          "exact_fraction": 0.9319890739533988,
+          "exactly_preserved_pixels": 276030,
+          "foreground_pixels": 296173,
+          "rgb_mae": 15.653755293921684,
+          "silhouette_iou": 0.9319890739533988,
+          "source_edge_pixels": 32191
+        },
+        "independent_semantics": {
+          "background_false_positive_pixels": 11,
+          "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+          "correct_visible_semantic_pixels": 244014,
+          "foreground_pixels": 296162,
+          "groups": {
+            "clothing": {
+              "full_iou": 0.9902188154149661,
+              "visible_iou": 0.9902188154149661
+            },
+            "eyes_brows": {
+              "full_iou": 0.8789930811129103,
+              "visible_iou": 0.9011797150298759
+            },
+            "face_ears_nose": {
+              "full_iou": 0.12784502091517821,
+              "visible_iou": 0.20015369938520247
+            },
+            "hair_accessories": {
+              "full_iou": 0.6464649444317436,
+              "visible_iou": 0.7872834869078823
+            },
+            "mouth": {
+              "full_iou": 0.32608695652173914,
+              "visible_iou": 0.32608695652173914
+            },
+            "neck": {
+              "full_iou": 0.3570162518411264,
+              "visible_iou": 0.2909136420525657
+            }
+          },
+          "mask_threshold": 127,
+          "mean_full_iou": 0.5544375117062773,
+          "mean_visible_iou": 0.5826393858853719,
+          "resampling": "nearest to original 1000x1000; square no crop",
+          "scope": "Girl1 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+          "unknown_or_missing_foreground_pixels": 20143,
+          "visible_semantic_accuracy": 0.8239206920536734
+        }
+      },
+      "before": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.9194288473290948,
+          "candidate_covered_pixels": 272310,
+          "composite_changed_foreground_pixels": 295331,
+          "composite_rgb_mae": 34.483927749434734,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 296173,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            1000,
+            1000
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 6.210711,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 32.48375803233661,
+          "exact_edge_fraction": 0.007175918735050169,
+          "exact_fraction": 0.0028429330155010754,
+          "exactly_preserved_pixels": 842,
+          "foreground_pixels": 296173,
+          "rgb_mae": 34.483927749434734,
+          "silhouette_iou": 0.918154360606224,
+          "source_edge_pixels": 32191
+        },
+        "independent_semantics": {
+          "background_false_positive_pixels": 411,
+          "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+          "correct_visible_semantic_pixels": 241246,
+          "foreground_pixels": 296162,
+          "groups": {
+            "clothing": {
+              "full_iou": 0.9896501038020337,
+              "visible_iou": 0.9896501038020337
+            },
+            "eyes_brows": {
+              "full_iou": 0.8782287822878229,
+              "visible_iou": 0.8994010136691752
+            },
+            "face_ears_nose": {
+              "full_iou": 0.12839811991869918,
+              "visible_iou": 0.19906514907439196
+            },
+            "hair_accessories": {
+              "full_iou": 0.6355380044711143,
+              "visible_iou": 0.7748751855350156
+            },
+            "mouth": {
+              "full_iou": 0.381294964028777,
+              "visible_iou": 0.381294964028777
+            },
+            "neck": {
+              "full_iou": 0.3422726705750281,
+              "visible_iou": 0.27633488465195416
+            }
+          },
+          "mask_threshold": 127,
+          "mean_full_iou": 0.5592304408472458,
+          "mean_visible_iou": 0.5867702167935579,
+          "resampling": "nearest to original 1000x1000; square no crop",
+          "scope": "Girl1 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+          "unknown_or_missing_foreground_pixels": 23859,
+          "visible_semantic_accuracy": 0.8145744558721241
+        }
+      },
+      "defects": [
+        "face assigned to back hair",
+        "missing chest",
+        "missing left iris; copied detail does not repair independent geometry"
+      ],
+      "detail_reassigned_pixels": 35,
+      "gates": {
+        "hidden_reconstruction": "not-accepted",
+        "psd2live_import": "not-tested",
+        "runtime_geometry": "not-tested",
+        "semantic_decomposition": "rejected",
+        "source_preservation": "rejected",
+        "visual_animation": "not-tested"
+      },
+      "manifest_sha256": "83873585e2d242476e291a63d7450dfc1b0aba952410bc362d8323d71b8b4113",
+      "neck_reassigned_pixels": 0,
+      "postprocess_seconds": 1.8852651350025553,
+      "production_ready": false,
+      "rights": "stevenburrow; CC0; https://opengameart.org/content/anime-girl-and-boy-portraits",
+      "small_component_flags": 3,
+      "source_sha256": "0912d6c050e023019e08ab14c0e5bbbd848f2ce2f5805f01118485ce8e7069ad",
+      "structural_semantics": {
+        "face_support_of_eyes": 0.03329714078899747,
+        "reasons": [
+          "Face surface does not support most eye geometry",
+          "Strong disagreement on visible face ownership"
+        ],
+        "sam_face_recall_candidate": 0.13745509548118737,
+        "status": "rejected"
+      },
+      "uncertain_source_samples": 277846
+    },
+    "oga": {
+      "after": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.9988552208041109,
+          "candidate_covered_pixels": 310621,
+          "composite_changed_foreground_pixels": 356,
+          "composite_rgb_mae": 0.055220589732788386,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 310977,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            1000,
+            1000
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 0.094113,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 0.15738675147425285,
+          "exact_edge_fraction": 0.9970272715522812,
+          "exact_fraction": 0.9988552208041109,
+          "exactly_preserved_pixels": 310621,
+          "foreground_pixels": 310977,
+          "rgb_mae": 0.055220589732788386,
+          "silhouette_iou": 0.9988552208041109,
+          "source_edge_pixels": 30948
+        },
+        "independent_semantics": {
+          "background_false_positive_pixels": 47,
+          "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+          "correct_visible_semantic_pixels": 308820,
+          "foreground_pixels": 310930,
+          "groups": {
+            "clothing": {
+              "full_iou": 0.9960160267819949,
+              "visible_iou": 0.9960160267819949
+            },
+            "eyes_brows": {
+              "full_iou": 0.9191155492154066,
+              "visible_iou": 0.9488451668092387
+            },
+            "face_ears_nose": {
+              "full_iou": 0.833516139141335,
+              "visible_iou": 0.9689402997525234
+            },
+            "hair_accessories": {
+              "full_iou": 0.6345088222427453,
+              "visible_iou": 0.9883853423595086
+            },
+            "mouth": {
+              "full_iou": 0.9168831168831169,
+              "visible_iou": 0.9168831168831169
+            },
+            "neck": {
+              "full_iou": 0.8692721030897059,
+              "visible_iou": 0.9809217121851931
+            }
+          },
+          "mask_threshold": 127,
+          "mean_full_iou": 0.8615519595590507,
+          "mean_visible_iou": 0.9666652774619292,
+          "resampling": "nearest to original 1000x1000; square no crop",
+          "scope": "Girl2 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+          "unknown_or_missing_foreground_pixels": 356,
+          "visible_semantic_accuracy": 0.9932139066670955
+        }
+      },
+      "before": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.993179559903144,
+          "candidate_covered_pixels": 308856,
+          "composite_changed_foreground_pixels": 309662,
+          "composite_rgb_mae": 8.283000564886363,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 310977,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            1000,
+            1000
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 0.935299,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 22.261506167864745,
+          "exact_edge_fraction": 0.005073025720563526,
+          "exact_fraction": 0.004228608546612772,
+          "exactly_preserved_pixels": 1315,
+          "foreground_pixels": 310977,
+          "rgb_mae": 8.283000564886363,
+          "silhouette_iou": 0.9903592749097484,
+          "source_edge_pixels": 30948
+        },
+        "independent_semantics": {
+          "background_false_positive_pixels": 776,
+          "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+          "correct_visible_semantic_pixels": 279003,
+          "foreground_pixels": 310930,
+          "groups": {
+            "clothing": {
+              "full_iou": 0.8162271197237193,
+              "visible_iou": 0.8162271197237193
+            },
+            "eyes_brows": {
+              "full_iou": 0.870194353809051,
+              "visible_iou": 0.9025817555938038
+            },
+            "face_ears_nose": {
+              "full_iou": 0.7245315711689062,
+              "visible_iou": 0.9573336258191889
+            },
+            "hair_accessories": {
+              "full_iou": 0.6264072642359788,
+              "visible_iou": 0.9765793646245248
+            },
+            "mouth": {
+              "full_iou": 0.9078341013824884,
+              "visible_iou": 0.9078341013824884
+            },
+            "neck": {
+              "full_iou": 0.2910406924684111,
+              "visible_iou": 0.13755889952880376
+            }
+          },
+          "mask_threshold": 127,
+          "mean_full_iou": 0.7060391837980925,
+          "mean_visible_iou": 0.7830191444454214,
+          "resampling": "nearest to original 1000x1000; square no crop",
+          "scope": "Girl2 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+          "unknown_or_missing_foreground_pixels": 2119,
+          "visible_semantic_accuracy": 0.897317724246615
+        }
+      },
+      "defects": [
+        "thin hair gaps at combined poses",
+        "flat intermediate lids",
+        "brows through bangs",
+        "hidden anatomy not independently known"
+      ],
+      "detail_reassigned_pixels": 457,
+      "gates": {
+        "hidden_reconstruction": "reviewed-incomplete",
+        "psd2live_import": "accepted",
+        "runtime_geometry": "accepted-numeric-with-triangle-warnings",
+        "semantic_decomposition": "accepted-coarse-benchmark",
+        "source_preservation": "accepted-with-small-unassigned-fringe",
+        "visual_animation": "accepted-limited-prototype; high-quality gate not met"
+      },
+      "manifest_sha256": "996d83f42a1c3e19ed2fa4f9e35a9a91678b371a85b80bff520b196700ba3040",
+      "neck_reassigned_pixels": 27757,
+      "postprocess_seconds": 1.9528302340004302,
+      "production_ready": false,
+      "rights": "stevenburrow; CC0; https://opengameart.org/content/anime-girl-and-boy-portraits",
+      "small_component_flags": 0,
+      "source_sha256": "09011ad707e0325c345fdc39da23d9b1a1640c3327c1ba2dfe192001da736f41",
+      "structural_semantics": {
+        "face_support_of_eyes": 1.0,
+        "reasons": [],
+        "sam_face_recall_candidate": 0.9475705507510241,
+        "status": "requires-review"
+      },
+      "uncertain_source_samples": 60213
+    },
+    "wikipe": {
+      "after": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.7715941781005037,
+          "candidate_covered_pixels": 144302,
+          "composite_changed_foreground_pixels": 42716,
+          "composite_rgb_mae": 35.0603239616864,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 187018,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            440,
+            440
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 56.26332644628099,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 20.14957471859261,
+          "exact_edge_fraction": 0.7341760640232812,
+          "exact_fraction": 0.7715941781005037,
+          "exactly_preserved_pixels": 144302,
+          "foreground_pixels": 187018,
+          "rgb_mae": 35.0603239616864,
+          "silhouette_iou": 0.7715941781005037,
+          "source_edge_pixels": 32988
+        }
+      },
+      "before": {
+        "coverage": {
+          "alpha_threshold": 127,
+          "candidate_coverage_fraction": 0.7670812435166668,
+          "candidate_covered_pixels": 143458,
+          "composite_changed_foreground_pixels": 180898,
+          "composite_rgb_mae": 52.02027255843466,
+          "correct_semantic_fraction": null,
+          "foreground_pixels": 187018,
+          "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+          "original_resolution": [
+            440,
+            440
+          ]
+        },
+        "fidelity": {
+          "alpha_mae": 57.48057334710744,
+          "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+          "edge_magnitude_mae": 37.74918655117432,
+          "exact_edge_fraction": 0.005244331271977689,
+          "exact_fraction": 0.032724122811707966,
+          "exactly_preserved_pixels": 6120,
+          "foreground_pixels": 187018,
+          "rgb_mae": 52.02027255843466,
+          "silhouette_iou": 0.7670758964377761,
+          "source_edge_pixels": 32988
+        }
+      },
+      "defects": [
+        "cropped/tilted face assigned back hair",
+        "padding did not restore face geometry"
+      ],
+      "detail_reassigned_pixels": 32,
+      "gates": {
+        "hidden_reconstruction": "not-accepted",
+        "psd2live_import": "not-tested",
+        "runtime_geometry": "not-tested",
+        "semantic_decomposition": "rejected",
+        "source_preservation": "rejected",
+        "visual_animation": "not-tested"
+      },
+      "manifest_sha256": "1ef667a4a6df4ba9d412a78b24720f89068a2f838cef22d70914576c224ed977",
+      "neck_reassigned_pixels": 0,
+      "postprocess_seconds": 0.9393917769994005,
+      "production_ready": false,
+      "rights": "Kasuga; CC-BY-SA-3.0; https://commons.wikimedia.org/wiki/File:Wikipe-tan_face.png",
+      "small_component_flags": 2,
+      "source_sha256": "6035d94f0d446f87558fea4af285a014a5bc4b517eb605a1b6a2f4c88da35df1",
+      "structural_semantics": {
+        "face_support_of_eyes": 0.014194783980172366,
+        "reasons": [
+          "Face surface does not support most eye geometry",
+          "Strong disagreement on visible face ownership"
+        ],
+        "sam_face_recall_candidate": 0.00889073942540841,
+        "status": "rejected"
+      },
+      "uncertain_source_samples": 144302
+    }
+  },
+  "gpu_runs": {
+    "boy1-neural": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "bfloat16",
+      "gpu_samples": 218,
+      "input_sha256": "e846a1c5e54e2a918d51f46ecc0200b9cdb1784702f22f4c7cab865bf7151e5e",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 20072,
+      "sampled_gpu_utilization_mean": 91.56880733944953,
+      "sampled_gpu_utilization_peak": 100,
+      "seconds": 116.9707340169989,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "layerdiff",
+          "peak_allocated_bytes": 12722573312,
+          "peak_reserved_bytes": 17202937856,
+          "seconds": 108.68307678200108
+        },
+        {
+          "name": "marigold",
+          "peak_allocated_bytes": 6391918592,
+          "peak_reserved_bytes": 7197425664,
+          "seconds": 6.847728086999268
+        },
+        {
+          "name": "export",
+          "peak_allocated_bytes": 8519680,
+          "peak_reserved_bytes": 20971520,
+          "seconds": 1.008025920998989
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    },
+    "boy1-sam": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "float32",
+      "gpu_samples": 4,
+      "input_sha256": "e846a1c5e54e2a918d51f46ecc0200b9cdb1784702f22f4c7cab865bf7151e5e",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 6292,
+      "sampled_gpu_utilization_mean": 20.25,
+      "sampled_gpu_utilization_peak": 58,
+      "seconds": 2.071133440000267,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "sam",
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200,
+          "seconds": 2.0702216690006026
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    },
+    "girl1-neural": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "bfloat16",
+      "gpu_samples": 217,
+      "input_sha256": "0912d6c050e023019e08ab14c0e5bbbd848f2ce2f5805f01118485ce8e7069ad",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 20072,
+      "sampled_gpu_utilization_mean": 90.84331797235023,
+      "sampled_gpu_utilization_peak": 100,
+      "seconds": 116.53108800200062,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "layerdiff",
+          "peak_allocated_bytes": 12722573312,
+          "peak_reserved_bytes": 17202937856,
+          "seconds": 108.13925253000161
+        },
+        {
+          "name": "marigold",
+          "peak_allocated_bytes": 6391918592,
+          "peak_reserved_bytes": 7197425664,
+          "seconds": 6.8826322040004015
+        },
+        {
+          "name": "export",
+          "peak_allocated_bytes": 8519680,
+          "peak_reserved_bytes": 20971520,
+          "seconds": 1.0253776550016482
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    },
+    "girl1-sam": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "float32",
+      "gpu_samples": 4,
+      "input_sha256": "0912d6c050e023019e08ab14c0e5bbbd848f2ce2f5805f01118485ce8e7069ad",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 6294,
+      "sampled_gpu_utilization_mean": 7.0,
+      "sampled_gpu_utilization_peak": 7,
+      "seconds": 2.1257067740007187,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "sam",
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200,
+          "seconds": 2.121309088999624
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    },
+    "wikipe-padding-neural": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "bfloat16",
+      "gpu_samples": 215,
+      "input_sha256": "360a049bbc94ae37db87fea19bb5f1ec53db7a5f7ec251ddf3ae625f207d2ae2",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 20232,
+      "sampled_gpu_utilization_mean": 89.7860465116279,
+      "sampled_gpu_utilization_peak": 100,
+      "seconds": 116.12693611299983,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "layerdiff",
+          "peak_allocated_bytes": 12722573312,
+          "peak_reserved_bytes": 17202937856,
+          "seconds": 106.87292157699994
+        },
+        {
+          "name": "marigold",
+          "peak_allocated_bytes": 6391918592,
+          "peak_reserved_bytes": 7197425664,
+          "seconds": 7.722907474999374
+        },
+        {
+          "name": "export",
+          "peak_allocated_bytes": 8519680,
+          "peak_reserved_bytes": 20971520,
+          "seconds": 0.7993673000000854
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    },
+    "wikipe-padding-sam": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "float32",
+      "gpu_samples": 5,
+      "input_sha256": "360a049bbc94ae37db87fea19bb5f1ec53db7a5f7ec251ddf3ae625f207d2ae2",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 8953,
+      "sampled_gpu_utilization_mean": 16.4,
+      "sampled_gpu_utilization_peak": 54,
+      "seconds": 2.3776662059990485,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "sam",
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200,
+          "seconds": 2.376712575000056
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    }
+  },
+  "guard_experiment": {
+    "decision": "rejected for recommended export; new hair fragments",
+    "generated_guard_pixels": {
+      "st-00-back_hair-none": 2227,
+      "st-02-neck-none": 2725,
+      "st-05-topwear-none": 0,
+      "st-07-face-none": 1076
+    },
+    "hidden_reconstruction": "requires-review",
+    "neutral_pixel_changes": 0,
+    "production_ready": false
+  },
+  "main_dependencies_unchanged": true,
+  "neural_source_unchanged": true,
+  "padding_experiment": {
+    "decision": "rejected; padding cannot recover missing source anatomy",
+    "fidelity": {
+      "alpha_mae": 9.01573691460055,
+      "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+      "edge_magnitude_mae": 10.789845512146153,
+      "exact_edge_fraction": 0.9189079173087547,
+      "exact_fraction": 0.9176496380027591,
+      "exactly_preserved_pixels": 171617,
+      "foreground_pixels": 187018,
+      "rgb_mae": 14.825622845572797,
+      "silhouette_iou": 0.9176496380027591,
+      "source_edge_pixels": 34393
+    },
+    "gates": {
+      "hidden_reconstruction": "requires-review",
+      "psd2live_import": "not-tested",
+      "runtime_geometry": "not-tested",
+      "semantic_decomposition": "rejected",
+      "source_preservation": "requires-review",
+      "visual_animation": "not-tested"
+    },
+    "neck_reassigned_pixels": 0,
+    "production_ready": false,
+    "small_components": [
+      {
+        "action": "retained-uncertain",
+        "border": false,
+        "layer": "st-00-back_hair-none",
+        "pixels": 1,
+        "reason": "small relative component; may be legitimate ink/accessory"
+      }
+    ],
+    "source_samples_copied": 171617,
+    "structural_semantics": {
+      "face_support_of_eyes": 0.0,
+      "reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership"
+      ],
+      "sam_face_recall_candidate": 0.0,
+      "status": "rejected"
+    },
+    "uncertain_copied_samples": 171617
+  },
+  "phase25_reference_sha256": "678f5b762afb3e71468422372694f5bc0e11761893c460fb59b9a4c73a282b0b",
+  "recommendation": "Retain optional source-preserving postprocessing and reviewed Girl2 prototype; no production-ready character or default neural promotion.",
+  "regression": {
+    "browser": {
+      "phase0": "pass",
+      "phase1": "pass"
+    },
+    "isolation": {
+      "changed_files": [],
+      "checked_files": 137
+    },
+    "synthetic": {
+      "layers": {
+        "eyebrow_left": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "eyebrow_right": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "eyelash_left": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "eyelash_right": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "eyewhite_left": {
+          "full_iou": 0.9293785310734464,
+          "visible_iou": 1.0
+        },
+        "eyewhite_right": {
+          "full_iou": 0.9293785310734464,
+          "visible_iou": 1.0
+        },
+        "face": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "irides_left": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "irides_right": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "mouth_open": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "neck": {
+          "full_iou": 0.31521739130434784,
+          "visible_iou": 1.0
+        },
+        "nose": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        },
+        "topwear": {
+          "full_iou": 1.0,
+          "visible_iou": 1.0
+        }
+      },
+      "mean_full_iou": 0.9364595733424032,
+      "mean_visible_iou": 1.0,
+      "scope": "synthetic-only"
+    },
+    "unit_tests": 51
+  },
+  "render_comparison": {
+    "guards_rejected": {
+      "control_noise": 0,
+      "expanded_triangles": 0,
+      "invalid_numeric_or_opacity": 0,
+      "max_detached_small_pixels": 42,
+      "max_hole_pixels": 405,
+      "max_triangle_flips": 24,
+      "network": {
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "neutral_hole_pixels": 156,
+      "poses": 21,
+      "status": "pass",
+      "warning": "Counts are candidates, not artistic scores; intended blink folds can flip triangles."
+    },
+    "initial_restore": {
+      "control_noise": 0,
+      "expanded_triangles": 2,
+      "invalid_numeric_or_opacity": 0,
+      "max_detached_small_pixels": 3,
+      "max_hole_pixels": 509,
+      "max_triangle_flips": 18,
+      "network": {
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "neutral_hole_pixels": 163,
+      "poses": 21,
+      "status": "pass",
+      "warning": "Counts are candidates, not artistic scores; intended blink folds can flip triangles."
+    },
+    "phase25": {
+      "control_noise": 0,
+      "expanded_triangles": 0,
+      "invalid_numeric_or_opacity": 0,
+      "max_detached_small_pixels": 1,
+      "max_hole_pixels": 292,
+      "max_triangle_flips": 30,
+      "network": {
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "neutral_hole_pixels": 163,
+      "poses": 21,
+      "status": "pass",
+      "warning": "Counts are candidates, not artistic scores; intended blink folds can flip triangles."
+    },
+    "recommended": {
+      "control_noise": 0,
+      "expanded_triangles": 0,
+      "invalid_numeric_or_opacity": 0,
+      "max_detached_small_pixels": 3,
+      "max_hole_pixels": 502,
+      "max_triangle_flips": 24,
+      "network": {
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "neutral_hole_pixels": 163,
+      "poses": 21,
+      "status": "pass",
+      "warning": "Counts are candidates, not artistic scores; intended blink folds can flip triangles."
+    }
+  },
+  "rig_import": {
+    "animation_tested": false,
+    "deformers": 28,
+    "imported_layers": 21,
+    "input_layers": 19,
+    "meshes": 24,
+    "parameter_count": 20,
+    "status": "pass"
+  },
+  "rig_import_scope": "animation_tested=false is import-only; actual animation recorded in render_comparison and separate visual review.",
+  "schema_version": 1,
+  "scope": "Four images, three CC0 characters from one artist; no broad generalization"
+}

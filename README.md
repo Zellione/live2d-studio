@@ -2,10 +2,17 @@
 
 A local, open-source-first pipeline that turns one or more character images into an animated Live2D avatar usable in the SillyTavern Live2D extension.
 
-**Status:** Phase 2.5 evaluates See-through locally alongside the deterministic
-baseline. A licensed CC0 portrait passes image → neural layers → PSD2Live →
-isolated SillyTavern with visible blink, mouth and head movement. Cropped Wikipe-tan
-fails semantic quality. This is **not a production anime converter**.
+**Status:** Phase 2.6 restores original pixels to individually deformable layers
+and improves neck/chest semantics. Girl2 preserves 99.89% of visible RGBA exactly;
+21 actual runtime poses demonstrate a limited animated prototype. Hair gaps and
+flat lids remain; two other inputs fail parsing. This is **not a production anime converter**.
+
+Read [Phase 2.6 results](docs/phase2-6-results.md),
+[quality gates](docs/phase2-6-quality.md) and
+[replay commands](backends/see-through/README.md#phase-26-source-preserving-replay-and-rig-qa).
+The deterministic baseline remains the default. `refine`, `readiness` and
+`review-poses` are independent steps; experimental `prepare-rig` guards are
+not recommended for the tested Girl2 export.
 
 See [Phase 2 results](docs/phase2-results.md),
 [architecture and commands](docs/phase2-architecture.md),
@@ -51,7 +58,7 @@ optional `uv sync --frozen --extra gpu` installs the pinned Torch/CUDA probe sta
 ## Continuing work
 
 Read [`AGENTS.md`](AGENTS.md), [`docs/HANDOVER.md`](docs/HANDOVER.md) and the phase
-results before continuing. Phase 2.5 stops at the documented evaluation; Phase 3 and
+results before continuing. Phase 2.6 stops at the documented evaluation; Phase 3 and
 production deployment require a new assignment.
 
 ## Project structure

@@ -1,6 +1,32 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 2.5 (2026-11-02)
+## Current state after Phase 2.6 (2026-11-02)
+
+Read [Phase 2.6 results](phase2-6-results.md), [quality contract](phase2-6-quality.md)
+and the [replay guide](../backends/see-through/README.md).
+
+- Historical Phase 2.5 metrics reproduced exactly before changes and left intact.
+- `refine` restores each source sample once, preserving generated hidden surfaces;
+  uncertainty remains separate from copy provenance. Main/neural locks unchanged.
+- Girl2 visible RGB MAE 8.283 → 0.055, 99.89% exact pixels; neck IoU 0.1376 →
+  0.9809, six-class mean 0.7830 → 0.9667. No GT enters inference/refinement.
+- Actual motion caught doubled contours in the first attempt. Bounded nearby ink
+  ownership fixes them. Final recommended project: `runs/phase2-6-oga-v2-build/`;
+  replay-identical layers: `runs/phase2-6-oga-release/`.
+- 21 single/combined poses pass actual isolated ST/Core checks; limited prototype
+  review accepted, unrestricted quality gate unmet (hair gaps, flat lids).
+- Guard-band `prepare-rig` experiment is visually rejected: fewer holes but new
+  detached hair fragments. Do not promote this optional experiment automatically.
+- Added CC0 Girl1/Boy1 from existing XCF; same artist, limited style variety.
+  Girl1 and Wikipe-tan rejected; Boy1 fine beard/brow ownership blocks rig acceptance.
+  Padding did not solve Wikipe-tan. All failures remain in local evidence.
+- 51 tests; synthetic visible IoU 1.0/full 0.9364596; Phase 0/1 browser regressions
+  pass. Four exact manifest replays. Golden fixtures, models and production ST
+  unchanged. Test server/browser stopped; editor reopened recommended saved rig.
+- Stop after Phase 2.6. Next work requires new authorization; no production copying,
+  Phase 3 expansion or custom training has been started.
+
+## Historical state after Phase 2.5 (2026-11-02)
 
 Read [Phase 2.5 results](phase2-5-results.md) and the
 [isolated worker guide](../backends/see-through/README.md).

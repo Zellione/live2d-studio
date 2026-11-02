@@ -108,3 +108,55 @@ profile paths. Run `scripts/cdp_smoke.mjs` against loopback and
 `scripts/phase2_5_browser_scenario.js`. The scenario records controlled eye,
 mouth and head poses; its automated `pass` means changes/resources/reload passed,
 not that an artist approved the deformation. Inspect the saved frames separately.
+
+## Phase 2.6: source-preserving replay and rig QA
+
+Reuse an existing imported bridge; no model reload is needed. All outputs must
+be fresh. Existing SAM masks must have the identical original source hash.
+
+```bash
+uv run --frozen live2d-studio refine \
+  --project runs/phase2-5-oga-layers --sam runs/phase2-5-oga-sam \
+  --output runs/oga-restored-new
+uv run --frozen live2d-studio readiness \
+  --project runs/oga-restored-new --output runs/oga-restored-new/readiness.json
+uv run --frozen live2d-studio inspect --project runs/oga-restored-new
+uv run --frozen python scripts/evaluate_oga.py \
+  --project runs/oga-restored-new --truth runs/phase2-5-oga-ground-truth \
+  --definition benchmarks/oga-oga.json --output runs/oga-restored-new/evaluation.json
+```
+
+Use `--no-neck-repair` / `--no-detail-repair` for independent ablation. Source
+provenance and uncertain semantic ownership are distinct. Visible samples are
+copied only once; hidden generated surfaces remain underneath. `rig_ready` stays
+false. The [results](../../docs/phase2-6-results.md) explain both the improvement
+and the failed characters. The original raster is neither edited nor overlaid
+as a non-deformable layer.
+
+To extract additional existing CC0 characters, set `OGA_GROUP=Girl1` or `Boy1`
+in the GIMP command above, with fresh output paths. Review source layers and use
+the corresponding `benchmarks/oga-girl1.json` / `oga-boy1.json` **only for evaluation**.
+The truth-preparation command now records the selected group correctly. The same
+collection is not a broad independent-style benchmark.
+
+For actual animation repeat the reviewed connected-MCP recipe above. Copy only
+the fresh runtime into the disposable server's `assets/live2d/phase2-6` directory.
+Use `scripts/phase2_6_browser_scenario.js` with the existing CDP driver and URL
+`http://127.0.0.1:8766/?qaAsset=phase2-6`; the same script accepts `phase2-5` for
+historical runtime comparison and `phase2-6-v2` etc. for fresh experimental assets.
+It measures ±15° axes and combined eye/mouth/head poses. Then:
+
+```bash
+uv run --frozen live2d-studio review-poses \
+  --frames runs/NEW-BROWSER-EVIDENCE --output runs/NEW-POSE-REVIEW
+```
+
+Inspect `index.html` / `poses.png` and `quality.json`. Render/load success is not
+visual acceptance. The Phase 2.6 recommended build is `runs/phase2-6-oga-v2-build`;
+the final replayed layers are `runs/phase2-6-oga-release` (identical manifest).
+
+Optional `prepare-rig --project ... --output ...` tests separately marked small
+hidden guard bands. **Experimental and not recommended for the tested Girl2**:
+it preserved neutral pixels but introduced hair fragments under motion. No custom
+blink/mouth alternatives are fabricated; the tested rig uses PSD2Live's procedural
+ones. Do not relax automatic build gates based on generated part names.

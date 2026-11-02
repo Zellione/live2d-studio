@@ -105,3 +105,22 @@
   separately from high-quality rig acceptance.
 - Full results, actual timing/VRAM, visual failures and repeatability evidence:
   [Phase 2.5](phase2-5-results.md). Stop here; no training or production deployment.
+
+## Phase 2.6 — Preserve source ownership and judge actual motion (2026-11-02)
+
+- Freeze/recompute Phase 2.5 metrics before changes. Keep baseline, golden assets,
+  upstream/model pins and both dependency locks unchanged.
+- Restore native source samples to one deformable layer each. Exact source
+  provenance and uncertain semantic ownership are separate properties.
+- Repair connected skin from face/neck agreement and source colours, never XCF
+  GT or fixed benchmark coordinates. GT remains evaluation-only.
+- Actual blinking exposed static source outlines on the face. Nearby ink transfer
+  fixes this; lower neutral RGB error alone would have missed the regression.
+- Evaluate four images, including two additional CC0 characters from the same XCF.
+  Reject face/back-hair failures even when colour restoration looks recognizable.
+- Keep guard-band filling experimental and reject its Girl2 export: neutral
+  equality and fewer holes did not justify new visible hair fragments.
+- Retain six separate quality gates, 21-pose actual runtime evidence and a limited
+  prototype acceptance. Hair gaps and flat lids still block unrestricted quality.
+- No new weights, training, manual painting or production ST changes. Stop at 2.6;
+  [results](phase2-6-results.md) record improvements and measured regressions.
