@@ -75,7 +75,7 @@ class Operations:
         state = context['data']
         request = dict(fields, state=state['state'], project_id=state.get('project_id'),
                        request_id='phase2-'+str(uuid.uuid4()))
-        response = self.client.tool('workspace_call', {'operation':name,'request':request,'wait_ms':20000})
+        response = self.client.tool('workspace_call', {'operation':name,'request':request})
         entry = dict(operation=name, request=request, result=response)
         self.log.append(entry)
         write_json(self.output/'mcp-transcript.json', self.log)
