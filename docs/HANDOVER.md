@@ -1,6 +1,33 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 4A (2026-11-02)
+## Current state after Phase 4A.1 read-only audit (2026-11-02)
+
+Read [production audit and concrete plan](phase4a1-production-audit.md).
+Started from `f1c7e39`; no production files/settings, services, package or adapter
+were changed. No production browser/API session, chat or credential-store access.
+
+- Installed ST/extension revisions, all 11 compatibility pins and 729 public code
+  hashes match Phase 4A. Actual installed Core 5.0.0 accepts Girl2 MOC v5/24 drawables.
+- No global or character-specific Live2D assets, saved model mappings or Live2D
+  preferences. Proposed destination: `data/default-user/assets/live2d/girl2-phase3-portrait-v1`.
+- **Production expressions API is 2 (LLM).** This Live2D revision falls back to joy
+  (Girl2 happy); the existing adapter falls back to neutral. Neither calls the LLM
+  classifier. Preserve the preference; full automatic-emotion readiness is blocked.
+- `/data` ext4 and `/home` Btrfs are different filesystems. Production transaction
+  staging/backups/journal must live in a private sidecar on the target filesystem.
+  The plan also requires controller-first publication and stronger directory fsync.
+- `audit-production` is read-only, projects settings without copying secrets/custom
+  fields, and writes reports exclusively to new project `runs/` files. Local detailed
+  report: `runs/phase4a1-audit/report-complete.json`. Proposed adapter bytes stay in that run.
+- 82 Python + five JS controller tests and two exact-source synthetic behavior audits
+  pass. Existing deployment/rollback/adapter implementations and restrictions unchanged.
+- Future production command examples are explicitly proposed interfaces, not currently
+  implemented commands. Do not use an isolated marker or ad-hoc copy as a bypass.
+- Stop after the audit. Await explicit authorization for transaction implementation,
+  model-only versus optional adapter, maintenance/character activation, and any separate
+  classifier/provider changes or real production validation. Phase 4B remains unassigned.
+
+## Historical state after Phase 4A (2026-11-02)
 
 Read [results](phase4a-results.md), [deployment/recovery](phase4a-deployment.md) and
 [benchmark](benchmarks/phase4a.json). Started from `a106c5f`; Phase 3 sources unchanged.

@@ -189,3 +189,30 @@
 - Exact neutral canvas equality and visual review retain Phase 3's limited prototype
   acceptance. All 730 production hashes unchanged. Stop after Phase 4A; see
   [results](phase4a-results.md) for evidence and remaining production/Phase 4B work.
+
+
+## Phase 4A.1 — Read-only production audit (2026-11-02)
+
+- User authorized an audit from `f1c7e39`, explicitly excluding production changes,
+  service actions, chats and credentials. Add only a read-only audit CLI and tests.
+- Match all 11 compatibility pins and 729 prior public code hashes; probe actual
+  Core again. Preserve Phase 4A browser evidence as inherited, not a new session.
+- Project `/data` ext4 and production `/home` Btrfs differ. Design a private
+  target-filesystem transaction sidecar outside served paths and both Git trees.
+  Existing project-local same-filesystem/isolated restrictions stay unchanged.
+- Identify production requirements beyond Phase 4A: publish the controller before
+  patched imports; flush nested directories and both rename parents; retain durable
+  target-side recovery when the project filesystem is unavailable. No installer added.
+- Stream only allowed settings fields and reduce model/character records to counts.
+  No saved Live2D models/settings exist, but the existing expression provider is LLM
+  (`api=2`). Exact-source synthetic tests prove joy/neutral fallback without classifier
+  calls. Package/Core compatibility does not establish production emotion inference.
+- Preserve the provider and all existing settings. Exact-source preset tests confirm
+  new entries initialize while existing/partial entries remain untouched. A later
+  activation must use an approved per-key delta, never wholesale settings replacement.
+- [Audit](phase4a1-production-audit.md) records 17 model-file creations, optional one
+  controller creation/one extension replacement/one backup, paths/hashes, transaction
+  scaffolding and recovery. Proposed installation commands are explicitly unimplemented.
+- 82 Python + five JS controller regressions and two source-behavior audits pass.
+  Stop and request explicit authorization before implementation/deployment, classifier
+  changes, real production validation or service maintenance. Phase 4B remains unassigned.

@@ -133,3 +133,20 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   snapshots, browser data or backups enter Git. Local review: `runs/phase4a-review-final/`.
 - Stop after Phase 4A. No production installation, Phase 4B automation or training
   is authorized. Production requires separate explicit authorization and implementation.
+
+
+## Phase 4A.1 production audit
+- Read `docs/phase4a1-production-audit.md` before any production planning. Audit from
+  `f1c7e39` was production-read-only; no production execution is authorized.
+- `audit-production` may inspect code, Live2D asset trees and its restricted settings
+  projection. Never dump/copy raw settings, read chats/cards/credentials, call production
+  HTTP endpoints, or stop/restart services to complete this audit.
+- Production expressions `api=2` is unsupported by the installed Live2D classifier
+  path: upstream joy fallback, current adapter neutral fallback. Do not change the
+  user's provider or promise full automatic emotions from package compatibility.
+- Project ext4 and target Btrfs differ. The current installer remains isolated-only.
+  Future target-side transactions need explicit authorization and implementation;
+  preserve the document's controller-first order and durability/recovery requirements.
+- No audit `--execute`, production override or retagging production as a test copy.
+  Proposed production commands in the audit are unimplemented design contracts.
+- Stop here pending explicit user authorization. No Phase 4B or training assignment.

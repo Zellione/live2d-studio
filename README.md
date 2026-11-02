@@ -8,6 +8,10 @@ Production deployment is disabled. Real message, expression, lifecycle and rollb
 tests pass with the optional pinned adapter; upstream classifier-fallback failure
 remains documented.
 
+The [Phase 4A.1 production audit](docs/phase4a1-production-audit.md) confirms runtime
+compatibility but identifies separate filesystems and an unsupported existing LLM
+classification preference. Production execution remains unimplemented and unauthorized.
+
 Read [Phase 4A results](docs/phase4a-results.md) and the
 [deployment/recovery guide](docs/phase4a-deployment.md). Run the complete isolated
 scenario with a fresh name:
