@@ -176,7 +176,8 @@ Offline-Validierung des gespeicherten Bundles aus dem Projektroot:
 
 ```bash
 export UV_CACHE_DIR="$PWD/.cache/uv"
-uv run --no-project --no-managed-python --offline python -m unittest discover -s tests -v
+# Seit Phase 2 einmal zuvor: uv sync --frozen (projektlokale Bildpakete)
+uv run --frozen --offline python -m unittest discover -s tests -v
 uv run --no-project --no-managed-python --offline python scripts/validate_bundle.py \
   tests/fixtures/phase1/final/runtime/Generated_artwork.model3.json
 node scripts/probe_rig.cjs \
@@ -241,7 +242,10 @@ Frühere Ergebnisse unter `st-browser/` und `st-browser-final/` sind Vorläufe;
 maßgeblich ist `st-browser-acceptance/`. Ein Zwischenlauf scheiterte am bereits
 beendeten Testserver; der erneut gestartete Server bestand die Abnahme.
 
-## Konkreter Architekturvorschlag für Phase 2 — noch nicht begonnen
+## Historischer Architekturvorschlag für Phase 2
+
+Dieser Vorschlag beschreibt den Stand am Ende von Phase 1. Den tatsächlich
+umgesetzten Umfang und neue Messungen dokumentieren [Phase-2-Ergebnisse](phase2-results.md).
 
 Eine lokale Python-Orchestrierung mit uv, unveränderlichen Eingaben und einem
 Manifest pro Arbeitsschritt. Jeder Worker erhält Dateien und eine versionierte

@@ -46,12 +46,13 @@ try {
     }
     result.result.value.frames=Object.keys(frames);
   }
-  if(['sillytavern-extension','phase1-animation'].includes(result.result.value?.stage)) {
+  if(['sillytavern-extension','phase1-animation','phase2-basic'].includes(result.result.value?.stage)) {
     const value=result.result.value;
     const phase1=value.stage==='phase1-animation';
-    const assetRoot=phase1?'/assets/live2d/phase1/':'/assets/live2d/phase0/';
+    const phase2=value.stage==='phase2-basic';
+    const assetRoot=phase2?'/assets/live2d/phase2/':phase1?'/assets/live2d/phase1/':'/assets/live2d/phase0/';
     const responses=events.filter(e=>e.method==='Network.responseReceived').map(e=>e.params.response);
-    const expected=phase1?['.model3.json','.moc3','/texture_00.png','.phase1Idle.motion3.json',
+    const expected=phase2?['.model3.json','.moc3','/texture_00.png','.idle.motion3.json']:phase1?['.model3.json','.moc3','/texture_00.png','.phase1Idle.motion3.json',
       '.phase1_neutral.exp3.json','.phase1_happy.exp3.json','.phase1_angry.exp3.json']:
       ['.model3.json','.moc3','/texture_00.png','.idle.motion3.json',
       '.nod.motion3.json','.smile.exp3.json','.sad.exp3.json','.angry.exp3.json','.surprised.exp3.json'];

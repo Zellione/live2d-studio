@@ -40,3 +40,21 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - For each phase, first summarize findings, proposed changes and test commands. Implement only that phase, test it, and provide a concise result with files changed and any blocking dependencies.
 - Keep a decision log in `docs/decisions.md` as assumptions are validated.
 - If a tool or MCP connection is missing, report the exact blocker and minimal setup needed instead of choosing a paid alternative.
+
+## Phase 2 repository state
+- Read `docs/phase2-results.md`, `docs/phase2-architecture.md` and `docs/artifact-policy.md`.
+- Golden fixtures: `tests/fixtures/phase0/` and `tests/fixtures/phase1/final/`.
+  Never regenerate these in place. Keep all new runs, diagnostics and exports in `runs/`.
+- Use `uv sync --frozen` and `uv run --frozen python -m unittest discover -s tests -v`.
+  Optional GPU probe: `uv run --frozen --extra gpu live2d-studio doctor`.
+- Inference must only read raster inputs/configuration. Fixture metadata belongs
+  exclusively to benchmark generation/evaluation; never import it into segmentation.
+- Manifest v1: relative paths, hashes, source rights, observed/reconstructed masks,
+  explicit missing/unknown regions. Scores are uncalibrated candidate indicators.
+- The CPU flat-colour baseline passes the geometric benchmark; real anime parsing
+  fails semantic acceptance. CUDA arithmetic works on the 5090, but no neural image
+  model has been installed or validated. Never describe this as GPU image inference.
+- Keep MCP on loopback; tokens only from an explicitly provided environment.
+  `mcp-check` is read-only. Never read profile secrets to close the live CLI auth gate.
+- Phase 2 is the current stopping point. Do not begin Phase 3 or production copying
+  without a new user assignment.

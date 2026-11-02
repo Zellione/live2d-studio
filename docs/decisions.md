@@ -56,3 +56,31 @@
 - Preserve historical Phase 1 measurements in its report, traceable to `07f56b3`.
   Raw transcripts/frames are local-only; future runs use `runs/`.
 - No golden fixture regeneration or production SillyTavern changes.
+
+## 2026-11-02 — Phase 2 image stages and evidence
+
+- Choose a deterministic CPU flat-colour baseline before model downloads. SAM 2.1
+  is promptable segmentation, not an anime semantic parser; SDXL inpainting is
+  not validated for preserving anime identity. Neither checkpoint was downloaded.
+- Keep recognition, extraction, hidden-pixel reconstruction, editor import and
+  actual animation as separate gates. Unknown pixels remain explicit; generated
+  alternate shapes never count as recognized source regions.
+- Flatten only simultaneously visible Phase 1 parts. Remove alternate closed-eye
+  and closed-mouth forms from the flat benchmark. Source metadata is confined to
+  `benchmark.py`, and an inference test hides it before a repeat run.
+- Fill enclosed holes and bounded white-eye row gaps using original nearby colour.
+  Do not invent missing outer neck/eye contours. Full-layer IoU reflects these gaps.
+- Reuse only the Phase 1 MCP protocol and PSD2Live semantic roles, not its opaque
+  project IDs/deformer geometry/Mood recipe. The generated baseline has 20 parameters.
+- User authorized searching for a licensed real test image. Use Kasuga's CC-BY-SA-3.0
+  Wikipe-tan PNG locally with attribution and SHA-256; no artwork committed. Real
+  parsing fails acceptance despite an exact neutral composite; build is refused.
+- Install Torch 2.9.0+cu128 only as an optional project extra. RTX 5090 arithmetic
+  passes outside the sandbox; no GPU image-inference result is claimed.
+- Shared MCP transport rejects non-loopback/credential URLs, redirects and proxies.
+  Dummy-token JSON/SSE/session/error tests pass. Live CLI still returns 401 without
+  user-supplied environment token; connected authenticated MCP completes export.
+- Fresh `.cache/phase2-st` hosts Phase 0/1/2 browser runs; all pass. Original 137
+  server/extension file hashes remain unchanged. Phase 1 final fixture unchanged.
+- Stop after this Phase 2 MVP. Improving real-art parsing is necessary before a
+  useful general-purpose character pipeline; no Phase 3 or deployment started.

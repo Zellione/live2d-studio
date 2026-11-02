@@ -2,12 +2,30 @@
 
 A local, open-source-first pipeline that turns one or more character images into an animated Live2D avatar usable in the SillyTavern Live2D extension.
 
-**Status:** Phase 0 compatibility and Phase 1 geometric face-rig tests passed in
-an isolated copy of the installed SillyTavern extension: independent blink,
-mouth opening, head X/Y/Z, three expressions and authored idle animation.
-See [Phase 0](docs/compatibility.md) and [Phase 1 results/reproduction](docs/phase1-results.md).
-The standalone MCP CLI still needs its local authentication token. Real artwork
-segmentation, text-talk and emotion classification remain unvalidated.
+**Status:** Phase 2 provides a reproducible local CLI for candidate RGBA layers,
+segmentation/reconstruction masks, a versioned manifest and offline previews.
+The geometric regression passes image → layers → PSD2Live → installed SillyTavern
+extension, with visible blink, mouth and head movement. A licensed real anime test
+exposes unreliable semantic parsing; this is **not a production anime converter**.
+
+See [Phase 2 results](docs/phase2-results.md),
+[architecture and commands](docs/phase2-architecture.md),
+[artifact policy](docs/artifact-policy.md), [Phase 0](docs/compatibility.md) and
+[Phase 1](docs/phase1-results.md). The standalone MCP CLI requires a locally supplied
+token; the authenticated connected MCP route was exercised. Text-talk and emotion
+classification remain unvalidated.
+
+```bash
+export UV_CACHE_DIR="$PWD/.cache/uv"
+uv sync --frozen
+uv run --frozen live2d-studio prepare --input character.png --output runs/character
+uv run --frozen live2d-studio inspect --project runs/character
+uv run --frozen python -m unittest discover -s tests -v
+```
+
+Open `runs/character/preview/index.html` to review all layers and warnings.
+Outputs must be new directories. CPU processing requires no model downloads;
+optional `uv sync --frozen --extra gpu` installs the pinned Torch/CUDA probe stack.
 
 ## Constraints
 
@@ -17,10 +35,11 @@ segmentation, text-talk and emotion classification remain unvalidated.
 - Minimize manual image editing. Preserve originals and intermediate assets.
 - Validate the final model in the *actual SillyTavern extension*, not just PSD2Live's preview.
 
-## Next phase
+## Continuing work
 
 Read [`AGENTS.md`](AGENTS.md), [`docs/HANDOVER.md`](docs/HANDOVER.md) and the phase
-results before continuing. Phase 2 is proposed only; it has not been started.
+results before continuing. Phase 2 stops at the documented MVP; Phase 3 and
+production deployment require a new assignment.
 
 ## Project structure
 
@@ -29,7 +48,7 @@ results before continuing. Phase 2 is proposed only; it has not been started.
 - `assets/input/` – user-supplied source images (ignored by Git)
 - `assets/intermediate/` – generated segmentation, inpainting, PSDs (ignored by Git)
 - `assets/output/` – generated Live2D bundles and previews (ignored by Git)
-- `src/live2d_studio/` – future pipeline code
+- `src/live2d_studio/` – image stages, manifest validation, CLI and MCP transport
 - `tests/` – test assets and automated checks
 - `scripts/preflight.sh` – read-only check of host prerequisites
 - `scripts/install-psd2live.sh` – SHA-256-verified Linux x64 release installer

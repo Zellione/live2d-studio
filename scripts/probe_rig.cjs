@@ -1,6 +1,7 @@
 // Geometry/opacity evidence only; browser pixel tests are a separate gate.
 const fs=require('node:fs'), vm=require('node:vm'), path=require('node:path'), crypto=require('node:crypto');
-const [coreFile,mocFile]=process.argv.slice(2);
+const [coreFile,mocFile,profile='phase1']=process.argv.slice(2);
+if(!['phase1','basic'].includes(profile))throw Error('Profile must be phase1 or basic');
 if(!coreFile||!mocFile)throw Error('Usage: CORE_JS MOC3');
 const sandbox={console:{...console,log:console.error},require,process,Buffer,setTimeout,clearTimeout,
   __dirname:path.dirname(path.resolve(coreFile)),__filename:path.resolve(coreFile)};
@@ -26,7 +27,10 @@ setTimeout(()=>{
     };
     const baseline=capture();
     const changed=(a,b)=>a.filter((d,i)=>Math.abs(d.opacity-b[i].opacity)>1e-5||d.vertices.some((v,j)=>Math.abs(v-b[i].vertices[j])>1e-5)).map(d=>d.id);
-    for(const [id,values]of Object.entries({ParamEyeLOpen:[0,.5],ParamEyeROpen:[0,.5],ParamMouthOpenY:[.5,1],ParamAngleX:[-25,25],ParamAngleY:[-20,20],ParamAngleZ:[-20,20],ParamMood:[-1,1]})) {
+    const cases={ParamEyeLOpen:[0,.5],ParamEyeROpen:[0,.5],ParamMouthOpenY:[.5,1],ParamAngleX:[-25,25],ParamAngleY:[-20,20],ParamAngleZ:[-20,20]};
+    if(profile==='phase1')cases.ParamMood=[-1,1];
+    report.profile=profile;
+    for(const [id,values]of Object.entries(cases)) {
       const samples=values.map(value=>capture({[id]:value}));
       const changes=samples.map(s=>changed(baseline,s));
       if(changes.some(c=>!c.length)||!changed(samples[0],samples[1]).length)throw Error('Unbound/constant parameter '+id);

@@ -114,7 +114,8 @@ Aus dem Projektverzeichnis, zsh-sicher, ohne Netzwerk/Installation:
 
 ```bash
 export UV_CACHE_DIR="$PWD/.cache/uv"
-uv run --no-project --no-managed-python --offline python -m unittest discover -s tests -v
+# Seit Phase 2 einmal zuvor: uv sync --frozen (projektlokale Bildpakete)
+uv run --frozen --offline python -m unittest discover -s tests -v
 uv run --no-project --no-managed-python --offline python scripts/validate_bundle.py \
   tests/fixtures/phase0/export/Generated_artwork.model3.json
 node scripts/probe_core.cjs \

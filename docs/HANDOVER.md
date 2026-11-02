@@ -1,5 +1,28 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 2 (2026-11-02)
+
+Read [Phase 2 results](phase2-results.md), [architecture](phase2-architecture.md)
+and [artifact policy](artifact-policy.md) first. The original plan below is retained
+as history; Phase 0/1 are complete and Phase 2's limited MVP is implemented.
+
+- Cleanup commit `c5d6512` removes obsolete index entries while retaining local
+  copies. Phase 0 and final Phase 1 golden fixtures remain unchanged.
+- `uv run live2d-studio prepare/inspect/reconstruct/evaluate/build/mcp-check/doctor`
+  provide local stages. Commands with arguments are in the architecture document.
+- 33 automated tests and all three isolated ST browser scenarios passed.
+- Synthetic: visible mask IoU 1.0, full-layer mean IoU 0.93646; original pixels
+  unchanged. PSD2Live import/export and basic visible animation passed.
+- Real licensed Wikipe-tan image: semantic acceptance failed; most foreground
+  remains unknown, some candidate roles are wrong. Do not promote synthetic
+  success to real-anime readiness. No neural image weights installed.
+- PyTorch 2.9.0+cu128 arithmetic succeeds on RTX 5090; CPU image pipeline is the
+  implemented backend. GPU model inference remains future work.
+- Connected authenticated MCP succeeds; independent CLI still needs a local
+  environment token. Do not read profile secrets. No production ST writes.
+- Stop here. Next authorized work should improve semantic parsing and concealed
+  contours using a licensed benchmark, before broader rig/production automation.
+
 ## User goal
 The user wants to provide one or more illustrations of an anime/roleplay character and obtain a properly rigged Live2D avatar for SillyTavern's Live2D extension. They have no image-editing experience, use Arch Linux/Hyprland, and want to avoid paid software like Photoshop or Cubism Pro. Codex should orchestrate an automated, locally executed pipeline and use PSD2Live through MCP if reliable.
 
