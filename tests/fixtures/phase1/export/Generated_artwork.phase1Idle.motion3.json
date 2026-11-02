@@ -1,0 +1,103 @@
+{
+    "Version": 3,
+    "Meta": {
+        "Duration": 4.0,
+        "Fps": 30.0,
+        "FadeInTime": 0.2,
+        "FadeOutTime": 0.2,
+        "Loop": true,
+        "AreBeziersRestricted": true,
+        "CurveCount": 5,
+        "TotalSegmentCount": 15,
+        "TotalPointCount": 20,
+        "UserDataCount": 0,
+        "TotalUserDataSize": 0
+    },
+    "Curves": [
+        {
+            "Target": "Parameter",
+            "Id": "ParamAngleZ",
+            "Segments": [
+                0.0,
+                -6.0,
+                0,
+                2.0,
+                6.0,
+                0,
+                4.0,
+                -6.0
+            ]
+        },
+        {
+            "Target": "Parameter",
+            "Id": "ParamAngleY",
+            "Segments": [
+                0.0,
+                0.0,
+                0,
+                1.0,
+                4.0,
+                0,
+                3.0,
+                -4.0,
+                0,
+                4.0,
+                0.0
+            ]
+        },
+        {
+            "Target": "Parameter",
+            "Id": "ParamBreath",
+            "Segments": [
+                0.0,
+                0.0,
+                0,
+                2.0,
+                1.0,
+                0,
+                4.0,
+                0.0
+            ]
+        },
+        {
+            "Target": "Parameter",
+            "Id": "ParamEyeLOpen",
+            "Segments": [
+                0.0,
+                1.0,
+                0,
+                1.7,
+                1.0,
+                0,
+                1.85,
+                0.0,
+                0,
+                2.0,
+                1.0,
+                0,
+                4.0,
+                1.0
+            ]
+        },
+        {
+            "Target": "Parameter",
+            "Id": "ParamEyeROpen",
+            "Segments": [
+                0.0,
+                1.0,
+                0,
+                1.7,
+                1.0,
+                0,
+                1.85,
+                0.0,
+                0,
+                2.0,
+                1.0,
+                0,
+                4.0,
+                1.0
+            ]
+        }
+    ]
+}

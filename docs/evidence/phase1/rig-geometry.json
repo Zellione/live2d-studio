@@ -1,0 +1,212 @@
+{
+  "stage": "rig-geometry",
+  "render_tested": false,
+  "checks": {
+    "ParamEyeLOpen": {
+      "values": [
+        0,
+        0.5
+      ],
+      "changed_drawables": [
+        [
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshEyewhiteL"
+        ],
+        [
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshEyewhiteL"
+        ]
+      ]
+    },
+    "ParamEyeROpen": {
+      "values": [
+        0,
+        0.5
+      ],
+      "changed_drawables": [
+        [
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshEyewhiteR"
+        ],
+        [
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshEyewhiteR"
+        ]
+      ]
+    },
+    "ParamMouthOpenY": {
+      "values": [
+        0.5,
+        1
+      ],
+      "changed_drawables": [
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1"
+        ],
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1"
+        ]
+      ]
+    },
+    "ParamAngleX": {
+      "values": [
+        -25,
+        25
+      ],
+      "changed_drawables": [
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1",
+          "ArtMeshNose",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshIridesR",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyebrowL",
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteL",
+          "ArtMeshFace"
+        ],
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1",
+          "ArtMeshNose",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshIridesR",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyebrowL",
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteL",
+          "ArtMeshFace"
+        ]
+      ]
+    },
+    "ParamAngleY": {
+      "values": [
+        -20,
+        20
+      ],
+      "changed_drawables": [
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1",
+          "ArtMeshNose",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshIridesR",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyebrowL",
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteL",
+          "ArtMeshFace"
+        ],
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1",
+          "ArtMeshNose",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshIridesR",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyebrowL",
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteL",
+          "ArtMeshFace"
+        ]
+      ]
+    },
+    "ParamAngleZ": {
+      "values": [
+        -20,
+        20
+      ],
+      "changed_drawables": [
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1",
+          "ArtMeshNose",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshIridesR",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyebrowL",
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteL",
+          "ArtMeshFace"
+        ],
+        [
+          "ArtMeshMouthClose",
+          "ArtMeshMouthOpen",
+          "ArtMeshMouthOpen_lip_0",
+          "ArtMeshMouthOpen_lip_1",
+          "ArtMeshNose",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyeCloseR",
+          "ArtMeshEyelashR",
+          "ArtMeshIridesR",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyebrowL",
+          "ArtMeshEyeCloseL",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteL",
+          "ArtMeshFace"
+        ]
+      ]
+    },
+    "ParamMood": {
+      "values": [
+        -1,
+        1
+      ],
+      "changed_drawables": [
+        [
+          "ArtMeshEyebrowR",
+          "ArtMeshEyebrowL"
+        ],
+        [
+          "ArtMeshEyebrowR",
+          "ArtMeshEyebrowL"
+        ]
+      ]
+    }
+  },
+  "moc_sha256": "b2871611b41fef8de85b94a7a98ec11ec28b1a6dc6457e300986d89d7fa2444a",
+  "status": "pass"
+}

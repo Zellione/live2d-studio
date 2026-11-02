@@ -1,0 +1,83 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Generated_artwork.moc3",
+		"Textures": [
+			"Generated_artwork.4096/texture_00.png"
+		],
+		"Physics": "Generated_artwork.physics3.json",
+		"DisplayInfo": "Generated_artwork.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "Smile",
+				"File": "Generated_artwork.smile.exp3.json"
+			},
+			{
+				"Name": "Sad",
+				"File": "Generated_artwork.sad.exp3.json"
+			},
+			{
+				"Name": "Angry",
+				"File": "Generated_artwork.angry.exp3.json"
+			},
+			{
+				"Name": "Surprised",
+				"File": "Generated_artwork.surprised.exp3.json"
+			},
+			{
+				"Name": "neutral",
+				"File": "Generated_artwork.phase1_neutral.exp3.json"
+			},
+			{
+				"Name": "happy",
+				"File": "Generated_artwork.phase1_happy.exp3.json"
+			},
+			{
+				"Name": "angry 2",
+				"File": "Generated_artwork.phase1_angry.exp3.json"
+			}
+		],
+		"Motions": {
+			"Idle": [
+				{
+					"File": "Generated_artwork.idle.motion3.json"
+				},
+				{
+					"File": "Generated_artwork.phase1Idle.motion3.json"
+				}
+			],
+			"Blink": [
+				{
+					"File": "Generated_artwork.blink.motion3.json"
+				}
+			],
+			"Nod": [
+				{
+					"File": "Generated_artwork.nod.motion3.json"
+				}
+			],
+			"Shake": [
+				{
+					"File": "Generated_artwork.shake.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		}
+	]
+}

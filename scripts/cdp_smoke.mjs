@@ -38,13 +38,25 @@ try {
   if(!ready)throw Error('Document not ready');
   const expression=await fs.readFile(script,'utf8');
   const result=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:60000});
-  if(result.result.value?.stage==='sillytavern-extension') {
+  const frames=result.result.value?.frames;
+  if(frames) {
+    for(const [name,data] of Object.entries(frames)) {
+      if(!/^[a-zA-Z0-9_-]+$/.test(name)) throw Error('Invalid frame name');
+      await fs.writeFile(`${output}/${name}.png`,Buffer.from(data,'base64'));
+    }
+    result.result.value.frames=Object.keys(frames);
+  }
+  if(['sillytavern-extension','phase1-animation'].includes(result.result.value?.stage)) {
     const value=result.result.value;
+    const phase1=value.stage==='phase1-animation';
+    const assetRoot=phase1?'/assets/live2d/phase1/':'/assets/live2d/phase0/';
     const responses=events.filter(e=>e.method==='Network.responseReceived').map(e=>e.params.response);
-    const expected=['.model3.json','.moc3','/texture_00.png','.idle.motion3.json',
+    const expected=phase1?['.model3.json','.moc3','/texture_00.png','.phase1Idle.motion3.json',
+      '.phase1_neutral.exp3.json','.phase1_happy.exp3.json','.phase1_angry.exp3.json']:
+      ['.model3.json','.moc3','/texture_00.png','.idle.motion3.json',
       '.nod.motion3.json','.smile.exp3.json','.sad.exp3.json','.angry.exp3.json','.surprised.exp3.json'];
-    const missing=expected.filter(suffix=>!responses.some(r=>r.url.includes('/assets/live2d/phase0/') && r.url.endsWith(suffix) && r.status===200));
-    const unexpectedHttp=responses.filter(r=>r.url.includes('/assets/live2d/phase0/') && r.status>=400 && !r.url.endsWith('/sillytavern_settings.json'));
+    const missing=expected.filter(suffix=>!responses.some(r=>r.url.includes(assetRoot) && r.url.endsWith(suffix) && r.status===200));
+    const unexpectedHttp=responses.filter(r=>r.url.includes(assetRoot) && r.status>=400 && !r.url.endsWith('/sillytavern_settings.json'));
     const exceptions=events.filter(e=>e.method==='Runtime.exceptionThrown');
     value.network_validation={missing_successful_resources:missing,unexpected_http_errors:unexpectedHttp.map(r=>({url:r.url,status:r.status})),uncaught_exceptions:exceptions.length};
     if(missing.length || unexpectedHttp.length || exceptions.length)value.status='fail';

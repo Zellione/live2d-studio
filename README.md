@@ -2,10 +2,12 @@
 
 A local, open-source-first pipeline that turns one or more character images into an animated Live2D avatar usable in the SillyTavern Live2D extension.
 
-**Status:** Phase 0 passed for a geometric PSD2Live 3.6.7 fixture in an isolated
-copy of the installed SillyTavern Live2D extension, including rendering and reload.
-See [compatibility results and reproduction](docs/compatibility.md).
-A usable character rig, visible lip sync and emotion behavior remain unvalidated.
+**Status:** Phase 0 compatibility and Phase 1 geometric face-rig tests passed in
+an isolated copy of the installed SillyTavern extension: independent blink,
+mouth opening, head X/Y/Z, three expressions and authored idle animation.
+See [Phase 0](docs/compatibility.md) and [Phase 1 results/reproduction](docs/phase1-results.md).
+The standalone MCP CLI still needs its local authentication token. Real artwork
+segmentation, text-talk and emotion classification remain unvalidated.
 
 ## Constraints
 
@@ -15,9 +17,10 @@ A usable character rig, visible lip sync and emotion behavior remain unvalidated
 - Minimize manual image editing. Preserve originals and intermediate assets.
 - Validate the final model in the *actual SillyTavern extension*, not just PSD2Live's preview.
 
-## First task
+## Next phase
 
-Read [`AGENTS.md`](AGENTS.md) and [`docs/HANDOVER.md`](docs/HANDOVER.md). Start **Phase 0** only: inspect the installed SillyTavern Live2D extension and PSD2Live output, produce a documented compatibility matrix, and identify a minimal viable smoke test. Do not assume `.model3.json` works just because PSD2Live exports it.
+Read [`AGENTS.md`](AGENTS.md), [`docs/HANDOVER.md`](docs/HANDOVER.md) and the phase
+results before continuing. Phase 2 is proposed only; it has not been started.
 
 ## Project structure
 

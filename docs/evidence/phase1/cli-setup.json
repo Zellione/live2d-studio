@@ -1,0 +1,9 @@
+{
+  "endpoint": "http://127.0.0.1:23871/mcp",
+  "standalone_cli_status": "blocked_before_initialize",
+  "observed_http_status_without_token": 401,
+  "required_local_environment_variable": "PSD2LIVE_MCP_TOKEN",
+  "secret_read_or_logged": false,
+  "connected_mcp_replay": "passed",
+  "authenticated_standalone_cli_tested": false
+}

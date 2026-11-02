@@ -1,0 +1,32 @@
+{
+  "request": {
+    "state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:6:0",
+    "project_id": "2f6e1897-766e-4554-ac65-b1ce49b80d4a",
+    "request_id": "phase1-regeneration-probe"
+  },
+  "result": {
+    "ok": true,
+    "operation": "rig_generate",
+    "data": {
+      "id": "job-bc4b401e-971b-4689-a071-11ec40557c92",
+      "operation": "rig_generate",
+      "project_id": "2f6e1897-766e-4554-ac65-b1ce49b80d4a",
+      "input_state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:6:0",
+      "status": "completed",
+      "terminal": true,
+      "progress": 1,
+      "message": "Completed",
+      "created_at": "2026-11-02T00:29:44.488517561Z",
+      "updated_at": "2026-11-02T00:29:44.489834013Z",
+      "result": {
+        "project_id": "2f6e1897-766e-4554-ac65-b1ce49b80d4a",
+        "state": "5cebdd44-610b-43cc-8fda-8ffff1f5792b:6:0",
+        "history_node_id": "history-da0d02df-d9f7-4a88-b570-6faf17ce2be7",
+        "revision": "revision-b47c8d93ff4ab8a8ce837e4d4418f89e367d5776d92fbaa97b846d8928e02f7d",
+        "applied": false,
+        "edit_count": 1,
+        "changed": []
+      }
+    }
+  }
+}

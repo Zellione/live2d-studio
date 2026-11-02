@@ -1,0 +1,287 @@
+{
+  "result": {
+    "type": "object",
+    "value": {
+      "stage": "phase1-animation",
+      "status": "pass",
+      "visual_character_rig_tested": true,
+      "character": "Phase1 Face",
+      "discovered_models": [
+        "/assets/live2d/phase0/Generated_artwork.model3.json",
+        "/assets/live2d/phase1/Generated_artwork.model3.json"
+      ],
+      "model_option_found": true,
+      "parameter_mapping": {
+        "mouth": "ParamMouthOpenY",
+        "cursor": {
+          "idParamAngleX": "ParamAngleX",
+          "idParamAngleY": "ParamAngleY",
+          "idParamAngleZ": "ParamAngleZ",
+          "idParamBodyAngleX": "ParamBodyAngleX",
+          "idParamBreath": "ParamBreath",
+          "idParamEyeBallX": "ParamEyeBallX",
+          "idParamEyeBallY": "ParamEyeBallY"
+        }
+      },
+      "expression_options": [
+        "none",
+        "neutral",
+        "happy",
+        "angry"
+      ],
+      "motion_options": [
+        "none",
+        "Idle_id=random",
+        "Idle_id=0",
+        "Idle_id=1",
+        "Blink_id=random",
+        "Nod_id=random",
+        "Shake_id=random"
+      ],
+      "parameter_ids": [
+        "ParamMood",
+        "ParamAngleX",
+        "ParamAngleY",
+        "ParamAngleZ",
+        "ParamEyeLOpen",
+        "ParamEyeROpen",
+        "ParamEyeBallX",
+        "ParamEyeBallY",
+        "ParamEyeBallForm",
+        "ParamBrowLY",
+        "ParamBrowRY",
+        "ParamMouthForm",
+        "ParamMouthOpenY",
+        "ParamBodyAngleX",
+        "ParamBodyAngleY",
+        "ParamBodyAngleZ",
+        "ParamBodyLean",
+        "ParamProportion",
+        "ParamBreath",
+        "ParamHairFront",
+        "ParamHairBack"
+      ],
+      "drawables": 18,
+      "frames": [
+        "neutral",
+        "neutral-repeat",
+        "left_closed",
+        "right_closed",
+        "blink_half",
+        "blink",
+        "mouth_half",
+        "mouth_open",
+        "angle_x_minus",
+        "angle_x_plus",
+        "angle_y_minus",
+        "angle_y_plus",
+        "angle_z_minus",
+        "angle_z_plus",
+        "expression_neutral",
+        "expression_happy",
+        "expression_angry",
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5",
+        "idle_6",
+        "idle_7",
+        "idle_8",
+        "reload"
+      ],
+      "parameters": {
+        "left_closed": {
+          "values": {
+            "ParamEyeLOpen": 0
+          },
+          "changed_pixels": 4157
+        },
+        "right_closed": {
+          "values": {
+            "ParamEyeROpen": 0
+          },
+          "changed_pixels": 4147
+        },
+        "blink_half": {
+          "values": {
+            "ParamEyeLOpen": 0.5,
+            "ParamEyeROpen": 0.5
+          },
+          "changed_pixels": 7165
+        },
+        "blink": {
+          "values": {
+            "ParamEyeLOpen": 0,
+            "ParamEyeROpen": 0
+          },
+          "changed_pixels": 8304
+        },
+        "mouth_half": {
+          "values": {
+            "ParamMouthOpenY": 0.5
+          },
+          "changed_pixels": 1113
+        },
+        "mouth_open": {
+          "values": {
+            "ParamMouthOpenY": 1
+          },
+          "changed_pixels": 2703
+        },
+        "angle_x_minus": {
+          "values": {
+            "ParamAngleX": -25
+          },
+          "changed_pixels": 19961
+        },
+        "angle_x_plus": {
+          "values": {
+            "ParamAngleX": 25
+          },
+          "changed_pixels": 20088
+        },
+        "angle_y_minus": {
+          "values": {
+            "ParamAngleY": -20
+          },
+          "changed_pixels": 23790
+        },
+        "angle_y_plus": {
+          "values": {
+            "ParamAngleY": 20
+          },
+          "changed_pixels": 23911
+        },
+        "angle_z_minus": {
+          "values": {
+            "ParamAngleZ": -20
+          },
+          "changed_pixels": 52851
+        },
+        "angle_z_plus": {
+          "values": {
+            "ParamAngleZ": 20
+          },
+          "changed_pixels": 52829
+        }
+      },
+      "expressions": {
+        "neutral": {
+          "values": {
+            "ParamMood": 0,
+            "ParamEyeLOpen": 1,
+            "ParamEyeROpen": 1,
+            "ParamMouthOpenY": 0,
+            "ParamMouthForm": 0
+          }
+        },
+        "happy": {
+          "values": {
+            "ParamMood": 1,
+            "ParamEyeLOpen": 0.6499999761581421,
+            "ParamEyeROpen": 0.6499999761581421,
+            "ParamMouthOpenY": 0.550000011920929,
+            "ParamMouthForm": 1
+          }
+        },
+        "angry": {
+          "values": {
+            "ParamMood": -1,
+            "ParamEyeLOpen": 0.800000011920929,
+            "ParamEyeROpen": 0.800000011920929,
+            "ParamMouthOpenY": 0.11999999731779099,
+            "ParamMouthForm": -1
+          }
+        },
+        "neutral_happy": {
+          "changed_pixels": 10209
+        },
+        "neutral_angry": {
+          "changed_pixels": 6819
+        },
+        "happy_angry": {
+          "changed_pixels": 8651
+        }
+      },
+      "control_noise_pixels": 0,
+      "idle": [
+        {
+          "sample": 0,
+          "values": {
+            "ParamAngleZ": -1.1575028896331787,
+            "ParamAngleY": 6.166179656982422,
+            "ParamBreath": 0.3044355809688568
+          }
+        },
+        {
+          "sample": 1,
+          "values": {
+            "ParamAngleZ": -0.9564862847328186,
+            "ParamAngleY": 5.9000163078308105,
+            "ParamBreath": 0.336626261472702
+          }
+        },
+        {
+          "sample": 2,
+          "values": {
+            "ParamAngleZ": -0.36155691742897034,
+            "ParamAngleY": 0.480665385723114,
+            "ParamBreath": 0.5329421758651733
+          }
+        },
+        {
+          "sample": 3,
+          "values": {
+            "ParamAngleZ": 0.7828426957130432,
+            "ParamAngleY": -3.9629170894622803,
+            "ParamBreath": 0.8902692794799805
+          }
+        },
+        {
+          "sample": 4,
+          "values": {
+            "ParamAngleZ": -1.9314883947372437,
+            "ParamAngleY": -5.624025344848633,
+            "ParamBreath": 0.8713833093643188
+          }
+        },
+        {
+          "sample": 5,
+          "values": {
+            "ParamAngleZ": -3.1928133964538574,
+            "ParamAngleY": -4.355129718780518,
+            "ParamBreath": 0.7250182628631592
+          }
+        },
+        {
+          "sample": 6,
+          "values": {
+            "ParamAngleZ": -3.546842098236084,
+            "ParamAngleY": 0.9261072874069214,
+            "ParamBreath": 0.3607465326786041
+          }
+        },
+        {
+          "sample": 7,
+          "values": {
+            "ParamAngleZ": -3.0329511165618896,
+            "ParamAngleY": 3.66328763961792,
+            "ParamBreath": 0
+          }
+        },
+        {
+          "sample": 8,
+          "values": {
+            "ParamAngleZ": 1.423040509223938,
+            "ParamAngleY": 4.304942607879639,
+            "ParamBreath": 0.0050927577540278435
+          }
+        }
+      ],
+      "idle_changed_pixels": 20565,
+      "idle_angle_range": 4.969882607460022
+    }
+  }
+}

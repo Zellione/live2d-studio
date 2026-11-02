@@ -27,3 +27,24 @@
 - Geometric-fixture compatibility gate passed. Visible facial rig quality,
   text-talk, emotion classification and hardware rendering remain untested.
 - No adapter required for the verified versions. Stay within Phase 0.
+
+## 2026-11-02 — Phase 1 rig validation, explicitly authorized
+
+- Phase 0 committed as `fed38dc`. User expanded Phase 1 to include a visibly
+  animatable test rig; this supersedes the original narrow MCP-only milestone.
+- Use deterministic original raster shapes and semantic layer roles. PSD2Live
+  generates meshes, deformers and standard movement; author custom Mood shapes,
+  expressions and idle exclusively through MCP, never by patching rig files.
+- Preserve original/intermediate fixtures; `tests/fixtures/phase1/final/` is the
+  accepted version. Parameter IDs, changed Core geometry and changed browser
+  pixels are three separate gates. Pixel tests use the actual ST-owned model.
+- Correct brow direction after visual review. Use Multiply for expression eye
+  entries and Add for mouth; neutral does not overwrite blink/talk channels.
+- Complete keys must include all directly bound axes. Author mood at all 27
+  existing head/lean combinations per brow. Do not infer full visual quality
+  from the local geometry safety gate.
+- Connected authenticated MCP replay succeeds. Standalone HTTP CLI receives
+  401 without PSD2LIVE_MCP_TOKEN; do not read profile secrets or claim that CLI
+  path was end-to-end validated. Token must be supplied locally for that path.
+- Extension/runtime/production installation remain unchanged (137 code files
+  compared). Phase 2 is a proposal only; no model weights downloaded.

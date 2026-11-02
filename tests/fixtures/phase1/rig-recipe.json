@@ -1,0 +1,2753 @@
+[
+  {
+    "operation": "author_axis",
+    "request": {
+      "parameter": {
+        "id": "ParamMood",
+        "name": "Mood",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      "shapes": [
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": -1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 22
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                0.16
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "operation": "author_axis",
+    "request": {
+      "parameter": {
+        "id": "ParamMood",
+        "name": "Mood",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      "shapes": [
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeL",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": 12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": -45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 0,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": -30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 0,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": -10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 0
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        },
+        {
+          "target": "warp:DeformBrowShapeR",
+          "value": 1,
+          "key": {
+            "ParamAngleX": 45,
+            "ParamAngleY": 30,
+            "ParamBodyLean": 10
+          },
+          "operations": [
+            {
+              "type": "rotate",
+              "degrees": -12
+            },
+            {
+              "type": "translate",
+              "delta": [
+                0,
+                -0.25
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "operation": "expression_create",
+    "request": {
+      "id": "phase1_neutral",
+      "name": "neutral",
+      "fade_in": 0.2,
+      "fade_out": 0.2,
+      "entries": [
+        {
+          "parameter": "ParamMood",
+          "value": 0,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamEyeLOpen",
+          "value": 1,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamEyeROpen",
+          "value": 1,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamMouthOpenY",
+          "value": 0,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamMouthForm",
+          "value": 0,
+          "blend": "OVERWRITE"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "expression_create",
+    "request": {
+      "id": "phase1_happy",
+      "name": "happy",
+      "fade_in": 0.2,
+      "fade_out": 0.2,
+      "entries": [
+        {
+          "parameter": "ParamMood",
+          "value": 1,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamEyeLOpen",
+          "value": 0.65,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamEyeROpen",
+          "value": 0.65,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamMouthOpenY",
+          "value": 0.55,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamMouthForm",
+          "value": 1,
+          "blend": "OVERWRITE"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "expression_create",
+    "request": {
+      "id": "phase1_angry",
+      "name": "angry",
+      "fade_in": 0.2,
+      "fade_out": 0.2,
+      "entries": [
+        {
+          "parameter": "ParamMood",
+          "value": -1,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamEyeLOpen",
+          "value": 0.8,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamEyeROpen",
+          "value": 0.8,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamMouthOpenY",
+          "value": 0.12,
+          "blend": "OVERWRITE"
+        },
+        {
+          "parameter": "ParamMouthForm",
+          "value": -1,
+          "blend": "OVERWRITE"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "motion_put",
+    "request": {
+      "clip": {
+        "id": "phase1_idle",
+        "name": "Phase1Idle",
+        "loop": true,
+        "duration": 4,
+        "fps": 30,
+        "fade_in": 0.2,
+        "fade_out": 0.2,
+        "enabled": true,
+        "curves": [
+          {
+            "parameter": "ParamAngleZ",
+            "keys": [
+              {
+                "time": 0,
+                "value": -6,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 2,
+                "value": 6,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 4,
+                "value": -6,
+                "interpolation": "LINEAR"
+              }
+            ]
+          },
+          {
+            "parameter": "ParamAngleY",
+            "keys": [
+              {
+                "time": 0,
+                "value": 0,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 1,
+                "value": 4,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 3,
+                "value": -4,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 4,
+                "value": 0,
+                "interpolation": "LINEAR"
+              }
+            ]
+          },
+          {
+            "parameter": "ParamBreath",
+            "keys": [
+              {
+                "time": 0,
+                "value": 0,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 2,
+                "value": 1,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 4,
+                "value": 0,
+                "interpolation": "LINEAR"
+              }
+            ]
+          },
+          {
+            "parameter": "ParamEyeLOpen",
+            "keys": [
+              {
+                "time": 0,
+                "value": 1,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 1.7,
+                "value": 1,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 1.85,
+                "value": 0,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 2,
+                "value": 1,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 4,
+                "value": 1,
+                "interpolation": "LINEAR"
+              }
+            ]
+          },
+          {
+            "parameter": "ParamEyeROpen",
+            "keys": [
+              {
+                "time": 0,
+                "value": 1,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 1.7,
+                "value": 1,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 1.85,
+                "value": 0,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 2,
+                "value": 1,
+                "interpolation": "LINEAR"
+              },
+              {
+                "time": 4,
+                "value": 1,
+                "interpolation": "LINEAR"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "operation": "expression_delete",
+    "request": {
+      "id": "smile"
+    }
+  },
+  {
+    "operation": "expression_delete",
+    "request": {
+      "id": "sad"
+    }
+  },
+  {
+    "operation": "expression_delete",
+    "request": {
+      "id": "angry"
+    }
+  },
+  {
+    "operation": "expression_delete",
+    "request": {
+      "id": "surprised"
+    }
+  },
+  {
+    "operation": "expression_update",
+    "request": {
+      "id": "phase1_angry",
+      "name": "angry"
+    }
+  },
+  {
+    "operation": "expression_set_entries",
+    "request": {
+      "id": "phase1_neutral",
+      "entries": [
+        {
+          "parameter": "ParamEyeLOpen",
+          "remove": true
+        },
+        {
+          "parameter": "ParamEyeROpen",
+          "remove": true
+        },
+        {
+          "parameter": "ParamMouthOpenY",
+          "remove": true
+        }
+      ]
+    }
+  },
+  {
+    "operation": "expression_set_entries",
+    "request": {
+      "id": "phase1_happy",
+      "entries": [
+        {
+          "parameter": "ParamEyeLOpen",
+          "blend": "MULTIPLY",
+          "value": 0.65
+        },
+        {
+          "parameter": "ParamEyeROpen",
+          "blend": "MULTIPLY",
+          "value": 0.65
+        },
+        {
+          "parameter": "ParamMouthOpenY",
+          "blend": "ADD",
+          "value": 0.55
+        }
+      ]
+    }
+  },
+  {
+    "operation": "expression_set_entries",
+    "request": {
+      "id": "phase1_angry",
+      "entries": [
+        {
+          "parameter": "ParamEyeLOpen",
+          "blend": "MULTIPLY",
+          "value": 0.8
+        },
+        {
+          "parameter": "ParamEyeROpen",
+          "blend": "MULTIPLY",
+          "value": 0.8
+        },
+        {
+          "parameter": "ParamMouthOpenY",
+          "blend": "ADD",
+          "value": 0.12
+        }
+      ]
+    }
+  }
+]
