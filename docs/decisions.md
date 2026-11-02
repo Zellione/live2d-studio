@@ -157,3 +157,35 @@
   Full runtime replay is exact; editable CMO3/CAN3 container bytes are not.
 - 59 Python + five JS tests, actual RP/pose QA and old golden browser regressions pass.
   Stop after Phase 3; all generated projects, frames and transcripts remain ignored.
+
+
+## Phase 4A — Reproducible packages and reversible isolated deployment (2026-11-02)
+
+- User explicitly authorized Phase 4A from `a106c5f`, not production deployment or
+  Phase 4B. Freeze accepted Phase 3 sources and all historical benchmark reports.
+- Package only referenced runtime files, mapping and provenance. Pin the complete
+  accepted input, probe actual Core and require reviewed sleeve/torso/neck drawables.
+  No renamed model formats, runtime-library redistribution or new image generation.
+- Restrict writes to marked independent `.cache/phase4a-*` copies. Reject links,
+  traversal, incompatible hashes and existing destinations unless explicitly replaced.
+- Use verified backups, fsynced write-ahead journals and atomic renames. Preserve
+  interrupted transaction state for rollback; refuse modified installed files or
+  corrupt backups. Test actual child-process death as well as injected failures.
+- Keep user settings outside deployment ownership. Preserve/reset disposable browser
+  fixtures separately, then verify exact data-file restoration. Do not imply that
+  uninstall deletes later user chats or reverts deliberate settings changes.
+- Inspect actual ST event exports and private extension state. No adequate complete
+  companion hook exists in these pinned versions; retain the one-file optional patch
+  and separate talk controller. Journal both changed files and restore original bytes.
+- Implement explicit source inventory and independent-mask structural checks. Girl2
+  clothed upper-arm/sleeve preservation permits portrait acceptance; absent source
+  forearms/hands do not require generation. No general limb benchmark claim.
+- Fresh browser tests exposed startup classification outside the old mock. Retain
+  that failed attempt; install the Phase 4A startup mock before navigation, preserving
+  explicit HTTP/offline/race injection through real message handlers.
+- Upstream and adapter discovery, mapping, talk, idle, switching and reload tested;
+  retain upstream HTTP fallback failure. Adapter RP suite, Phase 0/1 regressions and
+  post-uninstall asset discovery pass. No real classifier inference or audio lipsync.
+- Exact neutral canvas equality and visual review retain Phase 3's limited prototype
+  acceptance. All 730 production hashes unchanged. Stop after Phase 4A; see
+  [results](phase4a-results.md) for evidence and remaining production/Phase 4B work.

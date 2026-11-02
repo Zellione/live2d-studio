@@ -11,6 +11,7 @@ accepted Phase 3 sources are read-only inputs.
 From the repository, with the installed local Node/Chrome/ST dependencies:
 
 ```sh
+export UV_CACHE_DIR="$PWD/.cache/uv"
 uv sync --frozen
 uv run --frozen python -m unittest discover -s tests -v
 node tests/test_rp_talk.mjs
@@ -19,7 +20,8 @@ uv run --frozen python scripts/phase4a_acceptance.py --run-id my-new-run
 
 Choose a fresh ID each time. The scenario copies the installed ST code and
 extension, creates fresh settings, disables model downloads, packages Girl2 twice,
-compares every packaged hash, and exercises upstream and adapter copies separately.
+compares every packaged hash, exercises upstream and adapter copies separately,
+and reboots restored copies to verify removed-model discovery and surviving assets.
 Ports default to loopback 8766/9227; `--port` and `--cdp-port` select alternatives.
 No original profile, credentials or chats are copied. Production code, extension,
 Live2D assets and settings are hashed before/after, without deserializing settings.

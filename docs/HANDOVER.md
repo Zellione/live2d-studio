@@ -1,5 +1,34 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4A (2026-11-02)
+
+Read [results](phase4a-results.md), [deployment/recovery](phase4a-deployment.md) and
+[benchmark](benchmarks/phase4a.json). Started from `a106c5f`; Phase 3 sources unchanged.
+
+- Reproducible 17-file runtime package: `runs/phase4a-acceptance-v4/girl2/`.
+  Recipe pins accepted files, CC0 rights, versions, Core, mapping and limitations.
+- `package`, `deploy --dry-run/--execute`, `rollback --dry-run/--execute` implemented.
+  Only marked independent `.cache/phase4a-*` copies are writable targets.
+  Existing outputs fail; model replacement requires `--replace` and verified backups.
+- Journaled install/recovery tests cover process death, interrupted rename boundaries,
+  partial failures, changed user assets, corrupt backups, links and production refusal.
+  Settings never written by CLI. Preserve journals; rollback rejects later user edits.
+- Optional exact-hash patch remains necessary for complete tested RP behavior; no
+  sufficient supported companion hook found. Original extension restored exactly.
+- Full upstream/adapter isolated browser acceptance and post-uninstall discovery pass
+  with the upstream HTTP fallback intentionally failing. Classification mocked before
+  startup and at actual event fetch; no classifier inference or audio synchronization.
+- 75 Python tests + five JS tests; Phase 0/1 browser goldens pass. All 730 production
+  hashes unchanged, including model assets/settings where present. No production writes.
+- Girl2 portrait completeness passes reviewed clothed-shoulder/sleeve preservation;
+  absent source hands are explicit. General limb preservation remains unvalidated.
+- Local gallery: `runs/phase4a-review-final/index.html`; full evidence and restoration records:
+  `runs/phase4a-acceptance-v4/`. Neutral canvas equals Phase 3 exactly; flat lids,
+  residual hair gaps and body-following-only sleeves remain. Servers/browser stopped.
+- Stop here. Production deployment requires separate explicit authorization, a scoped
+  production implementation and current-version revalidation. Phase 4B automation and
+  independent real limb benchmarks are future assignments; no training authorized.
+
 ## Post-Phase 3 limb audit
 
 Read [Girl2 limb audit](girl2-limb-audit.md). Both sleeves survive as left/right
@@ -7,9 +36,9 @@ Read [Girl2 limb audit](girl2-limb-audit.md). Both sleeves survive as left/right
 leaves. Shirt and neck evaluated visible pixels are exactly preserved. The local
 comparison is `runs/girl2-limb-audit-final/index.html`. Future limb preservation
 is not guaranteed; framing and per-limb checks are recommendations only.
-Accepted models unchanged; Phase 4 has not started.
+Accepted models unchanged; this audit preceded the subsequently authorized Phase 4A.
 
-## Current state after Phase 3 (2026-11-02)
+## Historical state after Phase 3 (2026-11-02)
 
 Read [results](phase3-results.md), [authoring](phase3-animation.md) and
 [isolated RP tests](phase3-sillytavern.md).

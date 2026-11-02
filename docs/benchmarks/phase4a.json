@@ -1,0 +1,423 @@
+{
+  "artifacts": {
+    "integration": "runs/phase4a-acceptance-v4/integration.json",
+    "package": "runs/phase4a-acceptance-v4/girl2",
+    "review": "runs/phase4a-review-final"
+  },
+  "audio_lipsync": false,
+  "earlier_attempts": [
+    {
+      "result": "Sandbox blocked loopback listen; no browser claim",
+      "run": "runs/phase4a-acceptance-v1"
+    },
+    {
+      "result": "Saved-chat startup classification preceded mock; caught upstream lifecycle error retained",
+      "run": "runs/phase4a-acceptance-v2"
+    }
+  ],
+  "full_workflow_replay": {
+    "final_run": "runs/phase4a-acceptance-v4",
+    "package_files_identical": 17,
+    "previous_run": "runs/phase4a-acceptance-v3"
+  },
+  "idle_ranges": {
+    "adapter": {
+      "ParamAngleX": {
+        "max": 2,
+        "min": 0.6458644866943359
+      },
+      "ParamEyeLOpen": {
+        "max": 1,
+        "min": 0
+      },
+      "ParamEyeROpen": {
+        "max": 1,
+        "min": 0
+      },
+      "ParamMouthOpenY": {
+        "max": 0,
+        "min": 0
+      }
+    },
+    "upstream": {
+      "ParamAngleX": {
+        "max": 6.706925392150879,
+        "min": -5.669568061828613
+      },
+      "ParamEyeLOpen": {
+        "max": 1,
+        "min": 0
+      },
+      "ParamEyeROpen": {
+        "max": 1,
+        "min": 0
+      },
+      "ParamMouthOpenY": {
+        "max": 0,
+        "min": 0
+      }
+    }
+  },
+  "limitations": [
+    "Girl2-specific limited portrait prototype; no general image-to-model automation",
+    "Residual hair gaps, flat eyelids, subtle mouth shapes",
+    "Source has no forearms/hands; no missing anatomy generated",
+    "No independent limb animation or independent sleeve masks; aggregate shirt preservation is not sleeve IoU",
+    "28-label preset only initializes absent model settings; existing settings remain authoritative",
+    "Full RP acceptance requires optional pinned adapter; upstream classifier HTTP fallback fails",
+    "Text-duration mouth animation; no audio or phoneme lip synchronization",
+    "Production deployment disabled; visual acceptance is limited and source-specific"
+  ],
+  "neutral_equals_phase3": true,
+  "package": {
+    "completeness": {
+      "anatomical_completeness": false,
+      "failures": [],
+      "framing": "portrait/bust",
+      "general_limb_preservation_validated": false,
+      "generated_anatomy": false,
+      "portrait_completeness": "pass",
+      "visual_review_required": []
+    },
+    "core_probe": {
+      "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+      "core_version": 83886080,
+      "drawable_ids": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyelashR",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyelashL",
+        "ArtMeshIridesR",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteR",
+        "ArtMeshEyewhiteL",
+        "ArtMeshMouth",
+        "ArtMeshMouth_lip_0",
+        "ArtMeshMouth_lip_1",
+        "ArtMeshEyebrowL",
+        "ArtMeshNose",
+        "ArtMeshFace",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshEarsR",
+        "ArtMeshHandwearR",
+        "ArtMeshNeck",
+        "ArtMeshHandwearL",
+        "ArtMeshBackHair",
+        "ArtMeshEyebrowR_SeeThrough",
+        "ArtMeshEyebrowL_SeeThrough",
+        "ArtMeshFrontHair_SeeThrough"
+      ],
+      "drawables": 24,
+      "latest_moc_version": 5,
+      "missing_parameters": [],
+      "moc_sha256": "ee5211e840fa1144db0882e1985d3a7ca5eb5b4bccd556c11ce193548062999b",
+      "moc_version": 5,
+      "parameters": [
+        "ParamBrowMood",
+        "ParamAngleX",
+        "ParamAngleY",
+        "ParamAngleZ",
+        "ParamEyeLOpen",
+        "ParamEyeROpen",
+        "ParamEyeBallX",
+        "ParamEyeBallY",
+        "ParamEyeBallForm",
+        "ParamBrowLY",
+        "ParamBrowRY",
+        "ParamMouthForm",
+        "ParamMouthOpenY",
+        "ParamBodyAngleX",
+        "ParamBodyAngleY",
+        "ParamBodyAngleZ",
+        "ParamBodyLean",
+        "ParamProportion",
+        "ParamBreath",
+        "ParamHairFront",
+        "ParamHairBack"
+      ],
+      "render_tested": false,
+      "stage": "cubism-core-only",
+      "status": "pass"
+    },
+    "file_count": 17,
+    "manifest_sha256": "5f3a30be1c1af850637a3cb3c4963db05a0003aad35730afd0e7fb27ac645b94",
+    "provenance": {
+      "accepted_commit": "a106c5f",
+      "editable_sources_sha256": {
+        "character.psd": "741d47d63930d165f2475b9d369b600b01e4ac3ccf53dca2fa7650e00a48161e",
+        "character.psd2live": "bf185db0784cc658480c321f4f6e21f94d4176c4c3dca086993a64862e73c8ea"
+      },
+      "limb_audit_sha256": "adf68f5cd898271a41d4cc4e9bacc91bc95bea9cc6a06cdaf686bbd3a8612b12",
+      "psd2live_version": "3.6.7",
+      "source": {
+        "author": "stevenburrow",
+        "download_url": "https://opengameart.org/sites/default/files/allanime-11-28-2020.zip",
+        "files": {
+          "NewAnime.xcf": "25810f207c565b454cee3a27f7323419ec5055dc6337f14657f62c1559446e9e",
+          "allanime-11-28-2020.zip": "616438aaf0bb1f5925b164486f351ee4a612952054de7d3b6900bf121f3a5c05"
+        },
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "modifications": "Original files unchanged. Girl2 visible layers exported by GIMP; clipped to 1000x1000 and composited separately for evaluation.",
+        "source_url": "https://opengameart.org/content/anime-girl-and-boy-portraits"
+      },
+      "tool_licenses": {
+        "Cubism Core": "Live2D proprietary SDK license; not redistributed",
+        "Extension-Live2d": "GPL-3.0",
+        "PSD2Live": "GPL-3.0 (inspected Phase 0 provenance)",
+        "SillyTavern": "AGPL-3.0"
+      }
+    },
+    "runtime_sha256": {
+      "Generated_artwork.4096/texture_00.png": "fe6668bc67467761a47ffd2a9bea3956d18e8707fc3fe1a16806701fc20708ab",
+      "Generated_artwork.cdi3.json": "076db70d6923dbe25dd3b85b9645a8d4bac2cbbe745c222104b7a0dd71d311da",
+      "Generated_artwork.moc3": "ee5211e840fa1144db0882e1985d3a7ca5eb5b4bccd556c11ce193548062999b",
+      "Generated_artwork.model3.json": "3dcb97f3e20b0f1c6b208257675ab218e0d57ddbd00f0744e83e5fab17cda66e",
+      "Generated_artwork.physics3.json": "385846be2c653e6bf3eda4a4e49353ba7c8ea6051a0e88aa86b5e2db749b30e1",
+      "Generated_artwork.rpIdle.motion3.json": "00c9c1896d937f51832c6afc0f7b21588454fb3930347a5b7f4f09fd9a046146",
+      "Generated_artwork.rpNod.motion3.json": "65ef1428f5479f01866da86f4a9f67f23d352a9543a2d17fcd8755b045e6cd05",
+      "Generated_artwork.rp_angry.exp3.json": "3e73fcd146b73a0fb219728b7ff5a189dfe2c28d540d0ffa75ac3ef0538666f3",
+      "Generated_artwork.rp_confused.exp3.json": "212845f21068903b2acf2342173e09f8f36ea9a3a8f110b41820821312be6662",
+      "Generated_artwork.rp_embarrassed.exp3.json": "73a5bba642526550dc8ff964e8f9f7a237db3485984d4af8f079a90c7f53d558",
+      "Generated_artwork.rp_happy.exp3.json": "ac79645f8e3acaa14c561c0ce18740651e48611372c35414ae5bd0862c1b3998",
+      "Generated_artwork.rp_neutral.exp3.json": "add942af772e4ae1390c01c63b0287894dc60c5bbee8386757d57386f2f56280",
+      "Generated_artwork.rp_sad.exp3.json": "50051d9adc1dd0b7bd72e0d7c1cec42834de76f63ca3e11971c744eddbc19773",
+      "Generated_artwork.rp_surprised.exp3.json": "cd33e7c119e53f5cafad59d23fe65ec991239dfcec4a79a00b65372b3ff0f1c5",
+      "animation-provenance.json": "f8cdd5692c31e871cb2e1fddd287d57e818adb1bbedf0ae11713e05e7d8f6643",
+      "sillytavern_settings.json": "9614cf4e674e072efcb84aca5ea2d9ff41526b24e48ee1bcb3f745ec7671cb92"
+    }
+  },
+  "package_reproducible": true,
+  "phase": "4A",
+  "production_authorized": false,
+  "production_files_checked": 730,
+  "production_hashes_unchanged": true,
+  "real_classifier_inference": false,
+  "regression": {
+    "javascript_controller_tests": 5,
+    "phase0": "pass",
+    "phase1": "pass",
+    "python_tests": 75
+  },
+  "restoration": {
+    "adapter": {
+      "browser_fixture_reset": true,
+      "data_files_exact": true,
+      "model_absent": true,
+      "settings_written_by_installer": false,
+      "upstream_live2d_sha256": "f6bae7eff0705593403de51062b9dead7a1a5799a8aaa1754c677149fb117c5b"
+    },
+    "upstream": {
+      "browser_fixture_reset": true,
+      "data_files_exact": true,
+      "model_absent": true,
+      "settings_written_by_installer": false,
+      "upstream_live2d_sha256": "f6bae7eff0705593403de51062b9dead7a1a5799a8aaa1754c677149fb117c5b"
+    }
+  },
+  "rollback_scope": "Exact deployment-owned files, modes and mtimes; browser fixture state separately preserved/reset, never user settings rollback",
+  "rp_acceptance": {
+    "classification": "mock network labels, not classifier model inference",
+    "failures": [],
+    "production_ready": false,
+    "rp_integration": "accepted-isolated-adapter",
+    "schema_version": 1,
+    "visual_animation": "requires-independent-review"
+  },
+  "scenarios": {
+    "adapter-expressions": {
+      "evidence": "runs/phase4a-acceptance-v4/adapter-expressions",
+      "idle_recovered": null,
+      "mapping_count": 0,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 0,
+      "status": "pass",
+      "switch_removed": null
+    },
+    "adapter-failure": {
+      "evidence": "runs/phase4a-acceptance-v4/adapter-failure",
+      "idle_recovered": null,
+      "mapping_count": 0,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 19,
+      "status": "pass",
+      "switch_removed": null
+    },
+    "adapter-lifecycle": {
+      "evidence": "runs/phase4a-acceptance-v4/adapter-lifecycle",
+      "idle_recovered": true,
+      "mapping_count": 0,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 1,
+      "status": "pass",
+      "switch_removed": true
+    },
+    "adapter-race": {
+      "evidence": "runs/phase4a-acceptance-v4/adapter-race",
+      "idle_recovered": null,
+      "mapping_count": 0,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 0,
+      "status": "pass",
+      "switch_removed": null
+    },
+    "adapter-rp": {
+      "evidence": "runs/phase4a-acceptance-v4/adapter-rp",
+      "idle_recovered": null,
+      "mapping_count": 7,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 20,
+      "status": "pass",
+      "switch_removed": null
+    },
+    "adapter-visual": {
+      "evidence": "runs/phase4a-acceptance-v4/adapter-visual",
+      "idle_recovered": null,
+      "mapping_count": 0,
+      "mouth_pixel_changes": {
+        "1": 499,
+        "10": 575,
+        "11": 337,
+        "12": 388,
+        "13": 207,
+        "14": 580,
+        "15": 635,
+        "2": 205,
+        "3": 383,
+        "4": 322,
+        "5": 559,
+        "6": 170,
+        "7": 608,
+        "8": 607,
+        "9": 178
+      },
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 2,
+      "status": "pass",
+      "switch_removed": null
+    },
+    "upstream-failure": {
+      "evidence": "runs/phase4a-acceptance-v4/upstream-failure",
+      "idle_recovered": null,
+      "mapping_count": 0,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 1,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 0,
+      "status": "fail",
+      "switch_removed": null
+    },
+    "upstream-lifecycle": {
+      "evidence": "runs/phase4a-acceptance-v4/upstream-lifecycle",
+      "idle_recovered": true,
+      "mapping_count": 0,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 0,
+      "status": "pass",
+      "switch_removed": true
+    },
+    "upstream-rp": {
+      "evidence": "runs/phase4a-acceptance-v4/upstream-rp",
+      "idle_recovered": null,
+      "mapping_count": 7,
+      "mouth_pixel_changes": {},
+      "network": {
+        "caught_event_listener_errors": 0,
+        "missing_successful_resources": [],
+        "uncaught_exceptions": 0,
+        "unexpected_http_errors": []
+      },
+      "raw_opacity_excursions": 2,
+      "status": "pass",
+      "switch_removed": null
+    }
+  },
+  "starting_commit": "a106c5f",
+  "status": "pass",
+  "uninstall": {
+    "adapter": {
+      "existing_model_preserved": true,
+      "models": [
+        "/assets/live2d/phase0/Generated_artwork.model3.json",
+        "/assets/live2d/phase1/Generated_artwork.model3.json"
+      ],
+      "removed_model_discoverable": false,
+      "stage": "phase4a-uninstall",
+      "startup_classifier": "mock neutral before application startup; no inference",
+      "status": "pass"
+    },
+    "upstream": {
+      "existing_model_preserved": true,
+      "models": [
+        "/assets/live2d/phase0/Generated_artwork.model3.json",
+        "/assets/live2d/phase1/Generated_artwork.model3.json"
+      ],
+      "removed_model_discoverable": false,
+      "stage": "phase4a-uninstall",
+      "startup_classifier": "mock neutral before application startup; no inference",
+      "status": "pass"
+    }
+  },
+  "visual_review": {
+    "limitations": [
+      "flat intermediate eyelids",
+      "visible hair/neck gaps at stress poses",
+      "subtle mouth and expression shapes",
+      "no new forearm/hand anatomy"
+    ],
+    "result": "accepted-limited-Phase3-prototype-unchanged",
+    "reviewed": [
+      "expressions",
+      "actual talk sequence",
+      "combined stress poses",
+      "intermediate lids",
+      "full neutral sleeve silhouette"
+    ]
+  }
+}

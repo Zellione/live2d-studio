@@ -37,3 +37,10 @@ checkouts remain under `.cache/`, model snapshots under `models/see-through/`,
 licensed XCF inputs under `assets/references/`, and all inference/PSD/runtime/SAM
 outputs under `runs/`. Compact benchmark numbers and recipes may be versioned
 under `docs/benchmarks/`; raw GPU samples, masks and browser recordings may not.
+
+Phase 4A packages, package manifests, deployment journals, verified backups,
+quarantined files and disposable browser data remain under `runs/`. Isolated ST
+copies/profiles remain under `.cache/`. The reviewed packaging policy and hashes
+in `recipes/girl2-package.json`, automated scenarios, compact benchmark and results
+are tracked; no generated runtime, copied upstream dependency or settings snapshot
+is added to Git. Keep failed attempts and rollback evidence inspectable locally.

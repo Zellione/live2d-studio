@@ -2,18 +2,27 @@
 
 A local, open-source-first pipeline that turns one or more character images into an animated Live2D avatar usable in the SillyTavern Live2D extension.
 
-**Status:** Phase 3 delivers an expressive Girl2 RP prototype: seven facial
-presets, independent blinking, subtle idle, and actual SillyTavern assistant-event
-text-talk/emotion mappings. The complete RP gate passes with an **optional adapter
-tested only in an isolated ST copy**. Upstream has a demonstrated classifier-error
-fallback defect and adds unwanted head oscillation. Production ST is untouched.
+**Status:** Phase 4A packages the accepted Girl2 prototype reproducibly and deploys/removes
+it through a recoverable CLI restricted to disposable SillyTavern copies.
+Production deployment is disabled. Real message, expression, lifecycle and rollback
+tests pass with the optional pinned adapter; upstream classifier-fallback failure
+remains documented.
 
-Read [Phase 3 results](docs/phase3-results.md),
-[animation recipe](docs/phase3-animation.md) and
-[isolated RP integration](docs/phase3-sillytavern.md).
-The accepted local project/runtime is under `runs/phase3-final/`; visual gallery:
-`runs/phase3-review/index.html`. Text-driven mouth motion is not audio lipsync;
-classification tests use network mocks, not a newly installed classifier model.
+Read [Phase 4A results](docs/phase4a-results.md) and the
+[deployment/recovery guide](docs/phase4a-deployment.md). Run the complete isolated
+scenario with a fresh name:
+
+```sh
+export UV_CACHE_DIR="$PWD/.cache/uv"
+uv run --frozen python scripts/phase4a_acceptance.py --run-id my-new-run
+```
+
+Accepted editable sources remain in `runs/phase3-final/`. Tested package:
+`runs/phase4a-acceptance-v4/girl2/`; local visual review: `runs/phase4a-review-final/index.html`.
+[Phase 3 animation](docs/phase3-animation.md) supplies seven expressions, independent
+blinks and text-driven talking. No audio lipsync or classifier-model inference is claimed.
+Girl2 passes portrait completeness despite absent source forearms/hands; this does
+not validate general limb preservation or an anatomically complete rig.
 
 Source preservation from [Phase 2.6](docs/phase2-6-results.md) remains intact:
 99.89% exact visible RGBA in the refined layers, unchanged texture and runtime
@@ -63,8 +72,9 @@ optional `uv sync --frozen --extra gpu` installs the pinned Torch/CUDA probe sta
 ## Continuing work
 
 Read [`AGENTS.md`](AGENTS.md), [`docs/HANDOVER.md`](docs/HANDOVER.md) and the phase
-results before continuing. Work stops after Phase 3. Phase 4, general-purpose
-automation and production deployment require a new assignment.
+results before continuing. Work stops after Phase 4A. Production deployment needs
+separate explicit authorization and implementation. Phase 4B image-to-model automation
+and any training require a new assignment.
 
 ## Project structure
 

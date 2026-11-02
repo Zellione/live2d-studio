@@ -56,8 +56,8 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   inference on the 5090; read its results before generalizing to other inputs.
 - Keep MCP on loopback; tokens only from an explicitly provided environment.
   `mcp-check` is read-only. Never read profile secrets to close the live CLI auth gate.
-- Phase 3 is the current stopping point. Do not begin Phase 4, custom training
-  or production copying without a new user assignment.
+- Phase 3 was the previous stopping point. Phase 4A was subsequently authorized;
+  the current Phase 4A section below governs deployment scope.
 
 ## Phase 2.5 neural backend
 - Read `docs/phase2-5-results.md` and `backends/see-through/README.md`.
@@ -104,4 +104,32 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   ST-caught listener errors are distinct from uncaught browser exceptions.
 - Run Python regression tests plus `node tests/test_rp_talk.mjs`; actual RP browser
   tests cover messages, mapping, idle, interruption, reload, fallback and stale replies.
-- Stop after Phase 3. No Phase 4, training or production deployment is authorized.
+- Phase 3 authoring remains frozen. Phase 4A subsequently authorized isolated
+  packaging/deployment tests only; see below.
+
+## Phase 4A isolated packaging and rollback
+- Read `docs/phase4a-results.md`, `docs/phase4a-deployment.md` and
+  `docs/benchmarks/phase4a.json`. Accepted Phase 3 art/rig/runtime remain immutable.
+- `package` uses `recipes/girl2-package.json`; do not silently repin accepted hashes.
+  Runtime references, all seven expressions, two motions, mapping, actual pinned
+  Core instantiation and reviewed sleeve/torso/neck mesh IDs must pass.
+- `deploy`/`rollback` write only marked `.cache/phase4a-*` copies. Production writes
+  remain unimplemented, even with `--execute`; never add an implicit override.
+- Keep the disposable server stopped during changes. Existing models require explicit
+  `--replace`; backups, write-ahead journals and rollback hashes stay in `runs/`.
+  Never force through changed user files, damaged backups or unknown upstream hashes.
+- CLI settings are read-only. Browser-created test state is preserved/reset separately;
+  rollback restores deployment-owned files, not arbitrary later chats/settings.
+- The adapter changes only pinned `live2d.js` plus `rp-talk.mjs`. No suitable complete
+  companion hook was found in the inspected version; review again before upgrading.
+- Framing is not anatomy. Preserve a full bilateral source inventory and distinguish
+  source preservation, semantic ownership and animation. Missing source hands do
+  not fail Girl2 portrait completeness; lost visible limbs must block acceptance.
+  Synthetic mask checks are not independent real limb benchmark validation.
+- Repeat with `scripts/phase4a_acceptance.py --run-id NEW_ID`; real message handlers
+  use classifier network mocks, including before application startup. Keep the
+  intentional upstream HTTP failure and all raw opacity excursion evidence.
+- Run Python regression tests and `node tests/test_rp_talk.mjs`. No generated packages,
+  snapshots, browser data or backups enter Git. Local review: `runs/phase4a-review-final/`.
+- Stop after Phase 4A. No production installation, Phase 4B automation or training
+  is authorized. Production requires separate explicit authorization and implementation.
