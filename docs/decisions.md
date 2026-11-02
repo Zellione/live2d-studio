@@ -48,3 +48,11 @@
   path was end-to-end validated. Token must be supplied locally for that path.
 - Extension/runtime/production installation remain unchanged (137 code files
   compared). Phase 2 is a proposal only; no model weights downloaded.
+
+## 2026-11-02 — Phase 2 artifact cleanup
+
+- Explicit user authorization supersedes retaining intermediate Phase 1 artifacts in Git.
+  Remove only index entries; retain local copies, final golden fixture and Phase 0 bundle.
+- Preserve historical Phase 1 measurements in its report, traceable to `07f56b3`.
+  Raw transcripts/frames are local-only; future runs use `runs/`.
+- No golden fixture regeneration or production SillyTavern changes.

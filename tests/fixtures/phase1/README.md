@@ -11,8 +11,8 @@ used PSD2Live 3.6.7 through MCP. `rig-recipe.json` contains ordered editor opera
 not hand-edited rig data. Recreate under a fresh directory; never reuse opaque
 state tokens from evidence logs. [Details and limitations](../../../docs/phase1-results.md).
 
-Earlier `art/`, `face.psd`, `face.psd2live`, `export/` and `runtime/` preserve
-intermediates. Their brow direction and expression composition differ from
+Earlier `art/`, `face.psd`, `face.psd2live`, `export/` and `runtime/` are local-only
+intermediates, removed from the index during Phase 2 cleanup. Their brow direction and expression composition differ from
 the accepted final model; do not deploy these intermediates.
 
 This is a functional geometric rig with 18 drawables, not finished anime artwork.

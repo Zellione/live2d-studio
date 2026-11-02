@@ -1,5 +1,10 @@
 # Phase 1 — automatisch erzeugter, sichtbar animierbarer Test-Rig
 
+Historischer Prüfstand: 2026-11-02, Commit `07f56b3`. Die folgenden Messwerte
+stammen aus Phase 1 und wurden beim Cleanup nicht neu im Browser gemessen.
+Rohbelege liegen nur noch lokal unter `docs/evidence/phase1/`; im ursprünglichen
+Commit bleiben sie nachvollziehbar. Neue Läufe gehören nach `runs/`.
+
 Prüfdatum: 2026-11-02. Phase 0 wurde vorher als `fed38dc` committed.
 **Phase 1 besteht den funktionalen Rig-/Runtime-Test für die geometrische
 Gesichtsvorlage.** Die unveränderte installierte SillyTavern-Erweiterung lädt
@@ -25,11 +30,11 @@ Software, keine neuen Python-Pakete, keine Änderungen an Produktions-ST.
   Lippenkonturen), 19 Deformer und 21 Parameter einschließlich `ParamMood`.
 - `scripts/create_phase1_art.py` erzeugt die Pixel ohne Bildmodell;
   `tests/fixtures/phase1/rig-recipe.json` beschreibt die MCP-Schritte.
-- Die Dateien direkt unter `tests/fixtures/phase1/`, `export/` und `runtime/`
-  sind erhaltene Vorstufen. Nur `final/runtime/` ist das Abnahmebundle.
-- [SHA-256-Manifest](evidence/phase1/fixture-sha256.json),
-  [Projektübersicht](evidence/phase1/final-overview.json),
-  [vollständiger Neuaufbau](evidence/phase1/rebuild-mcp.json).
+- Die früheren Zwischenstände wurden in Phase 2 aus dem Index entfernt; lokale
+  Kopien bleiben erhalten. Nur `final/runtime/` ist das Abnahmebundle.
+- SHA-256-Manifest (historischer lokaler Beleg),
+  Projektübersicht (historischer lokaler Beleg),
+  vollständiger Neuaufbau (historischer lokaler Beleg).
 
 PSD2Live **3.6.7**, SillyTavern **1.18.0**, Extension **0.1.0**, Core **5.0.0**,
 PIXI **6.5.2**, Bridge **0.4.0**, Chrome **156.0.8078.79**: gleiche Installation
@@ -48,10 +53,10 @@ das Video aus Browserframes; nichts installiert. Python-Standardbibliothek
 | Funktionierender Rig | Core verändert Vertices/Opacity; Zwischenwerte unterscheiden sich | Blink links/rechts beeinflusst getrennte Drawables; Mund, X/Y/Z, Mood verändern Geometrie; Defaults wiederherstellbar |
 | Sichtbare Animation | Pixelvergleich im tatsächlichen ST-Modell plus laufende Motion | 12 isolierte Posen, 3 Expressions, Idle und kontinuierlich beobachtetes Blinzeln bestanden |
 
-Belege: [Core](evidence/phase1/core.json),
-[Rig-Geometrie](evidence/phase1/rig-geometry.json),
-[Referenzen](evidence/phase1/integrity.json),
-[Browser-Abnahme](evidence/phase1/st-browser-acceptance/result.json).
+Belege: Core (historischer lokaler Beleg),
+Rig-Geometrie (historischer lokaler Beleg),
+Referenzen (historischer lokaler Beleg),
+Browser-Abnahme (historischer lokaler Beleg).
 
 Bei fixierten übrigen Parametern ändern sich gegenüber neutral:
 
@@ -73,18 +78,18 @@ Die Browserprüfung verlangt >100 geänderte Pixel und mehr als dreifaches
 Kontrollrauschen. Geometrie und Pixelzahlen ersetzen keine visuelle Qualitäts-
 kontrolle; die Screenshots wurden zusätzlich angesehen.
 
-[ST-Screenshot](evidence/phase1/st-browser-acceptance/screenshot.png),
-[Blinzeln](evidence/phase1/st-browser-acceptance/blink.png),
-[offener Mund](evidence/phase1/st-browser-acceptance/mouth_open.png),
-[neutral](evidence/phase1/st-browser-acceptance/expression_neutral.png),
-[happy](evidence/phase1/st-browser-acceptance/expression_happy.png),
-[angry](evidence/phase1/st-browser-acceptance/expression_angry.png).
+ST-Screenshot (historischer lokaler Beleg),
+Blinzeln (historischer lokaler Beleg),
+offener Mund (historischer lokaler Beleg),
+neutral (historischer lokaler Beleg),
+happy (historischer lokaler Beleg),
+angry (historischer lokaler Beleg).
 
 Idle: `Idle_id=1` startet nachweislich als Motion-Priorität 2 mit Index 1.
 Die selbst gespeicherte Vier-Sekunden-Sequenz steuert Kopf Z/Y, Atem und beide
 Augen. Gemessene Z-Spanne ca. **11,21°**, minimaler Blinkwert **0,00133**,
 20765 unterschiedliche Pixel zwischen zwei Idle-Stichproben.
-[Idle-Stichprobenvideo](evidence/phase1/idle-sampled.webm): neun echte Browser-
+Idle-Stichprobenvideo (historischer lokaler Beleg): neun echte Browser-
 Frames mit 2 fps zusammengesetzt, **keine** kontinuierliche Echtzeitaufnahme.
 Die groben Video-Stichproben können den kurzen Blinkmoment verpassen; dessen
 Minimum wird deshalb in jedem Motion-Update beobachtet.
@@ -93,16 +98,16 @@ Alle sieben erwarteten Modellressourcen wurden mit HTTP 200 geladen; keine
 unerwarteten Modell-HTTP-Fehler und keine unbehandelten JS-Ausnahmen.
 Der optionale `sillytavern_settings.json`-404 bleibt zulässig.
 137 Server-/Extension-Dateien entsprechen nach dem Test weiterhin der
-Produktionsinstallation: [Isolation](evidence/phase1/isolation.json).
+Produktionsinstallation: Isolation (historischer lokaler Beleg).
 Die hierfür gestarteten Testserver- und Browserprozesse wurden beendet.
 
 ## Tatsächlich geprüfte MCP-Operationen
 
-Der Server meldet [278 Operationen](evidence/phase1/operations.json).
+Der Server meldet 278 Operationen (historischer lokaler Beleg).
 Das ist ein Katalog, **keine Behauptung, alle getestet zu haben**.
 Requests/Responses inklusive Geometrie-Diagnostik:
-[erste Untersuchung](evidence/phase1/mcp-transcript.json) und
-[finaler Neuaufbau](evidence/phase1/rebuild-mcp.json).
+erste Untersuchung (historischer lokaler Beleg) und
+finaler Neuaufbau (historischer lokaler Beleg).
 
 | Operation | Beobachtetes Verhalten |
 | --- | --- |
@@ -120,7 +125,7 @@ Requests/Responses inklusive Geometrie-Diagnostik:
 | `view_render_poses` | Mehrere echte Rig-Posen nebeneinander gerendert; keine generierten Illustrationen als Bewegungsbeweis |
 | `project_save_as`, `project_open` | Parameter, Keyforms, Expressions und Motion überleben Save/Reopen; Export erfolgt danach |
 | `project_export_psd`, `project_export_model` | Editierbare PSD/Projektarchive und vollständige Cubism-Dateifamilie erfolgreich |
-| `rig_generate` | Auf unverändertem finalen Projekt erfolgreich als No-op; keine Aussage über Regeneration nach ausgetauschten Eingangsbildern ([Log](evidence/phase1/regeneration.json)) |
+| `rig_generate` | Auf unverändertem finalen Projekt erfolgreich als No-op; keine Aussage über Regeneration nach ausgetauschten Eingangsbildern (Log (historischer lokaler Beleg)) |
 
 Nicht separat geprüft: manuelles Erzeugen zusätzlicher ArtMeshes, freie
 Deformer-Erstellung, Mesh-Retopologie, Physics-Authoring, Skeleton-/IK-Baking,
@@ -179,7 +184,7 @@ node scripts/probe_rig.cjs \
   tests/fixtures/phase1/final/runtime/Generated_artwork.moc3
 ```
 
-15 Unittests bestanden ([Log](evidence/phase1/tests.log)), dazu separate
+15 Unittests bestanden (Log (historischer lokaler Beleg)), dazu separate
 Core-Geometrie- und Browserprüfungen. Der Browser-Test endet ungleich 0 bei
 fehlenden Pixeländerungen, nicht gestarteter Motion, fehlendem Blinkminimum,
 fehlenden Ressourcen oder unbehandelten JS-Ausnahmen.
@@ -191,7 +196,7 @@ Neuaufbau über die bereits authentifizierte MCP-Verbindung (ausgeführt):
 `workspace_inspect` verwenden, neue request_id vergeben, Jobs bis terminal
 beobachten. Anschließend `project_save_as`, `project_export_psd(scale=1)`,
 `project_open`, `project_export_model`. Nie `discard_unsaved=true` verwenden.
-Im finalen [Neuaufbauprotokoll](evidence/phase1/rebuild-mcp.json) stehen alle
+Im finalen Neuaufbauprotokoll (historischer lokaler Beleg) stehen alle
 konkreten Requests; State-Tokens daraus dürfen nicht wiederverwendet werden.
 
 Zusätzlicher CLI-Weg (Token-Setup und erfolgreicher authentifizierter Lauf
@@ -227,7 +232,7 @@ Server dort mit Port 8766 und Chrome mit neuem Projektprofil und Debug-Port
 
 ```bash
 node scripts/cdp_smoke.mjs http://127.0.0.1:9227 http://127.0.0.1:8766/ \
-  scripts/phase1_browser_scenario.js docs/evidence/phase1/repeat-browser
+  scripts/phase1_browser_scenario.js runs/phase1-repeat-browser
 ```
 
 Die Szenarioprüfung erstellt/benutzt nur den Testcharakter `Phase1 Face` in der

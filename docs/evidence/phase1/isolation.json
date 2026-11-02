@@ -1,9 +1,0 @@
-{
-  "files_checked": 137,
-  "changed": [],
-  "production_read_only": true,
-  "test_server": "127.0.0.1:8766",
-  "test_browser": "127.0.0.1:9227",
-  "backend": "ANGLE SwiftShader",
-  "source_versions": "../phase0/installation.json"
-}
