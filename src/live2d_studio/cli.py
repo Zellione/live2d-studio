@@ -30,6 +30,18 @@ def main():
     mode=p.add_mutually_exclusive_group(required=True)
     mode.add_argument('--dry-run',action='store_true')
     mode.add_argument('--execute',action='store_true')
+    p=commands.add_parser('target-deploy',help='Phase 4A.2 disposable targets only; production disabled')
+    p.add_argument('--package',type=Path,required=True)
+    p.add_argument('--target',type=Path,required=True)
+    p.add_argument('--transaction',type=Path,required=True)
+    p.add_argument('--name',default='girl2-phase3-portrait-v1')
+    p.add_argument('--adapter',action='store_true')
+    mode=p.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--dry-run',action='store_true'); mode.add_argument('--execute',action='store_true')
+    p=commands.add_parser('target-rollback',help='Standalone-compatible disposable recovery')
+    p.add_argument('--transaction',type=Path,required=True)
+    mode=p.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--dry-run',action='store_true'); mode.add_argument('--execute',action='store_true')
     p=commands.add_parser('prepare')
     p.add_argument('--input',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
@@ -84,6 +96,12 @@ def main():
         elif args.command=='rollback':
             from .deployment import rollback
             result=rollback(args.record,args.execute)
+        elif args.command=='target-deploy':
+            from .target_transaction import deploy
+            result=deploy(args.package,args.target,args.transaction,args.name,args.adapter,args.execute)
+        elif args.command=='target-rollback':
+            from .target_recovery import recover
+            result=recover(args.transaction,args.execute)
         elif args.command=='prepare':
             from .backends import prepare
             result=prepare(args.input,args.output,args.rights,args.backend,args.decomposition)
