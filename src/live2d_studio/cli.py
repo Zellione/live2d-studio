@@ -7,6 +7,10 @@ import sys
 def main():
     parser=argparse.ArgumentParser(description='Local image-to-layers MVP; candidates require visual review')
     commands=parser.add_subparsers(dest='command',required=True)
+    p=commands.add_parser('audit-production',help='Read-only audit; no production execution option')
+    p.add_argument('--target',type=Path,required=True)
+    p.add_argument('--package',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
     p=commands.add_parser('package')
     p.add_argument('--source',type=Path,default=Path('runs/phase3-final/runtime'))
     p.add_argument('--output',type=Path,required=True)
@@ -68,7 +72,10 @@ def main():
     commands.add_parser('doctor')
     args=parser.parse_args()
     try:
-        if args.command=='package':
+        if args.command=='audit-production':
+            from .production_audit import save_audit
+            result=save_audit(args.target,args.package,args.output)
+        elif args.command=='package':
             from .packaging import package
             result=package(args.source,args.output,args.core)
         elif args.command=='deploy':
