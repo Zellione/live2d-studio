@@ -2,11 +2,10 @@
 
 A local, open-source-first pipeline that turns one or more character images into an animated Live2D avatar usable in the SillyTavern Live2D extension.
 
-**Status:** Phase 2 provides a reproducible local CLI for candidate RGBA layers,
-segmentation/reconstruction masks, a versioned manifest and offline previews.
-The geometric regression passes image → layers → PSD2Live → installed SillyTavern
-extension, with visible blink, mouth and head movement. A licensed real anime test
-exposes unreliable semantic parsing; this is **not a production anime converter**.
+**Status:** Phase 2.5 evaluates See-through locally alongside the deterministic
+baseline. A licensed CC0 portrait passes image → neural layers → PSD2Live →
+isolated SillyTavern with visible blink, mouth and head movement. Cropped Wikipe-tan
+fails semantic quality. This is **not a production anime converter**.
 
 See [Phase 2 results](docs/phase2-results.md),
 [architecture and commands](docs/phase2-architecture.md),
@@ -14,6 +13,20 @@ See [Phase 2 results](docs/phase2-results.md),
 [Phase 1](docs/phase1-results.md). The standalone MCP CLI requires a locally supplied
 token; the authenticated connected MCP route was exercised. Text-talk and emotion
 classification remain unvalidated.
+
+## Phase 2.5: evaluated neural backend
+
+See-through now runs locally in a separate pinned uv environment. One CC0 bust
+produced a basic animated PSD2Live/SillyTavern prototype; the cropped Wikipe-tan
+case failed semantic quality. The deterministic backend remains the default.
+Read [results and limitations](docs/phase2-5-results.md) and the
+[worker/reproduction guide](backends/see-through/README.md).
+
+After running the isolated worker, import its output with
+`uv run live2d-studio prepare --backend see-through --input IMAGE --decomposition BRIDGE_DIRECTORY --output NEW_DIRECTORY --rights RIGHTS`.
+The v2 manifest distinguishes generated, uncertain and verified-original pixels;
+a neural PSD alone is not a rig acceptance result. Model downloads require the
+reviewed size/license/revision plan; generated artwork and exports remain local.
 
 ```bash
 export UV_CACHE_DIR="$PWD/.cache/uv"
@@ -38,7 +51,7 @@ optional `uv sync --frozen --extra gpu` installs the pinned Torch/CUDA probe sta
 ## Continuing work
 
 Read [`AGENTS.md`](AGENTS.md), [`docs/HANDOVER.md`](docs/HANDOVER.md) and the phase
-results before continuing. Phase 2 stops at the documented MVP; Phase 3 and
+results before continuing. Phase 2.5 stops at the documented evaluation; Phase 3 and
 production deployment require a new assignment.
 
 ## Project structure

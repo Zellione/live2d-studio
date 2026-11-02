@@ -1,6 +1,31 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 2 (2026-11-02)
+## Current state after Phase 2.5 (2026-11-02)
+
+Read [Phase 2.5 results](phase2-5-results.md) and the
+[isolated worker guide](../backends/see-through/README.md).
+
+- See-through source and all three approved model snapshots pinned; verified
+  checkpoint hashes, independent Python 3.12 / Torch 2.8.0+cu128 uv environment.
+- Full BF16 decomposition runs on RTX 5090; sequential model unloading,
+  approximately 113–125 s per tested image, peak 11.85 GiB Torch allocation.
+- `prepare --backend see-through --decomposition ...` imports worker output into
+  manifest v2; default deterministic backend and v1 goldens are retained.
+- Girl2 CC0 XCF benchmark: six-group visible mean IoU 0.7830 versus baseline
+  0.5200; 89.73% versus 54.23% visible coarse semantic accuracy. Neck/chest weak.
+- Cropped Wikipe-tan fails visual/semantic quality despite higher coverage.
+- Girl2 experimental MCP import/export and isolated actual ST blink/mouth/head
+  poses passed. Basic animation uses PSD2Live-generated shapes, not complete
+  animation parts from See-through. No general production-quality claim.
+- 40 unit/regression tests, prior Phase 0/1 browser tests and actual Core checks
+  pass; 21/21 repeated neural bridge files byte-identical on this setup.
+- Keep neural build gated by default. Missing source variants do not mean no
+  experimental motion is possible; actual evidence must be reviewed separately.
+- No original input, golden fixture, system stack or production ST changes.
+  Local evidence under `runs/phase2-5-*`; test server/browser stopped.
+- Stop after Phase 2.5. No custom training, Phase 3 or production deployment.
+
+## Historical handover after Phase 2 (2026-11-02)
 
 Read [Phase 2 results](phase2-results.md), [architecture](phase2-architecture.md)
 and [artifact policy](artifact-policy.md) first. The original plan below is retained

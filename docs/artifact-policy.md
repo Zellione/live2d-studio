@@ -30,3 +30,10 @@ are local diagnostics, not permission to capture HTTP authorization headers.
 Record model revision, license, checksum, cache path and actual measured hardware
 usage before promoting a model-backed result. Review `git diff --cached` before
 committing. Do not use `git add -f` to bypass this policy.
+
+Phase 2.5 adds `backends/see-through/` for its independent pyproject, uv lock,
+model download manifest and worker code. Nested `.venv/` stays ignored. Source
+checkouts remain under `.cache/`, model snapshots under `models/see-through/`,
+licensed XCF inputs under `assets/references/`, and all inference/PSD/runtime/SAM
+outputs under `runs/`. Compact benchmark numbers and recipes may be versioned
+under `docs/benchmarks/`; raw GPU samples, masks and browser recordings may not.

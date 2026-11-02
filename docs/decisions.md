@@ -84,3 +84,24 @@
   server/extension file hashes remain unchanged. Phase 1 final fixture unchanged.
 - Stop after this Phase 2 MVP. Improving real-art parsing is necessary before a
   useful general-purpose character pipeline; no Phase 3 or deployment started.
+
+## Phase 2.5 — Evaluate an existing neural decomposition backend (2026-11-02)
+
+- Pin See-through `df019de5` and three publicly licensed checkpoint snapshots
+  before downloading; user approved the 14,730,707,786-byte plan. Preserve all
+  weight notices and checksums locally. No system stack changes.
+- Isolate Python 3.12 / Torch 2.8/cu128 from the working Phase 2 environment;
+  omit GUI/training/detectron2/mmcv/SAM2 tiers from the headless inference worker.
+- Keep baseline behavior/defaults. Add a process/file boundary and manifest v2
+  rather than calling neural output protected source pixels. Mark all model
+  pixels generated/uncertain; hidden-only provenance remains unlocalized.
+- Use independent CC0 Girl2 XCF layers for coarse evaluation; no GT enters
+  inference. SAM is a separate prediction experiment, never a reference label.
+- Retain See-through as opt-in: strong improvement on the frontal/bust case,
+  major failure on cropped Wikipe-tan; no unconditional default promotion.
+- Missing source blink/mouth variants do not establish impossibility: the
+  explicit connected-MCP experiment demonstrates PSD2Live procedural fallback
+  animation. Retain strict ordinary build gates and report that narrow success
+  separately from high-quality rig acceptance.
+- Full results, actual timing/VRAM, visual failures and repeatability evidence:
+  [Phase 2.5](phase2-5-results.md). Stop here; no training or production deployment.

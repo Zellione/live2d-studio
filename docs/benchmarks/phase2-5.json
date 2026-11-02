@@ -1,0 +1,382 @@
+{
+  "animation": {
+    "angle_x_minus": {
+      "changed_pixels": 17548,
+      "values": {
+        "ParamAngleX": -25
+      }
+    },
+    "angle_x_plus": {
+      "changed_pixels": 17495,
+      "values": {
+        "ParamAngleX": 25
+      }
+    },
+    "angle_y_minus": {
+      "changed_pixels": 12246,
+      "values": {
+        "ParamAngleY": -20
+      }
+    },
+    "angle_y_plus": {
+      "changed_pixels": 12098,
+      "values": {
+        "ParamAngleY": 20
+      }
+    },
+    "angle_z_minus": {
+      "changed_pixels": 49677,
+      "values": {
+        "ParamAngleZ": -20
+      }
+    },
+    "angle_z_plus": {
+      "changed_pixels": 49340,
+      "values": {
+        "ParamAngleZ": 20
+      }
+    },
+    "blink": {
+      "changed_pixels": 2723,
+      "values": {
+        "ParamEyeLOpen": 0,
+        "ParamEyeROpen": 0
+      }
+    },
+    "blink_half": {
+      "changed_pixels": 1677,
+      "values": {
+        "ParamEyeLOpen": 0.5,
+        "ParamEyeROpen": 0.5
+      }
+    },
+    "left_closed": {
+      "changed_pixels": 1149,
+      "values": {
+        "ParamEyeLOpen": 0
+      }
+    },
+    "mouth_half": {
+      "changed_pixels": 314,
+      "values": {
+        "ParamMouthOpenY": 0.5
+      }
+    },
+    "mouth_open": {
+      "changed_pixels": 624,
+      "values": {
+        "ParamMouthOpenY": 1
+      }
+    },
+    "right_closed": {
+      "changed_pixels": 1574,
+      "values": {
+        "ParamEyeROpen": 0
+      }
+    }
+  },
+  "hardware": {
+    "oga": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "bfloat16",
+      "gpu_samples": 210,
+      "input_sha256": "09011ad707e0325c345fdc39da23d9b1a1640c3327c1ba2dfe192001da736f41",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 19951,
+      "sampled_gpu_utilization_mean": 86.83333333333333,
+      "sampled_gpu_utilization_peak": 100,
+      "seconds": 113.06187751100151,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "layerdiff",
+          "peak_allocated_bytes": 12722573312,
+          "peak_reserved_bytes": 17202937856,
+          "seconds": 103.3916910279986
+        },
+        {
+          "name": "marigold",
+          "peak_allocated_bytes": 6391918592,
+          "peak_reserved_bytes": 7197425664,
+          "seconds": 8.141277469998386
+        },
+        {
+          "name": "export",
+          "peak_allocated_bytes": 8519680,
+          "peak_reserved_bytes": 20971520,
+          "seconds": 1.0294752970003174
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    },
+    "wikipe": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "bfloat16",
+      "gpu_samples": 232,
+      "input_sha256": "6035d94f0d446f87558fea4af285a014a5bc4b517eb605a1b6a2f4c88da35df1",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 19872,
+      "sampled_gpu_utilization_mean": 80.63793103448276,
+      "sampled_gpu_utilization_peak": 100,
+      "seconds": 124.98866012200051,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "layerdiff",
+          "peak_allocated_bytes": 12722573312,
+          "peak_reserved_bytes": 17202937856,
+          "seconds": 114.06965756099999
+        },
+        {
+          "name": "marigold",
+          "peak_allocated_bytes": 6391918592,
+          "peak_reserved_bytes": 7197425664,
+          "seconds": 8.170327984998949
+        },
+        {
+          "name": "export",
+          "peak_allocated_bytes": 8519680,
+          "peak_reserved_bytes": 20971520,
+          "seconds": 1.135638846000802
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    }
+  },
+  "input_hashes": {
+    "oga": "09011ad707e0325c345fdc39da23d9b1a1640c3327c1ba2dfe192001da736f41",
+    "wikipe": "6035d94f0d446f87558fea4af285a014a5bc4b517eb605a1b6a2f4c88da35df1"
+  },
+  "model_lock": "backends/see-through/models.lock.json",
+  "native_comparisons": {
+    "oga": {
+      "baseline": {
+        "alpha_threshold": 127,
+        "candidate_coverage_fraction": 0.5422491052392943,
+        "candidate_covered_pixels": 168627,
+        "composite_changed_foreground_pixels": 122,
+        "composite_rgb_mae": 0.018315395243592505,
+        "correct_semantic_fraction": null,
+        "foreground_pixels": 310977,
+        "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+        "original_resolution": [
+          1000,
+          1000
+        ]
+      },
+      "neural": {
+        "alpha_threshold": 127,
+        "candidate_coverage_fraction": 0.993179559903144,
+        "candidate_covered_pixels": 308856,
+        "composite_changed_foreground_pixels": 309662,
+        "composite_rgb_mae": 8.283000564886363,
+        "correct_semantic_fraction": null,
+        "foreground_pixels": 310977,
+        "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+        "original_resolution": [
+          1000,
+          1000
+        ]
+      }
+    },
+    "wikipe": {
+      "baseline": {
+        "alpha_threshold": 127,
+        "candidate_coverage_fraction": 0.22333679111101606,
+        "candidate_covered_pixels": 41768,
+        "composite_changed_foreground_pixels": 0,
+        "composite_rgb_mae": 0.0,
+        "correct_semantic_fraction": null,
+        "foreground_pixels": 187018,
+        "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+        "original_resolution": [
+          440,
+          440
+        ]
+      },
+      "neural": {
+        "alpha_threshold": 127,
+        "candidate_coverage_fraction": 0.7670812435166668,
+        "candidate_covered_pixels": 143458,
+        "composite_changed_foreground_pixels": 180898,
+        "composite_rgb_mae": 52.02027255843466,
+        "correct_semantic_fraction": null,
+        "foreground_pixels": 187018,
+        "note": "Candidate support is not correct parsing. Composite comparison includes resampling and generated RGB.",
+        "original_resolution": [
+          440,
+          440
+        ]
+      }
+    }
+  },
+  "oga_baseline": {
+    "background_false_positive_pixels": 157,
+    "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+    "correct_visible_semantic_pixels": 168627,
+    "foreground_pixels": 310930,
+    "groups": {
+      "clothing": {
+        "full_iou": 0.8803047700157404,
+        "visible_iou": 0.8587168939007976
+      },
+      "eyes_brows": {
+        "full_iou": 0.0,
+        "visible_iou": 0.0
+      },
+      "face_ears_nose": {
+        "full_iou": 0.7757227049313984,
+        "visible_iou": 0.8916607873571328
+      },
+      "hair_accessories": {
+        "full_iou": 0.0,
+        "visible_iou": 0.0
+      },
+      "mouth": {
+        "full_iou": 0.6657223796033994,
+        "visible_iou": 0.6657223796033994
+      },
+      "neck": {
+        "full_iou": 0.6546339541950369,
+        "visible_iou": 0.7037554691298007
+      }
+    },
+    "mask_threshold": 127,
+    "mean_full_iou": 0.49606396812426246,
+    "mean_visible_iou": 0.5199759216651885,
+    "resampling": "nearest to original 1000x1000; square no crop",
+    "scope": "OGA Girl2 only; six independently reviewed coarse groups",
+    "unknown_or_missing_foreground_pixels": 142303,
+    "visible_semantic_accuracy": 0.5423310713022224
+  },
+  "oga_neural": {
+    "background_false_positive_pixels": 776,
+    "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+    "correct_visible_semantic_pixels": 279003,
+    "foreground_pixels": 310930,
+    "groups": {
+      "clothing": {
+        "full_iou": 0.8162271197237193,
+        "visible_iou": 0.8162271197237193
+      },
+      "eyes_brows": {
+        "full_iou": 0.870194353809051,
+        "visible_iou": 0.9025817555938038
+      },
+      "face_ears_nose": {
+        "full_iou": 0.7245315711689062,
+        "visible_iou": 0.9573336258191889
+      },
+      "hair_accessories": {
+        "full_iou": 0.6264072642359788,
+        "visible_iou": 0.9765793646245248
+      },
+      "mouth": {
+        "full_iou": 0.9078341013824884,
+        "visible_iou": 0.9078341013824884
+      },
+      "neck": {
+        "full_iou": 0.2910406924684111,
+        "visible_iou": 0.13755889952880376
+      }
+    },
+    "mask_threshold": 127,
+    "mean_full_iou": 0.7060391837980925,
+    "mean_visible_iou": 0.7830191444454214,
+    "resampling": "nearest to original 1000x1000; square no crop",
+    "scope": "OGA Girl2 only; six independently reviewed coarse groups",
+    "unknown_or_missing_foreground_pixels": 2119,
+    "visible_semantic_accuracy": 0.897317724246615
+  },
+  "recommendation": "Keep See-through opt-in; basic Girl2 rig demonstrated, cropped Wikipe-tan rejected.",
+  "replay": {
+    "compared_bridge_files": 21,
+    "different_files": [],
+    "exact_replay": true
+  },
+  "rig_import": {
+    "animation_tested": false,
+    "deformers": 28,
+    "imported_layers": 21,
+    "input_layers": 19,
+    "meshes": 24,
+    "parameter_count": 20,
+    "status": "pass"
+  },
+  "sam": {
+    "oga": {
+      "candidate_coverage_fraction": 0.9802750685742032,
+      "coarse_visible_iou": {
+        "clothing": 0.8107255723960013,
+        "eyes_brows": 0.8741058655221745,
+        "face_ears_nose": 0.9449560991327229,
+        "hair_accessories": 0.9658508397487278,
+        "mouth": 0.7941507311586051,
+        "neck": 0.3715663088957613
+      },
+      "foreground_pixels": 310977,
+      "mean_coarse_visible_iou": 0.7935592361423321,
+      "metric_note": "Each overlapping predicted class mask independently scored against visible XCF group; not exclusive-label accuracy.",
+      "overlapping_pixels": 5187,
+      "parts": [
+        "hair",
+        "headwear",
+        "face",
+        "eyes",
+        "ears",
+        "mouth",
+        "neck",
+        "topwear"
+      ],
+      "unknown_foreground_pixels": 6134,
+      "warning": "SAM predictions are not independent ground truth and supply no hidden-pixel inpainting."
+    },
+    "wikipe": {
+      "candidate_coverage_fraction": 0.8043236479911025,
+      "foreground_pixels": 187018,
+      "overlapping_pixels": 417,
+      "parts": [
+        "hair",
+        "face",
+        "eyes",
+        "nose",
+        "mouth",
+        "neck",
+        "topwear",
+        "legwear"
+      ],
+      "unknown_foreground_pixels": 36595,
+      "warning": "SAM predictions are not independent ground truth and supply no hidden-pixel inpainting."
+    }
+  },
+  "schema_version": 1,
+  "scope": "Phase 2.5; two licensed artworks, one with coarse XCF GT"
+}

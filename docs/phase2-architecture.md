@@ -1,5 +1,11 @@
 # Phase 2 architecture and reproducibility
 
+This document describes the retained Phase 2 baseline. Phase 2.5 adds an isolated
+optional neural worker and backward-compatible manifest v2; see the
+[evaluation](phase2-5-results.md) and [worker guide](../backends/see-through/README.md).
+The historical model assessment below is unchanged; its "not installed" statements
+refer to Phase 2, not the later See-through experiment.
+
 Phase 2 is a working **flat-colour baseline**, not a general anime part parser.
 The modules deliberately separate recognition, extraction, reconstruction, editor
 import and runtime acceptance. A successful neutral composite proves none of the

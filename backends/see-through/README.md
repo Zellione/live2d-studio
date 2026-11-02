@@ -90,3 +90,21 @@ PSD2Live artwork requests. Upstream `-r` maps to image-left, `-l` to image-right
 The bridge rejects unsupported blends, invalid paths, unpinned provenance and
 out-of-canvas placement; it never silently drops excess layers. Automatic build
 is gated until animation-specific shapes and concealed geometry are reviewed.
+
+For the Phase 2.5 experimental rig, use `manifest.artwork_request(project)` as
+the `project_create_artwork` payload through connected MCP. Inspect current
+project/state before each mutation, never pass `discard_unsaved`, and use new
+request IDs. Then save to a fresh `.psd2live`, export PSD, reopen the saved project
+and export runtime. Validate with `mcp.validate_import` and `scripts/validate_bundle.py`.
+This deliberately reviewed experiment does not set `rig_ready=true` or relax the
+ordinary CLI build gate. The connected path was tested; standalone transport still
+requires a locally entered token, never a token read from user profiles.
+
+For actual rendering, create a new disposable server with
+`scripts/prepare_st_smoke.py`, copy only the experimental runtime to
+`data/default-user/assets/live2d/phase2-5` **inside that copy**, and start the
+isolated server/browser as documented in `docs/compatibility.md`, with fresh
+profile paths. Run `scripts/cdp_smoke.mjs` against loopback and
+`scripts/phase2_5_browser_scenario.js`. The scenario records controlled eye,
+mouth and head poses; its automated `pass` means changes/resources/reload passed,
+not that an artist approved the deformation. Inspect the saved frames separately.

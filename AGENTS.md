@@ -52,9 +52,23 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Manifest v1: relative paths, hashes, source rights, observed/reconstructed masks,
   explicit missing/unknown regions. Scores are uncalibrated candidate indicators.
 - The CPU flat-colour baseline passes the geometric benchmark; real anime parsing
-  fails semantic acceptance. CUDA arithmetic works on the 5090, but no neural image
-  model has been installed or validated. Never describe this as GPU image inference.
+  fails semantic acceptance. Phase 2.5 separately validates See-through GPU
+  inference on the 5090; read its results before generalizing to other inputs.
 - Keep MCP on loopback; tokens only from an explicitly provided environment.
   `mcp-check` is read-only. Never read profile secrets to close the live CLI auth gate.
-- Phase 2 is the current stopping point. Do not begin Phase 3 or production copying
-  without a new user assignment.
+- Phase 2.5 is the current stopping point. Do not begin Phase 3, custom training
+  or production copying without a new user assignment.
+
+## Phase 2.5 neural backend
+- Read `docs/phase2-5-results.md` and `backends/see-through/README.md`.
+- Never install worker dependencies into the main environment. Its separate
+  pyproject/uv.lock and models.lock.json pin source, wheels and approved weights.
+- `prepare --backend see-through` imports an offline worker bridge. It does not
+  download weights or load Torch inside the baseline process.
+- V2 generated alpha is fractional. Observed masks remain protected-original
+  pixels; no inferred hidden mask may be described as independently known truth.
+- XCF metadata and SAM predictions are not independent inference inputs/GT
+  interchangeably. Only the reviewed XCF evaluation recipe supplies ground truth.
+- Coverage, correct semantic assignment, reconstructed plausibility, import and
+  rendered motion are separate gates. Girl2 passed a basic animation experiment;
+  Wikipe-tan failed semantic quality. Retain both outcomes.
