@@ -5,61 +5,15 @@ The destination must be new. PSD2LIVE_MCP_TOKEN is optional and never logged.
 """
 import argparse
 import json
-import os
 from pathlib import Path
 import time
-import urllib.parse
-import urllib.request
-import urllib.error
 import uuid
 from create_phase1_art import create
 
-class MCP:
-    def __init__(self, endpoint):
-        if urllib.parse.urlparse(endpoint).hostname != '127.0.0.1':
-            raise ValueError('MCP endpoint must be loopback 127.0.0.1')
-        self.endpoint, self.session, self.counter = endpoint, None, 0
-        self.rpc('initialize', {'protocolVersion':'2024-11-05','capabilities':{},
-                               'clientInfo':{'name':'live2d-studio-phase1','version':'1'}})
-        self.rpc('notifications/initialized', {}, notification=True)
-
-    def rpc(self, method, params, notification=False):
-        self.counter += 1
-        message = {'jsonrpc':'2.0','method':method,'params':params}
-        if not notification:
-            message['id'] = self.counter
-        headers = {'Content-Type':'application/json','Accept':'application/json, text/event-stream'}
-        if self.session:
-            headers['Mcp-Session-Id'] = self.session
-        token = os.environ.get('PSD2LIVE_MCP_TOKEN')
-        if token:
-            headers['Authorization'] = 'Bearer ' + token
-        request = urllib.request.Request(self.endpoint, json.dumps(message).encode(), headers)
-        try:
-            with urllib.request.urlopen(request, timeout=60) as response:
-                self.session = response.headers.get('Mcp-Session-Id', self.session)
-                body = response.read().decode()
-        except urllib.error.HTTPError as error:
-            if error.code == 401:
-                raise RuntimeError('PSD2Live requires its MCP token: set PSD2LIVE_MCP_TOKEN locally; do not put it in the recipe or logs.') from None
-            raise
-        if notification:
-            return None
-        if body.lstrip().startswith('{'):
-            result = json.loads(body)
-        else:
-            messages = [json.loads(line[5:].strip()) for line in body.splitlines() if line.startswith('data:')]
-            result = next(item for item in messages if item.get('id') == self.counter)
-        if 'error' in result:
-            raise RuntimeError(result['error'])
-        return result['result']
-
-    def tool(self, name, arguments):
-        response = self.rpc('tools/call', {'name':name,'arguments':arguments})
-        value = response.get('structuredContent')
-        if value is None:
-            value = json.loads(next(c['text'] for c in response['content'] if c['type']=='text'))
-        return value
+# Keep the historical stdlib-only script usable without installing the package.
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
+from live2d_studio.mcp import MCP
 
 def build(destination, endpoint):
     destination = destination.resolve()

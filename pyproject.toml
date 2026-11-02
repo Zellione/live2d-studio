@@ -1,15 +1,29 @@
 [project]
 name = "live2d-studio"
-version = "0.0.1"
+version = "0.2.0"
 description = "Local pipeline for SillyTavern-compatible Live2D characters"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["numpy==2.3.4", "Pillow==12.0.0", "scipy==1.16.3"]
+
+[project.optional-dependencies]
+gpu = ["torch==2.9.0"]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+
+[project.scripts]
+live2d-studio = "live2d_studio.cli:main"
 
 [dependency-groups]
-dev = ["pytest>=8"]
+dev = ["pytest==8.4.2"]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
