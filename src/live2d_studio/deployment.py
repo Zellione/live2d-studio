@@ -216,6 +216,8 @@ def rollback(record, execute=False, _checkpoint=None):
     record = record_path(record)
     safe_tree(record)
     plan = json.loads((record / 'deployment.json').read_text())
+    if plan.get('schema_version') != 1:
+        raise ValueError('Unsupported deployment journal schema')
     root = isolated(plan['target'])
     with locked(root):
         if plan['status'] == 'rolled-back':

@@ -1,11 +1,12 @@
 // Dependency-free CDP driver for a dedicated local test browser only.
 import fs from 'node:fs/promises';
-const [endpoint, url, script, output] = process.argv.slice(2);
+const [endpoint, url, script, output, startupMock] = process.argv.slice(2);
+if(startupMock && startupMock !== '--mock-startup-classifier') throw Error('Unknown option');
 if (!endpoint || !url || !script || !output) throw Error('Usage: ENDPOINT URL SCRIPT OUTPUT_DIR');
 for (const value of [endpoint, url]) {
   if (new URL(value).hostname !== '127.0.0.1') throw Error('Loopback only');
 }
-const target = await (await fetch(`${endpoint}/json/new?${encodeURIComponent(url)}`, {method:'PUT'})).json();
+const target = await (await fetch(`${endpoint}/json/new?about:blank`, {method:'PUT'})).json();
 const ws = new WebSocket(target.webSocketDebuggerUrl);
 await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
 let next=0;
@@ -28,6 +29,15 @@ await fs.mkdir(output,{recursive:false});
 const timeout=setTimeout(()=>{console.error('CDP test timed out');process.exit(2);},150000);
 try {
   await send('Runtime.enable');await send('Network.enable');await send('Page.enable');
+  if(startupMock) await send('Page.addScriptToEvaluateOnNewDocument',{source:`
+    const originalFetch = window.fetch;
+    window.fetch = function(input, init) {
+      if(String(input) === '/api/extra/classify') return Promise.resolve(new Response(
+        JSON.stringify({classification:[{label:'neutral',score:1}]}),
+        {status:200,headers:{'Content-Type':'application/json'}}));
+      return originalFetch.call(this,input,init);
+    };
+  `});
   await send('Page.navigate',{url});
   await send('Page.bringToFront');
   let ready=false;
@@ -40,6 +50,7 @@ try {
   const expression=await fs.readFile(script,'utf8');
   const result=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:120000});
   const frames=result.result.value?.frames;
+  if(result.result.value && startupMock) result.result.value.startup_classifier='mock neutral before application startup; no inference';
   if(frames) {
     for(const [name,data] of Object.entries(frames)) {
       if(!/^[a-zA-Z0-9_-]+$/.test(name)) throw Error('Invalid frame name');

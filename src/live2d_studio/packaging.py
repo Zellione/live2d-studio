@@ -131,6 +131,8 @@ def verify(root):
     root = Path(root)
     safe_tree(root)
     manifest = json.loads((root / 'package-manifest.json').read_text())
+    if manifest.get('schema_version') != 1 or manifest.get('production_authorized') is not False:
+        raise ValueError('Unsupported package schema or production authorization claim')
     spec = policy()
     actual = files(root)
     actual.pop('package-manifest.json')

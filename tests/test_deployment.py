@@ -61,13 +61,18 @@ class DeploymentTests(unittest.TestCase):
         with self.assertRaises(FileExistsError): pkg.package(self.source,second,self.root / pkg.CORE)
 
     def test_missing_modified_extra_and_symlink_bundle(self):
-        for attack in ['missing','modified','extra','symlink']:
+        for attack in ['missing','modified','extra','symlink','schema','authorization']:
             with self.subTest(attack=attack):
                 target=self.base / attack; shutil.copytree(self.package,target)
                 if attack=='missing': (target/'test.moc3').unlink()
                 if attack=='modified': (target/'test.moc3').write_bytes(b'wrong')
                 if attack=='extra': (target/'unlisted').write_text('extra')
                 if attack=='symlink': (target/'link').symlink_to(self.package/'test.moc3')
+                if attack in {'schema','authorization'}:
+                    m=json.loads((target/'package-manifest.json').read_text())
+                    if attack=='schema':m['schema_version']=2
+                    else:m['production_authorized']=True
+                    pkg.write_json(target/'package-manifest.json',m)
                 with self.assertRaises((ValueError,OSError)): pkg.verify(target)
 
     def test_dry_runs_do_not_write(self):
@@ -121,15 +126,17 @@ class DeploymentTests(unittest.TestCase):
         dep.rollback(self.record,True);self.assertFalse(self.dest.exists())
 
     def test_process_death_after_rename_recovers(self):
+        self.dest.mkdir(); (self.dest/'old').write_text('original before process death')
+        before=dep.snapshot(self.dest)
         pid=os.fork()
         if pid==0:
             def die(stage,i):os._exit(73)
-            self.install(adapter=True,_checkpoint=die)
+            self.install(adapter=True,replace=True,_checkpoint=die)
             os._exit(0)
         _,status=os.waitpid(pid,0)
         self.assertEqual(os.waitstatus_to_exitcode(status),73)
         dep.rollback(self.record,True)
-        self.assertFalse(self.dest.exists())
+        self.assertEqual(dep.snapshot(self.dest),before)
         self.assertEqual((self.root/pkg.EXT/'live2d.js').read_text(),'original extension\n')
 
     def test_modified_installed_files_and_backups_fail_closed(self):
@@ -162,6 +169,14 @@ class DeploymentTests(unittest.TestCase):
         journal['operations'][0]['path']='../../production'
         pkg.write_json(self.record/'deployment.json',journal)
         with self.assertRaises(ValueError):dep.rollback(self.record,True)
+
+    def test_case_and_hardlink_conflicts(self):
+        (self.dest.parent/'Girl2').mkdir()
+        with self.assertRaises(ValueError):self.install()
+        (self.dest.parent/'Girl2').rmdir()
+        os.link(self.package/'test.png',self.package/'linked.png')
+        with self.assertRaises(ValueError):self.install()
+        self.assertFalse(self.record.exists())
 
 
 class CompletenessTests(unittest.TestCase):
