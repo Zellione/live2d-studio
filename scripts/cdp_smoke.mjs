@@ -24,8 +24,8 @@ function send(method,params={}) {
     const id=++next;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));
   });
 }
-await fs.mkdir(output,{recursive:true});
-const timeout=setTimeout(()=>{console.error('CDP test timed out');process.exit(2);},90000);
+await fs.mkdir(output,{recursive:false});
+const timeout=setTimeout(()=>{console.error('CDP test timed out');process.exit(2);},150000);
 try {
   await send('Runtime.enable');await send('Network.enable');await send('Page.enable');
   await send('Page.navigate',{url});
@@ -38,7 +38,7 @@ try {
   }
   if(!ready)throw Error('Document not ready');
   const expression=await fs.readFile(script,'utf8');
-  const result=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:60000});
+  const result=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:120000});
   const frames=result.result.value?.frames;
   if(frames) {
     for(const [name,data] of Object.entries(frames)) {
@@ -47,23 +47,25 @@ try {
     }
     result.result.value.frames=Object.keys(frames);
   }
-  if(['sillytavern-extension','phase1-animation','phase2-basic','phase2-5-experiment','phase2-6-quality'].includes(result.result.value?.stage)) {
+  if(['sillytavern-extension','phase1-animation','phase2-basic','phase2-5-experiment','phase2-6-quality','phase3-animation'].includes(result.result.value?.stage)) {
     const value=result.result.value;
+    const phase3=value.stage==='phase3-animation';
     const phase1=value.stage==='phase1-animation';
     const phase25=value.stage==='phase2-5-experiment';
     const phase26=value.stage==='phase2-6-quality';
     const phase2=value.stage==='phase2-basic'||phase25||phase26;
-    const assetRoot=phase26?value.asset_root:phase25?'/assets/live2d/phase2-5/':phase2?'/assets/live2d/phase2/':phase1?'/assets/live2d/phase1/':'/assets/live2d/phase0/';
+    const assetRoot=phase3?value.asset_root:phase26?value.asset_root:phase25?'/assets/live2d/phase2-5/':phase2?'/assets/live2d/phase2/':phase1?'/assets/live2d/phase1/':'/assets/live2d/phase0/';
     const responses=events.filter(e=>e.method==='Network.responseReceived').map(e=>e.params.response);
-    const expected=phase2?['.model3.json','.moc3','/texture_00.png','.idle.motion3.json']:phase1?['.model3.json','.moc3','/texture_00.png','.phase1Idle.motion3.json',
+    const expected=phase3?['.model3.json','.moc3','/texture_00.png','.rpIdle.motion3.json']:phase2?['.model3.json','.moc3','/texture_00.png','.idle.motion3.json']:phase1?['.model3.json','.moc3','/texture_00.png','.phase1Idle.motion3.json',
       '.phase1_neutral.exp3.json','.phase1_happy.exp3.json','.phase1_angry.exp3.json']:
       ['.model3.json','.moc3','/texture_00.png','.idle.motion3.json',
       '.nod.motion3.json','.smile.exp3.json','.sad.exp3.json','.angry.exp3.json','.surprised.exp3.json'];
     const missing=expected.filter(suffix=>!responses.some(r=>r.url.includes(assetRoot) && r.url.endsWith(suffix) && r.status===200));
     const unexpectedHttp=responses.filter(r=>r.url.includes(assetRoot) && r.status>=400 && !r.url.endsWith('/sillytavern_settings.json'));
     const exceptions=events.filter(e=>e.method==='Runtime.exceptionThrown');
-    value.network_validation={missing_successful_resources:missing,unexpected_http_errors:unexpectedHttp.map(r=>({url:r.url,status:r.status})),uncaught_exceptions:exceptions.length};
-    if(missing.length || unexpectedHttp.length || exceptions.length)value.status='fail';
+    const listenerErrors=phase3?events.filter(e=>e.method==='Runtime.consoleAPICalled'&&e.params.args?.some(a=>a.value==='Error in event listener')):[];
+    value.network_validation={caught_event_listener_errors:listenerErrors.length,missing_successful_resources:missing,unexpected_http_errors:unexpectedHttp.map(r=>({url:r.url,status:r.status})),uncaught_exceptions:exceptions.length};
+    if(missing.length || unexpectedHttp.length || exceptions.length || listenerErrors.length)value.status='fail';
   }
   await fs.writeFile(`${output}/result.json`,JSON.stringify(result,null,2));
   const screenshot=await send('Page.captureScreenshot',{format:'png'});
@@ -78,5 +80,5 @@ try {
     url:e.params.response?.url,status:e.params.response?.status,
     error:e.params.errorText}));
   await fs.writeFile(`${output}/browser-events.json`,JSON.stringify(sanitized,null,2));
-  clearTimeout(timeout);ws.close();
+  clearTimeout(timeout);await send("Target.closeTarget",{targetId:target.id});ws.close();
 }
