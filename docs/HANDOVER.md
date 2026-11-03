@@ -1,5 +1,30 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.2 (2026-11-03)
+
+Continued from `71ef58e`. Read [results](phase4b2-results.md),
+[model investigation](phase4b2-model-evaluation.md) and
+[benchmark](benchmarks/phase4b2.json). **Keep deterministic reconstruction.**
+No tested neural candidate improved facial animation without a visual regression.
+
+- Optional isolated LaMa and quantized Qwen workers now run through `create`
+  (`deterministic`, `neural`, exact-image-reviewed `hybrid`). No agent at runtime;
+  no inference/download in the default path. Separate frozen uv environments.
+- 32 crop tasks used the actual 5090. Qwen Q4_K_S + FP8 encoder fits: peak Torch
+  allocation about 20.4 GiB. FP8/NVFP4/GGUF alternatives were investigated; full
+  Qwen was not downloaded. The matching existing VAE was hash-verified and reused.
+- Five fresh editable MCP rigs and actual 57-pose comparisons retain failures.
+  Four Sara 122-frame transition suites expose the decisive double contour near
+  0.1 eye openness. Smoother fully closed stills did not survive animation review.
+  Qwen mouth aperture and Girl2 lash-style regressions are also rejected.
+- Source RGBA/masks and frozen Sara/Girl2/Phase 3/3.1 inventories remain unchanged.
+  New generated pixels and uncertain boundaries are separately tracked. No model
+  output is anatomical truth; other expression tiles remain evaluation-only.
+- Local review: `runs/phase4b2-review-release/index.html`. Every rendered candidate
+  has a development rejection record; no new user visual approval or promotion.
+  Accepted Phase 4B.1 Sara and earlier Girl2 previews remain the defaults.
+- Stop after Phase 4B.2. No production deployment, training or system changes.
+
 ## Current state after Phase 4B.1 (2026-11-03)
 
 Continued from 3e120c8. Read [results](phase4b1-results.md),

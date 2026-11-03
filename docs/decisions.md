@@ -303,3 +303,31 @@
   image-to-Live2D, professional-quality or production acceptance is inferred.
 - Assess additional models through pinned public metadata only. Neither a newer
   model nor an available local filename establishes a tested facial improvement.
+
+# Phase 4B.2 decisions (2026-11-03)
+
+- Test a small specialized safetensors LaMa first; investigate quantized Qwen
+  before drawing VRAM conclusions. The separately approved 21.59 GB Q4_K_S/FP8
+  set runs on the 5090 at about 20.4 GiB peak Torch allocation. Reuse the verified
+  existing VAE. Full Qwen and untested FP8/NVFP4 variants are not downloaded.
+- Keep optional inference in separate frozen uv environments and offline worker
+  processes. Hash-check weights, source revisions, crop inputs and masks. Preserve
+  source layers; hard-composite generated RGB only inside explicit masks.
+- Use exact cached outputs for controlled neural/hybrid rig comparisons. Review
+  names individual feature outputs and hashes. Empty selection means deterministic
+  fallback with no model load; no character-name/coordinate tuning or universal
+  promotion policy is introduced.
+- Keep **deterministic as the default**. LaMa recreates/removes features incorrectly;
+  Qwen's smoother Sara closed lashes produce duplicate contours during the 0.1
+  blink crossfade. Its mouth edit reduces apparent opening. Girl2's generated
+  lashes change style asymmetrically. All five rendered candidates are rejected.
+- Dense transitions are a separate visual gate. Quarter-step poses, exact neutral
+  equality, unchanged source ownership and finite geometry missed the decisive
+  double-contour defect. Preserve both successful numerical checks and failures.
+- Diagnose experimental confounds rather than assigning them to the model:
+  native Boy1 holdout removes the rescaled black-boundary halo; original LaMa
+  TorchScript/safetensors forward parity is exact; stronger Qwen conditioning
+  avoids reconstructing an eye but does not establish better skin or half lids.
+- Record developer review separately from user acceptance. No anatomical truth,
+  quantization-only quality degradation, general conversion, production approval,
+  training or driver change follows from this experiment. Stop after Phase 4B.2.

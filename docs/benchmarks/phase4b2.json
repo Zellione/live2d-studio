@@ -1,0 +1,1079 @@
+{
+  "base_commit": "71ef58e497e2dc3c6626907a137b745b351e6a70",
+  "boy1_holdout": {
+    "caveat": "2x run has black-mask resampling halo; not a clean model comparison. Flat skin patch is not hidden anatomy validation.",
+    "pixels": 197,
+    "rgb_mae": {
+      "deterministic": 0.0,
+      "lama_native": 1.4703891708967851,
+      "lama_rescaled_confounded": 75.59560067681895
+    },
+    "truth_is_evaluation_only": true
+  },
+  "inference": {
+    "boy1-holdout": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "lama",
+      "peak_allocated_bytes": 297775616,
+      "peak_reserved_bytes": 356515840,
+      "producer_report_sha256": "7620f3a82732303714231902b9f7b0c07ff09e929fd0d8f5f57cc11b54385e37",
+      "remaining_before_process_exit": 0,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 197,
+          "id": "skin-gap",
+          "outside_mask_changed": 0,
+          "seconds": 0.23359409299882827,
+          "seed": 1729,
+          "steps": null
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 0.5776407809971715,
+      "unloaded": true
+    },
+    "boy1-holdout-native": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "lama",
+      "peak_allocated_bytes": 233577472,
+      "peak_reserved_bytes": 260046848,
+      "producer_report_sha256": "3c78034e71f5c4b48c13ecf55870fb0397d31f5b31b41051bad7dfd3e3d5ef2d",
+      "remaining_before_process_exit": 0,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 197,
+          "id": "skin-gap",
+          "outside_mask_changed": 0,
+          "seconds": 0.22102853300020797,
+          "seed": 1729,
+          "steps": null
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 0.5214202990027843,
+      "unloaded": true
+    },
+    "girl2-lama1": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "lama",
+      "peak_allocated_bytes": 329903104,
+      "peak_reserved_bytes": 501219328,
+      "producer_report_sha256": "58937b2a26e20c1b3c1ace2aecfc85d25be82e875a1a4cccebba4e28d85bd9ab",
+      "remaining_before_process_exit": 0,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 2389,
+          "id": "eye-left-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.2712371550005628,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 2389,
+          "id": "eye-left-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.012079200001608115,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 5411,
+          "id": "eye-right-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.07461226300074486,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 5411,
+          "id": "eye-right-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.012106800000765361,
+          "seed": 1729,
+          "steps": null
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 0.838155375997303,
+      "unloaded": true
+    },
+    "girl2-lama2": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "lama",
+      "peak_allocated_bytes": 689982464,
+      "peak_reserved_bytes": 1421869056,
+      "producer_report_sha256": "5288d07c6be47ba1382bafcbfcab8795d6ef3f50c59507e7f37d4b3f67f8a505",
+      "remaining_before_process_exit": 0,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 2389,
+          "id": "eye-left-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.5029412689982564,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 2389,
+          "id": "eye-left-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.023853277001762763,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 5411,
+          "id": "eye-right-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.08385997200093698,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 5411,
+          "id": "eye-right-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.03851748099987162,
+          "seed": 1729,
+          "steps": null
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 1.0974730730013107,
+      "unloaded": true
+    },
+    "girl2-qwen": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "qwen",
+      "peak_allocated_bytes": 21863398912,
+      "peak_reserved_bytes": 23469228032,
+      "producer_report_sha256": "2879c7973da38f454a9b67f5af813aca66a9bca7ac39680fbeaeae937a56dde6",
+      "remaining_before_process_exit": 8519680,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 2389,
+          "id": "eye-left-skin",
+          "outside_mask_changed": 0,
+          "seconds": 49.273082046005584,
+          "seed": 1729,
+          "steps": 20
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 2389,
+          "id": "eye-left-closed",
+          "outside_mask_changed": 0,
+          "seconds": 36.43990495199978,
+          "seed": 1729,
+          "steps": 20
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 5411,
+          "id": "eye-right-closed",
+          "outside_mask_changed": 0,
+          "seconds": 35.45041174500511,
+          "seed": 1729,
+          "steps": 20
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 138.19140341199818,
+      "unloaded": true
+    },
+    "sara-lama1": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "lama",
+      "peak_allocated_bytes": 236365312,
+      "peak_reserved_bytes": 262144000,
+      "producer_report_sha256": "f3bd132fa6dd48c1a1b0bd40065759775573c6b26ceb50dd8aba48a58cec7aea",
+      "remaining_before_process_exit": 0,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "eye-left-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.3405934460024582,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "eye-left-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.010191305998887401,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1177,
+          "id": "eye-right-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.07896394899580628,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1177,
+          "id": "eye-right-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.009301635000156239,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 137,
+          "id": "mouth-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.05013289199996507,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 320,
+          "id": "mouth-interior",
+          "outside_mask_changed": 0,
+          "seconds": 0.039881805001641624,
+          "seed": 1729,
+          "steps": null
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 0.8821870110041345,
+      "unloaded": true
+    },
+    "sara-lama2": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "lama",
+      "peak_allocated_bytes": 309864448,
+      "peak_reserved_bytes": 465567744,
+      "producer_report_sha256": "384a2d1d5dd92159d1f62dabe64e62fd4b1090fc60a49075a46dc230a8003ec8",
+      "remaining_before_process_exit": 0,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "eye-left-skin",
+          "outside_mask_changed": 0,
+          "seconds": 2.4166196759979357,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "eye-left-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.013490950004779734,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1177,
+          "id": "eye-right-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.06100272399635287,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1177,
+          "id": "eye-right-closed",
+          "outside_mask_changed": 0,
+          "seconds": 0.012615419997018762,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 137,
+          "id": "mouth-skin",
+          "outside_mask_changed": 0,
+          "seconds": 0.09478713600401534,
+          "seed": 1729,
+          "steps": null
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 320,
+          "id": "mouth-interior",
+          "outside_mask_changed": 0,
+          "seconds": 0.07218889099749504,
+          "seed": 1729,
+          "steps": null
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 3.05644860999746,
+      "unloaded": true
+    },
+    "sara-qwen": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "qwen",
+      "peak_allocated_bytes": 21897729536,
+      "peak_reserved_bytes": 23494393856,
+      "producer_report_sha256": "c94753b5966933ea3a8df53715bb72d554fefa661f147182b892f6740d96a39c",
+      "remaining_before_process_exit": 8929280,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "eye-left-skin",
+          "outside_mask_changed": 0,
+          "seconds": 43.98550789900037,
+          "seed": 1729,
+          "steps": 20
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "eye-left-closed",
+          "outside_mask_changed": 0,
+          "seconds": 34.81338305900135,
+          "seed": 1729,
+          "steps": 20
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1177,
+          "id": "eye-right-closed",
+          "outside_mask_changed": 0,
+          "seconds": 37.28776253500109,
+          "seed": 1729,
+          "steps": 20
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 320,
+          "id": "mouth-interior",
+          "outside_mask_changed": 0,
+          "seconds": 35.12030509499891,
+          "seed": 1729,
+          "steps": 20
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "eye-left-half",
+          "outside_mask_changed": 0,
+          "seconds": 34.71060230799776,
+          "seed": 1729,
+          "steps": 20
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 207.70250161999866,
+      "unloaded": true
+    },
+    "sara-qwen-controlled": {
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "model": "qwen",
+      "peak_allocated_bytes": 21897729536,
+      "peak_reserved_bytes": 23509073920,
+      "producer_report_sha256": "5f6c301c20cb153f251a3617e8e680c22d940eee631dbd9d6c6cc021c2cd1df2",
+      "remaining_before_process_exit": 8929280,
+      "tasks": [
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "skin-prefill-40",
+          "outside_mask_changed": 0,
+          "seconds": 78.63631715999509,
+          "seed": 1729,
+          "steps": 40
+        },
+        {
+          "alpha_changed": 0,
+          "generated_pixels": 1160,
+          "id": "half-from-open-40",
+          "outside_mask_changed": 0,
+          "seconds": 66.00858380000136,
+          "seed": 1729,
+          "steps": 40
+        }
+      ],
+      "torch": "2.8.0+cu128",
+      "total_seconds": 160.93288213999767,
+      "unloaded": true
+    }
+  },
+  "model_lock_sha256": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+  "multi_reference": false,
+  "outcome": "No tested candidate improved facial animation without a visual regression; retain deterministic default.",
+  "preservation": {
+    "hybrid_replay_pngs_equal": true,
+    "phase3_31_files_verified": 41,
+    "phase4b1_all_stage_inventories": "pass"
+  },
+  "production_deployment": false,
+  "retained_failures": [
+    "sandbox CUDA/browser refusals",
+    "Qwen singleton VAE output-shape failure before image conversion",
+    "Girl2 baseline talking assertion failure; fresh repeat passed",
+    "LaMa rescaled holdout boundary contamination",
+    "all five rejected rendered candidates; no gate relaxed"
+  ],
+  "runtime": {
+    "girl2-lama-rig": {
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 122
+      },
+      "max_detached_pixels": 4,
+      "max_holes": 267,
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_differing_pixels": 525,
+      "neutral_holes": 124,
+      "original_layer_file_count": 59,
+      "original_layer_files_equal": true,
+      "poses": 57,
+      "render_status": "pass",
+      "review": {
+        "checks": [],
+        "decision": "reject",
+        "evidence_sha256": "74b78539bb91e10e1cd41cc3402d2af52edde71d90065bc13b0da574afccd528",
+        "notes": "Reject: missing/recreated eyes and inconsistent closed-lash contours.",
+        "reviewer": "development-agent actual Core/crop review"
+      },
+      "source_exact_fraction": 0.9988552208041109
+    },
+    "girl2-qwen-rig": {
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 140
+      },
+      "max_detached_pixels": 4,
+      "max_holes": 267,
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_differing_pixels": 0,
+      "neutral_holes": 124,
+      "original_layer_file_count": 59,
+      "original_layer_files_equal": true,
+      "poses": 57,
+      "render_status": "pass",
+      "review": {
+        "checks": [],
+        "decision": "reject",
+        "evidence_sha256": "4c600fac1e6d99705c7819f3ad583b56746c9544d3f17cd0cce630b036c77291",
+        "notes": "Reject: left/right closed lashes differ markedly in density and style from each other and source; preserve deterministic fallback.",
+        "reviewer": "development-agent actual Core/crop review"
+      },
+      "source_exact_fraction": 0.9988552208041109
+    },
+    "sara-lama-rig": {
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 190
+      },
+      "max_detached_pixels": 79,
+      "max_holes": 4357,
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_differing_pixels": 2594,
+      "neutral_holes": 102,
+      "original_layer_file_count": 56,
+      "original_layer_files_equal": true,
+      "poses": 57,
+      "render_status": "pass",
+      "review": {
+        "checks": [],
+        "decision": "reject",
+        "evidence_sha256": "5a8ca6b5751b0d4637bf1f6f6f7f0cf9e00f999c54b538899ba6bb0130d220ea",
+        "notes": "Reject: hallucinated open eyes under closed lashes; duplicate contours during partial blink; pale mouth interior.",
+        "reviewer": "development-agent actual Core/crop review"
+      },
+      "source_exact_fraction": 0.9977132740751669
+    },
+    "sara-qwen-hybrid": {
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 263
+      },
+      "max_detached_pixels": 79,
+      "max_holes": 4357,
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_differing_pixels": 0,
+      "neutral_holes": 102,
+      "original_layer_file_count": 56,
+      "original_layer_files_equal": true,
+      "poses": 57,
+      "render_status": "pass",
+      "review": {
+        "checks": [],
+        "decision": "reject",
+        "evidence_sha256": "bc03cfe0cb92add0344251671fea0b0511fd1fe29eef4484e26b23aac80dcd69",
+        "notes": "Reject despite smoother fully closed lashes: at 0.1 openness the curved generated lash and contracted source contour form a doubled loop; quarter-step poses conceal this transition defect. Retain deterministic reconstruction.",
+        "reviewer": "development-agent dense actual Core blink-ramp review"
+      },
+      "source_exact_fraction": 0.9977132740751669
+    },
+    "sara-qwen-rig": {
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 229
+      },
+      "max_detached_pixels": 79,
+      "max_holes": 4357,
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_differing_pixels": 0,
+      "neutral_holes": 102,
+      "original_layer_file_count": 56,
+      "original_layer_files_equal": true,
+      "poses": 57,
+      "render_status": "pass",
+      "review": {
+        "checks": [],
+        "decision": "reject",
+        "evidence_sha256": "397a90d083981ea6f5a44b82160cde0f073e9e931483ca236558d6d878004e03",
+        "notes": "Reject full selection: smoother closed lashes but generated mouth has a smaller visible aperture during talking. Evaluate closed-only hybrid separately.",
+        "reviewer": "development-agent actual Core/crop review"
+      },
+      "source_exact_fraction": 0.9977132740751669
+    }
+  },
+  "schema_version": 1,
+  "single_image": true,
+  "tests": {
+    "javascript": 5,
+    "python": 124,
+    "status": "pass"
+  },
+  "training": false,
+  "transitions": {
+    "baseline": {
+      "checks": [
+        {
+          "name": "Actual Cubism model loaded",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during neutral",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during happy",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from happy",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during sad",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from sad",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during angry",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from angry",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during surprised",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from surprised",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during confused",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from confused",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry and bounded opacity",
+          "pass": true
+        },
+        {
+          "name": "Only local assets",
+          "pass": true
+        }
+      ],
+      "frames": 122,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 18
+      },
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "status": "pass",
+      "talking_ranges": {
+        "angry": [
+          0.08046133071184158,
+          0.7876709699630737
+        ],
+        "confused": [
+          0.08962036669254303,
+          0.7700470089912415
+        ],
+        "embarrassed": [
+          0.08120780438184738,
+          0.7674554586410522
+        ],
+        "happy": [
+          0.0800001248717308,
+          0.7154474854469299
+        ],
+        "neutral": [
+          0.08003892004489899,
+          0.8045886158943176
+        ],
+        "sad": [
+          0.08002160489559174,
+          0.8262508511543274
+        ],
+        "surprised": [
+          0.09598381072282791,
+          0.6895313858985901
+        ]
+      }
+    },
+    "hybrid": {
+      "checks": [
+        {
+          "name": "Actual Cubism model loaded",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during neutral",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during happy",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from happy",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during sad",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from sad",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during angry",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from angry",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during surprised",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from surprised",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during confused",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from confused",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry and bounded opacity",
+          "pass": true
+        },
+        {
+          "name": "Only local assets",
+          "pass": true
+        }
+      ],
+      "frames": 122,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 19
+      },
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "status": "pass",
+      "talking_ranges": {
+        "angry": [
+          0.0950600877404213,
+          0.6650131940841675
+        ],
+        "confused": [
+          0.09923312067985535,
+          0.7102116346359253
+        ],
+        "embarrassed": [
+          0.08000577986240387,
+          0.7941125631332397
+        ],
+        "happy": [
+          0.10529347509145737,
+          0.620465874671936
+        ],
+        "neutral": [
+          0.08002319186925888,
+          0.8114851713180542
+        ],
+        "sad": [
+          0.0801861435174942,
+          0.8253328800201416
+        ],
+        "surprised": [
+          0.08000046759843826,
+          0.7650110125541687
+        ]
+      }
+    },
+    "lama": {
+      "checks": [
+        {
+          "name": "Actual Cubism model loaded",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during neutral",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during happy",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from happy",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during sad",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from sad",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during angry",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from angry",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during surprised",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from surprised",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during confused",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from confused",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry and bounded opacity",
+          "pass": true
+        },
+        {
+          "name": "Only local assets",
+          "pass": true
+        }
+      ],
+      "frames": 122,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 18
+      },
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "status": "pass",
+      "talking_ranges": {
+        "angry": [
+          0.10523409396409988,
+          0.6873113512992859
+        ],
+        "confused": [
+          0.09096267819404602,
+          0.738553524017334
+        ],
+        "embarrassed": [
+          0.08024581521749496,
+          0.7848974466323853
+        ],
+        "happy": [
+          0.08045564591884613,
+          0.7153581976890564
+        ],
+        "neutral": [
+          0.10718220472335815,
+          0.6806158423423767
+        ],
+        "sad": [
+          0.08032145351171494,
+          0.8070405721664429
+        ],
+        "surprised": [
+          0.08000057935714722,
+          0.7639805674552917
+        ]
+      }
+    },
+    "qwen": {
+      "checks": [
+        {
+          "name": "Actual Cubism model loaded",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during neutral",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from neutral",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during happy",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from happy",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during sad",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from sad",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during angry",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from angry",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during surprised",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from surprised",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during confused",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from confused",
+          "pass": true
+        },
+        {
+          "name": "Non-frozen talk envelope during embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral restoration from embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry and bounded opacity",
+          "pass": true
+        },
+        {
+          "name": "Only local assets",
+          "pass": true
+        }
+      ],
+      "frames": 122,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 15
+      },
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "status": "pass",
+      "talking_ranges": {
+        "angry": [
+          0.09202348440885544,
+          0.7329890131950378
+        ],
+        "confused": [
+          0.10444548726081848,
+          0.6813570261001587
+        ],
+        "embarrassed": [
+          0.0800129771232605,
+          0.8044360876083374
+        ],
+        "happy": [
+          0.08301681280136108,
+          0.6976969242095947
+        ],
+        "neutral": [
+          0.10167430341243744,
+          0.713371992111206
+        ],
+        "sad": [
+          0.08030452579259872,
+          0.7974854111671448
+        ],
+        "surprised": [
+          0.08043922483921051,
+          0.7611820101737976
+        ]
+      }
+    }
+  },
+  "user_visual_approval": false
+}

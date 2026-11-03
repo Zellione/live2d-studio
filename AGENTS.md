@@ -228,3 +228,24 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Preserve the failed early facial candidates and Girl2 open-mouth regression.
   Reuse validated inference; do not alter accepted Phase 3/3.1 or package pins.
 - Stop after Phase 4B.1. No production deployment, new training or global changes.
+
+## Phase 4B.2 local neural inpainting
+- Explicit authorization reopened local model investigation/downloads and facial
+  inpainting comparisons. Read docs/phase4b2-results.md,
+  docs/phase4b2-model-evaluation.md and backends/inpainting/README.md.
+- Keep deterministic reconstruction as default. All five rendered neural/hybrid
+  candidates were rejected by development review. Smoother Qwen closed-eye stills
+  produce a doubled contour near 0.1 openness; quarter-step poses miss this defect.
+- LaMa and Qwen Q4_K_S/FP8-encoder execute in separate frozen uv environments.
+  Preserve model/source pins, project-local caches and exact-image hybrid reviews.
+  Cached predictions require matching parameters, model, input, mask and output
+  hashes. Empty hybrid selection uses deterministic fallback without model loading.
+- Source layers/masks remain immutable to inpainting; generated alternatives and
+  uncertain boundary masks remain distinct. No anatomy, universal quality or
+  quantization-degradation conclusion follows from the tested crops.
+- Keep all failed attempts, including the confounded rescaled Boy1 holdout and
+  failed first Girl2 baseline talking assertion. Native holdout and repeated
+  browser evidence are separately labelled. No acceptance gate was weakened.
+- Review: runs/phase4b2-review-release. Accepted Phase 4B.1/3/3.1 and package pins
+  stay frozen. Run Python regressions and node tests/test_rp_talk.mjs.
+- Stop after Phase 4B.2. No production deployment, training or system changes.

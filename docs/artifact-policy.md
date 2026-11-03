@@ -53,3 +53,12 @@ Project reports/contact sheets/logs stay in ignored `runs/phase4a2-*`; local uni
 fixtures use `.cache/phase4a2-tests`. Only implementation, repeatable scenarios,
 compact benchmark and documentation are committed. Do not copy target-side recovery
 material into served asset trees or force-add generated package data.
+
+Phase 4B.2 keeps model weights under `models/phase4b2`, downloaded inference source
+under `.cache/phase4b2-*`, and worker environments in ignored nested `.venv` folders.
+Raw/composited crops, generated/uncertain masks, model parity diagnostics, reviewed
+image selections, failed download/runtime attempts, PSDs, projects and actual Core
+comparison galleries remain in `runs/phase4b2-*`. Version only implementation,
+licenses, frozen locks, generic recipes, tests and concise results/benchmark. The
+quantized Qwen download approval does not authorize committing weights or changing
+the user's ComfyUI installation. Preserve all rejected candidates locally.
