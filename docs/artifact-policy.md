@@ -62,3 +62,10 @@ comparison galleries remain in `runs/phase4b2-*`. Version only implementation,
 licenses, frozen locks, generic recipes, tests and concise results/benchmark. The
 quantized Qwen download approval does not authorize committing weights or changing
 the user's ComfyUI installation. Preserve all rejected candidates locally.
+
+Phase 4B.3 preserves all new projects, PSDs, exports, mesh inspections, native
+warnings, failed attempts, dense frames and sampled recordings under
+`runs/phase4b3-*`. Reused neural patches keep their producer hashes and masks;
+no weights or new inference outputs are introduced. Commit only authoring,
+validation/reproduction code, tests and concise results. Do not promote or delete
+old rejected experiments because a later transition looks better.

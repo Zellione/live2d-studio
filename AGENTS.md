@@ -249,3 +249,22 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Review: runs/phase4b2-review-release. Accepted Phase 4B.1/3/3.1 and package pins
   stay frozen. Run Python regressions and node tests/test_rp_talk.mjs.
 - Stop after Phase 4B.2. No production deployment, training or system changes.
+
+## Phase 4B.3 rig-aware transitions
+- Read docs/phase4b3-results.md and docs/phase4b3-transition-quality.md.
+  This phase used existing artwork only; no model downloads or inference.
+- `--facial-motion aligned` is an explicit candidate option; legacy motion and
+  deterministic artwork remain defaults. Semantic/visual review gates persist.
+- Source-derived and replacement curves move together during closure. Preserve
+  the opaque lower-stroke handoff and source visibility delay: earlier symmetric
+  fades lost contrast, and an early Qwen source triangle reversed at .05.
+- Require the dense 401-frame suite and exported Core channel/visible-triangle
+  audit. Keep native warnings on invisible squashed keys separate from visible
+  geometry, source preservation and natural-animation assessment.
+- Sara's Qwen loop near .1 was eliminated in the inspected candidate. Girl2's
+  neural lash-style mismatch, neural skin/cavity failures and every early rig
+  remain local. No neural image or development review grants user approval.
+- Keep accepted Phase 3/3.1/4B.1, model/package pins and rejected Phase 4B.2 runs
+  frozen. Review: runs/phase4b3-review-final. No hardcoded character coordinates,
+  opaque artwork IDs or source hashes belong in generic authoring.
+- Stop after Phase 4B.3. No production deployment, training or system changes.

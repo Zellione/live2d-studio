@@ -331,3 +331,30 @@
 - Record developer review separately from user acceptance. No anatomical truth,
   quantization-only quality degradation, general conversion, production approval,
   training or driver change follows from this experiment. Stop after Phase 4B.2.
+
+# Phase 4B.3 decisions (2026-11-03)
+
+- Diagnose correspondence before adding artwork. The old .1-openness loop combines
+  a .4-opacity flattened source with a .6-opacity stationary curved replacement.
+  Shared head ancestry and valid meshes do not align those local curves.
+- Derive landmarks from source roles, pixels and inspected mesh bounds/margins.
+  Move the replacement along the same interpolated curve as the source. Keep the
+  fully open source unchanged and the alternative completely invisible at opening.
+- Preserve source-over coverage during handoff: complementary scalar opacities
+  yield only .75 coverage at their midpoint. Hold the lower stroke opaque until
+  the original white/lash can cover it. Explicitly hide the iris near closure.
+- Keep the extreme source squash invisible until it unfolds. The actual Core
+  audit found a visible reversal at .05 in an earlier Qwen candidate; final checks
+  reject visible eye reversals at three head poses. Native invisible-key warnings
+  are retained rather than relabelled as zero geometry issues.
+- Copy sparse-mouth opening keys from the inspected full-open cavity, preserving
+  horizontal span/centre and inherited expression/head motion. Keep the existing
+  open-source branch for Girl2 and deterministic cavity artwork for Sara.
+- Treat Sara's eliminated loop as a limited temporal improvement, not anatomical
+  truth or universal neural acceptance. Girl2's neural lash style and the neural
+  skin/cavity remain rejected selections. Default artwork stays deterministic;
+  aligned motion is explicit pending character-specific review.
+- Record 401-frame dense suites, parameter trajectories, exported channel checks,
+  complete sequence sheets and sampled recordings. Frame-difference maxima are
+  not uniformly reduced and are not an aesthetic score. No new user acceptance,
+  model downloads/inference, training or production deployment. Stop after 4B.3.

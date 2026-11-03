@@ -1,0 +1,1293 @@
+{
+  "artwork_default": "deterministic",
+  "baseline": {
+    "girl2": {
+      "frames": 401,
+      "max_detached": 3,
+      "max_holes": 146,
+      "quality_sha256": "2cae0fe4499931cf6d0d84a308854afaecb2c807f19cf379c75ee20d624b8fed",
+      "temporal": {
+        "checks": [
+          "left dense samples and actual parameters",
+          "right dense samples and actual parameters",
+          "both dense samples and actual parameters",
+          "mouth dense samples and actual parameters",
+          "smile dense samples and actual parameters",
+          "frown dense samples and actual parameters",
+          "left complete round trip",
+          "right complete round trip",
+          "both complete round trip",
+          "mouth complete round trip",
+          "neutral talking with head and both eyes",
+          "happy talking with head and both eyes",
+          "sad talking with head and both eyes",
+          "angry talking with head and both eyes",
+          "surprised talking with head and both eyes",
+          "confused talking with head and both eyes",
+          "embarrassed talking with head and both eyes"
+        ],
+        "status": "pass",
+        "visual_acceptance": false
+      }
+    },
+    "sara": {
+      "frames": 401,
+      "max_detached": 85,
+      "max_holes": 2713,
+      "quality_sha256": "7fbd9a6cf934557dbd1dc69eee21b7722c5555423ebcf842cf4babc69c70fde3",
+      "temporal": {
+        "checks": [
+          "left dense samples and actual parameters",
+          "right dense samples and actual parameters",
+          "both dense samples and actual parameters",
+          "mouth dense samples and actual parameters",
+          "smile dense samples and actual parameters",
+          "frown dense samples and actual parameters",
+          "left complete round trip",
+          "right complete round trip",
+          "both complete round trip",
+          "mouth complete round trip",
+          "neutral talking with head and both eyes",
+          "happy talking with head and both eyes",
+          "sad talking with head and both eyes",
+          "angry talking with head and both eyes",
+          "surprised talking with head and both eyes",
+          "confused talking with head and both eyes",
+          "embarrassed talking with head and both eyes"
+        ],
+        "status": "pass",
+        "visual_acceptance": false
+      }
+    }
+  },
+  "candidate": {
+    "girl2-deterministic": {
+      "core_audit": {
+        "samples": 72,
+        "sha256": "d62b1d90bfb56b5e237cefb53e67302f44c628621d6f37ab36cbe40b16ac8536",
+        "status": "pass",
+        "visible_reversals": 0
+      },
+      "frames": 401,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 225
+      },
+      "max_detached": 3,
+      "max_holes": 146,
+      "mouth_smile_frown_equal_to_baseline": 36,
+      "native_key_warnings": [],
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_changed_pixels": 0,
+      "neutral_holes": 124,
+      "numerical": "pass",
+      "render": "runs/phase4b3-girl2-deterministic-final/dense",
+      "review": {
+        "assessment": "limited near-closure improvement; original open-mouth treatment preserved",
+        "decision": "limited-improvement",
+        "promotion": false,
+        "quality_sha256": "5b074ca66a96ce87270fd6f87a200a84af2264ed0c6f2cb23b6e8cd91390fec5",
+        "reviewer": "development-agent",
+        "user_approval": false
+      },
+      "run": "runs/phase4b3-girl2-deterministic-final",
+      "source_files_equal": 59,
+      "structural": {
+        "checks": [
+          "left dense samples and actual parameters",
+          "right dense samples and actual parameters",
+          "both dense samples and actual parameters",
+          "mouth dense samples and actual parameters",
+          "smile dense samples and actual parameters",
+          "frown dense samples and actual parameters",
+          "left complete round trip",
+          "right complete round trip",
+          "both complete round trip",
+          "mouth complete round trip",
+          "neutral talking with head and both eyes",
+          "happy talking with head and both eyes",
+          "sad talking with head and both eyes",
+          "angry talking with head and both eyes",
+          "surprised talking with head and both eyes",
+          "confused talking with head and both eyes",
+          "embarrassed talking with head and both eyes"
+        ],
+        "status": "pass",
+        "visual_acceptance": false
+      }
+    },
+    "girl2-qwen": {
+      "core_audit": {
+        "samples": 72,
+        "sha256": "9e9e7918f5de4426fa9fafba8b4f5f7bd97d716a3a4f57260032d407bba2b934",
+        "status": "pass",
+        "visible_reversals": 0
+      },
+      "frames": 401,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 206
+      },
+      "max_detached": 3,
+      "max_holes": 146,
+      "mouth_smile_frown_equal_to_baseline": 36,
+      "native_key_warnings": [
+        {
+          "new_collapses": 3,
+          "new_flips": 4,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeLOpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_FLIP",
+              "target": "mesh:ArtMeshEyewhiteL",
+              "triangleIds": [
+                10,
+                14,
+                15,
+                21
+              ]
+            },
+            {
+              "coordinate": {
+                "ParamEyeLOpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_COLLAPSE",
+              "target": "mesh:ArtMeshEyewhiteL",
+              "triangleIds": [
+                11,
+                27,
+                61
+              ]
+            }
+          ]
+        },
+        {
+          "new_collapses": 2,
+          "new_flips": 1,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeROpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_FLIP",
+              "target": "mesh:ArtMeshEyelashR",
+              "triangleIds": [
+                28
+              ]
+            },
+            {
+              "coordinate": {
+                "ParamEyeROpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_COLLAPSE",
+              "target": "mesh:ArtMeshEyelashR",
+              "triangleIds": [
+                26,
+                27
+              ]
+            }
+          ]
+        },
+        {
+          "new_collapses": 4,
+          "new_flips": 7,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeROpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_FLIP",
+              "target": "mesh:ArtMeshEyewhiteR",
+              "triangleIds": [
+                14,
+                15,
+                33,
+                44,
+                45,
+                65,
+                93
+              ]
+            },
+            {
+              "coordinate": {
+                "ParamEyeROpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_COLLAPSE",
+              "target": "mesh:ArtMeshEyewhiteR",
+              "triangleIds": [
+                35,
+                36,
+                38,
+                94
+              ]
+            }
+          ]
+        }
+      ],
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_changed_pixels": 0,
+      "neutral_holes": 124,
+      "numerical": "pass",
+      "render": "runs/phase4b3-girl2-qwen-final/dense",
+      "review": {
+        "assessment": "reject neural selection: lash density/style remains inconsistent with original",
+        "decision": "reject-neural-selection",
+        "promotion": false,
+        "quality_sha256": "ce40c6d5b7c1f6b43bf9ca1d181bd757dac52810ceee07d0cfb7585e06d7599e",
+        "reviewer": "development-agent",
+        "user_approval": false
+      },
+      "run": "runs/phase4b3-girl2-qwen-final",
+      "source_files_equal": 59,
+      "structural": {
+        "checks": [
+          "left dense samples and actual parameters",
+          "right dense samples and actual parameters",
+          "both dense samples and actual parameters",
+          "mouth dense samples and actual parameters",
+          "smile dense samples and actual parameters",
+          "frown dense samples and actual parameters",
+          "left complete round trip",
+          "right complete round trip",
+          "both complete round trip",
+          "mouth complete round trip",
+          "neutral talking with head and both eyes",
+          "happy talking with head and both eyes",
+          "sad talking with head and both eyes",
+          "angry talking with head and both eyes",
+          "surprised talking with head and both eyes",
+          "confused talking with head and both eyes",
+          "embarrassed talking with head and both eyes"
+        ],
+        "status": "pass",
+        "visual_acceptance": false
+      }
+    },
+    "sara-deterministic": {
+      "core_audit": {
+        "samples": 72,
+        "sha256": "a1f78d7d107ee4f5908d2dbb6e24a34e51945cb2b83671dccdb772ea835959b1",
+        "status": "pass",
+        "visible_reversals": 0
+      },
+      "frames": 401,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 407
+      },
+      "max_detached": 85,
+      "max_holes": 2713,
+      "native_key_warnings": [
+        {
+          "new_collapses": 1,
+          "new_flips": 0,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeLOpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_COLLAPSE",
+              "target": "mesh:ArtMeshEyewhiteL",
+              "triangleIds": [
+                98
+              ]
+            }
+          ]
+        }
+      ],
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_changed_pixels": 0,
+      "neutral_holes": 102,
+      "numerical": "pass",
+      "render": "runs/phase4b3-sara-create-final/stages/validation-ecae07e65fc8",
+      "review": {
+        "assessment": "limited improvement; candidate pending user review",
+        "decision": "limited-improvement",
+        "promotion": false,
+        "quality_sha256": "a862c7d8389b34894551fefb40c07bf94b3283d6c928db30193b87bf11d74720",
+        "reviewer": "development-agent",
+        "user_approval": false
+      },
+      "run": "runs/phase4b3-sara-create-final",
+      "source_files_equal": 56,
+      "structural": {
+        "checks": [
+          "left dense samples and actual parameters",
+          "right dense samples and actual parameters",
+          "both dense samples and actual parameters",
+          "mouth dense samples and actual parameters",
+          "smile dense samples and actual parameters",
+          "frown dense samples and actual parameters",
+          "left complete round trip",
+          "right complete round trip",
+          "both complete round trip",
+          "mouth complete round trip",
+          "neutral talking with head and both eyes",
+          "happy talking with head and both eyes",
+          "sad talking with head and both eyes",
+          "angry talking with head and both eyes",
+          "surprised talking with head and both eyes",
+          "confused talking with head and both eyes",
+          "embarrassed talking with head and both eyes"
+        ],
+        "status": "pass",
+        "visual_acceptance": false
+      }
+    },
+    "sara-qwen": {
+      "core_audit": {
+        "samples": 72,
+        "sha256": "0c0f84afe2912f7fe0edfa9da71cc85c7c75f395ecc3bb9d7b73154adf62d548",
+        "status": "pass",
+        "visible_reversals": 0
+      },
+      "frames": 401,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 278
+      },
+      "max_detached": 85,
+      "max_holes": 2713,
+      "native_key_warnings": [
+        {
+          "new_collapses": 0,
+          "new_flips": 1,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeLOpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_FLIP",
+              "target": "mesh:ArtMeshEyelashL",
+              "triangleIds": [
+                31
+              ]
+            }
+          ]
+        },
+        {
+          "new_collapses": 2,
+          "new_flips": 15,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeLOpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_FLIP",
+              "target": "mesh:ArtMeshEyewhiteL",
+              "triangleIds": [
+                6,
+                8,
+                17,
+                18,
+                19,
+                34,
+                71,
+                74,
+                84,
+                86,
+                91,
+                93,
+                95,
+                98,
+                104
+              ]
+            },
+            {
+              "coordinate": {
+                "ParamEyeLOpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_COLLAPSE",
+              "target": "mesh:ArtMeshEyewhiteL",
+              "triangleIds": [
+                26,
+                89
+              ]
+            }
+          ]
+        },
+        {
+          "new_collapses": 0,
+          "new_flips": 1,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeROpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_FLIP",
+              "target": "mesh:ArtMeshEyelashR",
+              "triangleIds": [
+                36
+              ]
+            }
+          ]
+        },
+        {
+          "new_collapses": 5,
+          "new_flips": 10,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeROpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_FLIP",
+              "target": "mesh:ArtMeshEyewhiteR",
+              "triangleIds": [
+                4,
+                6,
+                40,
+                42,
+                87,
+                91,
+                94,
+                95,
+                96,
+                104
+              ]
+            },
+            {
+              "coordinate": {
+                "ParamEyeROpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_COLLAPSE",
+              "target": "mesh:ArtMeshEyewhiteR",
+              "triangleIds": [
+                39,
+                41,
+                50,
+                51,
+                98
+              ]
+            }
+          ]
+        }
+      ],
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_changed_pixels": 0,
+      "neutral_holes": 102,
+      "numerical": "pass",
+      "render": "runs/phase4b3-sara-qwen-final/dense",
+      "review": {
+        "assessment": "loop at 0.1 eliminated; improved temporal candidate, style/anatomy uncertain; no automatic promotion",
+        "decision": "limited-improvement",
+        "promotion": false,
+        "quality_sha256": "3926c80965ffda18db7e135270db5da0fac15212032186395093b6f9b48ea864",
+        "reviewer": "development-agent",
+        "user_approval": false
+      },
+      "run": "runs/phase4b3-sara-qwen-final",
+      "source_files_equal": 56,
+      "structural": {
+        "checks": [
+          "left dense samples and actual parameters",
+          "right dense samples and actual parameters",
+          "both dense samples and actual parameters",
+          "mouth dense samples and actual parameters",
+          "smile dense samples and actual parameters",
+          "frown dense samples and actual parameters",
+          "left complete round trip",
+          "right complete round trip",
+          "both complete round trip",
+          "mouth complete round trip",
+          "neutral talking with head and both eyes",
+          "happy talking with head and both eyes",
+          "sad talking with head and both eyes",
+          "angry talking with head and both eyes",
+          "surprised talking with head and both eyes",
+          "confused talking with head and both eyes",
+          "embarrassed talking with head and both eyes"
+        ],
+        "status": "pass",
+        "visual_acceptance": false
+      }
+    },
+    "sara-skin": {
+      "core_audit": {
+        "samples": 72,
+        "sha256": "a1f78d7d107ee4f5908d2dbb6e24a34e51945cb2b83671dccdb772ea835959b1",
+        "status": "pass",
+        "visible_reversals": 0
+      },
+      "frames": 401,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 286
+      },
+      "max_detached": 85,
+      "max_holes": 2713,
+      "native_key_warnings": [
+        {
+          "new_collapses": 1,
+          "new_flips": 0,
+          "operation": "rig_deform",
+          "safe": true,
+          "warnings": [
+            {
+              "coordinate": {
+                "ParamEyeLOpen": 0.0
+              },
+              "reason": "GEOMETRY_NEW_COLLAPSE",
+              "target": "mesh:ArtMeshEyewhiteL",
+              "triangleIds": [
+                98
+              ]
+            }
+          ]
+        }
+      ],
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_changed_pixels": 933,
+      "neutral_holes": 102,
+      "numerical": "pass",
+      "render": "runs/phase4b3-sara-skin-final/dense",
+      "review": {
+        "assessment": "reject additional neural skin: no established benefit; neutral shading changes",
+        "decision": "reject-neural-selection",
+        "promotion": false,
+        "quality_sha256": "82d08ebcc4d6e4ff6bbf0245ba116a43ce6131912ac31b071eea00c2ce41eafd",
+        "reviewer": "development-agent",
+        "user_approval": false
+      },
+      "run": "runs/phase4b3-sara-skin-final",
+      "source_files_equal": 56,
+      "structural": {
+        "checks": [
+          "left dense samples and actual parameters",
+          "right dense samples and actual parameters",
+          "both dense samples and actual parameters",
+          "mouth dense samples and actual parameters",
+          "smile dense samples and actual parameters",
+          "frown dense samples and actual parameters",
+          "left complete round trip",
+          "right complete round trip",
+          "both complete round trip",
+          "mouth complete round trip",
+          "neutral talking with head and both eyes",
+          "happy talking with head and both eyes",
+          "sad talking with head and both eyes",
+          "angry talking with head and both eyes",
+          "surprised talking with head and both eyes",
+          "confused talking with head and both eyes",
+          "embarrassed talking with head and both eyes"
+        ],
+        "status": "pass",
+        "visual_acceptance": false
+      }
+    }
+  },
+  "continued_from": "ca66737",
+  "inference_executed": false,
+  "motion_default": "legacy; aligned is explicit candidate option",
+  "new_models_downloaded": false,
+  "phase": "4B.3",
+  "preservation": {
+    "model_lock_sha256": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+    "phase3_31_verified_files": 41,
+    "phase4b1_all_stages": "pass",
+    "phase4b2_rejected_rigs_all_stages": "pass",
+    "source_pixels": "Exact source files preserved; animated render positions are intentionally different"
+  },
+  "production_modified": false,
+  "retained_failures": [
+    "fragmented-contour fit and disappearing-lash candidates",
+    "Qwen visible triangle reversal at .05 before delayed handoff",
+    "symmetric alpha coverage dip",
+    "Qwen cavity and skin rejection",
+    "Girl2 Qwen style regression",
+    "initial sandbox/default-key/output-directory failures",
+    "pixel-read bug and oversized CDP transfers"
+  ],
+  "runtime_independent": true,
+  "schema_version": 1,
+  "temporal_image_changes": {
+    "girl2": {
+      "combined-angry": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.4660939445828145
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.723585382938979
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.742119396014944
+        }
+      },
+      "combined-confused": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.536270236612703
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.688716142590287
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.714897260273973
+        }
+      },
+      "combined-embarrassed": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.779907378580324
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.657086706102117
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.770616049190536
+        }
+      },
+      "combined-happy": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.4781775373599
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.804317792652553
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.801554716687422
+        }
+      },
+      "combined-neutral": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.6009009184308844
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.747635818804484
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.842747898505604
+        }
+      },
+      "combined-sad": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.003872198007472
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.34791407222914
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.365455712951432
+        }
+      },
+      "combined-surprised": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.407436955168119
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.690185242839353
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.840471279576588
+        }
+      },
+      "cycle-both": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.416436410336239
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.420639399128269
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.7559931506849316
+        }
+      },
+      "cycle-left": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.4704720579078456
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.5658273661270237
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.6868676058530511
+        }
+      },
+      "cycle-mouth": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.24506732565379827
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.24506732565379827
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.24506732565379827
+        }
+      },
+      "cycle-right": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.9463535180572852
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8739200653798257
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.0692033779576589
+        }
+      },
+      "idle-talk": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.211423957036114
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 7.4838593555417185
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 6.608869084682441
+        }
+      }
+    },
+    "mouth-cavity-rejected": {
+      "combined-angry": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.876527248533236
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.965992257908425
+        }
+      },
+      "combined-confused": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.765431258694731
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.839593540192343
+        }
+      },
+      "combined-embarrassed": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.781006169479223
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.82075243452489
+        }
+      },
+      "combined-happy": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.69810379241517
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.706881691163128
+        }
+      },
+      "combined-neutral": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.713202383112563
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.797261537530998
+        }
+      },
+      "combined-sad": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.970997399141112
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 14.067161132280892
+        }
+      },
+      "combined-surprised": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.71648369926813
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.676873525675921
+        }
+      },
+      "cycle-both": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.5092088550172382
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.7711546603762172
+        }
+      },
+      "cycle-left": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.7250499001996008
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8386938244722676
+        }
+      },
+      "cycle-mouth": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.17257908425573096
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.14388646948527187
+        }
+      },
+      "cycle-right": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.7841211516361217
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.9324532752676465
+        }
+      },
+      "idle-talk": {
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 5.6018946954575695
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 6.222887558216899
+        }
+      }
+    },
+    "qwen-before-after": {
+      "combined-angry": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 14.023626988447347
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.588739188290086
+        }
+      },
+      "combined-confused": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.899647674348273
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.45172533720438
+        }
+      },
+      "combined-embarrassed": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.90143954515212
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.460616645496884
+        }
+      },
+      "combined-happy": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.888352083711364
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.414511885320268
+        }
+      },
+      "combined-neutral": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.910300610899414
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.400751527248532
+        }
+      },
+      "combined-sad": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 14.116705981975443
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.684101493981734
+        }
+      },
+      "combined-surprised": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.868996854775299
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.329212786548116
+        }
+      },
+      "cycle-both": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.6936052138147946
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.6843509949797375
+        }
+      },
+      "cycle-left": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8481068166696909
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.7923698058428598
+        }
+      },
+      "cycle-mouth": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.17257908425573096
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.20162704893243816
+        }
+      },
+      "cycle-right": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8455286396903163
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8920567954999092
+        }
+      },
+      "idle-talk": {
+        "after": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 5.400509586886832
+        },
+        "before": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 5.710072279683058
+        }
+      }
+    },
+    "sara": {
+      "combined-angry": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.539103610959899
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.876527248533236
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 14.023626988447347
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.82113802697635
+        }
+      },
+      "combined-confused": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.432097925361399
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.765431258694731
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.899647674348273
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.721980281860521
+        }
+      },
+      "combined-embarrassed": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.432264259360068
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.781006169479223
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.90143954515212
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.74719500393153
+        }
+      },
+      "combined-happy": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.434744148067502
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.69810379241517
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.888352083711364
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.64714510373193
+        }
+      },
+      "combined-neutral": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.443801790358677
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.713202383112563
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.910300610899414
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.653337264864211
+        }
+      },
+      "combined-sad": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.669615314824895
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.970997399141112
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 14.116705981975443
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.917173229298978
+        }
+      },
+      "combined-surprised": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.412530998608842
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.71648369926813
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.868996854775299
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 13.679073670840138
+        }
+      },
+      "cycle-both": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.6843509949797375
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.5092088550172382
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.6936052138147946
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 1.5992257908425573
+        }
+      },
+      "cycle-left": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.7923698058428598
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.7250499001996008
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8481068166696909
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8150668360249198
+        }
+      },
+      "cycle-mouth": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.20162704893243816
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.17257908425573096
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.17257908425573096
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.17257908425573096
+        }
+      },
+      "cycle-right": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8920567954999092
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.7841211516361217
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.8455286396903163
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 0.7841211516361217
+        }
+      },
+      "idle-talk": {
+        "baseline": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 4.900388616705982
+        },
+        "deterministic": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 5.6018946954575695
+        },
+        "qwen": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 5.400509586886832
+        },
+        "skin": {
+          "caveat": "Image change only; pose speed and real detail matter. Not a naturalness score.",
+          "max": 5.724082138752798
+        }
+      }
+    }
+  },
+  "tests": {
+    "javascript": 5,
+    "javascript_log_sha256": "bc3a9936a85542f815d3f12d71e3f577fb9348380ef6e470dabde28a9d8fb443",
+    "python": 130,
+    "python_log_sha256": "33adf136a5c6112d04da3d42d8e4f0eb1f29244f46db68eddb4613319c71618c",
+    "status": "pass"
+  },
+  "training": false,
+  "visual_acceptance": "Development assessment only; no new user approval or automatic promotion"
+}

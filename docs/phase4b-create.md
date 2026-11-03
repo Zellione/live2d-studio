@@ -127,3 +127,12 @@ in place after code changes.
 
 No deployment is part of `create`. Existing isolated-only deployment restrictions,
 accepted Girl2 packaging pins and production settings remain unchanged.
+
+Phase 4B.3 adds the explicit `--facial-motion aligned` candidate option. It derives
+shared eye curves from source/alternative artwork, coordinates opacity with geometry,
+and changes sparse-mouth interpolation. It reuses existing artwork and requires no
+models. The normal review gates remain, with dense 401-frame validation and exported
+Core channel/visible-triangle checks. `legacy` remains the motion default pending
+character-specific review; `--reconstruction deterministic` remains the artwork
+default. See [transition quality](phase4b3-transition-quality.md) for reproducible
+comparisons and the separate Sara/Girl2 assessments.

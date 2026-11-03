@@ -1,5 +1,30 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.3 (2026-11-03)
+
+Continued from `ca66737`. Read [results](phase4b3-results.md),
+[transition method](phase4b3-transition-quality.md) and
+[benchmark](benchmarks/phase4b3.json). No new inference or model downloads.
+
+- `create --facial-motion aligned` adds source-derived shared closure curves,
+  coordinated source-over opacity, explicit iris hiding and a more even sparse
+  mouth opening. `legacy` remains default pending character-specific review;
+  deterministic remains the default artwork. No agent at runtime.
+- The separated Qwen loop at Sara openness .1 is eliminated in the final candidate.
+  The replacement moves with the source curve; a static crossfade is insufficient.
+  Do not restore the earlier fragmented-landmark, disappearing-lash or contrast-dip
+  versions. Keep all rejected `runs/phase4b3-*` attempts.
+- Dense validation captures 401 actual Core frames. Exported channel/triangle
+  audits cover twelve opening values on each side at three head poses. Visible
+  eye reversals fail; invisible squashed-key warnings remain in reports.
+- Girl2 independently exercises the same algorithm and retains its original
+  open-mouth branch. Neural lash-style regression is not repaired by geometry.
+  Qwen skin/cavity remain rejected selections; no automatic neural promotion.
+- Local review: `runs/phase4b3-review-final/index.html`. Development assessments
+  are distinct from user approval. Accepted Sara, Girl2, package pins and earlier
+  neural failures remain immutable. Run Python regressions and JS talk tests.
+- Stop after Phase 4B.3. No production deployment, training or system changes.
+
 ## Current state after Phase 4B.2 (2026-11-03)
 
 Continued from `71ef58e`. Read [results](phase4b2-results.md),
