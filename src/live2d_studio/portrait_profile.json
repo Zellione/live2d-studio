@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "name": "limited-frontal-portrait-v1",
+  "mouth_curve": [-0.1, 0.45, 0.45, -0.1],
+  "brow_inner_raise": [0.45, 0.15, -0.15, -0.45],
+  "idle_degrees": {"x": 2.0, "y": 0.8, "z": 1.0},
+  "limitations": ["Procedural lids and mouth interior", "No limb articulation", "Human semantic and visual review required"]
+}

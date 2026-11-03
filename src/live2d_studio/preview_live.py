@@ -84,7 +84,7 @@ def serve(model=None, extension=None, port=8768, open_browser=True):
     files = viewer_assets(model, extension)
     with ThreadingHTTPServer(('127.0.0.1', port), partial(Handler, files=files)) as server:
         url = f'http://127.0.0.1:{server.server_port}/'
-        print(f'Girl2 live preview: {url}\nRead-only local preview. Ctrl+C stops the server.', flush=True)
+        print(f'Live2D preview: {url}\nRead-only local preview. Ctrl+C stops the server.', flush=True)
         if open_browser:
             if not webbrowser.open(url):
                 print('Browser could not be opened automatically. Open the URL above.', flush=True)

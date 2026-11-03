@@ -1,0 +1,87 @@
+{
+  "casual": {
+    "author": "Kitsuge Apps",
+    "download": "https://opengameart.org/sites/default/files/CasualAvatar_00_2.png",
+    "evaluation": "input screening only; no inference",
+    "input_sha256": "652ccd346cc96adf42bed09080a92cffb1b50426393921b336729540f590293b",
+    "license": "CC0",
+    "reason": "Patterned opaque background and one closed eye",
+    "source": "https://opengameart.org/content/casual-avatars"
+  },
+  "hachi": {
+    "author": "HachiStudio",
+    "download": "https://opengameart.org/sites/default/files/hachi_0.zip",
+    "files": {
+      "back.png": "dc40ecff46f4878d2cdec91774539bbf9e44421e229c1da1a7111f82d2ce0288",
+      "eyes.png": "de7942ef984595feacd116354895af5629cd96f1998a982a3bb5cd781f18ea23",
+      "front.png": "0fc059d8a047f1e7091a608f64cf32e24ebb4f25dbbab962be1449af771a910e",
+      "hachi.zip": "4456376cdd3661e11c506159078b5b24e765a1c43095e654c770b719588ad95f",
+      "mouth.png": "615fed69a768e6a9520e5d3fdcd1d6ca46e7950f23220e2a7a74b0e925ddeb8a"
+    },
+    "license": "CC0-1.0",
+    "license_choice": "Source page offers CC0, CC-BY 3.0 and CC-BY 4.0; choose CC0 and retain attribution",
+    "portrait_transform": {
+      "canvas": [
+        320,
+        320
+      ],
+      "crop": [
+        270,
+        0,
+        530,
+        280
+      ],
+      "excluded": "lower torso/skirt, forearms, legs and feet; no limb preservation claim outside crop",
+      "included": "head, torso top, shoulders, upper arms cropped at lower edge",
+      "output": "portrait.png",
+      "output_sha256": "a5b7c310adc6f5d9c528126f8e2f2b6b6b6ba9626fcf530c6ee2d27687fd6575",
+      "paste": [
+        30,
+        20
+      ],
+      "reason": "separate portrait-scope experiment after full-body semantic rejection",
+      "resampling": "none",
+      "source": "front.png",
+      "source_sha256": "0fc059d8a047f1e7091a608f64cf32e24ebb4f25dbbab962be1449af771a910e"
+    },
+    "source": "https://opengameart.org/content/anime-girl%EF%BC%9Ahachi"
+  },
+  "manga": {
+    "author": "mcproject",
+    "download": "https://opengameart.org/sites/default/files/chica%20pmorado_3.png",
+    "evaluation": "input screening only; no inference",
+    "input_sha256": "c724af25f948bc73080b4c94e1f21ebbd1540fdd8f9eb84a9b918c853a9c9b8b",
+    "license": "CC0",
+    "reason": "Large corner badge",
+    "source": "https://opengameart.org/content/manga-girl"
+  },
+  "sara": {
+    "attribution": "Portrait graphics created by RPG Action; graphics designed by ZeNeRIA29",
+    "author": "ZeNeRIA29 / RPG Action",
+    "download": "https://opengameart.org/sites/default/files/portrait21.png",
+    "ground_truth": "No independent part masks; other expression tiles excluded from inference",
+    "input_sha256": "66e23cc4302ee023e99895de7f361827809c8ca39a21878d591c4d0ec311dc57",
+    "inventory": "Head, shoulders and upper arms; arms end at original tile edge; hands/forearms/legs/feet absent from chosen source view",
+    "license": "CC-BY-3.0",
+    "source": "https://opengameart.org/content/sara-trevor-puck-anime-portrait-and-expressions",
+    "source_sha256": "48c2b67f3d0b1cd0d060449d579c4e631d4601e0e96a7570339f8e66308d5c4a",
+    "transform": {
+      "background": "Only border-connected exactly-white pixels set alpha=0; no RGB edits or resizing",
+      "background_pixels": 30617,
+      "canvas": [
+        420,
+        420
+      ],
+      "crop": [
+        0,
+        380,
+        300,
+        760
+      ],
+      "paste": [
+        60,
+        20
+      ]
+    }
+  }
+}

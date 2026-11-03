@@ -26,8 +26,10 @@ def main():
     p.add_argument('--reviewer',required=True)
     p.add_argument('--notes',required=True)
     p.add_argument('--checks',default='',help='Comma-separated completed review checks from quality.json')
-    p=commands.add_parser('preview-live',help='Open Girl2 in a standalone local browser viewer')
-    p.add_argument('--model',type=Path)
+    p=commands.add_parser('preview-live',help='Open a model in the standalone local browser viewer')
+    source=p.add_mutually_exclusive_group()
+    source.add_argument('--model',type=Path)
+    source.add_argument('--run',type=Path,help='Open the verified current model from a creation run')
     p.add_argument('--extension',type=Path)
     p.add_argument('--port',type=int,default=8768)
     p.add_argument('--no-open',action='store_true')
@@ -121,7 +123,11 @@ def main():
                           [v.strip() for v in args.checks.split(',') if v.strip()])
         elif args.command=='preview-live':
             from .preview_live import serve
-            result=serve(args.model,args.extension,args.port,not args.no_open)
+            model=args.model
+            if args.run:
+                from .creation import preview_model
+                model=preview_model(args.run)
+            result=serve(model,args.extension,args.port,not args.no_open)
         elif args.command=='audit-production':
             from .production_audit import save_audit
             result=save_audit(args.target,args.package,args.output)

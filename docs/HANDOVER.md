@@ -1,5 +1,31 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B implementation milestones (2026-11-03)
+
+Continued from `53ad920` with explicit authorization for reusable local creation.
+Read [results](phase4b-results.md), [usage](phase4b-create.md) and
+[benchmark](benchmarks/phase4b.json). **Independent usable-character acceptance is
+not met.** Production remains disabled; no training was performed.
+
+- `create` orchestrates twelve resumable stages with verified cache reuse, source
+  restoration, semantic/visual review, local MCP authoring/export and actual Core/
+  browser validation. No coding agent is a runtime component. `preview-live --run`
+  opens a verified current creation export without MCP/inference.
+- Generic target selection uses imported roles, mesh ancestry and inspected axes.
+  Profile curves contain no Girl2 IDs/coordinates. Per-eye white/iris/lash ordering
+  fixes a real Sara depth-order defect and is a no-op for accepted Girl2 layers.
+- Fresh Girl2 and independent Sara projects/PSDs/runtime complete automatically;
+  32 real poses each pass control/load checks. Sara is **visually rejected** for
+  remaining closed-eye contours and inadequate mouth opening. Do not promote it.
+- Boy2 and full/cropped Hachi fail semantic/source gates. Girl1/Wikipe-tan remain
+  blocked, Boy1's fine beard/brow rejection is retained. XCF truth stays evaluation-only.
+- Accepted Phase 2.6/3/3.1 models/recipes remain unchanged.
+  `runs/phase4b-review-final/index.html` contains outcomes, layers and pose sheets.
+  New artwork provenance is pinned in `benchmarks/phase4b-art.json`.
+- Remaining work: generic contour ownership, concealed facial skin, intermediate
+  lids and aligned open-mouth artwork, then an actually accepted independent rig.
+  No production installation, deployment safety change or training is authorized.
+
 ## Current state after Phase 3.1 (2026-11-03)
 
 Continued from `257582f` with explicit user authorization to improve Girl2 expressions

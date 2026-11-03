@@ -274,3 +274,12 @@
   are a runtime contract; Girl2 object IDs, geometry and hashes are not a template.
 - Keep procedural eyelid/mouth limitations visible. No invented teeth/tongue,
   arbitrary new hidden anatomy, production promotion or cloud image processing.
+- Enforce white/iris/lash depth order only for complete unambiguous per-eye role
+  triplets. This fixes Sara's hidden iris without character coordinates and leaves
+  Girl2's accepted restored layers unchanged. Preserve the raw imported order.
+- Keep Sara's successful export and numeric runtime checks separate from its
+  explicit visual rejection: ghosted closed-eye contours and insufficient mouth
+  opening still block independent-character acceptance. Do not promote it merely
+  because 32 poses render or all application tests pass.
+- Retain Boy2 and both Hachi inputs as parser failures. Independent ground-truth
+  masks remain evaluation-only; Sara has no independent semantic ground truth.

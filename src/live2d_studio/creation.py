@@ -8,7 +8,7 @@ import sys
 from PIL import Image
 
 from .manifest import digest, local_file, load_validate, write_json
-from .stages import Stages, inventory, fingerprint, atomic_json
+from .stages import Stages, inventory, verify, atomic_json
 from .creation_quality import CHECKS, VISUAL_CHECKS, validate_review
 
 REPO = Path(__file__).resolve().parents[2]
@@ -98,20 +98,33 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
             import_decomposition(original, root/'validated', rights, root/'bridge')
         inf = run('inference', inference_key, infer)
         if stop('inference'): return result()
+        old_semantics=stages.data['stages'].get('semantics')
+        sam_key=inventory(Path(sam)) if sam else (
+            old_semantics['inputs']['sam'] if old_semantics else 'offline-worker')
         def semantics(root):
             from .seethrough import import_decomposition
-            import_decomposition(original, root/'layers', rights, inf/'bridge')
-            if sam:
+            from .semantic_order import order_eyes
+            import_decomposition(original, root/'imported', rights, inf/'bridge')
+            order_eyes(root/'imported',root/'layers')
+            sam_source=Path(sam) if sam else None
+            if sam_source is None and old_semantics and old_semantics['status']=='complete':
+                previous=(stages.root/old_semantics['directory']).resolve()
+                if not previous.is_relative_to(stages.root):
+                    raise ValueError('Previous semantic stage escapes run')
+                verify(previous,old_semantics['files'])
+                sam_source=previous/'sam'
+            if sam_source is not None:
                 from .refinement import sam_masks
-                masks = sam_masks(Path(sam),identity['input_sha256'],Image.open(original).size)
+                masks = sam_masks(sam_source,identity['input_sha256'],Image.open(original).size)
                 (root/'sam').mkdir()
                 for name in ['sam.json'] + [name+'.png' for name in masks]:
-                    shutil.copyfile(local_file(Path(sam),name),root/'sam'/name)
+                    shutil.copyfile(local_file(sam_source,name),root/'sam'/name)
             else:
                 worker(original, root/'sam', sam=True)
         sem = run('semantics', dict(inference=stages.data['stages']['inference']['files'],
-            code=code_hash('src/live2d_studio/seethrough.py','src/live2d_studio/refinement.py'),
-            sam=inventory(Path(sam)) if sam else 'offline-worker'), semantics)
+            code=code_hash('src/live2d_studio/seethrough.py','src/live2d_studio/refinement.py',
+                           'src/live2d_studio/semantic_order.py'),
+            sam=sam_key), semantics)
         if stop('semantics'): return result()
         def restore(root):
             from .refinement import refine
@@ -136,7 +149,12 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
             stages.data['status'] = 'needs-semantic-review'
             stages.save()
             return dict(result(), review=str(ready/'quality.json'), layers=str(restored/'preview/index.html'))
-        validate_review(json.loads(review_file.read_text()),digest(ready/'quality.json'),CHECKS)
+        semantic_review=json.loads(review_file.read_text())
+        if semantic_review.get('decision')=='reject':
+            stages.data['status']='rejected-semantic'
+            stages.save()
+            return result()
+        validate_review(semantic_review,digest(ready/'quality.json'),CHECKS)
         # These later stages each reopen a saved predecessor and preserve failed attempts.
         from .generic_rig import facial_plan, create_project, author_rig, author_animation, export_model
         from .mcp import MCP
@@ -145,10 +163,12 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
             code=code_hash('src/live2d_studio/generic_rig.py')),lambda root: facial_plan(restored,root))
         if stop('facial'): return result()
         project = run('project',dict(parent=stages.data['stages']['facial']['files'],
-            source=digest(restored/'layer_manifest.json')), lambda root:create_project(factory(),restored,root))
+            source=digest(restored/'layer_manifest.json'),
+            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/mcp.py')),
+            lambda root:create_project(factory(),restored,root))
         if stop('project'): return result()
         rig = run('rig',dict(parent=stages.data['stages']['project']['files'],
-            code=code_hash('src/live2d_studio/generic_rig.py')),lambda root:author_rig(factory(),project,root))
+            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/portrait_profile.json')),lambda root:author_rig(factory(),project,root))
         if stop('rig'): return result()
         animation = run('animation',dict(parent=stages.data['stages']['rig']['files']),
             lambda root:author_animation(factory(),rig,root))
@@ -162,19 +182,26 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         extension = Path(extension or DEFAULT_EXTENSION).resolve()
         validation = run('validation',dict(parent=stages.data['stages']['export']['files'],
             libraries=inventory(extension/'lib'), code=code_hash('src/live2d_studio/creation_validation.py',
-                'scripts/phase4b_browser_scenario.js','scripts/cdp_smoke.mjs')),
+                'scripts/phase4b_browser_scenario.js','scripts/cdp_smoke.mjs',
+                'src/live2d_studio/preview_live.py','src/live2d_studio/preview_ui/viewer.js',
+                'src/live2d_studio/visual_qa.py')),
             lambda root:validate_runtime(model,root,extension))
         stages.data['review_evidence']['visual'] = str((validation/'quality.json').relative_to(stages.root))
         stages.data['model'] = str(model.relative_to(stages.root))
         stages.data['status'] = 'needs-visual-review'
         stages.save()
         if stop('validation'): return result()
-        run('preview',dict(model=digest(model)),lambda root:write_json(root/'preview.json',dict(
+        run('preview',dict(model=digest(model),location=str(model)),lambda root:write_json(root/'preview.json',dict(
             command=['uv','run','--frozen','live2d-studio','preview-live','--model',str(model)],
             visual_review='required',production_ready=False)))
         visual = stages.root/'reviews/visual.json'
         if visual.is_file():
-            validate_review(json.loads(visual.read_text()),digest(validation/'quality.json'),VISUAL_CHECKS)
+            visual_review=json.loads(visual.read_text())
+            if visual_review.get('decision')=='reject':
+                stages.data['status']='rejected-visual'
+                stages.save()
+                return result()
+            validate_review(visual_review,digest(validation/'quality.json'),VISUAL_CHECKS)
             stages.data['status'] = 'accepted-limited-prototype'
         stages.save()
         if preview:
@@ -203,3 +230,21 @@ def review(output, stage, decision, reviewer, notes, checks):
         stages.data['status'] = ('reviewed-' if decision=='accept' else 'rejected-') + stage
         stages.save()
         return record
+
+
+def preview_model(output):
+    """Resolve only the verified current export, including after an explicit rejection."""
+    from .stages import verify
+    root=Path(output).resolve()
+    data=json.loads((root/'creation.json').read_text())
+    stage=data['stages'].get('export',{})
+    if stage.get('status')!='complete' or 'model' not in data:
+        raise ValueError('Creation has no validated preview model yet')
+    directory=(root/stage['directory']).resolve()
+    if not directory.is_relative_to(root):
+        raise ValueError('Export escapes creation run')
+    verify(directory,stage['files'])
+    model=local_file(root,data['model'])
+    if not model.is_relative_to(directory/'runtime'):
+        raise ValueError('Preview model is not the current creation export')
+    return model

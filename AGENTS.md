@@ -193,3 +193,22 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Repeat browser review with `scripts/phase3_1_acceptance.py` in fresh runs. Keep
   user visual review distinct from geometry/pixel tests and professional-quality claims.
 - Stop after Phase 3.1. No production deployment, Phase 4B or training is authorized.
+
+## Phase 4B reusable creation
+- Explicit user authorization on 2026-11-03 supersedes the earlier Phase 4B stops
+  for local reusable orchestration, generic authoring and independent benchmarks.
+  Read `docs/phase4b-results.md` and `docs/phase4b-create.md` before continuing.
+- `create` uses the separate pinned offline worker, hash-verified resumable stages
+  and loopback MCP. Never turn cached masks or reviewed Girl2 IDs into universal
+  semantic ground truth. No coding agent is a runtime dependency.
+- Keep failed attempts and negative characters. A source-fidelity score, role name,
+  moving vertex or valid MOC cannot grant semantic/visual acceptance. Do not weaken
+  gates to obtain a passing independent benchmark. Review records must remain bound
+  to exact evidence and identify development-agent review separately from user review.
+- Accepted Phase 2.6/3/3.1 projects, Golden Fixtures and Girl2 package pins remain
+  immutable. New profiles and operations derive targets from inspected semantics
+  and ancestry. Source pixels and generated/procedural alternatives stay distinct.
+- All inference, artwork, PSD/project/runtime, raw reports, browser profiles and
+  downloads remain outside Git. Commit only code, configuration, tests, provenance
+  definitions and concise results. Production deployment restrictions are unchanged.
+- Stop after Phase 4B. No production installation or training is authorized.

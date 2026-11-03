@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "author": "stevenburrow",
+  "license": "CC0",
+  "source": "https://opengameart.org/content/anime-girl-and-boy-portraits",
+  "group": "Boy2",
+  "input_sha256": "4ba869b775f05a0e76344a2f60f9d5c5a7bf71e9060098b4f922f324899342ba",
+  "scope": "Boy2 visible authored XCF leaves; six coarse groups; beard grouped with hair; no fine brow truth",
+  "layer_groups": {
+    "B2 Shirt": "clothing",
+    "B2 Neck": "neck",
+    "B2 Face": "face_ears_nose",
+    "B2 Mouth2": "mouth",
+    "B2 OuterEyes3": "eyes_brows",
+    "B2 EyesMouth #1": "eyes_brows",
+    "B2 HairTop": "hair_accessories",
+    "B2 Beard": "hair_accessories"
+  },
+  "caveat": "GIMP projection differs; defined input is visible leaf alpha composition. Same artist as Girl2, not independent style."
+}

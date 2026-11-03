@@ -1,0 +1,795 @@
+{
+  "base_commit": "53ad920",
+  "characters": {
+    "Boy2": {
+      "blocking_reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership",
+        "Missing face",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "fidelity": {
+        "alpha_mae": 44.318572,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 23.062874568127597,
+        "exact_edge_fraction": 0.6704356359602338,
+        "exact_fraction": 0.30468181418300183,
+        "exactly_preserved_pixels": 76193,
+        "foreground_pixels": 250074,
+        "rgb_mae": 87.29609635547878,
+        "silhouette_iou": 0.30468181418300183,
+        "source_edge_pixels": 23437
+      },
+      "inference": {
+        "reused_validated_bridge": true
+      },
+      "input_sha256": "4ba869b775f05a0e76344a2f60f9d5c5a7bf71e9060098b4f922f324899342ba",
+      "rights": "stevenburrow; CC0; https://opengameart.org/content/anime-girl-and-boy-portraits",
+      "stages": {
+        "inference": "complete",
+        "ingest": "complete",
+        "readiness": "complete",
+        "restore": "complete",
+        "semantics": "complete"
+      },
+      "status": "blocked-semantic-quality",
+      "structural_semantics": {
+        "face_support_of_eyes": 0.0,
+        "reasons": [
+          "Face surface does not support most eye geometry",
+          "Strong disagreement on visible face ownership"
+        ],
+        "sam_face_recall_candidate": 0.0,
+        "status": "rejected"
+      }
+    },
+    "Girl2": {
+      "blocking_reasons": [],
+      "core": {
+        "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+        "core_version": 83886080,
+        "drawable_ids": [
+          "ArtMeshFrontHair",
+          "ArtMeshEyelashR",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesR",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyewhiteL",
+          "ArtMeshMouth",
+          "ArtMeshMouth_lip_0",
+          "ArtMeshMouth_lip_1",
+          "ArtMeshEyebrowL",
+          "ArtMeshNose",
+          "ArtMeshFace",
+          "ArtMeshEarsL",
+          "ArtMeshTopwear",
+          "ArtMeshEarsR",
+          "ArtMeshHandwearR",
+          "ArtMeshNeck",
+          "ArtMeshHandwearL",
+          "ArtMeshBackHair",
+          "ArtMeshEyebrowR_SeeThrough",
+          "ArtMeshEyebrowL_SeeThrough",
+          "ArtMeshFrontHair_SeeThrough"
+        ],
+        "drawables": 24,
+        "latest_moc_version": 5,
+        "missing_parameters": [],
+        "moc_sha256": "74352665302823d75afbfeb2f4b42e8a896f48aea2ec54cc73c99fba51fd0af6",
+        "moc_version": 5,
+        "parameters": [
+          "ParamBrowEmotion",
+          "ParamMouthCurve",
+          "ParamAngleX",
+          "ParamAngleY",
+          "ParamAngleZ",
+          "ParamEyeLOpen",
+          "ParamEyeROpen",
+          "ParamEyeBallX",
+          "ParamEyeBallY",
+          "ParamEyeBallForm",
+          "ParamBrowLY",
+          "ParamBrowRY",
+          "ParamMouthForm",
+          "ParamMouthOpenY",
+          "ParamBodyAngleX",
+          "ParamBodyAngleY",
+          "ParamBodyAngleZ",
+          "ParamBodyLean",
+          "ParamProportion",
+          "ParamBreath",
+          "ParamHairFront",
+          "ParamHairBack"
+        ],
+        "render_tested": false,
+        "stage": "cubism-core-only",
+        "status": "pass"
+      },
+      "fidelity": {
+        "alpha_mae": 0.094113,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 0.15738675147425285,
+        "exact_edge_fraction": 0.9970272715522812,
+        "exact_fraction": 0.9988552208041109,
+        "exactly_preserved_pixels": 310621,
+        "foreground_pixels": 310977,
+        "rgb_mae": 0.055220589732788386,
+        "silhouette_iou": 0.9988552208041109,
+        "source_edge_pixels": 30948
+      },
+      "inference": {
+        "reused_validated_bridge": true
+      },
+      "input_sha256": "09011ad707e0325c345fdc39da23d9b1a1640c3327c1ba2dfe192001da736f41",
+      "rights": "stevenburrow; CC0; https://opengameart.org/content/anime-girl-and-boy-portraits",
+      "runtime": {
+        "geometry": {
+          "invalid_opacity": 0,
+          "nonfinite": 0,
+          "raw_opacity_max": 1.0000004768371582,
+          "raw_opacity_min": 0.4999998211860657,
+          "strict_opacity_excursions": 152
+        },
+        "max_detached_pixels": 4,
+        "max_hole_pixels": 262,
+        "model_sha256": "5a192ed1c62f8f61e52e64efb25dae78ad992ba33df34bb4c00a89caad0b40d4",
+        "network": {
+          "external_requests": 0,
+          "failures": 0
+        },
+        "pose_count": 32,
+        "render_status": "pass"
+      },
+      "semantic_review": {
+        "checks": [
+          "semantic_ownership",
+          "hidden_face",
+          "source_preservation",
+          "visible_limbs"
+        ],
+        "decision": "accept",
+        "evidence_sha256": "3b1165290e7786f7c7379f5478da087e33a768db4d56911d5b699c3fec8eb38d",
+        "notes": "All 19 layer records equal accepted Phase 2.6 after no-op eye ordering. Limited concealed face/hair support retained. Both shoulders/sleeves preserved; source hands/forearms/legs/feet absent. Not a new user approval.",
+        "reviewer": "Codex development benchmark review"
+      },
+      "stages": {
+        "animation": "complete",
+        "export": "complete",
+        "facial": "complete",
+        "inference": "complete",
+        "ingest": "complete",
+        "preview": "complete",
+        "project": "complete",
+        "readiness": "complete",
+        "restore": "complete",
+        "rig": "complete",
+        "semantics": "complete",
+        "validation": "complete"
+      },
+      "status": "needs-visual-review",
+      "structural_semantics": {
+        "face_support_of_eyes": 1.0,
+        "reasons": [],
+        "sam_face_recall_candidate": 0.9475705507510241,
+        "status": "requires-review"
+      }
+    },
+    "Hachi": {
+      "blocking_reasons": [
+        "Strong disagreement on visible face ownership",
+        "Missing mouth",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "fidelity": {
+        "alpha_mae": 0.4334171875,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 0.8072932012834277,
+        "exact_edge_fraction": 0.9923153471915082,
+        "exact_fraction": 0.991115343367479,
+        "exactly_preserved_pixels": 107203,
+        "foreground_pixels": 108164,
+        "rgb_mae": 0.3216597019341001,
+        "silhouette_iou": 0.991115343367479,
+        "source_edge_pixels": 18088
+      },
+      "inference": {
+        "capability": [
+          12,
+          0
+        ],
+        "device": "NVIDIA GeForce RTX 5090",
+        "dtype": "bfloat16",
+        "gpu_samples": 227,
+        "input_sha256": "0fc059d8a047f1e7091a608f64cf32e24ebb4f25dbbab962be1449af771a910e",
+        "input_unchanged": true,
+        "packages": {
+          "Pillow": "12.1.1",
+          "diffusers": "0.37.0",
+          "numpy": "2.2.6",
+          "psd-tools": "1.14.2",
+          "torch": "2.8.0+cu128",
+          "torchvision": "0.23.0+cu128",
+          "transformers": "5.0.0"
+        },
+        "sampled_device_peak_mib": 20561,
+        "sampled_gpu_utilization_mean": 79.72687224669603,
+        "sampled_gpu_utilization_peak": 100,
+        "seconds": 122.06081666699902,
+        "seed": 42,
+        "stages": [
+          {
+            "name": "layerdiff",
+            "peak_allocated_bytes": 12722573312,
+            "peak_reserved_bytes": 17202937856,
+            "seconds": 104.29990548999922
+          },
+          {
+            "name": "marigold",
+            "peak_allocated_bytes": 6391918592,
+            "peak_reserved_bytes": 7197425664,
+            "seconds": 16.08617517300081
+          },
+          {
+            "name": "export",
+            "peak_allocated_bytes": 8519680,
+            "peak_reserved_bytes": 20971520,
+            "seconds": 1.1375854150028317
+          }
+        ],
+        "status": "completed",
+        "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+      },
+      "input_sha256": "0fc059d8a047f1e7091a608f64cf32e24ebb4f25dbbab962be1449af771a910e",
+      "rights": "HachiStudio; CC0; https://opengameart.org/content/anime-girl%EF%BC%9Ahachi",
+      "stages": {
+        "inference": "complete",
+        "ingest": "complete",
+        "readiness": "complete",
+        "restore": "complete",
+        "semantics": "complete"
+      },
+      "status": "blocked-semantic-quality",
+      "structural_semantics": {
+        "face_support_of_eyes": 0.8395904436860068,
+        "reasons": [
+          "Strong disagreement on visible face ownership"
+        ],
+        "sam_face_recall_candidate": 0.0,
+        "status": "rejected"
+      }
+    },
+    "Hachi portrait": {
+      "blocking_reasons": [
+        "Missing mouth",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "fidelity": {
+        "alpha_mae": 30.46185546875,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 33.66303420441169,
+        "exact_edge_fraction": 0.8042578356002366,
+        "exact_fraction": 0.6059431524547804,
+        "exactly_preserved_pixels": 18760,
+        "foreground_pixels": 30960,
+        "rgb_mae": 52.769961240310074,
+        "silhouette_iou": 0.6059431524547804,
+        "source_edge_pixels": 10146
+      },
+      "inference": {
+        "capability": [
+          12,
+          0
+        ],
+        "device": "NVIDIA GeForce RTX 5090",
+        "dtype": "bfloat16",
+        "gpu_samples": 236,
+        "input_sha256": "a5b7c310adc6f5d9c528126f8e2f2b6b6b6ba9626fcf530c6ee2d27687fd6575",
+        "input_unchanged": true,
+        "packages": {
+          "Pillow": "12.1.1",
+          "diffusers": "0.37.0",
+          "numpy": "2.2.6",
+          "psd-tools": "1.14.2",
+          "torch": "2.8.0+cu128",
+          "torchvision": "0.23.0+cu128",
+          "transformers": "5.0.0"
+        },
+        "sampled_device_peak_mib": 20104,
+        "sampled_gpu_utilization_mean": 83.16949152542372,
+        "sampled_gpu_utilization_peak": 100,
+        "seconds": 126.91372106899871,
+        "seed": 42,
+        "stages": [
+          {
+            "name": "layerdiff",
+            "peak_allocated_bytes": 12722573312,
+            "peak_reserved_bytes": 17202937856,
+            "seconds": 110.82847687899994
+          },
+          {
+            "name": "marigold",
+            "peak_allocated_bytes": 6391918592,
+            "peak_reserved_bytes": 7197425664,
+            "seconds": 14.352697723003075
+          },
+          {
+            "name": "export",
+            "peak_allocated_bytes": 8519680,
+            "peak_reserved_bytes": 20971520,
+            "seconds": 1.0859885509999003
+          }
+        ],
+        "status": "completed",
+        "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+      },
+      "input_sha256": "a5b7c310adc6f5d9c528126f8e2f2b6b6b6ba9626fcf530c6ee2d27687fd6575",
+      "rights": "HachiStudio; CC0; portrait crop of front.png; https://opengameart.org/content/anime-girl%EF%BC%9Ahachi",
+      "stages": {
+        "inference": "complete",
+        "ingest": "complete",
+        "readiness": "complete",
+        "restore": "complete",
+        "semantics": "complete"
+      },
+      "status": "blocked-semantic-quality",
+      "structural_semantics": {
+        "face_support_of_eyes": 1.0,
+        "reasons": [],
+        "sam_face_recall_candidate": 0.8361858190709046,
+        "status": "requires-review"
+      }
+    },
+    "Sara": {
+      "blocking_reasons": [],
+      "core": {
+        "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+        "core_version": 83886080,
+        "drawable_ids": [
+          "ArtMeshHeadwear",
+          "ArtMeshFrontHair",
+          "ArtMeshEyebrowR",
+          "ArtMeshEyelashR",
+          "ArtMeshIridesR",
+          "ArtMeshEyebrowL",
+          "ArtMeshEyewhiteR",
+          "ArtMeshEyelashL",
+          "ArtMeshIridesL",
+          "ArtMeshEyewhiteL",
+          "ArtMeshNose",
+          "ArtMeshMouth",
+          "ArtMeshMouth_lip_0",
+          "ArtMeshMouth_lip_1",
+          "ArtMeshFace",
+          "ArtMeshTopwear",
+          "ArtMeshNeck",
+          "ArtMeshHandwearL",
+          "ArtMeshHandwearR",
+          "ArtMeshBackHair",
+          "ArtMeshEyebrowR_SeeThrough",
+          "ArtMeshEyebrowL_SeeThrough",
+          "ArtMeshFrontHair_SeeThrough"
+        ],
+        "drawables": 23,
+        "latest_moc_version": 5,
+        "missing_parameters": [],
+        "moc_sha256": "291946aa4f792bd8fdd1365ab6c2f2249348b008f8965e6fc0c82c917a89cfd9",
+        "moc_version": 5,
+        "parameters": [
+          "ParamBrowEmotion",
+          "ParamMouthCurve",
+          "ParamAngleX",
+          "ParamAngleY",
+          "ParamAngleZ",
+          "ParamEyeLOpen",
+          "ParamEyeROpen",
+          "ParamEyeBallX",
+          "ParamEyeBallY",
+          "ParamEyeBallForm",
+          "ParamBrowLY",
+          "ParamBrowRY",
+          "ParamMouthForm",
+          "ParamMouthOpenY",
+          "ParamBodyAngleX",
+          "ParamBodyAngleY",
+          "ParamBodyAngleZ",
+          "ParamBodyLean",
+          "ParamProportion",
+          "ParamBreath",
+          "ParamHairFront",
+          "ParamHairBack"
+        ],
+        "render_tested": false,
+        "stage": "cubism-core-only",
+        "status": "pass"
+      },
+      "fidelity": {
+        "alpha_mae": 0.4079705215419501,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 1.4863924387532912,
+        "exact_edge_fraction": 0.9938662644544998,
+        "exact_fraction": 0.9977132740751669,
+        "exactly_preserved_pixels": 81153,
+        "foreground_pixels": 81339,
+        "rgb_mae": 0.18408553502419914,
+        "silhouette_iou": 0.9977132740751669,
+        "source_edge_pixels": 29835
+      },
+      "inference": {
+        "capability": [
+          12,
+          0
+        ],
+        "device": "NVIDIA GeForce RTX 5090",
+        "dtype": "bfloat16",
+        "gpu_samples": 265,
+        "input_sha256": "66e23cc4302ee023e99895de7f361827809c8ca39a21878d591c4d0ec311dc57",
+        "input_unchanged": true,
+        "packages": {
+          "Pillow": "12.1.1",
+          "diffusers": "0.37.0",
+          "numpy": "2.2.6",
+          "psd-tools": "1.14.2",
+          "torch": "2.8.0+cu128",
+          "torchvision": "0.23.0+cu128",
+          "transformers": "5.0.0"
+        },
+        "sampled_device_peak_mib": 19937,
+        "sampled_gpu_utilization_mean": 75.80377358490566,
+        "sampled_gpu_utilization_peak": 100,
+        "seconds": 142.83047552100106,
+        "seed": 42,
+        "stages": [
+          {
+            "name": "layerdiff",
+            "peak_allocated_bytes": 12722573312,
+            "peak_reserved_bytes": 17202937856,
+            "seconds": 127.01969058500254
+          },
+          {
+            "name": "marigold",
+            "peak_allocated_bytes": 6391918592,
+            "peak_reserved_bytes": 7197425664,
+            "seconds": 13.609412181998778
+          },
+          {
+            "name": "export",
+            "peak_allocated_bytes": 8519680,
+            "peak_reserved_bytes": 20971520,
+            "seconds": 1.1113567579996015
+          }
+        ],
+        "status": "completed",
+        "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+      },
+      "input_sha256": "66e23cc4302ee023e99895de7f361827809c8ca39a21878d591c4d0ec311dc57",
+      "rights": "Portrait graphics created by RPG Action; designed by ZeNeRIA29; CC-BY-3.0; https://opengameart.org/content/sara-trevor-puck-anime-portrait-and-expressions; neutral atlas crop",
+      "runtime": {
+        "geometry": {
+          "invalid_opacity": 0,
+          "nonfinite": 0,
+          "raw_opacity_max": 1.0000001192092896,
+          "raw_opacity_min": 0.4999998211860657,
+          "strict_opacity_excursions": 214
+        },
+        "max_detached_pixels": 85,
+        "max_hole_pixels": 4644,
+        "model_sha256": "5a192ed1c62f8f61e52e64efb25dae78ad992ba33df34bb4c00a89caad0b40d4",
+        "network": {
+          "external_requests": 0,
+          "failures": 0
+        },
+        "pose_count": 32,
+        "render_status": "pass"
+      },
+      "semantic_review": {
+        "checks": [
+          "semantic_ownership",
+          "hidden_face",
+          "source_preservation",
+          "visible_limbs"
+        ],
+        "decision": "accept",
+        "evidence_sha256": "abf6694e24cb0ab0f068ec5ee5b9abcb419a33cea599f9cb44623ea7faf0a629",
+        "notes": "Reviewed original atlas tile, corrected per-eye order and all source layers. Iris ownership corrected on both sides; no independent part GT. Face support is inferred, high-collar neck boundary remains uncertain and requires modest-motion review. Source head ornament, braid, shoulders and upper arms retained; forearms/hands/lower body absent from tile. Approve limited authoring experiment only; user visual acceptance pending.",
+        "reviewer": "Codex development benchmark review"
+      },
+      "stages": {
+        "animation": "complete",
+        "export": "complete",
+        "facial": "complete",
+        "inference": "complete",
+        "ingest": "complete",
+        "preview": "complete",
+        "project": "complete",
+        "readiness": "complete",
+        "restore": "complete",
+        "rig": "complete",
+        "semantics": "complete",
+        "validation": "complete"
+      },
+      "status": "rejected-visual",
+      "structural_semantics": {
+        "face_support_of_eyes": 1.0,
+        "reasons": [],
+        "sam_face_recall_candidate": 0.8815165876777251,
+        "status": "requires-review"
+      },
+      "visual_review": {
+        "checks": [],
+        "decision": "reject",
+        "evidence_sha256": "5d1586b9b894e33bcee07ce21fbbe5391de7fe4b82d26b584eac94775fb6dd90",
+        "notes": "Real 32-pose sheet inspected. Reject: closed eyes retain multiple source/skin contours; procedural mouth is barely visible and not a convincing open interior. Numeric movement, 99.77% source fidelity and successful Core import do not establish usable facial animation. Source shoulders/upper arms retained; source-tile forearms/hands/lower body absent.",
+        "reviewer": "Codex development visual review"
+      }
+    }
+  },
+  "limitations": [
+    "No independently validated fine Sara masks or hidden anatomy",
+    "No new eyelid-skin/teeth/tongue raster generator",
+    "Framing excludes limbs absent from input; not full-body reconstruction"
+  ],
+  "negative_regressions": {
+    "boy1": {
+      "blocking_reasons": [],
+      "fidelity": {
+        "alpha_mae": 0.082065,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 0.3943140895943878,
+        "exact_edge_fraction": 0.9908966558181218,
+        "exact_fraction": 0.9987201280664424,
+        "exactly_preserved_pixels": 252046,
+        "foreground_pixels": 252369,
+        "rgb_mae": 0.0805566452298024,
+        "silhouette_iou": 0.9987201280664424,
+        "source_edge_pixels": 21201
+      },
+      "independent_evaluation": {
+        "background_false_positive_pixels": 50,
+        "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+        "correct_visible_semantic_pixels": 247968,
+        "foreground_pixels": 252319,
+        "groups": {
+          "clothing": {
+            "full_iou": 0.9990711149219217,
+            "visible_iou": 0.9993760034319811
+          },
+          "eyes_brows": {
+            "full_iou": 0.8412730589904723,
+            "visible_iou": 0.9284413218839448
+          },
+          "face_ears_nose": {
+            "full_iou": 0.6933129994980889,
+            "visible_iou": 0.9666526233917749
+          },
+          "hair_accessories": {
+            "full_iou": 0.9218159139955255,
+            "visible_iou": 0.9218159139955255
+          },
+          "mouth": {
+            "full_iou": 0.9110776186887717,
+            "visible_iou": 0.9110776186887717
+          },
+          "neck": {
+            "full_iou": 0.662373539403442,
+            "visible_iou": 0.8150368427625827
+          }
+        },
+        "mask_threshold": 127,
+        "mean_full_iou": 0.8381540409163705,
+        "mean_visible_iou": 0.9237333873590967,
+        "resampling": "nearest to original 1000x1000; square no crop",
+        "scope": "Boy1 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+        "unknown_or_missing_foreground_pixels": 323,
+        "visible_semantic_accuracy": 0.982755955754422
+      },
+      "status": "rejected-historical-semantic-review"
+    },
+    "boy2": {
+      "blocking_reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership",
+        "Missing face",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "fidelity": {
+        "alpha_mae": 44.318572,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 23.062874568127597,
+        "exact_edge_fraction": 0.6704356359602338,
+        "exact_fraction": 0.30468181418300183,
+        "exactly_preserved_pixels": 76193,
+        "foreground_pixels": 250074,
+        "rgb_mae": 87.29609635547878,
+        "silhouette_iou": 0.30468181418300183,
+        "source_edge_pixels": 23437
+      },
+      "independent_evaluation": {
+        "background_false_positive_pixels": 12,
+        "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+        "correct_visible_semantic_pixels": 61140,
+        "foreground_pixels": 250058,
+        "groups": {
+          "clothing": {
+            "full_iou": 0.13206689102272579,
+            "visible_iou": 0.13220001690869954
+          },
+          "eyes_brows": {
+            "full_iou": 0.6962904498816102,
+            "visible_iou": 0.6962904498816102
+          },
+          "face_ears_nose": {
+            "full_iou": 0.0980058558202105,
+            "visible_iou": 0.11007424562359512
+          },
+          "hair_accessories": {
+            "full_iou": 0.5109646693986045,
+            "visible_iou": 0.5109646693986045
+          },
+          "mouth": {
+            "full_iou": 0.4566929133858268,
+            "visible_iou": 0.0
+          },
+          "neck": {
+            "full_iou": 0.6628419793691135,
+            "visible_iou": 0.5291242527064146
+          }
+        },
+        "mask_threshold": 127,
+        "mean_full_iou": 0.42614379314634854,
+        "mean_visible_iou": 0.329775605753154,
+        "resampling": "nearest to original 1000x1000; square no crop",
+        "scope": "Boy2 visible authored XCF leaves; six coarse groups; beard grouped with hair; no fine brow truth",
+        "unknown_or_missing_foreground_pixels": 173877,
+        "visible_semantic_accuracy": 0.24450327524014429
+      },
+      "status": "blocked-semantic-quality"
+    },
+    "girl1": {
+      "blocking_reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "fidelity": {
+        "alpha_mae": 5.147282,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 4.835786637225829,
+        "exact_edge_fraction": 0.9841259979497375,
+        "exact_fraction": 0.9319890739533988,
+        "exactly_preserved_pixels": 276030,
+        "foreground_pixels": 296173,
+        "rgb_mae": 15.653755293921684,
+        "silhouette_iou": 0.9319890739533988,
+        "source_edge_pixels": 32191
+      },
+      "independent_evaluation": {
+        "background_false_positive_pixels": 11,
+        "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+        "correct_visible_semantic_pixels": 244014,
+        "foreground_pixels": 296162,
+        "groups": {
+          "clothing": {
+            "full_iou": 0.9902188154149661,
+            "visible_iou": 0.9902188154149661
+          },
+          "eyes_brows": {
+            "full_iou": 0.8789930811129103,
+            "visible_iou": 0.9011797150298759
+          },
+          "face_ears_nose": {
+            "full_iou": 0.12784502091517821,
+            "visible_iou": 0.20015369938520247
+          },
+          "hair_accessories": {
+            "full_iou": 0.6464649444317436,
+            "visible_iou": 0.7872834869078823
+          },
+          "mouth": {
+            "full_iou": 0.32608695652173914,
+            "visible_iou": 0.32608695652173914
+          },
+          "neck": {
+            "full_iou": 0.3570162518411264,
+            "visible_iou": 0.2909136420525657
+          }
+        },
+        "mask_threshold": 127,
+        "mean_full_iou": 0.5544375117062773,
+        "mean_visible_iou": 0.5826393858853719,
+        "resampling": "nearest to original 1000x1000; square no crop",
+        "scope": "Girl1 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+        "unknown_or_missing_foreground_pixels": 20143,
+        "visible_semantic_accuracy": 0.8239206920536734
+      },
+      "status": "blocked-semantic-quality"
+    },
+    "girl2": {
+      "blocking_reasons": [],
+      "fidelity": {
+        "alpha_mae": 0.094113,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 0.15738675147425285,
+        "exact_edge_fraction": 0.9970272715522812,
+        "exact_fraction": 0.9988552208041109,
+        "exactly_preserved_pixels": 310621,
+        "foreground_pixels": 310977,
+        "rgb_mae": 0.055220589732788386,
+        "silhouette_iou": 0.9988552208041109,
+        "source_edge_pixels": 30948
+      },
+      "independent_evaluation": {
+        "background_false_positive_pixels": 47,
+        "caveat": "Full source layers are authored drawing components, not complete hidden anatomical ground truth.",
+        "correct_visible_semantic_pixels": 308820,
+        "foreground_pixels": 310930,
+        "groups": {
+          "clothing": {
+            "full_iou": 0.9960160267819949,
+            "visible_iou": 0.9960160267819949
+          },
+          "eyes_brows": {
+            "full_iou": 0.9191155492154066,
+            "visible_iou": 0.9488451668092387
+          },
+          "face_ears_nose": {
+            "full_iou": 0.833516139141335,
+            "visible_iou": 0.9689402997525234
+          },
+          "hair_accessories": {
+            "full_iou": 0.6345088222427453,
+            "visible_iou": 0.9883853423595086
+          },
+          "mouth": {
+            "full_iou": 0.9168831168831169,
+            "visible_iou": 0.9168831168831169
+          },
+          "neck": {
+            "full_iou": 0.8692721030897059,
+            "visible_iou": 0.9809217121851931
+          }
+        },
+        "mask_threshold": 127,
+        "mean_full_iou": 0.8615519595590507,
+        "mean_visible_iou": 0.9666652774619292,
+        "resampling": "nearest to original 1000x1000; square no crop",
+        "scope": "Girl2 default visible XCF leaves; visually reviewed six coarse groups; beard included with hair",
+        "unknown_or_missing_foreground_pixels": 356,
+        "visible_semantic_accuracy": 0.9932139066670955
+      },
+      "status": "stopped-after-readiness"
+    },
+    "wikipe": {
+      "blocking_reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership",
+        "Missing neck",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "fidelity": {
+        "alpha_mae": 56.26332644628099,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 20.14957471859261,
+        "exact_edge_fraction": 0.7341760640232812,
+        "exact_fraction": 0.7715941781005037,
+        "exactly_preserved_pixels": 144302,
+        "foreground_pixels": 187018,
+        "rgb_mae": 35.0603239616864,
+        "silhouette_iou": 0.7715941781005037,
+        "source_edge_pixels": 32988
+      },
+      "independent_evaluation": null,
+      "status": "blocked-semantic-quality"
+    }
+  },
+  "primary_acceptance": "not-met: independent runtime candidate rejected visually",
+  "schema_version": 1,
+  "scope": "No production deployment; real local offline inference and installed Core/browser"
+}

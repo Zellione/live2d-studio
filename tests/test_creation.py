@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
+from PIL import Image
 
 from live2d_studio.stages import Stages
 from live2d_studio.creation_quality import validate_review, CHECKS
@@ -9,6 +11,69 @@ from live2d_studio.generic_rig import targets, rig_recipe, animation_recipe
 
 
 class CreationTests(unittest.TestCase):
+    def test_eye_order_uses_semantics_and_leaves_other_layers_fixed(self):
+        from live2d_studio.semantic_order import order_layers
+        roles=[('face','none'),('eyelash','left'),('eyebrow','left'),('irides','left'),('eyewhite','left'),('front_hair','none')]
+        layers=[dict(id=str(i),role=role,side=side,z_order=i) for i,(role,side) in enumerate(roles)]
+        ordered,changes=order_layers(layers)
+        self.assertEqual([l['id'] for l in ordered],['0','4','2','3','1','5'])
+        self.assertEqual(len(changes),1)
+        replay,changes=order_layers(ordered)
+        self.assertEqual(replay,ordered);self.assertEqual(changes,[])
+        self.assertEqual([l['id'] for l in layers],[str(i) for i in range(6)])
+        ambiguous=layers+[dict(layers[3],id='duplicate')]
+        self.assertEqual(order_layers(ambiguous)[1],[])
+
+    def test_preview_run_verifies_current_export(self):
+        from live2d_studio.creation import preview_model
+        from live2d_studio.stages import inventory
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);export=root/'stages/export-test';(export/'runtime').mkdir(parents=True)
+            model=export/'runtime/a.model3.json';model.write_text('{}')
+            data=dict(model='stages/export-test/runtime/a.model3.json',stages=dict(export=dict(
+                status='complete',directory='stages/export-test',files=inventory(export))))
+            (root/'creation.json').write_text(json.dumps(data))
+            self.assertEqual(preview_model(root),model)
+            model.write_text('changed')
+            with self.assertRaises(ValueError):preview_model(root)
+            model.write_text('{}');data['stages']['export']['status']='failed'
+            (root/'creation.json').write_text(json.dumps(data))
+            with self.assertRaises(ValueError):preview_model(root)
+
+    def test_real_cli_stages_reuse_validated_bridge_without_worker(self):
+        from live2d_studio.creation import create
+        from live2d_studio.seethrough import PINNED_SOURCE,MODEL_REVISIONS
+        from live2d_studio.manifest import digest,write_json
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);source=root/'input.png';bridge=root/'bridge';bridge.mkdir()
+            Image.new('RGBA',(12,10),(80,60,30,255)).save(source)
+            Image.open(source).save(bridge/'normalized.png')
+            Image.new('RGBA',(4,5),(20,40,60,255)).save(bridge/'eye.png')
+            write_json(bridge/'decomposition.json',dict(format_version=1,order='back-to-front',
+                canvas=dict(width=12,height=10),input_sha256=digest(source),source_revision=PINNED_SOURCE,
+                models=MODEL_REVISIONS,normalized_path='normalized.png',transform=dict(kind='test'),
+                layers=[dict(name='irides-r',path='eye.png',x=1,y=2,z_order=0,opacity=255,blend_mode='BlendMode.NORMAL')]))
+            with patch('live2d_studio.creation.worker',side_effect=AssertionError('GPU reran')):
+                result=create(source,root/'run',decomposition=bridge,until='inference',preview=False)
+                first=json.loads((root/'run/creation.json').read_text())
+                # Resume no longer even needs the external bridge path.
+                result=create(source,root/'run',until='inference',preview=False)
+                second=json.loads((root/'run/creation.json').read_text())
+            self.assertEqual(first['stages'],second['stages'])
+            self.assertEqual(result['status'],'stopped-after-inference')
+            import zipfile
+            from live2d_studio.generic_rig import verify_source_art
+            project=root/'run'/second['stages']['inference']['directory']/'validated'
+            with zipfile.ZipFile(root/'model.psd2live','w') as archive:
+                archive.write(bridge/'eye.png','assets/eye.png')
+            self.assertEqual(verify_source_art(project,root/'model.psd2live')['exact_source_layers'],1)
+            with zipfile.ZipFile(root/'wrong.psd2live','w') as archive:
+                archive.write(source,'assets/wrong.png')
+            with self.assertRaises(ValueError):verify_source_art(project,root/'wrong.psd2live')
+            pixel=root/'run'/second['stages']['inference']['directory']/'bridge/eye.png'
+            pixel.write_bytes(b'corrupt')
+            with self.assertRaises(ValueError):create(source,root/'run',until='inference',preview=False)
+
     def test_resume_checks_pixels_and_preserves_failed_attempt(self):
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)/'run'

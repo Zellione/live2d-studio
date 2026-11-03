@@ -4,10 +4,43 @@ import json
 import math
 from pathlib import Path
 import shutil
+import fcntl
+from functools import wraps
+import hashlib
+import io
+import zipfile
+from PIL import Image
 
 from .manifest import artwork_request, load_validate, write_json, digest
 from .mcp import Operations, validate_import
 from .bundle import validate
+
+
+def profile():
+    data = json.loads(Path(__file__).with_name('portrait_profile.json').read_text())
+    if data.get('schema_version') != 1:
+        raise ValueError('Unsupported portrait profile')
+    for key in ('mouth_curve','brow_inner_raise'):
+        if len(data[key]) != 4 or not all(math.isfinite(v) and abs(v)<=1 for v in data[key]):
+            raise ValueError('Unsafe relative facial profile')
+    if not all(math.isfinite(v) and 0<=v<=5 for v in data['idle_degrees'].values()):
+        raise ValueError('Portrait idle amplitudes must remain modest')
+    return data
+
+
+def locked_editor(function):
+    """Serialize creation stages sharing the one local authoring workspace."""
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        folder = Path(__file__).resolve().parents[2]/'.cache'
+        folder.mkdir(exist_ok=True)
+        with (folder/'creation-editor.lock').open('a') as lock:
+            try:
+                fcntl.flock(lock,fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                raise RuntimeError('Another creation stage owns PSD2Live; resume when it finishes') from None
+            return function(*args, **kwargs)
+    return wrapper
 
 
 def facial_plan(project, output):
@@ -90,14 +123,15 @@ def axis_steps(target, axes, ident, shapes):
 
 
 def rig_recipe(bindings, details):
+    config = profile()
     steps = []
     mouth = bindings['mouth:none']
     steps += axis_steps(mouth, details[mouth]['axes'], 'ParamMouthCurve', [
-        (1,[dict(type='curve',axis='y',controls=[-.1,.45,.45,-.1])]),
-        (-1,[dict(type='curve',axis='y',controls=[.1,-.45,-.45,.1])])])
+        (1,[dict(type='curve',axis='y',controls=config['mouth_curve'])]),
+        (-1,[dict(type='curve',axis='y',controls=[-v for v in config['mouth_curve']])])])
     for side in ('left','right'):
         target = bindings['eyebrow:'+side]
-        controls = [.45,.15,-.15,-.45] if side=='left' else [-.45,-.15,.15,.45]
+        controls = config['brow_inner_raise'] if side=='left' else [-v for v in config['brow_inner_raise']]
         # Positive raises the inner end (sad); negative lowers it (angry).
         steps += axis_steps(target, details[target]['axes'], 'ParamBrowEmotion', [
             (1,[dict(type='curve',axis='y',controls=controls)]),
@@ -107,6 +141,29 @@ def rig_recipe(bindings, details):
 
 def save(op, output):
     op.call('project_save_as',dict(path=str(output/'character.psd2live')))
+
+
+def archived_art(project):
+    with zipfile.ZipFile(project) as archive:
+        return {name:hashlib.sha256(archive.read(name)).hexdigest()
+                for name in archive.namelist() if name.startswith('assets/') and name.endswith('.png')}
+
+
+def verify_source_art(layers, project):
+    """PNG encodings may differ; compare all decoded source RGBA exactly."""
+    def rgba_hash(image):
+        rgba=image.convert('RGBA')
+        return (rgba.size,hashlib.sha256(rgba.tobytes()).hexdigest())
+    with zipfile.ZipFile(project) as archive:
+        available={rgba_hash(Image.open(io.BytesIO(archive.read(name)))) for name in archive.namelist()
+                   if name.startswith('assets/') and name.endswith('.png')}
+    data=load_validate(layers)
+    missing=[layer['id'] for layer in data['layers']
+             if rgba_hash(Image.open(Path(layers)/layer['rgba_path'])) not in available]
+    if missing:
+        raise ValueError('Source layers missing/changed in editor archive: '+', '.join(missing))
+    return dict(status='pass',exact_source_layers=len(data['layers']),
+                caveat='Exact imported RGBA, including marked generated hidden pixels; original input preservation is measured separately.')
 
 
 def open_stage(client, predecessor, output):
@@ -119,6 +176,7 @@ def open_stage(client, predecessor, output):
     return op
 
 
+@locked_editor
 def create_project(client, project, output):
     request = artwork_request(project)
     write_json(output/'artwork-request.json',request)
@@ -130,8 +188,10 @@ def create_project(client, project, output):
     write_json(output/'overview.json',view)
     write_json(output/'import-validation.json',validate_import(request,view))
     save(op,output)
+    write_json(output/'source-art.json',verify_source_art(project,output/'character.psd2live'))
 
 
+@locked_editor
 def author_rig(client, predecessor, output):
     op = open_stage(client,predecessor,output)
     data = overview(client)['data']
@@ -141,12 +201,14 @@ def author_rig(client, predecessor, output):
     steps = rig_recipe(binding,details)
     write_json(output/'inspection.json',dict(overview=data,objects=items,bindings=binding,details=details))
     write_json(output/'recipe.json',steps)
+    write_json(output/'profile.json',profile())
     for step in steps:
         op.call(step['operation'],step['request'])
     save(op,output)
 
 
 def animation_recipe(parameters):
+    amplitude = profile()['idle_degrees']
     params = {p['id']:p for p in parameters}
     required = {'ParamMouthCurve','ParamBrowEmotion','ParamEyeLOpen','ParamEyeROpen',
                 'ParamMouthOpenY','ParamAngleX','ParamAngleY','ParamAngleZ','ParamBreath'}
@@ -174,8 +236,8 @@ def animation_recipe(parameters):
               dict(operation='motion_properties',request=dict(id='createIdle',duration=12,loop=True,fps=30,fade_in=.5,fade_out=.5))]
     poses = {}
     for t in range(13):
-        poses[t] = dict(ParamAngleX=2*math.sin(t*math.pi/6),ParamAngleY=.8*math.sin(t*math.pi/3),
-                        ParamAngleZ=math.sin(t*math.pi/6),ParamBreath=.2*(1-math.cos(t*math.pi/2)))
+        poses[t] = dict(ParamAngleX=amplitude['x']*math.sin(t*math.pi/6),ParamAngleY=amplitude['y']*math.sin(t*math.pi/3),
+                        ParamAngleZ=amplitude['z']*math.sin(t*math.pi/6),ParamBreath=.2*(1-math.cos(t*math.pi/2)))
     for onset in (2.5,6.5,10.5):
         for dt,v in [(0,1),(.1,0),(.16,0),(.32,1)]:
             poses.setdefault(onset+dt,{}).update(ParamEyeLOpen=v,ParamEyeROpen=v)
@@ -187,6 +249,7 @@ def animation_recipe(parameters):
     return steps
 
 
+@locked_editor
 def author_animation(client, predecessor, output):
     op = open_stage(client,predecessor,output)
     data = overview(client)['data']
@@ -203,9 +266,12 @@ def author_animation(client, predecessor, output):
     save(op,output)
 
 
+@locked_editor
 def export_model(client, predecessor, output):
     op = open_stage(client,predecessor,output)
     save(op,output)
+    if archived_art(predecessor/'character.psd2live') != archived_art(output/'character.psd2live'):
+        raise ValueError('Archived source artwork changed during export preparation')
     op.call('project_export_psd',dict(path=str(output/'character.psd'),scale=1))
     op.call('project_open',dict(path=str(output/'character.psd2live')))
     op.call('project_export_model',dict(output_directory=str(output/'export')))
