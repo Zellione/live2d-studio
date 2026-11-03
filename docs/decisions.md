@@ -283,3 +283,23 @@
   because 32 poses render or all application tests pass.
 - Retain Boy2 and both Hachi inputs as parser failures. Independent ground-truth
   masks remain evaluation-only; Sara has no independent semantic ground truth.
+
+# Phase 4B.1 decisions (2026-11-03)
+
+- Reconstruct ownership before rigging: Sara had static face-owned eye/mouth pixels,
+  missing concealed skin and an independent partial-contour blink deformation.
+  Source copying and neutral fidelity alone did not diagnose these causes.
+- Keep skin/lash/interior alternatives separate with explicit provenance. Opaque
+  backing changes runtime fractional-alpha compositing; report that separately
+  from exact observed RGBA, rather than weakening the original source gate.
+- Preserve source upper-lash colour/thickness in a generated closure and retain
+  original open-eye details. A dark mouth cavity is an uncertain simple shape;
+  no unsupported teeth/tongue or hidden reference tiles are inputs.
+- Retain procedural mouth generation when substantial already-open source artwork
+  exists. A failed Girl2 regression demonstrated that a universal replacement
+  degraded its opening range. Sara's artifacts are unchanged by this branch.
+- User accepted limited visual improvement of the exact Sara candidate gallery.
+  Keep development geometry/head/limb checks separately attributed. No general
+  image-to-Live2D, professional-quality or production acceptance is inferred.
+- Assess additional models through pinned public metadata only. Neither a newer
+  model nor an available local filename establishes a tested facial improvement.

@@ -44,19 +44,22 @@ def locked_editor(function):
 
 
 def facial_plan(project, output):
+    from .facial_artwork import prepare
+    report=prepare(project,output/'layers')
     data = load_validate(project)
     write_json(output/'facial-plan.json', dict(schema_version=1,
         source_manifest_sha256=digest(Path(project)/'layer_manifest.json'),
-        source_artwork='unchanged', generated_by='PSD2Live procedural import',
-        blink='source eyelash/white deformation; intermediate lid skin unavailable',
-        mouth='source mouth plus generated lip outlines and procedural interior; no teeth/tongue',
+        source_artwork='exact pixels reassigned; original input immutable', generated_by='local source-aware facial reconstruction',
+        blink='source eyelash/white deformation over generated concealed skin',
+        mouth='complete source contour plus generated dark cavity; no teeth/tongue',
         smile_frown='relative curve field on inspected mouth parent',
         brows='separate relative sad/angry fields on inspected brow parents',
         concealed_face='reviewed See-through candidate; no independent anatomy claim',
         optional_blush='omitted; not needed for basic expression acceptance',
         source_layers=[dict(id=l['id'],role=l['role'],side=l['side'],
                             sha256=l['sha256']['rgba_path']) for l in data['layers']],
-        limitations=['No newly painted skin eyelids','No phonemes','No full-body rig'],
+        reconstruction=report,
+        limitations=['Uncertain concealed skin','No phonemes','No full-body rig'],
         requires_visual_review=True))
 
 
@@ -187,6 +190,9 @@ def create_project(client, project, output):
     view = overview(client)
     write_json(output/'overview.json',view)
     write_json(output/'import-validation.json',validate_import(request,view))
+    if (Path(project)/'facial-artwork.json').is_file():
+        from .facial_authoring import install
+        install(client,op,Path(project),output)
     save(op,output)
     write_json(output/'source-art.json',verify_source_art(project,output/'character.psd2live'))
 

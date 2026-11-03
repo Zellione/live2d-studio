@@ -1,0 +1,405 @@
+{
+  "accepted_reference_preservation": {
+    "pinned_files": 41,
+    "sources": [
+      "recipes/girl2-package.json",
+      "docs/benchmarks/phase3-1.json"
+    ],
+    "status": "pass"
+  },
+  "base_commit": "3e120c8",
+  "development_visual_assessment": "Clearer closed eyes and visible mouth cavity; simplified intermediate lids/interior remain.",
+  "facial_artwork": {
+    "additional_references": false,
+    "algorithm": "facial-local-skin-v1",
+    "alternatives": [
+      {
+        "feature": "eye-left",
+        "kind": "skin",
+        "path": "alternatives/eye-left-skin.png",
+        "provenance": "Generated from single-image local source skin/contour evidence",
+        "sha256": "db3a74ad579210a4108d1386b05351b8f47b34d2f932f79122dd8d8feb813770",
+        "source_pixels": false,
+        "uncertainty": "Unvalidated hidden surface"
+      },
+      {
+        "feature": "eye-left",
+        "kind": "closed-lash",
+        "path": "alternatives/eye-left-closed.png",
+        "provenance": "Generated from single-image local source skin/contour evidence",
+        "sha256": "51e2ee70d03a3e05eb81510c45567d6777871601fdff66b25cda2c6f5555179e",
+        "source_pixels": false,
+        "uncertainty": "Unvalidated hidden surface"
+      },
+      {
+        "feature": "eye-right",
+        "kind": "skin",
+        "path": "alternatives/eye-right-skin.png",
+        "provenance": "Generated from single-image local source skin/contour evidence",
+        "sha256": "eef17b112163c7b39f29721e8710b9b983cf40b81346d49d1bc9f66c383d7d06",
+        "source_pixels": false,
+        "uncertainty": "Unvalidated hidden surface"
+      },
+      {
+        "feature": "eye-right",
+        "kind": "closed-lash",
+        "path": "alternatives/eye-right-closed.png",
+        "provenance": "Generated from single-image local source skin/contour evidence",
+        "sha256": "bc656e3d5623462535a4ee160976451e09c4f962013ec2e2af3d9f13be44bdf8",
+        "source_pixels": false,
+        "uncertainty": "Unvalidated hidden surface"
+      },
+      {
+        "feature": "mouth",
+        "kind": "skin",
+        "path": "alternatives/mouth-skin.png",
+        "provenance": "Generated from single-image local source skin/contour evidence",
+        "sha256": "3ae37c6f51a5d74af4cf2185948893389391da7c1b98558084efa1d0cfc541de",
+        "source_pixels": false,
+        "uncertainty": "Unvalidated hidden surface"
+      },
+      {
+        "feature": "mouth",
+        "kind": "interior",
+        "path": "alternatives/mouth-interior.png",
+        "provenance": "Generated from single-image local source skin/contour evidence",
+        "sha256": "81bf2a1bd2e58029edf1aac2bb8072bbc52a3237a5cfaf2832262d9e8da97c8b",
+        "source_pixels": false,
+        "uncertainty": "Unvalidated hidden surface"
+      },
+      {
+        "feature": "mouth",
+        "kind": "source-neutral",
+        "path": "alternatives/mouth-neutral.png",
+        "provenance": "Exact source contour variant; replaces procedural mouth rendering",
+        "sha256": "e755ae179f1acfec563b0aefb6caf33ee0acee9633b8789a9b3e67b4486b787a",
+        "source_pixels": true,
+        "uncertainty": "Ownership reviewed as candidate"
+      }
+    ],
+    "changes": [
+      {
+        "bounds": [
+          162,
+          143,
+          195,
+          174
+        ],
+        "feature": "eye-left",
+        "reconstructed_skin_pixels": 1160,
+        "skin_samples": 662,
+        "transferred_source_pixels": 440
+      },
+      {
+        "bounds": [
+          223,
+          140,
+          258,
+          172
+        ],
+        "feature": "eye-right",
+        "reconstructed_skin_pixels": 1177,
+        "skin_samples": 724,
+        "transferred_source_pixels": 428
+      },
+      {
+        "bounds": [
+          194,
+          206,
+          228,
+          214
+        ],
+        "feature": "mouth",
+        "reconstructed_skin_pixels": 137,
+        "skin_samples": 855,
+        "transferred_source_pixels": 110
+      }
+    ],
+    "fidelity": {
+      "alpha_mae": 0.4079705215419501,
+      "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+      "edge_magnitude_mae": 1.4863924387532912,
+      "exact_edge_fraction": 0.9938662644544998,
+      "exact_fraction": 0.9977132740751669,
+      "exactly_preserved_pixels": 81153,
+      "foreground_pixels": 81339,
+      "rgb_mae": 0.18408553502419914,
+      "silhouette_iou": 0.9977132740751669,
+      "source_edge_pixels": 29835
+    },
+    "generated_pixels": "All non-observed alpha is marked generated and uncertain.",
+    "input_manifest_sha256": "ed96fefce35b6eae18958fc20966b04fad54a4976728a3eca4606c7c234bf3c9",
+    "requires_visual_review": true,
+    "single_image": true,
+    "uncertainty": "Local skin interpolation is not independently known hidden anatomy."
+  },
+  "frame_hash_manifest_sha256": "3fa4aea4705998e069dc33a5ef5790f1451e8ff7b8d5c825504dc56c6b50d0eb",
+  "girl2_regression": {
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 169
+    },
+    "max_detached_pixels": 4,
+    "max_holes": 267,
+    "mouth_strategy": {
+      "bounds": [
+        435,
+        399,
+        497,
+        433
+      ],
+      "feature": "mouth",
+      "reason": "Substantial tall source mouth artwork; sparse closed-contour replacement is unsuitable.",
+      "reconstructed_skin_pixels": 0,
+      "skin_samples": 0,
+      "strategy": "retain-existing-open-source-mouth",
+      "transferred_source_pixels": 0
+    },
+    "poses": 57,
+    "status": "needs-visual-review"
+  },
+  "independent_general_purpose_acceptance": false,
+  "model_review": {
+    "path": "benchmarks/phase4b1-model-review.json",
+    "sha256": "6ff498c9f5cfad6d2f5b9f45b694323b3fc05397c7d3741d5c49ce461d6f24ec",
+    "weights_downloaded": false
+  },
+  "multi_reference": false,
+  "production_ready": false,
+  "reference_sheet": {
+    "attribution": "Portrait graphics created by RPG Action; graphics designed by ZeNeRIA29; CC-BY-3.0",
+    "sha256": "87b673b2ff97e2bf77fca8f4e31183b08e0d50d8cdb46dbfcf8387fd2818baa0",
+    "url": "https://opengameart.org/content/sara-trevor-puck-anime-portrait-and-expressions",
+    "usage": "evaluation-only; never supplied to inference or reconstruction"
+  },
+  "regressions": {
+    "boy1": {
+      "reasons": [],
+      "status": "rejected-historical-semantic-review"
+    },
+    "boy2": {
+      "reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership",
+        "Missing face",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "status": "blocked-semantic-quality"
+    },
+    "girl1": {
+      "reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "status": "blocked-semantic-quality"
+    },
+    "girl2": {
+      "reasons": [],
+      "status": "stopped-after-readiness"
+    },
+    "wikipe": {
+      "reasons": [
+        "Face surface does not support most eye geometry",
+        "Strong disagreement on visible face ownership",
+        "Missing neck",
+        "Less than 99.5% exact foreground preservation",
+        "Source silhouette incomplete"
+      ],
+      "status": "blocked-semantic-quality"
+    }
+  },
+  "runtime": {
+    "after": {
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 184
+      },
+      "max_detached_pixels": 79,
+      "max_holes": 4357,
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_holes": 102,
+      "pose_count": 57,
+      "render_status": "pass"
+    },
+    "before": {
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0.49999991059303284,
+        "strict_opacity_excursions": 208
+      },
+      "max_detached_pixels": 85,
+      "max_holes": 4644,
+      "network": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_holes": 413,
+      "pose_count": 57,
+      "render_status": "pass"
+    },
+    "neutral_comparison": {
+      "caveat": "Runtime comparison with old model, separate from exact original observed pixels.",
+      "changed_pixels": 13417,
+      "exact_frame_equality": false,
+      "rgba_mean_absolute_difference": 0.24101923076923076
+    }
+  },
+  "schema_version": 1,
+  "single_image": true,
+  "source_sha256": "66e23cc4302ee023e99895de7f361827809c8ca39a21878d591c4d0ec311dc57",
+  "transitions": {
+    "caveat": "Nominal 100ms talk samples and 150ms fades; not a real-time latency benchmark.",
+    "checks": [
+      {
+        "name": "Actual Cubism model loaded",
+        "pass": true
+      },
+      {
+        "name": "Stable neutral",
+        "pass": true
+      },
+      {
+        "name": "Non-frozen talk envelope during neutral",
+        "pass": true
+      },
+      {
+        "name": "Exact neutral restoration from neutral",
+        "pass": true
+      },
+      {
+        "name": "Non-frozen talk envelope during happy",
+        "pass": true
+      },
+      {
+        "name": "Exact neutral restoration from happy",
+        "pass": true
+      },
+      {
+        "name": "Non-frozen talk envelope during sad",
+        "pass": true
+      },
+      {
+        "name": "Exact neutral restoration from sad",
+        "pass": true
+      },
+      {
+        "name": "Non-frozen talk envelope during angry",
+        "pass": true
+      },
+      {
+        "name": "Exact neutral restoration from angry",
+        "pass": true
+      },
+      {
+        "name": "Non-frozen talk envelope during surprised",
+        "pass": true
+      },
+      {
+        "name": "Exact neutral restoration from surprised",
+        "pass": true
+      },
+      {
+        "name": "Non-frozen talk envelope during confused",
+        "pass": true
+      },
+      {
+        "name": "Exact neutral restoration from confused",
+        "pass": true
+      },
+      {
+        "name": "Non-frozen talk envelope during embarrassed",
+        "pass": true
+      },
+      {
+        "name": "Exact neutral restoration from embarrassed",
+        "pass": true
+      },
+      {
+        "name": "Finite geometry and bounded opacity",
+        "pass": true
+      },
+      {
+        "name": "Only local assets",
+        "pass": true
+      }
+    ],
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000001192092896,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 17
+    },
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "poses": 122,
+    "status": "pass",
+    "talking_ranges": {
+      "angry": [
+        0.08219952881336212,
+        0.7862712740898132
+      ],
+      "confused": [
+        0.0844091847538948,
+        0.7785220146179199
+      ],
+      "embarrassed": [
+        0.08511519432067871,
+        0.7707543969154358
+      ],
+      "happy": [
+        0.08007106930017471,
+        0.7198686003684998
+      ],
+      "neutral": [
+        0.10006443411111832,
+        0.7140049338340759
+      ],
+      "sad": [
+        0.08356614410877228,
+        0.7579213380813599
+      ],
+      "surprised": [
+        0.08771674335002899,
+        0.7262548208236694
+      ]
+    }
+  },
+  "validation_tests": {
+    "javascript_log_sha256": "f90d18d1399b2b2abe941389f97757094b159b6e8b8543846292d1fd4f3a16bc",
+    "javascript_talk": 5,
+    "python": 117,
+    "python_log_sha256": "f490f2805a101358f193a32a46ea57e51541d98f7c50bafa588a4497f7161f36",
+    "scope": "Full local Python suite and existing Node talk tests; no production or new Btrfs acceptance run."
+  },
+  "visual_review": {
+    "checks": [
+      "blink",
+      "mouth",
+      "head_overlap",
+      "expressions",
+      "holes_contours",
+      "visible_limbs"
+    ],
+    "decision": "accept",
+    "evidence_sha256": "cbef09acce03e477e4fb5be7c080f7e1d7d8e639cafa757fbfe36b6d387b87bb",
+    "notes": "User explicitly selected Accept limited visual improvement after reviewing runs/phase4b1-review-candidate/index.html. This records acceptance of limited eyes/mouth/expression improvement, not professional quality or general-purpose conversion. Development QA separately inspected head combinations, transparency/components and retained source bilateral shoulders/upper arms; forearms/hands/lower limbs absent in source. Mouth interior remains a simple source-coloured cavity without teeth/tongue; intermediate lids remain stylized. No production approval.",
+    "reviewer": "User visual review; development QA separately identified"
+  }
+}

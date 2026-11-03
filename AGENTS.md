@@ -212,3 +212,19 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   downloads remain outside Git. Commit only code, configuration, tests, provenance
   definitions and concise results. Production deployment restrictions are unchanged.
 - Stop after Phase 4B. No production installation or training is authorized.
+
+## Phase 4B.1 facial reconstruction
+- Explicit user authorization reopens only generic facial artwork/rigging and
+  local regression evaluation. Read docs/phase4b1-results.md and
+  docs/phase4b1-facial-artwork.md. Orchestration and deployment gates remain intact.
+- The user accepted limited Sara visual improvement in the exact gallery
+  runs/phase4b1-review-candidate. Preserve runs/phase4b1-sara and its review record.
+  This is not general-purpose conversion, anatomical truth or production approval.
+- Single-image reconstruction never reads the other spritesheet tiles. Only the
+  evaluation gallery reads them; any future multi-reference run must be separate.
+- Source-observed pixels stay exact/unique; generated backing, closed lashes and
+  mouth alternatives retain provenance/uncertainty. Runtime-neutral equality is
+  separate and is not claimed for the reconstructed candidate.
+- Preserve the failed early facial candidates and Girl2 open-mouth regression.
+  Reuse validated inference; do not alter accepted Phase 3/3.1 or package pins.
+- Stop after Phase 4B.1. No production deployment, new training or global changes.

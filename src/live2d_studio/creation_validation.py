@@ -15,7 +15,8 @@ from .preview_live import assets, Handler
 REPO = Path(__file__).resolve().parents[2]
 
 
-def validate_runtime(model, output, extension):
+def validate_runtime(model, output, extension, scenario=None):
+    scenario = scenario or REPO/'scripts/phase4b_browser_scenario.js'
     report = validate(model)
     write_json(output/'integrity.json',report)
     if report['status'] != 'pass':
@@ -55,7 +56,7 @@ def validate_runtime(model, output, extension):
                 try:
                     with (output/'browser.log').open('w') as stream:
                         result = subprocess.run(['node',str(REPO/'scripts/cdp_smoke.mjs'),endpoint,
-                            f'http://127.0.0.1:{server.server_port}/',str(REPO/'scripts/phase4b_browser_scenario.js'),
+                            f'http://127.0.0.1:{server.server_port}/',str(scenario),
                             str(output/'frames')],cwd=REPO,stdout=stream,stderr=subprocess.STDOUT,timeout=180)
                     if result.returncode:
                         raise RuntimeError('Browser validation failed; inspect frames/result.json and browser.log')

@@ -160,12 +160,12 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         from .mcp import MCP
         factory = client_factory or (lambda: MCP(endpoint))
         face = run('facial',dict(parent=stages.data['stages']['restore']['files'], review=digest(review_file),
-            code=code_hash('src/live2d_studio/generic_rig.py')),lambda root: facial_plan(restored,root))
+            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/facial_artwork.py')),lambda root: facial_plan(restored,root))
         if stop('facial'): return result()
         project = run('project',dict(parent=stages.data['stages']['facial']['files'],
             source=digest(restored/'layer_manifest.json'),
-            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/mcp.py')),
-            lambda root:create_project(factory(),restored,root))
+            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/facial_authoring.py','src/live2d_studio/mcp.py')),
+            lambda root:create_project(factory(),face/'layers',root))
         if stop('project'): return result()
         rig = run('rig',dict(parent=stages.data['stages']['project']['files'],
             code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/portrait_profile.json')),lambda root:author_rig(factory(),project,root))
@@ -182,10 +182,10 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         extension = Path(extension or DEFAULT_EXTENSION).resolve()
         validation = run('validation',dict(parent=stages.data['stages']['export']['files'],
             libraries=inventory(extension/'lib'), code=code_hash('src/live2d_studio/creation_validation.py',
-                'scripts/phase4b_browser_scenario.js','scripts/cdp_smoke.mjs',
+                'scripts/phase4b1_browser_scenario.js','scripts/cdp_smoke.mjs',
                 'src/live2d_studio/preview_live.py','src/live2d_studio/preview_ui/viewer.js',
                 'src/live2d_studio/visual_qa.py')),
-            lambda root:validate_runtime(model,root,extension))
+            lambda root:validate_runtime(model,root,extension,REPO/'scripts/phase4b1_browser_scenario.js'))
         stages.data['review_evidence']['visual'] = str((validation/'quality.json').relative_to(stages.root))
         stages.data['model'] = str(model.relative_to(stages.root))
         stages.data['status'] = 'needs-visual-review'

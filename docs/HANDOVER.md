@@ -1,5 +1,25 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.1 (2026-11-03)
+
+Continued from 3e120c8. Read [results](phase4b1-results.md),
+[implementation](phase4b1-facial-artwork.md) and [benchmark](benchmarks/phase4b1.json).
+The user accepted **limited visual improvement** for independent single-image Sara.
+The exact reviewed gallery is runs/phase4b1-review-candidate; final comparison is
+runs/phase4b1-review-complete. This does not establish general-purpose conversion.
+
+- The facial stage now reconstructs source ownership, concealed skin, source-derived
+  closed lashes and a simple mouth cavity through reusable Python/MCP authoring.
+- Open the frozen reviewed model with preview-live --run runs/phase4b1-sara.
+  Preserve it; changed code invalidates creation stages and requires new review.
+- Matched 57-pose baseline/candidate renders and separate time-sampled transitions
+  exercise the installed Core/viewer. Original inference is reused throughout.
+- Girl2 exposed an already-open-source mouth case; the generic geometry selector
+  retains its existing procedural treatment. Failed candidates remain in history.
+- Accepted Phase 3/3.1 and all deployment restrictions remain unchanged. Additional
+  image models were assessed from metadata only, without new weights or inference.
+- Stop after Phase 4B.1. No production deployment or training.
+
 ## Current state after Phase 4B implementation milestones (2026-11-03)
 
 Continued from `53ad920` with explicit authorization for reusable local creation.

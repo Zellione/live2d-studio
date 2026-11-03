@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "repository": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+      "revision": "115134f363124c53c7d878647567d04daf26e41e",
+      "license": "openrail++",
+      "url": "https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+      "selected_weights": [
+        {
+          "path": "text_encoder/model.fp16.safetensors",
+          "bytes": 246144867
+        },
+        {
+          "path": "text_encoder_2/model.fp16.safetensors",
+          "bytes": 1389382884
+        },
+        {
+          "path": "unet/diffusion_pytorch_model.fp16.safetensors",
+          "bytes": 5135178560
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.fp16.safetensors",
+          "bytes": 167335338
+        }
+      ],
+      "total_weight_bytes": 6938041649,
+      "downloaded": false,
+      "tested": false,
+      "hardware_assessment": "32 GB plausible with activation headroom; unmeasured",
+      "benefit_assessment": "Possible local eyelid/skin refinement; not demonstrated on Sara"
+    },
+    {
+      "repository": "Qwen/Qwen-Image-Edit-2509",
+      "revision": "d3968ef930e841f4c73640fb8afa3b306a78167e",
+      "license": "apache-2.0",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2509",
+      "selected_weights": [
+        {
+          "path": "text_encoder/model-00001-of-00004.safetensors",
+          "bytes": 4968243304
+        },
+        {
+          "path": "text_encoder/model-00002-of-00004.safetensors",
+          "bytes": 4991495816
+        },
+        {
+          "path": "text_encoder/model-00003-of-00004.safetensors",
+          "bytes": 4932751040
+        },
+        {
+          "path": "text_encoder/model-00004-of-00004.safetensors",
+          "bytes": 1691924384
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00005.safetensors",
+          "bytes": 9973578592
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00005.safetensors",
+          "bytes": 9987326072
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00005.safetensors",
+          "bytes": 9987307440
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00004-of-00005.safetensors",
+          "bytes": 9930685712
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00005-of-00005.safetensors",
+          "bytes": 982130472
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "bytes": 253806966
+        }
+      ],
+      "total_weight_bytes": 57699249798,
+      "downloaded": false,
+      "tested": false,
+      "hardware_assessment": "Full BF16 transformer exceeds 32 GB; offload or separately reviewed quantization required",
+      "benefit_assessment": "Possible local eyelid/skin refinement; not demonstrated on Sara"
+    }
+  ],
+  "method": "Public anonymous hf-cli model/card and pinned recursive file metadata; no weights or remote image processing"
+}

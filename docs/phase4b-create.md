@@ -117,5 +117,13 @@ provides unvalidated candidate hidden surfaces; there is no independently known
 hidden mask, teeth/tongue system or reconstructed eyelid skin. Optional blush is
 omitted from this generic profile. These limitations remain visible in reports.
 
+Phase 4B.1 extends this earlier plan-only stage with source-aware contour ownership,
+concealed skin, closed-lash variants and a source-derived mouth cavity. Existing
+open-mouth artwork retains its procedural treatment. See the
+[facial implementation guide](phase4b1-facial-artwork.md) for current behaviour and
+the separate, limited Sara visual acceptance. Historical Phase 4B rejection remains
+unchanged; accepted runs should be opened with preview-live rather than rebuilt
+in place after code changes.
+
 No deployment is part of `create`. Existing isolated-only deployment restrictions,
 accepted Girl2 packaging pins and production settings remain unchanged.
