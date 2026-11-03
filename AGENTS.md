@@ -179,3 +179,17 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   `runs/phase4a2-review-final`. Preserve expected upstream HTTP failure, blocked LLM gate,
   raw opacity excursions, and existing portrait limitations. SIGKILL is not power loss.
 - Stop after Phase 4A.2; report remaining production/classifier decisions.
+
+
+## Phase 3.1 standalone preview and facial candidate
+- Read `docs/phase3-1-results.md`, `docs/phase3-1-preview.md` and its benchmark.
+  This explicit assignment reopened Girl2 facial authoring only; production remains disabled.
+- `preview-live` uses a loopback asset allowlist, accepted Phase 3 by default and a
+  version selector for `runs/phase3-1-final-v2/runtime/`. No settings writes or backend.
+- Keep Phase 3 sources/runtime and original animation/package recipes immutable.
+  New recipe: `recipes/girl2-expressive.json`; new builder: `scripts/build_phase3_1.py`.
+- User accepted clearer expressions and the corrected sad eyebrows. Preserve the
+  dedicated sad-brow axis, neutral equality, original artwork and rejected evidence.
+- Repeat browser review with `scripts/phase3_1_acceptance.py` in fresh runs. Keep
+  user visual review distinct from geometry/pixel tests and professional-quality claims.
+- Stop after Phase 3.1. No production deployment, Phase 4B or training is authorized.

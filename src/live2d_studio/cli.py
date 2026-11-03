@@ -7,6 +7,11 @@ import sys
 def main():
     parser=argparse.ArgumentParser(description='Local image-to-layers MVP; candidates require visual review')
     commands=parser.add_subparsers(dest='command',required=True)
+    p=commands.add_parser('preview-live',help='Open Girl2 in a standalone local browser viewer')
+    p.add_argument('--model',type=Path)
+    p.add_argument('--extension',type=Path)
+    p.add_argument('--port',type=int,default=8768)
+    p.add_argument('--no-open',action='store_true')
     p=commands.add_parser('audit-production',help='Read-only audit; no production execution option')
     p.add_argument('--target',type=Path,required=True)
     p.add_argument('--package',type=Path,required=True)
@@ -84,7 +89,10 @@ def main():
     commands.add_parser('doctor')
     args=parser.parse_args()
     try:
-        if args.command=='audit-production':
+        if args.command=='preview-live':
+            from .preview_live import serve
+            result=serve(args.model,args.extension,args.port,not args.no_open)
+        elif args.command=='audit-production':
             from .production_audit import save_audit
             result=save_audit(args.target,args.package,args.output)
         elif args.command=='package':

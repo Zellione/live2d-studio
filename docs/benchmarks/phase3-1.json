@@ -1,0 +1,188 @@
+{
+  "artifacts": {
+    "audit": "runs/phase3-1-audit",
+    "build": "runs/phase3-1-final-v2",
+    "gallery": "runs/phase3-1-review-corrected/index.html",
+    "sad_correction": "runs/phase3-1-sad-v2-browser/sad-correction.png"
+  },
+  "base_commit": "257582f",
+  "browser": {
+    "baseline": {
+      "captured_frames": 53,
+      "core_version": 83886080,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0.4999998211860657,
+        "samples": 2128,
+        "strict_opacity_excursions": 181
+      },
+      "network_validation": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_reset_changed_channels": 0,
+      "passed_checks": 76,
+      "status": "pass"
+    },
+    "revised": {
+      "captured_frames": 53,
+      "core_version": 83886080,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "samples": 2128,
+        "strict_opacity_excursions": 182
+      },
+      "network_validation": {
+        "external_requests": 0,
+        "failures": 0
+      },
+      "neutral_reset_changed_channels": 0,
+      "passed_checks": 77,
+      "status": "pass"
+    }
+  },
+  "comparison": {
+    "angry": {
+      "face_changed_pixels": 1672,
+      "head_locked": true
+    },
+    "confused": {
+      "face_changed_pixels": 962,
+      "head_locked": true
+    },
+    "embarrassed": {
+      "face_changed_pixels": 1589,
+      "head_locked": true
+    },
+    "happy": {
+      "face_changed_pixels": 669,
+      "head_locked": true
+    },
+    "neutral": {
+      "face_changed_pixels": 0,
+      "head_locked": true
+    },
+    "neutral_full_frame_changed_pixels": 0,
+    "sad": {
+      "face_changed_pixels": 1613,
+      "head_locked": true
+    },
+    "surprised": {
+      "face_changed_pixels": 809,
+      "head_locked": true
+    }
+  },
+  "date": "2026-11-03",
+  "editable_project_sha256": "46785518c07da97f7590f308a91b9cd40ac728c890b7266277efa34df1c178c9",
+  "limitations": [
+    "Flat eyelids",
+    "Existing hair gaps",
+    "Simplified/faint lip edges",
+    "Confused remains subtle",
+    "Surprise eyes do not open beyond source-neutral geometry",
+    "No phonemes/audio lipsync",
+    "No production ST test or candidate deployment"
+  ],
+  "original_archive_assets": {
+    "count": 19,
+    "identical": true
+  },
+  "phase": "3.1",
+  "phase4b": false,
+  "production_modified": false,
+  "provenance": {
+    "blush": {
+      "generator": "live2d_studio.expressive.blush_png",
+      "license": "CC0-1.0",
+      "max_alpha": 70,
+      "model_inference": false,
+      "sha256": "06c5cf1df0af9e412d54cb54b63a871682fa97606c5528f923a63d1aa7cf58c3"
+    },
+    "bridge_version": "0.4.0",
+    "chrome_version": "156.0.8078.79",
+    "core_version": "5.0.0",
+    "licenses": {
+      "Chrome": "Proprietary; installed only",
+      "Cubism_Core": "Proprietary Live2D SDK; not redistributed",
+      "PIXI": "MIT",
+      "PSD2Live": "GPL-3.0",
+      "Pillow": "HPND",
+      "bridge": "MIT",
+      "legacy_Live2D": "Proprietary Live2D SDK; not redistributed",
+      "numpy": "BSD-3-Clause"
+    },
+    "pixi_version": "6.5.2",
+    "psd2live_jar_sha256": "7001df5d68b5148ae2e92098986d11f2aec14fb966a2cb747492b6a5e78a15e7",
+    "psd2live_version": "3.6.7",
+    "runtime_library_sha256": {
+      "index.min.js": "e32028b54c6f975e93469a51fc73421eff175f5bf61b73b56b41ab2051829e04",
+      "live2d.min.js": "96cd98047edc7ff319c35c344ede4dc62a286d3c7e1173e5365e7a7ea6bad69e",
+      "live2dcubismcore.min.js": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+      "pixi.min.js": "ce14152237354383ef19362e1d83cad5c62c6af70f6598c2bf54820af8e7eaf1"
+    },
+    "source": {
+      "author": "stevenburrow",
+      "download_url": "https://opengameart.org/sites/default/files/allanime-11-28-2020.zip",
+      "files": {
+        "NewAnime.xcf": "25810f207c565b454cee3a27f7323419ec5055dc6337f14657f62c1559446e9e",
+        "allanime-11-28-2020.zip": "616438aaf0bb1f5925b164486f351ee4a612952054de7d3b6900bf121f3a5c05"
+      },
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "modifications": "Original files unchanged. Girl2 visible layers exported by GIMP; clipped to 1000x1000 and composited separately for evaluation.",
+      "source_url": "https://opengameart.org/content/anime-girl-and-boy-portraits"
+    }
+  },
+  "psd_sha256": "2af65a941ee20a504aa3717edbfc4160b216df48f23965788fc9c9c374276b6f",
+  "recipe_sha256": "5e08cd836dedccad22e0b77952f0d37a7a86b13a37d951390ca7b6825f513d10",
+  "replay": {
+    "corrected_final": "Rebuilt from accepted Phase 3, saved/reopened/exported and browser-tested",
+    "earlier_candidate_runtime_consumed_files_identical": true,
+    "earlier_differences": [
+      "CMO3",
+      "CAN3"
+    ]
+  },
+  "runtime": {
+    "files_sha256": {
+      "Generated_artwork.4096/texture_00.png": "01110636ca668c5807febd223250ff264b0614f2a219000d33970551454f80b9",
+      "Generated_artwork.cdi3.json": "6493a36e69968e4b87b6bbbb18743e9f5f2f90c0e27b3d8ccb51feff4abfafbd",
+      "Generated_artwork.moc3": "9b21fa45aef274858d365e3c39e7872d71db729ba19c9798128de4080f13f983",
+      "Generated_artwork.physics3.json": "385846be2c653e6bf3eda4a4e49353ba7c8ea6051a0e88aa86b5e2db749b30e1",
+      "Generated_artwork.rpIdle.motion3.json": "00c9c1896d937f51832c6afc0f7b21588454fb3930347a5b7f4f09fd9a046146",
+      "Generated_artwork.rpNod.motion3.json": "65ef1428f5479f01866da86f4a9f67f23d352a9543a2d17fcd8755b045e6cd05",
+      "Generated_artwork.rp_angry.exp3.json": "d3c4a9fdf5e19a76dd4b04603b91ffead6323b51b7c89fc2d1c3b1d3feff440e",
+      "Generated_artwork.rp_confused.exp3.json": "1df19b5c6b8ba6b6f1caab6db2de6420ac0360ca03fc93ddf978f876f5b93933",
+      "Generated_artwork.rp_embarrassed.exp3.json": "22a55ef3d025163fa19682eb5df4f0d98f35a192105db50bad9d3955fdf3100e",
+      "Generated_artwork.rp_happy.exp3.json": "f0642ed71b6c17a9aebc34a5f527ba234d0ca1030ac060d5d391a4f54933e4ba",
+      "Generated_artwork.rp_neutral.exp3.json": "c0b23b74ff0680f83789668fa92472958d0087ba3d52a6058ce183e76144a0e3",
+      "Generated_artwork.rp_sad.exp3.json": "488e21216ddb97eb6f091e5ddeec70fcdee6430a790c255adf4050661e063c0d",
+      "Generated_artwork.rp_surprised.exp3.json": "123bd130e7da82df249893a91378d3ff7f1d3703330d51a5a8f379a5ecb62d11"
+    },
+    "model_sha256": "3dcb97f3e20b0f1c6b208257675ab218e0d57ddbd00f0744e83e5fab17cda66e",
+    "reference_validation": "pass"
+  },
+  "schema_version": 1,
+  "settings_modified": false,
+  "source_baseline_unchanged": true,
+  "status": "functional_pass_user_reviewed_visual_improvement",
+  "tests": {
+    "btrfs_transaction": 15,
+    "javascript_talk": 5,
+    "python": 103,
+    "synthetic_node_source_audits": 3
+  },
+  "visual_review": {
+    "blinded_recognition_test": false,
+    "correction": "Dedicated ParamBrowSad lifts inner ends with vertical deformation; preserves other expressions",
+    "gate": "user_reviewed_limited_improvement",
+    "initial": "User: more recognizable; sad eyebrows read as angry",
+    "professional_quality": false,
+    "user_response": "Yes, this reads as sad"
+  }
+}

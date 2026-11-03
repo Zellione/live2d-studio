@@ -78,6 +78,12 @@ try {
     value.network_validation={caught_event_listener_errors:listenerErrors.length,missing_successful_resources:missing,unexpected_http_errors:unexpectedHttp.map(r=>({url:r.url,status:r.status})),uncaught_exceptions:exceptions.length};
     if(missing.length || unexpectedHttp.length || exceptions.length || listenerErrors.length)value.status='fail';
   }
+  if(result.result.value?.stage==='phase3-1-standalone') {
+    const failures=events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Network.loadingFailed'||(e.method==='Network.responseReceived'&&e.params.response.status>=400));
+    const external=events.filter(e=>e.method==='Network.responseReceived'&&new URL(e.params.response.url).origin!==new URL(url).origin);
+    result.result.value.network_validation={failures:failures.length,external_requests:external.length};
+    if(failures.length||external.length)result.result.value.status='fail';
+  }
   await fs.writeFile(`${output}/result.json`,JSON.stringify(result,null,2));
   const screenshot=await send('Page.captureScreenshot',{format:'png'});
   await fs.writeFile(`${output}/screenshot.png`,Buffer.from(screenshot.data,'base64'));

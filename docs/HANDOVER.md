@@ -1,6 +1,31 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 4A.2 (2026-11-02)
+## Current state after Phase 3.1 (2026-11-03)
+
+Continued from `257582f` with explicit user authorization to improve Girl2 expressions
+and add a standalone viewer. Read [results](phase3-1-results.md),
+[preview/rebuild instructions](phase3-1-preview.md) and [benchmark](benchmarks/phase3-1.json).
+
+- `uv run --frozen live2d-studio preview-live` opens accepted Girl2 immediately;
+  select Phase 3.1 in the Version menu for the revised candidate. No ST/backend,
+  onboarding, classifier, model picker or persistent settings. Loopback allowlist only.
+- Final candidate: `runs/phase3-1-final-v2/character.psd2live`, matching PSD and runtime.
+  Final gallery: `runs/phase3-1-review-corrected/index.html`.
+- Clearer smile/frown/surprise and deterministic blush. User reviewed them as more
+  recognizable, rejected initial sad eyebrows, then approved the corrected sad pose.
+  Dedicated `ParamBrowSad` preserves the other expressions. Keep rejected evidence.
+- Full neutral render is identical to Phase 3; all 19 archived source assets retained
+  byte-for-byte. Original Phase 3 sources/runtime, recipe and packaging pins unchanged.
+- 103 Python tests, five JS talk tests, 15 Btrfs transaction tests and three synthetic
+  Node audits pass. Standalone browser checks pass for both models, including fades,
+  independent blink, talking, idle, manual overrides, stress and exact neutral reset.
+- Existing flat lids, hair gaps and simple lip edges remain. User-reviewed limited
+  improvement is not professional rigging or blinded seven-emotion recognition.
+- No production ST/settings/service activity, deployment, Phase 4B or training.
+  Stopped after Phase 3.1. Production bindings/classifier decisions remain as below.
+
+
+## Historical state after Phase 4A.2 (2026-11-02)
 
 Started from `b53c3eb`. Read [results](phase4a2-results.md),
 [target transactions](phase4a2-deployment.md), [classifier blocker](phase4a2-classifier.md)

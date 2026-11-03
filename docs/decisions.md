@@ -239,3 +239,25 @@
 - Keep technical runtime, visual prototype, classifier and production readiness gates
   separate. Any production binding, activation, maintenance or real API call requires
   new explicit scope. No Phase 4B or training work was started.
+
+## 2026-11-03 — Phase 3.1 standalone preview and facial revision
+
+- User explicitly reopened Girl2 authoring from `257582f` for a standalone viewer
+  and clearer faces. Production deployment, Phase 4B and training remain excluded.
+- Keep the accepted Phase 3 recipe, editable sources, runtime and Phase 4A package
+  pins unchanged. The default preview loads that baseline; a version selector exposes
+  the separate `runs/phase3-1-final-v2/` candidate without setup or persistent state.
+- Apply manual controls immediately before Core geometry update; reset parameter
+  defaults before motion evaluation. Pause physics with idle for repeatable manual
+  poses. Talking blends to its envelope rather than taking a maximum with resting
+  mouth opening, which had frozen the surprised mouth.
+- Use the existing mouth/lip meshes for curved and rounded forms. Add only an
+  original deterministic native-alpha blush layer, registered/imported through MCP,
+  hidden by its own neutral opacity key. Preserve original archive assets.
+- User accepted increased recognizability but rejected initial sad eyebrows as angry.
+  A large reverse rotation distorted brow width. A dedicated vertical-deformation
+  `ParamBrowSad` raises the inner ends and leaves other expressions intact. The user
+  reviewed the corrected pose and said it reads as sad. Keep failed versions locally.
+- Pixel differences and finite geometry do not establish emotional recognition.
+  Record user-reviewed limited improvement separately from runtime tests. No blinded
+  recognition, professional-quality, candidate production/ST-session or phoneme claim.
