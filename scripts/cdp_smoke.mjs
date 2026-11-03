@@ -26,7 +26,9 @@ function send(method,params={}) {
   });
 }
 await fs.mkdir(output,{recursive:false});
-const timeout=setTimeout(()=>{console.error('CDP test timed out');process.exit(2);},150000);
+const scenarioTimeout=Number(process.env.LIVE2D_SCENARIO_TIMEOUT_MS||120000);
+if(!Number.isFinite(scenarioTimeout)||scenarioTimeout<1000||scenarioTimeout>600000)throw Error('Invalid scenario timeout');
+const timeout=setTimeout(()=>{console.error('CDP test timed out');process.exit(2);},scenarioTimeout+30000);
 try {
   await send('Runtime.enable');await send('Network.enable');await send('Page.enable');
   if(startupMock) await send('Page.addScriptToEvaluateOnNewDocument',{source:`
@@ -48,10 +50,18 @@ try {
   }
   if(!ready)throw Error('Document not ready');
   const expression=await fs.readFile(script,'utf8');
-  const result=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:120000});
+  const result=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,timeout:scenarioTimeout});
   const frames=result.result.value?.frames;
   if(result.result.value && startupMock) result.result.value.startup_classifier='mock neutral before application startup; no inference';
-  if(frames) {
+  if(result.result.value?.remote_frames) {
+    if(!Array.isArray(frames)||frames.length>2000||frames.some(n=>!/^[a-zA-Z0-9_-]+$/.test(n)))throw Error('Invalid remote frames');
+    for(let start=0;start<frames.length;start+=8){
+      const names=frames.slice(start,start+8);
+      const chunk=await send('Runtime.evaluate',{expression:`Object.fromEntries(${JSON.stringify(names)}.map(n=>[n,window.phase4b3Frames[n]]))`,returnByValue:true});
+      for(const [name,data] of Object.entries(chunk.result.value))await fs.writeFile(`${output}/${name}.png`,Buffer.from(data,'base64'));
+    }
+    await send('Runtime.evaluate',{expression:'delete window.phase4b3Frames'});
+  } else if(frames) {
     for(const [name,data] of Object.entries(frames)) {
       if(!/^[a-zA-Z0-9_-]+$/.test(name)) throw Error('Invalid frame name');
       await fs.writeFile(`${output}/${name}.png`,Buffer.from(data,'base64'));

@@ -49,10 +49,12 @@ def copy_bridge(source, output, input_hash):
 def create(source, output, *, rights='unspecified-local-only', decomposition=None, sam=None,
            endpoint='http://127.0.0.1:23871/mcp', until='preview', preview=True,
            extension=None, port=8768, client_factory=None, reconstruction='deterministic',
-           inpainting_config=None, inpainting_review=None):
+           inpainting_config=None, inpainting_review=None, facial_motion='legacy'):
     source = Path(source).resolve()
     if until not in ORDER:
         raise ValueError('Unknown creation stage')
+    if facial_motion not in ('legacy','aligned'):
+        raise ValueError('Unknown facial motion method')
     if reconstruction not in ('deterministic','neural','hybrid'):
         raise ValueError('Unknown facial reconstruction mode')
     if reconstruction != 'deterministic' and inpainting_config is None:
@@ -191,8 +193,9 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         if stop('facial'): return result()
         project = run('project',dict(parent=stages.data['stages']['facial']['files'],
             source=digest(restored/'layer_manifest.json'),
-            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/facial_authoring.py','src/live2d_studio/mcp.py')),
-            lambda root:create_project(factory(),face/'layers',root))
+            facial_motion=facial_motion,
+            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/facial_authoring.py','src/live2d_studio/transition_authoring.py','src/live2d_studio/mcp.py')),
+            lambda root:create_project(factory(),face/'layers',root,facial_motion=facial_motion))
         if stop('project'): return result()
         rig = run('rig',dict(parent=stages.data['stages']['project']['files'],
             code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/portrait_profile.json')),lambda root:author_rig(factory(),project,root))
@@ -207,12 +210,14 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         from .creation_validation import validate_runtime
         from .preview_live import DEFAULT_EXTENSION, serve
         extension = Path(extension or DEFAULT_EXTENSION).resolve()
+        scenario='scripts/phase4b3_transition_scenario.js' if facial_motion=='aligned' else 'scripts/phase4b1_browser_scenario.js'
         validation = run('validation',dict(parent=stages.data['stages']['export']['files'],
-            libraries=inventory(extension/'lib'), code=code_hash('src/live2d_studio/creation_validation.py',
-                'scripts/phase4b1_browser_scenario.js','scripts/cdp_smoke.mjs',
+            libraries=inventory(extension/'lib'), code=code_hash('src/live2d_studio/creation_validation.py','src/live2d_studio/transition_quality.py',
+                scenario,'scripts/cdp_smoke.mjs','scripts/probe_transitions.cjs',
                 'src/live2d_studio/preview_live.py','src/live2d_studio/preview_ui/viewer.js',
                 'src/live2d_studio/visual_qa.py')),
-            lambda root:validate_runtime(model,root,extension,REPO/'scripts/phase4b1_browser_scenario.js'))
+            lambda root:validate_runtime(model,root,extension,REPO/scenario,
+                transition_plan=project/'transition-correspondence.json' if facial_motion=='aligned' else None))
         stages.data['review_evidence']['visual'] = str((validation/'quality.json').relative_to(stages.root))
         stages.data['model'] = str(model.relative_to(stages.root))
         stages.data['status'] = 'needs-visual-review'

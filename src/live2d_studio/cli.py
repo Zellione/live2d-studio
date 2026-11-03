@@ -15,6 +15,7 @@ def main():
     p.add_argument('--decomposition',type=Path,help='Reuse an existing source-matched See-through bridge')
     p.add_argument('--sam',type=Path,help='Reuse existing source-matched SAM candidates')
     p.add_argument('--reconstruction',choices=['deterministic','neural','hybrid'],default='deterministic')
+    p.add_argument('--facial-motion',choices=['legacy','aligned'],default='legacy',help='Experimental source-derived contour correspondence, with dense runtime review')
     p.add_argument('--inpainting-config',type=Path,help='Offline model, target alternatives and pinned sampling parameters')
     p.add_argument('--inpainting-review',type=Path,help='Exact-image review required for selected hybrid alternatives')
     p.add_argument('--endpoint',default='http://127.0.0.1:23871/mcp')
@@ -118,7 +119,7 @@ def main():
             result=create(args.input,args.output,rights=args.rights,decomposition=args.decomposition,
                 sam=args.sam,endpoint=args.endpoint,until=args.until,preview=not args.no_preview,
                 extension=args.extension,port=args.port,reconstruction=args.reconstruction,
-                inpainting_config=args.inpainting_config,inpainting_review=args.inpainting_review)
+                inpainting_config=args.inpainting_config,inpainting_review=args.inpainting_review,facial_motion=args.facial_motion)
             print(json.dumps(result,indent=2))
             return 2 if result['status'].startswith(('blocked','needs-','rejected')) else 0
         elif args.command=='review-create':

@@ -180,7 +180,7 @@ def open_stage(client, predecessor, output):
 
 
 @locked_editor
-def create_project(client, project, output):
+def create_project(client, project, output, facial_motion='legacy'):
     request = artwork_request(project)
     write_json(output/'artwork-request.json',request)
     op = Operations(client,output)
@@ -192,7 +192,7 @@ def create_project(client, project, output):
     write_json(output/'import-validation.json',validate_import(request,view))
     if (Path(project)/'facial-artwork.json').is_file():
         from .facial_authoring import install
-        install(client,op,Path(project),output)
+        install(client,op,Path(project),output,motion=facial_motion)
     save(op,output)
     write_json(output/'source-art.json',verify_source_art(project,output/'character.psd2live'))
 

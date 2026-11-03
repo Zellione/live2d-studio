@@ -5,7 +5,7 @@ from .generic_rig import inspect,overview,objects
 from .manifest import digest,write_json
 
 
-def install(client,op,layers,output):
+def install(client,op,layers,output,motion='legacy'):
     report=json.loads((layers/'facial-artwork.json').read_text())
     data=overview(client)['data'];items=objects(client)
     manifest=json.loads((layers/'layer_manifest.json').read_text())
@@ -85,3 +85,7 @@ def install(client,op,layers,output):
         op.call('rig_edit_structure',dict(edits=[dict(action='static',kind='mesh',id=target.split(':',1)[1],draw_order=int(order)+offset)]))
         installed.append(dict(**variant,target=target,parent=parent,parameter=parameter))
     write_json(output/'facial-installed.json',installed)
+    if motion=='aligned':
+        from .transition_authoring import install as align
+        align(client,op,layers,output)
+    elif motion!='legacy':raise ValueError('Unknown facial motion method')
