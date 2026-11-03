@@ -40,7 +40,7 @@ class PreviewTests(unittest.TestCase):
 
     def test_missing_dependencies_fail_before_server(self):
         with tempfile.TemporaryDirectory() as directory:
-            with self.assertRaisesRegex(ValueError,'Missing Girl2 model'):
+            with self.assertRaisesRegex(ValueError,'Missing model'):
                 assets(Path(directory)/'absent.model3.json',self.extension)
             with self.assertRaisesRegex(ValueError,'Missing installed runtime'):
                 assets(FIXTURE,Path(directory))

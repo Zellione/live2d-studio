@@ -261,3 +261,16 @@
 - Pixel differences and finite geometry do not establish emotional recognition.
   Record user-reviewed limited improvement separately from runtime tests. No blinded
   recognition, professional-quality, candidate production/ST-session or phoneme claim.
+# Phase 4B decisions (2026-11-03)
+
+- Explicit user authorization reopens reusable creation and independent benchmarks;
+  production bindings, deployments, settings and services remain out of scope.
+- Reuse the pinned offline worker and source restoration. Validate every cached
+  artifact before reuse; never silently redo costly inference or overwrite failures.
+- Semantic review and visual review are separate, hash-bound records. Hard parser
+  failures cannot be overridden by review. Development-agent review is labelled as
+  such and is never represented as user acceptance.
+- Resolve rig targets through layer roles and mesh ancestry. Standard parameter IDs
+  are a runtime contract; Girl2 object IDs, geometry and hashes are not a template.
+- Keep procedural eyelid/mouth limitations visible. No invented teeth/tongue,
+  arbitrary new hidden anatomy, production promotion or cloud image processing.

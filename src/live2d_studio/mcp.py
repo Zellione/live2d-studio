@@ -54,11 +54,13 @@ class MCP:
 
     def tool(self, name, arguments):
         response = self.rpc('tools/call', {'name':name,'arguments':arguments})
-        if response.get('isError'):
-            raise RuntimeError('MCP tool failed: '+name)
         value = response.get('structuredContent')
         if value is None:
             value = json.loads(next(c['text'] for c in response['content'] if c['type']=='text'))
+        if response.get('isError'):
+            error = RuntimeError('MCP tool failed: '+name+' ('+str(value.get('error',{}).get('code','unknown'))+')')
+            error.response = value
+            raise error
         return value
 
 
@@ -75,7 +77,13 @@ class Operations:
         state = context['data']
         request = dict(fields, state=state['state'], project_id=state.get('project_id'),
                        request_id='phase2-'+str(uuid.uuid4()))
-        response = self.client.tool('workspace_call', {'operation':name,'request':request})
+        try:
+            response = self.client.tool('workspace_call', {'operation':name,'request':request})
+        except RuntimeError as error:
+            self.log.append(dict(operation=name, request=request,
+                                 result=getattr(error,'response',dict(ok=False))))
+            write_json(self.output/'mcp-transcript.json', self.log)
+            raise
         entry = dict(operation=name, request=request, result=response)
         self.log.append(entry)
         write_json(self.output/'mcp-transcript.json', self.log)

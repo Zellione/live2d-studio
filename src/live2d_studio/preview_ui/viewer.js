@@ -54,8 +54,8 @@
       state.values=Object.fromEntries(ids.map(id=>[id,get(id)]));state.frames++;
       if(state.frames%10===0)$('#parameters').textContent=JSON.stringify(state.values,null,2);
     });
-    $('#capture').onclick=()=>{app.renderer.render(app.stage);const a=document.createElement('a');a.href=app.view.toDataURL('image/png');a.download=`girl2-${state.expression}.png`;a.click();};
-    await expression('neutral');idle(true);$('#controls').disabled=false;$('#status').textContent='Girl2 · Live Cubism model · Local only';
+    $('#capture').onclick=()=>{app.renderer.render(app.stage);const a=document.createElement('a');a.href=app.view.toDataURL('image/png');a.download=`character-${state.expression}.png`;a.click();};
+    await expression('neutral');idle(true);$('#controls').disabled=false;$('#status').textContent='Live Cubism model · Local only';
     window.preview={app,model,state,reset,expression,idle,talk};
   }catch(error){fail(error);}
 })();

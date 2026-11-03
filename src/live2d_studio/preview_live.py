@@ -18,7 +18,7 @@ DEFAULT_EXTENSION = REPO / '.cache/phase3-st/data/default-user/extensions/Extens
 def assets(model, extension):
     model, extension = Path(model).resolve(), Path(extension).resolve()
     if not model.is_file():
-        raise ValueError(f'Missing Girl2 model: {model}. Restore the local Phase 3 bundle or use --model MODEL.model3.json; see docs/phase3-1-preview.md.')
+        raise ValueError(f'Missing model: {model}. Restore the local bundle or use --model MODEL.model3.json; see docs/phase3-1-preview.md.')
     report = validate(model)
     if report['status'] != 'pass':
         raise ValueError('Invalid preview bundle: ' + '; '.join(report['errors']))

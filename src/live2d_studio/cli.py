@@ -7,6 +7,25 @@ import sys
 def main():
     parser=argparse.ArgumentParser(description='Local image-to-layers MVP; candidates require visual review')
     commands=parser.add_subparsers(dest='command',required=True)
+    from .creation import ORDER
+    p=commands.add_parser('create',help='Resumable local image-to-preview pipeline with explicit quality review')
+    p.add_argument('--input',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--rights',default='unspecified-local-only')
+    p.add_argument('--decomposition',type=Path,help='Reuse an existing source-matched See-through bridge')
+    p.add_argument('--sam',type=Path,help='Reuse existing source-matched SAM candidates')
+    p.add_argument('--endpoint',default='http://127.0.0.1:23871/mcp')
+    p.add_argument('--until',choices=ORDER,default='preview')
+    p.add_argument('--no-preview',action='store_true')
+    p.add_argument('--extension',type=Path)
+    p.add_argument('--port',type=int,default=8768)
+    p=commands.add_parser('review-create',help='Record acceptance/rejection tied to exact creation evidence')
+    p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--stage',choices=['semantic','visual'],required=True)
+    p.add_argument('--decision',choices=['accept','reject'],required=True)
+    p.add_argument('--reviewer',required=True)
+    p.add_argument('--notes',required=True)
+    p.add_argument('--checks',default='',help='Comma-separated completed review checks from quality.json')
     p=commands.add_parser('preview-live',help='Open Girl2 in a standalone local browser viewer')
     p.add_argument('--model',type=Path)
     p.add_argument('--extension',type=Path)
@@ -89,7 +108,18 @@ def main():
     commands.add_parser('doctor')
     args=parser.parse_args()
     try:
-        if args.command=='preview-live':
+        if args.command=='create':
+            from .creation import create
+            result=create(args.input,args.output,rights=args.rights,decomposition=args.decomposition,
+                sam=args.sam,endpoint=args.endpoint,until=args.until,preview=not args.no_preview,
+                extension=args.extension,port=args.port)
+            print(json.dumps(result,indent=2))
+            return 2 if result['status'].startswith(('blocked','needs-','rejected')) else 0
+        elif args.command=='review-create':
+            from .creation import review
+            result=review(args.output,args.stage,args.decision,args.reviewer,args.notes,
+                          [v.strip() for v in args.checks.split(',') if v.strip()])
+        elif args.command=='preview-live':
             from .preview_live import serve
             result=serve(args.model,args.extension,args.port,not args.no_open)
         elif args.command=='audit-production':
