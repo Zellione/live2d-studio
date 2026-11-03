@@ -1,0 +1,9 @@
+{
+  "model": "qwen",
+  "scale": 1,
+  "seed": 1729,
+  "targets": [
+    "eye-left-closed",
+    "eye-right-closed"
+  ]
+}

@@ -48,10 +48,19 @@ def copy_bridge(source, output, input_hash):
 
 def create(source, output, *, rights='unspecified-local-only', decomposition=None, sam=None,
            endpoint='http://127.0.0.1:23871/mcp', until='preview', preview=True,
-           extension=None, port=8768, client_factory=None):
+           extension=None, port=8768, client_factory=None, reconstruction='deterministic',
+           inpainting_config=None, inpainting_review=None):
     source = Path(source).resolve()
     if until not in ORDER:
         raise ValueError('Unknown creation stage')
+    if reconstruction not in ('deterministic','neural','hybrid'):
+        raise ValueError('Unknown facial reconstruction mode')
+    if reconstruction != 'deterministic' and inpainting_config is None:
+        raise ValueError('Optional neural reconstruction needs --inpainting-config')
+    if reconstruction == 'hybrid' and inpainting_review is None:
+        raise ValueError('Hybrid reconstruction needs --inpainting-review')
+    if reconstruction == 'deterministic' and (inpainting_config or inpainting_review):
+        raise ValueError('Inpainting options require neural/hybrid reconstruction')
     identity = dict(input_sha256=digest(source), rights=rights, pipeline='phase4b-v1')
     stages = Stages(output, identity)
     with stages.locked():
@@ -159,8 +168,26 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         from .generic_rig import facial_plan, create_project, author_rig, author_animation, export_model
         from .mcp import MCP
         factory = client_factory or (lambda: MCP(endpoint))
-        face = run('facial',dict(parent=stages.data['stages']['restore']['files'], review=digest(review_file),
-            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/facial_artwork.py')),lambda root: facial_plan(restored,root))
+        facial_inputs=dict(parent=stages.data['stages']['restore']['files'],review=digest(review_file),
+            code=code_hash('src/live2d_studio/generic_rig.py','src/live2d_studio/facial_artwork.py'))
+        if reconstruction!='deterministic':
+            facial_inputs.update(reconstruction=reconstruction,config=digest(inpainting_config),
+                neural_code=code_hash('src/live2d_studio/neural_artwork.py','backends/inpainting/worker.py',
+                    'backends/inpainting/lama.py','backends/inpainting/qwen.py','backends/inpainting/models.lock.json',
+                    'backends/inpainting/uv.lock','backends/inpainting/qwen-env/uv.lock'),
+                neural_review=digest(inpainting_review) if inpainting_review else None)
+            neural_config=json.loads(Path(inpainting_config).read_text())
+            if neural_config.get('prediction_cache'):
+                facial_inputs['prediction_cache']=inventory(Path(neural_config['prediction_cache']))
+        def facial(root):
+            facial_plan(restored,root)
+            if reconstruction!='deterministic':
+                from .neural_artwork import reconstruct
+                reconstruction_report=reconstruct(root/'layers',root,reconstruction,inpainting_config,inpainting_review)
+                plan=json.loads((root/'facial-plan.json').read_text())
+                plan.update(reconstruction=reconstruction_report,generated_by='optional local '+reconstruction+' inpainting')
+                write_json(root/'facial-plan.json',plan)
+        face = run('facial',facial_inputs,facial)
         if stop('facial'): return result()
         project = run('project',dict(parent=stages.data['stages']['facial']['files'],
             source=digest(restored/'layer_manifest.json'),

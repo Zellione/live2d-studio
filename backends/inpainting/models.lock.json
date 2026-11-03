@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "used": {
+    "lama": {
+      "repo": "mayocream/lama-manga",
+      "revision": "f91c85b26913b3e83f9877867b4c336da3675238",
+      "license": "mit",
+      "files": {
+        "lama-manga.safetensors": {
+          "size": 204332996,
+          "sha256": "a790515e9da839b8d89af7d565ceb110d908b7d6fbdb991f2acb2ec7d9b08bdb"
+        }
+      }
+    },
+    "qwen_transformer": {
+      "repo": "QuantStack/Qwen-Image-Edit-2509-GGUF",
+      "revision": "84a3006979126011422eeeefe0c9485ddf431ef5",
+      "license": "apache-2.0",
+      "files": {
+        "Qwen-Image-Edit-2509-Q4_K_S.gguf": {
+          "size": 12204309024,
+          "sha256": "07e64364812e527e0e39db3770440f76a5ed4732926c54a0a0e7da841cbe0ce6"
+        }
+      }
+    },
+    "qwen_parts": {
+      "repo": "Comfy-Org/Qwen-Image",
+      "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+      "license": "apache-2.0",
+      "files": {
+        "split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors": {
+          "size": 9384670680,
+          "sha256": "cb5636d852a0ea6a9075ab1bef496c0db7aef13c02350571e388aea959c5c0b4"
+        },
+        "split_files/vae/qwen_image_vae.safetensors": {
+          "size": 253806246,
+          "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f"
+        }
+      }
+    }
+  },
+  "sources": {
+    "lama": "786f5936b27fb3dacd2b1ad799e4de968ea697e7",
+    "comfy": "b8730510db30c8858e1e5d8e126ef19eac395560",
+    "gguf": "6ea2651e7df66d7585f6ffee804b20e92fb38b8a"
+  }
+}
