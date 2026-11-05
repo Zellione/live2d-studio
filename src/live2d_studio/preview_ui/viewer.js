@@ -33,11 +33,15 @@
     }
     const names=internal.settings.expressions.map(e=>e.Name || e.name);
     async function expression(name){await model.expression(name);state.expression=name;for(const b of $('#expressions').children)b.setAttribute('aria-pressed',String(b.dataset.expression===name));}
-    for(const name of names){const b=document.createElement('button');b.textContent=name[0].toUpperCase()+name.slice(1);b.dataset.expression=name;b.onclick=()=>expression(name).catch(fail);$('#expressions').append(b);}
+    for(const name of names){const b=document.createElement('button');b.textContent=name[0].toUpperCase()+name.slice(1);b.dataset.expression=name;b.onclick=()=>selectExpression(name).catch(fail);$('#expressions').append(b);}
     function idle(value){state.idle=value;internal.physics=value?physics:undefined;manager.groups.idle=value?'Idle':'__paused__';if(value)model.motion('Idle',0,3);else manager.stopAllMotions();$('#idle').textContent=value?'Pause idle':'Play idle';$('#idle').setAttribute('aria-pressed',String(value));}
     function talk(value){state.talking=value;$('#talk').textContent=value?'Stop talking':'Start talking';$('#talk').setAttribute('aria-pressed',String(value));}
     async function reset(){idle(false);talk(false);state.manual={};state.blinks={};for(const [id] of sliderDefs){$('#'+id).value=0;$('#'+id).nextElementSibling.value='0';}await expression('neutral');}
-    $('#idle').onclick=()=>idle(!state.idle);$('#talk').onclick=()=>talk(!state.talking);$('#reset').onclick=()=>reset().catch(fail);
+    let comparisonGeneration=0;
+    async function compare(name){const generation=++comparisonGeneration;await reset();state.talkWeight=0;await new Promise(r=>setTimeout(r,750));if(generation!==comparisonGeneration)return;await expression(name);await new Promise(r=>setTimeout(r,750));}
+    async function selectExpression(name){if($('#compare').checked)await compare(name);else await expression(name);}
+    $('#compare').onchange=()=>{const locked=$('#compare').checked;for(const selector of ['#idle','#talk','#blink-left','#blink-right',...sliderDefs.map(([id])=>'#'+id)])$(selector).disabled=locked;if(locked)compare(state.expression).catch(fail);else comparisonGeneration++;};
+    $('#idle').onclick=()=>idle(!state.idle);$('#talk').onclick=()=>talk(!state.talking);$('#reset').onclick=()=>{comparisonGeneration++;reset().catch(fail);};
     for(const side of ['left','right'])$('#blink-'+side).onclick=()=>{state.blinks[side]=performance.now();};
     internal.on('beforeModelUpdate',()=>{
       const now=performance.now();
@@ -56,6 +60,6 @@
     });
     $('#capture').onclick=()=>{app.renderer.render(app.stage);const a=document.createElement('a');a.href=app.view.toDataURL('image/png');a.download=`character-${state.expression}.png`;a.click();};
     await expression('neutral');idle(true);$('#controls').disabled=false;$('#status').textContent='Live Cubism model · Local only';
-    window.preview={app,model,state,reset,expression,idle,talk};
+    window.preview={app,model,state,reset,expression,idle,talk,compare};
   }catch(error){fail(error);}
 })();

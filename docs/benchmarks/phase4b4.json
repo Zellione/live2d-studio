@@ -1,0 +1,290 @@
+{
+  "automatic_promotion": false,
+  "blush": {
+    "landmarks": [
+      {
+        "radius_x": 12.4,
+        "radius_y": 5.2700000000000005,
+        "x": 178.5,
+        "y": 189.265
+      },
+      {
+        "radius_x": 12.4,
+        "radius_y": 5.2700000000000005,
+        "x": 240.5,
+        "y": 188.125
+      }
+    ],
+    "max_alpha": 64,
+    "method": "Gaussian transparent cheek tint; procedural CC0-1.0; adapted from expressive.blush_png",
+    "neutral_opacity": 0,
+    "parent": "DeformFaceContour",
+    "path": "blush.png",
+    "sha256": "9b283dfee065a7408b2101360524b438abd972c1c17eecb424598ffe6bb90757",
+    "source_pixels_changed": false,
+    "target": "mesh:ArtMeshImage_8",
+    "uncertainty": "Placement inferred from reviewed semantic eye/mouth/face support; not anatomical truth"
+  },
+  "candidate": "runs/phase4b4-sara-v6",
+  "comparison": {
+    "after_quality_sha256": "678c8a8fdbc55e16b8fff45b397cecd0604ab65876fa9d8420ab3bdac2592d5d",
+    "before_quality_sha256": "d94d67cca1f02a91b52fbd8a3bd2fe6001a94c84d93a440c26feb33779ba20d9",
+    "face_crop": [
+      225,
+      163,
+      392,
+      361
+    ],
+    "pixels_changed": {
+      "angry": 4223,
+      "confused": 2421,
+      "embarrassed": 4172,
+      "happy": 1,
+      "neutral": 1,
+      "sad": 1,
+      "surprised": 1
+    },
+    "recognition_score": null,
+    "user_approval": false
+  },
+  "continued_from": "65c34e4",
+  "controlled": {
+    "checks": 112,
+    "frames": 149,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 85
+    },
+    "max_detached": 25,
+    "max_holes": 212,
+    "moc_sha256": "dfbdc0c3408f7203edc261c81c52aadab2ddba37e068fe6641e2af7a3d5fbdfd",
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b4-sara-v6/expressions-release",
+    "quality_sha256": "678c8a8fdbc55e16b8fff45b397cecd0604ab65876fa9d8420ab3bdac2592d5d"
+  },
+  "dense": {
+    "checks": 13,
+    "frames": 401,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 219
+    },
+    "max_detached": 85,
+    "max_holes": 2713,
+    "moc_sha256": "dfbdc0c3408f7203edc261c81c52aadab2ddba37e068fe6641e2af7a3d5fbdfd",
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b4-sara-v6/dense",
+    "quality_sha256": "1831fd0bca25140668b5b27a0fa409b4f895d4b00265d29867ed9605f357fb79",
+    "temporal": {
+      "checks": [
+        "left dense samples and actual parameters",
+        "right dense samples and actual parameters",
+        "both dense samples and actual parameters",
+        "mouth dense samples and actual parameters",
+        "smile dense samples and actual parameters",
+        "frown dense samples and actual parameters",
+        "left complete round trip",
+        "right complete round trip",
+        "both complete round trip",
+        "mouth complete round trip",
+        "neutral talking with head and both eyes",
+        "happy talking with head and both eyes",
+        "sad talking with head and both eyes",
+        "angry talking with head and both eyes",
+        "surprised talking with head and both eyes",
+        "confused talking with head and both eyes",
+        "embarrassed talking with head and both eyes"
+      ],
+      "status": "pass",
+      "visual_acceptance": false
+    },
+    "transition_core": {
+      "samples": 72,
+      "sha256": "a1f78d7d107ee4f5908d2dbb6e24a34e51945cb2b83671dccdb772ea835959b1",
+      "visible_reversals": 0
+    }
+  },
+  "development_review": {
+    "assessments": {
+      "angry": "Clearer mild displeasure: closed shallow frown and normally open eyes. High stylized brows limit forceful anger.",
+      "confused": "Raised/lowered asymmetric brows, unequal eye apertures and small uncertain near-flat mouth; no friendly smile.",
+      "embarrassed": "Softer eyes, shy smile and subtle cheek tint; closest remaining comparison is Happy, whose mouth is more open.",
+      "happy": "Existing open smile retained; no observed regression.",
+      "neutral": "Original friendly resting smile retained; not an affectless face.",
+      "sad": "Existing behavior retained; source smile still weakens sadness. This phase intentionally does not re-author Sad.",
+      "surprised": "Existing wide opening retained; no observed regression."
+    },
+    "controlled_quality_sha256": "678c8a8fdbc55e16b8fff45b397cecd0604ab65876fa9d8420ab3bdac2592d5d",
+    "decision": "candidate-for-user-review",
+    "dense_quality_sha256": "1831fd0bca25140668b5b27a0fa409b4f895d4b00265d29867ed9605f357fb79",
+    "exact_neutral_return": true,
+    "gallery_comparison_sha256": "38f2c20195eb85b1dedcde3403405ba895a5cb293c4741bd1585194a76292f40",
+    "head_zero_evaluated": true,
+    "identity": "Retained in development visual inspection; exact imported source RGBA separately verified.",
+    "independent_blink_talk": true,
+    "limitations": [
+      "No human recognition test or automatic emotion score",
+      "Brow interpretation over bangs remains stylistic/semantic uncertainty",
+      "Simple mouth cavity and stylized closed lashes",
+      "Existing head/hair gaps",
+      "Blush is inferred cosmetic placement"
+    ],
+    "promotion": false,
+    "reviewer": "development-agent",
+    "user_approval": false
+  },
+  "expression_core": {
+    "exact_neutral_geometry": true,
+    "invalid_opacity": 0,
+    "nonfinite": 0,
+    "samples": 756,
+    "sha256": "376bb67519e6f85d392e94293866f392e2278ed3c6ed09519485d119ea8c1882",
+    "status": "pass",
+    "strict_opacity_excursions": 199,
+    "visible_reversals": 0
+  },
+  "girl2_regression": {
+    "checks": 13,
+    "frames": 401,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 227
+    },
+    "max_detached": 3,
+    "max_holes": 146,
+    "moc_sha256": "df1c850b2f75c933605d9b5c912cf9f3636336a20eedd5669819e5df5428bf7e",
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b4-girl2-regression",
+    "quality_sha256": "857da088bf49ef62468bacff4943f6c2c508021d8347a1bddd93fcc927c337ff",
+    "temporal": {
+      "checks": [
+        "left dense samples and actual parameters",
+        "right dense samples and actual parameters",
+        "both dense samples and actual parameters",
+        "mouth dense samples and actual parameters",
+        "smile dense samples and actual parameters",
+        "frown dense samples and actual parameters",
+        "left complete round trip",
+        "right complete round trip",
+        "both complete round trip",
+        "mouth complete round trip",
+        "neutral talking with head and both eyes",
+        "happy talking with head and both eyes",
+        "sad talking with head and both eyes",
+        "angry talking with head and both eyes",
+        "surprised talking with head and both eyes",
+        "confused talking with head and both eyes",
+        "embarrassed talking with head and both eyes"
+      ],
+      "status": "pass",
+      "visual_acceptance": false
+    },
+    "transition_core": {
+      "samples": 72,
+      "sha256": "d62b1d90bfb56b5e237cefb53e67302f44c628621d6f37ab36cbe40b16ac8536",
+      "visible_reversals": 0
+    }
+  },
+  "implementation_sha256": {
+    "scripts/phase4b4_experiment.py": "9cf312783acc3f5ba25bc2fb9ed8a4a4300806c71b641e0e411f9c0c56084764",
+    "scripts/phase4b4_expression_scenario.js": "a26dea72614a7fed130212645b026315786d2475e0443f0a75130a5e920e5b62",
+    "scripts/probe_expressions.cjs": "ab42a84146644ea1efeee42030aa93980a457e0da2a5425c0a793561a0da5be3",
+    "src/live2d_studio/emotion_authoring.py": "5c4feebcbe6fd0c44a5f9212c4469a46a8b39184389947eabc929ae5cb4ab572",
+    "src/live2d_studio/preview_ui/viewer.js": "8edb9908105ae99a384da17d140c43797e01ab12177d6d64974742c71062cb54"
+  },
+  "inference_executed": false,
+  "models_downloaded": false,
+  "native_geometry_warnings": [],
+  "phase": "4B.4",
+  "preservation": {
+    "accepted_phase3_31_files": 41,
+    "frozen_stages": {
+      "runs/phase4b1-girl2": {
+        "stages": 12,
+        "status": "pass"
+      },
+      "runs/phase4b1-sara": {
+        "stages": 12,
+        "status": "pass"
+      },
+      "runs/phase4b2-girl2-lama-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-girl2-qwen-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-sara-lama-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-sara-qwen-hybrid": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-sara-qwen-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b3-sara-create-final": {
+        "stages": 11,
+        "status": "pass"
+      }
+    },
+    "girl2_moc_unchanged": true,
+    "golden_fixtures_package_and_locks_unchanged": true
+  },
+  "production_modified": false,
+  "provenance": {
+    "artwork": "Sara: ZeNeRIA29 / RPG Action, CC-BY-3.0; benchmarks/phase4b-art.json",
+    "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+    "cubism_core": "Installed 5.0.0, Live2D proprietary license; not redistributed",
+    "new_runtime_dependency": false,
+    "procedural_blush": "CC0-1.0; independent generated overlay",
+    "psd2live": "3.6.7, GPL-3.0 recorded in docs/compatibility.md"
+  },
+  "recognition_score": null,
+  "retained_failures": [
+    "sandbox socket refusal",
+    "brow mesh already had height keys",
+    "missing source-crop offsets",
+    "first candidate insufficient brow/mouth distinction",
+    "one-component mouth fit produced slant",
+    "quadratic pixel-read test harness timeout",
+    "first gallery path typo"
+  ],
+  "schema_version": 1,
+  "source_art": {
+    "caveat": "Exact imported RGBA, including marked generated hidden pixels; original input preservation is measured separately.",
+    "exact_source_layers": 18,
+    "status": "pass"
+  },
+  "tests": {
+    "javascript": 5,
+    "javascript_log_sha256": "3bec47db893fa974b4623e3281cc3a1eda371449c6d7fe998ee1ba51b0d884d3",
+    "python": 134,
+    "python_log_sha256": "04bef223c3080ba34ba792400ec82d532fa98cde965bd6e7b49d198f6cf261f4",
+    "status": "pass"
+  },
+  "training": false,
+  "user_approval": false
+}

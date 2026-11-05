@@ -69,3 +69,9 @@ warnings, failed attempts, dense frames and sampled recordings under
 no weights or new inference outputs are introduced. Commit only authoring,
 validation/reproduction code, tests and concise results. Do not promote or delete
 old rejected experiments because a later transition looks better.
+
+Phase 4B.4 keeps fresh PSDs/projects/runtime bundles, generated cheek tint, source
+geometry inspections, MCP transcripts, controlled/dense captures, comparison sheets,
+recordings and development-review records in ignored `runs/phase4b4-*`. Commit only
+optional authoring/viewer/review code, tests and concise documentation/benchmark.
+Previous accepted and rejected runs remain immutable; user review is a separate gate.

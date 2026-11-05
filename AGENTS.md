@@ -268,3 +268,19 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   frozen. Review: runs/phase4b3-review-final. No hardcoded character coordinates,
   opaque artwork IDs or source hashes belong in generic authoring.
 - Stop after Phase 4B.3. No production deployment, training or system changes.
+
+## Phase 4B.4 expression legibility
+- Read docs/phase4b4-results.md and docs/phase4b4-expressions.md. Explicit authorization
+  reopened optional generic facial expression authoring only; production stays disabled.
+- Independent source-relative brow inclination/raise, mouth skew/displeasure and
+  procedural blush are candidates. Existing defaults and accepted models stay frozen.
+- Source brow slopes and both disconnected mouth halves matter. Preserve the failed
+  small-shear and one-component-fit evidence. Do not interpret role names or ambiguous
+  brow-over-bangs styling as independently verified anatomy.
+- Compare with the viewer's still-expression mode; keep 149 controlled captures,
+  the 401-frame transition suite and exported 72/756-sample geometry audits separate
+  from visual legibility. Development review is not user approval.
+- Candidate: runs/phase4b4-sara-v6. Review: runs/phase4b4-review-release.
+  Blush has generated provenance, inferred landmarks, independent opacity and face
+  ancestry. Neutral/Happy/Sad/Surprised behavior remains unchanged; Sad is still limited.
+- Stop after Phase 4B.4. No production deployment, training, model or system changes.

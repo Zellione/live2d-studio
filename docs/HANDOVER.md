@@ -1,6 +1,25 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 4B.3 (2026-11-03)
+## Current state after Phase 4B.4 (2026-11-05)
+
+Continued from `65c34e4`. Read [results](phase4b4-results.md),
+[expression method](phase4b4-expressions.md) and [benchmark](benchmarks/phase4b4.json).
+
+- Optional source-relative independent brows, mouth skew/displeasure and generated
+  cheek tint make Sara's three revised poses more distinct in development review.
+  Explicit user visual acceptance is pending; no promotion or default change.
+- Candidate `runs/phase4b4-sara-v6/export/runtime/Generated_artwork.model3.json`;
+  matched gallery `runs/phase4b4-review-release/index.html`. Use the viewer's
+  **Compare expressions** mode for settled head-zero poses with idle/talking paused.
+- 134 Python tests, five JS tests, 149 controlled captures, 401-frame Sara/Girl2
+  temporal suites and exported 72/756-sample audits pass. Keep raw opacity excursions.
+- Preserve source brow orientation, both disconnected mouth halves, source RGBA,
+  generated-artwork provenance and rejected candidates. No role-name/anatomy inference.
+- Accepted Sara/Girl2, golden fixtures, package/model pins and earlier failures remain
+  frozen. Sad's weak source-smile reading, simplified cavity/lashes and hair gaps remain.
+- Stop after Phase 4B.4. No production deployment, inference, training or system changes.
+
+## Historical state after Phase 4B.3 (2026-11-03)
 
 Continued from `ca66737`. Read [results](phase4b3-results.md),
 [transition method](phase4b3-transition-quality.md) and

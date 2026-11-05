@@ -358,3 +358,19 @@
   complete sequence sheets and sampled recordings. Frame-difference maxima are
   not uniformly reduced and are not an aesthetic score. No new user acceptance,
   model downloads/inference, training or production deployment. Stop after 4B.3.
+
+## Phase 4B.4 — 2026-11-05
+
+- Preserve `generic_rig.animation_recipe()` defaults and accepted projects. Add an
+  explicit expression candidate from the hash-verified aligned Sara predecessor.
+- Bind independent brow axes through inspected semantic meshes/parents. Compensate
+  measured source inclination instead of increasing the shared brow-emotion value.
+  Keep old height axes and Sad behavior. Do not relabel brow/eyelid art from uncertain
+  visual interpretation.
+- Fit both disconnected source mouth halves; retain the failed one-component fit.
+  Generated cheek tint has its own opacity/provenance and inherits the face parent.
+- Compare settled poses with neutral restoration and no idle/blink/talk/head noise.
+  Retain 401-frame transition checks and add 756 exported expression combinations.
+  Numerical success and development visual judgments do not close user acceptance.
+- Keep all accepted art/runtime/package pins and rejected evidence. No automatic
+  candidate promotion, production deployment, inference or training.
