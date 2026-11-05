@@ -1,0 +1,31 @@
+{
+  "scope": "Evaluation only, created after first-run seal. Never an inference or rigging input.",
+  "neutral_png": "archive/Codel3.png",
+  "base": "layers/00.png",
+  "neutral_color": "layers/03.png",
+  "neutral_ink": "layers/04.png",
+  "mask_threshold": 127,
+  "ink_regions": {
+    "image_left_brow": {"box": [475, 250, 545, 276], "roles": ["eyebrow"]},
+    "image_right_brow": {"box": [588, 260, 660, 282], "roles": ["eyebrow"]},
+    "image_left_eye": {"box": [448, 277, 542, 332], "roles": ["eyelash", "eyewhite", "irides"]},
+    "image_right_eye": {"box": [585, 283, 670, 338], "roles": ["eyelash", "eyewhite", "irides"]},
+    "mouth_contour": {"box": [520, 395, 590, 420], "roles": ["mouth"]}
+  },
+  "source_review_regions": {
+    "image_left_shoulder_upper_arm": [190, 540, 420, 1000],
+    "crossed_forearm_and_hand": [155, 755, 680, 1100],
+    "image_right_shoulder_upper_arm": [590, 515, 810, 1010],
+    "hanging_forearm": [420, 980, 660, 1450],
+    "hanging_hand": [395, 1390, 600, 1790],
+    "skirt_and_visible_upper_legs": [205, 1200, 790, 2089]
+  },
+  "limitations": [
+    "Reference face1 contains ink, not full eye/iris/skin semantic masks. Report recall of ink ownership, never full-part IoU.",
+    "Pixel-aligned neutral composition must be checked before using these masks.",
+    "Region boxes are manually reviewed evaluation annotations, not independent limb masks.",
+    "Set2 fuses hair, body, clothing, arms and hands; no independent hair/limb/neck split exists.",
+    "Face base supplies authored concealed facial skin only, not anatomical ground truth.",
+    "Image left/right are viewing coordinates, not inferred anatomical labels."
+  ]
+}

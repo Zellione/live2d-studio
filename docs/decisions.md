@@ -395,3 +395,24 @@ opening samples. Finite geometry, exact neutral/source preservation and distinct
 configurations do not grant human emotion recognition. Candidate v4 remains pending
 explicit user visual approval. Preserve accepted/rejected predecessors and stop at
 Phase 4B.4.1 without production deployment, inference or training.
+
+## Phase 4B.5 — technical generalization does not close visual acceptance
+
+Freeze `7863b34`, original-framing Codel3.png and an unused secondary crop before
+inference. Disclose numbered-PNG selection exposure; never claim a fully blinded
+reference holdout or absence from training. Only one flat image enters creation.
+Preserve the first run before extracting the PSD, and keep optional 4B.4/4B.4.1
+scripts separate because they are not integrated into the creation CLI.
+
+The original frame completes all twelve stages with no special rig instructions.
+It preserves both hands, but a single unsided arm layer is not independent limb
+articulation. The PSD's fused base and color/ink facial pairs support narrow ink
+ownership and concealed-face checks, not universal semantic ground truth. Store
+all evaluation coordinates in an explicitly evaluation-only definition.
+
+Retain the optional mouth Core failure at 1.19e-7 versus 1e-7 even though no visible
+triangles reverse. Do not weaken the gate based on a plausible rounding diagnosis.
+High-resolution actual renders reveal overlapping near-closed eye contours and
+residual shading, so development review rejects convincing animation. Numeric
+success and almost perfect source copying are separate findings. User approval
+is still pending; neither candidate is promoted. Stop after Phase 4B.5.

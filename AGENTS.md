@@ -300,3 +300,20 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   emotional talk return, exact neutral pixels and source preservation are separate
   from perceived emotion. Retain 401-frame/72-sample and 819-sample Core checks.
 - Stop after Phase 4B.4.1. No production deployment, training or system changes.
+
+## Phase 4B.5 independent Codel benchmark
+- Read `docs/phase4b5-results.md` and `docs/phase4b5-generalization.md`.
+  Explicit authorization covered local benchmark inference and evaluation only.
+- Preserve the sealed `runs/phase4b5-codel-full-first` and all accepted references.
+  Only original neutral Codel3.png entered creation; PSD/reference annotations
+  are evaluation-only. Keep input-selection exposure and crop-not-run disclosure.
+- All twelve first-run stages completed without character-specific rig operations.
+  Source restoration and limited facial ink scores do not establish anatomy or
+  visual acceptance. Both arms/hands share an unsided layer; no full-body rig claim.
+- Optional unchanged expression/mouth scripts produced a separate candidate.
+  Its 819-sample Core audit fails Embarrassed source-seam invariance by 1.19e-7
+  against 1e-7. Do not relax that threshold or discard the failed report.
+- Development visual review rejects quarter-open eye contours/shading fragments
+  despite passing dense numerical checks. User acceptance remains pending.
+  Gallery: `runs/phase4b5-review-final`. Preserve all intermediate/report failures.
+- Stop after Phase 4B.5. No production deployment, new training or host changes.

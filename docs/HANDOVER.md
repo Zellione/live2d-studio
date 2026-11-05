@@ -1,5 +1,33 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.5 (2026-11-05)
+
+Continued from clean `7863b34`. Read [results](phase4b5-results.md),
+[protocol](phase4b5-generalization.md) and [benchmark](benchmarks/phase4b5.json).
+
+- LisadiKaprio's CC BY 4.0 Codel3.png, original 1078 × 2089 framing, completed
+  all twelve frozen creation stages without character-specific rig operations.
+  Archive/provenance verified; only the selected flat image entered generation.
+- `runs/phase4b5-codel-full-first` is sealed before PSD evaluation. Source
+  restoration is 99.99956% exact, unique observed owners; both hands retained.
+  Both arms share one unsided layer. No complete full-body articulation claim.
+- First/optional candidates pass 401-frame and 72-eye-sample suites. Separate
+  unchanged 4B.4/4B.4.1 scripts produce `runs/phase4b5-codel-mouths`; its 819-sample
+  mouth audit FAILS source-seam invariance in Embarrassed (1.19e-7 vs 1e-7).
+  Zero visible reversals do not erase that failure. No tolerance changed.
+- High-resolution review rejects convincing animation: overlapping quarter-open
+  eye contours and residual shading/fragments; flat closed lashes. Strong source
+  and facial ink scores do not imply visual quality. User acceptance is pending.
+- PSD has a fused base and seven color/ink facial groups, not full semantic truth.
+  Evaluation-only annotations never enter authoring. Four PNGs were exposed while
+  selecting neutral; no reference-driven tuning, no training-holdout claim.
+- Review `runs/phase4b5-review-final/index.html`; viewers 8786 (sealed first run)
+  and 8787 (optional-mouth diagnostic candidate), gallery 8790 when running.
+- Pipeline/defaults/locks/accepted references unchanged; new code only evaluates
+  and presents evidence. 137 Python and five JS baseline tests pass. Preserve
+  sandbox and early diagnostic-report failures. No models/training/production work.
+- Stop after Phase 4B.5. Do not promote either model on the user's behalf.
+
 ## Current state after Phase 4B.4.1 (2026-11-05)
 
 Continued from `889faf1`. Read [results](phase4b4-1-results.md),

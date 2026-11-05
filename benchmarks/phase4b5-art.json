@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "title": "Codel Visual Novel Sprite",
+  "author": "LisadiKaprio",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://opengameart.org/content/codel-visual-novel-sprite",
+  "alternative_publisher": "https://lisadikaprio.itch.io/codel-visual-novel-sprite",
+  "download": "https://opengameart.org/sites/default/files/Codel%20sprite.zip",
+  "archive_sha256": "a5c011407841d670ca4ff18acb13d59f2c023a2afdba4a3be3b7c2915fa14760",
+  "archive_bytes": 15077049,
+  "archive_members": [
+    {
+      "name": "Codel12.png",
+      "bytes": 992201
+    },
+    {
+      "name": "Codel.psd",
+      "bytes": 5434406
+    },
+    {
+      "name": "Codel1.png",
+      "bytes": 994682
+    },
+    {
+      "name": "Codel2.png",
+      "bytes": 994230
+    },
+    {
+      "name": "Codel3.png",
+      "bytes": 983191
+    },
+    {
+      "name": "Codel4.png",
+      "bytes": 980405
+    },
+    {
+      "name": "Codel5.png",
+      "bytes": 981646
+    },
+    {
+      "name": "Codel6.png",
+      "bytes": 981069
+    },
+    {
+      "name": "Codel7.png",
+      "bytes": 983968
+    },
+    {
+      "name": "Codel8.png",
+      "bytes": 985122
+    },
+    {
+      "name": "Codel9.png",
+      "bytes": 983383
+    },
+    {
+      "name": "Codel10.png",
+      "bytes": 995884
+    },
+    {
+      "name": "Codel11.png",
+      "bytes": 991200
+    }
+  ],
+  "license_evidence": {
+    "archive_license_file": false,
+    "publisher_html_sha256": "7ef848917b8e217ca05b1e9b822a2ac1e228bb2fc156a07e1bfdc198a3376283",
+    "note": "CC BY 4.0 stated on OpenGameArt; itch publisher requires attribution. Archive contains only one PSD and twelve PNGs."
+  },
+  "attribution": "Codel Visual Novel Sprite by LisadiKaprio, via OpenGameArt (also published on itch.io), CC BY 4.0. Automated decomposition, reconstruction, crop and rig derivatives by live2d-studio; original artist does not endorse them.",
+  "selected_input": {
+    "member": "Codel3.png",
+    "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "dimensions": [
+      1078,
+      2089
+    ],
+    "transform": "none",
+    "rights": "CC-BY-4.0"
+  },
+  "secondary_portrait": {
+    "crop": [
+      180,
+      0,
+      900,
+      760
+    ],
+    "resizing": false,
+    "sha256": "35b0d701d10957059cc6385c4a4cecb4a80f7dd628716caf7636c0e59b3dd445"
+  },
+  "selection_protocol": "Numbered filenames: visual selection plus difference bounding boxes against Codel2; no inference/tuning; PSD unopened",
+  "selection_exposure": [
+    "Codel1.png",
+    "Codel2.png",
+    "Codel8.png",
+    "Codel3.png"
+  ],
+  "evaluation_only": [
+    "Codel.psd",
+    "all nonselected PNGs"
+  ],
+  "independence": "Different credited artist from Girl2 (stevenburrow) and Sara (ZeNeRIA29 / RPG Action); no claim about model pretraining exposure. OGA comment about a separate jam Sara does not identify our Sara.",
+  "user_acceptance": false
+}

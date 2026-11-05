@@ -1,0 +1,869 @@
+{
+  "candidate_dense": {
+    "frames": 401,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 273
+    },
+    "max_detached": 2,
+    "max_holes": 6,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b5-codel-mouths/dense",
+    "quality_sha256": "6c02b1628c8f242578397b7c37d1373341305108662d4f8c73f50c442207079c",
+    "report_sha256": "19dcaa74c41ea7fa2c9c5ab2bb022807210d8d1533b642dcd11f3ee455b72653"
+  },
+  "candidate_details": {
+    "frames": 122,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000001192092896,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 25
+    },
+    "max_detached": 1,
+    "max_holes": 659,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b5-codel-mouths/details-v3",
+    "quality_sha256": "f51314c44a6a41e08c675781e06caa99a7dd893de7676878e56e08011897f7fb",
+    "report_sha256": "8f9bc2141fe0d6f6cbd725c76a924cdf21083aa3870585926216b7b12e47dbb0"
+  },
+  "candidate_mouths": {
+    "frames": 213,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "parameter_range_violations": 0,
+      "raw_opacity_max": 1.0000001192092896,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 64
+    },
+    "max_detached": 1,
+    "max_holes": 0,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b5-codel-mouths/mouth-review",
+    "quality_sha256": "d5405bffa4f628ad5183d460b24497d3ebd0773877ec41377e14c762ae313ddc",
+    "report_sha256": "b7c5e7bf4d47b0ce6cf8ca1ab693624be94335bf2f9d43e5353dfc7832152310"
+  },
+  "character_specific_rig_operations": 0,
+  "completion": {
+    "first_cli_technical_execution": true,
+    "functional_rigging": "first run passes; optional mouth candidate fails strict source-seam invariant",
+    "semantic_decomposition": "limited facial ink corroboration; whole-character accuracy unknown",
+    "source_art_preservation": "passes narrow native-grid and archive checks",
+    "user_acceptance": false,
+    "visually_convincing_animation": "development-rejected: overlapping near-closed eye contours and residual shading/fragments"
+  },
+  "continued_from": "7863b346d65c16942cb9a376d7b98119ce175a90",
+  "development_review": {
+    "decision": "reject-for-convincing-animation",
+    "defects": [
+      "At openness .25, overlapping compressed eye contours and residual skin/shading fragments remain.",
+      "Closed lashes are flat and simpler than the artist reference; original open-eye shading persists.",
+      "First-run mouth expression distinctions are weak; optional mouths retain the failed Core invariant.",
+      "Plain cavity and source lower-lip shading remain stylistic limits."
+    ],
+    "evidence_sha256": "8f9bc2141fe0d6f6cbd725c76a924cdf21083aa3870585926216b7b12e47dbb0",
+    "interpretation": "High facial ink recall misses shaded contour ownership and reconstruction around moving eye surfaces; no input-quality blame.",
+    "reviewer": "development-agent",
+    "user_acceptance": false
+  },
+  "first_dense": {
+    "frames": 401,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000001192092896,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 188
+    },
+    "max_detached": 2,
+    "max_holes": 6,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b5-codel-full-first/stages/validation-015056e6fc6a",
+    "quality_sha256": "7278925f1d078837def820c9d65befd850d48fe91cabb358bdad56be75cb90bf",
+    "report_sha256": "d1363c9034aba9e70a6f22476d4166703e743d850ed8a8e154273049ddc3b28c"
+  },
+  "first_details": {
+    "frames": 122,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000001192092896,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 13
+    },
+    "max_detached": 1,
+    "max_holes": 659,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b5-first-details-v2",
+    "quality_sha256": "25ba3ac46fbfc1813b0a25103c8482a29381f4bbfca4912fca085811ad48c99c",
+    "report_sha256": "53268d05121424a7bbd50ab83a6a110e2a1ed5b3731aa6aace696b326c382165"
+  },
+  "first_eye_core": {
+    "samples": 72,
+    "status": "pass",
+    "visible_reversals": 0
+  },
+  "first_mouths": {
+    "frames": 210,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "parameter_range_violations": 0,
+      "raw_opacity_max": 1.0000001192092896,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 58
+    },
+    "max_detached": 1,
+    "max_holes": 0,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b5-first-mouths",
+    "quality_sha256": "00a66571cc2283789cdb667bed610358ff1bf3c0808e44b3c1e1380df485c7ac",
+    "report_sha256": "b20edb9489cb1a59d7935b00320039a433f71f1b806e9377b7639a8db04b2abe"
+  },
+  "first_run": {
+    "available_roles": {
+      "back_hair": [
+        "none"
+      ],
+      "bottomwear": [
+        "none"
+      ],
+      "ears": [
+        "left",
+        "right"
+      ],
+      "eyebrow": [
+        "left",
+        "right"
+      ],
+      "eyelash": [
+        "right",
+        "left"
+      ],
+      "eyewhite": [
+        "right",
+        "left"
+      ],
+      "face": [
+        "none"
+      ],
+      "front_hair": [
+        "none"
+      ],
+      "handwear": [
+        "none"
+      ],
+      "irides": [
+        "left",
+        "right"
+      ],
+      "legwear": [
+        "none"
+      ],
+      "mouth": [
+        "none"
+      ],
+      "neck": [
+        "none"
+      ],
+      "nose": [
+        "none"
+      ],
+      "topwear": [
+        "none"
+      ]
+    },
+    "fidelity": {
+      "alpha_mae": 0.0009049966651006109,
+      "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+      "edge_magnitude_mae": 0.0025851065538945355,
+      "exact_edge_fraction": 0.999963953572201,
+      "exact_fraction": 0.999995612259785,
+      "exactly_preserved_pixels": 911627,
+      "foreground_pixels": 911631,
+      "rgb_mae": 0.00022633426609377404,
+      "silhouette_iou": 0.999995612259785,
+      "source_edge_pixels": 83226
+    },
+    "parser_agreement": {
+      "face_support_of_eyes": 1.0,
+      "reasons": [],
+      "sam_face_recall_candidate": 0.8923179137945353,
+      "status": "requires-review"
+    },
+    "path": "runs/phase4b5-codel-full-first",
+    "status": "needs-visual-review",
+    "timings_seconds": {
+      "animation": 2.879,
+      "export": 1.594,
+      "facial": 34.303,
+      "inference": 156.835,
+      "ingest": 0.036,
+      "preview": 0.001,
+      "project": 7.229,
+      "readiness": 0.175,
+      "restore": 4.602,
+      "rig": 1.5,
+      "semantics": 9.896,
+      "validation": 66.778
+    }
+  },
+  "first_run_seal_sha256": "eec5ebd934c2d35e060615d2e017ae3b574e49ecd4406027e9cfd34bb7b7408c",
+  "freeze_sha256": "0c2a2ad8070f4a80cfefb0c2d1e08a5e0f948c9cb45074a2b66d82c74f0a2d16",
+  "gpu": {
+    "decomposition": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "bfloat16",
+      "gpu_samples": 273,
+      "input_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 23563,
+      "sampled_gpu_utilization_mean": 86.3992673992674,
+      "sampled_gpu_utilization_peak": 100,
+      "seconds": 147.82534669900087,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "layerdiff",
+          "peak_allocated_bytes": 12722573312,
+          "peak_reserved_bytes": 17202937856,
+          "seconds": 136.75250814899846
+        },
+        {
+          "name": "marigold",
+          "peak_allocated_bytes": 6391918592,
+          "peak_reserved_bytes": 7197425664,
+          "seconds": 9.285601787001724
+        },
+        {
+          "name": "export",
+          "peak_allocated_bytes": 8519680,
+          "peak_reserved_bytes": 20971520,
+          "seconds": 1.1504229029997077
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    },
+    "sam": {
+      "capability": [
+        12,
+        0
+      ],
+      "device": "NVIDIA GeForce RTX 5090",
+      "dtype": "float32",
+      "gpu_samples": 11,
+      "input_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+      "input_unchanged": true,
+      "packages": {
+        "Pillow": "12.1.1",
+        "diffusers": "0.37.0",
+        "numpy": "2.2.6",
+        "psd-tools": "1.14.2",
+        "torch": "2.8.0+cu128",
+        "torchvision": "0.23.0+cu128",
+        "transformers": "5.0.0"
+      },
+      "sampled_device_peak_mib": 12357,
+      "sampled_gpu_utilization_mean": 23.545454545454547,
+      "sampled_gpu_utilization_peak": 24,
+      "seconds": 5.565458323999337,
+      "seed": 42,
+      "stages": [
+        {
+          "name": "sam",
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200,
+          "seconds": 5.560331562999636
+        }
+      ],
+      "status": "completed",
+      "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783"
+    }
+  },
+  "independent_evaluation": {
+    "authored_hidden_face_comparison": {
+      "st-07-face-none": {
+        "pixels": 451,
+        "rgb_mae": 18.30820399113082,
+        "scope": "Generated face beneath independently authored neutral ink; artist base, not anatomy"
+      }
+    },
+    "definition_sha256": "bd3eebabbf6e5fd4922728b841fc9526f4a6c9c69c75abce61e0a74c17dfed71",
+    "input_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "limitations": [
+      "Reference face1 contains ink, not full eye/iris/skin semantic masks. Report recall of ink ownership, never full-part IoU.",
+      "Pixel-aligned neutral composition must be checked before using these masks.",
+      "Region boxes are manually reviewed evaluation annotations, not independent limb masks.",
+      "Set2 fuses hair, body, clothing, arms and hands; no independent hair/limb/neck split exists.",
+      "Face base supplies authored concealed facial skin only, not anatomical ground truth.",
+      "Image left/right are viewing coordinates, not inferred anatomical labels."
+    ],
+    "original_pixel_audit": {
+      "all_observed_rgba_exact": true,
+      "copied_samples": 916843,
+      "duplicate_source_owners": 0,
+      "foreground_with_owner_fraction": 0.999995612259785,
+      "uncertain_copied_samples": 356353
+    },
+    "psd_alignment": {
+      "exact_foreground_fraction": 0.9834088573117852,
+      "foreground_rgba_mae": 0.01468494379853252,
+      "max_foreground_channel_error": 3,
+      "transform": "identity; original native canvas; no registration fit"
+    },
+    "reference_ink_ownership": {
+      "image_left_brow": {
+        "caveat": "Ink ownership recall only; no fine iris/lash mask IoU",
+        "intended_role_recall": 1.0,
+        "owners": {
+          "st-10-eyebrow-left": 202
+        },
+        "reference_ink_pixels": 202
+      },
+      "image_left_eye": {
+        "caveat": "Ink ownership recall only; no fine iris/lash mask IoU",
+        "intended_role_recall": 0.9989680082559339,
+        "owners": {
+          "st-07-face-none": 1,
+          "st-14-eyelash-left": 384,
+          "st-16-eyewhite-left": 114,
+          "st-19-irides-left": 470
+        },
+        "reference_ink_pixels": 969
+      },
+      "image_right_brow": {
+        "caveat": "Ink ownership recall only; no fine iris/lash mask IoU",
+        "intended_role_recall": 1.0,
+        "owners": {
+          "st-13-eyebrow-right": 176
+        },
+        "reference_ink_pixels": 176
+      },
+      "image_right_eye": {
+        "caveat": "Ink ownership recall only; no fine iris/lash mask IoU",
+        "intended_role_recall": 1.0,
+        "owners": {
+          "st-12-eyelash-right": 274,
+          "st-17-eyewhite-right": 91,
+          "st-18-irides-right": 392
+        },
+        "reference_ink_pixels": 757
+      },
+      "mouth_contour": {
+        "caveat": "Ink ownership recall only; no fine iris/lash mask IoU",
+        "intended_role_recall": 1.0,
+        "owners": {
+          "st-09-mouth-none": 110
+        },
+        "reference_ink_pixels": 110
+      }
+    },
+    "run": "runs/phase4b5-codel-full-first",
+    "schema_version": 1,
+    "source_regions": {
+      "crossed_forearm_and_hand": {
+        "caveat": "Source pixels in reviewed region; not an anatomical segmentation score",
+        "exact_fraction": 1.0,
+        "source_foreground_pixels": 167145
+      },
+      "hanging_forearm": {
+        "caveat": "Source pixels in reviewed region; not an anatomical segmentation score",
+        "exact_fraction": 1.0,
+        "source_foreground_pixels": 107559
+      },
+      "hanging_hand": {
+        "caveat": "Source pixels in reviewed region; not an anatomical segmentation score",
+        "exact_fraction": 1.0,
+        "source_foreground_pixels": 82000
+      },
+      "image_left_shoulder_upper_arm": {
+        "caveat": "Source pixels in reviewed region; not an anatomical segmentation score",
+        "exact_fraction": 1.0,
+        "source_foreground_pixels": 88872
+      },
+      "image_right_shoulder_upper_arm": {
+        "caveat": "Source pixels in reviewed region; not an anatomical segmentation score",
+        "exact_fraction": 1.0,
+        "source_foreground_pixels": 79665
+      },
+      "skirt_and_visible_upper_legs": {
+        "caveat": "Source pixels in reviewed region; not an anatomical segmentation score",
+        "exact_fraction": 1.0,
+        "source_foreground_pixels": 417597
+      }
+    },
+    "user_acceptance": false,
+    "whole_character_semantic_accuracy": null
+  },
+  "limitations": [
+    "Input selection exposed four numbered PNGs and difference bounds before inference; no expression tuning.",
+    "Optional 4B.4/4B.4.1 scripts remain outside create CLI; separate candidate, not silently included in first result.",
+    "Original frame ends at upper legs; no feet or complete full-body articulation.",
+    "Single unsided arm layer preserves both arms/hands but does not provide independent limb controls.",
+    "Plain mouth cavity, simplified closed lashes, residual shading and generated skin/hair boundaries need user review.",
+    "No claim of model-pretraining holdout or broad generalization."
+  ],
+  "model_downloads": false,
+  "mouth_core": {
+    "error": "Error: Source seam deforms while only opening changes",
+    "invalid_opacity": 0,
+    "nonfinite": 0,
+    "samples": 819,
+    "sha256": "57f7ef61fe04e96f4c406bd982d6f1d24596a7ce713654adb35407ed4aa45d22",
+    "source_seam_max_drift": {
+      "angry": 0.0,
+      "confused": 5.960464477539063e-08,
+      "embarrassed": 1.1920928955078125e-07,
+      "happy": 0.0,
+      "neutral": 0.0,
+      "sad": 0.0,
+      "surprised": 0.0
+    },
+    "source_seam_opening_invariant": false,
+    "status": "fail",
+    "strict_opacity_excursions": 220,
+    "unchanged_tolerance": 1e-07,
+    "visible_reversals_recounted": 0
+  },
+  "neutral_changed_pixels_first_vs_optional": 0,
+  "optional_candidate": "runs/phase4b5-codel-mouths",
+  "optional_eye_core": {
+    "samples": 72,
+    "status": "pass",
+    "visible_reversals": 0
+  },
+  "phase": "4B.5",
+  "portrait_experiment": "Predeclared, not executed: original framing reached runtime.",
+  "preservation": {
+    "first_run_sealed": true,
+    "frozen_code_unchanged": true,
+    "reference_inventories_unchanged": true
+  },
+  "production_modified": false,
+  "protocol": {
+    "dimensions": [
+      1078,
+      2089
+    ],
+    "manual_character_authoring": false,
+    "portrait": {
+      "crop": [
+        180,
+        0,
+        900,
+        760
+      ],
+      "resizing": false,
+      "sha256": "35b0d701d10957059cc6385c4a4cecb4a80f7dd628716caf7636c0e59b3dd445"
+    },
+    "primary": "original-framing",
+    "references": "Archive remains evaluation-only; only selected neutral file or its predefined crop enters create",
+    "selected_member": "Codel3.png",
+    "selection_exposure": [
+      "Codel1.png",
+      "Codel2.png",
+      "Codel8.png",
+      "Codel3.png"
+    ],
+    "selection_method": "Numbered filenames: visual selection plus difference bounding boxes against Codel2; no inference/tuning; PSD unopened",
+    "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "timestamp": 1793907686.6096146
+  },
+  "reference_timing_caveat": "Phase 4B.1 cached inference/SAM replays; not comparable GPU inference speed measurements.",
+  "references": {
+    "girl2": {
+      "available_roles": {
+        "back_hair": [
+          "none"
+        ],
+        "ears": [
+          "right",
+          "left"
+        ],
+        "eyebrow": [
+          "left",
+          "right"
+        ],
+        "eyelash": [
+          "left",
+          "right"
+        ],
+        "eyewhite": [
+          "left",
+          "right"
+        ],
+        "face": [
+          "none"
+        ],
+        "front_hair": [
+          "none"
+        ],
+        "handwear": [
+          "left",
+          "right"
+        ],
+        "irides": [
+          "left",
+          "right"
+        ],
+        "mouth": [
+          "none"
+        ],
+        "neck": [
+          "none"
+        ],
+        "nose": [
+          "none"
+        ],
+        "topwear": [
+          "none"
+        ]
+      },
+      "fidelity": {
+        "alpha_mae": 0.094113,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 0.15738675147425285,
+        "exact_edge_fraction": 0.9970272715522812,
+        "exact_fraction": 0.9988552208041109,
+        "exactly_preserved_pixels": 310621,
+        "foreground_pixels": 310977,
+        "rgb_mae": 0.055220589732788386,
+        "silhouette_iou": 0.9988552208041109,
+        "source_edge_pixels": 30948
+      },
+      "historical_gpu": {
+        "decomposition": {
+          "caveat": "Historical source-matched inference, not rerun here",
+          "path": "runs/phase2-5-oga-neural/metrics.json",
+          "peak_allocated_bytes": 12722573312,
+          "seconds": 113.06187751100151,
+          "sha256": "7fcdff37a9d2ca94f32175177ef3c96bdd4d1be6f70e4ff4a0929c4414d1e6f6"
+        },
+        "sam": {
+          "caveat": "Historical source-matched inference, not rerun here",
+          "path": "runs/phase2-5-oga-sam/metrics.json",
+          "peak_allocated_bytes": 5005278208,
+          "seconds": 2.041186214000845,
+          "sha256": "fcde49a8ba3b456b3ccc48b88bd454c13b18c062df385967ea88bfe7132f8b5f"
+        }
+      },
+      "parser_agreement": {
+        "face_support_of_eyes": 1.0,
+        "reasons": [],
+        "sam_face_recall_candidate": 0.9475705507510241,
+        "status": "requires-review"
+      },
+      "path": "runs/phase4b1-girl2",
+      "status": "needs-visual-review",
+      "timings_seconds": {
+        "animation": 1.828,
+        "export": 0.652,
+        "facial": 1.056,
+        "inference": 0.879,
+        "ingest": 0.013,
+        "preview": 0.001,
+        "project": 2.396,
+        "readiness": 0.058,
+        "restore": 2.162,
+        "rig": 1.484,
+        "semantics": 1.192,
+        "validation": 57.295
+      }
+    },
+    "sara": {
+      "available_roles": {
+        "back_hair": [
+          "none"
+        ],
+        "eyebrow": [
+          "left",
+          "right"
+        ],
+        "eyelash": [
+          "left",
+          "right"
+        ],
+        "eyewhite": [
+          "left",
+          "right"
+        ],
+        "face": [
+          "none"
+        ],
+        "front_hair": [
+          "none"
+        ],
+        "handwear": [
+          "right",
+          "left"
+        ],
+        "headwear": [
+          "none"
+        ],
+        "irides": [
+          "left",
+          "right"
+        ],
+        "mouth": [
+          "none"
+        ],
+        "neck": [
+          "none"
+        ],
+        "nose": [
+          "none"
+        ],
+        "topwear": [
+          "none"
+        ]
+      },
+      "fidelity": {
+        "alpha_mae": 0.4079705215419501,
+        "caveat": "Pixel/edge agreement is not semantic correctness or animation acceptance.",
+        "edge_magnitude_mae": 1.4863924387532912,
+        "exact_edge_fraction": 0.9938662644544998,
+        "exact_fraction": 0.9977132740751669,
+        "exactly_preserved_pixels": 81153,
+        "foreground_pixels": 81339,
+        "rgb_mae": 0.18408553502419914,
+        "silhouette_iou": 0.9977132740751669,
+        "source_edge_pixels": 29835
+      },
+      "historical_gpu": {
+        "decomposition": {
+          "caveat": "Historical source-matched inference, not rerun here",
+          "path": "runs/phase4b-sara/stages/inference-e894236c7977/worker/metrics.json",
+          "peak_allocated_bytes": 12722573312,
+          "seconds": 142.83047552100106,
+          "sha256": "1fda2b471da97042b3f9611b5dc3ef21d456cb656aad813255467ad46a6b424d"
+        },
+        "sam": {
+          "caveat": "Historical source-matched inference, not rerun here",
+          "path": "runs/phase4b-sara/stages/semantics-70ebda41504a/sam/metrics.json",
+          "peak_allocated_bytes": 5005278208,
+          "seconds": 2.3135731129987107,
+          "sha256": "808e41d4a281dafb7f6ec1cd376040d74c0c5c4255498c54f5b5e63d93b41f99"
+        }
+      },
+      "parser_agreement": {
+        "face_support_of_eyes": 1.0,
+        "reasons": [],
+        "sam_face_recall_candidate": 0.8815165876777251,
+        "status": "requires-review"
+      },
+      "path": "runs/phase4b1-sara",
+      "status": "accepted-limited-prototype",
+      "timings_seconds": {
+        "animation": 3.027,
+        "export": 0.938,
+        "facial": 2.293,
+        "inference": 1.517,
+        "ingest": 0.012,
+        "preview": 0.001,
+        "project": 3.098,
+        "readiness": 0.025,
+        "restore": 0.727,
+        "rig": 2.258,
+        "semantics": 2.066,
+        "validation": 58.332
+      }
+    }
+  },
+  "retained_failures": [
+    "Initial sandbox CUDA denial; retry kept in creation history.",
+    "Optional mouth Core invariant: Embarrassed drift 1.1920928955078125e-7 exceeds 1e-7.",
+    "Early high-resolution diagnostic collectors omitted required geometry/control-noise fields; captures and tracebacks retained."
+  ],
+  "runtime_agent_required": false,
+  "schema_version": 1,
+  "source_art": {
+    "caveat": "Exact imported RGBA, including marked generated hidden pixels; original input preservation is measured separately.",
+    "exact_source_layers": 20,
+    "status": "pass"
+  },
+  "source_provenance": {
+    "alternative_publisher": "https://lisadikaprio.itch.io/codel-visual-novel-sprite",
+    "archive_bytes": 15077049,
+    "archive_members": [
+      {
+        "bytes": 992201,
+        "name": "Codel12.png"
+      },
+      {
+        "bytes": 5434406,
+        "name": "Codel.psd"
+      },
+      {
+        "bytes": 994682,
+        "name": "Codel1.png"
+      },
+      {
+        "bytes": 994230,
+        "name": "Codel2.png"
+      },
+      {
+        "bytes": 983191,
+        "name": "Codel3.png"
+      },
+      {
+        "bytes": 980405,
+        "name": "Codel4.png"
+      },
+      {
+        "bytes": 981646,
+        "name": "Codel5.png"
+      },
+      {
+        "bytes": 981069,
+        "name": "Codel6.png"
+      },
+      {
+        "bytes": 983968,
+        "name": "Codel7.png"
+      },
+      {
+        "bytes": 985122,
+        "name": "Codel8.png"
+      },
+      {
+        "bytes": 983383,
+        "name": "Codel9.png"
+      },
+      {
+        "bytes": 995884,
+        "name": "Codel10.png"
+      },
+      {
+        "bytes": 991200,
+        "name": "Codel11.png"
+      }
+    ],
+    "archive_sha256": "a5c011407841d670ca4ff18acb13d59f2c023a2afdba4a3be3b7c2915fa14760",
+    "attribution": "Codel Visual Novel Sprite by LisadiKaprio, via OpenGameArt (also published on itch.io), CC BY 4.0. Automated decomposition, reconstruction, crop and rig derivatives by live2d-studio; original artist does not endorse them.",
+    "author": "LisadiKaprio",
+    "download": "https://opengameart.org/sites/default/files/Codel%20sprite.zip",
+    "evaluation_only": [
+      "Codel.psd",
+      "all nonselected PNGs"
+    ],
+    "independence": "Different credited artist from Girl2 (stevenburrow) and Sara (ZeNeRIA29 / RPG Action); no claim about model pretraining exposure. OGA comment about a separate jam Sara does not identify our Sara.",
+    "license": "CC-BY-4.0",
+    "license_evidence": {
+      "archive_license_file": false,
+      "note": "CC BY 4.0 stated on OpenGameArt; itch publisher requires attribution. Archive contains only one PSD and twelve PNGs.",
+      "publisher_html_sha256": "7ef848917b8e217ca05b1e9b822a2ac1e228bb2fc156a07e1bfdc198a3376283"
+    },
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "schema_version": 1,
+    "secondary_portrait": {
+      "crop": [
+        180,
+        0,
+        900,
+        760
+      ],
+      "resizing": false,
+      "sha256": "35b0d701d10957059cc6385c4a4cecb4a80f7dd628716caf7636c0e59b3dd445"
+    },
+    "selected_input": {
+      "dimensions": [
+        1078,
+        2089
+      ],
+      "member": "Codel3.png",
+      "rights": "CC-BY-4.0",
+      "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+      "transform": "none"
+    },
+    "selection_exposure": [
+      "Codel1.png",
+      "Codel2.png",
+      "Codel8.png",
+      "Codel3.png"
+    ],
+    "selection_protocol": "Numbered filenames: visual selection plus difference bounding boxes against Codel2; no inference/tuning; PSD unopened",
+    "source": "https://opengameart.org/content/codel-visual-novel-sprite",
+    "title": "Codel Visual Novel Sprite",
+    "user_acceptance": false
+  },
+  "successful_mcp_calls_by_operation": {
+    "animation": {
+      "expression_delete": 4,
+      "expression_put": 7,
+      "motion_create": 1,
+      "motion_pose": 25,
+      "motion_preset": 4,
+      "motion_properties": 1,
+      "project_open": 1,
+      "project_save_as": 2
+    },
+    "export": {
+      "project_export_model": 1,
+      "project_export_psd": 1,
+      "project_open": 2,
+      "project_save_as": 2
+    },
+    "project": {
+      "asset_import_png": 7,
+      "asset_prepare_reference": 7,
+      "asset_register": 7,
+      "author_axis": 3,
+      "keyform_apply": 39,
+      "layer_add_from_asset": 7,
+      "parameter_create": 1,
+      "project_create_artwork": 1,
+      "project_save_as": 2,
+      "rig_deform": 16,
+      "rig_edit_structure": 7
+    },
+    "rig": {
+      "author_axis": 3,
+      "project_open": 1,
+      "project_save_as": 2
+    }
+  },
+  "tests": {
+    "javascript": 5,
+    "javascript_log_sha256": "56865e85965a922b6b5828b75d0e983c813d99a6795935d80ab003d0e13af7d7",
+    "python": 137,
+    "python_log_sha256": "6ea71b854ac8391629f87d4fa27bbcbc865868ffa0e8e4adf174dc990dcbc4ae"
+  },
+  "training": false
+}
