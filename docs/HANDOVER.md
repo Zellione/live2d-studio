@@ -1,6 +1,27 @@
 # Handover to local Codex CLI
 
-## Current state after Phase 4B.4 (2026-11-05)
+## Current state after Phase 4B.4.1 (2026-11-05)
+
+Continued from `889faf1`. Read [results](phase4b4-1-results.md),
+[mouth design](phase4b4-1-mouth-design.md) and [benchmark](benchmarks/phase4b4-1.json).
+
+- User rejected Phase 4B.4 emotional readability. All seven mouth recipes now have
+  an optional coordinated contour/cavity candidate; brows/eyes/blush unchanged.
+- Candidate `runs/phase4b4-1-sara-v4/export/runtime/Generated_artwork.model3.json`.
+  Review `runs/phase4b4-1-review-release/mouth-only.html` first, then
+  `full-expressions.html`. New viewer **Mouth only** control isolates facial shape.
+- 137 Python and five JS tests pass; 213 dedicated captures, Sara/Girl2 401-frame
+  suites, 72-sample eye audits and 819 mouth/expression Core samples pass.
+- Neutral render exactly matches Phase 4B.4; all 33 archived artwork PNGs and 18
+  source layers preserved. Earlier accepted/rejected models and pins remain frozen.
+- Keep rejected v2/v3 and the early-opening corner accumulation evidence. Author
+  each key from rest; source seam has no opening geometry axis. Visible full-open
+  cavity supplies the winding reference, never an invisible squashed key.
+- Plain cavity, source gap and existing facial/hair limitations remain. Explicit
+  user visual acceptance is pending; no default change or automatic promotion.
+- Stop after Phase 4B.4.1. No production deployment, inference, training or host changes.
+
+## Historical state after Phase 4B.4 (2026-11-05)
 
 Continued from `65c34e4`. Read [results](phase4b4-results.md),
 [expression method](phase4b4-expressions.md) and [benchmark](benchmarks/phase4b4.json).

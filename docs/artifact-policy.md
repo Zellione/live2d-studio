@@ -75,3 +75,9 @@ geometry inspections, MCP transcripts, controlled/dense captures, comparison she
 recordings and development-review records in ignored `runs/phase4b4-*`. Commit only
 optional authoring/viewer/review code, tests and concise documentation/benchmark.
 Previous accepted and rejected runs remain immutable; user review is a separate gate.
+
+Phase 4B.4.1 keeps mouth inspections, snapshots, fresh PSD/project/runtime exports,
+all rejected iterations, comparison sheets, browser profiles and Core reports under
+ignored `runs/phase4b4-1-*`. No raster artwork is regenerated. Commit optional mouth
+and review code, regression tests, concise results/design and benchmark only. The
+Phase 4B.4 candidate remains preserved despite the user's visual rejection.

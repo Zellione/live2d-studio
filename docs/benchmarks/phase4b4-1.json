@@ -1,0 +1,289 @@
+{
+  "automatic_promotion": false,
+  "before": {
+    "checks": 158,
+    "frames": 216,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 34
+    },
+    "max_detached": 56,
+    "max_holes": 2595,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b4-1-before-v2",
+    "quality_sha256": "6616f99d8f0d1c988f39a13127591a15a2754363ad37dbcd14d4895c81455386",
+    "report_sha256": "8ee28ed474f909b7604f0dcf0bc1d8a178caef0b5703a81ce4917fcfe06cda90"
+  },
+  "candidate": "runs/phase4b4-1-sara-v4",
+  "comparison": {
+    "face_crop": [
+      225,
+      164,
+      392,
+      362
+    ],
+    "mouth_crop": [
+      245,
+      304,
+      358,
+      337
+    ],
+    "recognition_score": null,
+    "report_hashes": {
+      "candidate": "7a6fd8d47e732c0fdef9b69231713fc5cc196db97ba4a2e2e68d0a8bc8b4eabe",
+      "previous": "8ee28ed474f909b7604f0dcf0bc1d8a178caef0b5703a81ce4917fcfe06cda90"
+    },
+    "user_approval": false
+  },
+  "continued_from": "889faf1",
+  "dense": {
+    "checks": 13,
+    "frames": 401,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 211
+    },
+    "max_detached": 85,
+    "max_holes": 2713,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b4-1-sara-v4/dense",
+    "quality_sha256": "768ea170cf11775e8f31edb30aac625d9fc34475ec565b17d6ffe7eac698f847",
+    "report_sha256": "6e0148b5e21ddc1f88aadc5308071c8b7ccfbde74b6c1821e1973e6129730408",
+    "temporal": {
+      "checks": [
+        "left dense samples and actual parameters",
+        "right dense samples and actual parameters",
+        "both dense samples and actual parameters",
+        "mouth dense samples and actual parameters",
+        "smile dense samples and actual parameters",
+        "frown dense samples and actual parameters",
+        "left complete round trip",
+        "right complete round trip",
+        "both complete round trip",
+        "mouth complete round trip",
+        "neutral talking with head and both eyes",
+        "happy talking with head and both eyes",
+        "sad talking with head and both eyes",
+        "angry talking with head and both eyes",
+        "surprised talking with head and both eyes",
+        "confused talking with head and both eyes",
+        "embarrassed talking with head and both eyes"
+      ],
+      "status": "pass",
+      "visual_acceptance": false
+    },
+    "transition_core": {
+      "samples": 72,
+      "sha256": "a1f78d7d107ee4f5908d2dbb6e24a34e51945cb2b83671dccdb772ea835959b1",
+      "visible_reversals": 0
+    }
+  },
+  "development_review": {
+    "assessments": {
+      "angry": "Compressed nearly horizontal seam; distinct from sad frown.",
+      "confused": "Small parted oval, related to surprised; intended questioning emotion still needs human review.",
+      "embarrassed": "Smaller closed asymmetric smile; perceived shyness needs human review.",
+      "happy": "Fuller smile with raised corners; still a simple untextured cavity.",
+      "neutral": "Unchanged original friendly resting seam.",
+      "sad": "Soft downward corners, no retained smile at rest.",
+      "surprised": "Larger vertical oval, no smiling curvature."
+    },
+    "decision": "candidate-for-explicit-user-review",
+    "gallery_sha256": "b6aef62603e451be07f7b1af131bd58f899e83db5c40c830899488566a8e9c9a",
+    "identity": "Original resting face exactly preserved; expressive runtime movement is not source-pixel equality.",
+    "limitations": [
+      "Single low-resolution sparse source contour with a centre gap",
+      "Dark flat cavity without teeth/tongue or phonemes",
+      "Existing eyebrow/eye/hair limitations unchanged",
+      "No human perception study, no automatic visual acceptance"
+    ],
+    "mouth_report_sha256": "7a6fd8d47e732c0fdef9b69231713fc5cc196db97ba4a2e2e68d0a8bc8b4eabe",
+    "reviewer": "development-agent",
+    "transitions": "Inspected opening sheets: early source-corner accumulation fixed; source/cavity handoff aligned. All emotions return to their own rest after talk.",
+    "user_approval": false
+  },
+  "girl2_regression": {
+    "checks": 13,
+    "frames": 401,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "raw_opacity_max": 1.0000004768371582,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 312
+    },
+    "max_detached": 3,
+    "max_holes": 146,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b4-1-girl2-regression-v2",
+    "quality_sha256": "8e517ebb2055d471cdeb005d9f6d57148dc786e763108c3f5c66994a9985e42b",
+    "report_sha256": "4c8092b35ef0ca1ccbc33f96fb3f6eddfcdc5ea9f2481665c0b0c5f6a54c99fc",
+    "temporal": {
+      "checks": [
+        "left dense samples and actual parameters",
+        "right dense samples and actual parameters",
+        "both dense samples and actual parameters",
+        "mouth dense samples and actual parameters",
+        "smile dense samples and actual parameters",
+        "frown dense samples and actual parameters",
+        "left complete round trip",
+        "right complete round trip",
+        "both complete round trip",
+        "mouth complete round trip",
+        "neutral talking with head and both eyes",
+        "happy talking with head and both eyes",
+        "sad talking with head and both eyes",
+        "angry talking with head and both eyes",
+        "surprised talking with head and both eyes",
+        "confused talking with head and both eyes",
+        "embarrassed talking with head and both eyes"
+      ],
+      "status": "pass",
+      "visual_acceptance": false
+    },
+    "transition_core": {
+      "samples": 72,
+      "sha256": "d62b1d90bfb56b5e237cefb53e67302f44c628621d6f37ab36cbe40b16ac8536",
+      "visible_reversals": 0
+    }
+  },
+  "implementation_sha256": {
+    "scripts/phase4b4_1_experiment.py": "41af968e4b250311d5de13d946fc5de39cdfe0680fa1f779b07bc0f284394aba",
+    "scripts/phase4b4_1_mouth_scenario.js": "b257214fa1fe5b1d9bc95f2b225e16a458c756c72e4ea67f2fb67ddc25aac24d",
+    "scripts/probe_expressions.cjs": "a4bf8c37b1b3052232bf614dbf0e2da261b65ecdf46ae7f95618d2a06c1fa944",
+    "src/live2d_studio/mouth_authoring.py": "acd2b55351c0abb83e0e5ce63629e7cbf42a9039baddf3e0ea03bfdae1477ab4",
+    "src/live2d_studio/preview_ui/viewer.js": "f1d1c575b9d58658893412d2d902e8b42c063ca760a77778227e869516cdc039"
+  },
+  "inference_executed": false,
+  "legacy_form_axis_changed_pixels": {
+    "-1": 0,
+    "1": 0
+  },
+  "models_downloaded": false,
+  "mouth_core": {
+    "exact_neutral_geometry": true,
+    "invalid_opacity": 0,
+    "mouth_orientation_reference": "full-open neutral cavity; source seam at neutral",
+    "nonfinite": 0,
+    "samples": 819,
+    "sha256": "5b16b577a0057f8679f64fbc87af4266278249838f8ff48df951cc5847ef0f6d",
+    "source_seam_opening_invariant": true,
+    "status": "pass",
+    "strict_opacity_excursions": 220,
+    "visible_reversals": 0
+  },
+  "mouths": {
+    "checks": 159,
+    "frames": 213,
+    "geometry": {
+      "invalid_opacity": 0,
+      "nonfinite": 0,
+      "parameter_range_violations": 0,
+      "raw_opacity_max": 1.000000238418579,
+      "raw_opacity_min": 0,
+      "strict_opacity_excursions": 70
+    },
+    "max_detached": 56,
+    "max_holes": 2545,
+    "network": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "path": "runs/phase4b4-1-sara-v4/mouths-release",
+    "quality_sha256": "7d4942630fdb82fc7deb3a5d6f0e05be0620de91a4c78159a8cb2b9eec749c64",
+    "report_sha256": "7a6fd8d47e732c0fdef9b69231713fc5cc196db97ba4a2e2e68d0a8bc8b4eabe"
+  },
+  "phase": "4B.4.1",
+  "preservation": {
+    "accepted_phase3_31_files": 41,
+    "frozen_stages": {
+      "runs/phase4b1-girl2": {
+        "stages": 12,
+        "status": "pass"
+      },
+      "runs/phase4b1-sara": {
+        "stages": 12,
+        "status": "pass"
+      },
+      "runs/phase4b2-girl2-lama-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-girl2-qwen-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-sara-lama-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-sara-qwen-hybrid": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b2-sara-qwen-rig": {
+        "stages": 11,
+        "status": "pass"
+      },
+      "runs/phase4b3-sara-create-final": {
+        "stages": 11,
+        "status": "pass"
+      }
+    },
+    "girl2_moc_unchanged": true,
+    "golden_fixtures_package_locks_and_inference_unchanged": true,
+    "phase4b4_inventory_unchanged": true
+  },
+  "production_modified": false,
+  "provenance": {
+    "artwork": "Sara: ZeNeRIA29 / RPG Action, CC-BY-3.0; benchmarks/phase4b-art.json",
+    "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+    "cubism_core": "Installed 5.0.0; proprietary Live2D license; not redistributed",
+    "new_artwork": false,
+    "new_runtime_dependency": false,
+    "psd2live": "3.6.7, GPL-3.0 recorded in docs/compatibility.md"
+  },
+  "recognition_score": null,
+  "retained_failures": [
+    "sandbox loopback/browser refusals",
+    "v2 thin happy and weak embarrassed mouths",
+    "v3 accumulated source geometry at early opening",
+    "initial triangle reference used an invisible squashed cavity",
+    "first Girl2 regression used wrong correspondence path"
+  ],
+  "schema_version": 1,
+  "source_preservation": {
+    "all_archived_pngs": 33,
+    "all_archived_pngs_identical": true,
+    "imported_source": {
+      "caveat": "Exact imported RGBA, including marked generated hidden pixels; original input preservation is measured separately.",
+      "exact_source_layers": 18,
+      "status": "pass"
+    },
+    "neutral_changed_pixels": 0
+  },
+  "tests": {
+    "javascript": 5,
+    "javascript_log_sha256": "e9ed91a18277af9d9cc7ca36dddf0a636c73ec9090d2b59c6789d8c315596b50",
+    "python": 137,
+    "python_log_sha256": "29078c39f6a9cbd0f41d690d6b5a0ad889953140b02bf33d08f1c8c4505411ea",
+    "status": "pass"
+  },
+  "training": false,
+  "user_approval": false
+}

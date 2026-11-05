@@ -374,3 +374,24 @@
   Numerical success and development visual judgments do not close user acceptance.
 - Keep all accepted art/runtime/package pins and rejected evidence. No automatic
   candidate promotion, production deployment, inference or training.
+
+## Phase 4B.4.1 — mouth geometry takes precedence over earlier expression judgments
+
+The user's manual review rejected Phase 4B.4 readability. Its development judgments
+are not user acceptance. The optional follow-up changes all seven mouth recipes,
+leaving non-mouth channels unchanged. Inspecting visible alternatives established
+that the imported MouthForm axis is ineffective, negative parent curvature retains
+the source smile, and the old Angry correction supplies a soft Sad-like frown.
+
+Use separate rest-derived source/cavity mappings to the same target seam, independent
+roundness/tension/width/skew and bounded opening. Preserve all PNG artwork. The first
+copy-based implementation accumulated bends when equal forms were omitted; reject
+it and author ordered reset/deform keys instead. The source seam has no opening
+geometry. Validate visible cavity winding against its full-open surface and retain
+the false-reference failure. No visible geometry/opacity gate is relaxed.
+
+Expose mouth-only review with identical neutral non-mouth channels, pair sheets and
+opening samples. Finite geometry, exact neutral/source preservation and distinct
+configurations do not grant human emotion recognition. Candidate v4 remains pending
+explicit user visual approval. Preserve accepted/rejected predecessors and stop at
+Phase 4B.4.1 without production deployment, inference or training.

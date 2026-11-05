@@ -12,28 +12,45 @@ try{
  const get=k=>model.parameters.values[ids.indexOf(k)];
  const areas=index=>{const p=model.drawables.vertexPositions[index],t=model.drawables.indices[index],a=[];for(let j=0;j<t.length;j+=3){const u=t[j]*2,v=t[j+1]*2,w=t[j+2]*2;a.push((p[v]-p[u])*(p[w+1]-p[u+1])-(p[v+1]-p[u+1])*(p[w]-p[u]))}return a};
  const inspection=JSON.parse(fs.readFileSync(inspectionFile));
- const recipe=JSON.parse(fs.readFileSync(path.join(path.dirname(inspectionFile),'expression-rig-recipe.json')));
- const targets=[...new Set([...inspection.brows.map(b=>b.mesh.target),...recipe.filter(s=>s.request.parameter.id==='ParamMouthDispleasure').flatMap(s=>s.request.shapes.map(f=>f.target))])];
+ const mouth=!!inspection.surfaces;
+ const recipe=mouth?[]:JSON.parse(fs.readFileSync(path.join(path.dirname(inspectionFile),'expression-rig-recipe.json')));
+ const targets=mouth?inspection.surfaces.map(s=>s.target):[...new Set([...inspection.brows.map(b=>b.mesh.target),...recipe.filter(s=>s.request.parameter.id==='ParamMouthDispleasure').flatMap(s=>s.request.shapes.map(f=>f.target))])];
  if(inspection.generated_artwork)targets.push(inspection.generated_artwork.target);
  model.update();const neutralAreas=drawables.map((_,i)=>areas(i));
+ // The hidden closed cavity is deliberately squashed and can reverse a coarse
+ // triangle. Use its visible full-open surface as reference, as the eye audit
+ // uses open eyes; still test every visible near-closed pose against it.
+ if(mouth){set('ParamMouthOpenY',1);model.update();for(const surface of inspection.surfaces)if(surface.kind==='interior'){const i=drawables.indexOf(surface.target.split(':')[1]);neutralAreas[i]=areas(i)}model.parameters.values.set(defaults);model.update();report.mouth_orientation_reference='full-open neutral cavity; source seam at neutral';}
  const neutral=model.drawables.vertexPositions.map(v=>Array.from(v)),neutralAlpha=Array.from(model.drawables.opacities);
  for(const e of data.FileReferences.Expressions){
   const expression=JSON.parse(fs.readFileSync(path.join(path.dirname(modelFile),e.File)));
   for(const head of [[0,0,0],[-12,-8,-5],[-12,-8,5],[-12,8,-5],[-12,8,5],[12,-8,-5],[12,-8,5],[12,8,-5],[12,8,5]])
-   for(const v of [0,.05,.1,.15,.2,.25,.35,.5,.65,.75,.9,1]){
+   for(const v of (mouth?[null,0,.05,.1,.15,.2,.25,.35,.5,.65,.75,.9,1]:[0,.05,.1,.15,.2,.25,.35,.5,.65,.75,.9,1])){
     model.parameters.values.set(defaults);
     for(const p of expression.Parameters)set(p.Id,p.Blend==='Multiply'?get(p.Id)*p.Value:p.Blend==='Overwrite'?p.Value:get(p.Id)+p.Value);
     for(const [i,k] of ['ParamAngleX','ParamAngleY','ParamAngleZ'].entries())set(k,head[i]);
-    set('ParamEyeLOpen',get('ParamEyeLOpen')*v);set('ParamEyeROpen',get('ParamEyeROpen')*v);set('ParamMouthOpenY',v);model.update();
+    if(v!==null){set('ParamEyeLOpen',get('ParamEyeLOpen')*v);set('ParamEyeROpen',get('ParamEyeROpen')*v);set('ParamMouthOpenY',v)}model.update();
     for(const vertices of model.drawables.vertexPositions)for(const x of vertices)if(!Number.isFinite(x))report.nonfinite++;
     for(const x of model.drawables.opacities){if(x<0||x>1)report.strict_opacity_excursions++;if(!Number.isFinite(x)||x < -8*2**-23||x>1+8*2**-23)report.invalid_opacity++}
     const triangles={};
+    if(mouth){for(const [i,id] of ids.entries())if(id.startsWith('ParamMouth')&&(get(id)<model.parameters.minimumValues[i]-1e-6||get(id)>model.parameters.maximumValues[i]+1e-6))throw Error('Unbounded mouth parameter '+id)}
     for(const t of targets){const i=drawables.indexOf(t.split(':')[1]);if(i<0)throw Error('Missing drawable '+t);const current=areas(i);triangles[t]={opacity:model.drawables.opacities[i],reversed:current.filter((x,j)=>x*neutralAreas[i][j]<-1e-12).length}}
-    report.samples.push({expression:e.Name,head,blink_talk:v,triangles});
+    report.samples.push({expression:e.Name,head,blink_talk:v,triangles,...(mouth&&head.every(x=>x===0)?{mouth_vertices:Object.fromEntries(targets.map(t=>[t,Array.from(model.drawables.vertexPositions[drawables.indexOf(t.split(':')[1])])]))}:{})});
    }
  }
  model.parameters.values.set(defaults);model.update();
  report.exact_neutral_geometry=model.drawables.vertexPositions.every((v,i)=>Array.from(v).every((x,j)=>x===neutral[i][j]))&&neutralAlpha.every((v,i)=>v===model.drawables.opacities[i]);
+ if(mouth){
+  report.source_seam_opening_invariant=true;
+  for(const e of data.FileReferences.Expressions){
+   const samples=report.samples.filter(s=>s.expression===e.Name&&s.head.every(v=>v===0)&&s.blink_talk!==null);
+   for(const surface of inspection.surfaces.filter(s=>s.kind==='source-neutral')){
+    const first=samples[0].mouth_vertices[surface.target];
+    if(!samples.every(s=>s.mouth_vertices[surface.target].every((v,i)=>Math.abs(v-first[i])<1e-7)))report.source_seam_opening_invariant=false;
+   }
+  }
+  if(!report.source_seam_opening_invariant)throw Error('Source seam deforms while only opening changes');
+ }
  report.visible_reversals=report.samples.flatMap(s=>Object.values(s.triangles)).filter(t=>t.opacity>1e-6).reduce((n,t)=>n+t.reversed,0);
  if(report.visible_reversals||report.nonfinite||report.invalid_opacity||!report.exact_neutral_geometry)throw Error('Expression geometry gate failed');
  report.status='pass';

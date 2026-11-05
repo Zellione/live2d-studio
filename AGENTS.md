@@ -284,3 +284,19 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   Blush has generated provenance, inferred landmarks, independent opacity and face
   ancestry. Neutral/Happy/Sad/Surprised behavior remains unchanged; Sad is still limited.
 - Stop after Phase 4B.4. No production deployment, training, model or system changes.
+
+## Phase 4B.4.1 mouth-specific expressions
+- Read `docs/phase4b4-1-results.md` and `docs/phase4b4-1-mouth-design.md`.
+  The user rejected Phase 4B.4 legibility; no previous development assessment grants
+  user acceptance. New optional mouths revise all seven recipes, not brows/eyes.
+- Candidate `runs/phase4b4-1-sara-v4`; mouth-only/full galleries in
+  `runs/phase4b4-1-review-release`. User visual approval remains pending.
+- Keep original source/cavity/backing/blush assets, all accepted models, package pins
+  and rejected candidates immutable. No new inference or raster artwork was needed.
+- Author each mouth key from rest, preserve the source seam without opening geometry,
+  and use visible full-open cavity winding as reference. Keep failed accumulation
+  and invisible-reference diagnostics. Do not weaken visible-triangle/opacity gates.
+- Mouth-only comparisons neutralize every non-mouth parameter. Shape/opening bounds,
+  emotional talk return, exact neutral pixels and source preservation are separate
+  from perceived emotion. Retain 401-frame/72-sample and 819-sample Core checks.
+- Stop after Phase 4B.4.1. No production deployment, training or system changes.

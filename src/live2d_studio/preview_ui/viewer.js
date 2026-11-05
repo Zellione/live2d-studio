@@ -40,7 +40,8 @@
     let comparisonGeneration=0;
     async function compare(name){const generation=++comparisonGeneration;await reset();state.talkWeight=0;await new Promise(r=>setTimeout(r,750));if(generation!==comparisonGeneration)return;await expression(name);await new Promise(r=>setTimeout(r,750));}
     async function selectExpression(name){if($('#compare').checked)await compare(name);else await expression(name);}
-    $('#compare').onchange=()=>{const locked=$('#compare').checked;for(const selector of ['#idle','#talk','#blink-left','#blink-right',...sliderDefs.map(([id])=>'#'+id)])$(selector).disabled=locked;if(locked)compare(state.expression).catch(fail);else comparisonGeneration++;};
+    $('#compare').onchange=()=>{const locked=$('#compare').checked;for(const selector of ['#idle','#talk','#blink-left','#blink-right',...sliderDefs.map(([id])=>'#'+id)])$(selector).disabled=locked;if(locked)compare(state.expression).catch(fail);else {comparisonGeneration++;state.mouthOnly=false;$('#mouth-only').checked=false;}};
+    $('#mouth-only').onchange=()=>{state.mouthOnly=$('#mouth-only').checked;if(state.mouthOnly&&!$('#compare').checked){$('#compare').checked=true;$('#compare').dispatchEvent(new Event('change'));}};
     $('#idle').onclick=()=>idle(!state.idle);$('#talk').onclick=()=>talk(!state.talking);$('#reset').onclick=()=>{comparisonGeneration++;reset().catch(fail);};
     for(const side of ['left','right'])$('#blink-'+side).onclick=()=>{state.blinks[side]=performance.now();};
     internal.on('beforeModelUpdate',()=>{
@@ -48,6 +49,7 @@
       const dt=Math.min(.1,(now-(state.lastTime||now))/1000);state.lastTime=now;
       state.talkWeight=(state.talkWeight||0)+((state.talking?1:0)-(state.talkWeight||0))*(1-Math.exp(-18*dt));
       if(state.talkWeight<.00001)state.talkWeight=0;
+      if(state.mouthOnly)ids.forEach((id,i)=>{if(!id.startsWith('ParamMouth'))set(id,defaults[i]);});
       for(const [id,v] of Object.entries(state.manual))set(id,v);
       if(state.talkWeight){const envelope=Math.pow(.5+.5*Math.sin(now*.014),1.5)*(.7+.3*Math.sin(now*.003)**2);const rest=get('ParamMouthOpenY');set('ParamMouthOpenY',rest+state.talkWeight*(.08+.75*envelope-rest));}
       for(const [side,start] of Object.entries(state.blinks)){
