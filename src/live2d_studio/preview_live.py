@@ -67,8 +67,16 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
-def viewer_assets(model=None, extension=None):
+def viewer_assets(model=None, extension=None, comparison=None):
     files = assets(model or DEFAULT_MODEL, extension or DEFAULT_EXTENSION)
+    if comparison is not None:
+        comparison = Path(comparison).resolve()
+        extra = assets(comparison, extension or DEFAULT_EXTENSION)
+        files.update({key.replace('/model/', '/before/'): value for key, value in extra.items() if key.startswith('/model/')})
+        config = dict(model='/model/' + Path(model or DEFAULT_MODEL).name,
+                      comparison='/before/' + comparison.name)
+        files['/config.json'] = (json.dumps(config).encode(), 'application/json')
+        return files
     # The default opens the accepted baseline; the separate candidate is one click away.
     if model is None:
         candidate = REPO / 'runs/phase3-1-final-v2/runtime/Generated_artwork.model3.json'
@@ -80,8 +88,8 @@ def viewer_assets(model=None, extension=None):
     return files
 
 
-def serve(model=None, extension=None, port=8768, open_browser=True):
-    files = viewer_assets(model, extension)
+def serve(model=None, extension=None, port=8768, open_browser=True, comparison=None):
+    files = viewer_assets(model, extension, comparison)
     with ThreadingHTTPServer(('127.0.0.1', port), partial(Handler, files=files)) as server:
         url = f'http://127.0.0.1:{server.server_port}/'
         print(f'Live2D preview: {url}\nRead-only local preview. Ctrl+C stops the server.', flush=True)

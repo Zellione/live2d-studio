@@ -11,12 +11,12 @@ import urllib.request
 
 from .bundle import validate
 from .manifest import write_json, digest
-from .preview_live import assets, Handler
+from .preview_live import assets, viewer_assets, Handler
 
 REPO = Path(__file__).resolve().parents[2]
 
 
-def validate_runtime(model, output, extension, scenario=None, transition_plan=None):
+def validate_runtime(model, output, extension, scenario=None, transition_plan=None, comparison=None):
     scenario = scenario or REPO/'scripts/phase4b_browser_scenario.js'
     dense=scenario.name=='phase4b3_transition_scenario.js'
     report = validate(model)
@@ -58,7 +58,8 @@ def validate_runtime(model, output, extension, scenario=None, transition_plan=No
             port = int(portfile.read_text().splitlines()[0])
             endpoint = f'http://127.0.0.1:{port}'
             urllib.request.urlopen(endpoint+'/json/version',timeout=3).close()
-            with ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,files=assets(model,extension))) as server:
+            files = viewer_assets(model, extension, comparison) if comparison else assets(model, extension)
+            with ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,files=files)) as server:
                 thread = threading.Thread(target=server.serve_forever,daemon=True)
                 thread.start()
                 try:

@@ -34,9 +34,14 @@ def main():
     source=p.add_mutually_exclusive_group()
     source.add_argument('--model',type=Path)
     source.add_argument('--run',type=Path,help='Open the verified current model from a creation run')
+    p.add_argument('--compare-model',type=Path,help='Synchronize a second model at the same scale')
     p.add_argument('--extension',type=Path)
     p.add_argument('--port',type=int,default=8768)
     p.add_argument('--no-open',action='store_true')
+    p=commands.add_parser('prepare-body',help='Author a separate body/head/hair candidate from a verified creation run; no inference')
+    p.add_argument('--baseline',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--endpoint',default='http://127.0.0.1:23871/mcp')
     p=commands.add_parser('audit-production',help='Read-only audit; no production execution option')
     p.add_argument('--target',type=Path,required=True)
     p.add_argument('--package',type=Path,required=True)
@@ -132,7 +137,10 @@ def main():
             if args.run:
                 from .creation import preview_model
                 model=preview_model(args.run)
-            result=serve(model,args.extension,args.port,not args.no_open)
+            result=serve(model,args.extension,args.port,not args.no_open,args.compare_model)
+        elif args.command=='prepare-body':
+            from .body_rig import prepare
+            result=prepare(args.baseline,args.output,args.endpoint)
         elif args.command=='audit-production':
             from .production_audit import save_audit
             result=save_audit(args.target,args.package,args.output)

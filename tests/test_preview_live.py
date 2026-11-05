@@ -45,6 +45,14 @@ class PreviewTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Missing installed runtime'):
                 assets(FIXTURE,Path(directory))
 
+    def test_comparison_has_two_closed_runtime_allowlists(self):
+        files=viewer_assets(FIXTURE,self.extension,comparison=FIXTURE)
+        config=json.loads(files['/config.json'][0])
+        self.assertIn(config['comparison'],files)
+        self.assertTrue(config['comparison'].startswith('/before/'))
+        self.assertNotIn('/before/character.psd2live',files)
+        self.assertNotIn('/before/sillytavern_settings.json',files)
+
     def test_escaping_model_reference_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             model=Path(directory)/'model.model3.json'

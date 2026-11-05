@@ -416,3 +416,26 @@ High-resolution actual renders reveal overlapping near-closed eye contours and
 residual shading, so development review rejects convincing animation. Numeric
 success and almost perfect source copying are separate findings. User approval
 is still pending; neither candidate is promoted. Stop after Phase 4B.5.
+
+## Phase 4B.6 — coherent head motion, evidence-gated limbs
+
+The user reopened local body/head/hair authoring and independent regressions from
+`68e1d25`. Actual Codel Core and continuous viewer samples show working but tiny
+XY/head/hair idle motion, not a missing parameter or an idle playback failure.
+Bind the shared head ancestor by semantics and ancestry, add bounded normalized
+translation, retain the inspected neck rotation pivot, and keep separate exported
+hair pendulums. Correct vertical translation to agree with the importer's nod;
+preserve the earlier cancelling-direction candidate and motion-format failures.
+
+Use a 16-second paused/eased idle with independent breathing/blink timing. Export
+only honest head-nod and questioning-tilt gestures. The merged Codel handwear
+component has both arms/hands but lacks reviewed joints and hidden intersection
+surfaces. Preserve source pixels and its shared body attachment; component count,
+side labels and clothing are insufficient to authorize independent articulation.
+
+Codel/Sara pass the broad combined Core audit; Girl2 retains 1,716 generated
+lip-triangle reversals also present before the body edit. Keep that gate failed
+while reporting independently passing dense facial/render tests. No threshold is
+relaxed and no prototype is promoted. Source gaps which become enclosed during
+motion retain numerical hole counts and close-up evidence; counters alone do not
+establish missing anatomy. User visual approval remains a separate pending gate.

@@ -88,11 +88,26 @@ try {
     value.network_validation={caught_event_listener_errors:listenerErrors.length,missing_successful_resources:missing,unexpected_http_errors:unexpectedHttp.map(r=>({url:r.url,status:r.status})),uncaught_exceptions:exceptions.length};
     if(missing.length || unexpectedHttp.length || exceptions.length || listenerErrors.length)value.status='fail';
   }
-  if(['phase3-1-standalone','generic-creation-preview'].includes(result.result.value?.stage)) {
+  if(['phase3-1-standalone','generic-creation-preview','body-runtime'].includes(result.result.value?.stage)) {
     const failures=events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Network.loadingFailed'||(e.method==='Network.responseReceived'&&e.params.response.status>=400));
     const external=events.filter(e=>e.method==='Network.responseReceived'&&new URL(e.params.response.url).origin!==new URL(url).origin);
     result.result.value.network_validation={failures:failures.length,external_requests:external.length};
     if(failures.length||external.length)result.result.value.status='fail';
+  }
+  if(result.result.value?.stage==='body-runtime' && result.result.value.status==='pass') {
+    await send('Page.reload',{ignoreCache:true});
+    let loaded=false;
+    for(let i=0;i<120;i++){
+      await new Promise(r=>setTimeout(r,250));
+      const probe=await send('Runtime.evaluate',{expression:'document.readyState === "complete" && !!window.preview',returnByValue:true});
+      if(probe.result.value){loaded=true;break;}
+    }
+    if(!loaded)throw Error('Reload failed');
+    const again=await send('Runtime.evaluate',{expression:`(async()=>{await window.preview.reset();await new Promise(r=>setTimeout(r,900));const p=window.preview;p.app.renderer.render(p.app.stage);return {image:p.app.view.toDataURL().split(',')[1],expression:p.state.expression,gestures:p.gestures};})()`,awaitPromise:true,returnByValue:true});
+    const original=await fs.readFile(`${output}/neutral.png`);
+    const identical=original.equals(Buffer.from(again.result.value.image,'base64'));
+    result.result.value.reload={loaded,exact_neutral:identical,expression:again.result.value.expression,gestures:again.result.value.gestures};
+    if(!identical||again.result.value.expression!=='neutral')result.result.value.status='fail';
   }
   await fs.writeFile(`${output}/result.json`,JSON.stringify(result,null,2));
   const screenshot=await send('Page.captureScreenshot',{format:'png'});

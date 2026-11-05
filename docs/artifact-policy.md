@@ -81,3 +81,12 @@ all rejected iterations, comparison sheets, browser profiles and Core reports un
 ignored `runs/phase4b4-1-*`. No raster artwork is regenerated. Commit optional mouth
 and review code, regression tests, concise results/design and benchmark only. The
 Phase 4B.4 candidate remains preserved despite the user's visual rejection.
+
+Phase 4B.6 keeps body inspections, immutable predecessor inventories, editor recovery
+snapshots, PSD/project/runtime exports, Core reports, continuous frames, browser
+profiles and sampled WebM recordings under ignored `runs/phase4b6-*`. Source artwork,
+model downloads and accepted benchmarks remain unchanged. Version only reusable
+body/viewer code, validation/report scripts, tests, concise results and benchmark
+summaries. Retain the failed motion-format/name/save attempts, earlier nod-direction
+candidate, and Girl2's inherited lip-triangle failures. Neither a rendered movie
+nor a development review records user approval.
