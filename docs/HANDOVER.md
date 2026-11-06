@@ -1,5 +1,29 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.9 — selected-family arm assessment; rig gate blocked
+
+Read [results](phase4b9-results.md), [method/reproduction](phase4b9-arm-assessment.md)
+and [benchmark](benchmarks/phase4b9.json). Four explicit human approvals from
+`runs/phase4b8-2-lightning-review-v2` were hash-verified and exported without
+changing decisions. Frozen evidence: `runs/phase4b9-family`. The fifth pose stays
+pending and is not required; no Qwen generation ran.
+
+- The user requires **the exact accepted artwork and rig**. Do not replace the
+  angled accepted body with the frontal canonical or recreate its facial rig.
+- SAM finds two arm regions in canonical plus all four helpers. Joint hypotheses
+  remain uncertain; projected right forearm lengths differ by 2.77×. These views
+  do not establish original-view cuts, hidden backing or a fixed-length skeleton.
+- A canonical-only raster swap exposes a shoulder seam; its intermediate fades
+  duplicate the arms. Exact neutral return does not make this a usable gesture.
+  Retain the failed probe and early landmark passes. No PSD2Live rig was authored.
+- Prefer a future discrete gesture after reviewing original-view bilateral cuts,
+  shoulder/elbow attachment and backing. Continuous articulation is not supported
+  yet. The saved fifth guide remains unchanged; any correction needs a new version.
+- Gallery: `runs/phase4b9-review-final`, localhost 8805. Unchanged accepted rig:
+  localhost 8806. Python 215, both JS suites, Core 496/819 and all three existing
+  browser suites pass. These prove preservation, not new arm animation.
+- Stop for user visual review. No promotion, final articulation or production work.
+
 ## Current Phase 4B.8.2 — optional Lightning acceleration
 
 Read [results](phase4b8-2-results.md), [integration/reproduction](phase4b8-2-lightning.md)

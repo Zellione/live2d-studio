@@ -1,0 +1,643 @@
+{
+  "phase": "4B.9",
+  "starting_commit": "998e86abc2cfab029cc8ca5fb69c824e61115d9a",
+  "outcome": "Assessment complete; anatomical prerequisite gate blocks rig authoring",
+  "user_constraint": "Keep the exact accepted artwork and rig",
+  "human_review_scope": "Four helper images visually approved; no anatomical, joint or rig approval inferred",
+  "generation": {
+    "new_images": 0,
+    "fifth_pose_required": false,
+    "fifth_pose_status": "pending"
+  },
+  "family": {
+    "path": "runs/phase4b9-family",
+    "sha256": "4c19cbcb16eca0bb1f7282c3a6450cc56cdb62e719e9b1f67aefec23e9d45eb9",
+    "selection_id": "48fd4925948c4e72a7a9d636c8f7fffe",
+    "selection_sha256": "469d5ac71c0576960a78ac2a216fcf4cf3652c0f0ec10a0829bd4d60783ae32b",
+    "original_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "canonical_provenance_sha256": "8d15231abbb8e648e1f1663abd16a7cdd5323296c1361f91c3115e31f2610725",
+    "images": {
+      "canonical": {
+        "sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "candidate": null,
+        "approval": {
+          "action": "accept",
+          "pose": "canonical",
+          "candidate": "b-62c26625a6664a98810b8361cea4b371-c4",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793981036.6653795,
+          "image_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e"
+        }
+      },
+      "right-lift": {
+        "sha256": "379af73a203cbd3fc5adc063a55950e33f0377b4d5572ccaa73631b04ff71810",
+        "candidate": "b-34832b77ecbf471f81ea1477f36adb21-c4",
+        "approval": {
+          "action": "accept",
+          "pose": "right-lift",
+          "candidate": "b-34832b77ecbf471f81ea1477f36adb21-c4",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793985946.2435322,
+          "image_sha256": "379af73a203cbd3fc5adc063a55950e33f0377b4d5572ccaa73631b04ff71810"
+        }
+      },
+      "left-lift": {
+        "sha256": "7050793b721a3cddbda846d59962fff2bcf259b0ae4816af0ee9c7f9033a46f1",
+        "candidate": "b-9994d724922a44d6b3649b02bc871c57-c1",
+        "approval": {
+          "action": "accept",
+          "pose": "left-lift",
+          "candidate": "b-9994d724922a44d6b3649b02bc871c57-c1",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793986135.8407798,
+          "image_sha256": "7050793b721a3cddbda846d59962fff2bcf259b0ae4816af0ee9c7f9033a46f1"
+        }
+      },
+      "explain": {
+        "sha256": "69bda9774597898ed0078dcbe7d28edc0fe0a10a57d04308fa8cb70cde6f7430",
+        "candidate": "b-e812a8e04218468ab7c00d5df8e81fd0-c1",
+        "approval": {
+          "action": "accept",
+          "pose": "explain",
+          "candidate": "b-e812a8e04218468ab7c00d5df8e81fd0-c1",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793986323.1094983,
+          "image_sha256": "69bda9774597898ed0078dcbe7d28edc0fe0a10a57d04308fa8cb70cde6f7430"
+        }
+      },
+      "wave": {
+        "sha256": "903c48c14c5d24dfe8a577f85220a7f5ee7e454af855c2ba36b2e3688e03a9fd",
+        "candidate": "b-4c7c81e9db6845fb80ec470299b635d7-c1",
+        "approval": {
+          "action": "accept",
+          "pose": "wave",
+          "candidate": "b-4c7c81e9db6845fb80ec470299b635d7-c1",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793986505.5162494,
+          "image_sha256": "903c48c14c5d24dfe8a577f85220a7f5ee7e454af855c2ba36b2e3688e03a9fd"
+        }
+      }
+    }
+  },
+  "parser": {
+    "model": "24yearsold/l2d_sam_iter2",
+    "revision": "0b0608310fb7a89e32ecd7397147a249540cf1e7",
+    "license": "Apache-2.0",
+    "checkpoint_sha256": "dda82b916f6c340bc5a6c3a077ff1214f9906906abe3707b1076d55b508f253f",
+    "dtype": "float32",
+    "torch": "2.8.0+cu128",
+    "image_dimensions": [
+      800,
+      1536
+    ],
+    "timing_scope": "SAM stage, excluding process startup; Torch allocated/reserved memory, not whole GPU usage",
+    "family_sha256": "4c19cbcb16eca0bb1f7282c3a6450cc56cdb62e719e9b1f67aefec23e9d45eb9",
+    "parser_worker_sha256": "988e73f7f71c1cee9d659b10776ddc796b4cda664d642de3acd7e6b7165a62ac",
+    "parser_lock_sha256": "a0f5d0b5559521a91b617772c1eaf009ecd0fe0e53584db7bc7ba44e17ecd3d3",
+    "images": {
+      "canonical": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+      "right-lift": "379af73a203cbd3fc5adc063a55950e33f0377b4d5572ccaa73631b04ff71810",
+      "left-lift": "7050793b721a3cddbda846d59962fff2bcf259b0ae4816af0ee9c7f9033a46f1",
+      "explain": "69bda9774597898ed0078dcbe7d28edc0fe0a10a57d04308fa8cb70cde6f7430",
+      "wave": "903c48c14c5d24dfe8a577f85220a7f5ee7e454af855c2ba36b2e3688e03a9fd"
+    },
+    "only_human_approved": true
+  },
+  "assessment": {
+    "path": "runs/phase4b9-geometry-final",
+    "sha256": "c372601b0c353818c9d05339a067ec1b10677690c6034f79392e56a3a22d0b39",
+    "algorithm_sha256": "c4fc158da6819406ee86f52932b83aca818fe073bc7b9ee62d7702c681c5eb9e",
+    "images": {
+      "canonical": {
+        "image_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "sam_sha256": "cc8f017be18fb613153cd989c6144b5b4c86919c1208832e8e78f5f1e82c2296",
+        "mask_hashes": {
+          "handwear": "32e22b5cbf71378a9f2d64a269b4b4af791b6b5273852362c0c02d67d713d83d",
+          "topwear": "753645267069d955ce7f8ce11e711cde787586c522a2592415e496e78d1284eb",
+          "face": "32e05292657b14769b512e81cff68709ed30de90f859b3dc8048fd00b89f6259"
+        },
+        "component_count": 2,
+        "arm_torso_overlap_pixels": 1481,
+        "independently_verified_anatomy": false,
+        "arms": {
+          "right": {
+            "ownership": "anatomical right under frontal non-mirrored assumption",
+            "visible_mask_pixels": 59658,
+            "shoulder_surface": [
+              209.35245901639345,
+              468.9754098360656
+            ],
+            "wrist": [
+              137.3855421686747,
+              1097.421686746988
+            ],
+            "hand_pixels": 8511,
+            "hand_center": [
+              138.06722294041603,
+              1187.9354800799154
+            ],
+            "upper_length_over_torso": 0.8252321251635808,
+            "forearm_length_over_torso": 0.45669078467700336
+          },
+          "left": {
+            "ownership": "anatomical left under frontal non-mirrored assumption",
+            "visible_mask_pixels": 58819,
+            "shoulder_surface": [
+              593.4864864864865,
+              469.22972972972974
+            ],
+            "wrist": [
+              664.9172932330827,
+              1098.9248120300751
+            ],
+            "hand_pixels": 8105,
+            "hand_center": [
+              663.53658235657,
+              1188.105367057372
+            ],
+            "upper_length_over_torso": 0.8660047859903713,
+            "forearm_length_over_torso": 0.42337573809873896
+          }
+        },
+        "elbow_status": {
+          "right": "unresolved-near-straight",
+          "left": "unresolved-near-straight"
+        },
+        "sam_stage": {
+          "name": "sam",
+          "seconds": 2.214462641000864,
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200
+        }
+      },
+      "right-lift": {
+        "image_sha256": "379af73a203cbd3fc5adc063a55950e33f0377b4d5572ccaa73631b04ff71810",
+        "sam_sha256": "be8019c4bd10204e41e85a2d29ab416a458874a052dd768151e058910f8d4119",
+        "mask_hashes": {
+          "handwear": "146975f1f47c55d2c0dc0a181cfdd4d396ce351a00da4a9b16d5a0baca8f708e",
+          "topwear": "59963165be097e4a9a296dbf256cb727ed1d0ada0e1a8ad023a6039edf844bbb",
+          "face": "94dc8791a3dd854197540a862a88b79fbe5cbede5da334acf37055126b86a88d"
+        },
+        "component_count": 2,
+        "arm_torso_overlap_pixels": 1442,
+        "independently_verified_anatomy": false,
+        "arms": {
+          "right": {
+            "ownership": "anatomical right under frontal non-mirrored assumption",
+            "visible_mask_pixels": 52416,
+            "shoulder_surface": [
+              225.97761194029852,
+              478.32835820895525
+            ],
+            "wrist": [
+              125.89285714285714,
+              625.6071428571429
+            ],
+            "hand_pixels": 12323,
+            "hand_center": [
+              100.7535274447435,
+              531.9442133594323
+            ],
+            "upper_length_over_torso": 0.6580964089038842,
+            "forearm_length_over_torso": 0.3839885599595248
+          },
+          "left": {
+            "ownership": "anatomical left under frontal non-mirrored assumption",
+            "visible_mask_pixels": 53288,
+            "shoulder_surface": [
+              587.5909090909091,
+              480.7090909090909
+            ],
+            "wrist": [
+              655.6910569105692,
+              1082.560975609756
+            ],
+            "hand_pixels": 7523,
+            "hand_center": [
+              652.9627808055297,
+              1169.5295759670344
+            ],
+            "upper_length_over_torso": 0.8074226655102059,
+            "forearm_length_over_torso": 0.4749200386872199
+          }
+        },
+        "elbow_status": {
+          "right": "visible-lobe-hypothesis-with-overlap-ambiguity",
+          "left": "unresolved-near-straight"
+        },
+        "sam_stage": {
+          "name": "sam",
+          "seconds": 2.2642389480024576,
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200
+        }
+      },
+      "left-lift": {
+        "image_sha256": "7050793b721a3cddbda846d59962fff2bcf259b0ae4816af0ee9c7f9033a46f1",
+        "sam_sha256": "5ab6a7464b69d2d581f1e73a8f974411a17c22d783be7631df76f1509288dca7",
+        "mask_hashes": {
+          "handwear": "a074a48fbfe7eb958b1fb48b1a511b29386f9e74c72e861d6723ddf234f3959d",
+          "topwear": "21abc52d3a3ade4cccdd0e73dc2a44ba66981d508bf1fb82be1c95dff7b843a5",
+          "face": "7c7f3c3195b7a420f9571ebf9b553a59d55e4046d0ac4dbad384c15d495341a5"
+        },
+        "component_count": 2,
+        "arm_torso_overlap_pixels": 1447,
+        "independently_verified_anatomy": false,
+        "arms": {
+          "right": {
+            "ownership": "anatomical right under frontal non-mirrored assumption",
+            "visible_mask_pixels": 54552,
+            "shoulder_surface": [
+              227.08823529411765,
+              478.4632352941176
+            ],
+            "wrist": [
+              146.5609756097561,
+              1082.1951219512196
+            ],
+            "hand_pixels": 7658,
+            "hand_center": [
+              150.71598328545312,
+              1169.0133194045443
+            ],
+            "upper_length_over_torso": 0.930135664605243,
+            "forearm_length_over_torso": 0.35538438477489165
+          },
+          "left": {
+            "ownership": "anatomical left under frontal non-mirrored assumption",
+            "visible_mask_pixels": 48966,
+            "shoulder_surface": [
+              582.9,
+              481.2416666666667
+            ],
+            "wrist": [
+              690.0391061452514,
+              641.5810055865921
+            ],
+            "hand_pixels": 10701,
+            "hand_center": [
+              696.6765037593985,
+              551.0298872180451
+            ],
+            "upper_length_over_torso": 0.6329809001420171,
+            "forearm_length_over_torso": 0.34812676393422126
+          }
+        },
+        "elbow_status": {
+          "right": "unresolved-near-straight",
+          "left": "visible-lobe-hypothesis-with-overlap-ambiguity"
+        },
+        "sam_stage": {
+          "name": "sam",
+          "seconds": 2.161044790998858,
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200
+        }
+      },
+      "explain": {
+        "image_sha256": "69bda9774597898ed0078dcbe7d28edc0fe0a10a57d04308fa8cb70cde6f7430",
+        "sam_sha256": "328b532f766acf1d09529b74580292e3ee3b40bc65addb62577b5f6e51a8da0e",
+        "mask_hashes": {
+          "handwear": "c7d58b925bb31097da2f98a2f503bf3245da256236a0a49f151fd63a8d4306bc",
+          "topwear": "af18e7d7f6906e3a34bdbe8ed088b3b653b57c523dfd0b72774765e2fe659782",
+          "face": "a439993d700b8fa236ac3f4147a91def24089b1e54a5b752244a3d5aa4f8cb1d"
+        },
+        "component_count": 2,
+        "arm_torso_overlap_pixels": 1540,
+        "independently_verified_anatomy": false,
+        "arms": {
+          "right": {
+            "ownership": "anatomical right under frontal non-mirrored assumption",
+            "visible_mask_pixels": 36282,
+            "shoulder_surface": [
+              226.8984375,
+              477.4921875
+            ],
+            "wrist": [
+              179.82242990654206,
+              743.2336448598131
+            ],
+            "hand_pixels": 4884,
+            "hand_center": [
+              119.63349713349713,
+              720.4703112203113
+            ],
+            "upper_length_over_torso": 0.6874669254741714,
+            "forearm_length_over_torso": 0.1385183711903502
+          },
+          "left": {
+            "ownership": "anatomical left under frontal non-mirrored assumption",
+            "visible_mask_pixels": 54317,
+            "shoulder_surface": [
+              590.6825396825396,
+              479.87301587301585
+            ],
+            "wrist": [
+              657.3783783783783,
+              1084.6936936936936
+            ],
+            "hand_pixels": 7582,
+            "hand_center": [
+              655.2898034560085,
+              1172.1754385964912
+            ],
+            "upper_length_over_torso": 0.8291278253403773,
+            "forearm_length_over_torso": 0.44658289754397773
+          }
+        },
+        "elbow_status": {
+          "right": "visible-lobe-hypothesis-with-overlap-ambiguity",
+          "left": "unresolved-near-straight"
+        },
+        "sam_stage": {
+          "name": "sam",
+          "seconds": 2.1278747220021614,
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200
+        }
+      },
+      "wave": {
+        "image_sha256": "903c48c14c5d24dfe8a577f85220a7f5ee7e454af855c2ba36b2e3688e03a9fd",
+        "sam_sha256": "0faac95c71bd7750c41f80e75b51af8623f32de6e81cbaa502df79405642fc0f",
+        "mask_hashes": {
+          "handwear": "ce1a0323c5798c5e0a576aa51a9419de0a4049a5b11adb48b34ecaf70511a7e0",
+          "topwear": "968734f7ddef9f2bcbabbcaf9adeb0446c0833b3ab1e892f2a68c201c7a72c6f",
+          "face": "302c01de690b6f716fcdb63609e368835ca5246e4696f7a566843b19de1c7b67"
+        },
+        "component_count": 2,
+        "arm_torso_overlap_pixels": 1272,
+        "independently_verified_anatomy": false,
+        "arms": {
+          "right": {
+            "ownership": "anatomical right under frontal non-mirrored assumption",
+            "visible_mask_pixels": 54144,
+            "shoulder_surface": [
+              227.0791366906475,
+              479.1294964028777
+            ],
+            "wrist": [
+              144.7625,
+              1080.6125
+            ],
+            "hand_pixels": 7607,
+            "hand_center": [
+              150.49533324569475,
+              1167.6160115682924
+            ],
+            "upper_length_over_torso": 0.9748935788457098,
+            "forearm_length_over_torso": 0.30717763245909363
+          },
+          "left": {
+            "ownership": "anatomical left under frontal non-mirrored assumption",
+            "visible_mask_pixels": 51410,
+            "shoulder_surface": [
+              584.7962962962963,
+              483.47222222222223
+            ],
+            "wrist": [
+              677.486301369863,
+              542.486301369863
+            ],
+            "hand_pixels": 12201,
+            "hand_center": [
+              689.2646452994974,
+              449.61843948257393
+            ],
+            "upper_length_over_torso": 0.5577925019294765,
+            "forearm_length_over_torso": 0.43203124847831914
+          }
+        },
+        "elbow_status": {
+          "right": "unresolved-near-straight",
+          "left": "visible-lobe-hypothesis-with-overlap-ambiguity"
+        },
+        "sam_stage": {
+          "name": "sam",
+          "seconds": 2.1938065760004974,
+          "peak_allocated_bytes": 5005278208,
+          "peak_reserved_bytes": 5452595200
+        }
+      }
+    },
+    "cross_pose": {
+      "sides": {
+        "right": {
+          "bent_views": [
+            "right-lift",
+            "explain"
+          ],
+          "measurements": {
+            "right-lift": {
+              "upper_length_over_torso": 0.6580964089038842,
+              "forearm_length_over_torso": 0.3839885599595248
+            },
+            "explain": {
+              "upper_length_over_torso": 0.6874669254741714,
+              "forearm_length_over_torso": 0.1385183711903502
+            }
+          },
+          "upper_length_over_torso_max_min_ratio": 1.0446295043901035,
+          "forearm_length_over_torso_max_min_ratio": 2.77211287325818
+        },
+        "left": {
+          "bent_views": [
+            "left-lift",
+            "wave"
+          ],
+          "measurements": {
+            "left-lift": {
+              "upper_length_over_torso": 0.6329809001420171,
+              "forearm_length_over_torso": 0.34812676393422126
+            },
+            "wave": {
+              "upper_length_over_torso": 0.5577925019294765,
+              "forearm_length_over_torso": 0.43203124847831914
+            }
+          },
+          "upper_length_over_torso_max_min_ratio": 1.1347963587758068,
+          "forearm_length_over_torso_max_min_ratio": 1.2410170467673427
+        }
+      },
+      "scope": "Projected cloth-axis lengths, normalized by torso height; changes can reflect foreshortening, mask errors or redraw. No automatic skeletal acceptance.",
+      "hidden_torso": "Visible synthetic torso surfaces only; occluded attachment backing, depth and original hidden pixels remain unverified."
+    },
+    "uncertainty": "Surface/cuff and elbow hypotheses from synthetic cloth silhouettes; not verified pivots, skeleton, fingers or original hidden pixels"
+  },
+  "accepted_reference": {
+    "accepted_manifest_sha256": "31a781ebc41f74fd81031dac37cc2a5d4b60d90310ccdb3f4d8ca1ddf772948e",
+    "editable_project_sha256": "8786087be08dce293e1c7b6d4e42ba287421bf87250f3c2379643db9f3661775",
+    "inspection_sha256": "29ae75587a60285f6020722bd10c7036306a82b4d7eb25671a3377ca6fd355b3",
+    "original_sam": {
+      "image_sha256": "3050737c18235a85907653428a0a5fe27dbdc20b98637419529a9057746a76e1",
+      "sam_metadata_sha256": "909e4cf866f4399ef948a09f951ae5409d3968e8800bfe7b37281b64b95222cf",
+      "arm_mask_sha256": "f321a40268210c88ba872c173bf1e5aed6aad13dec3147097665ce0bfa45ef72",
+      "torso_mask_sha256": "8b4ba66bcdcf979d0e4e5ccb98c064e1d2698f5ed95951e23a8628a6f9515d6c",
+      "arm_pixels": 121048,
+      "substantial_arm_components": 1,
+      "components": [
+        {
+          "label": 1,
+          "pixels": 121013,
+          "centroid": [
+            377.7595878128796,
+            772.3322866138349
+          ],
+          "bbox": [
+            118,
+            391,
+            595,
+            1298
+          ]
+        }
+      ],
+      "arm_torso_overlap_pixels": 3084,
+      "minimum_component_pixels": 6052,
+      "side_assignment": "image-space ordering only; not verified anatomical ownership",
+      "joints": "SAM does not separate shoulder, upper arm, elbow, forearm, wrist or hand",
+      "hidden_anatomy_verified": false
+    },
+    "historical_sam_directory": "runs/phase4b8-canonical/selected-assessment-v1",
+    "new_original_inference": false,
+    "accepted_independent_arms": false,
+    "limb_candidates": [
+      {
+        "bounds": [
+          155,
+          529,
+          650,
+          1243
+        ],
+        "components": [
+          260082
+        ],
+        "generated_pixels": 0,
+        "id": "st-11-handwear-none",
+        "observed_pixels": 260082,
+        "ownership_status": "parser-candidate-not-ground-truth",
+        "role": "handwear",
+        "side": "none"
+      }
+    ],
+    "pending_guide": {
+      "sha256": "99be90f2c500aac20fb728c806b81680341c4a969cf014a65a6aa3db4abfc7b6",
+      "status": "pending",
+      "upper_arm_degrees_from_vertical": 13.418011769336866,
+      "shoulder_wrist_degrees_from_vertical": 13.167116568799711,
+      "future_only": "Versioned 40\u201355 degree abduction design in a fresh run, with frame-bound checks; no edit or new generation here"
+    },
+    "constraint": "User explicitly requires keeping exact accepted artwork and rig; no canonical body replacement",
+    "rig_gate": "blocked: source-view bilateral cut lines, shoulder/joint backing and helper attachment mapping remain unreviewed"
+  },
+  "hybrid_diagnostic": {
+    "path": "runs/phase4b9-hybrid-probe",
+    "sha256": "f4ea851baceb585500c758f9fb9a9d363395582aa516a06eb6eea4122a4bc5a2",
+    "geometry_version": "v4; same numerical hypotheses as final, separately hash-bound",
+    "assessment_sha256": "adf1c34848eb257359a1dda1ce1aa6833f6c16daf7b54937c78899fea2e3ad69",
+    "scope": "Canonical-only raster diagnostic; no PSD2Live project, MOC or preservation claim for accepted angled rig",
+    "frames": 21,
+    "intermediate_ghost_frames": 18,
+    "return_to_neutral_exact": true,
+    "outside_arm_union_exact": true,
+    "crossfade_status": "reject: simultaneous displaced limbs at intermediate weights",
+    "endpoint_status": "rejected shoulder cut seam and residual old arm outlines",
+    "rig_authored": false,
+    "does_not_prove_all_hybrids_impossible": true
+  },
+  "regressions": {
+    "scope": "Fresh regressions of unchanged accepted reference; not a new arm-rig validation",
+    "reference_manifest_sha256": "31a781ebc41f74fd81031dac37cc2a5d4b60d90310ccdb3f4d8ca1ddf772948e",
+    "results": {
+      "body": {
+        "status": "pass",
+        "samples": 496,
+        "report_sha256": "53be27a386725f05e82ef505faa63e09fef66f42532b607b1517a3a4e89280ce"
+      },
+      "mouth": {
+        "status": "pass",
+        "samples": 819,
+        "report_sha256": "5409d38024bbdaad9c163b131a173d8305ac11d21231801edf2a5792dd14ea3a"
+      },
+      "dense-browser": {
+        "status": "pass",
+        "frames": 401,
+        "result_sha256": "47c2435cfaf7e2ed8b85c0ce141bd1b6bc50a4a7335738c168f0471450dbd6fd"
+      },
+      "body-browser": {
+        "status": "pass",
+        "frames": 476,
+        "result_sha256": "9283fd61b376de4b52905797b74cd304042ac60e5c662b7211e205fdb2dff9d7"
+      },
+      "coexistence-browser": {
+        "status": "pass",
+        "frames": 355,
+        "result_sha256": "3fce40a0da61de3c799b161c27828097930a48b2897247ca23d3c6fa14f98e7f"
+      }
+    }
+  },
+  "tests": {
+    "python": {
+      "passed": 215,
+      "log": "runs/phase4b9-audit/python-regression.log"
+    },
+    "final_changed_module_subset": {
+      "passed": 9,
+      "log": "runs/phase4b9-audit/family-tests-final.log"
+    },
+    "javascript": {
+      "rp_talk_passed": 5,
+      "mouth_invariant_passed": 3
+    },
+    "gallery": {
+      "images_loaded": 20,
+      "family_images": 5,
+      "evidence": "runs/phase4b9-browser-gallery-v2",
+      "first_attempt": "missing scenario file; failed evidence retained"
+    }
+  },
+  "historical_failures_retained": {
+    "legacy_absolute_source_seam": false,
+    "scale_aware_existing_contract": true,
+    "raw_opacity_excursions": {
+      "mouth_core": 220,
+      "dense_browser": 132,
+      "body_browser": 825,
+      "coexistence_browser": 55
+    },
+    "invalid_opacity_under_existing_policy": 0,
+    "threshold_changes": false
+  },
+  "preservation": {
+    "inventoried_files": 1932,
+    "unchanged_files": 1931,
+    "changed": [
+      "runs/phase4b8-2-lightning-review-v2/review.json"
+    ],
+    "allowed_change": "Selected-only export appended; all poses, approvals, batches, seeds and guides identical",
+    "review_changed_fields": [
+      "exports"
+    ],
+    "new_selection": {
+      "id": "48fd4925948c4e72a7a9d636c8f7fffe",
+      "sha256": "469d5ac71c0576960a78ac2a216fcf4cf3652c0f0ec10a0829bd4d60783ae32b"
+    }
+  },
+  "review": {
+    "gallery": "runs/phase4b9-review-final",
+    "url": "http://127.0.0.1:8805/",
+    "accepted_runtime_url": "http://127.0.0.1:8806/",
+    "new_runtime": false
+  },
+  "next_step": "Human review of original-view bilateral cuts, shoulder/elbow attachment and exposed backing before one discrete gesture in a cloned accepted project. Fifth helper not required.",
+  "production_changes": false,
+  "reference_promotion": false
+}

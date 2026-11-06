@@ -461,3 +461,21 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Keep user reviewer on localhost 8804, comparison gallery on 8803. Run Python
   and both JS suites. Stop after performance/quality evaluation; no production,
   final arm rigging, retraining or unrelated system changes.
+
+## Phase 4B.9 selected-family anatomy assessment
+- Read docs/phase4b9-results.md and docs/phase4b9-arm-assessment.md. Four helpers
+  have explicit hash-bound human approvals; the fifth remains pending and is not
+  required. Preserve the selected-only export and runs/phase4b9-family.
+- The user explicitly requires keeping the exact accepted artwork and rig.
+  Canonical/helper images are synthetic evidence, not replacement permission.
+- SAM bilateral masks and heuristic shoulder/cuff/elbow proposals do not certify
+  joints, fingers, hidden backing or a fixed-length skeleton. Keep uncertain
+  straight elbows and the 2.77× right projected-forearm discrepancy explicit.
+- The canonical raster swap/crossfade fails attachment and intermediate-frame
+  quality. No PSD2Live project or new gesture runtime was authored. Prefer future
+  discrete gestures only after original-view arm cuts, attachment and backing review.
+- Keep all failed landmark/probe evidence, old guide and accepted references.
+  The 215 Python tests, both JS suites and fresh Core/browser runs preserve the
+  old rig; they do not validate arm motion. No validation thresholds changed.
+- Review at localhost 8805; unchanged accepted live rig at 8806. Stop for visual
+  review before further articulation. No new generation or production changes.

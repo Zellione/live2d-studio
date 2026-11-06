@@ -572,3 +572,22 @@ Five additional Balanced candidates take 162.18 seconds total. Their hand shapes
 and height still vary; human selection and anatomical analysis remain separate.
 No generated output is promoted, no previous selection is modified, and no
 production rigging or deployment is authorized by this performance result.
+
+## 2026-11-06 — Phase 4B.9 preserves exact accepted artwork; stops before rigging
+
+Freeze only the four hash-bound human selections; leave the pending fifth pose
+alone. Visual approval permits anatomical assessment, not joint or rig acceptance.
+The user confirmed that the exact angled accepted artwork and rig must remain,
+so a replacement frontal canonical body is outside this experiment's scope.
+
+Selected-only SAM improves bilateral sleeve/hand evidence, but source-view cuts,
+rotation pivots, occluded backing and helper-to-original attachment are unresolved.
+The canonical raster registration exposes a shoulder seam and its intermediate
+crossfades duplicate limbs. This rejects the tested compositor, not every hybrid.
+Stop before PSD2Live authoring under the conditional anatomical gate. Prefer a
+future discrete gesture after review of original-view cut lines and backing;
+do not force continuous deformation from uncertain projected cloth-axis lengths.
+
+Fresh regressions validate preservation of the unchanged accepted runtime only.
+Keep the failed geometric hypotheses and probe; no promotion, further generation
+or production change follows from the completed assessment.
