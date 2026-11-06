@@ -765,7 +765,13 @@
         "cfg_norm": false,
         "negative_prompt": ""
       },
-      "decision": null,
+      "decision": {
+        "action": "accept",
+        "image_sha256": "f63a611c296c9e350c7dae04ce270f21b2a5d3b5da6f48c429363662aab079d5",
+        "reviewer_kind": "human",
+        "time": 1793975645.516208,
+        "reason": ""
+      },
       "seconds": 171.0727441729996
     },
     {
@@ -836,23 +842,138 @@
     }
   ],
   "poses": {
-    "right-lift": "pending",
+    "right-lift": "approved",
     "left-lift": "pending",
     "explain": "pending",
     "wave": "pending",
     "torso-open": "pending"
   },
-  "human_approved_count": 0,
+  "human_approved_count": 1,
   "anatomical_truth": false,
   "arm_rigging_solved": false,
-  "feasibility": "pending human selection and selected-only anatomical evaluation",
+  "feasibility": "Limited positive feasibility for segmentation support from one manually approved helper image; not a validated multi-pose anatomical model.",
   "artifacts": {
     "review_run": "runs/phase4b7b-review",
-    "gallery": "runs/phase4b7b-review-gallery",
-    "screening": "runs/phase4b7b-audit/calibration-screening.json"
+    "gallery": "runs/phase4b7b-review-gallery-assessed",
+    "screening": "runs/phase4b7b-audit/calibration-screening.json",
+    "selected_assessment": "runs/phase4b7b-review/selected-assessment-v1"
+  },
+  "selected_evaluation": {
+    "assessment": {
+      "reviewer_kind": "development-agent",
+      "human_visual_approval": {
+        "candidate": "b-941e0650b84f40bca2973fdfa66a2a1d-c2",
+        "image_sha256": "f63a611c296c9e350c7dae04ce270f21b2a5d3b5da6f48c429363662aab079d5",
+        "selection_sha256": "0ba3747ad564d8483cbb06d2cd44424c78840b9e7a9156fa73864b2f11a35850"
+      },
+      "semantic_report_sha256": "612376dadd85c22971448554ac4570ed21d3ff4d9a3dc43f4444a48dd08e344e",
+      "conclusion": "Limited positive feasibility for segmentation support from one manually approved helper image; not a validated multi-pose anatomical model.",
+      "visually_approved": true,
+      "segmentation_helpful": true,
+      "reliable_full_articulation_evidence": false,
+      "independently_verified_source_pixels": false,
+      "findings": {
+        "pose_compliance": "Closer to uncrossed arms-down than a clear right-arm lift; visual acceptance does not validate target-pose compliance.",
+        "arm_separation": "One connected substantial source arm category becomes two image-space components in the selected pose. Both sleeve/hand regions are easier to distinguish.",
+        "upper_arm_and_elbow": "Character left arm (viewer right) has a more readable outer contour and sleeve bend. Much of character right upper arm remains occluded/unparsed; joints are not established.",
+        "hands": "Both hands and cuffs are visible at the sides, away from the source crossed-arm contact. SAM does not create hand/wrist subparts and finger anatomy is not independently verified.",
+        "torso": "Front clothing under the original crossed forearm is now illustrated continuously. Its folds, shape and shading are generated hypotheses, not recovered source pixels.",
+        "draw_order": "Reduced arm-to-arm contact helps coarse ownership. Depth and shoulder/torso draw-order boundaries remain uncertain.",
+        "cross_pose": "Only one auxiliary pose is approved. Limb-length consistency and correspondence across a helper-pose family are untested."
+      },
+      "recommended_next_step": "Review another complementary pose, then evaluate generic sided arm and cuff/hand proposals using approved images only. Do not transfer joints or generated pixels into the accepted rig automatically."
+    },
+    "semantics": {
+      "selection_sha256": "0ba3747ad564d8483cbb06d2cd44424c78840b9e7a9156fa73864b2f11a35850",
+      "parser_lock_sha256": "a0f5d0b5559521a91b617772c1eaf009ecd0fe0e53584db7bc7ba44e17ecd3d3",
+      "source_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+      "baseline": {
+        "1536": {
+          "image_sha256": "3050737c18235a85907653428a0a5fe27dbdc20b98637419529a9057746a76e1",
+          "sam_metadata_sha256": "909e4cf866f4399ef948a09f951ae5409d3968e8800bfe7b37281b64b95222cf",
+          "arm_mask_sha256": "f321a40268210c88ba872c173bf1e5aed6aad13dec3147097665ce0bfa45ef72",
+          "torso_mask_sha256": "8b4ba66bcdcf979d0e4e5ccb98c064e1d2698f5ed95951e23a8628a6f9515d6c",
+          "arm_pixels": 121048,
+          "substantial_arm_components": 1,
+          "components": [
+            {
+              "label": 1,
+              "pixels": 121013,
+              "centroid": [
+                377.7595878128796,
+                772.3322866138349
+              ],
+              "bbox": [
+                118,
+                391,
+                595,
+                1298
+              ]
+            }
+          ],
+          "arm_torso_overlap_pixels": 3084,
+          "minimum_component_pixels": 6052,
+          "side_assignment": "image-space ordering only; not verified anatomical ownership",
+          "joints": "SAM does not separate shoulder, upper arm, elbow, forearm, wrist or hand",
+          "hidden_anatomy_verified": false
+        }
+      },
+      "selected": {
+        "right-lift": {
+          "image_sha256": "f63a611c296c9e350c7dae04ce270f21b2a5d3b5da6f48c429363662aab079d5",
+          "sam_metadata_sha256": "7d809ac49c8c745cef1f3c7833ef4a00020697c47954c3bca588935fe26e37da",
+          "arm_mask_sha256": "d9395a24ea1f259f502d3d0dc8df1176efb33fe4b31ac44746832b015c909854",
+          "torso_mask_sha256": "22b7c690216ef8afc8ff55e03189b46d3d5afc5ef37b9d5555ee889e7e39ecdf",
+          "arm_pixels": 99094,
+          "substantial_arm_components": 2,
+          "components": [
+            {
+              "label": 3,
+              "pixels": 26535,
+              "centroid": [
+                187.711852270586,
+                1011.776144714528
+              ],
+              "bbox": [
+                135,
+                712,
+                232,
+                1257
+              ]
+            },
+            {
+              "label": 1,
+              "pixels": 68582,
+              "centroid": [
+                558.9563733924354,
+                829.8566533492753
+              ],
+              "bbox": [
+                491,
+                434,
+                611,
+                1279
+              ]
+            }
+          ],
+          "arm_torso_overlap_pixels": 1223,
+          "minimum_component_pixels": 4954,
+          "side_assignment": "image-space ordering only; not verified anatomical ownership",
+          "joints": "SAM does not separate shoulder, upper arm, elbow, forearm, wrist or hand",
+          "hidden_anatomy_verified": false,
+          "baseline_long_edge": 1536,
+          "human_approval_sha256": "f63a611c296c9e350c7dae04ce270f21b2a5d3b5da6f48c429363662aab079d5"
+        }
+      },
+      "scope": "Selected-only exploratory segmentation; generated pixels and mask labels are not anatomy truth",
+      "threshold": "positive SAM logits; components >= max(32 pixels, 5 percent of arm mask)",
+      "correspondence": "No pixel registration or hidden-clothing area measurement; generated pose proportions differ."
+    },
+    "assessment_sha256": "40753f1dc28463362354471596f057b3263d5763c7df6c45dd9a24eeb5b09f22",
+    "semantics_sha256": "612376dadd85c22971448554ac4570ed21d3ff4d9a3dc43f4444a48dd08e344e"
   },
   "validation": {
-    "python_tests": 176,
+    "python_tests": 180,
     "javascript_talk_tests": 5,
     "javascript_mouth_tests": 3,
     "synthetic_browser": "pass",
@@ -862,7 +983,13 @@
       "runs/phase4b7b-audit/rp-js.log": "9a82f3fa68620a10074b6addab1b10d97b1b76f0e6a71b08a51a26176966528c",
       "runs/phase4b7b-audit/mouth-js.log": "385c7ced3322848651a25d827e11a220cdcf47244ce62d821e7f8b2a4e7e974c",
       "runs/phase4b7b-browser-fixture-v4/result.json": "287a888cfd49387e81833cdf5a631136979457f5cd72c87b6915dc1c2c8ffde4",
-      "runs/phase4b7b-browser-real/result.json": "fc97d99e973c33548cc91a3c44c6bc5bcb73a13ee6dbbcf63c95f60f2767a7a5"
+      "runs/phase4b7b-browser-real/result.json": "fc97d99e973c33548cc91a3c44c6bc5bcb73a13ee6dbbcf63c95f60f2767a7a5",
+      "runs/phase4b7b-audit/python-selected-review.log": "b3ccfb9c8043b0b168e3f77db3a7fa6c3555e964b86081dbac71b81a486a73d1",
+      "runs/phase4b7b-audit/rp-js-selected.log": "4d9f028fca33aa787bd8a30fb51cd959047e57a1907aecb89b7afa780cfa065c",
+      "runs/phase4b7b-audit/mouth-js-selected.log": "b4331b3b0b77107997fbc6a4d254d5746d9dfdf344e5e1e48fde3132e8ad8e3c",
+      "runs/phase4b7b-audit/python-selected-release.log": "f31b1e2cf1571fcbbd0591bcacf0fccd9da1dcff1d60772631854270a997accf",
+      "runs/phase4b7b-audit/selected-preservation.json": "a4948f3b1262c34b083ec5536bce880c27c03d24e647bb2822cdbd31f5176481",
+      "runs/phase4b7b-audit/selected-gallery-links.json": "141905bb9cb8221e3314ab2d880587a92fede6cdc10b3de0adfabbe5d0445e28"
     }
   }
 }

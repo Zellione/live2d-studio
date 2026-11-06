@@ -127,3 +127,24 @@ HTTP tests require permission to bind temporary loopback sockets. Browser QA use
 `tests/pose_reviewer_fixture_server.py`, with a dedicated ignored browser profile.
 Keep failed browser runs; test harness timing failures do not establish model
 quality or human approval.
+
+For the optional selected-only semantic comparison, use the existing pinned SAM
+worker through the analysis wrapper:
+
+```zsh
+UV_CACHE_DIR="$PWD/.cache/uv" uv run --frozen python scripts/phase4b7b_selected_semantics.py \
+  --run runs/phase4b7b-review --selection SAVED_ID \
+  --output runs/phase4b7b-review/selected-assessment-NEW
+```
+
+It acquires the same per-run GPU lock, verifies human selection before inference,
+and parses only the selected images plus a matching-resolution original baseline.
+The existing separate see-through environment and SAM checkpoint must be present;
+no download is performed. Connected arm-category components and mask overlaps are
+proposals, not joints or recovered anatomy. Results and overlays remain in the new
+ignored directory. The generic difference report stays separate from any later
+hash-bound development assessment.
+
+`scripts/phase4b7b_report.py --assessment PATH/assessment.json` can include that
+explicit assessment alongside the gallery records. It verifies the assessment's
+candidate, selected-set and semantic-report hashes. It never creates an approval.

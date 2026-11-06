@@ -511,3 +511,15 @@ unfinished tasks in fresh directories. Review/export remains standalone and
 loopback-only. Generated pixels are never promoted to independently known anatomy.
 Thirteen calibration cases expose remaining pose-control failures; feasibility
 requires user-selected useful candidates, not merely better-looking still images.
+
+
+### Phase 4B.7b human-selected follow-up
+
+The user selected candidate 2 in the right-arm batch. Its image hash and saved
+selection manifest were verified before inference. The unchanged SAM parser gives
+one substantial arm component on the original and two on the approved auxiliary.
+This supports a limited positive segmentation-feasibility conclusion. It does not
+supply an upper-arm/forearm split, reliable joints, exact hidden clothing or a
+validated pose family. Preserve the pose-compliance caveat: the approved image is
+closer to uncrossed arms-down than an explicit arm lift. Do not regenerate the
+approved pose, infer approval for the other candidates, or alter the frozen rig.

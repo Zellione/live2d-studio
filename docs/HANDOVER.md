@@ -15,9 +15,15 @@ Phase 4B.7a commit `c56a59d` was validated and pushed before implementation.
 - Thirteen controlled calibration cases retain important failures: cropped heads,
   hidden/missing arms, face/proportion drift and .8-denoise near-copies. Larger
   output improves inspected identity/style but does not guarantee pose compliance.
-- **Feasibility remains pending human selection and anatomical review.** Never
-  turn synthetic browser test approvals or development calibration notes into
-  Codel user approval. Selected-only diagnostics are difference panels, not GT.
+- User selected right-arm candidate 2 (`f63a611c…079d5`) and saved set
+  `34e5960402594190b38972b4797af192`. Selected-only SAM comparison finds one
+  substantial source arm component versus two visible auxiliary sleeve/hand regions.
+  **Limited positive segmentation benefit; joints/anatomy remain unverified.**
+  Much of the right upper arm is still occluded/unparsed. Other poses are pending.
+  Evidence: `runs/phase4b7b-review/selected-assessment-v1`. Do not turn synthetic
+  test decisions or development assessment into additional user approvals.
+- Follow-up: 180 Python tests and both JS suites pass. Selected set and frozen
+  references remain unchanged; no new pose generation or rig authoring.
 - Preserve `codel-combined-v1`, accepted Girl2/Sara, the original flat source,
   old negative evidence, model pins and deployment/semantic validation gates.
   Stop before final arm rigging or production deployment.

@@ -7,7 +7,7 @@ import shutil
 from live2d_studio.pose_review import Store,digest,write
 
 
-def build(calibrations,review,screening,output,benchmark):
+def build(calibrations,review,screening,output,benchmark,assessment=None):
     notes=json.loads(screening.read_text());store=Store(review);state=store.state()
     store.verify_pins(state,producer=False)
     output.mkdir(parents=True,exist_ok=False);shutil.copyfile(store.safe(state['source']['path']),output/'source.png')
@@ -41,12 +41,31 @@ def build(calibrations,review,screening,output,benchmark):
           'calibration':cases,'candidates':candidates,'poses':{k:v['status'] for k,v in state['poses'].items()},
           'human_approved_count':sum(p['status']=='approved' for p in state['poses'].values()),
           'anatomical_truth':False,'arm_rigging_solved':False,
-          'feasibility':'pending human selection and selected-only anatomical evaluation',
+          'feasibility':('human-selected images await separate anatomical evaluation' if any(p['status']=='approved' for p in state['poses'].values())
+                         else 'pending human selection and selected-only anatomical evaluation'),
           'artifacts':{'review_run':str(review),'gallery':str(output),'screening':str(screening)}}
+    if assessment:
+        evaluated=json.loads(assessment.read_text());semantic_file=assessment.parent/'semantics.json'
+        semantics=json.loads(semantic_file.read_text());approval=evaluated['human_visual_approval']
+        if digest(semantic_file)!=evaluated['semantic_report_sha256'] or semantics['source_sha256']!=state['source']['sha256']:
+            raise ValueError('Assessment evidence mismatch')
+        b,c=store.verify_candidate(state,approval['candidate'])
+        if state['poses'][b['pose']]['selected']!=c['id'] or approval['image_sha256']!=c['sha256']:
+            raise ValueError('Assessment does not belong to the selected candidate')
+        if semantics['selected'][b['pose']]['image_sha256']!=c['sha256']:
+            raise ValueError('Semantic assessment belongs to another image')
+        saved=next(e for e in state['exports'] if e['sha256']==approval['selection_sha256'])
+        if digest(store.safe('selections/'+saved['id']+'/selection.json'))!=saved['sha256'] or semantics['selection_sha256']!=saved['sha256']:
+            raise ValueError('Selected-set evidence changed')
+        data['feasibility']=evaluated['conclusion']
+        data['selected_evaluation']={'assessment':evaluated,'semantics':semantics,
+                                    'assessment_sha256':digest(assessment),'semantics_sha256':digest(semantic_file)}
+        data['artifacts']['selected_assessment']=str(assessment.parent)
     write(output/'summary.json',data);write(benchmark,data)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--calibration',type=Path,action='append',required=True)
     p.add_argument('--review',type=Path,required=True);p.add_argument('--screening',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True);p.add_argument('--benchmark',type=Path,required=True)
-    a=p.parse_args();build(a.calibration,a.review,a.screening,a.output,a.benchmark)
+    p.add_argument('--assessment',type=Path)
+    a=p.parse_args();build(a.calibration,a.review,a.screening,a.output,a.benchmark,a.assessment)
