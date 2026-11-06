@@ -523,3 +523,22 @@ supply an upper-arm/forearm split, reliable joints, exact hidden clothing or a
 validated pose family. Preserve the pose-compliance caveat: the approved image is
 closer to uncrossed arms-down than an explicit arm lift. Do not regenerate the
 approved pose, infer approval for the other candidates, or alter the frozen rig.
+
+
+## 2026-11-06 — Phase 4B.8 canonical working bases
+
+Canonicalization now precedes further helper-pose experiments. Keep it opt-in:
+original angled artwork remains the identity/style authority, while a separately
+human-approved frontal synthetic image may become the working geometry source.
+Never silently replace existing creation inputs or accepted runtime bundles.
+
+Reuse the reviewer’s fixed five-seed batches and guarded persistence. A canonical
+approval creates a recoverable, hash-bound working snapshot with separate original
+and synthetic files. Prepare future helpers only through an explicit command;
+record all input roles and do not claim three-reference visual validation without
+executing it. Preserve early mannequin-copy failures and all historical approvals.
+
+- Phase 4B.8 user selected canonical candidate 4 (image `ab2a52ae…d78da3e`).
+  The unchanged parser separates two substantial arm regions versus one merged
+  source region. Treat this as support for canonical-first decomposition; retain
+  synthetic anatomy uncertainty and test three-reference helpers in a later phase.

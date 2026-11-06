@@ -411,3 +411,20 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   per-run process/GPU locks. No unrelated workflow/settings/credential inspection.
 - Run Python regressions, both JS suites and synthetic reviewer browser checks.
   Stop after Phase 4B.7b; no final arm rigging, promotion or deployment.
+
+
+## Phase 4B.8 canonical front-facing base
+- Explicit user authorization covers an opt-in canonicalization stage before
+  further helper generation or arm rigging. Read docs/phase4b8-results.md and
+  docs/phase4b8-canonicalization.md. Existing production/default restrictions stay.
+- Use the original flat artwork plus a frontal guide; retain five seeded batches,
+  exact metadata and rejected outputs. Only human selection may freeze a base.
+- A canonical base is synthetic working geometry. Preserve the original as the
+  identity/style source, all historical references and the approved 4B.7b helper.
+- Freeze separate original/canonical payloads with approval and hashes. Reject
+  changed evidence; recover interrupted freezes without silently replacing files.
+- Future helper preparation is explicit and must bind canonical primary geometry
+  separately from original identity/style. No new helper inference, automatic
+  downstream migration, final arm rigging or production deployment in this phase.
+- Run Python/JS regressions and canonical reviewer checks; synthetic test approvals
+  never grant real image acceptance. Stop after Phase 4B.8.

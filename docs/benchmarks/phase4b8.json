@@ -1,0 +1,564 @@
+{
+  "schema_version": 1,
+  "phase": "4B.8",
+  "baseline_commit": "ad8340a",
+  "source_reference": "codel-combined-v1",
+  "original": {
+    "path": "assets/source.png",
+    "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "rights": "LisadiKaprio; CC-BY-4.0; https://opengameart.org/content/codel-visual-novel-sprite"
+  },
+  "workflow": "original -> canonical candidates -> human selection -> synthetic working freeze -> optional future helpers",
+  "producer_pins": {
+    "backends/inpainting/pose_worker.py": "bd5f6014c7297728272a8728a3bb82a4b51c066223cb977c6ffe16187803c3a1",
+    "backends/inpainting/qwen.py": "863c093bad744c755bc86f8a621009fbdc250e1d5195a5c88ba4f2279f341f8b",
+    "backends/inpainting/models.lock.json": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+    "backends/inpainting/qwen-env/uv.lock": "b66192d83c90714bc50fa84f9cc36148fdeb99fc9186ca07bf06247bb7b4e477",
+    "src/live2d_studio/pose_guides.py": "6f5b7f2e3f5f51914fe31a2cef378155f2b0a0afd13babab3fb339b9839408c7",
+    "backends/inpainting/pose_reference_worker.py": "75cbe07df5f45ce14a994d91ee09c0816dcfa3fd4dd85c65da4cae485289b90a",
+    "src/live2d_studio/canonical_pose.py": "c48e3e54765e64852bf48bbc43550d07265691a48a6e5a7834d435209c76d11e"
+  },
+  "model_lock_sha256": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+  "presets": {
+    "frontal-silhouette-1536-40": {
+      "long_edge": 1536,
+      "steps": 40,
+      "cfg": 4.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "source",
+      "mask": "none",
+      "guidance": "silhouette",
+      "cfg_norm": false,
+      "negative_prompt": ""
+    },
+    "frontal-skeleton-1536-40": {
+      "long_edge": 1536,
+      "steps": 40,
+      "cfg": 4.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "source",
+      "mask": "none",
+      "guidance": "skeleton",
+      "cfg_norm": false,
+      "negative_prompt": ""
+    },
+    "frontal-silhouette-empty-1536-40": {
+      "long_edge": 1536,
+      "steps": 40,
+      "cfg": 4.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "empty",
+      "mask": "none",
+      "guidance": "silhouette",
+      "cfg_norm": false,
+      "negative_prompt": ""
+    }
+  },
+  "candidates": [
+    {
+      "id": "b-62c26625a6664a98810b8361cea4b371-c1",
+      "batch": "b-62c26625a6664a98810b8361cea4b371",
+      "preset": "frontal-silhouette-1536-40",
+      "result": {
+        "id": "c1",
+        "seed": 3843414869068673,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Redraw the character in picture 1 as a straight-on front-facing neutral character base. The face, chest and pelvis face directly toward the viewer, with the nose centered between the eyes, level shoulders and both shoulders equally visible. No three-quarter turn, body lean or head tilt. Both arms hang relaxed slightly away from the torso, with both sleeves, wrists and hands visible. Leave a narrow background gap between each forearm and the torso. No crossed arms or hands behind the body. Use picture 2 only for the frontal body placement, not its mannequin appearance. Preserve the same recognizable facial features, neutral expression, hairstyle, outfit design, neckline, sleeves, hem, body proportions, illustration style and colour palette from picture 1. Keep the same head-to-upper-leg framing on plain white. Do not add feet beyond the original crop. Only reconstruct the previously hidden areas needed for this frontal neutral view.",
+        "negative_prompt": "",
+        "image_sha256": "74fc237f5691d503d961d929fc4b9a50d6bf6494fc0539fb6050acefb8f549b6",
+        "guide_sha256": "3172e0a3fd44fd36f65d41d170a9a12b7992943ff2497b100d43dca215892bbe",
+        "reference_latent_count": 2,
+        "identity_sha256": null,
+        "reference_roles": [
+          "primary geometry",
+          "target guide"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 170.05121936900105,
+        "peak_allocated_bytes": 22011136512,
+        "peak_reserved_bytes": 24540872704
+      },
+      "decision": null
+    },
+    {
+      "id": "b-62c26625a6664a98810b8361cea4b371-c2",
+      "batch": "b-62c26625a6664a98810b8361cea4b371",
+      "preset": "frontal-silhouette-1536-40",
+      "result": {
+        "id": "c2",
+        "seed": 472709781764267,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Redraw the character in picture 1 as a straight-on front-facing neutral character base. The face, chest and pelvis face directly toward the viewer, with the nose centered between the eyes, level shoulders and both shoulders equally visible. No three-quarter turn, body lean or head tilt. Both arms hang relaxed slightly away from the torso, with both sleeves, wrists and hands visible. Leave a narrow background gap between each forearm and the torso. No crossed arms or hands behind the body. Use picture 2 only for the frontal body placement, not its mannequin appearance. Preserve the same recognizable facial features, neutral expression, hairstyle, outfit design, neckline, sleeves, hem, body proportions, illustration style and colour palette from picture 1. Keep the same head-to-upper-leg framing on plain white. Do not add feet beyond the original crop. Only reconstruct the previously hidden areas needed for this frontal neutral view.",
+        "negative_prompt": "",
+        "image_sha256": "efbb1c58e54e37b2feb6e076f1aab5147b1b4bb87cc8be2d6922c86788d90f75",
+        "guide_sha256": "3172e0a3fd44fd36f65d41d170a9a12b7992943ff2497b100d43dca215892bbe",
+        "reference_latent_count": 2,
+        "identity_sha256": null,
+        "reference_roles": [
+          "primary geometry",
+          "target guide"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 170.45602889899965,
+        "peak_allocated_bytes": 21258814976,
+        "peak_reserved_bytes": 22074621952
+      },
+      "decision": null
+    },
+    {
+      "id": "b-62c26625a6664a98810b8361cea4b371-c3",
+      "batch": "b-62c26625a6664a98810b8361cea4b371",
+      "preset": "frontal-silhouette-1536-40",
+      "result": {
+        "id": "c3",
+        "seed": 326914394493462,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Redraw the character in picture 1 as a straight-on front-facing neutral character base. The face, chest and pelvis face directly toward the viewer, with the nose centered between the eyes, level shoulders and both shoulders equally visible. No three-quarter turn, body lean or head tilt. Both arms hang relaxed slightly away from the torso, with both sleeves, wrists and hands visible. Leave a narrow background gap between each forearm and the torso. No crossed arms or hands behind the body. Use picture 2 only for the frontal body placement, not its mannequin appearance. Preserve the same recognizable facial features, neutral expression, hairstyle, outfit design, neckline, sleeves, hem, body proportions, illustration style and colour palette from picture 1. Keep the same head-to-upper-leg framing on plain white. Do not add feet beyond the original crop. Only reconstruct the previously hidden areas needed for this frontal neutral view.",
+        "negative_prompt": "",
+        "image_sha256": "137ca8c5f2dc53ef4ec220bcca5ce2fabd011379f76b17fa89c04199d653c634",
+        "guide_sha256": "3172e0a3fd44fd36f65d41d170a9a12b7992943ff2497b100d43dca215892bbe",
+        "reference_latent_count": 2,
+        "identity_sha256": null,
+        "reference_roles": [
+          "primary geometry",
+          "target guide"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 170.22412131000237,
+        "peak_allocated_bytes": 21258810880,
+        "peak_reserved_bytes": 22074621952
+      },
+      "decision": null
+    },
+    {
+      "id": "b-62c26625a6664a98810b8361cea4b371-c4",
+      "batch": "b-62c26625a6664a98810b8361cea4b371",
+      "preset": "frontal-silhouette-1536-40",
+      "result": {
+        "id": "c4",
+        "seed": 2801932010064774,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Redraw the character in picture 1 as a straight-on front-facing neutral character base. The face, chest and pelvis face directly toward the viewer, with the nose centered between the eyes, level shoulders and both shoulders equally visible. No three-quarter turn, body lean or head tilt. Both arms hang relaxed slightly away from the torso, with both sleeves, wrists and hands visible. Leave a narrow background gap between each forearm and the torso. No crossed arms or hands behind the body. Use picture 2 only for the frontal body placement, not its mannequin appearance. Preserve the same recognizable facial features, neutral expression, hairstyle, outfit design, neckline, sleeves, hem, body proportions, illustration style and colour palette from picture 1. Keep the same head-to-upper-leg framing on plain white. Do not add feet beyond the original crop. Only reconstruct the previously hidden areas needed for this frontal neutral view.",
+        "negative_prompt": "",
+        "image_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "guide_sha256": "3172e0a3fd44fd36f65d41d170a9a12b7992943ff2497b100d43dca215892bbe",
+        "reference_latent_count": 2,
+        "identity_sha256": null,
+        "reference_roles": [
+          "primary geometry",
+          "target guide"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 170.0972631620025,
+        "peak_allocated_bytes": 21258810880,
+        "peak_reserved_bytes": 22074621952
+      },
+      "decision": {
+        "action": "accept",
+        "pose": "canonical",
+        "candidate": "b-62c26625a6664a98810b8361cea4b371-c4",
+        "reason": "",
+        "reviewer_kind": "human",
+        "time": 1793981036.6653795,
+        "image_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e"
+      }
+    },
+    {
+      "id": "b-62c26625a6664a98810b8361cea4b371-c5",
+      "batch": "b-62c26625a6664a98810b8361cea4b371",
+      "preset": "frontal-silhouette-1536-40",
+      "result": {
+        "id": "c5",
+        "seed": 2322707022841343,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Redraw the character in picture 1 as a straight-on front-facing neutral character base. The face, chest and pelvis face directly toward the viewer, with the nose centered between the eyes, level shoulders and both shoulders equally visible. No three-quarter turn, body lean or head tilt. Both arms hang relaxed slightly away from the torso, with both sleeves, wrists and hands visible. Leave a narrow background gap between each forearm and the torso. No crossed arms or hands behind the body. Use picture 2 only for the frontal body placement, not its mannequin appearance. Preserve the same recognizable facial features, neutral expression, hairstyle, outfit design, neckline, sleeves, hem, body proportions, illustration style and colour palette from picture 1. Keep the same head-to-upper-leg framing on plain white. Do not add feet beyond the original crop. Only reconstruct the previously hidden areas needed for this frontal neutral view.",
+        "negative_prompt": "",
+        "image_sha256": "045a3fdf37cb3fa60b58e79819bc5432856eeb396c8d9bd8e3fd4a24697429ad",
+        "guide_sha256": "3172e0a3fd44fd36f65d41d170a9a12b7992943ff2497b100d43dca215892bbe",
+        "reference_latent_count": 2,
+        "identity_sha256": null,
+        "reference_roles": [
+          "primary geometry",
+          "target guide"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 170.0855365770003,
+        "peak_allocated_bytes": 21258810880,
+        "peak_reserved_bytes": 22213033984
+      },
+      "decision": null
+    }
+  ],
+  "status": "approved",
+  "canonical_reference": {
+    "manifest": "canonical/b-62c26625a6664a98810b8361cea4b371-c4/manifest.json",
+    "sha256": "8d15231abbb8e648e1f1663abd16a7cdd5323296c1361f91c3115e31f2610725"
+  },
+  "frozen_manifest": {
+    "schema_version": 1,
+    "reference_name": "canonical-6b5e2a376dcd471fab4c2005bd95e638",
+    "kind": "reviewed-synthetic-canonical-working-base",
+    "run_id": "6b5e2a376dcd471fab4c2005bd95e638",
+    "original": {
+      "path": "original.png",
+      "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+      "rights": "LisadiKaprio; CC-BY-4.0; https://opengameart.org/content/codel-visual-novel-sprite"
+    },
+    "canonical": {
+      "path": "canonical.png",
+      "sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e"
+    },
+    "approval": {
+      "action": "accept",
+      "pose": "canonical",
+      "candidate": "b-62c26625a6664a98810b8361cea4b371-c4",
+      "reason": "",
+      "reviewer_kind": "human",
+      "time": 1793981036.6653795,
+      "image_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e"
+    },
+    "candidate": "b-62c26625a6664a98810b8361cea4b371-c4",
+    "seed": 2801932010064774,
+    "config": {
+      "long_edge": 1536,
+      "steps": 40,
+      "cfg": 4.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "source",
+      "mask": "none",
+      "guidance": "silhouette",
+      "cfg_norm": false,
+      "negative_prompt": ""
+    },
+    "prompt": "Redraw the character in picture 1 as a straight-on front-facing neutral character base. The face, chest and pelvis face directly toward the viewer, with the nose centered between the eyes, level shoulders and both shoulders equally visible. No three-quarter turn, body lean or head tilt. Both arms hang relaxed slightly away from the torso, with both sleeves, wrists and hands visible. Leave a narrow background gap between each forearm and the torso. No crossed arms or hands behind the body. Use picture 2 only for the frontal body placement, not its mannequin appearance. Preserve the same recognizable facial features, neutral expression, hairstyle, outfit design, neckline, sleeves, hem, body proportions, illustration style and colour palette from picture 1. Keep the same head-to-upper-leg framing on plain white. Do not add feet beyond the original crop. Only reconstruct the previously hidden areas needed for this frontal neutral view.",
+    "negative_prompt": "",
+    "guide_sha256": "3172e0a3fd44fd36f65d41d170a9a12b7992943ff2497b100d43dca215892bbe",
+    "plan_sha256": "6ebe224f3716ef61688bd255561b3d7ddab10a8746eee4fc75213ad62e0bc186",
+    "producer_pins": {
+      "backends/inpainting/pose_worker.py": "bd5f6014c7297728272a8728a3bb82a4b51c066223cb977c6ffe16187803c3a1",
+      "backends/inpainting/qwen.py": "863c093bad744c755bc86f8a621009fbdc250e1d5195a5c88ba4f2279f341f8b",
+      "backends/inpainting/models.lock.json": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+      "backends/inpainting/qwen-env/uv.lock": "b66192d83c90714bc50fa84f9cc36148fdeb99fc9186ca07bf06247bb7b4e477",
+      "src/live2d_studio/pose_guides.py": "6f5b7f2e3f5f51914fe31a2cef378155f2b0a0afd13babab3fb339b9839408c7",
+      "backends/inpainting/pose_reference_worker.py": "75cbe07df5f45ce14a994d91ee09c0816dcfa3fd4dd85c65da4cae485289b90a",
+      "src/live2d_studio/canonical_pose.py": "c48e3e54765e64852bf48bbc43550d07265691a48a6e5a7834d435209c76d11e"
+    },
+    "anatomically_verified": false,
+    "scope": "Synthetic working geometry only; original remains identity/style authority; no accepted rig replacement"
+  },
+  "evaluation": "Human-approved synthetic working base; selected-only segmentation comparison recorded; anatomy unverified",
+  "default_changes": false,
+  "historical_references_modified": false,
+  "helper_poses_generated": 0,
+  "arm_rigging_started": false,
+  "production_access": false,
+  "downloads": false,
+  "artifacts": {
+    "review_run": "runs/phase4b8-canonical",
+    "gallery": "runs/phase4b8-review-final"
+  },
+  "development_screening": {
+    "original_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "reviewer_kind": "development agent visual screening",
+    "human_approval": false,
+    "anatomy_verified": false,
+    "candidates": [
+      {
+        "candidate": "b-62c26625a6664a98810b8361cea4b371-c1",
+        "sha256": "74fc237f5691d503d961d929fc4b9a50d6bf6494fc0539fb6050acefb8f549b6",
+        "screen": "unsuitable",
+        "observation": "Mannequin copying; severe identity, anatomy and outfit/style drift."
+      },
+      {
+        "candidate": "b-62c26625a6664a98810b8361cea4b371-c2",
+        "sha256": "efbb1c58e54e37b2feb6e076f1aab5147b1b4bb87cc8be2d6922c86788d90f75",
+        "screen": "promising with limitations",
+        "observation": "Recognizable frontal face and outfit, separated arms and exposed torso; missing visible upper legs, slimmed proportions and simplified hands."
+      },
+      {
+        "candidate": "b-62c26625a6664a98810b8361cea4b371-c3",
+        "sha256": "137ca8c5f2dc53ef4ec220bcca5ce2fabd011379f76b17fa89c04199d653c634",
+        "screen": "unsuitable",
+        "observation": "Long narrow neck and rectangular torso; missing skirt/legs, changed neckline, expression and proportions."
+      },
+      {
+        "candidate": "b-62c26625a6664a98810b8361cea4b371-c4",
+        "sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "screen": "strongest candidate for human review",
+        "observation": "Recognizable frontal head and outfit; level visible shoulders, bilateral sleeve/hand silhouettes and exposed torso; preserves upper-leg crop. Hand anatomy, face/proportions and generated hidden clothing still uncertain."
+      },
+      {
+        "candidate": "b-62c26625a6664a98810b8361cea4b371-c5",
+        "sha256": "045a3fdf37cb3fa60b58e79819bc5432856eeb396c8d9bd8e3fd4a24697429ad",
+        "screen": "unsuitable",
+        "observation": "Mannequin proportions, narrow long neck, redesigned neckline/face and flat rectangular skirt; missing visible upper legs."
+      }
+    ]
+  },
+  "validation_evidence": {
+    "runs/phase4b8-audit/python-regression.log": "50325f644e00550a4f64db3726fe38d9c5395e10680345a293fcac9194a87f61",
+    "runs/phase4b8-audit/pose-final-host.log": "81e1877b556dfa1639dfce649c827dba17ef4d24ebb14ce038959d7202ff43b8",
+    "runs/phase4b8-audit/rp-js.log": "a4712940717437b82e4dc0dd3b77a817b9b14fcf6a09616ae2aa343b3894bf79",
+    "runs/phase4b8-audit/mouth-js.log": "f2164c4d9bca0c739345919b4f505020038eb74801b3a54f6a20135e3675b4cc",
+    "runs/phase4b8-browser-synthetic/result.json": "10387228899d8e4ade6fbc87d21a377aa10b940349efb5d5060fc8cc55032988",
+    "runs/phase4b8-browser-complete/result.json": "1be9be964d9f1afbdcd75059c6db5f19c1ce14cfec17bef56c0fd8874ed1b134"
+  },
+  "selected_semantics": {
+    "selection_sha256": "9dfbca90eb88a76d1377d79871d58812530654b3b50590d062b8db280941228c",
+    "parser_lock_sha256": "a0f5d0b5559521a91b617772c1eaf009ecd0fe0e53584db7bc7ba44e17ecd3d3",
+    "source_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "baseline": {
+      "1536": {
+        "image_sha256": "3050737c18235a85907653428a0a5fe27dbdc20b98637419529a9057746a76e1",
+        "sam_metadata_sha256": "909e4cf866f4399ef948a09f951ae5409d3968e8800bfe7b37281b64b95222cf",
+        "arm_mask_sha256": "f321a40268210c88ba872c173bf1e5aed6aad13dec3147097665ce0bfa45ef72",
+        "torso_mask_sha256": "8b4ba66bcdcf979d0e4e5ccb98c064e1d2698f5ed95951e23a8628a6f9515d6c",
+        "arm_pixels": 121048,
+        "substantial_arm_components": 1,
+        "components": [
+          {
+            "label": 1,
+            "pixels": 121013,
+            "centroid": [
+              377.7595878128796,
+              772.3322866138349
+            ],
+            "bbox": [
+              118,
+              391,
+              595,
+              1298
+            ]
+          }
+        ],
+        "arm_torso_overlap_pixels": 3084,
+        "minimum_component_pixels": 6052,
+        "side_assignment": "image-space ordering only; not verified anatomical ownership",
+        "joints": "SAM does not separate shoulder, upper arm, elbow, forearm, wrist or hand",
+        "hidden_anatomy_verified": false
+      }
+    },
+    "selected": {
+      "canonical": {
+        "image_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "sam_metadata_sha256": "cc8f017be18fb613153cd989c6144b5b4c86919c1208832e8e78f5f1e82c2296",
+        "arm_mask_sha256": "32e22b5cbf71378a9f2d64a269b4b4af791b6b5273852362c0c02d67d713d83d",
+        "torso_mask_sha256": "753645267069d955ce7f8ce11e711cde787586c522a2592415e496e78d1284eb",
+        "arm_pixels": 118477,
+        "substantial_arm_components": 2,
+        "components": [
+          {
+            "label": 2,
+            "pixels": 59658,
+            "centroid": [
+              175.19025109792483,
+              894.167923832512
+            ],
+            "bbox": [
+              99,
+              465,
+              246,
+              1324
+            ]
+          },
+          {
+            "label": 1,
+            "pixels": 58819,
+            "centroid": [
+              626.0498818409018,
+              901.9642802495792
+            ],
+            "bbox": [
+              555,
+              464,
+              703,
+              1323
+            ]
+          }
+        ],
+        "arm_torso_overlap_pixels": 1481,
+        "minimum_component_pixels": 5923,
+        "side_assignment": "image-space ordering only; not verified anatomical ownership",
+        "joints": "SAM does not separate shoulder, upper arm, elbow, forearm, wrist or hand",
+        "hidden_anatomy_verified": false,
+        "baseline_long_edge": 1536,
+        "human_approval_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e"
+      }
+    },
+    "scope": "Selected-only exploratory segmentation; generated pixels and mask labels are not anatomy truth",
+    "threshold": "positive SAM logits; components >= max(32 pixels, 5 percent of arm mask)",
+    "correspondence": "No pixel registration or hidden-clothing area measurement; generated pose proportions differ."
+  }
+}

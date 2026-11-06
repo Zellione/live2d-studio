@@ -1,5 +1,27 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.8 — canonical front-facing working base
+
+Read [results](phase4b8-results.md), [canonical workflow](phase4b8-canonicalization.md)
+and [benchmark](benchmarks/phase4b8.json). This phase supersedes further auxiliary
+pose generation/rigging with a separate human-reviewed canonicalization stage.
+
+- Run `runs/phase4b8-canonical`, localhost 8798. User approved candidate 4
+  (`ab2a52ae…d78da3e`); its original/synthetic freeze is manifest-bound. Five
+  candidates and failed mannequin outputs remain retained. Selected-only SAM
+  finds two separate arm regions versus the original merged region, without
+  establishing joints or hidden anatomy. Gallery: `runs/phase4b8-review-final`.
+- Approving a candidate freezes separate original/canonical payloads and a
+  hash-bound manifest. No automatic helper generation or creation migration.
+- `init-from-canonical` only prepares a future run: canonical primary geometry,
+  target guide, original identity/style. Three-reference helper inference is not
+  visually/GPU evaluated in this phase. Historical producer pins remain usable.
+- Preserve the Phase 4B.7b human-selected candidate and all frozen Codel/Girl2/Sara
+  references. New canonical art is synthetic working evidence, not verified
+  anatomy or an accepted rig replacement. Stop after Phase 4B.8 without rigging
+  or production deployment.
+
+
 ## Current Phase 4B.7b — local human pose review (2026-11-06)
 
 Read [results](phase4b7b-results.md), [generation audit](phase4b7b-generation.md),

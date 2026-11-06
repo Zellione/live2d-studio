@@ -61,7 +61,8 @@ def validate_preset(cfg):
         if not isinstance(cfg.get(key,''),str) or len(cfg.get(key,''))>2000:raise ValueError('Invalid prompt text')
 
 
-def initialize(root,source,presets,rights):
+def initialize(root,source,presets,rights,*,workflow='auxiliary'):
+    if workflow not in ('auxiliary','canonical','canonical-helpers'):raise ValueError('Unknown review workflow')
     root=root.resolve();source=source.resolve()
     if not root.is_relative_to(REPO/'runs') or root.is_relative_to(REPO/'runs/references'):
         raise ValueError('New reviewer runs must be under project runs/, outside references')
@@ -70,11 +71,16 @@ def initialize(root,source,presets,rights):
     root.mkdir(parents=True,exist_ok=False);(root/'assets').mkdir();(root/'batches').mkdir()
     shutil.copyfile(source,root/'assets/source.png')
     im=Image.open(source).convert('RGBA');supported={}
-    for pose,(title,_) in POSES.items():
+    poses=POSES;make_guide=guide
+    if workflow!='auxiliary':
+        from .canonical_pose import frontal_guide,TITLE
+        make_guide=frontal_guide
+        if workflow=='canonical':poses={'canonical':(TITLE,'')}
+    for pose,(title,_) in poses.items():
         try:
             files={}
             for kind in ('skeleton','silhouette'):
-                g,points=guide(im,pose,kind);name=f'assets/{pose}-{kind}.png';g.save(root/name)
+                g,points=make_guide(im,pose,kind);name=f'assets/{pose}-{kind}.png';g.save(root/name)
                 files[kind]={'path':name,'sha256':digest(root/name),'joints':points}
             supported[pose]={'title':title,'status':'pending','selected':None,'guides':files}
         except ValueError as exc:supported[pose]={'title':title,'status':'unsupported','selected':None,'reason':str(exc),'guides':{}}
@@ -83,6 +89,13 @@ def initialize(root,source,presets,rights):
     state={'schema_version':1,'run_id':uuid.uuid4().hex,'source':{'path':'assets/source.png','sha256':digest(source),'rights':rights},
            'presets':presets,'presets_sha256':fingerprint(presets),'producer_pins':pins,'poses':supported,
            'batches':[],'used_seeds':[],'events':[],'exports':[]}
+    if workflow!='auxiliary':
+        from .canonical_pose import WORKER,PROMPT
+        state.update(workflow=workflow,worker=WORKER)
+        for name in (WORKER,'src/live2d_studio/canonical_pose.py'):pins[name]=digest(REPO/name)
+        if workflow=='canonical':
+            state['poses']['canonical']['prompt']=PROMPT
+            state['definition_sha256']=fingerprint({'workflow':workflow,'prompt':PROMPT})
     write(root/'review.json',state)
     return Store(root)
 
@@ -108,8 +121,25 @@ class Store:
             write(self.root/'review.json',state)
 
     def verify_pins(self,state,producer=True):
+        if state.get('workflow') in ('canonical','canonical-helpers'):
+            from .canonical_pose import WORKER
+            if state.get('worker')!=WORKER:raise ValueError('Canonical worker binding changed')
+        if state.get('workflow')=='canonical-helpers' and (not state.get('identity_reference') or not state.get('canonical_origin')):
+            raise ValueError('Canonical helper initialization is incomplete')
         if fingerprint(state['presets'])!=state['presets_sha256']:raise ValueError('Preset changed')
         if digest(self.safe(state['source']['path']))!=state['source']['sha256']:raise ValueError('Source changed')
+        if state.get('workflow')=='canonical':
+            if fingerprint({'workflow':'canonical','prompt':state['poses']['canonical']['prompt']})!=state['definition_sha256']:
+                raise ValueError('Canonical prompt changed')
+        if state.get('identity_reference'):
+            item=state['identity_reference']
+            if digest(self.safe(item['path']))!=item['sha256']:raise ValueError('Original identity reference changed')
+        if state.get('canonical_origin'):
+            item=state['canonical_origin']
+            if digest(self.safe('canonical-provenance.json'))!=item['local_provenance_sha256'] or state['source']['sha256']!=item['canonical_sha256']:
+                raise ValueError('Canonical provenance changed')
+            if state['identity_reference']['sha256']!=item['original_sha256']:
+                raise ValueError('Canonical identity/geometry roles changed')
         if producer:
             for name,h in state['producer_pins'].items():
                 if digest(REPO/name)!=h:raise ValueError('Producer changed; use a fresh review run: '+name)
@@ -147,6 +177,8 @@ class Store:
                         or row['prompt']!=task['prompt'] or row.get('negative_prompt','')!=task['negative_prompt']
                         or row['guide_sha256']!=plan['inputs']['guide.png'] or digest(im)!=row['image_sha256']):
                         raise ValueError('Worker result does not match reserved candidate')
+                    if plan.get('identity') and row.get('identity_sha256')!=plan['inputs'][plan['identity']]:
+                        raise ValueError('Worker identity reference mismatch')
                     c.update(status='ready',image=c['directory']+'/image.png',sha256=row['image_sha256'],result=row)
             if batch['status']=='running':
                 report=self.safe(batch.get('execution_directory',batch['directory']))/'report.json'
@@ -162,7 +194,12 @@ class Store:
                         os.close(fd);batch['status']='interrupted'
 
     def state(self):
-        with self.transaction() as s:self.reconcile(s);return s
+        with self.transaction() as s:
+            self.reconcile(s)
+            if s.get('workflow')=='canonical':
+                from .canonical_reference import ensure_freeze
+                ensure_freeze(self,s)
+            return s
 
     @staticmethod
     def candidate(state,cid):
@@ -194,6 +231,7 @@ class Store:
                 if action=='accept':p.update(status='approved',selected=cid,approval=event)
                 else:p['status']='rejected'
             s['events'].append(event)
+        if action=='accept' and s.get('workflow')=='canonical':self.state()
         return event
 
     def reserve(self,pose,preset):
@@ -212,15 +250,26 @@ class Store:
                 shutil.copyfile(self.safe(g['path']),folder/'guide.png')
                 if digest(folder/'source.png')!=s['source']['sha256'] or digest(folder/'guide.png')!=g['sha256']:
                     raise ValueError('Input changed while reserving batch')
-                text=prompt(pose,cfg['guidance'])+(' '+cfg['prompt_suffix'] if cfg.get('prompt_suffix') else '')
+                text=p.get('prompt') or prompt(pose,cfg['guidance'])
+                if s.get('workflow')=='canonical-helpers':
+                    text=('Picture 1 is the reviewed synthetic front-facing base and primary geometry. '
+                          'Picture 2 is the target pose guide. Picture 3 is the original character for identity, '
+                          'facial features, clothing and style only; do not restore its angled or crossed-arm pose. '+text)
+                text+=(' '+cfg['prompt_suffix'] if cfg.get('prompt_suffix') else '')
                 tasks=[{'id':'c'+str(i+1),'seed':seed,'config':cfg,'prompt':text,
                         'negative_prompt':cfg.get('negative_prompt',''),'guide':'guide.png'} for i,seed in enumerate(seeds)]
                 plan={'source':'source.png','inputs':{n:digest(folder/n) for n in ('source.png','guide.png')},
                       'model_lock_sha256':s['producer_pins']['backends/inpainting/models.lock.json'],'tasks':tasks}
+                if s.get('identity_reference'):
+                    identity=s['identity_reference'];shutil.copyfile(self.safe(identity['path']),folder/'identity.png')
+                    if digest(folder/'identity.png')!=identity['sha256']:raise ValueError('Identity changed during copy')
+                    plan['identity']='identity.png';plan['inputs']['identity.png']=identity['sha256']
+                    plan['canonical_origin']=s['canonical_origin']
                 write(folder/'plan.json',plan)
                 batch={'id':bid,'pose':pose,'preset':preset,'config':cfg,'config_sha256':fingerprint(cfg),
                        'directory':directory,'plan_sha256':digest(folder/'plan.json'),'status':'running','created':time.time(),
                        'candidates':[{'id':bid+'-'+t['id'],'task_id':t['id'],'seed':t['seed'],'directory':directory+'/'+t['id'],'status':'pending'} for t in tasks]}
+                if s.get('worker'):batch['worker']=s['worker']
                 s['used_seeds']+=seeds;s['batches'].append(batch)
             return batch,fd
         except BaseException:os.close(fd);raise
@@ -229,7 +278,9 @@ class Store:
         try:
             folder=self.safe(batch.get('execution_directory',batch['directory']))
             with (folder/'worker.log').open('a') as log:
-                proc=runner([str(REPO/'backends/inpainting/qwen-env/.venv/bin/python'),str(REPO/'backends/inpainting/pose_worker.py'),
+                worker=batch.get('worker','backends/inpainting/pose_worker.py')
+                if worker not in ('backends/inpainting/pose_worker.py','backends/inpainting/pose_reference_worker.py'):raise ValueError('Unknown worker')
+                proc=runner([str(REPO/'backends/inpainting/qwen-env/.venv/bin/python'),str(REPO/worker),
                              '--plan',str(folder/'plan.json')],cwd=REPO,stdout=log,stderr=subprocess.STDOUT,pass_fds=(fd,),timeout=3600)
             with self.transaction() as s:
                 self.reconcile(s)
@@ -264,7 +315,10 @@ class Store:
                     else:missing.append(c['task_id'])
                 if not missing:raise ValueError('No unfinished candidates')
                 directory=b['directory']+'/retry-'+uuid.uuid4().hex;folder=self.safe(directory);folder.mkdir()
-                for name in ('source.png','guide.png'):shutil.copyfile(original.parent/name,folder/name)
+                for name in plan['inputs']:
+                    source=(original.parent/name).resolve()
+                    if not source.is_relative_to(original.parent):raise ValueError('Invalid plan input')
+                    shutil.copyfile(source,folder/name)
                 plan['tasks']=[t for t in plan['tasks'] if t['id'] in missing];write(folder/'plan.json',plan)
                 for c in b['candidates']:
                     if c['task_id'] in missing:c['directory']=directory+'/'+c['task_id']
@@ -276,6 +330,9 @@ class Store:
     def finish(self,reviewer='local user'):
         with self.transaction() as s:
             self.reconcile(s);self.verify_pins(s,producer=False)
+            if s.get('workflow')=='canonical':
+                from .canonical_reference import ensure_freeze
+                ensure_freeze(self,s)
             if any(b['status']=='running' for b in s['batches']):raise ValueError('Wait for the active batch')
             selected={};export_id=uuid.uuid4().hex;folder=self.root/'selections'/export_id;folder.mkdir(parents=True)
             for pose,p in s['poses'].items():
@@ -289,12 +346,14 @@ class Store:
             manifest={'schema_version':1,'run_id':s['run_id'],'source':s['source'],'producer_pins':s['producer_pins'],
                       'selected':selected,'poses':{k:v['status'] for k,v in s['poses'].items()},'reviewer':reviewer,
                       'scope':'Human-selected synthetic auxiliary poses, not anatomy or rig approval','created':time.time()}
+            if s.get('canonical_reference'):manifest['canonical_reference']=s['canonical_reference']
             write(folder/'selection.json',manifest);s['exports'].append({'id':export_id,'sha256':digest(folder/'selection.json')})
             return manifest
 
     def asset(self,key):
         s=self.state()
         if key=='source':record=s['source']
+        elif key=='identity' and s.get('identity_reference'):record=s['identity_reference']
         elif key.startswith('guide/'):
             _,pose,kind=key.split('/');record=s['poses'][pose]['guides'][kind]
         else:

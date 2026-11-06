@@ -32,7 +32,9 @@ def make_server(store,port=8795):
             try:
                 self.guard()
                 if self.path=='/api/state':
-                    data=store.state();data['csrf']=token;data['reasons']=REASONS;self.send(200,data)
+                    data=store.state();data['csrf']=token
+                    data['reasons']=REASONS+(['not frontal','shoulders hidden','arms overlap','non-neutral expression'] if data.get('workflow')=='canonical' else [])
+                    self.send(200,data)
                 elif self.path in ('/','/app.js','/style.css'):
                     name={'/':'index.html','/app.js':'app.js','/style.css':'style.css'}[self.path]
                     kind={'/':'text/html; charset=utf-8','/app.js':'text/javascript; charset=utf-8','/style.css':'text/css; charset=utf-8'}[self.path]
