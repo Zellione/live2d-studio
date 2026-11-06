@@ -1,5 +1,27 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.8.1 — canonical-based guided gestures
+
+Read [results](phase4b8-1-results.md), [generation](phase4b8-1-gesture-generation.md)
+and [benchmark](benchmarks/phase4b8-1.json). New run:
+`runs/phase4b8-1-gestures`, localhost 8800. Original, canonical and previous
+selections stay frozen. The opt-in `chest-forearm-v1` profile requests anatomical
+right forearm up (viewer left), elbow bent and hand at chest height.
+
+- image1 canonical, image2 guide, image3 original identity/style. Actual retained
+  reference count and shapes are recorded; missing third-reference evidence fails.
+- Gesture compliance is distinct from identity and segmentation. Arms-down edits
+  do not satisfy this target. Development screening never makes human approval.
+- Only manually selected images enter the pinned SAM comparison; the baseline is
+  the synthetic canonical base. No new verified source anatomy is recovered.
+- User rejected all five: four arms-down, one bent arm with no hand. No selected
+  helper exists, so no new SAM analysis ran. A matched two-reference diagnostic
+  bends the arm with a present hand; it is not approved or substituted silently.
+- Other target poses are prepared but not generated. Gallery:
+  `runs/phase4b8-1-review-final`, localhost 8801. Defer final rigging; first validate
+  revised conditioning with a reviewed repeat batch. Stop after Phase 4B.8.1.
+
+
 ## Current Phase 4B.8 — canonical front-facing working base
 
 Read [results](phase4b8-results.md), [canonical workflow](phase4b8-canonicalization.md)

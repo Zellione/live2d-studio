@@ -542,3 +542,16 @@ executing it. Preserve early mannequin-copy failures and all historical approval
   The unchanged parser separates two substantial arm regions versus one merged
   source region. Treat this as support for canonical-first decomposition; retain
   synthetic anatomy uncertainty and test three-reference helpers in a later phase.
+
+## Phase 4B.8.1 — separate reference processing from gesture compliance
+
+- Preserve the approved canonical and use a new opt-in bent-forearm profile.
+  Actual Qwen execution retains three reference tensors; missing third-reference
+  evidence must fail, never trigger an implicit two-reference fallback.
+- The user rejected all five initial candidates: four arms-down, one missing the
+  raised hand. No approved helper means no new SAM analysis or rigging evidence.
+- A matched two-reference control produces a bent arm with a present hand. Treat
+  this as reference-family evidence for revised conditioning, not universal model
+  limits or anatomical proof. It remains separate and unapproved.
+- Keep skeletal deformation and discrete gesture variants as future alternatives;
+  neither should begin before complete, reviewed gesture evidence exists.

@@ -26,6 +26,7 @@ def analyze(run,selection,output):
             raise ValueError('Selected evidence/approval changed')
     output.mkdir(parents=True,exist_ok=False)
     source=Image.open(store.safe(state['source']['path']));sections=[];report={}
+    baseline_label='Canonical synthetic base' if state.get('canonical_origin') else 'Original'
     for pose,row in manifest['selected'].items():
         candidate=Image.open(manifest_file.parent/row['image']).convert('RGB')
         original=fit(source,row['config']['long_edge'])
@@ -41,7 +42,7 @@ def analyze(run,selection,output):
             'checklist':['bilateral arm ownership','shoulders and elbows','wrists and fingers','sleeve boundaries',
                          'new torso coverage','occlusion/draw order','cross-pose anatomical contradictions'],
             'limitation':'Overlay detects repainting, displacement and exposure together; it cannot label hidden-region truth.'}
-        sections.append(f'<h2>{html.escape(pose)}</h2><p>Original / selected synthetic image / difference overlay</p><img src="{pose}.png" style="max-width:100%">')
+        sections.append(f'<h2>{html.escape(pose)}</h2><p>{baseline_label} / selected synthetic image / difference overlay</p><img src="{pose}.png" style="max-width:100%">')
     write(output/'analysis.json',{'selection_sha256':record['sha256'],'poses':report})
     (output/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Selected pose diagnostics</title><h1>Human-selected auxiliary poses</h1><p>Generated anatomy remains unverified. Colour differences are not segmentation labels.</p>'+''.join(sections))
     return report

@@ -55,9 +55,12 @@ def load_frozen(run):
     return store,state,data
 
 
-def initialize_helpers(run,output,presets):
+def initialize_helpers(run,output,presets,*,gesture_profile=None):
     """Explicit opt-in preparation only. No helper inference or migration occurs."""
     from .pose_review import initialize,digest,write
+    if gesture_profile is not None:
+        from .gesture_profile import PROFILE
+        if gesture_profile!=PROFILE:raise ValueError('Unknown gesture profile')
     store,state,data=load_frozen(run);folder=store.safe(state['canonical_reference']['manifest']).parent
     target=initialize(output,folder/'canonical.png',presets,data['original']['rights'],workflow='canonical-helpers')
     with target.transaction() as current:
@@ -67,4 +70,7 @@ def initialize_helpers(run,output,presets):
                                      'canonical_sha256':data['canonical']['sha256'],'original_sha256':data['original']['sha256']}
         write(target.root/'canonical-provenance.json',data)
         current['canonical_origin']['local_provenance_sha256']=digest(target.root/'canonical-provenance.json')
+    if gesture_profile is not None:
+        from .gesture_profile import apply
+        apply(target,gesture_profile)
     return target

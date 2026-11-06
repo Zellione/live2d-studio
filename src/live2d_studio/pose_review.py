@@ -140,6 +140,9 @@ class Store:
                 raise ValueError('Canonical provenance changed')
             if state['identity_reference']['sha256']!=item['original_sha256']:
                 raise ValueError('Canonical identity/geometry roles changed')
+        if state.get('gesture_profile'):
+            from .gesture_profile import definition
+            if fingerprint(definition(state))!=state['gesture_definition_sha256']:raise ValueError('Gesture definition changed')
         if producer:
             for name,h in state['producer_pins'].items():
                 if digest(REPO/name)!=h:raise ValueError('Producer changed; use a fresh review run: '+name)
@@ -179,6 +182,10 @@ class Store:
                         raise ValueError('Worker result does not match reserved candidate')
                     if plan.get('identity') and row.get('identity_sha256')!=plan['inputs'][plan['identity']]:
                         raise ValueError('Worker identity reference mismatch')
+                    if plan.get('identity'):
+                        shapes=row.get('reference_latent_shapes',[])
+                        if row.get('reference_latent_count')!=3 or not isinstance(shapes,list) or len(shapes)!=3 or any(not isinstance(v,list) or len(v)!=5 or any(type(n) is not int or n<=0 for n in v) for v in shapes):
+                            raise ValueError('Three-reference conditioning evidence missing')
                     c.update(status='ready',image=c['directory']+'/image.png',sha256=row['image_sha256'],result=row)
             if batch['status']=='running':
                 report=self.safe(batch.get('execution_directory',batch['directory']))/'report.json'

@@ -428,3 +428,18 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   downstream migration, final arm rigging or production deployment in this phase.
 - Run Python/JS regressions and canonical reviewer checks; synthetic test approvals
   never grant real image acceptance. Stop after Phase 4B.8.
+
+## Phase 4B.8.1 canonical-based guided gestures
+- Explicit authorization reopens three-reference helper generation only. Read
+  docs/phase4b8-1-results.md and docs/phase4b8-1-gesture-generation.md.
+- Keep the approved canonical, original, prior selections and accepted runtimes
+  immutable. Use init-from-canonical with an explicit opt-in gesture profile.
+- image1 is synthetic canonical geometry, image2 the desired guide, image3 the
+  original identity/style reference. Require actual three-reference evidence;
+  two-reference controls must be explicit, separate and never silent fallback.
+- The first target bends the anatomical right elbow (viewer left), forearm up,
+  hand at chest height. Arms-down images fail compliance, regardless of parsing.
+- Human approval, gesture compliance, segmentation and verified anatomy are
+  separate. Parse selected images only; never use raw differences as hidden truth.
+- Other poses remain independently reviewed. No automatic all-pose generation,
+  final arm rigging, accepted-runtime replacement or production deployment.

@@ -20,10 +20,13 @@ function render(){
   $('finish').textContent=canonical?'Save canonical selection':'Save reviewed pose set';
   $('unsupported').textContent=canonical?'Mark canonicalization unsuccessful':'Mark unsupported';
   $('primary-caption').textContent=helpers?'Canonical · synthetic geometry':'Original · unchanged';
+  document.querySelector('[data-view="source"] img').alt=helpers?'Frozen synthetic canonical base':'Original unchanged artwork';
   $('compare-reference-caption').textContent=helpers?'Canonical synthetic base':'Original';
   $('identity-figure').hidden=!helpers;if(helpers)$('identity-image').src=asset('identity');
+  document.querySelector('.references').classList.toggle('three-references',helpers);
   $('review-heading').textContent=canonical?'Check the frontal view and character identity.':'Inspect the pose, then the details.';
   $('review-instructions').textContent=canonical?'Check a forward-facing head, chest and hips, level visible shoulders, separated arms, neutral expression, and the same face, hairstyle and outfit. Approval freezes a synthetic working base; it does not replace the original.':'Look at hand placement, sleeve boundaries, shoulder and elbow shape, costume, face and hair. Generated pixels may differ from the original.';
+  if(state.gesture_profile)$('review-instructions').textContent=state.poses[pose].prompt+' Both arms down does not satisfy a raised-forearm target.';
   const p=state.poses[pose],active=busy||state.batches.some(b=>b.status==='running');
   const poseActive=busy||state.batches.some(b=>b.pose===pose&&b.status==='running'),frozen=['approved','unsupported'].includes(p.status);
   $('poses').replaceChildren();for(const [key,v] of Object.entries(state.poses)){const b=el('button',v.title,key===pose?'active':'');b.append(el('small',v.status));b.onclick=()=>{pose=key;lastSignature='';render()};$('poses').append(b)}

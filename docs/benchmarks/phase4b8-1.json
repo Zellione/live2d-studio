@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "phase": "4B.8.1",
+  "baseline_commit": "46717d4",
+  "source_canonical": {
+    "path": "assets/source.png",
+    "sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+    "rights": "LisadiKaprio; CC-BY-4.0; https://opengameart.org/content/codel-visual-novel-sprite"
+  },
+  "identity_original": {
+    "path": "assets/identity.png",
+    "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+  },
+  "canonical_origin": {
+    "review_run": "/data/projects/live2d-studio/runs/phase4b8-canonical",
+    "manifest": {
+      "manifest": "canonical/b-62c26625a6664a98810b8361cea4b371-c4/manifest.json",
+      "sha256": "8d15231abbb8e648e1f1663abd16a7cdd5323296c1361f91c3115e31f2610725"
+    },
+    "canonical_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+    "original_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "local_provenance_sha256": "8d15231abbb8e648e1f1663abd16a7cdd5323296c1361f91c3115e31f2610725"
+  },
+  "gesture_profile": "chest-forearm-v1",
+  "producer_pins": {
+    "backends/inpainting/pose_worker.py": "bd5f6014c7297728272a8728a3bb82a4b51c066223cb977c6ffe16187803c3a1",
+    "backends/inpainting/qwen.py": "863c093bad744c755bc86f8a621009fbdc250e1d5195a5c88ba4f2279f341f8b",
+    "backends/inpainting/models.lock.json": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+    "backends/inpainting/qwen-env/uv.lock": "b66192d83c90714bc50fa84f9cc36148fdeb99fc9186ca07bf06247bb7b4e477",
+    "src/live2d_studio/pose_guides.py": "6f5b7f2e3f5f51914fe31a2cef378155f2b0a0afd13babab3fb339b9839408c7",
+    "backends/inpainting/pose_reference_worker.py": "75cbe07df5f45ce14a994d91ee09c0816dcfa3fd4dd85c65da4cae485289b90a",
+    "src/live2d_studio/canonical_pose.py": "c48e3e54765e64852bf48bbc43550d07265691a48a6e5a7834d435209c76d11e",
+    "src/live2d_studio/gesture_profile.py": "0bd73b5534f8ad1508c9a800fc9b739acb4d5a9b711d573e3083909d4be31b71"
+  },
+  "presets": {
+    "canonical-gesture-1536-40": {
+      "long_edge": 1536,
+      "steps": 40,
+      "cfg": 4.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "source",
+      "mask": "none",
+      "guidance": "silhouette",
+      "cfg_norm": false,
+      "negative_prompt": ""
+    }
+  },
+  "candidates": [
+    {
+      "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c1",
+      "pose": "right-lift",
+      "batch": "b-cff4858500e9424bbe4340f92e2e9335",
+      "input_hashes": {
+        "source.png": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "guide.png": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "identity.png": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+      },
+      "plan_sha256": "977d326c044fa7c1e97b45f5ae6a9bed3f3cd975eeffe0262b502ba209e6ca87",
+      "result": {
+        "id": "c1",
+        "seed": 2597810572262578,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Picture 1 is the reviewed synthetic front-facing base and primary geometry. Picture 2 is the target pose guide. Picture 3 is the original character for identity, facial features, clothing and style only; do not restore its angled or crossed-arm pose. Retain the front-facing head, chest and hips and original framing of picture 1. Keep both arms visible with continuous shoulder, upper arm, elbow, forearm, wrist and hand. Preserve the face, hairstyle, neutral expression, outfit design, body proportions, illustration style and colours. Use picture 2 for joint placement only, never copy its mannequin rendering. Keep a natural relaxed hand with five fingers, without extra limbs or merged fingers. Bend the character's anatomical RIGHT elbow (viewer LEFT). The upper arm points down beside the torso, the elbow is near waist height, and the forearm points upward so the hand is at chest height, slightly outside the torso. The anatomical LEFT arm (viewer RIGHT) stays relaxed down. Do not leave both hands down and do not cross the forearm over the torso.",
+        "negative_prompt": "",
+        "image_sha256": "19036ff39304084c59898a3ba820f23d0d67af3d8e05e91fcb53bae1bd3c9fe4",
+        "guide_sha256": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "reference_latent_count": 3,
+        "identity_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+        "reference_roles": [
+          "primary geometry",
+          "target guide",
+          "original identity/style"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 239.15911431700079,
+        "peak_allocated_bytes": 22398893056,
+        "peak_reserved_bytes": 25153241088
+      },
+      "decision": {
+        "action": "reject",
+        "pose": "right-lift",
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c1",
+        "reason": "wrong pose",
+        "reviewer_kind": "human",
+        "time": 1793983314.6606607,
+        "image_sha256": "19036ff39304084c59898a3ba820f23d0d67af3d8e05e91fcb53bae1bd3c9fe4"
+      }
+    },
+    {
+      "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c2",
+      "pose": "right-lift",
+      "batch": "b-cff4858500e9424bbe4340f92e2e9335",
+      "input_hashes": {
+        "source.png": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "guide.png": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "identity.png": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+      },
+      "plan_sha256": "977d326c044fa7c1e97b45f5ae6a9bed3f3cd975eeffe0262b502ba209e6ca87",
+      "result": {
+        "id": "c2",
+        "seed": 528438402671782,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Picture 1 is the reviewed synthetic front-facing base and primary geometry. Picture 2 is the target pose guide. Picture 3 is the original character for identity, facial features, clothing and style only; do not restore its angled or crossed-arm pose. Retain the front-facing head, chest and hips and original framing of picture 1. Keep both arms visible with continuous shoulder, upper arm, elbow, forearm, wrist and hand. Preserve the face, hairstyle, neutral expression, outfit design, body proportions, illustration style and colours. Use picture 2 for joint placement only, never copy its mannequin rendering. Keep a natural relaxed hand with five fingers, without extra limbs or merged fingers. Bend the character's anatomical RIGHT elbow (viewer LEFT). The upper arm points down beside the torso, the elbow is near waist height, and the forearm points upward so the hand is at chest height, slightly outside the torso. The anatomical LEFT arm (viewer RIGHT) stays relaxed down. Do not leave both hands down and do not cross the forearm over the torso.",
+        "negative_prompt": "",
+        "image_sha256": "e2f710e2524e154d843816057b928836b0f94f4dc4e2e82dcbad9adfd7893a97",
+        "guide_sha256": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "reference_latent_count": 3,
+        "identity_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+        "reference_roles": [
+          "primary geometry",
+          "target guide",
+          "original identity/style"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 240.5007929429994,
+        "peak_allocated_bytes": 21313645056,
+        "peak_reserved_bytes": 22074621952
+      },
+      "decision": {
+        "action": "reject",
+        "pose": "right-lift",
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c2",
+        "reason": "wrong pose",
+        "reviewer_kind": "human",
+        "time": 1793983315.7850957,
+        "image_sha256": "e2f710e2524e154d843816057b928836b0f94f4dc4e2e82dcbad9adfd7893a97"
+      }
+    },
+    {
+      "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c3",
+      "pose": "right-lift",
+      "batch": "b-cff4858500e9424bbe4340f92e2e9335",
+      "input_hashes": {
+        "source.png": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "guide.png": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "identity.png": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+      },
+      "plan_sha256": "977d326c044fa7c1e97b45f5ae6a9bed3f3cd975eeffe0262b502ba209e6ca87",
+      "result": {
+        "id": "c3",
+        "seed": 3531224070097414,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Picture 1 is the reviewed synthetic front-facing base and primary geometry. Picture 2 is the target pose guide. Picture 3 is the original character for identity, facial features, clothing and style only; do not restore its angled or crossed-arm pose. Retain the front-facing head, chest and hips and original framing of picture 1. Keep both arms visible with continuous shoulder, upper arm, elbow, forearm, wrist and hand. Preserve the face, hairstyle, neutral expression, outfit design, body proportions, illustration style and colours. Use picture 2 for joint placement only, never copy its mannequin rendering. Keep a natural relaxed hand with five fingers, without extra limbs or merged fingers. Bend the character's anatomical RIGHT elbow (viewer LEFT). The upper arm points down beside the torso, the elbow is near waist height, and the forearm points upward so the hand is at chest height, slightly outside the torso. The anatomical LEFT arm (viewer RIGHT) stays relaxed down. Do not leave both hands down and do not cross the forearm over the torso.",
+        "negative_prompt": "",
+        "image_sha256": "55cb8cbfc27749e3cd515d2b6b215cb5e6a6568ef8788c17aa0266338ab47305",
+        "guide_sha256": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "reference_latent_count": 3,
+        "identity_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+        "reference_roles": [
+          "primary geometry",
+          "target guide",
+          "original identity/style"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 241.58439304100102,
+        "peak_allocated_bytes": 21313640960,
+        "peak_reserved_bytes": 22143827968
+      },
+      "decision": {
+        "action": "reject",
+        "pose": "right-lift",
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c3",
+        "reason": "bad hands",
+        "reviewer_kind": "human",
+        "time": 1793983321.3646402,
+        "image_sha256": "55cb8cbfc27749e3cd515d2b6b215cb5e6a6568ef8788c17aa0266338ab47305"
+      }
+    },
+    {
+      "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c4",
+      "pose": "right-lift",
+      "batch": "b-cff4858500e9424bbe4340f92e2e9335",
+      "input_hashes": {
+        "source.png": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "guide.png": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "identity.png": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+      },
+      "plan_sha256": "977d326c044fa7c1e97b45f5ae6a9bed3f3cd975eeffe0262b502ba209e6ca87",
+      "result": {
+        "id": "c4",
+        "seed": 2090140980387358,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Picture 1 is the reviewed synthetic front-facing base and primary geometry. Picture 2 is the target pose guide. Picture 3 is the original character for identity, facial features, clothing and style only; do not restore its angled or crossed-arm pose. Retain the front-facing head, chest and hips and original framing of picture 1. Keep both arms visible with continuous shoulder, upper arm, elbow, forearm, wrist and hand. Preserve the face, hairstyle, neutral expression, outfit design, body proportions, illustration style and colours. Use picture 2 for joint placement only, never copy its mannequin rendering. Keep a natural relaxed hand with five fingers, without extra limbs or merged fingers. Bend the character's anatomical RIGHT elbow (viewer LEFT). The upper arm points down beside the torso, the elbow is near waist height, and the forearm points upward so the hand is at chest height, slightly outside the torso. The anatomical LEFT arm (viewer RIGHT) stays relaxed down. Do not leave both hands down and do not cross the forearm over the torso.",
+        "negative_prompt": "",
+        "image_sha256": "c19d5ce99f98b347ef4967ac736342324f0d11a5e0401bf8edc003cb5e1b6cd5",
+        "guide_sha256": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "reference_latent_count": 3,
+        "identity_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+        "reference_roles": [
+          "primary geometry",
+          "target guide",
+          "original identity/style"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 240.09129494800072,
+        "peak_allocated_bytes": 21313640960,
+        "peak_reserved_bytes": 22066233344
+      },
+      "decision": {
+        "action": "reject",
+        "pose": "right-lift",
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c4",
+        "reason": "wrong pose",
+        "reviewer_kind": "human",
+        "time": 1793983326.7865741,
+        "image_sha256": "c19d5ce99f98b347ef4967ac736342324f0d11a5e0401bf8edc003cb5e1b6cd5"
+      }
+    },
+    {
+      "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c5",
+      "pose": "right-lift",
+      "batch": "b-cff4858500e9424bbe4340f92e2e9335",
+      "input_hashes": {
+        "source.png": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "guide.png": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "identity.png": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+      },
+      "plan_sha256": "977d326c044fa7c1e97b45f5ae6a9bed3f3cd975eeffe0262b502ba209e6ca87",
+      "result": {
+        "id": "c5",
+        "seed": 666969407125788,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Picture 1 is the reviewed synthetic front-facing base and primary geometry. Picture 2 is the target pose guide. Picture 3 is the original character for identity, facial features, clothing and style only; do not restore its angled or crossed-arm pose. Retain the front-facing head, chest and hips and original framing of picture 1. Keep both arms visible with continuous shoulder, upper arm, elbow, forearm, wrist and hand. Preserve the face, hairstyle, neutral expression, outfit design, body proportions, illustration style and colours. Use picture 2 for joint placement only, never copy its mannequin rendering. Keep a natural relaxed hand with five fingers, without extra limbs or merged fingers. Bend the character's anatomical RIGHT elbow (viewer LEFT). The upper arm points down beside the torso, the elbow is near waist height, and the forearm points upward so the hand is at chest height, slightly outside the torso. The anatomical LEFT arm (viewer RIGHT) stays relaxed down. Do not leave both hands down and do not cross the forearm over the torso.",
+        "negative_prompt": "",
+        "image_sha256": "6ab6d9953df080cc673c54942fc488a1ff5de184a64d197901d2edd9d872f99d",
+        "guide_sha256": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "reference_latent_count": 3,
+        "identity_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+        "reference_roles": [
+          "primary geometry",
+          "target guide",
+          "original identity/style"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 240.48283543100115,
+        "peak_allocated_bytes": 21313640960,
+        "peak_reserved_bytes": 22074621952
+      },
+      "decision": {
+        "action": "reject",
+        "pose": "right-lift",
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c5",
+        "reason": "wrong pose",
+        "reviewer_kind": "human",
+        "time": 1793983327.5359023,
+        "image_sha256": "6ab6d9953df080cc673c54942fc488a1ff5de184a64d197901d2edd9d872f99d"
+      }
+    }
+  ],
+  "poses": {
+    "right-lift": {
+      "status": "rejected",
+      "selected": null
+    },
+    "left-lift": {
+      "status": "pending",
+      "selected": null
+    },
+    "explain": {
+      "status": "pending",
+      "selected": null
+    },
+    "wave": {
+      "status": "pending",
+      "selected": null
+    },
+    "torso-open": {
+      "status": "pending",
+      "selected": null
+    }
+  },
+  "selections": [
+    {
+      "id": "af71e7e31c1d4770a2e8562ab2646c8b",
+      "sha256": "278cb836ebeee9e3e611657b8c33da69c41a15ab410c7275a364600fedb573d3"
+    }
+  ],
+  "controls": [
+    {
+      "metadata": {
+        "mode": "two-references",
+        "parent_batch": "b-cff4858500e9424bbe4340f92e2e9335",
+        "parent_plan_sha256": "977d326c044fa7c1e97b45f5ae6a9bed3f3cd975eeffe0262b502ba209e6ca87",
+        "control_plan_sha256": "cd53c85cde8fa5a227f5e9602760267b6a720b7f152b15843810994c3099c758",
+        "producer_pins": {
+          "backends/inpainting/pose_worker.py": "bd5f6014c7297728272a8728a3bb82a4b51c066223cb977c6ffe16187803c3a1",
+          "backends/inpainting/qwen.py": "863c093bad744c755bc86f8a621009fbdc250e1d5195a5c88ba4f2279f341f8b",
+          "backends/inpainting/models.lock.json": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+          "backends/inpainting/qwen-env/uv.lock": "b66192d83c90714bc50fa84f9cc36148fdeb99fc9186ca07bf06247bb7b4e477",
+          "src/live2d_studio/pose_guides.py": "6f5b7f2e3f5f51914fe31a2cef378155f2b0a0afd13babab3fb339b9839408c7",
+          "backends/inpainting/pose_reference_worker.py": "75cbe07df5f45ce14a994d91ee09c0816dcfa3fd4dd85c65da4cae485289b90a",
+          "src/live2d_studio/canonical_pose.py": "c48e3e54765e64852bf48bbc43550d07265691a48a6e5a7834d435209c76d11e",
+          "src/live2d_studio/gesture_profile.py": "0bd73b5534f8ad1508c9a800fc9b739acb4d5a9b711d573e3083909d4be31b71"
+        },
+        "seed": 2597810572262578,
+        "scope": "Single seeded diagnosis, not a five-candidate review batch; never selected automatically",
+        "change": "Remove image3 conditioning and its textual instruction; numeric settings/source/guide/seed unchanged"
+      },
+      "result": {
+        "id": "c1",
+        "seed": 2597810572262578,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": ""
+        },
+        "prompt": "Picture 1 is the reviewed synthetic front-facing base and primary geometry. Picture 2 is the target pose guide. Retain the front-facing head, chest and hips and original framing of picture 1. Keep both arms visible with continuous shoulder, upper arm, elbow, forearm, wrist and hand. Preserve the face, hairstyle, neutral expression, outfit design, body proportions, illustration style and colours. Use picture 2 for joint placement only, never copy its mannequin rendering. Keep a natural relaxed hand with five fingers, without extra limbs or merged fingers. Bend the character's anatomical RIGHT elbow (viewer LEFT). The upper arm points down beside the torso, the elbow is near waist height, and the forearm points upward so the hand is at chest height, slightly outside the torso. The anatomical LEFT arm (viewer RIGHT) stays relaxed down. Do not leave both hands down and do not cross the forearm over the torso.",
+        "negative_prompt": "",
+        "image_sha256": "b43b6bd8132ee1dd5532100bd6386d90a26f19b3c2b214b017b2e2fcfe20c1de",
+        "guide_sha256": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+        "reference_latent_count": 2,
+        "identity_sha256": null,
+        "reference_roles": [
+          "primary geometry",
+          "target guide"
+        ],
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 172.03384326299783,
+        "peak_allocated_bytes": 22011163136,
+        "peak_reserved_bytes": 24540872704
+      },
+      "input_hashes": {
+        "source.png": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+        "guide.png": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a"
+      },
+      "directory": "runs/phase4b8-1-two-reference-control"
+    }
+  ],
+  "scope": "Synthetic helper evidence only; reference count and visual acceptance are distinct from gesture compliance and anatomy",
+  "arm_rigging": false,
+  "runtime_replacement": false,
+  "production_access": false,
+  "downloads": false,
+  "artifacts": {
+    "run": "runs/phase4b8-1-gestures",
+    "gallery": "runs/phase4b8-1-review-final"
+  },
+  "development_screening": {
+    "canonical_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+    "reviewer_kind": "development agent visual screening",
+    "human_approval": false,
+    "anatomy_verified": false,
+    "candidates": [
+      {
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c1",
+        "sha256": "19036ff39304084c59898a3ba820f23d0d67af3d8e05e91fcb53bae1bd3c9fe4",
+        "gesture_compliance": "fail",
+        "observation": "Both arms down; requested elbow bend and chest-height hand absent.",
+        "useful_articulation_evidence": false
+      },
+      {
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c2",
+        "sha256": "e2f710e2524e154d843816057b928836b0f94f4dc4e2e82dcbad9adfd7893a97",
+        "gesture_compliance": "fail",
+        "observation": "Both arms down; requested elbow bend and chest-height hand absent.",
+        "useful_articulation_evidence": false
+      },
+      {
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c3",
+        "sha256": "55cb8cbfc27749e3cd515d2b6b215cb5e6a6568ef8788c17aa0266338ab47305",
+        "gesture_compliance": "partial but unusable",
+        "observation": "Anatomical right elbow bends and forearm rises, but the hand is absent and outer shoulder contour is damaged.",
+        "useful_articulation_evidence": false
+      },
+      {
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c4",
+        "sha256": "c19d5ce99f98b347ef4967ac736342324f0d11a5e0401bf8edc003cb5e1b6cd5",
+        "gesture_compliance": "fail",
+        "observation": "Both arms down; requested elbow bend and chest-height hand absent.",
+        "useful_articulation_evidence": false
+      },
+      {
+        "candidate": "b-cff4858500e9424bbe4340f92e2e9335-c5",
+        "sha256": "6ab6d9953df080cc673c54942fc488a1ff5de184a64d197901d2edd9d872f99d",
+        "gesture_compliance": "fail",
+        "observation": "Both arms down; requested elbow bend and chest-height hand absent.",
+        "useful_articulation_evidence": false
+      }
+    ]
+  },
+  "validation_evidence": {
+    "runs/phase4b8-1-audit/python-regression-final.log": "3598c3f152e0408442f6196c143d83f91cd6be1cb976b7a76eb230cc6ef76d41",
+    "runs/phase4b8-1-audit/javascript-regression.log": "441467af86325711c2671ebccd462ed1f04b7da7506189dca1830fe10a1377e7",
+    "runs/phase4b8-1-browser-synthetic-v2/result.json": "dae253414814bfa2aa541adcaef2989326a96c15d1e31a343df7ab3edc4f494e",
+    "runs/phase4b8-1-browser-real/result.json": "f456a96db9f09fb0f8d8fe4d5a26a9221332a93e17fe66d85cb9cf65312c0a1f",
+    "runs/phase4b8-1-audit/preservation-after.json": "915d6fc04c18aab5d80bea5ebd4700100d5ed99658e10eaf5508fc6245b8d42b",
+    "runs/phase4b8-1-audit/conditioning-inspection.json": "94e2ad3ae603d751b1dc31c8fd835a21368642156df621c9ae0f1631fcca5fb1"
+  }
+}

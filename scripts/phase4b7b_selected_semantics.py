@@ -54,6 +54,9 @@ def evaluate(run,selection,output,runner=subprocess.run):
         selection_file=store.safe('selections/'+selection+'/selection.json')
         selected=json.loads(selection_file.read_text())['selected']
         source=Image.open(store.safe(state['source']['path']));baselines={};results={};cards=[]
+        baseline_label='Canonical synthetic base' if state.get('canonical_origin') else 'Original'
+        if state.get('canonical_origin'):
+            store.verify_pins(state,producer=False)
         def infer(file,folder):
             with (output/(folder.name+'.log')).open('x') as log:
                 runner([str(REPO/'backends/see-through/.venv/bin/python'),str(REPO/'backends/see-through/worker.py'),
@@ -71,9 +74,11 @@ def evaluate(run,selection,output,runner=subprocess.run):
             result=summarize(folder,file,output/(pose+'-arms.png'))
             result['baseline_long_edge']=edge;result['human_approval_sha256']=row['approval']['image_sha256']
             results[pose]=result
-            cards.append(f'<section><h2>{html.escape(pose)}</h2><p>Original SAM / selected SAM. Colours identify disconnected arm-category components, not verified limb ownership.</p><div><img src="{name}-arms.png"><img src="{pose}-arms.png"></div><p><a href="{pose}.png">Original / selected / unregistered difference panel</a></p></section>')
+            cards.append(f'<section><h2>{html.escape(pose)}</h2><p>{baseline_label} SAM / selected SAM. Colours identify disconnected arm-category components, not verified limb ownership.</p><div><img src="{name}-arms.png"><img src="{pose}-arms.png"></div><p><a href="{pose}.png">{baseline_label} / selected / unregistered difference panel</a></p></section>')
         report={'selection_sha256':digest(selection_file),'parser_lock_sha256':digest(REPO/'backends/see-through/models.lock.json'),
                 'source_sha256':state['source']['sha256'],'baseline':baselines,'selected':results,
+                'baseline_role':baseline_label,'identity_reference':state.get('identity_reference'),
+                'canonical_origin':state.get('canonical_origin'),
                 'scope':'Selected-only exploratory segmentation; generated pixels and mask labels are not anatomy truth',
                 'threshold':'positive SAM logits; components >= max(32 pixels, 5 percent of arm mask)',
                 'correspondence':'No pixel registration or hidden-clothing area measurement; generated pose proportions differ.'}

@@ -1,0 +1,16 @@
+{
+  "canonical-gesture-1536-40": {
+    "long_edge": 1536,
+    "steps": 40,
+    "cfg": 4.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "shift": 3.0,
+    "denoise": 1.0,
+    "latent": "source",
+    "mask": "none",
+    "guidance": "silhouette",
+    "cfg_norm": false,
+    "negative_prompt": ""
+  }
+}
