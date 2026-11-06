@@ -360,3 +360,20 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Whole runtime hashes identify the candidate; model3 alone may be unchanged.
   No inference/downloads/training/system changes or production work. Stop after
   Phase 4B.6.1; no automatic promotion.
+
+## Phase 4B.6.2 reviewed combined Codel reference
+- Read `docs/phase4b6-2-results.md` and `docs/references/codel-combined-v1.json`.
+  The user's “Das sieht soweit gut aus jetzt.” grants limited visual acceptance
+  of the exact combined candidate, not professional/full-body/production acceptance.
+- Preserve `runs/phase4b6-1-codel-v3` and the read-only snapshot
+  `runs/references/codel-combined-v1`. Never repin or regenerate this reference
+  in place. Its 1,806 payload hashes and separate user review are manifest-bound.
+- Fresh autonomous `create` and `prepare-performance` reproduced all 15 referenced
+  runtime files exactly. Editor CAN3/CMO3 archives differ. Use deterministic
+  reconstruction, aligned facial motion, coordinated mouths and calm body options;
+  creation defaults remain unchanged. Other characters need their own reviews.
+- Run `tests/test_reviewed_codel.py` with the Python suite. Local artifact checks
+  skip when the ignored snapshot is absent; metadata/default checks always run.
+  Retain old Codel seam failure and Girl2's 1,716 lip reversals as failures.
+- Only docs, tests and small manifests enter Git. No inference, training, production
+  access or default changes. Stop after Phase 4B.6.2.

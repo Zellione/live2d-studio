@@ -1,5 +1,34 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.6.2 (2026-11-06)
+
+Read [freeze results](phase4b6-2-results.md) and the immutable
+[Codel reference identity](references/codel-combined-v1.json).
+
+- User said “Das sieht soweit gut aus jetzt.” This is limited visual acceptance
+  of the exact Phase 4B.6.1 combined Codel; not professional/full-body/production
+  acceptance. New `user-review.json` is separate from unchanged automated reports.
+- Original `runs/phase4b6-1-codel-v3` stays unchanged. Read-only snapshot:
+  `runs/references/codel-combined-v1`, with 1,806 payload hashes and full manifest
+  pinned by SHA-256 in Git. Do not repin/rebuild in place; use a new reference ID.
+- Fresh `create` with existing bridge/SAM and `prepare-performance` both reproduce
+  all 15 runtime-referenced files exactly. Extra CAN3/CMO3 containers differ;
+  editor archive byte identity is not claimed. No individual agent rig operations,
+  model inference or downloads. Semantic/visual checkpoints remain intact.
+- Configuration: deterministic reconstruction, aligned facial motion, coordinated
+  mouths, calm body. Mouth/body defaults remain preserve; no default or product
+  code changes. Other characters still need their own reviews.
+- Fresh 819-pose mouth and 496-pose body Core checks pass; fresh create passes
+  401 browser frames and 72 eye samples. Existing exact body, mouth-only/full,
+  idle/gesture/coexistence and neutral-reload evidence is pinned in the snapshot.
+- 2,863 historical reference files and the sealed Codel first run verify unchanged.
+  Old Codel absolute seam and Girl2 1,716 lip reversals remain failed, not waived.
+- `tests/test_reviewed_codel.py` verifies metadata/defaults, local sealed contents,
+  expression/physics/motion channels and tamper detection. Local artifact tests
+  skip without the untracked snapshot. No production access or deployment.
+- Stop after freezing Phase 4B.6.2. Future revisions require separate work.
+
+
 ## Current state after Phase 4B.6.1 (2026-11-06)
 
 Read [results](phase4b6-1-results.md) and [benchmark](benchmarks/phase4b6-1.json).

@@ -1,0 +1,129 @@
+{
+  "artifacts": {
+    "editable_project": {
+      "path": "candidate/stages/body-693120c4083e/authoring/character.psd2live",
+      "sha256": "8786087be08dce293e1c7b6d4e42ba287421bf87250f3c2379643db9f3661775"
+    },
+    "exported_project": {
+      "path": "candidate/stages/export-f30df9451395/character.psd2live",
+      "sha256": "293ebde6feadb30c6d3d66384a229131db10c8047a765b5c8810d1e42c7b7df3"
+    },
+    "model": {
+      "path": "candidate/stages/export-f30df9451395/runtime/Generated_artwork.model3.json",
+      "sha256": "75afc21eb8145f1d4b9a93eeddaddfebae11e26887ab1c3c94765fd658274849"
+    },
+    "psd": {
+      "path": "candidate/stages/export-f30df9451395/character.psd",
+      "sha256": "53427e2dc0a916c61916a05abd30d2359e4f47f3d0f4f2c9a8f1a38474b2fca2"
+    }
+  },
+  "baseline_commit": "ba0971a",
+  "candidate": "runs/phase4b6-1-codel-v3",
+  "default_changes": false,
+  "feature_configuration": {
+    "body_motion": "calm",
+    "facial_motion": "aligned",
+    "mouths": "coordinated",
+    "reconstruction": "deterministic"
+  },
+  "freeze_verification": {
+    "body_core_poses": 496,
+    "files": {
+      "runs/phase4b6-2-audit/body-core.json": "53be27a386725f05e82ef505faa63e09fef66f42532b607b1517a3a4e89280ce",
+      "runs/phase4b6-2-audit/create-command.json": "d6a43d66002c2a76626696161f6ff303e36b107910966bd00b8d0745a38485d6",
+      "runs/phase4b6-2-audit/historical-preservation.json": "8174451d8d14a977120ebcd28ecc0588b353d13d1719c4ab5d9d626efdaa2504",
+      "runs/phase4b6-2-audit/js-numerical.log": "0ad01033b64e58f8a05a9d08452d14d7ec95104cf57e44cf407dd29c4b78dd45",
+      "runs/phase4b6-2-audit/js-talk.log": "f78b557528fe8f5a66b896c151289b94372d0ec6f856241c3b16b69dcc718f5d",
+      "runs/phase4b6-2-audit/mouth-core.json": "5409d38024bbdaad9c163b131a173d8305ac11d21231801edf2a5792dd14ea3a",
+      "runs/phase4b6-2-audit/python-tests.log": "13b0712a9ad98ee2f963fc540bdc37fc6d085261a8cc42e2ad535b5d0878f987",
+      "runs/phase4b6-2-audit/workflow-reproduction.json": "19fefdea559162670426d8029ade4fc9996600d350d151a5be18c26ba848b155",
+      "runs/phase4b6-2-create-check/stages/validation-289faee49438/quality.json": "f39212bc3adc1e3fb6dadf0d2e6f1f3d4136199fdbd26377839a89c6c6cdfa80",
+      "runs/phase4b6-2-create-check/stages/validation-289faee49438/transition-core.json": "9bc41955d6bf1a2ac622660367d147a44df10eed84bc24453511f58c0ba8d206"
+    },
+    "javascript_tests": 8,
+    "mouth_core_poses": 819,
+    "python_tests": 152,
+    "user_acceptance_inferred_from_automation": false
+  },
+  "limitations": [
+    "Limited visual acceptance of this exact combined Codel; no professional-quality or production claim",
+    "Shared unsided arm/hand layer; no independent gestures or full-body rig",
+    "Inherited eye contour/shading artifacts and uncertain concealed facial backing",
+    "Plain mouth cavity; no teeth, tongue or phonemes",
+    "Apparent 2D head turn, not reconstructed 3D anatomy",
+    "Legacy 1e-7 Codel seam test remains failed; optional inspected scale-aware contract passes",
+    "Girl2 1716 inherited lip reversals remain failed",
+    "Raw opacity excursions retained; existing policy unchanged",
+    "Other characters still require semantic and visual review"
+  ],
+  "local_payload_files": 1806,
+  "manifest": "manifest.json",
+  "manifest_sha256": "31a781ebc41f74fd81031dac37cc2a5d4b60d90310ccdb3f4d8ca1ddf772948e",
+  "paths": {
+    "editable_project": "candidate/stages/body-693120c4083e/authoring/character.psd2live",
+    "exported_project": "candidate/stages/export-f30df9451395/character.psd2live",
+    "model": "candidate/stages/export-f30df9451395/runtime/Generated_artwork.model3.json",
+    "psd": "candidate/stages/export-f30df9451395/character.psd"
+  },
+  "reference_id": "codel-combined-v1",
+  "reference_root": "runs/references/codel-combined-v1",
+  "retained_failures": {
+    "codel_legacy_seam": {
+      "path": "runs/phase4b5-codel-mouths/expression-core.json",
+      "sha256": "57f7ef61fe04e96f4c406bd982d6f1d24596a7ce713654adb35407ed4aa45d22",
+      "status": "fail",
+      "visible_reversals": null
+    },
+    "girl2_visible_lips": {
+      "path": "runs/phase4b6-portrait-final/girl2/predecessor-core-body.json",
+      "sha256": "f372c126919e79828c6d353af1330bb91365388ee0b972a9581fa516da5e64c4",
+      "status": "fail",
+      "visible_reversals": 1716
+    }
+  },
+  "runtime_files": {
+    "Generated_artwork.4096/texture_00.png": "792327ee758a928a39fe173097bd9709a784a8e548b6bf29ff30b29f98dc2208",
+    "Generated_artwork.blink.motion3.json": "399f91b7bfac0666f589ab7c6daace5e33e5c6d6e7c6e7ca4024b6db48a65110",
+    "Generated_artwork.bodyNod.motion3.json": "8287a7cfd68b1fa468975902c9ca7431c39e5d909a7651145ef4f2113519c6aa",
+    "Generated_artwork.bodyQuestion.motion3.json": "b2afc0d0224675c51adb1422efa5255dfd8e406b49698b7ea6f1cc8eabd1999c",
+    "Generated_artwork.can3": "a7139a98ee9de93c25b71dab81ae996b4a5fbd339926a2742792abb9a58289a9",
+    "Generated_artwork.cdi3.json": "c891457bfa7d02925ccafc8ccc977b16eb40e4c606a7974b36773fe6fe57d8fc",
+    "Generated_artwork.cmo3": "49c01e3791ad43119b2d2e2237029bbd8fa9191a305a8e09fe3be8fc10be96fb",
+    "Generated_artwork.createIdle.motion3.json": "d1dfc9452ac98fea14addd653632399c4080b79cc7e71ebea0a30a2a06dc7f2c",
+    "Generated_artwork.create_angry.exp3.json": "ec83e73e26aafd6fdb025f67af567f9e8e12bfb85137ded2f8e80deccc8debdc",
+    "Generated_artwork.create_confused.exp3.json": "8993aa56dff5eadf9fd0699b835dcdfce108ed7de3dfe5ebee38b133f0958dfc",
+    "Generated_artwork.create_embarrassed.exp3.json": "446d539a462051b05323b1ef26731d54e38d73f464d48f8200b85e693236ea88",
+    "Generated_artwork.create_happy.exp3.json": "462375b2e4dbb0e4769c26cf09521a446808617431e667ef1406a107975ac857",
+    "Generated_artwork.create_neutral.exp3.json": "5ef679a167a1202c66ad9aedb417a89e9f0a2e619a456a6bc6e6fd444f44c43f",
+    "Generated_artwork.create_sad.exp3.json": "d389d8dd3d76dc3aebfd27943f790fe931e48ad0fb84eb92b593ccd240cd01f4",
+    "Generated_artwork.create_surprised.exp3.json": "1c3c7fa8be48644abcfd95b280cf13bd826f5c908aa06f61dc4ee9586ad3ce1d",
+    "Generated_artwork.idle.motion3.json": "14674d50d8765df706ac253975629f7cffe97a2442248a41af59f68d9cd3f2dc",
+    "Generated_artwork.moc3": "4ebdef85821dce228870fa79fc603e3b667b75d69e1e6f184f153a706b5ff5de",
+    "Generated_artwork.model3.json": "75afc21eb8145f1d4b9a93eeddaddfebae11e26887ab1c3c94765fd658274849",
+    "Generated_artwork.nod.motion3.json": "bfd9a247d5ec8479145c2dddfd5fdbf03e1c46df8d7460f07badd146c1e19418",
+    "Generated_artwork.physics3.json": "55298cfb73cacbcb42f2760f0e699727503494560c3324a23fffdf45c553072a",
+    "Generated_artwork.psd2live.json": "545dd7e5589d5cfbd1e03d3db580abc7aa42fcd2921c6229fa7f823218b44645",
+    "Generated_artwork.shake.motion3.json": "81f50690b925cab5487c64cd1fc9781485a141f758a1f7085d36f0596bbfe54b"
+  },
+  "schema_version": 1,
+  "source": {
+    "author": "LisadiKaprio",
+    "input_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "license": "CC-BY-4.0",
+    "source": "https://opengameart.org/content/codel-visual-novel-sprite"
+  },
+  "status": "accepted-limited-combined-character-reference",
+  "user_acceptance": {
+    "full_body_articulation": false,
+    "path": "user-review.json",
+    "production_approved": false,
+    "professional_quality": false,
+    "quote": "Das sieht soweit gut aus jetzt.",
+    "scope": [
+      "current combined facial animation",
+      "current head/hair/breathing/body idle",
+      "Idle, Nod and Question gestures"
+    ],
+    "sha256": "3aed53767abea2fd0f64f0a69ace71767dcbdc313005dbc211e7d1bc46973b3f"
+  }
+}

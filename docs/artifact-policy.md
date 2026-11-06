@@ -97,3 +97,13 @@ candidates, face/body captures, recordings and whole-runtime-bound review record
 under ignored `runs/phase4b6-1-*`. Original body/mouth references stay frozen.
 Commit reusable composition and regression code, concise results and benchmark
 summaries only. Model3 hashes alone do not identify referenced MOC/exp3 contents.
+
+Phase 4B.6.2 freezes the reviewed combined Codel as
+`runs/references/codel-combined-v1/`, with a separate user acceptance record and
+full SHA-256 inventory. Files/directories are read-only (0444/0555); the Git-pinned
+manifest hash provides integrity, not root-proof storage. Never overwrite or repin
+v1. Future changes require a new reference ID and review. Commit only the small
+`docs/references/codel-combined-v1.json`, tests and documentation. The 1,806 payload
+files, original candidate, source artwork, reproduction runs and audit evidence
+stay ignored. Historical failures and pending labels remain as recorded; the new
+limited user review does not retroactively approve earlier candidates.

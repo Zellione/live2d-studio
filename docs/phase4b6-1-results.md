@@ -1,5 +1,9 @@
 # Phase 4B.6.1 — preserve improved expressions through body authoring
 
+Subsequent review: the exact final candidate received limited user visual
+acceptance and was frozen in [Phase 4B.6.2](phase4b6-2-results.md). The pending-review
+statements below describe the original Phase 4B.6.1 result, preserved historically.
+
 Continued from `e6b9d81`. **The combined Codel candidate restores the small,
 parted Confused mouth while preserving the body motion the user approved.**
 Surprised has a larger oval opening; Sad has a distinct downward contour.

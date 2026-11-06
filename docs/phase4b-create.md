@@ -1,5 +1,10 @@
 # Create a local portrait
 
+For the explicitly selected combined mouth/body configuration now reviewed on
+Codel, see the [Phase 4B.6.2 reference and reproduction commands](phase4b6-2-results.md#reproduction-commands).
+This is limited acceptance of that exact character; defaults and per-character
+semantic/visual review gates remain unchanged.
+
 This command is a Python application. Codex is not involved at runtime. It needs
 the already pinned See-through environment/checkpoints, a local PSD2Live application
 with MCP enabled on `127.0.0.1`, and the installed viewer libraries. Nothing downloads

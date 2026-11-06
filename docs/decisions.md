@@ -460,3 +460,19 @@ establish missing anatomy. User visual approval remains a separate pending gate.
   reversals remain failed. The old probe behavior persists without the contract.
 - Present `runs/phase4b6-1-codel-v3` for explicit visual review. No automatic
   promotion, production deployment, inference, downloads or training.
+
+## 2026-11-06 — Phase 4B.6.2 freeze reviewed combined Codel
+
+- Record the user's “Das sieht soweit gut aus jetzt.” separately from automated
+  and development review, bound to the whole runtime and editable project. Scope
+  is the current combined facial/body animation; no professional, independent-arm,
+  general conversion or production acceptance follows.
+- Preserve the original candidate and create `codel-combined-v1` as a read-only,
+  SHA-256-pinned local snapshot. Git stores a small identity manifest, documentation
+  and regression tests; generated projects, PSDs, runtime and artwork stay ignored.
+- Verify both autonomous entry points with existing source-matched inference caches.
+  All 15 runtime-referenced files reproduce exactly; CAN3/CMO3 editor containers
+  differ. No individual agent rig operations or new inference were needed.
+- Keep coordinated mouths and calm body explicitly selectable, with aligned facial
+  motion and deterministic reconstruction. Defaults and product code are unchanged.
+  Keep historical Codel seam and Girl2 visible lip failures. Stop at the freeze.
