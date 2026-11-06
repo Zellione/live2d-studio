@@ -90,3 +90,10 @@ body/viewer code, validation/report scripts, tests, concise results and benchmar
 summaries. Retain the failed motion-format/name/save attempts, earlier nod-direction
 candidate, and Girl2's inherited lip-triangle failures. Neither a rendered movie
 nor a development review records user approval.
+
+Phase 4B.6.1 retains saved-project inspections, numerical isolation probes,
+MOC-bound geometry contracts, optional composition stages, reverse-order and failed
+candidates, face/body captures, recordings and whole-runtime-bound review records
+under ignored `runs/phase4b6-1-*`. Original body/mouth references stay frozen.
+Commit reusable composition and regression code, concise results and benchmark
+summaries only. Model3 hashes alone do not identify referenced MOC/exp3 contents.

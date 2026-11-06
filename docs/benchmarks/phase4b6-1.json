@@ -1,0 +1,327 @@
+{
+  "accepted_body_inventory": "verified unchanged",
+  "body_motion_user_feedback": "accepted by user; preserved",
+  "body_reference": "runs/phase4b6-codel-v7",
+  "candidate": "runs/phase4b6-1-codel-v3",
+  "comparison": {
+    "network_validation": {
+      "external_requests": 0,
+      "failures": 0
+    },
+    "reload": {
+      "exact_neutral": true,
+      "expression": "neutral",
+      "gestures": [
+        "Nod",
+        "Question"
+      ],
+      "loaded": true
+    },
+    "status": "pass"
+  },
+  "confused_pixels_different_from_improved_reference": {
+    "full": 0,
+    "mouth": 0
+  },
+  "core": {
+    "body": {
+      "exact_neutral_return": true,
+      "nonfinite": 0,
+      "samples": 496,
+      "status": "pass",
+      "visible_reversals": 0
+    },
+    "mouth": {
+      "exact_neutral_geometry": true,
+      "legacy_source_seam_absolute_invariant": false,
+      "nonfinite": 0,
+      "samples": 819,
+      "seam_groups": 63,
+      "source_seam_opening_invariant": true,
+      "status": "pass",
+      "visible_reversals": 0
+    },
+    "preservation": {
+      "samples": 481,
+      "status": "pass"
+    }
+  },
+  "dense_precision": {
+    "angry": {
+      "both": {
+        "max": 5.960464477539063e-08,
+        "ulps": 3
+      },
+      "eyes": {
+        "max": 0,
+        "ulps": 0
+      },
+      "opening": {
+        "max": 5.960464477539063e-08,
+        "ulps": 3
+      },
+      "repeat": {
+        "max": 0,
+        "ulps": 0
+      }
+    },
+    "confused": {
+      "both": {
+        "max": 1.1920928955078125e-07,
+        "ulps": 19
+      },
+      "eyes": {
+        "max": 0,
+        "ulps": 0
+      },
+      "opening": {
+        "max": 1.1920928955078125e-07,
+        "ulps": 19
+      },
+      "repeat": {
+        "max": 0,
+        "ulps": 0
+      }
+    },
+    "embarrassed": {
+      "both": {
+        "max": 1.1920928955078125e-07,
+        "ulps": 16
+      },
+      "eyes": {
+        "max": 0,
+        "ulps": 0
+      },
+      "opening": {
+        "max": 1.1920928955078125e-07,
+        "ulps": 16
+      },
+      "repeat": {
+        "max": 0,
+        "ulps": 0
+      }
+    },
+    "happy": {
+      "both": {
+        "max": 1.1920928955078125e-07,
+        "ulps": 5
+      },
+      "eyes": {
+        "max": 0,
+        "ulps": 0
+      },
+      "opening": {
+        "max": 1.1920928955078125e-07,
+        "ulps": 5
+      },
+      "repeat": {
+        "max": 0,
+        "ulps": 0
+      }
+    },
+    "neutral": {
+      "both": {
+        "max": 5.960464477539063e-08,
+        "ulps": 5
+      },
+      "eyes": {
+        "max": 0,
+        "ulps": 0
+      },
+      "opening": {
+        "max": 5.960464477539063e-08,
+        "ulps": 5
+      },
+      "repeat": {
+        "max": 0,
+        "ulps": 0
+      }
+    },
+    "sad": {
+      "both": {
+        "max": 5.960464477539063e-08,
+        "ulps": 11
+      },
+      "eyes": {
+        "max": 0,
+        "ulps": 0
+      },
+      "opening": {
+        "max": 5.960464477539063e-08,
+        "ulps": 11
+      },
+      "repeat": {
+        "max": 0,
+        "ulps": 0
+      }
+    },
+    "surprised": {
+      "both": {
+        "max": 5.960464477539063e-08,
+        "ulps": 22
+      },
+      "eyes": {
+        "max": 0,
+        "ulps": 0
+      },
+      "opening": {
+        "max": 5.960464477539063e-08,
+        "ulps": 22
+      },
+      "repeat": {
+        "max": 0,
+        "ulps": 0
+      }
+    }
+  },
+  "frozen_codel_seal": "verified unchanged",
+  "girl2_inherited_failure": "runs/phase4b6-portrait-final/girl2/predecessor-core-body.json",
+  "implementation_commit": "5f230ae",
+  "independent_numerical_checks": {
+    "codel": {
+      "maximum_source_pixel_change": 0.0001285076141357422,
+      "poses": 819,
+      "seam_groups": 63,
+      "status": "pass"
+    },
+    "sara": {
+      "maximum_source_pixel_change": 9.387731552124023e-06,
+      "poses": 819,
+      "seam_groups": 63,
+      "status": "pass"
+    }
+  },
+  "model_sha256": "75afc21eb8145f1d4b9a93eeddaddfebae11e26887ab1c3c94765fd658274849",
+  "neutral_pixels_equal": true,
+  "new_archived_pngs": 2,
+  "numerical_policy": "Structural opening independence plus eight float32 steps at mesh coordinate magnitude, capped at .001 source pixel. Legacy 1e-7 diagnostic retained separately.",
+  "old_strict_failure_preserved": "runs/phase4b5-codel-mouths/expression-core.json",
+  "phase": "4B.6.1",
+  "preserved_failures": [
+    "Original Codel mouth 1e-7 seam invariant remains failed",
+    "Girl2 1716 inherited visible lip reversals remain failed",
+    "First face summaries missing control_noise_pixels; corrected captures are separate",
+    "Unsupported separate visibility Part experiment"
+  ],
+  "preserved_runtime_files": {
+    "Idle": true,
+    "Nod": true,
+    "Physics": true,
+    "Question": true
+  },
+  "promoted": false,
+  "render": {
+    "body": {
+      "frames": 476,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 850
+      },
+      "reload": {
+        "exact_neutral": true,
+        "expression": "neutral",
+        "gestures": [
+          "Nod",
+          "Question"
+        ],
+        "loaded": true
+      },
+      "status": "pass"
+    },
+    "coexistence": {
+      "frames": 355,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 56
+      },
+      "reload": {
+        "exact_neutral": true,
+        "expression": "neutral",
+        "gestures": [
+          "Nod",
+          "Question"
+        ],
+        "loaded": true
+      },
+      "status": "pass"
+    },
+    "dense": {
+      "frames": 401,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.000000238418579,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 132
+      },
+      "reload": null,
+      "status": "pass"
+    },
+    "face": {
+      "frames": 17,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0
+      },
+      "reload": null,
+      "status": "pass"
+    },
+    "mouths": {
+      "frames": 213,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "parameter_range_violations": 0,
+        "raw_opacity_max": 1.000000238418579,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 45
+      },
+      "reload": null,
+      "status": "pass"
+    }
+  },
+  "runtime_files": {
+    "Generated_artwork.4096/texture_00.png": "792327ee758a928a39fe173097bd9709a784a8e548b6bf29ff30b29f98dc2208",
+    "Generated_artwork.blink.motion3.json": "399f91b7bfac0666f589ab7c6daace5e33e5c6d6e7c6e7ca4024b6db48a65110",
+    "Generated_artwork.bodyNod.motion3.json": "8287a7cfd68b1fa468975902c9ca7431c39e5d909a7651145ef4f2113519c6aa",
+    "Generated_artwork.bodyQuestion.motion3.json": "b2afc0d0224675c51adb1422efa5255dfd8e406b49698b7ea6f1cc8eabd1999c",
+    "Generated_artwork.can3": "a7139a98ee9de93c25b71dab81ae996b4a5fbd339926a2742792abb9a58289a9",
+    "Generated_artwork.cdi3.json": "c891457bfa7d02925ccafc8ccc977b16eb40e4c606a7974b36773fe6fe57d8fc",
+    "Generated_artwork.cmo3": "49c01e3791ad43119b2d2e2237029bbd8fa9191a305a8e09fe3be8fc10be96fb",
+    "Generated_artwork.createIdle.motion3.json": "d1dfc9452ac98fea14addd653632399c4080b79cc7e71ebea0a30a2a06dc7f2c",
+    "Generated_artwork.create_angry.exp3.json": "ec83e73e26aafd6fdb025f67af567f9e8e12bfb85137ded2f8e80deccc8debdc",
+    "Generated_artwork.create_confused.exp3.json": "8993aa56dff5eadf9fd0699b835dcdfce108ed7de3dfe5ebee38b133f0958dfc",
+    "Generated_artwork.create_embarrassed.exp3.json": "446d539a462051b05323b1ef26731d54e38d73f464d48f8200b85e693236ea88",
+    "Generated_artwork.create_happy.exp3.json": "462375b2e4dbb0e4769c26cf09521a446808617431e667ef1406a107975ac857",
+    "Generated_artwork.create_neutral.exp3.json": "5ef679a167a1202c66ad9aedb417a89e9f0a2e619a456a6bc6e6fd444f44c43f",
+    "Generated_artwork.create_sad.exp3.json": "d389d8dd3d76dc3aebfd27943f790fe931e48ad0fb84eb92b593ccd240cd01f4",
+    "Generated_artwork.create_surprised.exp3.json": "1c3c7fa8be48644abcfd95b280cf13bd826f5c908aa06f61dc4ee9586ad3ce1d",
+    "Generated_artwork.idle.motion3.json": "14674d50d8765df706ac253975629f7cffe97a2442248a41af59f68d9cd3f2dc",
+    "Generated_artwork.moc3": "4ebdef85821dce228870fa79fc603e3b667b75d69e1e6f184f153a706b5ff5de",
+    "Generated_artwork.model3.json": "75afc21eb8145f1d4b9a93eeddaddfebae11e26887ab1c3c94765fd658274849",
+    "Generated_artwork.nod.motion3.json": "bfd9a247d5ec8479145c2dddfd5fdbf03e1c46df8d7460f07badd146c1e19418",
+    "Generated_artwork.physics3.json": "55298cfb73cacbcb42f2760f0e699727503494560c3324a23fffdf45c553072a",
+    "Generated_artwork.psd2live.json": "545dd7e5589d5cfbd1e03d3db580abc7aa42fcd2921c6229fa7f823218b44645",
+    "Generated_artwork.shake.motion3.json": "81f50690b925cab5487c64cd1fc9781485a141f758a1f7085d36f0596bbfe54b"
+  },
+  "source_layers": {
+    "caveat": "Exact imported RGBA, including marked generated hidden pixels; original input preservation is measured separately.",
+    "exact_source_layers": 20,
+    "status": "pass"
+  },
+  "source_pngs_preserved": 33,
+  "tests": {
+    "numerical_javascript": 3,
+    "python": 146,
+    "status": "pass",
+    "synthetic_source_audits": 3,
+    "talk_javascript": 5
+  },
+  "visual_review": "pending"
+}

@@ -439,3 +439,24 @@ while reporting independently passing dense facial/render tests. No threshold is
 relaxed and no prototype is promoted. Source gaps which become enclosed during
 motion retain numerical hole counts and close-up evidence; counters alone do not
 establish missing anatomy. User visual approval remains a separate pending gate.
+
+## 2026-11-06 — Phase 4B.6.1 expression/body composition
+
+- User accepted Phase 4B.6 head/hair/breathing/gestures, but identified Confused's
+  regression. Saved-project and exp3 inspection confirms that body authoring
+  started from the original five-channel branch, not the improved mouth branch.
+- Add optional resumable coordinated-mouth/body composition after existing base
+  animation. Read saved expressions, preserve them through body authoring, check
+  every exported channel/blend/fade, and retain the gesture groups. Defaults stay
+  unchanged; duplicate authoring and legacy overwrite are refused.
+- Keep approved body geometry and motion unchanged. Final Codel has exact matching
+  physics/Idle/Nod/Question files and 481 poses with zero non-authored-region vertex
+  difference. Confused stills exactly match the optional improved reference.
+- Keep the historical strict seam failure. A separately supplied, MOC-bound
+  geometry-independence contract enables a scale-aware eight-binary32-step bound,
+  capped at .001 source pixel. Independent Codel/Sara and injected-deformation
+  checks support this limited policy. It is not a proof of arbitrary Core rounding
+  error or permission to waive genuine geometry failures; Girl2's 1,716 lip
+  reversals remain failed. The old probe behavior persists without the contract.
+- Present `runs/phase4b6-1-codel-v3` for explicit visual review. No automatic
+  promotion, production deployment, inference, downloads or training.

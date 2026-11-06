@@ -339,3 +339,24 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Keep frozen Codel/accepted models/package pins unchanged. No inference/downloads
   needed. Run Python and JS regressions; stop after Phase 4B.6 without deployment,
   training or host changes.
+
+## Phase 4B.6.1 expression/body composition
+- Read `docs/phase4b6-1-results.md`. User accepted Phase 4B.6 head/hair/breathing/
+  gesture behavior; preserve it. Final combined expressions still await review.
+- `prepare-performance` composes optional coordinated mouths then calm body motion;
+  both options default to preserve. `create` exposes the same optional composition.
+  Read actual saved expression entries; never regenerate them from the legacy
+  five-channel recipe after coordinated authoring. Check exported channels/fades.
+- Candidate `runs/phase4b6-1-codel-v3`; gallery `runs/phase4b6-1-review`.
+  Confused round=1/open=.35, Surprised round=1/open=.85. Settled Confused matches
+  the earlier improved mouth reference exactly; body/physics clips stay exact.
+- Historical `1e-7` seam failure stays failed. New scale-aware verification requires
+  an exact-MOC-bound saved geometry contract, no opening geometry dependencies,
+  eight float32 steps at mesh scale AND a .001 source-pixel cap. Without the
+  contract, the probe retains the original strict rule. Keep raw legacy results,
+  precision probes, negative controls and Girl2's inherited 1,716 lip reversals.
+- Preserve failed Part-creation experiment, v1/v2 candidates and the first missing
+  face-summary field. User review is distinct from numerical/development review.
+- Whole runtime hashes identify the candidate; model3 alone may be unchanged.
+  No inference/downloads/training/system changes or production work. Stop after
+  Phase 4B.6.1; no automatic promotion.

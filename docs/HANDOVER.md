@@ -1,5 +1,35 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.6.1 (2026-11-06)
+
+Read [results](phase4b6-1-results.md) and [benchmark](benchmarks/phase4b6-1.json).
+User accepted Phase 4B.6 body motion; its final model remains frozen. The new
+combined candidate restores improved mouth expressions and awaits visual review.
+
+- Candidate `runs/phase4b6-1-codel-v3`; `performance.json` records editable/runtime
+  paths. Viewer 8792 compares against the approved body model; gallery 8793 serves
+  `runs/phase4b6-1-review` with mouth-only/full comparisons and moving Confused.
+- `prepare-performance --mouths coordinated --body-motion calm` composes both in
+  one resumable workflow. Same optional flags on `create`; defaults unchanged.
+  Applying mouths to an existing body run instead uses body-motion `preserve`.
+- All saved expression channels survive later body authoring and export. Confused
+  has roundness=1/open=.35; Surprised open=.85. Both Confused still comparisons
+  match the improved reference exactly; neutral matches approved body exactly.
+- Physics/Idle/Nod/Question are byte-identical. 481 matching Core poses show zero
+  change in the 21 checked non-authored drawables. All 33 old archive PNGs and 20
+  source layers stay exact; complete artwork matches the optional mouth reference.
+- 146 Python, five talk and three numerical JS tests pass, plus three synthetic
+  JS source audits. Final candidate passes 819 mouth/496 body Core poses, 401
+  dense frames/72 eye samples, 213 mouth, 476 body and 355 coexistence frames.
+- Old Codel strict seam failure remains. New optional MOC-bound geometry contract
+  adds explicit scale-aware float32 bounds plus a .001 source-pixel cap; Codel and
+  Sara benchmarks/negative tests pass. No contract means the old strict check.
+  Girl2's 1,716 lip reversals remain failed; no unrelated quality claim.
+- Retain all failed attempts, first face-summary failure, reverse-order candidate,
+  raw opacity excursions and exact runtime review hashes. No automatic promotion
+  or production deployment. Stop after Phase 4B.6.1.
+
+
 ## Current state after Phase 4B.6 (2026-11-06)
 
 Continued from `68e1d25`. Read [results](phase4b6-results.md),
