@@ -617,3 +617,22 @@ expression review did. The user subsequently said “Accept as a limited frontal
 prototype” after reviewing the repaired runtime. Freeze that exact runtime,
 editable project and reviewed artwork as `codel-frontal-prototype-v1`; this separate
 acceptance excludes elbow/finger articulation, runtime waves and deployment.
+
+
+## Phase 4B.11 — native elbow rotation and reviewed sleeve overlap
+
+Test exported Core/render behavior before selecting the authoring method. Distal
+mesh keyforms distorted under the existing mapping and failed the combined
+triangle audit. Native rotation kept the forearm/hand coherent. The user's
+“Elbow is desintigrating while moving, we need more overlap there.” rejected the
+flat-cut candidate despite its numerical pass. Add a small source-derived concealed
+sleeve cap with generated-shape provenance and zero rest opacity; do not repaint
+or replace original textures. The user approved the exact right cap for continued
+validation and later accepted the left cap plus both coordinated gestures as a
+limited elbow prototype. Preserve those separate decisions; no automatic promotion.
+
+Keep the historical three-total-mesh shoulder check failed when an invisible cap
+is added. A separate scoped contract requires three visible originals and exactly
+one hidden cap per articulated side; unrelated motion and neutral checks remain.
+Retain the reference-neutral render discrepancy and all mesh-transform, draw-order,
+flat-cut and operational failures. No wrist/finger articulation or deployment.

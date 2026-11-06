@@ -1,0 +1,918 @@
+{
+  "schema_version": 1,
+  "phase": "4B.11",
+  "baseline_commit": "009824853de7b5b9e52ec8908da10c896f9ed6a6",
+  "status": "human-accepted-limited-elbow-experiment-not-promoted",
+  "reference": "docs/references/codel-frontal-prototype-v1.json",
+  "candidate": "runs/phase4b11-bilateral-v2",
+  "editable_project": "runs/phase4b11-bilateral-v2/rig/authoring/character.psd2live",
+  "project_sha256": "3a1451c8151d43722f6135be99c9014cd731c294d9b5299d700c2b0b34feedaf",
+  "review": {
+    "file": "runs/phase4b11-bilateral-v2/user-review.json",
+    "sha256": "0ab6ccd934573c36d9c877a1cfd2607aecde23df70890ecb9bbcf03040cb6589",
+    "record": {
+      "reviewer_kind": "human",
+      "decision": "accept",
+      "reply": "Accept as a limited elbow prototype",
+      "scope": [
+        "Left concealed sleeve overlap",
+        "Both coordinated elbow/shoulder gestures",
+        "Hand following and neutral return",
+        "Limited experimental candidate only"
+      ],
+      "excluded": [
+        "replacement of codel-frontal-prototype-v1",
+        "production deployment",
+        "independent wrist/finger articulation",
+        "verified anatomy"
+      ],
+      "files": {
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.4096/texture_00.png": "28cb4fb98f7f034fef2a09023b69e316809dab87855702f42076ab09d0321818",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.blink.motion3.json": "399f91b7bfac0666f589ab7c6daace5e33e5c6d6e7c6e7ca4024b6db48a65110",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.bodyNod.motion3.json": "8287a7cfd68b1fa468975902c9ca7431c39e5d909a7651145ef4f2113519c6aa",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.bodyQuestion.motion3.json": "b2afc0d0224675c51adb1422efa5255dfd8e406b49698b7ea6f1cc8eabd1999c",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.can3": "93c3c05b7ac880218b036dd48f3a56ec9a2516877a98aaa8bfda2b9410c24e5a",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.cdi3.json": "ca2b7e0975e475848f204d6d1404286f28f9e6deaea3e028c0320dc324addb41",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.cmo3": "5f630594c8662f571ffc1eed3865c2eb0abeb87320a6a820393f7c0cf7f72ddb",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.createIdle.motion3.json": "d1dfc9452ac98fea14addd653632399c4080b79cc7e71ebea0a30a2a06dc7f2c",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.create_angry.exp3.json": "ec83e73e26aafd6fdb025f67af567f9e8e12bfb85137ded2f8e80deccc8debdc",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.create_confused.exp3.json": "8993aa56dff5eadf9fd0699b835dcdfce108ed7de3dfe5ebee38b133f0958dfc",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.create_embarrassed.exp3.json": "446d539a462051b05323b1ef26731d54e38d73f464d48f8200b85e693236ea88",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.create_happy.exp3.json": "462375b2e4dbb0e4769c26cf09521a446808617431e667ef1406a107975ac857",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.create_neutral.exp3.json": "5ef679a167a1202c66ad9aedb417a89e9f0a2e619a456a6bc6e6fd444f44c43f",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.create_sad.exp3.json": "d389d8dd3d76dc3aebfd27943f790fe931e48ad0fb84eb92b593ccd240cd01f4",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.create_surprised.exp3.json": "1c3c7fa8be48644abcfd95b280cf13bd826f5c908aa06f61dc4ee9586ad3ce1d",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.elbowLeft.motion3.json": "38e62202dd87dc859eb852723987a959f6047ce8031dfe536582888eae765f0a",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.elbowRight.motion3.json": "cc1cedf724832b7b8e3fd301348c683a73027e0a7e038806cc598b6b4235528c",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.frontalArmLeft.motion3.json": "68eb7911af1e0dd0a8fb4938ee3e85dc05516e500af18cb80296917d05ba33f0",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.frontalArmRight.motion3.json": "fd70a5f004ca5931d3daf1e3ae91922cea7bd996f57fac472b5b3835ae991849",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.idle.motion3.json": "14674d50d8765df706ac253975629f7cffe97a2442248a41af59f68d9cd3f2dc",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.moc3": "147c34840ec508fb6561e9a6cf31cc8f3bd1b83f4acb4a81b304f1bbd900c1d8",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.model3.json": "294529f89be42be9b8682c88a495dfda87ca94bd321442392db8190a1f2619d2",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.nod.motion3.json": "bfd9a247d5ec8479145c2dddfd5fdbf03e1c46df8d7460f07badd146c1e19418",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.physics3.json": "55298cfb73cacbcb42f2760f0e699727503494560c3324a23fffdf45c553072a",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.psd2live.json": "fb704e27db11b80f1acb8e959d67f6b1e50f39234c6aafdacefcfc82eca4bb7d",
+        "runs/phase4b11-bilateral-v2/rig/exported/runtime/Generated_artwork.shake.motion3.json": "81f50690b925cab5487c64cd1fc9781485a141f758a1f7085d36f0596bbfe54b",
+        "runs/phase4b11-bilateral-v2/rig/authoring/character.psd2live": "3a1451c8151d43722f6135be99c9014cd731c294d9b5299d700c2b0b34feedaf",
+        "runs/phase4b11-bilateral-v2/rig/overlap/overlap.json": "2e2e8a844af2898ec6576dd206699f5ae6aa80fb773500ec11d42b8b1099edb3",
+        "runs/phase4b11-bilateral-v2/rig/overlap/sleeve-overlap.png": "bf1e2aaddb69776ec22befece21eab1f5ab82356cd2812f201bccd1e98b920da",
+        "runs/phase4b11-overlap-v2/rig/overlap/sleeve-overlap.png": "f7950e4ff8bfb4bf6a61152a7d00a987396f170457a7c5a8bd94949010b1ae4a",
+        "runs/phase4b11-bilateral-v2/joints.json": "44bef30f04ea3c8344a5bad450cab266b415666252727bb0d88a82f15ad662e4"
+      }
+    }
+  },
+  "review_history": [
+    {
+      "file": "runs/phase4b11-audit/user-gap-rejection.json",
+      "sha256": "52fba55215c35c2713fc5e7eefa9ed515830fe61344f73dadbcd3d71725d24a6"
+    },
+    {
+      "file": "runs/phase4b11-overlap-v1/overlap-approval.json",
+      "sha256": "624a415366d17a09a3aad439cd7d78c06eed78f14bc856e1dfedf7fa403cabe5"
+    }
+  ],
+  "joints": {
+    "anatomy_verified": false,
+    "arms": {
+      "left": {
+        "elbow": [
+          0.773125,
+          0.5833333333333334
+        ],
+        "elbow_overlap_rows": 0,
+        "elbow_uncertainty": {
+          "angle_degrees": 169.9689664026048,
+          "candidate_bbox": [
+            604.0,
+            560.0,
+            640.0,
+            1004.0
+          ],
+          "fit_rms_pixels": 4.553605609911204,
+          "forearm_length_pixels": 209.57099035887578,
+          "point": [
+            616.0,
+            896.0
+          ],
+          "status": "unresolved-near-straight",
+          "upper_length_pixels": 428.6723690652338,
+          "warning": "Cloth silhouette fit; joint center, depth and underlying bone lengths are not independently observed."
+        },
+        "forearm_generated_pixels": 0,
+        "helpers": {
+          "canonical": {
+            "elbow": [
+              616.0,
+              896.0
+            ],
+            "forearm_over_torso": 0.42337573809873896,
+            "status": "unresolved-near-straight",
+            "upper_over_torso": 0.8660047859903713
+          },
+          "explain": {
+            "elbow": [
+              608.0,
+              876.0
+            ],
+            "forearm_over_torso": 0.44658289754397773,
+            "status": "unresolved-near-straight",
+            "upper_over_torso": 0.8291278253403773
+          },
+          "left-lift": {
+            "elbow": [
+              604.0,
+              780.0
+            ],
+            "forearm_over_torso": 0.34812676393422126,
+            "status": "visible-lobe-hypothesis-with-overlap-ambiguity",
+            "upper_over_torso": 0.6329809001420171
+          },
+          "right-lift": {
+            "elbow": [
+              604.0,
+              864.0
+            ],
+            "forearm_over_torso": 0.4749200386872199,
+            "status": "unresolved-near-straight",
+            "upper_over_torso": 0.8074226655102059
+          },
+          "wave": {
+            "elbow": [
+              632.0,
+              744.0
+            ],
+            "forearm_over_torso": 0.43203124847831914,
+            "status": "visible-lobe-hypothesis-with-overlap-ambiguity",
+            "upper_over_torso": 0.5577925019294765
+          }
+        },
+        "limitation": "Flat sleeve cut has no concealed joint cap; pivot is unreviewed.",
+        "shoulder_surface": [
+          0.741858108108108,
+          0.3054881052927928
+        ],
+        "support": {
+          "forearm": [
+            573,
+            896,
+            688,
+            1099
+          ],
+          "hand": [
+            623,
+            1099,
+            703,
+            1322
+          ],
+          "upper": [
+            503,
+            451,
+            665,
+            896
+          ]
+        },
+        "wrist": [
+          0.8311466165413534,
+          0.7154458411654135
+        ],
+        "wrist_overlap_rows": 0
+      },
+      "right": {
+        "elbow": [
+          0.23125,
+          0.5703125
+        ],
+        "elbow_overlap_rows": 0,
+        "elbow_uncertainty": {
+          "angle_degrees": 169.50779992129398,
+          "candidate_bbox": [
+            160.0,
+            560.0,
+            200.0,
+            1000.0
+          ],
+          "fit_rms_pixels": 3.906370447016508,
+          "forearm_length_pixels": 226.06193841511666,
+          "point": [
+            188.0,
+            876.0
+          ],
+          "status": "unresolved-near-straight",
+          "upper_length_pixels": 408.48990195597247,
+          "warning": "Cloth silhouette fit; joint center, depth and underlying bone lengths are not independently observed."
+        },
+        "forearm_generated_pixels": 0,
+        "helpers": {
+          "canonical": {
+            "elbow": [
+              188.0,
+              876.0
+            ],
+            "forearm_over_torso": 0.45669078467700336,
+            "status": "unresolved-near-straight",
+            "upper_over_torso": 0.8252321251635808
+          },
+          "explain": {
+            "elbow": [
+              208.0,
+              804.0
+            ],
+            "forearm_over_torso": 0.1385183711903502,
+            "status": "visible-lobe-hypothesis-with-overlap-ambiguity",
+            "upper_over_torso": 0.6874669254741714
+          },
+          "left-lift": {
+            "elbow": [
+              188.0,
+              920.0
+            ],
+            "forearm_over_torso": 0.35538438477489165,
+            "status": "unresolved-near-straight",
+            "upper_over_torso": 0.930135664605243
+          },
+          "right-lift": {
+            "elbow": [
+              196.0,
+              792.0
+            ],
+            "forearm_over_torso": 0.3839885599595248,
+            "status": "visible-lobe-hypothesis-with-overlap-ambiguity",
+            "upper_over_torso": 0.6580964089038842
+          },
+          "wave": {
+            "elbow": [
+              184.0,
+              940.0
+            ],
+            "forearm_over_torso": 0.30717763245909363,
+            "status": "unresolved-near-straight",
+            "upper_over_torso": 0.9748935788457098
+          }
+        },
+        "limitation": "Flat sleeve cut has no concealed joint cap; pivot is unreviewed.",
+        "shoulder_surface": [
+          0.2616905737704918,
+          0.3053225324453552
+        ],
+        "support": {
+          "forearm": [
+            115,
+            876,
+            231,
+            1098
+          ],
+          "hand": [
+            99,
+            1098,
+            182,
+            1322
+          ],
+          "upper": [
+            141,
+            452,
+            298,
+            876
+          ]
+        },
+        "wrist": [
+          0.1717319277108434,
+          0.7144672439759036
+        ],
+        "wrist_overlap_rows": 0
+      }
+    },
+    "canvas": [
+      800,
+      1536
+    ],
+    "geometry_sha256": "c372601b0c353818c9d05339a067ec1b10677690c6034f79392e56a3a22d0b39",
+    "layer_manifest_sha256": "3cde90336c54a5edf9d860f7e8f5fe766dc07bf251e1abed8459cd03de80077a",
+    "range_is_diagnostic": true,
+    "review": "pending"
+  },
+  "overlaps": {
+    "right": {
+      "bbox": [
+        140,
+        829,
+        231,
+        924
+      ],
+      "center": [
+        185.5,
+        876.5
+      ],
+      "classification": "generated source-derived concealed overlap; duplicated samples are not observed ownership",
+      "human_review": "pending",
+      "layer_manifest_sha256": "3cde90336c54a5edf9d860f7e8f5fe766dc07bf251e1abed8459cd03de80077a",
+      "method": "Elliptical source sleeve patch beneath existing upper and moving forearm; alpha zero at rest",
+      "new_hidden_shape": true,
+      "new_rgb_inference": false,
+      "path": "sleeve-overlap.png",
+      "pivot": [
+        185.0,
+        876.0
+      ],
+      "radius_pixels": 45.0,
+      "sha256": "f7950e4ff8bfb4bf6a61152a7d00a987396f170457a7c5a8bd94949010b1ae4a",
+      "side": "right"
+    },
+    "left": {
+      "bbox": [
+        573,
+        849,
+        665,
+        944
+      ],
+      "center": [
+        619.0,
+        896.5
+      ],
+      "classification": "generated source-derived concealed overlap; duplicated samples are not observed ownership",
+      "human_review": "pending",
+      "layer_manifest_sha256": "3cde90336c54a5edf9d860f7e8f5fe766dc07bf251e1abed8459cd03de80077a",
+      "method": "Elliptical source sleeve patch beneath existing upper and moving forearm; alpha zero at rest",
+      "new_hidden_shape": true,
+      "new_rgb_inference": false,
+      "path": "sleeve-overlap.png",
+      "pivot": [
+        618.5,
+        896.0
+      ],
+      "radius_pixels": 45.5,
+      "sha256": "bf1e2aaddb69776ec22befece21eab1f5ab82356cd2812f201bccd1e98b920da",
+      "side": "left"
+    }
+  },
+  "source_assets": {
+    "original_count": 40,
+    "original_all_exact": true,
+    "added_count": 2
+  },
+  "method": {
+    "native_rotation": true,
+    "elbow_degrees": 120,
+    "parameters": [
+      "ParamArmRElbow",
+      "ParamArmLElbow"
+    ],
+    "existing_shoulder_controls_preserved": true,
+    "clip_shoulder_fraction": 0.15,
+    "clip_seconds": 4,
+    "interpolation": "BEZIER horizontal endpoint tangents",
+    "hand_attachment": "shared native elbow rotation; independent wrist/fingers absent",
+    "artwork": "two source-derived sleeve overlaps; no global redraw or new RGB inference",
+    "ordinary_creation_defaults_changed": false
+  },
+  "validation": {
+    "core": {
+      "status": "pass",
+      "render_tested": false,
+      "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+      "head_tilt_pivot": {
+        "input": 5,
+        "actual_degrees": -5.000002115845674,
+        "canvas": [
+          402.0819230420214,
+          337.51530002219187
+        ],
+        "normalized": [
+          0.5026024038025267,
+          0.21973652345194783
+        ],
+        "fit_max_source_pixels": 0.00014775113847291
+      },
+      "elbow_combination_samples": 402,
+      "nonfinite": 0,
+      "visible_reversals": 0,
+      "exact_neutral_return": true
+    },
+    "core_samples": 898,
+    "elbow_browser": {
+      "status": "pass",
+      "frames": 382,
+      "checks": [
+        {
+          "name": "Loaded",
+          "pass": true
+        },
+        {
+          "name": "Elbow parameter present",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral",
+          "pass": true
+        },
+        {
+          "name": "Only forearm and hand move; upper arm/shoulder unchanged",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return",
+          "pass": true
+        },
+        {
+          "name": "Cubism clip reaches elbow endpoint",
+          "pass": true
+        },
+        {
+          "name": "Talking coexists",
+          "pass": true
+        },
+        {
+          "name": "Shoulder and elbow coordinated",
+          "pass": true
+        },
+        {
+          "name": "Interruption resets exactly",
+          "pass": true
+        },
+        {
+          "name": "Only forearm and hand move; upper arm/shoulder unchanged",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return",
+          "pass": true
+        },
+        {
+          "name": "Cubism clip reaches elbow endpoint",
+          "pass": true
+        },
+        {
+          "name": "Talking coexists",
+          "pass": true
+        },
+        {
+          "name": "Shoulder and elbow coordinated",
+          "pass": true
+        },
+        {
+          "name": "Interruption resets exactly",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Neutral after head/talk coexistence",
+          "pass": true
+        },
+        {
+          "name": "Fresh model instance restores exact neutral render",
+          "pass": true
+        },
+        {
+          "name": "Finite sampled geometry and bounded opacity",
+          "pass": true
+        }
+      ],
+      "geometry": {
+        "nonfinite": 0,
+        "invalid_opacity": 0,
+        "strict_opacity_excursions": 55
+      },
+      "report": "runs/phase4b11-bilateral-render-final/frames/result.json",
+      "sha256": "4656d934e715bc6a7b307689a7caa87edf82822200be4414b8dac9d216399a82"
+    },
+    "shoulders_scoped": {
+      "status": "pass",
+      "checks": [
+        {
+          "name": "Frontal model loaded",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral control",
+          "pass": true
+        },
+        {
+          "name": "ParamArmRightOpen present",
+          "pass": true
+        },
+        {
+          "name": "Only the concealed elbow overlap is additionally moved while invisible",
+          "pass": true
+        },
+        {
+          "name": "Exactly three visible original Right arm meshes move",
+          "pass": true
+        },
+        {
+          "name": "Correct anatomical Right ownership; torso/head/opposite arm fixed",
+          "pass": true
+        },
+        {
+          "name": "Right visible Core displacement",
+          "pass": true
+        },
+        {
+          "name": "Right exact neutral return",
+          "pass": true
+        },
+        {
+          "name": "ParamArmLeftOpen present",
+          "pass": true
+        },
+        {
+          "name": "Only the concealed elbow overlap is additionally moved while invisible",
+          "pass": true
+        },
+        {
+          "name": "Exactly three visible original Left arm meshes move",
+          "pass": true
+        },
+        {
+          "name": "Correct anatomical Left ownership; torso/head/opposite arm fixed",
+          "pass": true
+        },
+        {
+          "name": "Left visible Core displacement",
+          "pass": true
+        },
+        {
+          "name": "Left exact neutral return",
+          "pass": true
+        },
+        {
+          "name": "Right motion clip reaches gesture",
+          "pass": true
+        },
+        {
+          "name": "Talking continues during Right",
+          "pass": true
+        },
+        {
+          "name": "Head movement coexists with Right",
+          "pass": true
+        },
+        {
+          "name": "Left motion clip reaches gesture",
+          "pass": true
+        },
+        {
+          "name": "Talking continues during Left",
+          "pass": true
+        },
+        {
+          "name": "Head movement coexists with Left",
+          "pass": true
+        },
+        {
+          "name": "Final exact neutral return",
+          "pass": true
+        },
+        {
+          "name": "Finite final geometry",
+          "pass": true
+        },
+        {
+          "name": "Finite sampled geometry and bounded opacity",
+          "pass": true
+        }
+      ],
+      "report": "runs/phase4b11-bilateral-shoulders-final/frames/result.json"
+    },
+    "historical_regression": {
+      "results": {
+        "arms": "Browser validation failed; inspect frames/result.json and browser.log",
+        "body": 0,
+        "body-core": 0,
+        "coexistence": 0,
+        "dense": 0,
+        "mouth-core": 0
+      },
+      "status": "fail",
+      "user_review": "pending"
+    },
+    "historical_shoulder_count_note": "Old scenario fails exactly-three-total-mesh count due added invisible overlap; preserved unchanged. New scoped scenario asserts three visible original meshes and exactly one invisible overlap per articulated side; original unrelated-mesh isolation and neutral checks retained.",
+    "python": {
+      "log": "runs/phase4b11-audit/python-release.log",
+      "status": "pass",
+      "tests": 233,
+      "sha256": "156ac56c69c110a8afad1916bf93c09beaa26838befdc3a200173c9c2a38067d"
+    },
+    "javascript": {
+      "log": "runs/phase4b11-audit/javascript-release.log",
+      "status": "pass",
+      "suites": [
+        "test_rp_talk.mjs",
+        "test_mouth_invariant.cjs"
+      ],
+      "sha256": "4b09a3ae5254edaf3ee6ecce652c6398dc3f301897ffcd4a998cc8f265e8476b"
+    }
+  },
+  "preservation": {
+    "codel-combined-v1": {
+      "files": 1806,
+      "all_hashes_match": true,
+      "manifest_sha256": "31a781ebc41f74fd81031dac37cc2a5d4b60d90310ccdb3f4d8ca1ddf772948e"
+    },
+    "codel-frontal-prototype-v1": {
+      "files": 203,
+      "all_hashes_match": true,
+      "manifest_sha256": "3d15901ad6d0ca3716b1054fbf3dd4ee3f6898119ee379910e91089bf7074b4c"
+    },
+    "accepted_expression_physics_motion_payloads": {
+      "unchanged": [
+        "Generated_artwork.create_surprised.exp3.json",
+        "Generated_artwork.frontalArmRight.motion3.json",
+        "Generated_artwork.create_confused.exp3.json",
+        "Generated_artwork.create_angry.exp3.json",
+        "Generated_artwork.create_neutral.exp3.json",
+        "Generated_artwork.nod.motion3.json",
+        "Generated_artwork.idle.motion3.json",
+        "Generated_artwork.create_sad.exp3.json",
+        "Generated_artwork.physics3.json",
+        "Generated_artwork.create_embarrassed.exp3.json",
+        "Generated_artwork.createIdle.motion3.json",
+        "Generated_artwork.shake.motion3.json",
+        "Generated_artwork.bodyNod.motion3.json",
+        "Generated_artwork.frontalArmLeft.motion3.json",
+        "Generated_artwork.bodyQuestion.motion3.json",
+        "Generated_artwork.blink.motion3.json",
+        "Generated_artwork.create_happy.exp3.json"
+      ],
+      "changed": []
+    },
+    "render_neutral_vs_reference": {
+      "exact": false,
+      "changed_pixels": 880,
+      "max_channel_delta": 170,
+      "mean_absolute_channel_delta": 0.0036564102564102564,
+      "composited_0": {
+        "max_rgb_delta": 33.77254901960784,
+        "mean_rgb_delta": 0.0021636199095022633
+      },
+      "composited_255": {
+        "max_rgb_delta": 24.019607843137237,
+        "mean_rgb_delta": 0.002376892911010559
+      }
+    }
+  },
+  "failures_retained": {
+    "mesh_transform": {
+      "run": "runs/phase4b11-elbow-v6",
+      "visible_triangle_reversals": 8983,
+      "core_samples": 697
+    },
+    "unbacked_cut": "runs/phase4b11-elbow-v8; user requested more overlap",
+    "depth_order": [
+      "forearm behind torso",
+      "forearm behind skirt"
+    ],
+    "operational": [
+      "loopback sandbox denial",
+      "inspection page size 128 rejected",
+      "nested editor lock",
+      "relative export path",
+      "frame names containing decimal points rejected"
+    ]
+  },
+  "review_urls": {
+    "gallery": "http://127.0.0.1:8813/final/",
+    "live": "http://127.0.0.1:8816/"
+  },
+  "licenses": "Existing source CC-BY-4.0 and installed PSD2Live/Cubism license scope unchanged; no new weights or dependencies",
+  "production_touched": false,
+  "promoted": false,
+  "independently_verified_anatomy": false
+}

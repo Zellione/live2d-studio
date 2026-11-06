@@ -1,5 +1,28 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.11 — user-accepted limited elbow experiment
+
+Read [results](phase4b11-results.md), [authoring](phase4b11-elbow-rigging.md) and
+[benchmark](benchmarks/phase4b11.json). Baseline `0098248` stays immutable.
+
+- Candidate: `runs/phase4b11-bilateral-v2/rig`; exact user acceptance is in its
+  parent `user-review.json`. No promotion over `codel-frontal-prototype-v1`.
+- Native rotation deformers bend both forearms/hands through 120 degrees with
+  modest coordinated shoulder motion. No independent wrist or finger articulation.
+- Mesh-transform attempts failed Core geometry; flat sleeve cuts separated. The
+  user requested more overlap, approved the right patch for continued validation,
+  then accepted both repaired gestures and the left overlap as a limited prototype.
+- Two concealed source-derived sleeve patches retain explicit uncertain provenance;
+  all original textures and 17 expression/physics/motion payloads stay exact.
+  Candidate neutral return/reload is exact; rendering differs slightly from the
+  earlier reference (880 pixels). Do not claim reference-neutral pixel equality.
+- Core 898 and elbow browser 382-frame checks pass. The old shoulder scenario's
+  fixed three-total-mesh count remains failed for the new invisible patches. The
+  separate scoped test checks three visible originals plus one hidden overlap,
+  preserves unrelated-motion isolation, and passes. No numerical gate was relaxed.
+- Gallery: localhost 8813/final; live before/after: 8816. Earlier failed runs and
+  right-only candidates remain intact. Production untouched. Stop after 4B.11.
+
 ## Current Phase 4B.10 — frontal master replaces angled rig as target
 
 The user corrected the project goal: the approved frontal synthetic canonical is

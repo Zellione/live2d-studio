@@ -127,3 +127,11 @@ exports, browser profiles, images, clips and failed candidates stay in ignored
 `runs/phase4b10-*`. Only code, tests, concise reports and small provenance/benchmark
 JSON enter Git. Synthetic observed pixels mean copied master samples, not verified
 anatomy. No production deployment or elbow/finger articulation is authorized.
+
+Phase 4B.11 keeps native elbow projects, failed mesh-transform exports, source-derived
+sleeve caps, joint hypotheses, local correction proposals, exact user reviews and
+all Core/browser evidence under ignored `runs/phase4b11-*`. New hidden-shape samples
+remain inferred even when their RGB is copied from the synthetic master. The user
+accepted the bilateral candidate as a limited experiment; this does not overwrite
+or promote over the frozen frontal prototype. Commit only authoring/review code,
+small benchmarks, tests and concise documentation. Preserve historical failures.

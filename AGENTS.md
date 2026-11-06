@@ -501,3 +501,21 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   prototype. Preserve `codel-frontal-prototype-v1` and its 203 frozen payloads.
   Acceptance excludes elbow/finger articulation, wave/raised-forearm runtime and
   deployment. Production SillyTavern remains untouched. Stop after Phase 4B.10.
+
+
+## Phase 4B.11 limited native elbows
+- Read docs/phase4b11-results.md and docs/phase4b11-elbow-rigging.md. The user
+  accepted `runs/phase4b11-bilateral-v2` as a limited elbow prototype, including
+  both gestures and the left sleeve overlap. Preserve its exact user-review hashes.
+- Keep codel-frontal-prototype-v1 immutable and primary reference; no automatic
+  promotion or production deployment. New code is opt-in only.
+- Native rotation owns forearm/hand under the inspected shoulder. Source-relative
+  pivots remain hypotheses; do not turn helper proportions into anatomical truth.
+- Concealed source-derived caps were required after the user rejected separating
+  cuts. Retain right-patch approval, final bilateral review and all failed variants.
+- The affine mesh attempt failed with 8,983 visible triangle reversals. Keep it
+  failed. Existing shoulder fixed-count failure is retained separately from the
+  new exact three-visible-original plus one-invisible-cap contract. No threshold
+  relaxation. Preserve original textures and expression/physics/motion payloads.
+- Exact candidate-neutral return is not reference-render equality. No independent
+  wrist/finger articulation or general anatomical guarantee. Stop after 4B.11.
