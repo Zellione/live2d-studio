@@ -317,3 +317,25 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   despite passing dense numerical checks. User acceptance remains pending.
   Gallery: `runs/phase4b5-review-final`. Preserve all intermediate/report failures.
 - Stop after Phase 4B.5. No production deployment, new training or host changes.
+
+
+## Phase 4B.6 body/head/hair candidate
+- Explicit user authorization reopened local reusable body/head/hair authoring and
+  regressions from `68e1d25`. Read `docs/phase4b6-results.md` and
+  `docs/phase4b6-body-rigging.md`. Production remains disabled.
+- `prepare-body` builds separate candidates from verified creation/experiment
+  ancestry. Discover common head/face/hair parents; never use character IDs or
+  coordinates as generic bindings. Preserve neutral keys, artwork and draw order.
+- Candidate `runs/phase4b6-codel-v7`; comparison/gallery
+  `runs/phase4b6-review-release`. User visual review remains pending. No promotion.
+- Arms/hands remain one unsided component with no reviewed joints/hidden backing.
+  Shared breathing/body motion is not independent articulation. Head nod and
+  questioning tilt are the only new gestures; no hand lift or shoulder-only shrug.
+- Retain 496-sample Core, 401-frame facial and continuous body/reload evidence.
+  Girl2's 1,716 inherited lip reversals keep its broad gate FAILED. Sara's numeric
+  passes do not close source-boundary visual gaps. Preserve all negative evidence.
+- PSD2Live custom Bezier saves can retain a dirty flag: verify/save the full candidate
+  archive, checkout the predecessor history, reopen for export. Never discard work.
+- Keep frozen Codel/accepted models/package pins unchanged. No inference/downloads
+  needed. Run Python and JS regressions; stop after Phase 4B.6 without deployment,
+  training or host changes.

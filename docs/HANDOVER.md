@@ -1,5 +1,30 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.6 (2026-11-06)
+
+Continued from `68e1d25`. Read [results](phase4b6-results.md),
+[body authoring](phase4b6-body-rigging.md) and [benchmark](benchmarks/phase4b6.json).
+
+- New optional `prepare-body` reuses verified source/project stages, inspects shared
+  ancestry, adds coherent head XY motion, increases existing hair-physics response,
+  and exports a 16-second idle plus two head-only gestures. No inference/downloads.
+- Codel candidate: `runs/phase4b6-codel-v7`; original neutral/source assets stay exact.
+  Both arms remain one unsided component with a shared body attachment. No arm/hand
+  articulation or full-body claim. Missing joints/hidden intersections are explicit.
+- Viewer supports head/body/hair controls, actual available gestures and equal-scale
+  synchronized comparison. Local viewer 8788; gallery/recordings 8791 from
+  `runs/phase4b6-review-release`. User visual approval remains pending.
+- Codel passes 496 Core samples, 476 final body/comparison frames, 401 facial frames,
+  72 eye-channel samples and exact reset/reload. Sara passes numerical Core/render
+  gates but retains source-boundary gaps. Girl2's 1,716 inherited lip reversals
+  remain a failed broad Core gate; both portrait dense suites pass independently.
+- 142 Python tests, five JS talk tests and three source-contract audits pass.
+  No threshold change, no promotion, production ST untouched. Retain raw opacity
+  excursions, all earlier candidates, dirty-save/motion-format failures and v6's
+  partly cancelling nod. Saved candidate/history checkout avoids discard_unsaved.
+- Stop after Phase 4B.6. No production deployment, training or host changes.
+
+
 ## Current state after Phase 4B.5 (2026-11-05)
 
 Continued from clean `7863b34`. Read [results](phase4b5-results.md),
