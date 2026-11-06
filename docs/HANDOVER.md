@@ -1,5 +1,32 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.10 — frontal master replaces angled rig as target
+
+The user corrected the project goal: the approved frontal synthetic canonical is
+now the **primary production artwork**. The old angled rig is archival; preserve
+its frozen files, but do not use Phase 4B.9's old attachment constraint to block
+frontal authoring. Read [results](phase4b10-results.md),
+[workflow](phase4b10-frontal-master.md) and [benchmark](benchmarks/phase4b10.json).
+
+- Primary binding: `docs/references/codel-frontal-master-v1.json` and
+  `runs/phase4b10-master`. Original identity/style and canonical geometry stay
+  separately hash-bound. This promotes artwork authority, not verified anatomy
+  or production SillyTavern deployment.
+- Separate torso/skirt/neck/head/hair and bilateral upper-arm/forearm/hand parts.
+  The user approved decomposition/hidden backing and a subsequent local brow
+  repair. Neutral pixels remain exact across that repair; enlarged expression
+  crops exposed the original residual brow traces despite passing numeric gates.
+- Four helper selections are preserved in `runs/phase4b10-pose-review`, localhost
+  8808. Fresh aside guides are versioned and framed; no new Qwen generation.
+- Frontal runtime provides seven expressions, coordinated mouth/head/body/hair
+  behavior and two modest independent arm sweeps. No raised-forearm, waving,
+  elbow or finger articulation is claimed. The user accepted the exact repaired
+  runtime as a limited frontal prototype, frozen in
+  `docs/references/codel-frontal-prototype-v1.json` (203 payload files).
+  Gallery: localhost 8810; live rig: localhost 8812. Production remains disabled.
+- New raw/art/rig/render/review evidence remains under ignored `runs/phase4b10-*`.
+  Previous references, defaults and production deployment remain unchanged.
+
 ## Current Phase 4B.9 — selected-family arm assessment; rig gate blocked
 
 Read [results](phase4b9-results.md), [method/reproduction](phase4b9-arm-assessment.md)

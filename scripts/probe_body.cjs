@@ -1,6 +1,6 @@
 // Installed Core geometry audit, independent of parameter names or render claims.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
-const [coreFile,modelFile,inspectionFile]=process.argv.slice(2);
+const [coreFile,modelFile,inspectionFile,armMode]=process.argv.slice(2);
 const source=fs.readFileSync(coreFile),sandbox={console:{...console,log:console.error},require,process,Buffer,__dirname:path.dirname(path.resolve(coreFile)),__filename:path.resolve(coreFile),setTimeout,clearTimeout};
 vm.createContext(sandbox);vm.runInContext(source.toString(),sandbox,{timeout:10000});
 setTimeout(()=>{let moc,model;const report={status:'running',render_tested:false,core_sha256:crypto.createHash('sha256').update(source).digest('hex'),samples:[]};
@@ -34,6 +34,7 @@ try{
  }for(const r of Object.values(regions)){r.mean=r.total/r.vertices;delete r.total}return {values,regions,nonfinite,visibleReversals,invisibleReversals,reversals}};
  for(const [id,v]of Object.entries({ParamAngleX:12,ParamAngleY:8,ParamAngleZ:5,ParamBreath:1,ParamBodyAngleX:2,ParamBodyAngleZ:1,ParamHairFront:1,ParamHairBack:1}))if(ids.includes(id))for(const sign of id==='ParamBreath'?[1]:[-1,1])report.samples.push(sample({[id]:v*sign}));
  for(let i=0;i<=480;i++){const t=i/30;report.samples.push(sample({ParamAngleX:10*Math.sin(t*Math.PI/8),ParamAngleY:6*Math.sin(t*Math.PI/4),ParamAngleZ:4*Math.sin(t*Math.PI/8),ParamBreath:.5-.5*Math.cos(t*Math.PI/2),ParamHairFront:.6*Math.sin(t*Math.PI/8-.4),ParamHairBack:.7*Math.sin(t*Math.PI/8-.7),ParamBodyAngleX:1.5*Math.sin(t*Math.PI/8+.5),ParamBodyAngleZ:.6*Math.sin(t*Math.PI/4),ParamEyeLOpen:Math.cos(t*Math.PI)**2,ParamEyeROpen:Math.cos(t*Math.PI+.1)**2,ParamMouthOpenY:.5+.5*Math.sin(t*7)}))}
+ if(armMode==='--arms'){for(const id of ['ParamArmRightOpen','ParamArmLeftOpen'])if(!ids.includes(id))throw Error('Missing arm parameter '+id);for(let i=0;i<=100;i++){const t=i/100;report.samples.push(sample({ParamArmRightOpen:Math.sin(t*Math.PI)**2,ParamArmLeftOpen:Math.sin(t*2*Math.PI)**2,ParamAngleX:10*Math.sin(t*2*Math.PI),ParamAngleY:6*Math.cos(t*2*Math.PI),ParamAngleZ:4*Math.sin(t*Math.PI),ParamBodyAngleX:1.5*Math.sin(t*Math.PI),ParamBodyAngleZ:.6*Math.cos(t*Math.PI),ParamBreath:t,ParamEyeLOpen:Math.cos(t*Math.PI)**2,ParamEyeROpen:Math.cos(t*Math.PI)**2,ParamMouthOpenY:t}));}report.arm_combination_samples=101;}
  report.nonfinite=report.samples.reduce((s,v)=>s+v.nonfinite,0);report.visible_reversals=report.samples.reduce((s,v)=>s+v.visibleReversals,0);pose({});report.exact_neutral_return=d.vertexPositions.every((a,i)=>a.every((v,j)=>v===neutral[i][j]));
  report.status=!report.nonfinite&&!report.visible_reversals&&report.exact_neutral_return?'pass':'fail';if(report.status==='fail')process.exitCode=1;
 }catch(e){report.status='fail';report.error=String(e);process.exitCode=1}finally{model?.release();moc?._release();console.log(JSON.stringify(report,null,2))}},1000);

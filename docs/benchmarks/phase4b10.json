@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "phase": "4B.10",
+  "baseline_commit": "54ff23b2008642132ec4b91422dc5a0f4525529f",
+  "status": "human-accepted-limited-frontal-prototype",
+  "source_authority": {
+    "approval": {
+      "action": "accept",
+      "candidate": "b-62c26625a6664a98810b8361cea4b371-c4",
+      "image_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+      "pose": "canonical",
+      "reason": "",
+      "reviewer": "local user",
+      "reviewer_kind": "human",
+      "time": 1793981036.6653795
+    },
+    "canonical_provenance": {
+      "path": "canonical-provenance.json",
+      "sha256": "8d15231abbb8e648e1f1663abd16a7cdd5323296c1361f91c3115e31f2610725"
+    },
+    "canonical_run": "runs/phase4b8-canonical",
+    "deployment_authorized": false,
+    "family": {
+      "path": "runs/phase4b9-family",
+      "sha256": "4c19cbcb16eca0bb1f7282c3a6450cc56cdb62e719e9b1f67aefec23e9d45eb9"
+    },
+    "identity_style_only": {
+      "path": "identity.png",
+      "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+    },
+    "kind": "primary-frontal-synthetic-artwork",
+    "pixel_authority": "Exact synthetic master pixels; not independently verified anatomy",
+    "primary": {
+      "path": "primary.png",
+      "sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e"
+    },
+    "promotion_authority": "Explicit user Phase 4B.10 instruction: frontal canonical is the new primary production artwork",
+    "rig_approved": false,
+    "rights": "LisadiKaprio; CC-BY-4.0; https://opengameart.org/content/codel-visual-novel-sprite",
+    "schema_version": 1
+  },
+  "master_manifest_sha256": "8ca8b6c1ae0c36c6d638792ab1331505035eecb4d5a44591badc13a98bc4466b",
+  "user_reviews": {
+    "decomposition": {
+      "path": "runs/phase4b10-source-review/approval.json",
+      "sha256": "33d7cc82bfc13c3b21a75eca387b24cace7d8b7b10c7d673062f73722307d9eb",
+      "record": {
+        "reviewer_kind": "human",
+        "reviewer": "local user",
+        "decision": "accept",
+        "scope": "Exact frontal decomposition, matte, concealed facial skin and sleeve/torso backing for limited rig experiment; final animation separate",
+        "reply": "Approve for limited rig experiment",
+        "evidence_sha256": "b118e694e834154c2e40efcbbdfe8099baeba75c9dbc67d17cfc8127b7e98077",
+        "files": {
+          "runs/phase4b10-master/master.json": "8ca8b6c1ae0c36c6d638792ab1331505035eecb4d5a44591badc13a98bc4466b",
+          "runs/phase4b10-matte-v1/matte.json": "d3849e46880dbd4a2942187f68aa6561006235b18bd5e7fbba9f8e8f2881f83f",
+          "runs/phase4b10-layers-v1/layer_manifest.json": "9ba046dbd108fe5394225a52a87f0ddedc9ae8a7d7f24e884d589e4372cb90e5",
+          "runs/phase4b10-facial-v1/layers/layer_manifest.json": "feddb55328acf275cdaf42cdedea51e3d9ddde8eb609bf74856ec84b61cc3187",
+          "runs/phase4b10-readiness-v1/quality.json": "919bd1c5aa16ee06571b03d0f146cab621b68f71eb5c03acb147f8ec9f002c8d"
+        },
+        "animation_approved": false
+      }
+    },
+    "brow_repair": {
+      "path": "runs/phase4b10-source-review/v3/approval.json",
+      "sha256": "6223fd981f28b6f84e59b159b330f8aea2ff229f24b4bc346186722e97a1be86",
+      "record": {
+        "reviewer_kind": "human",
+        "reviewer": "local user",
+        "decision": "accept",
+        "scope": "Approved earlier frontal decomposition/backing plus revised local brow backing for limited rig experiment; final animation separate",
+        "reply": "Approve the local brow repair",
+        "evidence_sha256": "58339cacc5e844cb2bcba398528565952e3e8fe287d2234608275fdea8fdcfe3",
+        "files": {
+          "runs/phase4b10-master/master.json": "8ca8b6c1ae0c36c6d638792ab1331505035eecb4d5a44591badc13a98bc4466b",
+          "runs/phase4b10-matte-v1/matte.json": "d3849e46880dbd4a2942187f68aa6561006235b18bd5e7fbba9f8e8f2881f83f",
+          "runs/phase4b10-layers-v1/layer_manifest.json": "9ba046dbd108fe5394225a52a87f0ddedc9ae8a7d7f24e884d589e4372cb90e5",
+          "runs/phase4b10-readiness-v1/quality.json": "919bd1c5aa16ee06571b03d0f146cab621b68f71eb5c03acb147f8ec9f002c8d",
+          "runs/phase4b10-facial-v3/layers/layer_manifest.json": "3cde90336c54a5edf9d860f7e8f5fe766dc07bf251e1abed8459cd03de80077a"
+        },
+        "animation_approved": false
+      }
+    },
+    "runtime": {
+      "path": "runs/phase4b10-audit/user-runtime-review.json",
+      "sha256": "3f1f0d64ce633ad9442b0019a38a939991131ef574d80351822f7f8c57d219bb",
+      "record": {
+        "reviewer_kind": "human",
+        "reviewer": "local user",
+        "decision": "accept",
+        "reply": "Accept as a limited frontal prototype",
+        "scope": [
+          "Frontal synthetic master as primary character",
+          "Seven expressions and coordinated mouth/head/body/hair behavior",
+          "Two modest independent shoulder gestures",
+          "Talking/head-motion coexistence and neutral restoration"
+        ],
+        "excluded": [
+          "elbow articulation",
+          "finger articulation",
+          "raised forearm or wave runtime",
+          "production deployment",
+          "verified synthetic anatomy"
+        ],
+        "runtime_files": {
+          "Generated_artwork.blink.motion3.json": "399f91b7bfac0666f589ab7c6daace5e33e5c6d6e7c6e7ca4024b6db48a65110",
+          "Generated_artwork.bodyNod.motion3.json": "8287a7cfd68b1fa468975902c9ca7431c39e5d909a7651145ef4f2113519c6aa",
+          "Generated_artwork.bodyQuestion.motion3.json": "b2afc0d0224675c51adb1422efa5255dfd8e406b49698b7ea6f1cc8eabd1999c",
+          "Generated_artwork.can3": "c2410b219987763f14d1c17b4e13d24a779a6f0f35ae7020387be97f570e7379",
+          "Generated_artwork.cdi3.json": "305978041ff4117234ce0c980b199ddf99faa6cd26a8342c93d1787064873396",
+          "Generated_artwork.cmo3": "d52367ec1d4f8d2997e75231e7f40f5e73e3d2e6e610d9830d5475589151732c",
+          "Generated_artwork.createIdle.motion3.json": "d1dfc9452ac98fea14addd653632399c4080b79cc7e71ebea0a30a2a06dc7f2c",
+          "Generated_artwork.create_angry.exp3.json": "ec83e73e26aafd6fdb025f67af567f9e8e12bfb85137ded2f8e80deccc8debdc",
+          "Generated_artwork.create_confused.exp3.json": "8993aa56dff5eadf9fd0699b835dcdfce108ed7de3dfe5ebee38b133f0958dfc",
+          "Generated_artwork.create_embarrassed.exp3.json": "446d539a462051b05323b1ef26731d54e38d73f464d48f8200b85e693236ea88",
+          "Generated_artwork.create_happy.exp3.json": "462375b2e4dbb0e4769c26cf09521a446808617431e667ef1406a107975ac857",
+          "Generated_artwork.create_neutral.exp3.json": "5ef679a167a1202c66ad9aedb417a89e9f0a2e619a456a6bc6e6fd444f44c43f",
+          "Generated_artwork.create_sad.exp3.json": "d389d8dd3d76dc3aebfd27943f790fe931e48ad0fb84eb92b593ccd240cd01f4",
+          "Generated_artwork.create_surprised.exp3.json": "1c3c7fa8be48644abcfd95b280cf13bd826f5c908aa06f61dc4ee9586ad3ce1d",
+          "Generated_artwork.frontalArmLeft.motion3.json": "68eb7911af1e0dd0a8fb4938ee3e85dc05516e500af18cb80296917d05ba33f0",
+          "Generated_artwork.frontalArmRight.motion3.json": "fd70a5f004ca5931d3daf1e3ae91922cea7bd996f57fac472b5b3835ae991849",
+          "Generated_artwork.idle.motion3.json": "14674d50d8765df706ac253975629f7cffe97a2442248a41af59f68d9cd3f2dc",
+          "Generated_artwork.moc3": "1004c811c247233ec6b0481cdab024c5094b2729942dafebe894fe26c7f32714",
+          "Generated_artwork.model3.json": "ad5286b0e3ec3093e05d08c1f785f940da76185a8f24b11ad2fa9eacf34d6e6e",
+          "Generated_artwork.nod.motion3.json": "bfd9a247d5ec8479145c2dddfd5fdbf03e1c46df8d7460f07badd146c1e19418",
+          "Generated_artwork.physics3.json": "55298cfb73cacbcb42f2760f0e699727503494560c3324a23fffdf45c553072a",
+          "Generated_artwork.psd2live.json": "66948a7daf0ab4a2bb09710c4924dde5d7a31c6e0edb0811c16a9bb80219e972",
+          "Generated_artwork.shake.motion3.json": "81f50690b925cab5487c64cd1fc9781485a141f758a1f7085d36f0596bbfe54b"
+        },
+        "editable_project_sha256": "168f60ab678bd9d20f834b93d784c6b83dcb9535e260e24c9706411a8419c7e4",
+        "master_sha256": "8ca8b6c1ae0c36c6d638792ab1331505035eecb4d5a44591badc13a98bc4466b",
+        "gallery": "runs/phase4b10-review-release"
+      }
+    }
+  },
+  "frozen_prototype": {
+    "reference_name": "codel-frontal-prototype-v1",
+    "reference_root": "runs/references/codel-frontal-prototype-v1",
+    "manifest_sha256": "3d15901ad6d0ca3716b1054fbf3dd4ee3f6898119ee379910e91089bf7074b4c",
+    "payload_files": 203,
+    "user_review_sha256": "3f1f0d64ce633ad9442b0019a38a939991131ef574d80351822f7f8c57d219bb",
+    "model": "runtime/Generated_artwork.model3.json",
+    "editable_project": "authoring/character.psd2live",
+    "accepted_scope": [
+      "Frontal synthetic master as primary character",
+      "Seven expressions and coordinated mouth/head/body/hair behavior",
+      "Two modest independent shoulder gestures",
+      "Talking/head-motion coexistence and neutral restoration"
+    ],
+    "excluded": [
+      "elbow articulation",
+      "finger articulation",
+      "raised forearm or wave runtime",
+      "production deployment",
+      "verified synthetic anatomy"
+    ],
+    "runtime_files": {
+      "Generated_artwork.blink.motion3.json": "399f91b7bfac0666f589ab7c6daace5e33e5c6d6e7c6e7ca4024b6db48a65110",
+      "Generated_artwork.bodyNod.motion3.json": "8287a7cfd68b1fa468975902c9ca7431c39e5d909a7651145ef4f2113519c6aa",
+      "Generated_artwork.bodyQuestion.motion3.json": "b2afc0d0224675c51adb1422efa5255dfd8e406b49698b7ea6f1cc8eabd1999c",
+      "Generated_artwork.can3": "c2410b219987763f14d1c17b4e13d24a779a6f0f35ae7020387be97f570e7379",
+      "Generated_artwork.cdi3.json": "305978041ff4117234ce0c980b199ddf99faa6cd26a8342c93d1787064873396",
+      "Generated_artwork.cmo3": "d52367ec1d4f8d2997e75231e7f40f5e73e3d2e6e610d9830d5475589151732c",
+      "Generated_artwork.createIdle.motion3.json": "d1dfc9452ac98fea14addd653632399c4080b79cc7e71ebea0a30a2a06dc7f2c",
+      "Generated_artwork.create_angry.exp3.json": "ec83e73e26aafd6fdb025f67af567f9e8e12bfb85137ded2f8e80deccc8debdc",
+      "Generated_artwork.create_confused.exp3.json": "8993aa56dff5eadf9fd0699b835dcdfce108ed7de3dfe5ebee38b133f0958dfc",
+      "Generated_artwork.create_embarrassed.exp3.json": "446d539a462051b05323b1ef26731d54e38d73f464d48f8200b85e693236ea88",
+      "Generated_artwork.create_happy.exp3.json": "462375b2e4dbb0e4769c26cf09521a446808617431e667ef1406a107975ac857",
+      "Generated_artwork.create_neutral.exp3.json": "5ef679a167a1202c66ad9aedb417a89e9f0a2e619a456a6bc6e6fd444f44c43f",
+      "Generated_artwork.create_sad.exp3.json": "d389d8dd3d76dc3aebfd27943f790fe931e48ad0fb84eb92b593ccd240cd01f4",
+      "Generated_artwork.create_surprised.exp3.json": "1c3c7fa8be48644abcfd95b280cf13bd826f5c908aa06f61dc4ee9586ad3ce1d",
+      "Generated_artwork.frontalArmLeft.motion3.json": "68eb7911af1e0dd0a8fb4938ee3e85dc05516e500af18cb80296917d05ba33f0",
+      "Generated_artwork.frontalArmRight.motion3.json": "fd70a5f004ca5931d3daf1e3ae91922cea7bd996f57fac472b5b3835ae991849",
+      "Generated_artwork.idle.motion3.json": "14674d50d8765df706ac253975629f7cffe97a2442248a41af59f68d9cd3f2dc",
+      "Generated_artwork.moc3": "1004c811c247233ec6b0481cdab024c5094b2729942dafebe894fe26c7f32714",
+      "Generated_artwork.model3.json": "ad5286b0e3ec3093e05d08c1f785f940da76185a8f24b11ad2fa9eacf34d6e6e",
+      "Generated_artwork.nod.motion3.json": "bfd9a247d5ec8479145c2dddfd5fdbf03e1c46df8d7460f07badd146c1e19418",
+      "Generated_artwork.physics3.json": "55298cfb73cacbcb42f2760f0e699727503494560c3324a23fffdf45c553072a",
+      "Generated_artwork.psd2live.json": "66948a7daf0ab4a2bb09710c4924dde5d7a31c6e0edb0811c16a9bb80219e972",
+      "Generated_artwork.shake.motion3.json": "81f50690b925cab5487c64cd1fc9781485a141f758a1f7085d36f0596bbfe54b"
+    }
+  },
+  "decomposition": {
+    "layers": 25,
+    "arm_parts_per_side": [
+      "upper sleeve",
+      "forearm",
+      "hand/cuff"
+    ],
+    "foreground_pixels": 608259,
+    "preserved_foreground_pixels": 608135,
+    "foreground_preservation": 0.9997961394734809,
+    "silhouette_iou": 0.9997961394734809,
+    "gate_threshold_unchanged": 0.995,
+    "missing_foreground_pixels": 124,
+    "joints": "Uncertain neutral hypotheses; no independently verified elbow or finger anatomy",
+    "facial_manifest": "runs/phase4b10-facial-v3/layers/layer_manifest.json",
+    "facial_manifest_sha256": "3cde90336c54a5edf9d860f7e8f5fe766dc07bf251e1abed8459cd03de80077a",
+    "brow_repair": {
+      "transferred_master_pixels": 3185,
+      "generated_backing_pixels": 3519,
+      "neutral_composite_exact": true
+    },
+    "fresh_reproduction_matches": true
+  },
+  "inference": {
+    "device": "NVIDIA GeForce RTX 5090",
+    "capability": [
+      12,
+      0
+    ],
+    "seed": 42,
+    "dtype": "bfloat16",
+    "upstream_revision": "df019de5129d6c4b406587a14c3501669441a783",
+    "input_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+    "packages": {
+      "torch": "2.8.0+cu128",
+      "torchvision": "0.23.0+cu128",
+      "diffusers": "0.37.0",
+      "transformers": "5.0.0",
+      "numpy": "2.2.6",
+      "Pillow": "12.1.1",
+      "psd-tools": "1.14.2"
+    },
+    "stages": [
+      {
+        "name": "layerdiff",
+        "seconds": 116.84549276799953,
+        "peak_allocated_bytes": 12722573312,
+        "peak_reserved_bytes": 17202937856
+      },
+      {
+        "name": "marigold",
+        "seconds": 14.748880717001157,
+        "peak_allocated_bytes": 6391918592,
+        "peak_reserved_bytes": 7197425664
+      },
+      {
+        "name": "export",
+        "seconds": 1.1862119739998889,
+        "peak_allocated_bytes": 8519680,
+        "peak_reserved_bytes": 20971520
+      }
+    ],
+    "status": "completed",
+    "seconds": 133.43181165600254,
+    "sampled_device_peak_mib": 23218,
+    "sampled_gpu_utilization_mean": 88.52631578947368,
+    "sampled_gpu_utilization_peak": 100,
+    "input_unchanged": true
+  },
+  "helpers": {
+    "review_run": "runs/phase4b10-pose-review",
+    "references": [
+      "canonical geometry",
+      "target guide",
+      "original identity/style"
+    ],
+    "approved": {
+      "right-lift": {
+        "candidate": "b-34832b77ecbf471f81ea1477f36adb21-c4",
+        "approval": {
+          "action": "accept",
+          "pose": "right-lift",
+          "candidate": "b-34832b77ecbf471f81ea1477f36adb21-c4",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793985946.2435322,
+          "image_sha256": "379af73a203cbd3fc5adc063a55950e33f0377b4d5572ccaa73631b04ff71810"
+        }
+      },
+      "left-lift": {
+        "candidate": "b-9994d724922a44d6b3649b02bc871c57-c1",
+        "approval": {
+          "action": "accept",
+          "pose": "left-lift",
+          "candidate": "b-9994d724922a44d6b3649b02bc871c57-c1",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793986135.8407798,
+          "image_sha256": "7050793b721a3cddbda846d59962fff2bcf259b0ae4816af0ee9c7f9033a46f1"
+        }
+      },
+      "explain": {
+        "candidate": "b-e812a8e04218468ab7c00d5df8e81fd0-c1",
+        "approval": {
+          "action": "accept",
+          "pose": "explain",
+          "candidate": "b-e812a8e04218468ab7c00d5df8e81fd0-c1",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793986323.1094983,
+          "image_sha256": "69bda9774597898ed0078dcbe7d28edc0fe0a10a57d04308fa8cb70cde6f7430"
+        }
+      },
+      "wave": {
+        "candidate": "b-4c7c81e9db6845fb80ec470299b635d7-c1",
+        "approval": {
+          "action": "accept",
+          "pose": "wave",
+          "candidate": "b-4c7c81e9db6845fb80ec470299b635d7-c1",
+          "reason": "",
+          "reviewer": "local user",
+          "reviewer_kind": "human",
+          "time": 1793986505.5162494,
+          "image_sha256": "903c48c14c5d24dfe8a577f85220a7f5ee7e454af855c2ba36b2e3688e03a9fd"
+        }
+      }
+    },
+    "pending": [
+      "right-aside-v2",
+      "left-aside-v2"
+    ],
+    "batch_size": 5,
+    "new_generated_images": 0,
+    "guide_version": "frontal-family-v2",
+    "aside_upper_arm_degrees": 24,
+    "historical_guide_changed": false
+  },
+  "runtime": {
+    "run": "runs/phase4b10-arms-v3",
+    "expressions": 7,
+    "arm_parameters": [
+      "ParamArmRightOpen",
+      "ParamArmLeftOpen"
+    ],
+    "arm_motion_groups": [
+      "ArmRight",
+      "ArmLeft"
+    ],
+    "motion_seconds": 3.2,
+    "method": "Independent root-fixed smooth cubic horizontal shoulder fields; existing body combination keys retained",
+    "moving_meshes_per_isolated_side": 3,
+    "torso_head_opposite_arm_fixed_in_isolated_test": true,
+    "helper_image_swapping": false,
+    "elbow_or_finger_articulation": false
+  },
+  "validation": {
+    "summary": {
+      "results": {
+        "arms": 0,
+        "body": 0,
+        "body-core": 0,
+        "coexistence": 0,
+        "dense": 0,
+        "mouth-core": 0
+      },
+      "status": "pass",
+      "user_review": "pending"
+    },
+    "later_user_acceptance": "See user_reviews.runtime; validation pending label is retained historical state",
+    "core": {
+      "mouth": {
+        "status": "pass",
+        "visual_acceptance": false,
+        "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+        "nonfinite": 0,
+        "invalid_opacity": 0,
+        "strict_opacity_excursions": 220,
+        "mouth_orientation_reference": "full-open neutral cavity; source seam at neutral",
+        "exact_neutral_geometry": true,
+        "source_seam_opening_invariant": true,
+        "legacy_source_seam_absolute_invariant": false,
+        "visible_reversals": 0,
+        "samples": 819,
+        "report": "runs/phase4b10-validation-final/mouth-core.json",
+        "sha256": "21b70466efc5fa46098c011a1ada8bd11f83b73957b6d669caffee59b12113b0"
+      },
+      "body": {
+        "status": "pass",
+        "render_tested": false,
+        "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+        "nonfinite": 0,
+        "visible_reversals": 0,
+        "exact_neutral_return": true,
+        "samples": 496,
+        "report": "runs/phase4b10-validation-final/body-core.json",
+        "sha256": "ea61467d4d68752212dd456f17ae0b0c88128289c57f94d33ca8617e93d018f0"
+      },
+      "arms": {
+        "status": "pass",
+        "render_tested": false,
+        "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+        "arm_combination_samples": 101,
+        "nonfinite": 0,
+        "visible_reversals": 0,
+        "exact_neutral_return": true,
+        "samples": 597,
+        "report": "runs/phase4b10-audit/arms-core-final.json",
+        "sha256": "e6c8922c4d508737dd09700cf861b92deed0895ecf3ea170df44129f8c6a7edd"
+      }
+    },
+    "browser": {
+      "arms": {
+        "status": "pass",
+        "frames": 163,
+        "control_noise_pixels": 0,
+        "result": "runs/phase4b10-validation-final/arms/frames/result.json",
+        "sha256": "5e251682b195d0d656f186859c39797d5901b9845711fe53344d950d164abdfe"
+      },
+      "body": {
+        "status": "pass",
+        "frames": 540,
+        "control_noise_pixels": 0,
+        "result": "runs/phase4b10-validation-final/body/frames/result.json",
+        "sha256": "c6e433d07c8d5c8ee0862fcbe14aea861d2a85361a41fdf6c840de0dd268bf0b"
+      },
+      "dense": {
+        "status": "pass",
+        "frames": 401,
+        "control_noise_pixels": 0,
+        "result": "runs/phase4b10-validation-final/dense/frames/result.json",
+        "sha256": "3974d82a23d621132b884eca499e6f012e8576c8f6827f4f5c3a6f99a532acd4"
+      },
+      "coexistence": {
+        "status": "pass",
+        "frames": 355,
+        "control_noise_pixels": 0,
+        "result": "runs/phase4b10-validation-final/coexistence/frames/result.json",
+        "sha256": "8edb6ba4736c0da6cc97f053b21746222ccac5fbfadc461c0a5e473c49f63eac"
+      }
+    },
+    "python": {
+      "log": "runs/phase4b10-audit/python-regression-release-fixed.log",
+      "tests": 226,
+      "status": "pass",
+      "sha256": "f29e32fbbb551ad7af2664efb33fb8a34d72f466fc53cd7db97208061bdcefa1"
+    },
+    "javascript": {
+      "log": "runs/phase4b10-audit/javascript-regression-release.log",
+      "suites": [
+        "tests/test_rp_talk.mjs",
+        "tests/test_mouth_invariant.cjs"
+      ],
+      "status": "pass",
+      "sha256": "bea0567c78d47b355f48f6df31c326a561b349a4a4d5ca753631cbb73fad7cc4"
+    }
+  },
+  "preservation": {
+    "historical_inventory_files": 1932,
+    "unchanged": 1931,
+    "historical_difference": [
+      "runs/phase4b8-2-lightning-review-v2/review.json"
+    ],
+    "difference_fields": [
+      "exports"
+    ],
+    "difference_origin": "Already recorded selected-only export in Phase 4B.9; no Phase 4B.10 change to decisions or images",
+    "references": {
+      "codel-combined-v1": {
+        "files": 1806,
+        "all_hashes_match": true,
+        "manifest_sha256": "31a781ebc41f74fd81031dac37cc2a5d4b60d90310ccdb3f4d8ca1ddf772948e"
+      },
+      "codel-frontal-prototype-v1": {
+        "files": 203,
+        "all_hashes_match": true,
+        "manifest_sha256": "3d15901ad6d0ca3716b1054fbf3dd4ee3f6898119ee379910e91089bf7074b4c"
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic master and hidden backing are not independently verified anatomy",
+    "Two modest shoulder sweeps, not bent-forearm or waving gestures",
+    "124 foreground samples and thin matte-edge fringes remain",
+    "Legacy absolute mouth seam check remains failed; existing scale-aware float32 contract passes",
+    "220 raw strict opacity excursions retained in mouth Core report; tolerance policy unchanged"
+  ],
+  "retained_failures": [
+    "Opaque-background initial coverage rejection",
+    "Sandbox-denied editor connection",
+    "Misplaced-module import",
+    "Too-subtle initial arm arc",
+    "Initial browser arm summary missing required QA fields",
+    "Narrow brow repair left residual tails",
+    "Small synthetic guide fixture exceeded framing",
+    "Final new review test initially collided with an existing fixture directory; corrected test folder only"
+  ],
+  "production_deployment": false,
+  "defaults_changed": false,
+  "new_weights_or_dependencies": false
+}

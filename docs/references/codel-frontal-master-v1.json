@@ -1,0 +1,12 @@
+{
+  "reference_name": "codel-frontal-master-v1",
+  "role": "primary-character-artwork",
+  "master_root": "runs/phase4b10-master",
+  "manifest": "master.json",
+  "manifest_sha256": "8ca8b6c1ae0c36c6d638792ab1331505035eecb4d5a44591badc13a98bc4466b",
+  "primary_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+  "source_kind": "human-approved synthetic frontal master",
+  "angled_reference_role": "archival rig; identity/style/outfit clues only",
+  "rig_acceptance": "pending",
+  "deployment_authorized": false
+}

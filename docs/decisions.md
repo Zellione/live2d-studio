@@ -591,3 +591,29 @@ do not force continuous deformation from uncertain projected cloth-axis lengths.
 Fresh regressions validate preservation of the unchanged accepted runtime only.
 Keep the failed geometric hypotheses and probe; no promotion, further generation
 or production change follows from the completed assessment.
+
+
+## 2026-11-06 — Phase 4B.10 frontal production-source authority
+
+The user's corrected goal explicitly replaces the prior exact-angled-rig target.
+Promote the selected frontal image through a new manifest; preserve the original
+as identity/style reference and the old accepted rig as an archive. Do not change
+historical freezes or imply that synthetic artwork is independently known anatomy.
+
+Retain four hash-bound human helper approvals in a new reviewer. Use separate,
+framed 24-degree arm-aside definitions instead of overwriting the old ineffective
+guide or forcing a 40–55-degree straight arm outside the narrow canvas.
+
+Build bilateral editable partitions and recreate facial/body behavior on the
+frontal artwork. Prefer shared shoulder fields for this first modest independent
+motion, keeping all three parts on each side continuous. The earlier crossfade
+failure does not apply to this continuous single-artwork candidate. Elbow and
+finger articulation remain unimplemented.
+
+Human review approved the uncertain decomposition/backing and subsequently the
+localized brow repair. Keep both decisions bound to their exact manifests.
+Numerical gates did not detect stationary eyebrow remnants; enlarged runtime
+expression review did. The user subsequently said “Accept as a limited frontal
+prototype” after reviewing the repaired runtime. Freeze that exact runtime,
+editable project and reviewed artwork as `codel-frontal-prototype-v1`; this separate
+acceptance excludes elbow/finger articulation, runtime waves and deployment.

@@ -479,3 +479,25 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   old rig; they do not validate arm motion. No validation thresholds changed.
 - Review at localhost 8805; unchanged accepted live rig at 8806. Stop for visual
   review before further articulation. No new generation or production changes.
+
+
+## Phase 4B.10 frontal master is now the primary target
+- The user's corrected goal supersedes Phase 4B.9's exact-angled-rig constraint.
+  Read docs/phase4b10-results.md and docs/phase4b10-frontal-master.md.
+  codel-frontal-master-v1 is the approved synthetic primary artwork. Original
+  angled artwork is identity/style reference only; its accepted rig stays archived.
+- Preserve the exact canonical freeze and historical manifests. New promotion
+  metadata distinguishes source authority, uncertain anatomy and runtime approval.
+- Frontal layers separate both upper sleeves, forearms and hands. Human review
+  approved the initial matte/backing and then the local brow-backing repair.
+  Pixel-exact neutral copying from a synthetic master is not original anatomy.
+- Four existing helper approvals remain locked in the fresh frontal reviewer.
+  New aside guides are separate versioned 24-degree targets constrained by framing;
+  neither guide is generated or approved automatically. Do not edit historical runs.
+- First arm gestures use independent root-pinned shoulder fields, not helper-image
+  crossfades. No elbow/finger articulation or raised-forearm/wave runtime claim.
+  Preserve original body/head/mouth regression thresholds and all failed attempts.
+- The user separately accepted the exact repaired runtime as a limited frontal
+  prototype. Preserve `codel-frontal-prototype-v1` and its 203 frozen payloads.
+  Acceptance excludes elbow/finger articulation, wave/raised-forearm runtime and
+  deployment. Production SillyTavern remains untouched. Stop after Phase 4B.10.

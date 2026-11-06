@@ -115,3 +115,15 @@ Auxiliary poses are generated hypotheses, never observed anatomy or accepted rig
 artwork. Commit only study scripts, prompt/config recipe, tests, concise documents
 and the small benchmark. Model weights and source/runtime reference pins remain
 unchanged. A screening decision is exact-image development review, not user approval.
+
+Phase 4B.10 establishes `codel-frontal-master-v1` as synthetic primary artwork,
+with the original retained only as identity/style reference. Keep both source
+hashes and the older canonical/angled freezes unchanged. The separately reviewed
+`runs/references/codel-frontal-prototype-v1` contains 203 read-only payload files;
+its Git-pinned manifest and separate human runtime decision identify the accepted
+limited prototype. Decomposition/backing approval alone cannot approve animation.
+All matte derivatives, inferred backing, layered PSDs, editable projects, runtime
+exports, browser profiles, images, clips and failed candidates stay in ignored
+`runs/phase4b10-*`. Only code, tests, concise reports and small provenance/benchmark
+JSON enter Git. Synthetic observed pixels mean copied master samples, not verified
+anatomy. No production deployment or elbow/finger articulation is authorized.

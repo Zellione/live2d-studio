@@ -36,6 +36,7 @@
     const state={head:true,body:true,hair:true,idle:true,talking:false,expression:'neutral',manual:{},blinks:{},values:{},frames:0};
     const sliderDefs=[['ParamMouthOpenY','Mouth open',0,1,.01],['ParamAngleX','Head X',-15,15,.1],['ParamAngleY','Head Y',-15,15,.1],['ParamAngleZ','Head Z',-15,15,.1]];
     sliderDefs.push(...[['ParamBreath','Breathing',0,1,.01],['ParamBodyAngleX','Body turn',-2,2,.05],['ParamBodyAngleZ','Body tilt',-1,1,.05],['ParamHairFront','Front hair',-1,1,.01],['ParamHairBack','Back hair',-1,1,.01]].filter(([id])=>ids.includes(id)));
+    sliderDefs.push(...[['ParamArmRightOpen','Right arm (viewer left)',0,1,.01],['ParamArmLeftOpen','Left arm (viewer right)',0,1,.01]].filter(([id])=>ids.includes(id)));
     for(const [id,label,min,max,step] of sliderDefs){
       const row=document.createElement('label');row.className='slider';row.innerHTML=`<span>${label}</span><input id="${id}" type="range" min="${min}" max="${max}" step="${step}" value="0"><output>0</output>`;
       row.querySelector('input').oninput=e=>{state.manual[id]=Number(e.target.value);row.querySelector('output').value=e.target.value;};$('#sliders').append(row);
@@ -83,7 +84,7 @@
     const motions=internal.settings.motions||{};
     const gestures=Object.keys(motions).filter(g=>g!=='Idle'&&Array.isArray(motions[g])&&motions[g].length);
     async function gesture(name){if(!gestures.includes(name))throw Error('Unavailable gesture');await model.motion(name,0,3);state.gestureStarted=performance.now();}
-    for(const name of gestures){const b=document.createElement('button');b.textContent=name==='Nod'?'Head nod':name==='Question'?'Questioning head tilt':name;b.onclick=()=>gesture(name).catch(fail);$('#gestures').append(b);}
+    for(const name of gestures){const b=document.createElement('button');b.textContent=({Nod:'Head nod',Question:'Questioning head tilt',ArmRight:'Right arm outward',ArmLeft:'Left arm outward'})[name]||name;b.onclick=()=>gesture(name).catch(fail);$('#gestures').append(b);}
     $('#gesture-row').hidden=!gestures.length;
     for(const kind of ['head','body','hair'])$('#enable-'+kind).onchange=e=>{state[kind]=e.target.checked;if(kind==='hair')internal.physics=state.hair?physics:undefined;};
     // The comparison uses the same controls and clock; each model retains its

@@ -1,0 +1,47 @@
+{
+  "reference_name": "codel-frontal-prototype-v1",
+  "reference_root": "runs/references/codel-frontal-prototype-v1",
+  "manifest_sha256": "3d15901ad6d0ca3716b1054fbf3dd4ee3f6898119ee379910e91089bf7074b4c",
+  "payload_files": 203,
+  "user_review_sha256": "3f1f0d64ce633ad9442b0019a38a939991131ef574d80351822f7f8c57d219bb",
+  "model": "runtime/Generated_artwork.model3.json",
+  "editable_project": "authoring/character.psd2live",
+  "accepted_scope": [
+    "Frontal synthetic master as primary character",
+    "Seven expressions and coordinated mouth/head/body/hair behavior",
+    "Two modest independent shoulder gestures",
+    "Talking/head-motion coexistence and neutral restoration"
+  ],
+  "excluded": [
+    "elbow articulation",
+    "finger articulation",
+    "raised forearm or wave runtime",
+    "production deployment",
+    "verified synthetic anatomy"
+  ],
+  "runtime_files": {
+    "Generated_artwork.blink.motion3.json": "399f91b7bfac0666f589ab7c6daace5e33e5c6d6e7c6e7ca4024b6db48a65110",
+    "Generated_artwork.bodyNod.motion3.json": "8287a7cfd68b1fa468975902c9ca7431c39e5d909a7651145ef4f2113519c6aa",
+    "Generated_artwork.bodyQuestion.motion3.json": "b2afc0d0224675c51adb1422efa5255dfd8e406b49698b7ea6f1cc8eabd1999c",
+    "Generated_artwork.can3": "c2410b219987763f14d1c17b4e13d24a779a6f0f35ae7020387be97f570e7379",
+    "Generated_artwork.cdi3.json": "305978041ff4117234ce0c980b199ddf99faa6cd26a8342c93d1787064873396",
+    "Generated_artwork.cmo3": "d52367ec1d4f8d2997e75231e7f40f5e73e3d2e6e610d9830d5475589151732c",
+    "Generated_artwork.createIdle.motion3.json": "d1dfc9452ac98fea14addd653632399c4080b79cc7e71ebea0a30a2a06dc7f2c",
+    "Generated_artwork.create_angry.exp3.json": "ec83e73e26aafd6fdb025f67af567f9e8e12bfb85137ded2f8e80deccc8debdc",
+    "Generated_artwork.create_confused.exp3.json": "8993aa56dff5eadf9fd0699b835dcdfce108ed7de3dfe5ebee38b133f0958dfc",
+    "Generated_artwork.create_embarrassed.exp3.json": "446d539a462051b05323b1ef26731d54e38d73f464d48f8200b85e693236ea88",
+    "Generated_artwork.create_happy.exp3.json": "462375b2e4dbb0e4769c26cf09521a446808617431e667ef1406a107975ac857",
+    "Generated_artwork.create_neutral.exp3.json": "5ef679a167a1202c66ad9aedb417a89e9f0a2e619a456a6bc6e6fd444f44c43f",
+    "Generated_artwork.create_sad.exp3.json": "d389d8dd3d76dc3aebfd27943f790fe931e48ad0fb84eb92b593ccd240cd01f4",
+    "Generated_artwork.create_surprised.exp3.json": "1c3c7fa8be48644abcfd95b280cf13bd826f5c908aa06f61dc4ee9586ad3ce1d",
+    "Generated_artwork.frontalArmLeft.motion3.json": "68eb7911af1e0dd0a8fb4938ee3e85dc05516e500af18cb80296917d05ba33f0",
+    "Generated_artwork.frontalArmRight.motion3.json": "fd70a5f004ca5931d3daf1e3ae91922cea7bd996f57fac472b5b3835ae991849",
+    "Generated_artwork.idle.motion3.json": "14674d50d8765df706ac253975629f7cffe97a2442248a41af59f68d9cd3f2dc",
+    "Generated_artwork.moc3": "1004c811c247233ec6b0481cdab024c5094b2729942dafebe894fe26c7f32714",
+    "Generated_artwork.model3.json": "ad5286b0e3ec3093e05d08c1f785f940da76185a8f24b11ad2fa9eacf34d6e6e",
+    "Generated_artwork.nod.motion3.json": "bfd9a247d5ec8479145c2dddfd5fdbf03e1c46df8d7460f07badd146c1e19418",
+    "Generated_artwork.physics3.json": "55298cfb73cacbcb42f2760f0e699727503494560c3324a23fffdf45c553072a",
+    "Generated_artwork.psd2live.json": "66948a7daf0ab4a2bb09710c4924dde5d7a31c6e0edb0811c16a9bb80219e972",
+    "Generated_artwork.shake.motion3.json": "81f50690b925cab5487c64cd1fc9781485a141f758a1f7085d36f0596bbfe54b"
+  }
+}
