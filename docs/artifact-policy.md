@@ -107,3 +107,11 @@ v1. Future changes require a new reference ID and review. Commit only the small
 files, original candidate, source artwork, reproduction runs and audit evidence
 stay ignored. Historical failures and pending labels remain as recorded; the new
 limited user review does not retroactively approve earlier candidates.
+
+Phase 4B.7a retains canonical-source copies, Qwen auxiliary poses, raw decodes,
+protected composites, masks, semantic predictions, code snapshots, rejected runs,
+restart diagnostics and review galleries under ignored `runs/phase4b7a-*`.
+Auxiliary poses are generated hypotheses, never observed anatomy or accepted rig
+artwork. Commit only study scripts, prompt/config recipe, tests, concise documents
+and the small benchmark. Model weights and source/runtime reference pins remain
+unchanged. A screening decision is exact-image development review, not user approval.

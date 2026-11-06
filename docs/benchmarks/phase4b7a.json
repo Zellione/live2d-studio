@@ -1,0 +1,530 @@
+{
+  "schema_version": 1,
+  "phase": "4B.7a",
+  "baseline_commit": "6205158",
+  "status": "feasibility-study-complete-no-promotion",
+  "source_reference": "codel-combined-v1",
+  "source_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+  "model_lock_sha256": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+  "model": "Qwen-Image-Edit-2509 Q4_K_S",
+  "encoder": "Qwen2.5-VL-7B FP8 scaled",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "baseline_semantic": {
+    "arm_components": [
+      {
+        "label": 1,
+        "pixels": 53333,
+        "bbox": [
+          76,
+          261,
+          394,
+          864
+        ],
+        "centroid": [
+          248.60268501678135,
+          515.1207132544579
+        ]
+      },
+      {
+        "label": 2,
+        "pixels": 56,
+        "bbox": [
+          185,
+          450,
+          194,
+          461
+        ],
+        "centroid": [
+          189.26785714285714,
+          455.0892857142857
+        ]
+      }
+    ],
+    "hand_color_components": [
+      {
+        "label": 73,
+        "pixels": 5938,
+        "bbox": [
+          207,
+          697,
+          285,
+          846
+        ],
+        "centroid": [
+          237.7990906028966,
+          764.2278544964635
+        ]
+      },
+      {
+        "label": 33,
+        "pixels": 3645,
+        "bbox": [
+          236,
+          387,
+          328,
+          505
+        ],
+        "centroid": [
+          279.4244170096022,
+          450.6340192043896
+        ]
+      },
+      {
+        "label": 32,
+        "pixels": 157,
+        "bbox": [
+          275,
+          386,
+          307,
+          419
+        ],
+        "centroid": [
+          290.04458598726114,
+          398.4076433121019
+        ]
+      }
+    ],
+    "substantial_arm_components": 1,
+    "possible_arm_to_topwear_pixels": 0,
+    "arm_topwear_overlap_pixels": 1374,
+    "side_assignment": "image-space components only; anatomical identity unverified",
+    "shoulder_elbow_wrist": "not provided by this parser",
+    "hidden_truth": false,
+    "independent_evidence": false
+  },
+  "frozen_decomposition_arms": [
+    {
+      "id": "st-11-handwear-none",
+      "role": "handwear",
+      "side": "none",
+      "observed_pixels": 260082,
+      "generated_pixels": 0,
+      "ownership_status": "parser-candidate-not-ground-truth"
+    }
+  ],
+  "original_source_copy_matches": true,
+  "default_changes": false,
+  "training": false,
+  "downloads": false,
+  "production_access": false,
+  "arm_rig_built": false,
+  "user_approval": false,
+  "batches": [
+    {
+      "label": "primary",
+      "run": "runs/phase4b7a-qwen-v1-recovered",
+      "load_seconds": 10.901735791000078,
+      "batch_wall_seconds": 333.1005507880001,
+      "neutral_control_accepted": false
+    },
+    {
+      "label": "lower-strength",
+      "run": "runs/phase4b7a-qwen-low",
+      "load_seconds": 10.940226581999923,
+      "batch_wall_seconds": 251.86596182999995,
+      "neutral_control_accepted": true
+    }
+  ],
+  "poses": [
+    {
+      "batch": "primary",
+      "id": "neutral",
+      "decision": "reject",
+      "visually_plausible": false,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "No-change control changes the crossing and torso, with an ambiguous sleeve/arm attachment and skirt seam.",
+      "usefulness": "None: this is a failed consistency control.",
+      "seconds": 92.10325681200004,
+      "max_allocated_bytes": 22952681472,
+      "max_reserved_bytes": 24832376832,
+      "composite_sha256": "3203a446a9218179c6df7b2335a675baea0fd8dd84d684912b589098210130a6",
+      "raw_sha256": "dfcd79a0ea17e48bb01fe11ac8c51de13f2a172c7372fa2ec9daaf127bb8cfe5",
+      "reused_from": "runs/phase4b7a-qwen-v1",
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.5112281897996184,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 0,
+        "control_mae": 37.206975937868386,
+        "candidate_mae": 37.206975937868386
+      },
+      "semantic": null
+    },
+    {
+      "batch": "primary",
+      "id": "right-lift",
+      "decision": "reject",
+      "visually_plausible": false,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Both arms are lowered, torso proportions change, and an unsupported exposed-skin hole appears in the left sleeve.",
+      "usefulness": "Apparent bilateral gaps exist, but costume/anatomy drift excludes them as evidence.",
+      "seconds": 79.80619488499997,
+      "max_allocated_bytes": 23023104000,
+      "max_reserved_bytes": 24832376832,
+      "composite_sha256": "c5eeafaa6856889dcdb90b402f7af4db1d5739b7bf6aad0e83cef82149afb678",
+      "raw_sha256": "0c0ba1a2db891490953551bc5d13d11e291dc90163f70cb6a0b762eae38f7b28",
+      "reused_from": "runs/phase4b7a-qwen-v1",
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.4929567786710644,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 36013,
+        "control_mae": 37.206975937868386,
+        "candidate_mae": 34.78653468321661
+      },
+      "semantic": null
+    },
+    {
+      "batch": "primary",
+      "id": "left-lift",
+      "decision": "reject",
+      "visually_plausible": false,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Both arms are uncrossed; exposed-skin sleeve damage and torso repaint remain.",
+      "usefulness": "Silhouette separation is visually easier, but failed consistency prevents using it.",
+      "seconds": 81.34252923399993,
+      "max_allocated_bytes": 22952681472,
+      "max_reserved_bytes": 24832376832,
+      "composite_sha256": "30d23a5fd4eb20d95e36b44d4a5039b46256ca0be2139e85782d9eba06d2fb12",
+      "raw_sha256": "1668feceac696e9f19982f96da7d60d84a5291a92478b7ce536da565e4ba974c",
+      "reused_from": null,
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.4922537779680637,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 36312,
+        "control_mae": 37.206975937868386,
+        "candidate_mae": 34.49478422670642
+      },
+      "semantic": null
+    },
+    {
+      "batch": "primary",
+      "id": "question",
+      "decision": "reject",
+      "visually_plausible": false,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Produces two lowered arms instead of the requested palm-up explanatory gesture; torso and skirt are repainted.",
+      "usefulness": "An exposed shirt front is suggested, but rejected as unverified replacement artwork.",
+      "seconds": 79.4246378979999,
+      "max_allocated_bytes": 23023104000,
+      "max_reserved_bytes": 24832376832,
+      "composite_sha256": "087124b12190f623042b5437e51b0a35d64783418b62f29d367eb64543c50eca",
+      "raw_sha256": "cd5493fa2c0e6e9638ee18bc8d7e66ae66bd07343b8db07b0aca5206fa8b7e64",
+      "reused_from": null,
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.49847639133353416,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 37353,
+        "control_mae": 37.206975937868386,
+        "candidate_mae": 35.194630515683144
+      },
+      "semantic": null
+    },
+    {
+      "batch": "primary",
+      "id": "wave",
+      "decision": "reject",
+      "visually_plausible": false,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Wave is readable, but the palm/fingers are malformed and clipped at the edit boundary; lower hair and torso are redesigned.",
+      "usefulness": "A visible elbow bend is suggested, but hand/body failures exclude it.",
+      "seconds": 79.585964708,
+      "max_allocated_bytes": 23023104000,
+      "max_reserved_bytes": 24054333440,
+      "composite_sha256": "b9925da194ecd96a5e9aa97a27f8d5254fbbdbbc4a53dd28e7eb0a112f0149a9",
+      "raw_sha256": "798370277920ebcaf6ce8c703f7d9ef8dbc5baf8d343de9245d4db8b9ce7bf13",
+      "reused_from": null,
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.5393085750228608,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 75926,
+        "control_mae": 37.206975937868386,
+        "candidate_mae": 43.474022837066315
+      },
+      "semantic": null
+    },
+    {
+      "batch": "primary",
+      "id": "torso-open",
+      "decision": "reject",
+      "visually_plausible": false,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Opens the torso but changes neck/collar height, shoulder width, bust and waist; both hands terminate at the edit boundary.",
+      "usefulness": "Could suggest an open-shirt silhouette, but no source-compatible hidden torso or hands survive screening.",
+      "seconds": 79.99913971599995,
+      "max_allocated_bytes": 23023104000,
+      "max_reserved_bytes": 24054333440,
+      "composite_sha256": "4b2990fd8f999c5989f9c3a4e1fd1b1e584a6039c7e7e06ad534c6bdb3333a4c",
+      "raw_sha256": "1e2dbb9b80fd5fd1427e0dbabb94fa926fe7054b8062224996a6be1a515d768b",
+      "reused_from": null,
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.6261939119081976,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 91001,
+        "control_mae": 37.206975937868386,
+        "candidate_mae": 53.23708596260084
+      },
+      "semantic": null
+    },
+    {
+      "batch": "lower-strength",
+      "id": "neutral",
+      "decision": "accept-exploratory",
+      "visually_plausible": true,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Plausible coarse no-change control; source pose and costume remain close, but visible crossed-hand fingers are redrawn.",
+      "usefulness": "Consistency baseline only. No new arm separation, joints, hands or hidden clothing.",
+      "seconds": 80.06339018999995,
+      "max_allocated_bytes": 22952681472,
+      "max_reserved_bytes": 24832376832,
+      "composite_sha256": "7538daae0bee2000b257a37339172baafc9b6ce3e9b051e2186fd0945d6eb135",
+      "raw_sha256": "9cdbb6ce4b559bb60f5a61bf3da0162271e9e590c462f83aea435d0a4bfe64f8",
+      "reused_from": null,
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.4503446289160575,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 0,
+        "control_mae": 4.032278159166031,
+        "candidate_mae": 4.032278159166031
+      },
+      "semantic": {
+        "arm_components": [
+          {
+            "label": 1,
+            "pixels": 53066,
+            "bbox": [
+              75,
+              261,
+              395,
+              867
+            ],
+            "centroid": [
+              248.87553235593413,
+              515.2179549994347
+            ]
+          }
+        ],
+        "hand_color_components": [
+          {
+            "label": 69,
+            "pixels": 6054,
+            "bbox": [
+              208,
+              698,
+              284,
+              849
+            ],
+            "centroid": [
+              237.69871159563925,
+              764.9423521638586
+            ]
+          },
+          {
+            "label": 34,
+            "pixels": 1861,
+            "bbox": [
+              236,
+              410,
+              326,
+              505
+            ],
+            "centroid": [
+              270.3820526598603,
+              459.0306286942504
+            ]
+          },
+          {
+            "label": 28,
+            "pixels": 246,
+            "bbox": [
+              286,
+              387,
+              318,
+              408
+            ],
+            "centroid": [
+              300.4024390243902,
+              395.3983739837398
+            ]
+          }
+        ],
+        "substantial_arm_components": 1,
+        "possible_arm_to_topwear_pixels": 0,
+        "arm_topwear_overlap_pixels": 1134,
+        "side_assignment": "image-space components only; anatomical identity unverified",
+        "shoulder_elbow_wrist": "not provided by this parser",
+        "hidden_truth": false,
+        "independent_evidence": false
+      }
+    },
+    {
+      "batch": "lower-strength",
+      "id": "right-lift",
+      "decision": "reject",
+      "visually_plausible": false,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Right arm stays crossed; the palm disappears behind the opposite sleeve and new torso/sleeve wrinkles appear. Requested slight lift fails.",
+      "usefulness": "No useful separation; the altered hand/occlusion cannot support recovered anatomy.",
+      "seconds": 79.5024739060002,
+      "max_allocated_bytes": 23023104000,
+      "max_reserved_bytes": 24832376832,
+      "composite_sha256": "01f08648b50b0f5fa8233a0b3ce35a2963056c9b26343fe36b0095150b39e292",
+      "raw_sha256": "f69f4687b74af7bc65665d8fc97742d182c1770b9e8733724478026de4310b57",
+      "reused_from": null,
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.451124272552844,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 4813,
+        "control_mae": 4.032278159166031,
+        "candidate_mae": 4.809614451147632
+      },
+      "semantic": null
+    },
+    {
+      "batch": "lower-strength",
+      "id": "torso-open",
+      "decision": "accept-exploratory",
+      "visually_plausible": true,
+      "segmentation_helpful": false,
+      "reliable_articulation_evidence": false,
+      "summary": "Visually source-consistent, but both arms retain the original crossed/hanging arrangement instead of opening the torso.",
+      "usefulness": "A consistent near-copy, not a successful pose expansion. No additional hidden torso, elbow or shoulder coverage.",
+      "seconds": 79.54724315399994,
+      "max_allocated_bytes": 23023104000,
+      "max_reserved_bytes": 24054333440,
+      "composite_sha256": "8698a7cf1f8df8f0acac246f13b36dbec3e6289fb261b50b2fee8fae8534d6a1",
+      "raw_sha256": "270d1d701f57cf90dfb93fb1c03f54f84740071f56defd39685bda1e950ad96e",
+      "reused_from": null,
+      "outside_composite_changed": 0,
+      "raw_outside_mae": 0.4481338767053053,
+      "delta": {
+        "threshold": 24,
+        "excess_over_neutral": 16,
+        "changed_pixels": 488,
+        "control_mae": 4.032278159166031,
+        "candidate_mae": 3.1401312900168734
+      },
+      "semantic": {
+        "arm_components": [
+          {
+            "label": 1,
+            "pixels": 53200,
+            "bbox": [
+              76,
+              261,
+              395,
+              866
+            ],
+            "centroid": [
+              248.88802631578946,
+              515.3727067669173
+            ]
+          }
+        ],
+        "hand_color_components": [
+          {
+            "label": 60,
+            "pixels": 5999,
+            "bbox": [
+              208,
+              698,
+              284,
+              847
+            ],
+            "centroid": [
+              237.53125520920153,
+              764.4912485414236
+            ]
+          },
+          {
+            "label": 27,
+            "pixels": 3535,
+            "bbox": [
+              236,
+              387,
+              328,
+              505
+            ],
+            "centroid": [
+              278.98953323903817,
+              450.3256011315417
+            ]
+          },
+          {
+            "label": 26,
+            "pixels": 148,
+            "bbox": [
+              275,
+              386,
+              306,
+              418
+            ],
+            "centroid": [
+              290.0337837837838,
+              397.8243243243243
+            ]
+          }
+        ],
+        "substantial_arm_components": 1,
+        "possible_arm_to_topwear_pixels": 0,
+        "arm_topwear_overlap_pixels": 1294,
+        "side_assignment": "image-space components only; anatomical identity unverified",
+        "shoulder_elbow_wrist": "not provided by this parser",
+        "hidden_truth": false,
+        "independent_evidence": false
+      }
+    }
+  ],
+  "evidence_sha256": {
+    "runs/phase4b7a-qwen-v1-recovered/report.json": "54b06de19db805b578beafa8556c6d2076853a272646a176b07c18065369675d",
+    "runs/phase4b7a-review-release/primary/analysis.json": "46bb7b0c3b7f309263d89496b87d38ff7a6b2e3964ead12c9d78dedeb0661a17",
+    "runs/phase4b7a-qwen-low/report.json": "c24511556622eefbbab5f2773dcdfebeb586af0feb7b04c765a7ba8cb0cb88dc",
+    "runs/phase4b7a-review-release/lower/analysis.json": "09bc6c4eac49155f938de3cd8ba1e2b78115b45c22bf6948d7382b7595825df3"
+  },
+  "accepted_exploratory": 2,
+  "segmentation_helpful": 0,
+  "articulation_reliable": 0,
+  "measurements": "Torch allocation/reservation peaks; no whole-device peak claim. Reused timings belong to original producers.",
+  "limitations": [
+    "one character, one seed, one quantization, 528x1024, two strengths",
+    "body envelope clips some hands and produces visible composite seams",
+    "protected face is not evidence of model identity preservation",
+    "no independent hidden anatomy or pose ground truth",
+    "same-grid voting cannot establish trustworthy hidden reconstruction"
+  ],
+  "validation_evidence_sha256": {
+    "runs/phase4b7a-audit/python-tests-recovered.log": "8c51e7455a9b4cd306f4a1bcbd85b68266616048be1fd83503d1bccfb95d63d9",
+    "runs/phase4b7a-audit/pose-tests-final.log": "023b08a76d32619c0b65f99e87017d229f9051ea469e6a8c884a5519a6c0b5ec",
+    "runs/phase4b7a-audit/reference-before.log": "883a926f1d1808b30f80279946f6880ffde00a4eaebf9b2edad942cd9d61e86e",
+    "runs/phase4b7a-audit/reference-after.log": "8e0108e7c805575002b59aca83cf65af1c02e0d98ef446ea01db791d1b8f52b8",
+    "runs/phase4b7a-audit/js-tests.log": "2e98ee5680ef35d31060d3f77c9dc8eab05d03c659c65e21c0ff6d707a0685fe",
+    "runs/phase4b7a-audit/sealed-baseline-preservation.json": "735306d726caa70ee4a996aa1c9cc9e27a08347419331b17cc99952e3eca621c",
+    "runs/phase4b7a-audit/gallery-links.json": "8ee35a09da03201c958cfed1d16dc6b034f24dc3de40d3b898cf7d6d684c2663",
+    "runs/phase4b7a-audit/interruption.json": "6a121d25e5d776ef2ac6979916a8ce603ca7c792f06cd32696179577e94a808d",
+    "runs/phase4b7a-audit/evidence-inventory.json": "0acf2689b5ad6303e597284abb5e61fa808b045f08f8cdf0a88cc5b8bf5f1558"
+  }
+}

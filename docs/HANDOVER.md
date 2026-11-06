@@ -1,5 +1,28 @@
 # Handover to local Codex CLI
 
+## Current state after Phase 4B.7a (2026-11-06)
+
+Read [results](phase4b7a-results.md), [protocol](phase4b7a-qwen-feasibility.md) and
+[benchmark](benchmarks/phase4b7a.json). Continued from `6205158` for local pose
+feasibility only. **No demonstrated arm/body articulation benefit.**
+
+- Existing Qwen 2509 Q4_K_S + FP8 encoder generated six standard poses at strength
+  1.0 and three controls at .6. No downloads. All stronger outputs fail consistency;
+  two weaker near-copies pass coarse screening but preserve the original occlusion.
+- Three fresh SAM runs (source/two screened outputs) retain one substantial unsided
+  arm component and yield zero candidate torso exposure. No reliable new joints,
+  hand views, side correspondence or articulation evidence. No rig was built.
+- Gallery: `runs/phase4b7a-review-release/` (loopback 8794). All nine images, raw
+  decodes/composites, change overlays and accepted/rejected decisions are retained.
+  Face equality is imposed by a mask; clipping/seams are wrapper limitations.
+- Peak allocated/reserved VRAM 21.442/23.127 GiB; ~79–92 s per pose. Preserve the
+  interrupted primary batch, verified recovery and the pre-inference flag failure.
+- 156 Python tests and both JS suites pass; final pose/reference checks pass.
+  Frozen reference/payload and 1,275 sealed first-run files remain unchanged.
+- Next work would need stronger pose constraints and suitable hand/mask coverage
+  before arm rigging. This bounded negative result is not a universal Qwen claim.
+  Defaults, accepted models, production and model locks stay frozen. Stop here.
+
 ## Current state after Phase 4B.6.2 (2026-11-06)
 
 Read [freeze results](phase4b6-2-results.md) and the immutable

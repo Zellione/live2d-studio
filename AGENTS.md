@@ -377,3 +377,19 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   Retain old Codel seam failure and Girl2's 1,716 lip reversals as failures.
 - Only docs, tests and small manifests enter Git. No inference, training, production
   access or default changes. Stop after Phase 4B.6.2.
+
+## Phase 4B.7a auxiliary pose feasibility
+- Read `docs/phase4b7a-results.md` and `docs/phase4b7a-qwen-feasibility.md`.
+  This assignment authorized local Qwen pose experiments only; no final arm rig.
+- Nine completed images use the original frozen flat Codel image, existing
+  Q4_K_S/FP8 weights and separate worker environment. No PSD/reference tiles enter
+  generation. Default creation behavior and `codel-combined-v1` remain frozen.
+- Six stronger edits and the weaker lift fail screening. Two weaker near-copies
+  pass coarse consistency but add no useful structure; actual semantic analysis
+  retains one substantial unsided arm component. No articulation success claim.
+- Review: `runs/phase4b7a-review-release`. Protected face equality is imposed by
+  the mask; raw outputs, clipping/seam limitations and all failures remain visible.
+  Generated poses/region proposals are uncertain auxiliary inference, never GT.
+- Preserve the interrupted first batch, verified recovery and lower-strength
+  controls. No model downloads, training, production or default changes occurred.
+  Stop after Phase 4B.7a; future pose-conditioning/arm authoring needs new scope.

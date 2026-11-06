@@ -476,3 +476,21 @@ establish missing anatomy. User visual approval remains a separate pending gate.
 - Keep coordinated mouths and calm body explicitly selectable, with aligned facial
   motion and deterministic reconstruction. Defaults and product code are unchanged.
   Keep historical Codel seam and Girl2 visible lip failures. Stop at the freeze.
+
+## 2026-11-06 — Phase 4B.7a Qwen pose feasibility
+
+- Reuse the locally pinned Q4_K_S/FP8 Qwen setup; no new weights or defaults.
+  Only the frozen original flat Codel image enters generation. Retain raw decodes
+  separately from protected composites; copied face pixels cannot prove model fidelity.
+- Predefine six conservative poses. After the no-change control failed, compare
+  three lower-strength controls with otherwise identical settings. Preserve all
+  nine completed outputs and the interrupted/recovered execution history.
+- Screen before semantic aggregation. Six stronger edits and one weaker lift
+  are rejected; two source-like weaker near-copies are accepted only for coarse
+  exploratory analysis. Neither exposes useful new structure. Actual source and
+  accepted-image SAM results retain one substantial unsided arm component.
+- Keep plausible stills, segmentation usefulness and reliable articulation as
+  separate gates: 2 / 0 / 0 in this study. No arm rig or promotion follows.
+- Recommend pose-guided, source-constrained generation research before arm
+  authoring; current tests do not establish that all Qwen configurations fail.
+  Preserve `codel-combined-v1`, historical failures, defaults and production.

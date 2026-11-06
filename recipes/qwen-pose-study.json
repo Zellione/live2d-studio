@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "label": "Exploratory auxiliary pose family; not anatomical truth or accepted artwork",
+  "source_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+  "long_edge": 1024,
+  "steps": 40,
+  "cfg": 4.0,
+  "seed": 1729,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "shift": 3.0,
+  "denoise": 1.0,
+  "body_mask": {"top_fraction": 0.22, "bottom_fraction": 0.88, "horizontal_margin_fraction": 0.18},
+  "constraints": "Edit only the requested arm/body pose of this exact illustrated character. Preserve character identity, facial identity and neutral expression, hairstyle, hair length, clothing design, collar, sleeve lengths, skirt, all colors, line weight, shading and rendering style, body proportions and original camera angle. Keep the same canvas, scale, head position, framing and plain white background. Do not beautify, enhance, redesign, add accessories, change perspective or invent extra limbs. Allow only the minimal pose-related cloth deformation. Keep both hands anatomically plausible, with five fingers each. Keep every visible limb inside the existing framing. The character's right is the viewer's left; her right forearm initially crosses her torso. Her left arm initially hangs down on the viewer's right.",
+  "poses": [
+    {"id": "neutral", "instruction": "Reproduce the original image and pose unchanged. Keep the crossed right arm, hanging left arm and all clothing folds as close to the original as possible. This is a no-change consistency control."},
+    {"id": "right-lift", "instruction": "Move only her right arm slightly away from the torso: gently uncross the right forearm, keeping the right elbow low and close to her waist, with the right hand just in front of her waist on the viewer's left. Show a small gap between that sleeve and torso. Keep her left arm hanging in its original pose. No large gesture."},
+    {"id": "left-lift", "instruction": "Move only her hanging left arm slightly outward toward the viewer's right, by about ten degrees, keeping the elbow almost straight and the hand low. Reveal a narrow gap between that sleeve and torso. Keep the right arm gently crossed as originally, but release its resting hand only as much as needed. No large gesture."},
+    {"id": "question", "instruction": "Make a small explanatory gesture with her right forearm: elbow close to the waist, right hand slightly raised at lower chest height on the viewer's left, palm partly upward with relaxed fingers. Keep the left arm hanging down. Keep the face neutral and the torso still."},
+    {"id": "wave", "instruction": "Make a modest greeting with her left hand: bend the left elbow close to her side and lift the left hand only to shoulder height on the viewer's right, palm toward the viewer with relaxed slightly separated fingers. Keep the right arm low near the waist. Do not lift either arm overhead; keep the face neutral."},
+    {"id": "torso-open", "instruction": "Relax both shoulders without turning the body. Gently uncross the right arm and let both arms hang slightly away from the torso with small visible gaps. Reveal the front of the same high-neck long-sleeved top, retaining its seams and hem. Keep both hands low, the head fixed and the face neutral. No T-pose."}
+  ]
+}
