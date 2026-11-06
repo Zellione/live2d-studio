@@ -1,6 +1,7 @@
 // Exported Core geometry at expression/blink/talk/head combinations. No perception score.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
-const [coreFile,modelFile,inspectionFile]=process.argv.slice(2);
+const [coreFile,modelFile,inspectionFile,contractFile]=process.argv.slice(2);
+const {openingIndependent,invariant}=require('./mouth_invariant.cjs');
 const source=fs.readFileSync(coreFile);const sandbox={console:{...console,log:console.error},require,process,Buffer,__dirname:path.dirname(path.resolve(coreFile)),__filename:path.resolve(coreFile),setTimeout,clearTimeout};
 vm.createContext(sandbox);vm.runInContext(source.toString(),sandbox,{timeout:10000});
 setTimeout(()=>{let moc,model;const report={status:'running',visual_acceptance:false,samples:[],core_sha256:crypto.createHash('sha256').update(source).digest('hex'),nonfinite:0,invalid_opacity:0,strict_opacity_excursions:0};
@@ -35,18 +36,27 @@ try{
     const triangles={};
     if(mouth){for(const [i,id] of ids.entries())if(id.startsWith('ParamMouth')&&(get(id)<model.parameters.minimumValues[i]-1e-6||get(id)>model.parameters.maximumValues[i]+1e-6))throw Error('Unbounded mouth parameter '+id)}
     for(const t of targets){const i=drawables.indexOf(t.split(':')[1]);if(i<0)throw Error('Missing drawable '+t);const current=areas(i);triangles[t]={opacity:model.drawables.opacities[i],reversed:current.filter((x,j)=>x*neutralAreas[i][j]<-1e-12).length}}
-    report.samples.push({expression:e.Name,head,blink_talk:v,triangles,...(mouth&&head.every(x=>x===0)?{mouth_vertices:Object.fromEntries(targets.map(t=>[t,Array.from(model.drawables.vertexPositions[drawables.indexOf(t.split(':')[1])])]))}:{})});
+    report.samples.push({expression:e.Name,head,blink_talk:v,triangles,...(mouth&&(contractFile||head.every(x=>x===0))?{mouth_vertices:Object.fromEntries(targets.map(t=>[t,Array.from(model.drawables.vertexPositions[drawables.indexOf(t.split(':')[1])])]))}:{})});
    }
  }
  model.parameters.values.set(defaults);model.update();
  report.exact_neutral_geometry=model.drawables.vertexPositions.every((v,i)=>Array.from(v).every((x,j)=>x===neutral[i][j]))&&neutralAlpha.every((v,i)=>v===model.drawables.opacities[i]);
  if(mouth){
   report.source_seam_opening_invariant=true;
-  for(const e of data.FileReferences.Expressions){
-   const samples=report.samples.filter(s=>s.expression===e.Name&&s.head.every(v=>v===0)&&s.blink_talk!==null);
+  report.legacy_source_seam_absolute_invariant=true;report.seam_measurements=[];
+  const contract=contractFile?JSON.parse(fs.readFileSync(contractFile)):null;
+  if(contract&&contract.moc_sha256!==crypto.createHash('sha256').update(bytes).digest('hex'))throw Error('Geometry contract is bound to another export');
+  for(const e of data.FileReferences.Expressions)for(const head of (contract?[...new Map(report.samples.map(s=>[JSON.stringify(s.head),s.head])).values()]:[[0,0,0]])){
+   const samples=report.samples.filter(s=>s.expression===e.Name&&s.head.every((v,i)=>v===head[i])&&s.blink_talk!==null);
    for(const surface of inspection.surfaces.filter(s=>s.kind==='source-neutral')){
     const first=samples[0].mouth_vertices[surface.target];
-    if(!samples.every(s=>s.mouth_vertices[surface.target].every((v,i)=>Math.abs(v-first[i])<1e-7)))report.source_seam_opening_invariant=false;
+    const vectors=samples.map(s=>s.mouth_vertices[surface.target]);
+    const strict=vectors.every(a=>a.every((v,i)=>Math.abs(v-first[i])<1e-7));
+    if(head.every(v=>v===0))report.legacy_source_seam_absolute_invariant&&=strict;
+    const result=invariant(first,vectors,model.canvasinfo.PixelsPerUnit);
+    const structural=contract&&openingIndependent(surface.target,contract.details);
+    report.seam_measurements.push({expression:e.Name,head,...result,structural,legacy_absolute_pass:strict});
+    if(contract?!(structural&&result.pass):!strict)report.source_seam_opening_invariant=false;
    }
   }
   if(!report.source_seam_opening_invariant)throw Error('Source seam deforms while only opening changes');

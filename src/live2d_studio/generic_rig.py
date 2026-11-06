@@ -259,6 +259,8 @@ def animation_recipe(parameters):
 def author_animation(client, predecessor, output):
     op = open_stage(client,predecessor,output)
     data = overview(client)['data']
+    if any(p['id']=='ParamMouthRound' for p in data['parameters']['items']):
+        raise ValueError('Coordinated expressions already authored; refusing legacy animation replacement')
     listed = client.tool('workspace_call',dict(operation='expression_list',request={}))
     if not listed.get('ok'):
         raise RuntimeError('Cannot inspect default expressions')
@@ -275,6 +277,8 @@ def author_animation(client, predecessor, output):
 @locked_editor
 def export_model(client, predecessor, output):
     op = open_stage(client,predecessor,output)
+    from .performance import expressions, validate_export_expressions
+    saved_expressions=expressions(client)
     save(op,output)
     if archived_art(predecessor/'character.psd2live') != archived_art(output/'character.psd2live'):
         raise ValueError('Archived source artwork changed during export preparation')
@@ -288,12 +292,26 @@ def export_model(client, predecessor, output):
     model = output/'runtime'/models[0].name
     data = json.loads(model.read_text())
     refs = data['FileReferences']
-    entries = [m for group in refs.get('Motions',{}).values() for m in group if m['File'].endswith('.createIdle.motion3.json')]
+    all_motions = [m for group in refs.get('Motions',{}).values() for m in group]
+    entries = [m for m in all_motions if m['File'].endswith('.createIdle.motion3.json')]
     if len(entries) != 1:
         raise ValueError('Missing/ambiguous authored idle')
     refs['Motions'] = {'Idle':entries}
+    for group, ident in [('Nod','bodyNod'),('Question','bodyQuestion')]:
+        selected = [m for m in all_motions if m['File'].endswith('.'+ident+'.motion3.json')]
+        if len(selected)>1:raise ValueError('Ambiguous authored gesture '+group)
+        if selected:refs['Motions'][group]=selected
+    if {'Nod','Question'} <= refs['Motions'].keys():
+        data['StudioBody']={'version':1,'arms':'static shared attachment','gestures':{'Nod':'Small head nod','Question':'Questioning head tilt'},'idle_seconds':16}
     refs['Expressions'] = [e for e in refs['Expressions'] if '.create_' in e['File']]
     if len(refs['Expressions']) != 7:
         raise ValueError('Expected seven generated expressions')
+    validate_export_expressions(saved_expressions,model.parent,refs['Expressions'])
     write_json(model,data)
+    inspection=predecessor/'composition-inspection.json'
+    if inspection.is_file():
+        write_json(output/'mouth-contract.json',dict(details=json.loads(inspection.read_text())['details'],
+            project_sha256=digest(predecessor/'character.psd2live'),
+            moc_sha256=digest(model.parent/refs['Moc']),
+            policy='geometry excludes opening; binary32 eight-step bound capped at .001 source pixel'))
     write_json(output/'integrity.json',validate(model))

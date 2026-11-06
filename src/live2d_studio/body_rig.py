@@ -1,6 +1,7 @@
 """Optional geometry-inspected body motion. Never infers limb anatomy from names."""
 import itertools
 import json
+import shutil
 from pathlib import Path
 import numpy as np
 from PIL import Image
@@ -128,6 +129,11 @@ def author(client, predecessor, layers, output):
     output.mkdir(parents=True,exist_ok=False)
     op=open_stage(client,predecessor,output)
     view=overview(client)['data'];items=objects(client)
+    if any(m['id'] in ('bodyNod','bodyQuestion') for m in view['motions']['items']):
+        raise ValueError('Body motion already authored; use preserve instead of applying twice')
+    from .performance import expressions, assert_expressions_preserved
+    expression_before=expressions(client)
+    write_json(output/'expressions-before.json',expression_before)
     details={o['target']:inspect(client,dict(target=o['target'])) for o in items}
     binding=bindings(view,items,details)
     report=dict(overview=view,objects=items,details=details,bindings=binding,anatomy=anatomy_report(layers))
@@ -146,6 +152,12 @@ def author(client, predecessor, layers, output):
     clips=motion_clips({p['id']:p for p in view['parameters']['items']})
     write_json(output/'body-motions.json',clips)
     for clip in clips:op.call('motion_put',dict(clip=clip))
+    assert_expressions_preserved(expression_before,expressions(client))
+    write_json(output/'expressions.json',expression_before)
+    if (predecessor/'mouth-inspection.json').is_file():
+        shutil.copyfile(predecessor/'mouth-inspection.json',output/'mouth-inspection.json')
+        write_json(output/'composition-inspection.json',dict(overview=overview(client)['data'],objects=items,
+            details={o['target']:inspect(client,dict(target=o['target'])) for o in items}))
     save(op,output)
     if archived_art(predecessor/'character.psd2live')!=archived_art(output/'character.psd2live'):
         raise ValueError('Body authoring changed raster artwork')

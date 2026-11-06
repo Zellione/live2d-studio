@@ -24,7 +24,7 @@
       const before=await PIXI.live2d.Live2DModel.from(config.comparison,{autoInteract:false,autoHitTest:false});
       app.stage.addChild(before);before.scale.set(model.scale.x);before.x=(600-before.width)/2;before.y=35;peers.push(before);
       document.body.classList.add('comparison');
-      const labels=document.createElement('p');labels.textContent='Original · left / Body candidate · right · synchronized start, equal scale';$('#canvas').before(labels);
+      const labels=document.createElement('p');labels.textContent='Reference · left / Candidate · right · synchronized start, equal scale';$('#canvas').before(labels);
     }
     const internal=model.internalModel, core=internal.coreModel, manager=internal.motionManager;
     const physics=internal.physics;
@@ -96,7 +96,9 @@
         if(!state.head)for(const id of ['ParamAngleX','ParamAngleY','ParamAngleZ'])oc.setParameterValueById(id,0);
         if(!state.body)for(const id of ['ParamBreath','ParamBodyAngleX','ParamBodyAngleZ'])oc.setParameterValueById(id,0);
       });
-      other.on('beforeModelUpdate',()=>{for(const [id,v]of Object.entries(state.manual))if(oi.includes(id))oc.setParameterValueById(id,v);
+      other.on('beforeModelUpdate',()=>{
+        if(state.mouthOnly)oi.forEach((id,i)=>{if(!id.startsWith('ParamMouth'))oc.setParameterValueById(id,od[i]);});
+        for(const [id,v]of Object.entries(state.manual))if(oi.includes(id))oc.setParameterValueById(id,v);
         if(state.talkWeight)oc.setParameterValueById('ParamMouthOpenY',state.values.ParamMouthOpenY);
         if(!state.head)for(const id of ['ParamAngleX','ParamAngleY','ParamAngleZ'])oc.setParameterValueById(id,0);
         if(!state.body)for(const id of ['ParamBreath','ParamBodyAngleX','ParamBodyAngleZ'])oc.setParameterValueById(id,0);

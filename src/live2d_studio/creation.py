@@ -49,12 +49,15 @@ def copy_bridge(source, output, input_hash):
 def create(source, output, *, rights='unspecified-local-only', decomposition=None, sam=None,
            endpoint='http://127.0.0.1:23871/mcp', until='preview', preview=True,
            extension=None, port=8768, client_factory=None, reconstruction='deterministic',
-           inpainting_config=None, inpainting_review=None, facial_motion='legacy'):
+           inpainting_config=None, inpainting_review=None, facial_motion='legacy',
+           mouths='preserve', body_motion='preserve'):
     source = Path(source).resolve()
     if until not in ORDER:
         raise ValueError('Unknown creation stage')
     if facial_motion not in ('legacy','aligned'):
         raise ValueError('Unknown facial motion method')
+    if mouths not in ('preserve','coordinated') or body_motion not in ('preserve','calm'):
+        raise ValueError('Unknown optional performance feature')
     if reconstruction not in ('deterministic','neural','hybrid'):
         raise ValueError('Unknown facial reconstruction mode')
     if reconstruction != 'deterministic' and inpainting_config is None:
@@ -203,7 +206,12 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         animation = run('animation',dict(parent=stages.data['stages']['rig']['files']),
             lambda root:author_animation(factory(),rig,root))
         if stop('animation'): return result()
-        exported = run('export',dict(parent=stages.data['stages']['animation']['files']),
+        export_parent=stages.data['stages']['animation']['files']
+        if mouths!='preserve' or body_motion!='preserve':
+            from .performance import compose
+            animation=compose(stages,animation,face/'layers',factory,mouths,body_motion)
+            export_parent=inventory(animation)
+        exported = run('export',dict(parent=export_parent),
             lambda root:export_model(factory(),animation,root))
         if stop('export'): return result()
         model = next((exported/'runtime').glob('*.model3.json'))
