@@ -1,5 +1,25 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.8.2 — optional Lightning acceleration
+
+Read [results](phase4b8-2-results.md), [integration/reproduction](phase4b8-2-lightning.md)
+and [benchmark](benchmarks/phase4b8-2.json). The pinned 2509 BF16 8/4-step adapters
+work with the existing Q4_K_S/FP8 backend and all three references. Fresh-process
+800 × 1536 times: 253.14s Quality, 43.53s Balanced, 30.98s Fast. Matched no-LoRA
+low-step controls produce ghost limbs; both adapters apply all 720 expected patches.
+
+- New opt-in `init-from-canonical --lightning`, timed worker and separate adapter
+  lock. Old workers/model locks/presets and all 1,854 inventoried artifacts stay
+  unchanged. Never add adapter fields to a historical worker's presets.
+- New reviewer: `runs/phase4b8-2-lightning-review-v2`, localhost 8804. Five Balanced
+  candidates completed in 161.52s total; all bend the intended arm, but finger
+  poses and exact hand height remain inconsistent. No automatic approval or SAM.
+- Gallery: `runs/phase4b8-2-review-final`, localhost 8803. Retain all comparison
+  failures. Quality is the historical reference, not a promise of best gesture.
+- 206 Python tests and both JS suites pass; synthetic and real browser checks
+  pass. Keep performance, human visual approval and anatomical validity separate.
+- Stop after Phase 4B.8.2. No final arm rigging or production deployment.
+
 ## Current Phase 4B.8.1 — canonical-based guided gestures
 
 Read [results](phase4b8-1-results.md), [generation](phase4b8-1-gesture-generation.md)

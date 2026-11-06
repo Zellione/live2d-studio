@@ -48,7 +48,7 @@ def fresh_seeds(used,count=5,random=secrets.randbits):
 
 def validate_preset(cfg):
     required={'long_edge','steps','cfg','shift','denoise','guidance','latent','mask','sampler','scheduler','cfg_norm'}
-    if not isinstance(cfg,dict) or not required<=cfg.keys() or cfg.keys()-required-{'negative_prompt','prompt_suffix'}:
+    if not isinstance(cfg,dict) or not required<=cfg.keys() or cfg.keys()-required-{'negative_prompt','prompt_suffix','lora','lora_strength'}:
         raise ValueError('Missing or unknown preset fields')
     if type(cfg['steps']) is not int or type(cfg['cfg_norm']) is not bool:
         raise ValueError('Steps must be an integer and cfg_norm must be boolean')
@@ -57,6 +57,9 @@ def validate_preset(cfg):
         or cfg['latent'] not in ('source','empty') or cfg['mask'] not in ('none','legacy-body')
         or cfg['sampler'] not in ('euler','dpmpp_2m') or cfg['scheduler'] not in ('simple','beta')):
         raise ValueError('Unsupported or unbounded preset')
+    if 'lora' in cfg or 'lora_strength' in cfg:
+        from .lightning import validate
+        validate(cfg)
     for key in ('negative_prompt','prompt_suffix'):
         if not isinstance(cfg.get(key,''),str) or len(cfg.get(key,''))>2000:raise ValueError('Invalid prompt text')
 
@@ -123,9 +126,13 @@ class Store:
     def verify_pins(self,state,producer=True):
         if state.get('workflow') in ('canonical','canonical-helpers'):
             from .canonical_pose import WORKER
+            if state.get('inference_profile')=='qwen-lightning-v1':
+                from .lightning import WORKER
             if state.get('worker')!=WORKER:raise ValueError('Canonical worker binding changed')
         if state.get('workflow')=='canonical-helpers' and (not state.get('identity_reference') or not state.get('canonical_origin')):
             raise ValueError('Canonical helper initialization is incomplete')
+        if any('lora' in cfg or 'lora_strength' in cfg for cfg in state['presets'].values()) and state.get('inference_profile')!='qwen-lightning-v1':
+            raise ValueError('LoRA presets require an explicit Lightning run')
         if fingerprint(state['presets'])!=state['presets_sha256']:raise ValueError('Preset changed')
         if digest(self.safe(state['source']['path']))!=state['source']['sha256']:raise ValueError('Source changed')
         if state.get('workflow')=='canonical':
@@ -160,6 +167,8 @@ class Store:
         validate_preset(config)
         with self.transaction() as s:
             self.verify_pins(s)
+            if ('lora' in config or 'lora_strength' in config) and s.get('inference_profile')!='qwen-lightning-v1':
+                raise ValueError('LoRA presets require a fresh Lightning review run')
             if name in s['presets']:raise ValueError('Existing presets cannot be overwritten')
             previous=s['presets_sha256'];s['presets'][name]=config
             s['presets_sha256']=fingerprint(s['presets'])
@@ -186,6 +195,15 @@ class Store:
                         shapes=row.get('reference_latent_shapes',[])
                         if row.get('reference_latent_count')!=3 or not isinstance(shapes,list) or len(shapes)!=3 or any(not isinstance(v,list) or len(v)!=5 or any(type(n) is not int or n<=0 for n in v) for v in shapes):
                             raise ValueError('Three-reference conditioning evidence missing')
+                    if plan.get('lightning_lock_sha256'):
+                        from .lightning import validate,LOCK
+                        name,strength=validate(task['config']);adapter=row.get('lora',{})
+                        if row.get('lightning_lock_sha256')!=plan['lightning_lock_sha256'] or adapter.get('id')!=name or adapter.get('strength')!=strength:
+                            raise ValueError('Lightning result does not match plan')
+                        if name!='none':
+                            lock=json.loads((REPO/LOCK).read_text())
+                            if adapter.get('sha256')!=lock['files'][name]['sha256'] or adapter.get('revision')!=lock['revision'] or adapter.get('patch_count',0)<=0:
+                                raise ValueError('Lightning patch evidence missing')
                     c.update(status='ready',image=c['directory']+'/image.png',sha256=row['image_sha256'],result=row)
             if batch['status']=='running':
                 report=self.safe(batch.get('execution_directory',batch['directory']))/'report.json'
@@ -272,6 +290,8 @@ class Store:
                     if digest(folder/'identity.png')!=identity['sha256']:raise ValueError('Identity changed during copy')
                     plan['identity']='identity.png';plan['inputs']['identity.png']=identity['sha256']
                     plan['canonical_origin']=s['canonical_origin']
+                if s.get('inference_profile')=='qwen-lightning-v1':
+                    plan['lightning_lock_sha256']=s['producer_pins']['backends/inpainting/lightning.lock.json']
                 write(folder/'plan.json',plan)
                 batch={'id':bid,'pose':pose,'preset':preset,'config':cfg,'config_sha256':fingerprint(cfg),
                        'directory':directory,'plan_sha256':digest(folder/'plan.json'),'status':'running','created':time.time(),
@@ -286,7 +306,7 @@ class Store:
             folder=self.safe(batch.get('execution_directory',batch['directory']))
             with (folder/'worker.log').open('a') as log:
                 worker=batch.get('worker','backends/inpainting/pose_worker.py')
-                if worker not in ('backends/inpainting/pose_worker.py','backends/inpainting/pose_reference_worker.py'):raise ValueError('Unknown worker')
+                if worker not in ('backends/inpainting/pose_worker.py','backends/inpainting/pose_reference_worker.py','backends/inpainting/pose_lightning_worker.py'):raise ValueError('Unknown worker')
                 proc=runner([str(REPO/'backends/inpainting/qwen-env/.venv/bin/python'),str(REPO/worker),
                              '--plan',str(folder/'plan.json')],cwd=REPO,stdout=log,stderr=subprocess.STDOUT,pass_fds=(fd,),timeout=3600)
             with self.transaction() as s:

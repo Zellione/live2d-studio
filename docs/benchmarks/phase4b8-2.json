@@ -1,0 +1,905 @@
+{
+  "schema_version": 1,
+  "phase": "4B.8.2",
+  "baseline_commit": "8316adfd88bfba37154d71c89c72b7300cd5094f",
+  "hardware": "RTX 5090 32GB",
+  "model_lock_sha256": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+  "base_models": {
+    "qwen_transformer": {
+      "repo": "QuantStack/Qwen-Image-Edit-2509-GGUF",
+      "revision": "84a3006979126011422eeeefe0c9485ddf431ef5",
+      "license": "apache-2.0",
+      "files": {
+        "Qwen-Image-Edit-2509-Q4_K_S.gguf": {
+          "size": 12204309024,
+          "sha256": "07e64364812e527e0e39db3770440f76a5ed4732926c54a0a0e7da841cbe0ce6"
+        }
+      }
+    },
+    "qwen_parts": {
+      "repo": "Comfy-Org/Qwen-Image",
+      "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+      "license": "apache-2.0",
+      "files": {
+        "split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors": {
+          "size": 9384670680,
+          "sha256": "cb5636d852a0ea6a9075ab1bef496c0db7aef13c02350571e388aea959c5c0b4"
+        },
+        "split_files/vae/qwen_image_vae.safetensors": {
+          "size": 253806246,
+          "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f"
+        }
+      }
+    }
+  },
+  "backend_sources": {
+    "lama": "786f5936b27fb3dacd2b1ad799e4de968ea697e7",
+    "comfy": "b8730510db30c8858e1e5d8e126ef19eac395560",
+    "gguf": "6ea2651e7df66d7585f6ffee804b20e92fb38b8a"
+  },
+  "lightning_lock": {
+    "schema_version": 1,
+    "repo": "lightx2v/Qwen-Image-Lightning",
+    "revision": "d468c534b360e0754c6bf9e38ed49e1e09cd2e2a",
+    "license": "apache-2.0",
+    "files": {
+      "lightning-4": {
+        "filename": "Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+        "path": "models/phase4b8-2/lightning/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+        "size": 849608296,
+        "sha256": "2a32ce938ec71db2b49a817b4844ae86995569518dea56ee0ddc209cbe8e1377",
+        "precision": "bfloat16"
+      },
+      "lightning-8": {
+        "filename": "Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-bf16.safetensors",
+        "path": "models/phase4b8-2/lightning/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-bf16.safetensors",
+        "size": 849608296,
+        "sha256": "b5c48ba90d22294cc4e20ea4a347496e2136295ad438ff79ad4fe841f28d7f72",
+        "precision": "bfloat16"
+      }
+    }
+  },
+  "lightning_lock_sha256": "72345a87d9e7db31978131981e8e292893cc6f62cdcfb80a774faff85c034b2f",
+  "worker_sha256": "8bc4108fcdae6ba760e830f1bfea301a91811e9cf71db0fa3e6ae965c3d5cc2a",
+  "comparison": {
+    "directory": "runs/phase4b8-2-comparison",
+    "seed": 2597810572262578,
+    "inputs": {
+      "source.png": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+      "guide.png": "1bebd426715779c1edcc6a592f788a922c6afe81d764954536d99f3b8ba4a24a",
+      "identity.png": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d"
+    },
+    "prompt": "Picture 1 is the reviewed synthetic front-facing base and primary geometry. Picture 2 is the target pose guide. Picture 3 is the original character for identity, facial features, clothing and style only; do not restore its angled or crossed-arm pose. Retain the front-facing head, chest and hips and original framing of picture 1. Keep both arms visible with continuous shoulder, upper arm, elbow, forearm, wrist and hand. Preserve the face, hairstyle, neutral expression, outfit design, body proportions, illustration style and colours. Use picture 2 for joint placement only, never copy its mannequin rendering. Keep a natural relaxed hand with five fingers, without extra limbs or merged fingers. Bend the character's anatomical RIGHT elbow (viewer LEFT). The upper arm points down beside the torso, the elbow is near waist height, and the forearm points upward so the hand is at chest height, slightly outside the torso. The anatomical LEFT arm (viewer RIGHT) stays relaxed down. Do not leave both hands down and do not cross the forearm over the torso.",
+    "negative_prompt": "",
+    "cases": {
+      "quality": {
+        "process_wall_seconds": 253.14354079699842,
+        "worker_total_seconds": 252.65630348600098,
+        "startup_seconds": 0.6975596940028481,
+        "model_loading": {
+          "seconds": 10.910037845998886,
+          "peak_allocated_bytes": 8296472064,
+          "peak_reserved_bytes": 8451522560
+        },
+        "model_unloading": {
+          "seconds": 1.7574436030008656,
+          "peak_allocated_bytes": 12467144704,
+          "peak_reserved_bytes": 19933429760
+        },
+        "development_screening": "Recognizable face, hair, palette and outfit; frontal framing retained. Both arms remain down: fails requested gesture. Hands are present but anatomy is unverified.",
+        "human_approved": false,
+        "config": {
+          "long_edge": 1536,
+          "steps": 40,
+          "cfg": 4,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": "",
+          "lora": "none",
+          "lora_strength": 0
+        },
+        "image_sha256": "19036ff39304084c59898a3ba820f23d0d67af3d8e05e91fcb53bae1bd3c9fe4",
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 239.28976287800106,
+        "timings": {
+          "input_preparation": {
+            "seconds": 0.16493965100016794,
+            "peak_allocated_bytes": 8296472064,
+            "peak_reserved_bytes": 8451522560
+          },
+          "reference_encoding": {
+            "seconds": 1.6794785909987695,
+            "peak_allocated_bytes": 11378531840,
+            "peak_reserved_bytes": 11802771456
+          },
+          "latent_initialization": {
+            "seconds": 0.10067187700042268,
+            "peak_allocated_bytes": 11883843584,
+            "peak_reserved_bytes": 13698596864
+          },
+          "lora_loading": {
+            "seconds": 0.00016044999938458204,
+            "peak_allocated_bytes": 8559195648,
+            "peak_reserved_bytes": 13698596864
+          },
+          "sampling": {
+            "seconds": 236.3303170830004,
+            "peak_allocated_bytes": 22398893056,
+            "peak_reserved_bytes": 25153241088
+          },
+          "decoding": {
+            "seconds": 0.8412020840005425,
+            "peak_allocated_bytes": 20763616256,
+            "peak_reserved_bytes": 25153241088
+          },
+          "image_save": {
+            "seconds": 0.16453048599942122,
+            "peak_allocated_bytes": 12467144704,
+            "peak_reserved_bytes": 19933429760
+          }
+        },
+        "lora": {
+          "id": "none",
+          "strength": 0,
+          "patch_count": 0
+        },
+        "reference_latent_count": 3,
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "peak_allocated_bytes": 22398893056,
+        "peak_reserved_bytes": 25153241088,
+        "process_speedup": 1.0
+      },
+      "lightning8": {
+        "process_wall_seconds": 43.53074749100051,
+        "worker_total_seconds": 43.06169055200007,
+        "startup_seconds": 1.0851102070009802,
+        "model_loading": {
+          "seconds": 11.378805999000178,
+          "peak_allocated_bytes": 8296472064,
+          "peak_reserved_bytes": 8451522560
+        },
+        "model_unloading": {
+          "seconds": 1.6784616529985215,
+          "peak_allocated_bytes": 12475729920,
+          "peak_reserved_bytes": 19868418048
+        },
+        "development_screening": "Recognizable identity, hair and outfit; frontal framing retained. Anatomical right elbow bends with continuous sleeve, wrist and present hand; other arm stays down. Pointing index and hand above chest depart from relaxed chest-height target. Folded fingers/shoulder geometry still need human review.",
+        "human_approved": false,
+        "config": {
+          "long_edge": 1536,
+          "steps": 8,
+          "cfg": 1,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": "",
+          "lora": "lightning-8",
+          "lora_strength": 1
+        },
+        "image_sha256": "0954443c86afdff1d09854b6e6b41020cc5a07db29d7d5218fc8c724f166c850",
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 28.917641366999305,
+        "timings": {
+          "input_preparation": {
+            "seconds": 0.16751123300127801,
+            "peak_allocated_bytes": 8296472064,
+            "peak_reserved_bytes": 8451522560
+          },
+          "reference_encoding": {
+            "seconds": 1.633477753999614,
+            "peak_allocated_bytes": 11378531840,
+            "peak_reserved_bytes": 11802771456
+          },
+          "latent_initialization": {
+            "seconds": 0.10053240999695845,
+            "peak_allocated_bytes": 11883843584,
+            "peak_reserved_bytes": 13698596864
+          },
+          "lora_loading": {
+            "seconds": 0.40852663600162487,
+            "peak_allocated_bytes": 8559195648,
+            "peak_reserved_bytes": 13698596864
+          },
+          "sampling": {
+            "seconds": 25.554988397998386,
+            "peak_allocated_bytes": 22406233088,
+            "peak_reserved_bytes": 25092423680
+          },
+          "decoding": {
+            "seconds": 0.847152169997571,
+            "peak_allocated_bytes": 20772201472,
+            "peak_reserved_bytes": 25092423680
+          },
+          "image_save": {
+            "seconds": 0.19685085200035246,
+            "peak_allocated_bytes": 12475729920,
+            "peak_reserved_bytes": 19868418048
+          }
+        },
+        "lora": {
+          "filename": "Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-bf16.safetensors",
+          "path": "models/phase4b8-2/lightning/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-bf16.safetensors",
+          "size": 849608296,
+          "sha256": "b5c48ba90d22294cc4e20ea4a347496e2136295ad438ff79ad4fe841f28d7f72",
+          "precision": "bfloat16",
+          "id": "lightning-8",
+          "strength": 1,
+          "repo": "lightx2v/Qwen-Image-Lightning",
+          "revision": "d468c534b360e0754c6bf9e38ed49e1e09cd2e2a",
+          "license": "apache-2.0",
+          "loader": "LoraLoaderModelOnly",
+          "patcher": "GGUFModelPatcher",
+          "patch_count": 720,
+          "tensor_count": 2160,
+          "patch_dtype": "bfloat16",
+          "patch_on_device": null,
+          "patch_keys_sha256": "1372b59b07eb91de7c3d43b8ca6ca1e05e3d70325fd329abcd5bd20692054bc0"
+        },
+        "reference_latent_count": 3,
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "peak_allocated_bytes": 22406233088,
+        "peak_reserved_bytes": 25092423680,
+        "process_speedup": 5.815281275593372
+      },
+      "lightning4": {
+        "process_wall_seconds": 30.976330222001707,
+        "worker_total_seconds": 30.548714041000494,
+        "startup_seconds": 0.9838541780009109,
+        "model_loading": {
+          "seconds": 11.256548448000103,
+          "peak_allocated_bytes": 8296472064,
+          "peak_reserved_bytes": 8451522560
+        },
+        "model_unloading": {
+          "seconds": 1.603108470000734,
+          "peak_allocated_bytes": 12475729920,
+          "peak_reserved_bytes": 19868418048
+        },
+        "development_screening": "Clear right bent arm, present pointing hand and relaxed opposite arm. Outfit, palette and framing remain recognizable. Slight face/proportion change and simpler hand/cloth shading than eight steps. Same excessive hand height and pointing departure; finger topology unverified.",
+        "human_approved": false,
+        "config": {
+          "long_edge": 1536,
+          "steps": 4,
+          "cfg": 1,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": "",
+          "lora": "lightning-4",
+          "lora_strength": 1
+        },
+        "image_sha256": "b70de5b22542ab17c8a2d9a105850cb404b75f237977a28d6447a8585dada1c6",
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 16.69980253900212,
+        "timings": {
+          "input_preparation": {
+            "seconds": 0.1659186420001788,
+            "peak_allocated_bytes": 8296472064,
+            "peak_reserved_bytes": 8451522560
+          },
+          "reference_encoding": {
+            "seconds": 1.7231785109979683,
+            "peak_allocated_bytes": 11378531840,
+            "peak_reserved_bytes": 11802771456
+          },
+          "latent_initialization": {
+            "seconds": 0.10011496399965836,
+            "peak_allocated_bytes": 11883843584,
+            "peak_reserved_bytes": 13698596864
+          },
+          "lora_loading": {
+            "seconds": 0.4018977229970915,
+            "peak_allocated_bytes": 8559195648,
+            "peak_reserved_bytes": 13698596864
+          },
+          "sampling": {
+            "seconds": 13.254975432999345,
+            "peak_allocated_bytes": 22406233088,
+            "peak_reserved_bytes": 25092423680
+          },
+          "decoding": {
+            "seconds": 0.8398175199981779,
+            "peak_allocated_bytes": 20772201472,
+            "peak_reserved_bytes": 25092423680
+          },
+          "image_save": {
+            "seconds": 0.20556521200342104,
+            "peak_allocated_bytes": 12475729920,
+            "peak_reserved_bytes": 19868418048
+          }
+        },
+        "lora": {
+          "filename": "Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+          "path": "models/phase4b8-2/lightning/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+          "size": 849608296,
+          "sha256": "2a32ce938ec71db2b49a817b4844ae86995569518dea56ee0ddc209cbe8e1377",
+          "precision": "bfloat16",
+          "id": "lightning-4",
+          "strength": 1,
+          "repo": "lightx2v/Qwen-Image-Lightning",
+          "revision": "d468c534b360e0754c6bf9e38ed49e1e09cd2e2a",
+          "license": "apache-2.0",
+          "loader": "LoraLoaderModelOnly",
+          "patcher": "GGUFModelPatcher",
+          "patch_count": 720,
+          "tensor_count": 2160,
+          "patch_dtype": "bfloat16",
+          "patch_on_device": null,
+          "patch_keys_sha256": "1372b59b07eb91de7c3d43b8ca6ca1e05e3d70325fd329abcd5bd20692054bc0"
+        },
+        "reference_latent_count": 3,
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "peak_allocated_bytes": 22406233088,
+        "peak_reserved_bytes": 25092423680,
+        "process_speedup": 8.172160452279687
+      },
+      "control8": {
+        "process_wall_seconds": 41.42974324500028,
+        "worker_total_seconds": 40.93441989799976,
+        "startup_seconds": 0.6218903509980009,
+        "model_loading": {
+          "seconds": 11.00693750100254,
+          "peak_allocated_bytes": 8296472064,
+          "peak_reserved_bytes": 8451522560
+        },
+        "model_unloading": {
+          "seconds": 1.5875691890032613,
+          "peak_allocated_bytes": 12467144704,
+          "peak_reserved_bytes": 19933429760
+        },
+        "development_screening": "Reduced-step no-LoRA control has a ghost raised forearm/hand superimposed on the original down arm. Severe limb/hand failure despite recognizable face and outfit. Reject.",
+        "human_approved": false,
+        "config": {
+          "long_edge": 1536,
+          "steps": 8,
+          "cfg": 1,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": "",
+          "lora": "none",
+          "lora_strength": 0
+        },
+        "image_sha256": "a632642cdce749364b3079429eecacfd1535b23f0c5ff793e4fa0c9b6dfb526f",
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 27.71650142300132,
+        "timings": {
+          "input_preparation": {
+            "seconds": 0.16643580999880214,
+            "peak_allocated_bytes": 8296472064,
+            "peak_reserved_bytes": 8451522560
+          },
+          "reference_encoding": {
+            "seconds": 1.7254308689989557,
+            "peak_allocated_bytes": 11378531840,
+            "peak_reserved_bytes": 11802771456
+          },
+          "latent_initialization": {
+            "seconds": 0.10118448600042029,
+            "peak_allocated_bytes": 11883843584,
+            "peak_reserved_bytes": 13698596864
+          },
+          "lora_loading": {
+            "seconds": 0.0001753510005073622,
+            "peak_allocated_bytes": 8559195648,
+            "peak_reserved_bytes": 13698596864
+          },
+          "sampling": {
+            "seconds": 24.62460253899917,
+            "peak_allocated_bytes": 22397607936,
+            "peak_reserved_bytes": 25153241088
+          },
+          "decoding": {
+            "seconds": 0.8355015820015979,
+            "peak_allocated_bytes": 20763616256,
+            "peak_reserved_bytes": 25153241088
+          },
+          "image_save": {
+            "seconds": 0.25478781400306616,
+            "peak_allocated_bytes": 12467144704,
+            "peak_reserved_bytes": 19933429760
+          }
+        },
+        "lora": {
+          "id": "none",
+          "strength": 0,
+          "patch_count": 0
+        },
+        "reference_latent_count": 3,
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "peak_allocated_bytes": 22397607936,
+        "peak_reserved_bytes": 25153241088,
+        "process_speedup": 6.110188501531388
+      },
+      "control4": {
+        "process_wall_seconds": 29.379335648998676,
+        "worker_total_seconds": 28.90524612000081,
+        "startup_seconds": 0.6054469459995744,
+        "model_loading": {
+          "seconds": 10.955004642997665,
+          "peak_allocated_bytes": 8296472064,
+          "peak_reserved_bytes": 8451522560
+        },
+        "model_unloading": {
+          "seconds": 1.5748205919990141,
+          "peak_allocated_bytes": 12467144704,
+          "peak_reserved_bytes": 19933429760
+        },
+        "development_screening": "Reduced-step no-LoRA control has a fading duplicated arm and nearly absent raised hand. Severe anatomy/rendering failure. Reject.",
+        "human_approved": false,
+        "config": {
+          "long_edge": 1536,
+          "steps": 4,
+          "cfg": 1,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "shift": 3.0,
+          "denoise": 1.0,
+          "latent": "source",
+          "mask": "none",
+          "guidance": "silhouette",
+          "cfg_norm": false,
+          "negative_prompt": "",
+          "lora": "none",
+          "lora_strength": 0
+        },
+        "image_sha256": "40b0996caa833a75cb00099a0af6ce3e3cd4fa0461fa82af53bfcc75f760108d",
+        "output_size": [
+          800,
+          1536
+        ],
+        "seconds": 15.7684443750004,
+        "timings": {
+          "input_preparation": {
+            "seconds": 0.16500255099890637,
+            "peak_allocated_bytes": 8296472064,
+            "peak_reserved_bytes": 8451522560
+          },
+          "reference_encoding": {
+            "seconds": 1.6044878110005811,
+            "peak_allocated_bytes": 11378531840,
+            "peak_reserved_bytes": 11802771456
+          },
+          "latent_initialization": {
+            "seconds": 0.10465674200167996,
+            "peak_allocated_bytes": 11883843584,
+            "peak_reserved_bytes": 13698596864
+          },
+          "lora_loading": {
+            "seconds": 0.00020389999917824753,
+            "peak_allocated_bytes": 8559195648,
+            "peak_reserved_bytes": 13698596864
+          },
+          "sampling": {
+            "seconds": 12.787881952001044,
+            "peak_allocated_bytes": 22397607936,
+            "peak_reserved_bytes": 25153241088
+          },
+          "decoding": {
+            "seconds": 0.8283918860033737,
+            "peak_allocated_bytes": 20763616256,
+            "peak_reserved_bytes": 25153241088
+          },
+          "image_save": {
+            "seconds": 0.2692471599984856,
+            "peak_allocated_bytes": 12467144704,
+            "peak_reserved_bytes": 19933429760
+          }
+        },
+        "lora": {
+          "id": "none",
+          "strength": 0,
+          "patch_count": 0
+        },
+        "reference_latent_count": 3,
+        "reference_latent_shapes": [
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ],
+          [
+            1,
+            16,
+            1,
+            177,
+            92
+          ]
+        ],
+        "peak_allocated_bytes": 22397607936,
+        "peak_reserved_bytes": 25153241088,
+        "process_speedup": 8.616380704497864
+      }
+    },
+    "adapter_effect_controls": {
+      "8": {
+        "mean_absolute_rgb_delta_0_255": 5.090415581597222,
+        "changed_pixel_fraction": 0.73935791015625,
+        "meaning": "Matched steps, CFG, seed, prompt and references; adapter presence is the changed variable. Pixel change proves effect, not anatomical correctness."
+      },
+      "4": {
+        "mean_absolute_rgb_delta_0_255": 7.000087348090278,
+        "changed_pixel_fraction": 0.8518570963541666,
+        "meaning": "Matched steps, CFG, seed, prompt and references; adapter presence is the changed variable. Pixel change proves effect, not anatomical correctness."
+      }
+    },
+    "timing_scope": "One fresh process per case, warm filesystem cache; CUDA-synchronized wall stages. Sampling includes lazy GPU materialization/patch application; decoding includes VAE transfers. Torch allocator peaks, not whole-board VRAM. No uncertainty interval from n=1.",
+    "historical_baseline_exact_image_replay": true
+  },
+  "review_run": "runs/phase4b8-2-lightning-review-v2",
+  "canonical_origin": {
+    "review_run": "/data/projects/live2d-studio/runs/phase4b8-canonical",
+    "manifest": {
+      "manifest": "canonical/b-62c26625a6664a98810b8361cea4b371-c4/manifest.json",
+      "sha256": "8d15231abbb8e648e1f1663abd16a7cdd5323296c1361f91c3115e31f2610725"
+    },
+    "canonical_sha256": "ab2a52ae59af22435b1c2595cb7ced24fdcd4ed5056b16496b8d2b482d78da3e",
+    "original_sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "local_provenance_sha256": "8d15231abbb8e648e1f1663abd16a7cdd5323296c1361f91c3115e31f2610725"
+  },
+  "presets": {
+    "Balanced": {
+      "long_edge": 1536,
+      "steps": 8,
+      "cfg": 1,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "source",
+      "mask": "none",
+      "guidance": "silhouette",
+      "cfg_norm": false,
+      "negative_prompt": "",
+      "lora": "lightning-8",
+      "lora_strength": 1
+    },
+    "Fast": {
+      "long_edge": 1536,
+      "steps": 4,
+      "cfg": 1,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "source",
+      "mask": "none",
+      "guidance": "silhouette",
+      "cfg_norm": false,
+      "negative_prompt": "",
+      "lora": "lightning-4",
+      "lora_strength": 1
+    },
+    "Quality": {
+      "long_edge": 1536,
+      "steps": 40,
+      "cfg": 4,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "shift": 3.0,
+      "denoise": 1.0,
+      "latent": "source",
+      "mask": "none",
+      "guidance": "silhouette",
+      "cfg_norm": false,
+      "negative_prompt": "",
+      "lora": "none",
+      "lora_strength": 0
+    }
+  },
+  "producer_pins": {
+    "backends/inpainting/pose_worker.py": "bd5f6014c7297728272a8728a3bb82a4b51c066223cb977c6ffe16187803c3a1",
+    "backends/inpainting/qwen.py": "863c093bad744c755bc86f8a621009fbdc250e1d5195a5c88ba4f2279f341f8b",
+    "backends/inpainting/models.lock.json": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+    "backends/inpainting/qwen-env/uv.lock": "b66192d83c90714bc50fa84f9cc36148fdeb99fc9186ca07bf06247bb7b4e477",
+    "src/live2d_studio/pose_guides.py": "6f5b7f2e3f5f51914fe31a2cef378155f2b0a0afd13babab3fb339b9839408c7",
+    "backends/inpainting/pose_reference_worker.py": "75cbe07df5f45ce14a994d91ee09c0816dcfa3fd4dd85c65da4cae485289b90a",
+    "src/live2d_studio/canonical_pose.py": "c48e3e54765e64852bf48bbc43550d07265691a48a6e5a7834d435209c76d11e",
+    "src/live2d_studio/gesture_profile.py": "0bd73b5534f8ad1508c9a800fc9b739acb4d5a9b711d573e3083909d4be31b71",
+    "backends/inpainting/pose_lightning_worker.py": "8bc4108fcdae6ba760e830f1bfea301a91811e9cf71db0fa3e6ae965c3d5cc2a",
+    "backends/inpainting/lightning.lock.json": "72345a87d9e7db31978131981e8e292893cc6f62cdcfb80a774faff85c034b2f",
+    "src/live2d_studio/lightning.py": "1320a3e15977680703b1be07f7bd8bb600de0c656a87c6ee737747c0f1e15d15"
+  },
+  "real_five_candidate_batch": {
+    "id": "b-a8d420f9af694768bace0761936bde56",
+    "preset": "Balanced",
+    "worker_total_seconds": 162.17761933200018,
+    "model_loading": {
+      "seconds": 11.0343053530014,
+      "peak_allocated_bytes": 8296472064,
+      "peak_reserved_bytes": 8451522560
+    },
+    "candidates": [
+      {
+        "id": "b-a8d420f9af694768bace0761936bde56-c1",
+        "seed": 1969468236303304,
+        "sha256": "ca0bf5e43db79bcbe15fcc64454c4876eb36b9157f2f17a6c4b6df70b51715fd",
+        "seconds": 28.611586431001342,
+        "reference_count": 3,
+        "patch_count": 720,
+        "development_screening": "Bent arm with awkward curled fingertip; same frontal outfit.",
+        "human_approved": false
+      },
+      {
+        "id": "b-a8d420f9af694768bace0761936bde56-c2",
+        "seed": 968140225595450,
+        "sha256": "5a68a034c3f62ce9a15abe7f1275d6e78f372c7f912b40064e6c505bfe52ffb4",
+        "seconds": 30.08990991199971,
+        "reference_count": 3,
+        "patch_count": 720,
+        "development_screening": "Bent arm, pinching/curled fingers; slight face variation.",
+        "human_approved": false
+      },
+      {
+        "id": "b-a8d420f9af694768bace0761936bde56-c3",
+        "seed": 88183457137069,
+        "sha256": "6b2efae6300f760cfa28ce7b97e49b1772868de2e8c27a4ad307b3539ed7e3c2",
+        "seconds": 29.646727302999352,
+        "reference_count": 3,
+        "patch_count": 720,
+        "development_screening": "Bent arm, pointing hand and extra skirt folds.",
+        "human_approved": false
+      },
+      {
+        "id": "b-a8d420f9af694768bace0761936bde56-c4",
+        "seed": 3667102294184875,
+        "sha256": "feb022c80e83ccfdcbc0fb34a1f9d566567d50697744c4dcc40125a9a08d8c31",
+        "seconds": 29.599122506999265,
+        "reference_count": 3,
+        "patch_count": 720,
+        "development_screening": "Bent arm, open palm and extra skirt folds.",
+        "human_approved": false
+      },
+      {
+        "id": "b-a8d420f9af694768bace0761936bde56-c5",
+        "seed": 2549971984486889,
+        "sha256": "1e698d0837ba9221fbcd3fecc09c56c1c775a9a36646652078802d8e5dab7615",
+        "seconds": 29.6653929339991,
+        "reference_count": 3,
+        "patch_count": 720,
+        "development_screening": "Bent arm, pointing hand; frontal identity recognizable.",
+        "human_approved": false
+      }
+    ]
+  },
+  "preservation": {
+    "count": 1854,
+    "changed": []
+  },
+  "validation": {
+    "python": {
+      "passed": 206,
+      "failed": 0,
+      "initial_sandbox_errors": 2,
+      "log": "runs/phase4b8-2-audit/python-regression-final.log"
+    },
+    "javascript": {
+      "rp_talk": 5,
+      "mouth_invariant": 3
+    },
+    "synthetic_browser": "pass; 10 unique seeded candidates, history, decisions, approval locking and selected-only export",
+    "real_browser": "pass; read-only five candidates and three references",
+    "gallery_browser": "pass; 8 images and 5 cases",
+    "final_real_browser": "pass; read-only 5 final candidates, all3 references"
+  },
+  "recommendation": "Use Balanced for further human review; Fast for quick exploration; Quality retains the historical 40-step reference. No automatic approval or rigging.",
+  "limits": [
+    "One matched seed per configuration; no general quality ranking",
+    "Five Balanced follow-up seeds have variable hand shapes and elevated hand placement",
+    "No human approval, SAM analysis, verified anatomy, rigging or production change"
+  ],
+  "initial_review_run": "runs/phase4b8-2-lightning-review",
+  "final_worker_sha256": "d6cac24380303173609403686c4a708e5859a5299aa0b71875efad770cfe1a48",
+  "final_producer_pins": {
+    "backends/inpainting/pose_worker.py": "bd5f6014c7297728272a8728a3bb82a4b51c066223cb977c6ffe16187803c3a1",
+    "backends/inpainting/qwen.py": "863c093bad744c755bc86f8a621009fbdc250e1d5195a5c88ba4f2279f341f8b",
+    "backends/inpainting/models.lock.json": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+    "backends/inpainting/qwen-env/uv.lock": "b66192d83c90714bc50fa84f9cc36148fdeb99fc9186ca07bf06247bb7b4e477",
+    "src/live2d_studio/pose_guides.py": "6f5b7f2e3f5f51914fe31a2cef378155f2b0a0afd13babab3fb339b9839408c7",
+    "backends/inpainting/pose_reference_worker.py": "75cbe07df5f45ce14a994d91ee09c0816dcfa3fd4dd85c65da4cae485289b90a",
+    "src/live2d_studio/canonical_pose.py": "c48e3e54765e64852bf48bbc43550d07265691a48a6e5a7834d435209c76d11e",
+    "src/live2d_studio/gesture_profile.py": "0bd73b5534f8ad1508c9a800fc9b739acb4d5a9b711d573e3083909d4be31b71",
+    "backends/inpainting/pose_lightning_worker.py": "d6cac24380303173609403686c4a708e5859a5299aa0b71875efad770cfe1a48",
+    "backends/inpainting/lightning.lock.json": "72345a87d9e7db31978131981e8e292893cc6f62cdcfb80a774faff85c034b2f",
+    "src/live2d_studio/lightning.py": "eec7b2e61c8b4985e19558ce78f35fe36ba0d9eb27c41c20de6b3496d7cd40fc"
+  },
+  "final_five_candidate_batch": {
+    "id": "b-34832b77ecbf471f81ea1477f36adb21",
+    "preset": "Balanced",
+    "worker_total_seconds": 161.5228191339993,
+    "model_loading": {
+      "seconds": 10.937347219998628,
+      "peak_allocated_bytes": 8296472064,
+      "peak_reserved_bytes": 8451522560
+    },
+    "candidates": [
+      {
+        "id": "b-34832b77ecbf471f81ea1477f36adb21-c1",
+        "seed": 1081831778996740,
+        "sha256": "aaa96d83de595e79b350d0039c95fe57fbcbd0b8232e2431592e37ffc5ceb792",
+        "seconds": 28.424495617000503,
+        "patch_count": 720,
+        "reference_count": 3,
+        "peak_allocated_bytes": 22406233088,
+        "peak_reserved_bytes": 25092423680,
+        "human_approved": false
+      },
+      {
+        "id": "b-34832b77ecbf471f81ea1477f36adb21-c2",
+        "seed": 868616401727046,
+        "sha256": "02a55d3dd8384057cfc4ea0e587b32f30f5e578a736474b11a6dcc0501268e63",
+        "seconds": 30.075722446999862,
+        "patch_count": 720,
+        "reference_count": 3,
+        "peak_allocated_bytes": 21315783168,
+        "peak_reserved_bytes": 22131245056,
+        "human_approved": false
+      },
+      {
+        "id": "b-34832b77ecbf471f81ea1477f36adb21-c3",
+        "seed": 2702736462870291,
+        "sha256": "86c4d8740bb0f39250f680303dd535258fe765ed464a0b793038237faf8e1188",
+        "seconds": 29.692009270998824,
+        "patch_count": 720,
+        "reference_count": 3,
+        "peak_allocated_bytes": 21306344960,
+        "peak_reserved_bytes": 21992833024,
+        "human_approved": false
+      },
+      {
+        "id": "b-34832b77ecbf471f81ea1477f36adb21-c4",
+        "seed": 612433007400787,
+        "sha256": "379af73a203cbd3fc5adc063a55950e33f0377b4d5572ccaa73631b04ff71810",
+        "seconds": 29.522253299001022,
+        "patch_count": 720,
+        "reference_count": 3,
+        "peak_allocated_bytes": 21305554432,
+        "peak_reserved_bytes": 21997027328,
+        "human_approved": false
+      },
+      {
+        "id": "b-34832b77ecbf471f81ea1477f36adb21-c5",
+        "seed": 3964619045342103,
+        "sha256": "28cfb367c752112018d7b9f56a52926dd4447f4121fa120b7fa56533e9cc5ce9",
+        "seconds": 29.518237296000734,
+        "patch_count": 720,
+        "reference_count": 3,
+        "peak_allocated_bytes": 21305087488,
+        "peak_reserved_bytes": 21999124480,
+        "human_approved": false
+      }
+    ],
+    "development_screening": "All five bend anatomical right forearm with hand present and opposite arm down. Hands vary from curled fingers to wave-like open palms; height remains above the target. Candidate 3 widens/shifts the torso and nearly clips the relaxed hand at frame edge. Candidate 5 has a small patterned bottom-border artifact. No anatomical or user approval."
+  },
+  "final_guard_change": "Reject Comfy filename shadowing. Original compared worker/helper snapshots retained in runs/phase4b8-2-audit; no old producer pin rewritten."
+}

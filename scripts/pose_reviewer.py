@@ -13,13 +13,13 @@ def main():
     a=sub.add_parser('generate');a.add_argument('--run',type=Path,required=True);a.add_argument('--pose',required=True);a.add_argument('--preset',required=True)
     a=sub.add_parser('add-preset');a.add_argument('--run',type=Path,required=True);a.add_argument('--name',required=True);a.add_argument('--config',type=Path,required=True)
     a=sub.add_parser('init-canonical');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--presets',type=Path,required=True);a.add_argument('--rights',required=True)
-    a=sub.add_parser('init-from-canonical');a.add_argument('--canonical-run',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--presets',type=Path,required=True);a.add_argument('--gesture-profile',choices=['chest-forearm-v1'])
+    a=sub.add_parser('init-from-canonical');a.add_argument('--canonical-run',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--presets',type=Path,required=True);a.add_argument('--gesture-profile',choices=['chest-forearm-v1']);a.add_argument('--lightning',action='store_true')
     args=p.parse_args()
     if args.command=='init':initialize(args.output,args.input,json.loads(args.presets.read_text()),args.rights)
     elif args.command=='init-canonical':initialize(args.output,args.input,json.loads(args.presets.read_text()),args.rights,workflow='canonical')
     elif args.command=='init-from-canonical':
         from live2d_studio.canonical_reference import initialize_helpers
-        initialize_helpers(args.canonical_run,args.output,json.loads(args.presets.read_text()),gesture_profile=args.gesture_profile)
+        initialize_helpers(args.canonical_run,args.output,json.loads(args.presets.read_text()),gesture_profile=args.gesture_profile,lightning=args.lightning)
     elif args.command=='add-preset':Store(args.run).add_preset(args.name,json.loads(args.config.read_text()))
     elif args.command=='generate':
         store=Store(args.run);batch,fd=store.reserve(args.pose,args.preset)

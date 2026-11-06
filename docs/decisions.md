@@ -555,3 +555,20 @@ executing it. Preserve early mannequin-copy failures and all historical approval
   limits or anatomical proof. It remains separate and unapproved.
 - Keep skeletal deformation and discrete gesture variants as future alternatives;
   neither should begin before complete, reviewed gesture evidence exists.
+
+
+## 2026-11-06 — Phase 4B.8.2 Lightning as an explicit option
+
+Preserve historical inference hashes by introducing a separate timed worker and
+adapter lock for fresh canonical helper runs. Use the installed model-only LoRA
+loader with GGUF patch-count/shape checks; reject missing or partially applied
+adapters. Keep all three references and retain Quality at 40 steps/CFG 4.
+
+Actual matched tests support optional Balanced (8/CFG 1) and Fast (4/CFG 1):
+43.53/30.98 seconds fresh-process time versus 253.14 seconds, with clearer bent
+arms in this seed. Matched low-step no-LoRA controls fail with ghost limbs,
+confirming adapter influence independently of the changed step/CFG family.
+Five additional Balanced candidates take 162.18 seconds total. Their hand shapes
+and height still vary; human selection and anatomical analysis remain separate.
+No generated output is promoted, no previous selection is modified, and no
+production rigging or deployment is authorized by this performance result.

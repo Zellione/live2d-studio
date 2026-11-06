@@ -443,3 +443,21 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   separate. Parse selected images only; never use raw differences as hidden truth.
 - Other poses remain independently reviewed. No automatic all-pose generation,
   final arm rigging, accepted-runtime replacement or production deployment.
+
+
+## Phase 4B.8.2 optional Lightning acceleration
+- Read docs/phase4b8-2-results.md and docs/phase4b8-2-lightning.md. The 2509-specific
+  8/4-step BF16 adapters are pinned separately in lightning.lock.json; do not
+  change historical workers, model locks, presets or approved selections.
+- Use explicit `init-from-canonical --lightning` for fresh canonical helper runs.
+  Keep all three references. Require complete model-only GGUF patches and exact
+  adapter/input/output hashes; never silently ignore missing/incompatible LoRA.
+- Balanced/Fast/Quality are optional, compared presets. Quality keeps 40 steps;
+  no-LoRA low-step controls are failures, not replacement presets. Stage timings
+  include lazy transfers; Torch peaks are not whole-board VRAM measurements.
+- Five new Balanced candidates bend the intended arm, with variable fingers and
+  hand height. None is automatically approved. No SAM or rigging follows from
+  speed, visual plausibility, patch counts or pixel differences alone.
+- Keep user reviewer on localhost 8804, comparison gallery on 8803. Run Python
+  and both JS suites. Stop after performance/quality evaluation; no production,
+  final arm rigging, retraining or unrelated system changes.

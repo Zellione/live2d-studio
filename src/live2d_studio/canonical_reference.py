@@ -55,9 +55,10 @@ def load_frozen(run):
     return store,state,data
 
 
-def initialize_helpers(run,output,presets,*,gesture_profile=None):
+def initialize_helpers(run,output,presets,*,gesture_profile=None,lightning=False):
     """Explicit opt-in preparation only. No helper inference or migration occurs."""
     from .pose_review import initialize,digest,write
+    if not lightning and any('lora' in cfg or 'lora_strength' in cfg for cfg in presets.values()):raise ValueError('Use an explicit Lightning run for LoRA presets')
     if gesture_profile is not None:
         from .gesture_profile import PROFILE
         if gesture_profile!=PROFILE:raise ValueError('Unknown gesture profile')
@@ -73,4 +74,7 @@ def initialize_helpers(run,output,presets,*,gesture_profile=None):
     if gesture_profile is not None:
         from .gesture_profile import apply
         apply(target,gesture_profile)
+    if lightning:
+        from .lightning import enable
+        enable(target)
     return target
