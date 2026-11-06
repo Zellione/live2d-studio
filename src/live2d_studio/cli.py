@@ -18,6 +18,8 @@ def main():
     p.add_argument('--facial-motion',choices=['legacy','aligned'],default='legacy',help='Experimental source-derived contour correspondence, with dense runtime review')
     p.add_argument('--mouths',choices=['preserve','coordinated'],default='preserve')
     p.add_argument('--body-motion',choices=['preserve','calm'],default='preserve')
+    p.add_argument('--arms',choices=['preserve','native-elbows'],default='preserve')
+    p.add_argument('--arm-review-reference',type=Path,help='Explicit reuse of an exactly matching frozen human-reviewed arm contract')
     p.add_argument('--inpainting-config',type=Path,help='Offline model, target alternatives and pinned sampling parameters')
     p.add_argument('--inpainting-review',type=Path,help='Exact-image review required for selected hybrid alternatives')
     p.add_argument('--endpoint',default='http://127.0.0.1:23871/mcp')
@@ -49,7 +51,17 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--mouths',choices=['preserve','coordinated'],default='preserve')
     p.add_argument('--body-motion',choices=['preserve','calm'],default='preserve')
+    p.add_argument('--arms',choices=['preserve','native-elbows'],default='preserve')
+    p.add_argument('--arm-review-reference',type=Path,help='Explicit reuse of an exactly matching frozen human-reviewed arm contract')
     p.add_argument('--endpoint',default='http://127.0.0.1:23871/mcp')
+    p=commands.add_parser('prepare-arms',help='Plan, review and resume optional native elbow authoring; no inference')
+    for name in ('authoring','layers','model','output'):p.add_argument('--'+name,type=Path,required=True)
+    p.add_argument('--arm-review-reference',type=Path)
+    p.add_argument('--endpoint',default='http://127.0.0.1:23871/mcp')
+    p=commands.add_parser('review-arms',help='Record an explicit human decision for an exact arm plan')
+    p.add_argument('--plan',type=Path,required=True)
+    p.add_argument('--reviewer',required=True);p.add_argument('--notes',required=True)
+    p.add_argument('--decision',choices=['accept','reject'],required=True)
     p=commands.add_parser('audit-production',help='Read-only audit; no production execution option')
     p.add_argument('--target',type=Path,required=True)
     p.add_argument('--package',type=Path,required=True)
@@ -133,7 +145,7 @@ def main():
                 sam=args.sam,endpoint=args.endpoint,until=args.until,preview=not args.no_preview,
                 extension=args.extension,port=args.port,reconstruction=args.reconstruction,
                 inpainting_config=args.inpainting_config,inpainting_review=args.inpainting_review,facial_motion=args.facial_motion,
-                mouths=args.mouths,body_motion=args.body_motion)
+                mouths=args.mouths,body_motion=args.body_motion,arms=args.arms,arm_review_reference=args.arm_review_reference)
             print(json.dumps(result,indent=2))
             return 2 if result['status'].startswith(('blocked','needs-','rejected')) else 0
         elif args.command=='review-create':
@@ -152,7 +164,14 @@ def main():
             result=prepare(args.baseline,args.output,args.endpoint)
         elif args.command=='prepare-performance':
             from .performance import prepare
-            result=prepare(args.baseline,args.output,args.mouths,args.body_motion,args.endpoint)
+            result=prepare(args.baseline,args.output,args.mouths,args.body_motion,args.endpoint,arms=args.arms,arm_review_reference=args.arm_review_reference)
+        elif args.command=='prepare-arms':
+            from .arm_pipeline import prepare
+            result=prepare(args.authoring,args.layers,args.model,args.output,review_reference=args.arm_review_reference,endpoint=args.endpoint)
+        elif args.command=='review-arms':
+            from .arm_pipeline import approve
+            approve(args.plan,args.reviewer,args.notes,args.decision)
+            result={'status':'recorded','plan':str(args.plan),'animation_approved':False}
         elif args.command=='audit-production':
             from .production_audit import save_audit
             result=save_audit(args.target,args.package,args.output)

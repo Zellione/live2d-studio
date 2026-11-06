@@ -1,5 +1,32 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.11.1 — frozen elbows and optional arm pipeline
+
+Read [results](phase4b11-1-results.md), [workflow](phase4b11-1-autonomous-arms.md)
+and [benchmark](benchmarks/phase4b11-1.json). Baseline `e014179` is preserved.
+
+- `codel-frontal-elbows-v1` freezes the exact human-accepted bilateral experiment:
+  224 read-only payload files, editable project, PSD, runtime, both overlap patches,
+  source provenance and exact user review. Older references remain immutable.
+- `create` and `prepare-performance` offer `--arms native-elbows`; default remains
+  `preserve`. `prepare-arms` exposes the same resumable stage. Missing separated
+  parts, supported hierarchy or evidence retains existing static/shoulder behavior.
+- Readiness never grants anatomical acceptance. Exact joint/range/overlap plans
+  stop for human review. `review-arms` records a hash-bound accept/reject decision;
+  `--arm-review-reference` explicitly reuses only an exactly matching frozen review.
+  Native rotation moves forearm/hand below the unchanged shoulder owner. No inference.
+- `runs/phase4b11-1-performance` validates the complete performance route. All 23
+  non-editor runtime payloads and FileReferences match the accepted elbow runtime;
+  model metadata and CAN3/CMO3 archives differ. Rendered neutral matches the accepted
+  elbow capture exactly. The older frontal prototype still differs by 880 pixels.
+- 252 Python tests, both JS suites, Core 898 body/elbow and 819 mouth samples,
+  384 arm browser frames and 355 coexistence frames pass. Existing facial/body
+  regressions pass; historical mesh-deformation and fixed-mesh-count failures stay
+  failed. The scoped check verifies visible originals, hidden cap and exact isolation.
+- Review: [gallery](http://127.0.0.1:8818/) and [live comparison](http://127.0.0.1:8817/).
+  Resume uses saved hashes without repeating editor work. No automatic candidate
+  acceptance, default change, wrist/finger work or production deployment. Stop here.
+
 ## Current Phase 4B.11 — user-accepted limited elbow experiment
 
 Read [results](phase4b11-results.md), [authoring](phase4b11-elbow-rigging.md) and

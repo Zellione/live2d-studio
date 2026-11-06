@@ -88,6 +88,12 @@ def compose(stages, predecessor, layers, client_factory, mouths='preserve', body
 
 
 def resolve_baseline(baseline):
+    from .elbow_rig import frozen_reference
+    for pin in Path(__file__).resolve().parents[2].joinpath('docs/references').glob('*.json'):
+        spec=json.loads(pin.read_text())
+        if spec.get('reference_root') and (Path(__file__).resolve().parents[2]/spec['reference_root']).resolve()==baseline.resolve():
+            root,_=frozen_reference(pin)
+            if (root/'authoring/character.psd2live').is_file() and (root/'layers/layer_manifest.json').is_file():return root/'authoring',root/'layers'
     root=baseline;seen=set()
     while not (root/'creation.json').is_file():
         if root in seen or len(seen)>8:raise ValueError('Cyclic/unsupported experiment ancestry')
@@ -104,8 +110,10 @@ def resolve_baseline(baseline):
     return baseline/'authoring',layers
 
 
-def prepare(baseline,output,mouths='preserve',body='preserve',endpoint='http://127.0.0.1:23871/mcp'):
+def prepare(baseline,output,mouths='preserve',body='preserve',endpoint='http://127.0.0.1:23871/mcp',*,arms='preserve',arm_review_reference=None):
     from .mcp import MCP
+    if arms not in ('preserve','native-elbows'):raise ValueError('Unknown arm mode')
+    if arms=='preserve' and arm_review_reference:raise ValueError('Arm review requires native-elbows mode')
     baseline=Path(baseline).resolve();output=Path(output).resolve()
     if output.is_relative_to(baseline) or baseline.is_relative_to(output):raise ValueError('Separate output required')
     predecessor,layers=resolve_baseline(baseline)
@@ -125,4 +133,10 @@ def prepare(baseline,output,mouths='preserve',body='preserve',endpoint='http://1
             review='needs-user-visual-review',promotion=False))
         stages.data['status']='needs-visual-review';stages.save()
     verify(baseline,frozen)
+    if arms=='native-elbows':
+        from .arm_pipeline import prepare as prepare_arms
+        result=prepare_arms(current,layers,model,output/'arms',review_reference=arm_review_reference,endpoint=endpoint)
+        # Keep the baseline export separate from its optional reviewed extension.
+        write_json(output/'optional-arms.json',result)
+        return result
     return dict(model=str(model),authoring=str(current),status='needs-visual-review')

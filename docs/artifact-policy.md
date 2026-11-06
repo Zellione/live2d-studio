@@ -135,3 +135,15 @@ remain inferred even when their RGB is copied from the synthetic master. The use
 accepted the bilateral candidate as a limited experiment; this does not overwrite
 or promote over the frozen frontal prototype. Commit only authoring/review code,
 small benchmarks, tests and concise documentation. Preserve historical failures.
+
+Phase 4B.11.1 freezes `runs/references/codel-frontal-elbows-v1` with 224 read-only
+payload files and a Git-pinned full-manifest hash. Preserve the original accepted
+candidate and exact human decision separately; never overwrite or repin either.
+Its 880-pixel neutral difference from the prior frontal reference remains explicit.
+Optional arm plans, source-derived overlap images, exact plan reviews, editor
+snapshots, failed stage attempts, exports and browser evidence remain in fresh
+ignored runs. Chromium profiles live outside stage payload inventories; do not
+relax symlink rejection to include their process-local sockets. Plan approval is
+not animation approval. New candidate export/replay never changes a frozen reference
+or authorizes production deployment. Commit only reusable code, tests, small pins
+and concise results.

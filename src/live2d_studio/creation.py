@@ -50,7 +50,9 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
            endpoint='http://127.0.0.1:23871/mcp', until='preview', preview=True,
            extension=None, port=8768, client_factory=None, reconstruction='deterministic',
            inpainting_config=None, inpainting_review=None, facial_motion='legacy',
-           mouths='preserve', body_motion='preserve'):
+           mouths='preserve', body_motion='preserve', arms='preserve', arm_review_reference=None):
+    if arms not in ('preserve','native-elbows'):raise ValueError('Unknown arm mode')
+    if arms=='preserve' and arm_review_reference:raise ValueError('Arm review requires native-elbows mode')
     source = Path(source).resolve()
     if until not in ORDER:
         raise ValueError('Unknown creation stage')
@@ -231,6 +233,14 @@ def create(source, output, *, rights='unspecified-local-only', decomposition=Non
         stages.data['status'] = 'needs-visual-review'
         stages.save()
         if stop('validation'): return result()
+        if arms=='native-elbows':
+            from .arm_pipeline import prepare as prepare_arms
+            arm_result=prepare_arms(animation,face/'layers',model,stages.root/'arms',review_reference=arm_review_reference,endpoint=endpoint,client_factory=factory)
+            stages.data['optional_arms']=arm_result;stages.save()
+            if arm_result['status']!='shoulder-only-fallback':
+                if preview and arm_result['status']=='needs-visual-review':
+                    serve(Path(arm_result['model']),extension,port,True,model)
+                return arm_result
         run('preview',dict(model=digest(model),location=str(model)),lambda root:write_json(root/'preview.json',dict(
             command=['uv','run','--frozen','live2d-studio','preview-live','--model',str(model)],
             visual_review='required',production_ready=False)))

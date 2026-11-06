@@ -1,0 +1,2226 @@
+{
+  "anatomy_independently_verified": false,
+  "authorization": {
+    "kind": "explicit-reuse-of-exact-reviewed-reference",
+    "manifest_sha256": "948004fb0c962959132ab32d901aec0e29c7fb690940067ccaac8aaf66954908",
+    "plan_sha256": "beff732c8902ee63323182fe2d30189f5cbad12cf1db81e68be1b65078cd20ee",
+    "user_review_sha256": "0ab6ccd934573c36d9c877a1cfd2607aecde23df70890ecb9bbcf03040cb6589"
+  },
+  "baseline_commit": "e014179181b1921ef41d42466e42993c67013707",
+  "browser": {
+    "arms": {
+      "checks": [
+        {
+          "name": "Loaded",
+          "pass": true
+        },
+        {
+          "name": "Elbow parameter present",
+          "pass": true
+        },
+        {
+          "name": "Inspected arm validation contract present",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral",
+          "pass": true
+        },
+        {
+          "name": "Only inspected forearm and hand move; upper arm/shoulder unchanged",
+          "pass": true
+        },
+        {
+          "name": "Exact source meshes plus inspected overlap inherit shoulder; no unrelated motion",
+          "pass": true
+        },
+        {
+          "name": "Overlap hidden during shoulder-only motion",
+          "pass": true
+        },
+        {
+          "name": "Three inspected original arm meshes visibly move",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return",
+          "pass": true
+        },
+        {
+          "name": "Cubism clip reaches elbow endpoint",
+          "pass": true
+        },
+        {
+          "name": "Talking coexists",
+          "pass": true
+        },
+        {
+          "name": "Shoulder and elbow coordinated",
+          "pass": true
+        },
+        {
+          "name": "Interruption resets exactly",
+          "pass": true
+        },
+        {
+          "name": "Only inspected forearm and hand move; upper arm/shoulder unchanged",
+          "pass": true
+        },
+        {
+          "name": "Exact source meshes plus inspected overlap inherit shoulder; no unrelated motion",
+          "pass": true
+        },
+        {
+          "name": "Overlap hidden during shoulder-only motion",
+          "pass": true
+        },
+        {
+          "name": "Three inspected original arm meshes visibly move",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return",
+          "pass": true
+        },
+        {
+          "name": "Cubism clip reaches elbow endpoint",
+          "pass": true
+        },
+        {
+          "name": "Talking coexists",
+          "pass": true
+        },
+        {
+          "name": "Shoulder and elbow coordinated",
+          "pass": true
+        },
+        {
+          "name": "Interruption resets exactly",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Head gesture preserves held elbow",
+          "pass": true
+        },
+        {
+          "name": "Neutral after head/talk coexistence",
+          "pass": true
+        },
+        {
+          "name": "Fresh model instance restores exact neutral render",
+          "pass": true
+        },
+        {
+          "name": "Finite sampled geometry and bounded opacity",
+          "pass": true
+        }
+      ],
+      "error": null,
+      "frames": 384,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "strict_opacity_excursions": 57
+      },
+      "path": "runs/phase4b11-1-performance/arms/stages/arm-validation-046d1e1df922/arms/frames/result.json",
+      "sha256": "a1b25f6f1b3ac729383f80c5c1286c61706e476415b3b29f3f46b0591b3abbbe",
+      "status": "pass"
+    },
+    "coexistence": {
+      "checks": [
+        {
+          "name": "Actual Core loaded",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 0",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 0",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 1",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 1",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 2",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 2",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 3",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 3",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 4",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 4",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 5",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 5",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 6",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 6",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 7",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 7",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 8",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 8",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 9",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 9",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 10",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 10",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 11",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 11",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 12",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 12",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 13",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 13",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 14",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 14",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 15",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 15",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 16",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 16",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 17",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 17",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 18",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 18",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 19",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 19",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 20",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 20",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 21",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 21",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 22",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 22",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 23",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 23",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 24",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 24",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 25",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 25",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 26",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 26",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 27",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 27",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 28",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 28",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 29",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 29",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 30",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 30",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 31",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 31",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 32",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 32",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 33",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 33",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 34",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 34",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 35",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 35",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 36",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 36",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 37",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 37",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 38",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 38",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 39",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 39",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 40",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 41",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 42",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 43",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 44",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 45",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 46",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 47",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 48",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 49",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 50",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 51",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 52",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 53",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 54",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 55",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 56",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 57",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 58",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 59",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 60",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 61",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 62",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 63",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 64",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 65",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 66",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 67",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 68",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 69",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 70",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 71",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 72",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 73",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 74",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 75",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 76",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 77",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 78",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 79",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 80",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 81",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 82",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 83",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 84",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 85",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 86",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 87",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 88",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 89",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 90",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 91",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 92",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 93",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 94",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 95",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 96",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 97",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 98",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 99",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 100",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 101",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 102",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 103",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 104",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 104",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 105",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 105",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 106",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 106",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 107",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 107",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 108",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 108",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 109",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 109",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 110",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 110",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 111",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 111",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 112",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 112",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 113",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 113",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 114",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 114",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 115",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 115",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 116",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 116",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 117",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 117",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 118",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 118",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 119",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 119",
+          "pass": true
+        },
+        {
+          "name": "Visible head inputs coexist",
+          "pass": true
+        },
+        {
+          "name": "Hair dynamics coexist",
+          "pass": true
+        },
+        {
+          "name": "Breathing coexists",
+          "pass": true
+        },
+        {
+          "name": "Talking continues",
+          "pass": true
+        },
+        {
+          "name": "Talking/gesture returns exact confused rest",
+          "pass": true
+        },
+        {
+          "name": "Rapid expression changes restore confused",
+          "pass": true
+        },
+        {
+          "name": "Neutral clears expression channels",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry, valid opacity",
+          "pass": true
+        }
+      ],
+      "error": null,
+      "frames": 355,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 50
+      },
+      "path": "runs/phase4b11-1-performance/arms/stages/arm-validation-046d1e1df922/coexistence/frames/result.json",
+      "sha256": "80bb9e82f115154aafc2bed2908e7c2c433eb414cd6dafd6ced0061d59d58bfe",
+      "status": "pass"
+    }
+  },
+  "code_pins": {
+    "arm_pipeline.py": "b04889e080084f6dc02d424cea4382f6d6bcb0e9a9f023813787e665dc97f4ef",
+    "elbow_overlap.py": "3170358b73a7cb12ea94d80ba84314ab7246b48c84481ef5e271f2d4d2c02e74",
+    "elbow_rig.py": "43c03dbd94bbb832e0471bf101300f6106c29e13981f2d8b69a2df98d2f2d59f",
+    "frontal_arms.py": "94f12eb9a7596b6bfc41f1b87d4247599c028503c66ed124e0c1ba47b5e2f809",
+    "generic_rig.py": "affc61b9512d75fce04e9b6440ec45f3e705fe7f76a97220e566b63ef7e7c320"
+  },
+  "core": {
+    "body-elbows": {
+      "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+      "elbow_combination_samples": 402,
+      "exact_neutral_return": true,
+      "nonfinite": 0,
+      "path": "runs/phase4b11-1-performance/arms/stages/arm-validation-046d1e1df922/body-elbows.json",
+      "render_tested": false,
+      "samples": 898,
+      "sha256": "7dd057896a443e83fe4e2ae53745e76470aba9a63965d7e6e84f8d845fa900c8",
+      "status": "pass",
+      "visible_reversals": 0
+    },
+    "mouth": {
+      "core_sha256": "942783587666a3a1bddea93afd349e26f798ed19dcd7a52449d0ae3322fcff7c",
+      "exact_neutral_geometry": true,
+      "invalid_opacity": 0,
+      "legacy_source_seam_absolute_invariant": false,
+      "mouth_orientation_reference": "full-open neutral cavity; source seam at neutral",
+      "nonfinite": 0,
+      "path": "runs/phase4b11-1-performance/arms/stages/arm-validation-046d1e1df922/mouth.json",
+      "samples": 819,
+      "sha256": "21b70466efc5fa46098c011a1ada8bd11f83b73957b6d669caffee59b12113b0",
+      "source_seam_opening_invariant": true,
+      "status": "pass",
+      "strict_opacity_excursions": 220,
+      "visible_reversals": 0,
+      "visual_acceptance": false
+    }
+  },
+  "defaults_changed": false,
+  "fallback": {
+    "authoring": "/data/projects/live2d-studio/runs/references/codel-combined-v1/candidate/stages/body-693120c4083e/authoring",
+    "changed": false,
+    "model": "/data/projects/live2d-studio/runs/references/codel-combined-v1/candidate/stages/export-f30df9451395/runtime/Generated_artwork.model3.json",
+    "reasons": [
+      "Missing existing performance inspection contracts: arm-inspection.json"
+    ],
+    "status": "shoulder-only-fallback"
+  },
+  "gallery": "runs/phase4b11-1-review",
+  "historical": {
+    "arms": {
+      "checks": [
+        {
+          "name": "Frontal model loaded",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral control",
+          "pass": true
+        },
+        {
+          "name": "ParamArmRightOpen present",
+          "pass": true
+        },
+        {
+          "name": "Exactly three Right arm meshes move",
+          "pass": false
+        }
+      ],
+      "error": "Error: Exactly three Right arm meshes move",
+      "frames": 43,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "strict_opacity_excursions": 0
+      },
+      "path": "runs/phase4b11-1-historical-regression/arms/frames/result.json",
+      "sha256": "fd4534d85c295e8f0ed527a2334a577c460bcd384539417adc798745fb8c2e17",
+      "status": "fail"
+    },
+    "body": {
+      "checks": [
+        {
+          "name": "Model loaded",
+          "pass": true
+        },
+        {
+          "name": "Gesture preserves embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Talk continues in ArmLeft",
+          "pass": true
+        },
+        {
+          "name": "Gesture preserves embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Talk continues in ArmRight",
+          "pass": true
+        },
+        {
+          "name": "Gesture preserves embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Talk continues in ElbowLeft",
+          "pass": true
+        },
+        {
+          "name": "Gesture preserves embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Talk continues in ElbowRight",
+          "pass": true
+        },
+        {
+          "name": "Gesture preserves embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Talk continues in Nod",
+          "pass": true
+        },
+        {
+          "name": "Gesture preserves embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Talk continues in Question",
+          "pass": true
+        },
+        {
+          "name": "Head body hair switches disable actual channels",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral image return",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry and bounded opacity",
+          "pass": true
+        }
+      ],
+      "error": null,
+      "frames": 604,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000004768371582,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 1064
+      },
+      "path": "runs/phase4b11-1-historical-regression/body/frames/result.json",
+      "sha256": "1072aa897228b33b161f0282929a8d5653686d5414a2c69e44f4a6e593f145ed",
+      "status": "pass"
+    },
+    "coexistence": {
+      "checks": [
+        {
+          "name": "Actual Core loaded",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 0",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 0",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 1",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 1",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 2",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 2",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 3",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 3",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 4",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 4",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 5",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 5",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 6",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 6",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 7",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 7",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 8",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 8",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 9",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 9",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 10",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 10",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 11",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 11",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 12",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 12",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 13",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 13",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 14",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 14",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 15",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 15",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 16",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 16",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 17",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 17",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 18",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 18",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 19",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 19",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 20",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 20",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 21",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 21",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 22",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 22",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 23",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 23",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 24",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 24",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 25",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 25",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 26",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 26",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 27",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 27",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 28",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 28",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 29",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 29",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 30",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 30",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 31",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 31",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 32",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 32",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 33",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 33",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 34",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 34",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 35",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 35",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 36",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 36",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 37",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 37",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 38",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 38",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 39",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 39",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 40",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 41",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 42",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 43",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 44",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 45",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 46",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 47",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 48",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 49",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 50",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 51",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 52",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 53",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 54",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 55",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 56",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 57",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 58",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 59",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 60",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 61",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 62",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 63",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 64",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 65",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 66",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 67",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 68",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 69",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 70",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 71",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 72",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 73",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 74",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 75",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 76",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 77",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 78",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 79",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 80",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 81",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 82",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 83",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 84",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 85",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 86",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 87",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 88",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 89",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 90",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 91",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 92",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 93",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 94",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 95",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 96",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 97",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 98",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 99",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 100",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 101",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 102",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 103",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 104",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 104",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 105",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 105",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 106",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 106",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 107",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 107",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 108",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 108",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 109",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 109",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 110",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 110",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 111",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 111",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 112",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 112",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 113",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 113",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 114",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 114",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 115",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 115",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 116",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 116",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 117",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 117",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 118",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 118",
+          "pass": true
+        },
+        {
+          "name": "Round questioning shape persists 119",
+          "pass": true
+        },
+        {
+          "name": "Parted rest while moving 119",
+          "pass": true
+        },
+        {
+          "name": "Visible head inputs coexist",
+          "pass": true
+        },
+        {
+          "name": "Hair dynamics coexist",
+          "pass": true
+        },
+        {
+          "name": "Breathing coexists",
+          "pass": true
+        },
+        {
+          "name": "Talking continues",
+          "pass": true
+        },
+        {
+          "name": "Talking/gesture returns exact confused rest",
+          "pass": true
+        },
+        {
+          "name": "Rapid expression changes restore confused",
+          "pass": true
+        },
+        {
+          "name": "Neutral clears expression channels",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry, valid opacity",
+          "pass": true
+        }
+      ],
+      "error": null,
+      "frames": 355,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.0000001192092896,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 61
+      },
+      "path": "runs/phase4b11-1-historical-regression/coexistence/frames/result.json",
+      "sha256": "abf04c0c457053ab711149a34a37438b498250296cb3a27b21c87968db4e7146",
+      "status": "pass"
+    },
+    "dense": {
+      "checks": [
+        {
+          "name": "Actual Cubism model loaded",
+          "pass": true
+        },
+        {
+          "name": "Stable neutral",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return neutral",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return happy",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return sad",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return angry",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return surprised",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return confused",
+          "pass": true
+        },
+        {
+          "name": "Exact neutral return embarrassed",
+          "pass": true
+        },
+        {
+          "name": "Authored idle blink coexists with talking",
+          "pass": true
+        },
+        {
+          "name": "Exact final neutral",
+          "pass": true
+        },
+        {
+          "name": "Finite geometry and bounded opacity",
+          "pass": true
+        },
+        {
+          "name": "Only local assets",
+          "pass": true
+        }
+      ],
+      "error": null,
+      "frames": 401,
+      "geometry": {
+        "invalid_opacity": 0,
+        "nonfinite": 0,
+        "raw_opacity_max": 1.000000238418579,
+        "raw_opacity_min": 0,
+        "strict_opacity_excursions": 141
+      },
+      "path": "runs/phase4b11-1-historical-regression/dense/frames/result.json",
+      "sha256": "a73a8dea3efd693f7b601b4164c5b6c19ba5ca4f5b4676feaf344400173c5650",
+      "status": "pass"
+    }
+  },
+  "neutral_vs_previous_frontal": {
+    "changed_pixels": 880,
+    "composited_0": {
+      "max_rgb_delta": 33.77254901960784,
+      "mean_rgb_delta": 0.0021636199095022633
+    },
+    "composited_255": {
+      "max_rgb_delta": 24.019607843137237,
+      "mean_rgb_delta": 0.002376892911010559
+    },
+    "exact": false,
+    "max_channel_delta": 170,
+    "mean_absolute_channel_delta": 0.0036564102564102564
+  },
+  "new_image_inference": false,
+  "performance_run": "runs/phase4b11-1-performance",
+  "phase": "4B.11.1",
+  "preserved_references": {
+    "codel-combined-v1": {
+      "all_hashes_match": true,
+      "files": 1806
+    },
+    "codel-frontal-elbows-v1": {
+      "all_hashes_match": true,
+      "files": 224
+    },
+    "codel-frontal-prototype-v1": {
+      "all_hashes_match": true,
+      "files": 203
+    }
+  },
+  "production_touched": false,
+  "reference": {
+    "approved_arm_contract_sha256": "dfccfef767c808385b7b11bb9de518c5b38c37dcfd31b6703948a328e0523229",
+    "editable_project": "authoring/character.psd2live",
+    "layered_psd": "authoring/character.psd",
+    "manifest_sha256": "948004fb0c962959132ab32d901aec0e29c7fb690940067ccaac8aaf66954908",
+    "model": "runtime/Generated_artwork.model3.json",
+    "neutral_reference_changed_pixels": 880,
+    "payload_files": 224,
+    "production_deployment": false,
+    "reference_name": "codel-frontal-elbows-v1",
+    "reference_root": "runs/references/codel-frontal-elbows-v1",
+    "status": "accepted-limited-elbow-reference",
+    "user_review_sha256": "0ab6ccd934573c36d9c877a1cfd2607aecde23df70890ecb9bbcf03040cb6589"
+  },
+  "replay_automatically_accepted": false,
+  "replay_neutral_vs_reviewed_elbows": {
+    "changed_pixels": 0,
+    "same_dimensions": true
+  },
+  "reproduction": {
+    "different_files": [
+      "Generated_artwork.can3",
+      "Generated_artwork.cmo3",
+      "Generated_artwork.model3.json"
+    ],
+    "existing_expression_physics_motion_files_preserved": 17,
+    "file_references_equal": true,
+    "identical_runtime_payloads": [
+      "Generated_artwork.4096/texture_00.png",
+      "Generated_artwork.blink.motion3.json",
+      "Generated_artwork.bodyNod.motion3.json",
+      "Generated_artwork.bodyQuestion.motion3.json",
+      "Generated_artwork.cdi3.json",
+      "Generated_artwork.createIdle.motion3.json",
+      "Generated_artwork.create_angry.exp3.json",
+      "Generated_artwork.create_confused.exp3.json",
+      "Generated_artwork.create_embarrassed.exp3.json",
+      "Generated_artwork.create_happy.exp3.json",
+      "Generated_artwork.create_neutral.exp3.json",
+      "Generated_artwork.create_sad.exp3.json",
+      "Generated_artwork.create_surprised.exp3.json",
+      "Generated_artwork.elbowLeft.motion3.json",
+      "Generated_artwork.elbowRight.motion3.json",
+      "Generated_artwork.frontalArmLeft.motion3.json",
+      "Generated_artwork.frontalArmRight.motion3.json",
+      "Generated_artwork.idle.motion3.json",
+      "Generated_artwork.moc3",
+      "Generated_artwork.nod.motion3.json",
+      "Generated_artwork.physics3.json",
+      "Generated_artwork.psd2live.json",
+      "Generated_artwork.shake.motion3.json"
+    ]
+  },
+  "result": {
+    "path": "runs/phase4b11-1-performance/arms/arm-result.json",
+    "sha256": "103df3b06b913cffa5d5dd41b4f9ca789465ed1b8daf5408a48f3cb93fc3b292"
+  },
+  "resume": {
+    "path": "runs/phase4b11-1-audit/resume.log",
+    "sha256": "9099fad1d69a03675dc45e6c8cd539fc50c69ffe37e9d93983307f5a76b06f60"
+  },
+  "retained_failures": [
+    "runs/phase4b11-elbow-v6: 8983 visible triangle reversals",
+    "Historical shoulder fixed-total-count failure retained unchanged",
+    "First replay validation inventory rejected Chromium profile symlinks",
+    "Sandbox Python run: two loopback socket PermissionErrors; host suite passes"
+  ],
+  "status": "reviewed-reference-frozen-optional-integration-validated",
+  "tests": {
+    "javascript": [
+      {
+        "path": "runs/phase4b11-1-audit/javascript-talk.log",
+        "sha256": "ea60f180dc67ae48286df51bb4823620f4d6e926c0f13c40dca2d8894bd7e878"
+      },
+      {
+        "path": "runs/phase4b11-1-audit/javascript-mouth.log",
+        "sha256": "de7b8d9867f5dfdf823b335e274b67c59bbbd503c391210d7dcf556643edec06"
+      }
+    ],
+    "python": {
+      "count": 252,
+      "path": "runs/phase4b11-1-audit/python-final.log",
+      "sha256": "c329d225eff3af76eafeef4c8f7f6296c02ed3a226275b8c8da69ad66c1ab5cd",
+      "status": "pass"
+    }
+  },
+  "user_review": "Accept as a limited elbow prototype",
+  "viewer": "http://127.0.0.1:8817/"
+}

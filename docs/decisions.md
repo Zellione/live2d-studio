@@ -636,3 +636,18 @@ is added. A separate scoped contract requires three visible originals and exactl
 one hidden cap per articulated side; unrelated motion and neutral checks remain.
 Retain the reference-neutral render discrepancy and all mesh-transform, draw-order,
 flat-cut and operational failures. No wrist/finger articulation or deployment.
+
+## Phase 4B.11.1 — freeze exact review, keep generalized authoring optional
+
+Freeze the accepted bilateral candidate as `codel-frontal-elbows-v1`, preserving
+the earlier frontal/angled references and the 880-pixel neutral-render discrepancy.
+Integrate the proven native rotation method through an optional, resumable arm
+stage; do not change creation defaults or use the failed mesh-transform path.
+Readiness combines raster cut support and inspected mesh/parent/neutral contracts.
+Insufficient evidence retains the existing static/shoulder rig. Human review must
+cover exact joint/range/hidden-overlap evidence before mutations, and final animation
+review remains separate. A previously frozen review may be reused explicitly only
+when the entire source and arm contract matches. Codel reproduces the accepted MOC,
+texture, motions and neutral capture exactly; this is reproducibility evidence,
+not another-character or anatomical validation. Keep Chromium profile diagnostics
+outside hash-verified stage payloads instead of weakening symlink integrity checks.

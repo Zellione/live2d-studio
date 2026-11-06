@@ -519,3 +519,25 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
   relaxation. Preserve original textures and expression/physics/motion payloads.
 - Exact candidate-neutral return is not reference-render equality. No independent
   wrist/finger articulation or general anatomical guarantee. Stop after 4B.11.
+
+## Phase 4B.11.1 reviewed elbow reference and optional integration
+- Read docs/phase4b11-1-results.md and docs/phase4b11-1-autonomous-arms.md.
+  Explicit authorization freezes `codel-frontal-elbows-v1` as an additional limited
+  reviewed reference; preserve all 224 payload hashes and every older reference.
+- `--arms native-elbows` on create/prepare-performance and `prepare-arms` are
+  optional. Defaults stay `preserve`. Do not infer safe joints from semantic labels.
+  Unsupported separation, hierarchy or geometry must retain static/shoulder behavior.
+- Plans require human review of exact joint/range/overlap evidence. Reuse of an
+  existing reference review must be explicit and exactly contract-matched; it is
+  never transferable to a new character. Final animation review is separate.
+- Native rotation owns only the inspected forearm/hand. Hidden sleeve caps are
+  source-derived inferred shapes, not observed anatomy. No inference or wrist/finger
+  authoring is added. Original expression/physics/motion payloads stay byte-exact.
+- The performance replay matches accepted MOC/textures/motions and its neutral
+  render. The earlier frontal reference still differs by 880 pixels. Keep both facts.
+  Retain failed mesh deformation, old fixed-count shoulder tests and raw precision
+  diagnostics. New scoped checks require visible original meshes and an invisible
+  cap with exact unrelated-motion isolation; no threshold weakening.
+- Run full Python/JS suites plus relevant Core/browser gates. Browser profiles and
+  all generated projects/artwork stay ignored; only code, tests and small manifests
+  enter Git. Stop after 4B.11.1; no default promotion or production deployment.

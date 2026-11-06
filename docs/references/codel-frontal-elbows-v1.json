@@ -1,0 +1,14 @@
+{
+  "approved_arm_contract_sha256": "dfccfef767c808385b7b11bb9de518c5b38c37dcfd31b6703948a328e0523229",
+  "editable_project": "authoring/character.psd2live",
+  "layered_psd": "authoring/character.psd",
+  "manifest_sha256": "948004fb0c962959132ab32d901aec0e29c7fb690940067ccaac8aaf66954908",
+  "model": "runtime/Generated_artwork.model3.json",
+  "neutral_reference_changed_pixels": 880,
+  "payload_files": 224,
+  "production_deployment": false,
+  "reference_name": "codel-frontal-elbows-v1",
+  "reference_root": "runs/references/codel-frontal-elbows-v1",
+  "status": "accepted-limited-elbow-reference",
+  "user_review_sha256": "0ab6ccd934573c36d9c877a1cfd2607aecde23df70890ecb9bbcf03040cb6589"
+}
