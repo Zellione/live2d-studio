@@ -651,3 +651,11 @@ when the entire source and arm contract matches. Codel reproduces the accepted M
 texture, motions and neutral capture exactly; this is reproducibility evidence,
 not another-character or anatomical validation. Keep Chromium profile diagnostics
 outside hash-verified stage payloads instead of weakening symlink integrity checks.
+
+## UI hotfix — isolate gesture layout from shared control rows
+
+Use an explicit two-column grid for gestures instead of changing the shared `.row`
+class. Let long button labels wrap, including unbroken translated words. Reduce
+only container padding at very narrow widths to retain the existing controls'
+layout without horizontal scrolling. Verify actual browser zoom and pointer-driven
+Core motion; CSS changes must not alter accepted rig/runtime assets.

@@ -1,5 +1,13 @@
 # Handover to local Codex CLI
 
+## UI hotfix — responsive gesture controls
+
+The [gesture layout hotfix](ui-gesture-controls-hotfix.md) adds a two-column
+wrapping gesture grid without changing viewer logic or rig assets. Both viewer
+modes pass actual 100–200% page-zoom checks, narrow layouts and all six button
+clicks. Existing two-button rows stay unchanged. Servers preload CSS/HTML, so
+restart the relevant local preview after updating. No production changes.
+
 ## Current Phase 4B.11.1 — frozen elbows and optional arm pipeline
 
 Read [results](phase4b11-1-results.md), [workflow](phase4b11-1-autonomous-arms.md)

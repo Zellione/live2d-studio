@@ -2,4 +2,9 @@
 
 #version-row{font-size:12px;color:#64706f}select{display:block;width:100%;padding:10px;margin:6px 0 18px;border:1px solid #dce2dd;border-radius:10px;background:white;color:#344e46;font:inherit}
 
+#gesture-row{min-width:0;max-width:100%}
+#gestures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+#gestures>button{min-width:0;width:100%;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:360px){body{padding:8px}aside{padding:8px}}
+
 body.comparison{max-width:1800px;margin:auto}body.comparison main{max-width:1600px;grid-template-columns:minmax(0,1200px) 320px}body.comparison canvas{max-width:100%;height:auto}body.comparison .stage{display:block;min-height:0}body.comparison .stage p{font-size:12px;text-align:center}input[type=checkbox]{width:auto}@media(max-width:900px){body.comparison main{grid-template-columns:1fr}}
