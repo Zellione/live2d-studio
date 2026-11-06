@@ -1,0 +1,868 @@
+{
+  "schema_version": 1,
+  "phase": "4B.7b",
+  "baseline_commit": "c56a59d",
+  "source_reference": "codel-combined-v1",
+  "default_changes": false,
+  "downloads": false,
+  "production_access": false,
+  "arm_rig_built": false,
+  "source": {
+    "path": "assets/source.png",
+    "sha256": "98589fb8750ccfc3664935985fc42810381b2e09f22e1ae8cf4cd6dd45d39a2d",
+    "rights": "LisadiKaprio; CC-BY-4.0; https://opengameart.org/content/codel-visual-novel-sprite"
+  },
+  "producer_pins": {
+    "backends/inpainting/pose_worker.py": "bd5f6014c7297728272a8728a3bb82a4b51c066223cb977c6ffe16187803c3a1",
+    "backends/inpainting/qwen.py": "863c093bad744c755bc86f8a621009fbdc250e1d5195a5c88ba4f2279f341f8b",
+    "backends/inpainting/models.lock.json": "fd0c7afc26454b37497680691684e5c7bf0c6451d467701c629bfc05fe3081cd",
+    "backends/inpainting/qwen-env/uv.lock": "b66192d83c90714bc50fa84f9cc36148fdeb99fc9186ca07bf06247bb7b4e477",
+    "src/live2d_studio/pose_guides.py": "6f5b7f2e3f5f51914fe31a2cef378155f2b0a0afd13babab3fb339b9839408c7"
+  },
+  "model_lock": {
+    "schema_version": 1,
+    "used": {
+      "lama": {
+        "repo": "mayocream/lama-manga",
+        "revision": "f91c85b26913b3e83f9877867b4c336da3675238",
+        "license": "mit",
+        "files": {
+          "lama-manga.safetensors": {
+            "size": 204332996,
+            "sha256": "a790515e9da839b8d89af7d565ceb110d908b7d6fbdb991f2acb2ec7d9b08bdb"
+          }
+        }
+      },
+      "qwen_transformer": {
+        "repo": "QuantStack/Qwen-Image-Edit-2509-GGUF",
+        "revision": "84a3006979126011422eeeefe0c9485ddf431ef5",
+        "license": "apache-2.0",
+        "files": {
+          "Qwen-Image-Edit-2509-Q4_K_S.gguf": {
+            "size": 12204309024,
+            "sha256": "07e64364812e527e0e39db3770440f76a5ed4732926c54a0a0e7da841cbe0ce6"
+          }
+        }
+      },
+      "qwen_parts": {
+        "repo": "Comfy-Org/Qwen-Image",
+        "revision": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
+        "license": "apache-2.0",
+        "files": {
+          "split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors": {
+            "size": 9384670680,
+            "sha256": "cb5636d852a0ea6a9075ab1bef496c0db7aef13c02350571e388aea959c5c0b4"
+          },
+          "split_files/vae/qwen_image_vae.safetensors": {
+            "size": 253806246,
+            "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f"
+          }
+        }
+      }
+    },
+    "sources": {
+      "lama": "786f5936b27fb3dacd2b1ad799e4de968ea697e7",
+      "comfy": "b8730510db30c8858e1e5d8e126ef19eac395560",
+      "gguf": "6ea2651e7df66d7585f6ffee804b20e92fb38b8a"
+    }
+  },
+  "calibration": [
+    {
+      "id": "a-masked",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "legacy-body",
+        "guidance": "none",
+        "cfg_norm": false
+      },
+      "prompt": "Move only her right arm slightly away from the torso: gently uncross the right forearm, keeping the right elbow low and close to her waist, with the right hand just in front of her waist on the viewer's left. Show a small gap between that sleeve and torso. Keep her left arm hanging in its original pose. No large gesture. Edit only the requested arm/body pose of this exact illustrated character. Preserve character identity, facial identity and neutral expression, hairstyle, hair length, clothing design, collar, sleeve lengths, skirt, all colors, line weight, shading and rendering style, body proportions and original camera angle. Keep the same canvas, scale, head position, framing and plain white background. Do not beautify, enhance, redesign, add accessories, change perspective or invent extra limbs. Allow only the minimal pose-related cloth deformation. Keep both hands anatomically plausible, with five fingers each. Keep every visible limb inside the existing framing. The character's right is the viewer's left; her right forearm initially crosses her torso. Her left arm initially hangs down on the viewer's right.",
+      "negative_prompt": "",
+      "image_sha256": "8beef2e6f13131cbc149b48a95c3529b5c85ac1f7564270b95f83c93ebd7e1d5",
+      "guide_sha256": null,
+      "reference_latent_count": 1,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 80.57146508699952,
+      "peak_allocated_bytes": 23018672128,
+      "peak_reserved_bytes": 24828182528,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Legacy-style mask protects the top of the character but constrains changed limbs at its boundary; not accepted anatomical evidence.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "b-unmasked",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "none",
+        "cfg_norm": false
+      },
+      "prompt": "Move only her right arm slightly away from the torso: gently uncross the right forearm, keeping the right elbow low and close to her waist, with the right hand just in front of her waist on the viewer's left. Show a small gap between that sleeve and torso. Keep her left arm hanging in its original pose. No large gesture. Edit only the requested arm/body pose of this exact illustrated character. Preserve character identity, facial identity and neutral expression, hairstyle, hair length, clothing design, collar, sleeve lengths, skirt, all colors, line weight, shading and rendering style, body proportions and original camera angle. Keep the same canvas, scale, head position, framing and plain white background. Do not beautify, enhance, redesign, add accessories, change perspective or invent extra limbs. Allow only the minimal pose-related cloth deformation. Keep both hands anatomically plausible, with five fingers each. Keep every visible limb inside the existing framing. The character's right is the viewer's left; her right forearm initially crosses her torso. Her left arm initially hangs down on the viewer's right.",
+      "negative_prompt": "",
+      "image_sha256": "16e45bbe73d886a179289214698d61df247ddc71fc70850d448ea46cb1619e53",
+      "guide_sha256": null,
+      "reference_latent_count": 1,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 80.1295337470001,
+      "peak_allocated_bytes": 23089680384,
+      "peak_reserved_bytes": 24828182528,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Full head retained and seams reduced, but face/body are redrawn and requested right-arm lift is weak.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "c-short-prompt",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "none",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "aee217657afe1447a8dbddfc19a8524437ae7f38a7d4f880a77ee50b163c1fba",
+      "guide_sha256": null,
+      "reference_latent_count": 1,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 79.95347376500013,
+      "peak_allocated_bytes": 23089680384,
+      "peak_reserved_bytes": 24217911296,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Both hands visible beside the skirt; face and proportions drift and top hair is clipped. Generated torso is not verified clothing.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "d-skeleton",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "1a428423b77dc1658a75a210720929b351282d3a6f339a8efed79cf484830857",
+      "guide_sha256": "b122fea0560e0baf8b99f5c0b511c35e32370892567deeb73ebce8ab6eeae50e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ],
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 131.44246357500015,
+      "peak_allocated_bytes": 23089680384,
+      "peak_reserved_bytes": 24278728704,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Head severely cropped; right arm bends toward the hip rather than the requested slight lift. Reject as a helper pose.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "e-silhouette",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "silhouette",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "b09e9154d07ed54ddc27b1b7a5cc7bf96ff697143e991f70338fc6344ee66fc9",
+      "guide_sha256": "186d68cdd1dc08483c54d83aa90967d16e0ea07f8f0100bb04db531fc1864dc9",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ],
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 131.35054581900022,
+      "peak_allocated_bytes": 23089680384,
+      "peak_reserved_bytes": 24278728704,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Full head and two low hands visible; face/proportions change and arm lift is weak. Potential exposure is unverified.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "f-empty-latent",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "empty",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "1a428423b77dc1658a75a210720929b351282d3a6f339a8efed79cf484830857",
+      "guide_sha256": "b122fea0560e0baf8b99f5c0b511c35e32370892567deeb73ebce8ab6eeae50e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ],
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 130.71211804799987,
+      "peak_allocated_bytes": 23089680384,
+      "peak_reserved_bytes": 24278728704,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Head cropped and one forearm/hand obscured at the hip. Empty latent does not fix this seed.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "g-1536",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "3f156bb4aee9c9ee285e4e3b5763df8e2846534de7ae1427307d845bc6e95e9a",
+      "guide_sha256": "b122fea0560e0baf8b99f5c0b511c35e32370892567deeb73ebce8ab6eeae50e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ],
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ]
+      ],
+      "output_size": [
+        800,
+        1536
+      ],
+      "seconds": 167.62818865700046,
+      "peak_allocated_bytes": 21472318976,
+      "peak_reserved_bytes": 24278728704,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Closer face/style and full head, with newly visible front clothing; right arm is hidden/missing. Wrong requested pose.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "h-cfg-norm",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": true
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "679c282a3f59508940936a6353d4286fb03c2653aadfefbddc4faa4f1ea25e92",
+      "guide_sha256": "b122fea0560e0baf8b99f5c0b511c35e32370892567deeb73ebce8ab6eeae50e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ],
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 131.49741495299986,
+      "peak_allocated_bytes": 23087714304,
+      "peak_reserved_bytes": 24194842624,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Head cropped and the viewer-left hand is malformed near the edge. Normalization does not fix this seed.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "i-20-steps",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1024,
+        "steps": 20,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "2601e63545918fe267c99af641596bcc3c6d9396831f51fc7fe0bae195452e3c",
+      "guide_sha256": "b122fea0560e0baf8b99f5c0b511c35e32370892567deeb73ebce8ab6eeae50e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ],
+        [
+          1,
+          16,
+          1,
+          176,
+          93
+        ]
+      ],
+      "output_size": [
+        544,
+        1024
+      ],
+      "seconds": 66.53478961699966,
+      "peak_allocated_bytes": 23087714304,
+      "peak_reserved_bytes": 24194842624,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Head cropped, right forearm hidden behind torso. Faster sampling retains the main pose failure.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "b3ce87944fd5223c8b5c24b36089933a90ee7476487c07c461ab00b2dc6584e6"
+    },
+    {
+      "id": "j-face-landmarks",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "5c84a63f5b601a5dfab53c627d68f9f94aef578d3d0150b86a22cdc79e75ca84",
+      "guide_sha256": "b75cf116bbb3ffbb4fc5e574caebed7d76d4366a4791a279cf519129d193309e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ],
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ]
+      ],
+      "output_size": [
+        800,
+        1536
+      ],
+      "seconds": 170.40258013499988,
+      "peak_allocated_bytes": 22009573888,
+      "peak_reserved_bytes": 24540872704,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Full head and recognizable style; right arm disappears behind the body. Extra facial anchors do not solve arm placement.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "2e39645240682a4a345221e4378104c9227c4baff9f3a5f2eef28a26f91e6b82"
+    },
+    {
+      "id": "k-silhouette-1536",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "silhouette",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "7afe51d5213f3cc5e3e7020fa190947998b07a0bf757b85f150e7d6e633a0127",
+      "guide_sha256": "eca31ff94b6d2a26359033e046c8e3c9b56c682c2b590812c20c7ef25c9eb5d3",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ],
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ]
+      ],
+      "output_size": [
+        800,
+        1536
+      ],
+      "seconds": 170.29731670399997,
+      "peak_allocated_bytes": 21333393920,
+      "peak_reserved_bytes": 23251124224,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Recognizable face/style; second hand partly visible and front clothing exposed, but right upper arm/elbow remain obscured. Human review required.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "2e39645240682a4a345221e4378104c9227c4baff9f3a5f2eef28a26f91e6b82"
+    },
+    {
+      "id": "l-denoise-08",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 0.8,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "f9c1f982d1e406f95cf076061ae4b7e5ed595dd8bb1c3f583f6801748addfede",
+      "guide_sha256": "b75cf116bbb3ffbb4fc5e574caebed7d76d4366a4791a279cf519129d193309e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ],
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ]
+      ],
+      "output_size": [
+        800,
+        1536
+      ],
+      "seconds": 170.20242033500017,
+      "peak_allocated_bytes": 21469181440,
+      "peak_reserved_bytes": 23452450816,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Close to source identity and crossed-arm pose. No useful additional arm or torso exposure.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "2e39645240682a4a345221e4378104c9227c4baff9f3a5f2eef28a26f91e6b82"
+    },
+    {
+      "id": "m-20-steps",
+      "seed": 1729,
+      "config": {
+        "long_edge": 1536,
+        "steps": 20,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "skeleton",
+        "cfg_norm": false
+      },
+      "prompt": "Edit the illustrated character in picture 1. Move her right arm (viewer left) away from her torso, elbow low, hand beside her waist. Keep the left arm hanging. Use the body pose in picture 2 as the placement guide. Picture 2 is only a pose guide; do not copy its colors, sticks or mannequin into the illustration. Preserve her face, neutral expression, hairstyle, clothing design, body proportions, drawing style and palette. Keep the same camera and framing on a plain white background. Draw natural hands and only the cloth changes needed for the new arm pose.",
+      "negative_prompt": "",
+      "image_sha256": "32a6b59fa52e7af8a0da4b6f1fa04f131f6a2340bc72c8f5f4a713c120d2ca43",
+      "guide_sha256": "b75cf116bbb3ffbb4fc5e574caebed7d76d4366a4791a279cf519129d193309e",
+      "reference_latent_count": 2,
+      "reference_latent_shapes": [
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ],
+        [
+          1,
+          16,
+          1,
+          177,
+          92
+        ]
+      ],
+      "output_size": [
+        800,
+        1536
+      ],
+      "seconds": 86.24596458399992,
+      "peak_allocated_bytes": 21333389824,
+      "peak_reserved_bytes": 23251124224,
+      "development_screening": {
+        "reviewer_kind": "development-agent",
+        "assessment": "Full head with broadly similar identity, but right arm remains hidden and visible hand/sleeve less detailed. Not a useful right-arm control.",
+        "human_approved": false,
+        "anatomically_verified": false
+      },
+      "plan_sha256": "2e39645240682a4a345221e4378104c9227c4baff9f3a5f2eef28a26f91e6b82"
+    }
+  ],
+  "candidates": [
+    {
+      "pose": "right-lift",
+      "candidate": "b-941e0650b84f40bca2973fdfa66a2a1d-c1",
+      "seed": 2950709890492690,
+      "sha256": "edeab1d22c491a662d7a252fbe7c14bd3840d9d07ca0628ed1ecd025b0ac8e6b",
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "silhouette",
+        "cfg_norm": false,
+        "negative_prompt": ""
+      },
+      "decision": null,
+      "seconds": 170.03043621399956
+    },
+    {
+      "pose": "right-lift",
+      "candidate": "b-941e0650b84f40bca2973fdfa66a2a1d-c2",
+      "seed": 1189768204161235,
+      "sha256": "f63a611c296c9e350c7dae04ce270f21b2a5d3b5da6f48c429363662aab079d5",
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "silhouette",
+        "cfg_norm": false,
+        "negative_prompt": ""
+      },
+      "decision": null,
+      "seconds": 171.0727441729996
+    },
+    {
+      "pose": "right-lift",
+      "candidate": "b-941e0650b84f40bca2973fdfa66a2a1d-c3",
+      "seed": 3903699673634889,
+      "sha256": "61969f6ad19c3b304c214a21254e083db9ae1078037c42b39a9e29f373d6857a",
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "silhouette",
+        "cfg_norm": false,
+        "negative_prompt": ""
+      },
+      "decision": null,
+      "seconds": 203.48596951199943
+    },
+    {
+      "pose": "right-lift",
+      "candidate": "b-941e0650b84f40bca2973fdfa66a2a1d-c4",
+      "seed": 1169199114151233,
+      "sha256": "5683adb57a31d414bb9d8e44d0318797f2b364cd33bedacc9fb98e9a3b49eda4",
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "silhouette",
+        "cfg_norm": false,
+        "negative_prompt": ""
+      },
+      "decision": null,
+      "seconds": 241.73354203799863
+    },
+    {
+      "pose": "right-lift",
+      "candidate": "b-941e0650b84f40bca2973fdfa66a2a1d-c5",
+      "seed": 3726623271587344,
+      "sha256": "17da3d97e95c8d56fdf1305421829f05e8283a112b8c71717a50a8a225f0465a",
+      "config": {
+        "long_edge": 1536,
+        "steps": 40,
+        "cfg": 4.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "shift": 3.0,
+        "denoise": 1.0,
+        "latent": "source",
+        "mask": "none",
+        "guidance": "silhouette",
+        "cfg_norm": false,
+        "negative_prompt": ""
+      },
+      "decision": null,
+      "seconds": 249.99713423699905
+    }
+  ],
+  "poses": {
+    "right-lift": "pending",
+    "left-lift": "pending",
+    "explain": "pending",
+    "wave": "pending",
+    "torso-open": "pending"
+  },
+  "human_approved_count": 0,
+  "anatomical_truth": false,
+  "arm_rigging_solved": false,
+  "feasibility": "pending human selection and selected-only anatomical evaluation",
+  "artifacts": {
+    "review_run": "runs/phase4b7b-review",
+    "gallery": "runs/phase4b7b-review-gallery",
+    "screening": "runs/phase4b7b-audit/calibration-screening.json"
+  },
+  "validation": {
+    "python_tests": 176,
+    "javascript_talk_tests": 5,
+    "javascript_mouth_tests": 3,
+    "synthetic_browser": "pass",
+    "real_browser_read_only": "pass",
+    "evidence_sha256": {
+      "runs/phase4b7b-audit/python-regression-release.log": "e893765084a007a951911f9c0d5f8e8e5f0796307fb15856a47c130971f170a4",
+      "runs/phase4b7b-audit/rp-js.log": "9a82f3fa68620a10074b6addab1b10d97b1b76f0e6a71b08a51a26176966528c",
+      "runs/phase4b7b-audit/mouth-js.log": "385c7ced3322848651a25d827e11a220cdcf47244ce62d821e7f8b2a4e7e974c",
+      "runs/phase4b7b-browser-fixture-v4/result.json": "287a888cfd49387e81833cdf5a631136979457f5cd72c87b6915dc1c2c8ffde4",
+      "runs/phase4b7b-browser-real/result.json": "fc97d99e973c33548cc91a3c44c6bc5bcb73a13ee6dbbcf63c95f60f2767a7a5"
+    }
+  }
+}

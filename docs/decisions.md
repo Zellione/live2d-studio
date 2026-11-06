@@ -494,3 +494,20 @@ establish missing anatomy. User visual approval remains a separate pending gate.
 - Recommend pose-guided, source-constrained generation research before arm
   authoring; current tests do not establish that all Qwen configurations fail.
   Preserve `codel-combined-v1`, historical failures, defaults and production.
+
+
+## 2026-11-06 — Phase 4B.7b guided pose review
+
+The old pose run used 1024/40-step inference, not the older facial 512/20 setup.
+Keep that finding separate from the new high-resolution, multi-reference study.
+Use the installed Image Edit Plus node with two checked reference latents and
+source-relative guides. Keep the pinned Q4_K_S/FP8 stack; neither checkpoint
+identity nor successful execution proves parity with an unavailable old workflow.
+
+Human selection is mandatory for downstream auxiliary evidence. Five seeded
+variants share one fixed prompt/guide/config; new batches reserve fresh seeds.
+Accepted poses are immutable. Resume keeps completed images and only replays
+unfinished tasks in fresh directories. Review/export remains standalone and
+loopback-only. Generated pixels are never promoted to independently known anatomy.
+Thirteen calibration cases expose remaining pose-control failures; feasibility
+requires user-selected useful candidates, not merely better-looking still images.

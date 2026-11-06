@@ -1,5 +1,28 @@
 # Handover to local Codex CLI
 
+## Current Phase 4B.7b — local human pose review (2026-11-06)
+
+Read [results](phase4b7b-results.md), [generation audit](phase4b7b-generation.md),
+[reviewer guide](phase4b7b-reviewer.md) and [benchmark](benchmarks/phase4b7b.json).
+Phase 4B.7a commit `c56a59d` was validated and pushed before implementation.
+
+- New standalone reviewer: `scripts/pose_reviewer.py`, local run
+  `runs/phase4b7b-review`, loopback port 8795. It uses the existing pinned local
+  Qwen Q4_K_S/FP8 encoder; no model downloads or default changes.
+- Fixed five-candidate seeded batches, image2 skeleton/silhouette guidance,
+  aspect-preserving 1024/1536 output support, immutable history and resumable jobs.
+  Accepted poses are frozen; only human-selected images enter exported sets.
+- Thirteen controlled calibration cases retain important failures: cropped heads,
+  hidden/missing arms, face/proportion drift and .8-denoise near-copies. Larger
+  output improves inspected identity/style but does not guarantee pose compliance.
+- **Feasibility remains pending human selection and anatomical review.** Never
+  turn synthetic browser test approvals or development calibration notes into
+  Codel user approval. Selected-only diagnostics are difference panels, not GT.
+- Preserve `codel-combined-v1`, accepted Girl2/Sara, the original flat source,
+  old negative evidence, model pins and deployment/semantic validation gates.
+  Stop before final arm rigging or production deployment.
+
+
 ## Current state after Phase 4B.7a (2026-11-06)
 
 Read [results](phase4b7a-results.md), [protocol](phase4b7a-qwen-feasibility.md) and

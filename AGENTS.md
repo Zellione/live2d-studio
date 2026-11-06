@@ -393,3 +393,21 @@ Build an open-source, Linux-native workflow for turning one or more 2D character
 - Preserve the interrupted first batch, verified recovery and lower-strength
   controls. No model downloads, training, production or default changes occurred.
   Stop after Phase 4B.7a; future pose-conditioning/arm authoring needs new scope.
+
+
+## Phase 4B.7b guided auxiliary pose reviewer
+- Explicit user authorization covers local Qwen calibration, a standalone human
+  reviewer and selected-only feasibility analysis. Read docs/phase4b7b-results.md,
+  docs/phase4b7b-generation.md and docs/phase4b7b-reviewer.md.
+- Keep the frozen original and all accepted references immutable. New Qwen pose
+  work is separate from the facial worker and creation defaults; no production work.
+- Exactly five fresh seeds per new batch. Preserve fixed prompts/configs/guides,
+  model/input/output hashes, failed attempts and all reviewer history. Accepted
+  poses must not regenerate. Resume only unfinished reserved tasks in new folders.
+- Only real human decisions may approve Codel auxiliary poses. Synthetic browser
+  fixtures and development calibration screening are not user approval. Selected
+  images remain inferred artwork, not verified anatomy or production rig assets.
+- Review server stays loopback-only with fixed assets, guarded mutations and
+  per-run process/GPU locks. No unrelated workflow/settings/credential inspection.
+- Run Python regressions, both JS suites and synthetic reviewer browser checks.
+  Stop after Phase 4B.7b; no final arm rigging, promotion or deployment.
